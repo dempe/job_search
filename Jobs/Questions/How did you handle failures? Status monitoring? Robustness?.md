@@ -1,7 +1,7 @@
 ---
 type: question
-times_asked: 1
-technical: true
+aliases:
+  - "Pipeline robustness - What strategies would you use to ensure reliable, fault-tolerant data processing at scale?"
 title: How did you handle failures? Status monitoring? Robustness?
 date_created: "2023-05-30 15:33"
 date_modified: "2025-05-31 13:30"
@@ -24,3 +24,4 @@ As mentioned above, I've mostly used Grafana and ELK for logging and reporting e
 ## Asked by
 
 - Unknown (2021)
+- [[Clara#Second Interview Prep]]

@@ -1,7 +1,5 @@
 ---
 type: question
-times_asked: 1
-technical: true
 title: Can you describe the anatomy of an HTTP request? How are the bytes structured? What do the headers look like?
 date_created: "2023-05-30 21:43"
 date_modified: "2025-05-31 13:30"
@@ -21,4 +19,4 @@ Some of the most common request headers are:
 
 ## Asked by
 
-- [Close (0)](Close%20(0).md)
+- [[Close (0)#Questions]]

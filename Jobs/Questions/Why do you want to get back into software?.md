@@ -1,7 +1,5 @@
 ---
 type: question
-technical: false
-times_asked: 1
 title: Why do you want to get back into software?
 date_created: "2023-05-30 15:26"
 date_modified: "2025-05-31 13:30"

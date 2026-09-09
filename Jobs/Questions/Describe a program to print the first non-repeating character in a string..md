@@ -1,7 +1,5 @@
 ---
 type: question
-times_asked: 1
-technical: true
 title: Describe a program to print the first non-repeating character in a string.
 date_created: "2023-05-30 15:37"
 date_modified: "2025-05-31 13:30"

@@ -1,7 +1,5 @@
 ---
 type: question
-technical: true
-times_asked: 1
 title: What principles do you follow in what you architect?
 date_created: "2023-05-30 15:35"
 date_modified: "2025-05-31 13:30"

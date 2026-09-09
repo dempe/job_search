@@ -1,7 +1,5 @@
 ---
 type: question
-times_asked: 3
-technical: true
 title: What exactly did you do in your previous role?
 date_created: "2023-05-30 15:29"
 date_modified: "2025-05-31 13:30"

@@ -1,0 +1,28 @@
+---
+aliases:
+  - "Why are you interested in joining our team?"
+  - "Why do you want to work with us? (A few brief sentences is fine.)"
+  - "Why do you want to work with us? *"
+  - "Why do you want to work at Kovo?"
+  - "Why Aescape?"
+  - "What interests you about working for this company?"
+  - "Why are you interested in working at Jump? We'd love to hear what caught your attention!"
+  - "Why do you want to join Resend?<br/>"
+  - "Send an engaging message and tell us why you want to join us, what excites you about the problem we're solving, and how you envision your role at Resend."
+  - "Before your skills and experience, we're looking for the right kind of person – the kind who is utterly passionate about our mission and who thrives working how we work. So, please let us know why the Octopus Energy Group stands out to you?"
+  - "Why do you want to work for FB now?"
+  - "You Are Almost There. If You Didn't provide a Cover Letter, Tell Us what Makes You want to Work with Us? or why We Would like to Work with You? (Feel Free to Skip This if You Submitted a Cover Letter and just Leave a \"n/a\")"
+---
+
+- [[Aescape#Application]]
+- [[Anonos#You Are Almost There. If You Didn't provide a Cover Letter, Tell Us what Makes You want to Work with Us? or why We Would like to Work with You? (Feel Free to Skip This if You Submitted a Cover Letter and just Leave a "n/a")]]
+- [[ControlHub#Application]]
+- [[Enveritas#Application]]
+- [[Jump#Application]]
+- [[JustPaid#Application]]
+- [[Kovo#Application]]
+- [[Meta (1)#Interview 1 — Recruiter Screen]]
+- [[Nickelytics#Application]]
+- [[Octopus Energy#Application]]
+- [[Resend#Application]]
+- [[Yellowbrik Jobs#Application]]

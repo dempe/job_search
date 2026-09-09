@@ -4,22 +4,13 @@ date_created: "2023-05-30 15:08"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Non-technical Questions
+## Questions
 
 ```dataview
-TABLE times_asked AS "Times Asked"
-FROM "Job Search/Questions"
-WHERE technical = false
-SORT times_asked DESC
-```
-
-## Technical Questions
-
-```dataview
-TABLE times_asked AS "Times Asked"
-FROM "Job Search/Questions"
-WHERE technical = true
-SORT times_asked DESC
+LIST
+FROM "Jobs/Questions"
+WHERE file.name != "_MOC Questions"
+SORT file.name ASC
 ```
 
 ## Questions for Interviewers

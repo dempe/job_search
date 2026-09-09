@@ -1,7 +1,7 @@
 ---
 type: question
-times_asked: 1
-technical: false
+aliases:
+  - "What motivates you?"
 title: What gets you up in the morning?
 date_created: "2023-05-30 15:13"
 date_modified: "2025-05-31 13:30"
@@ -14,3 +14,4 @@ That's also why I love tech. There's an endless amount of things to learn in tec
 ## Asked By
 
 - Unknown (2019)
+- [[Reasint#Retrospective]]

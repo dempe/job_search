@@ -1,7 +1,8 @@
 ---
 type: question
-times_asked: 1
-technical: true
+aliases:
+  - "Can you tell me the difference between a GET and a POST request?"
+  - "What are the differences in terms of caching and security between a GET and a POST request?"
 title: Explain the difference between a GET request and a POST request.
 date_created: "2023-05-30 21:26"
 date_modified: "2025-05-31 13:30"
@@ -17,7 +18,7 @@ POST bodies are rarely cached, since it doesn't make sense to do so. A POST requ
 
 ## Asked by
 
-- [Close (company)](Close%20 (company). md)
+- [[Close (0)#Questions]]
 
 ## References
 
