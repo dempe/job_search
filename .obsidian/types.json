@@ -1,0 +1,14 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "released": "text",
+    "applied": "date",
+    "interview_dates": "multitext",
+    "remote": "checkbox",
+    "recruited": "checkbox",
+    "finished": "multitext",
+    "interviews": "date"
+  }
+}

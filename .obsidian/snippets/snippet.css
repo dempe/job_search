@@ -1,0 +1,77 @@
+body {
+    --text-normal: #ccc;
+    --background-primary: #050505;
+    --background-secondary: #000;
+    --blockquote-border-color: #666;
+}
+
+.embedded-backlinks {
+  border: none;
+}
+
+/* .backlink-pane, */
+.embedded-backlinks, /* Get rid of backlinks at bottom of page */
+.workspace-ribbon,
+.workspace-tab-header-container,
+.nav-header,
+::-webkit-scrollbar {
+  display: none;
+}
+
+.list-bullet:after {
+    margin-right: 12px;
+}
+
+/** File and Folder lists **/
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+    color: rgba(139, 108, 239, 1);
+    background-color: var(--background-primary);
+    -webkit-transition: color 150ms linear;
+}
+
+body:not(.is-grabbing) .nav-folder-title {
+    background-color: #222;
+}
+
+.inline-title {
+  color: #fff;
+}
+
+.cm-header-2 {
+  color: #fff;
+  font-size: 4rem;
+}
+
+/* Obsidian, lovingly, uses "!important" to set the font-size for the following elements. */
+/* .cm-header-2, .cm-header-2 * !important { */
+/*     font-size: 24px; */
+/* } */
+
+.cm-header-3 {
+  color: #ddd;
+}
+
+.cm-header-4 {
+  color: #bbb;
+}
+
+/* .cm-em, */
+.cm-strong {
+  color: #7fff00;
+}
+
+/* .cm-header, */
+.nav-file-title.is-active,
+.right-triangle {
+    color: rgba(139, 108, 239, 1);
+}
+
+.cm-hmd-frontmatter,
+.cm-def.cm-hmd-frontmatter {
+  color: #444444 !important;
+}
+
+.cm-quote {
+  font-style: italic;
+}

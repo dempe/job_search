@@ -1,0 +1,5 @@
+{
+  "folder": "Journal",
+  "format": "YYYY/MM/YYYY-MM-DD dddd",
+  "template": "_meta/Templates/Journal Template"
+}

@@ -1,0 +1,11 @@
+{
+  "accentColor": "#8b6cef",
+  "monospaceFontFamily": "JetBrains Mono",
+  "textFontFamily": "Roboto",
+  "translucency": false,
+  "showViewHeader": false,
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "snippet"
+  ]
+}
