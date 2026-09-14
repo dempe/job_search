@@ -27,10 +27,4 @@ date_modified: 2026-02-25 13:29
 
 >  What is a meaningful accomplishment outside of work that you are proud of? (For example: athletic, academic, creative, entrepreneurial, etc.)
 
-```
-I started my own LLC for app development (with an AWS backend) and contracting work. I released a successful app (> 10% conversion rate) and am taking on clients for contracting work.
-
-I realize this is work-tangential, but I think it does fit with the "entrepreneurial" category you listed.  A lot of the skills involved fall outside of the normal software engineering skillset.  I had to teach myself business, sales, marketing, and finances, for example.  All of these skills combine to help give me a more wholistic view of business, and I grew as a person and as an engineer because of it.
-
-Communication, in particular, was my biggest gain in this endeavor.  As a salaried software engineer, you might get by with subpar communication skills.  As a contractor, clear communication is paramount, especially when talking to potential clients who may not even know, themselves, what the problem is exactly that they are trying to solve.
-```
+Answer: [[Jobs/Answers/Building Athena Math#SentiLink (0)|Building Athena Math]]

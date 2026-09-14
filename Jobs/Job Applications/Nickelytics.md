@@ -25,17 +25,4 @@ date_modified: "2025-05-31 13:30"
 
 > What interests you about working for this company?
 
-```
-Hello!
-
-Just messaging you about the postion for Senior Software Engineer.
-
-I'm Chris. I have about 6 YOE in software. I spent most of that time working for startups working on data collection and ingestion. I had the opportunity to work in Go for about 2.5 years while working for SimplyMeasured, where most of the backend was in Go, and I had brief exposure to Typescript at SimplyMeasured and my previous company, Octamine.  I'm also working on a few mobile apps that are built in Typescript and React Native.
-
-I would love to hear more about the opportunities you have at Nikelytics. I have experience in many of the technologies you're using, I've worked in the advertisement industry, and I've worked almost exclusively for small to medium-sized companies.
-
-Lemme know if you'd like to chat!
-
-Best,
-Chris
-```
+Answer: [[Jobs/Answers/Backend engineering outreach#Nickelytics|Backend engineering outreach]]

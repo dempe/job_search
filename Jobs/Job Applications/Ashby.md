@@ -25,13 +25,7 @@ date_modified: 2026-08-04 21:58
 
 > In our initial calls, we'll cover this in more detail, so please keep your response brief (~3 paragraphs maximum). Write enough detail so we can understand the problem and meet the requirements outlined above.
 
-```
-My first big greenfield software project was a framework for retrieving selected data from various social media APIs and normalizing the data into a common model for ingestion into our system.
-
-The company I was working for, DataRank, was collecting data about what people were saying about certain products. A lot of this data came from social media. When I joined we had bespoke handlers for Facebook and Twitter, but they were error prone and not reliable. And we needed new handlers for other APIs.
-
-The solution I came up with was distributed across 4 servers and had generic queuing logic, generic token pools, generic rate limiting and retry strategies, etc. This allowed us to quickly spin up new APIs like Pinterest and Instagram, and replaced Facebook and Twitter with a more resilient system.
-```
+Answer: [[Jobs/Answers/Building DataRank social API ingestion#Ashby|Building DataRank social API ingestion]]
 
 ## Rejection
 

@@ -27,17 +27,4 @@ date_modified: "2025-11-28 10:23"
 
 > Please include your updated resume when applying for this role.
 
-```
-Hi Kiran,
-
-I'm Chris, a backend engineer with 9 YOE. I've worked with Python, PostgreSQL, Linux, and TypeScript, and love working on challenging technical problems at scale.
-
-I built a real-time ETL pipeline with Kafka at my last company and have experience processing large data volumes. Your work processing petabytes of data caught my attention.
-
-Here's a link to my resume: https://chrisdempewolf.com/Chris_Dempewolf_Resume_2025.pdf
-
-Would you have time for a quick chat?
-
-Best,
-Chris
-```
+Answer: [[Jobs/Answers/Backend engineering outreach#MixRank|Backend engineering outreach]]

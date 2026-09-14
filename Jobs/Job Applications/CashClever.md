@@ -3,7 +3,7 @@ type: job
 applied: 2026-08-12
 job_type: fulltime
 recruited: false
-status: awaiting-reply
+status: ghosted
 interviews:
 source: wellfound
 listing: https://wellfound.Com/jobs?Job_listing_slug=4551029-senior-backend-engineer-financial-infrastructure
@@ -13,8 +13,8 @@ contract: false
 remote: true
 compensation: $150k – $190k • 0.5% – 1.5%
 title: CashClever
-date_created: "2026-08-12 18:19"
-date_modified: "2026-08-12 18:52"
+date_created: 2026-08-12 18:19
+date_modified: 2026-08-12 18:52
 ---
 
 ## Application

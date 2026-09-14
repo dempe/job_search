@@ -20,13 +20,7 @@ date_modified: "2026-07-13 21:31"
 
 > Before your skills and experience, we're looking for the right kind of person – the kind who is utterly passionate about our mission and who thrives working how we work. So, please let us know why the Octopus Energy Group stands out to you?
 
-```
-I taught English for a couple of years to impoverished children in Mexico. Helping those students learn, improve, and motivate them was the most fulfiling experience of my life.
-
-Since then, I've been trying to find that same level of fulfillment in the tech industry. What Octopus is doing genuinely excites me. We, as a planet, are in a real engergy crisis. When I'm older, I'd like to say that I was a part of the solution and that I did something.
-
-I see Octopus as a place where I can do something positive and regain a sense of fulfillment in my work as a software engineer.
-```
+Answer: [[Jobs/Answers/Seeking mission-driven work#Octopus Energy|Seeking mission-driven work]]
 
 ## Rejection
 

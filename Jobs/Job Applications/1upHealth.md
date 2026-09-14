@@ -3,7 +3,7 @@ type: job
 applied: 2026-08-10
 job_type: fulltime
 recruited: false
-status: awaiting-reply
+status: ghosted
 interviews:
 source: matcha
 listing:

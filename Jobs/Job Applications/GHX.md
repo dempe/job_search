@@ -23,17 +23,7 @@ date_modified: "2025-05-31 13:30"
 
 > Please describe your background and how it relates to this role.
 
-```
-Hello!
-
-I'm Chris.  I have 6 YOE as a backend software engineer.  In the listing, you mention Java, Spring Framework, AWS, MySql, MongoDB, and ElasticSearch.  I have worked in data ingestion throughout most of my career and have worked with all of these technologies, particularly Java, Spring, AWS, and ES.  For example, most recently, I built a real-time data processing queue using Kafka and Java to import data from a data warehouse to ElasticSearch.
-
-Also mentioned in the listing, "maintaining and improving continuous integration and continuous delivery pipelines using Git, shell scripting, Python, Bamboo and AWS."  I have extensive experience with CICD, Git, shell, and Python and automation using these technologies.  For example, at my previous job, I automated a number of Python data processing pipelines using GitLab's CI and some shell scripting.
-
-If you curious to learn more about me, I recently wrote by own blog from scratch.  You can see my tech-related posts here: https://chrisdempewolf.com/tags/tech.html
-
-Thanks for reading and have a great day!
-```
+Answer: [[Jobs/Answers/Backend engineering background#GHX|Backend engineering background]]
 
 Along with a bunch of other silly questions w/ drop-downs.
 

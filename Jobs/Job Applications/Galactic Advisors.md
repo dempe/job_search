@@ -27,6 +27,4 @@ date_modified: 2025-11-24 13:00
 
 >  Describe one development project you made better. What was one thing you did to make it better?
 
-```
-At Octimine, I replaced a weekly batch job that took 2 days to run with a real-time, event-driven pipeline using Apache Kafka. This reduced data latency from 7 days to real-time, enabling immediate data availability across the organization and for our customers. 
-```
+Answer: [[Jobs/Answers/Replacing batch analytics with Kafka Streams#Galactic Advisors|Replacing batch analytics with Kafka Streams]]

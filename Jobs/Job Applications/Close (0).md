@@ -26,41 +26,23 @@ date_modified: 2025-05-31 13:30
 
 > Tell Us about Something You Built that You're Proud Of. (We like seeing URLs if Available, but not as a Replacement for a description)
 
-```
-I've been working on my personal website (chrisdempewolf. com) over the past few months. I'm trying to set up a blog to practice my writing and show what I'm doing. It's a static website written in PHP using Laravel. I run the Laravel server and use wget to pull down a static version. It's not the prettiest build setup, but it's worth it to use PHP/Laravel for my site. Say what you will about PHP, but it's a fantastic language for HTML templating. And since I'm not using someone else's static site generator, I know how everything works and control everything. Plus, I have a nice SQLite backend that makes working with various relationships (e.g., post<->tags, a many: many relationship) muuuch simpler than without a relational DB. I'm also a huge fan of the Laravel ORM, Eloquent.
-```
+Answer: [[Jobs/Answers/Building my personal website#Close (0)|Building my personal website]]
 
 > Describe a Software Development Project You Led and Any Lessons Learned from It.
 
-```
-I was hired as Senior Data Engineer at Octimine/Dennemyer. They needed to process ~30 million XML legal documents weekly, and they had some hacky Python scripts set up to run a weekly batch job that ran between 2 and 4 days if nothing went wrong. Using a batch job didn't make sense, as the data came in continuously.
-
-After some team meetings, I started the migration to using Kafka. Everything worked great in the end, but I do think that Kafka might have been overkill for our needs. We didn't have a hard requirement for real-time data, so something like Airflow would have worked instead.
-
-Lesson learned: do more research. If no one on your team is knowledgeable, ask around on the internet, and don't stick with something just because you're familiar with it (this is the biggest reason I pushed for Kafka).
-```
+Answer: [[Jobs/Answers/Replacing batch analytics with Kafka Streams#Close (0)|Replacing batch analytics with Kafka Streams]]
 
 > Where Did You Hear about This Role?
 
-```
-I saw this job posting: <https://remotive.com/remote-jobs/software-dev/senior-staff-software-engineer-backend-python-1655963>
-```
+Answer: [[Jobs/Answers/Where I found job listings#Close (0)|Where I found job listings]]
 
 > Describe Your Experience Working Remotely and if You Have Any Experience Working across Multiple time Zones in an Asynchronous Environment.
 
-```
-I worked remotely for a company based in Germany. Their standups were at noon Munich time, 5 am Central Time. Because it was so early for me, I gave my updates in chat, and we had no problems with this arrangement. I'm a fairly communicative person. In fact, this was one of the things my manager brought up in our first 1:1.
-```
+Answer: [[Jobs/Answers/Working remotely across time zones#Close (0)|Working remotely across time zones]]
 
 > Anything Else You'd like to Share?
 
-```
-First of all, thank you for taking the time to read my application! It means a lot to me.
-
-I'm sure that you hear this a lot but, your job description really resonated with me. I like the emphasis on autonomy and results-driven work. Also, I like that you pointed out code reviews, in particular. I have worked with companies that did not take reviews as seriously as I would have liked. Lemme tell you. Tech debt builds up fast. I also have worked professionally with a lot of the technologies in your tech stack (ElasticSearch, Kafka, and Python, in particular). So it sounds like we'd be a great fit! Call me? 🤙🏼
-
-Oh yeah, and your product looks pretty slick, too! I watched the demo.
-```
+Answer: [[Jobs/Answers/Closing remarks for Close applications#Close (0)|Closing remarks for Close applications]]
 
 ### Additional Information
 
