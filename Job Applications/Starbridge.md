@@ -25,7 +25,7 @@ date_modified: "2025-05-31 13:30"
 
 > Email to justin@starbridge.ai:
 
-Answer: [[Backend engineering outreach#Starbridge|Backend engineering outreach]]
+Answer: [[Introduction#Starbridge|Introduction]]
 
 Todo:
 
@@ -44,7 +44,7 @@ Don't mention anything about being in mexico. Mention nothing about having a mex
 
 > Tell me about yourself
 
-Answer: [[Backend engineering background#Starbridge|Backend engineering background]]
+Answer: [[Introduction#Starbridge (interview preparation)|Introduction]]
 
 > Probably will ask something about "prompt engineering." it's mentioned in the job description and it appears their "AI proposal writer" makes heavy use of LLMs.
 

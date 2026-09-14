@@ -27,4 +27,4 @@ date_modified: 2025-11-27 12:06
 
 >  Skip the cover letter. Send us something that shows you can build great products (a link, repo, demo, etc.). Recruiters: please do not reach out.
 
-Answer: [[Product portfolio#Soraban|Product portfolio]]
+Answer: [[Introduction#Soraban|Introduction]]

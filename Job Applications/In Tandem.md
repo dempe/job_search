@@ -25,7 +25,7 @@ Answer: [[Personal background and interests#In Tandem|Personal background and in
 
 > Cover Letter (Optional)
 
-Answer: [[In Tandem application letter#In Tandem|In Tandem application letter]]
+Answer: [[Introduction#In Tandem|Introduction]]
 
 > Describe your AI-enabled development workflow, from ideation through release.<br/>
 Please don't rely on it to write your responses for you - we're most interested in your own voice, experiences, and perspective. Trust us, it's surprisingly easy to spot AI-written answers.

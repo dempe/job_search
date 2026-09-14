@@ -26,7 +26,7 @@ date_modified: "2025-10-29 10:06"
 
 > Personal Summary
 
-Answer: [[Backend engineering background#BSC Analytics|Backend engineering background]]
+Answer: [[Introduction#BSC Analytics|Introduction]]
 
 > In one sentence, what is the most important thing you are looking for in your next role?
 

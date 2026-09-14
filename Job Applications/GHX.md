@@ -23,7 +23,7 @@ date_modified: "2025-05-31 13:30"
 
 > Please describe your background and how it relates to this role.
 
-Answer: [[Backend engineering background#GHX|Backend engineering background]]
+Answer: [[Introduction#GHX|Introduction]]
 
 Along with a bunch of other silly questions w/ drop-downs.
 

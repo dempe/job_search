@@ -20,7 +20,7 @@ date_modified: 2026-06-11 10:08
 
 > Cover Letter (optional)
 
-Answer: [[Archy application letter#Archy|Archy application letter]]
+Answer: [[Introduction#Archy|Introduction]]
 
 > Please tell us about a time you identified a technical bottleneck or a looming scalability issue that others had overlooked. How did you build a case for fixing it, and what was the measurable impact on the system's performance or reliability?
 
