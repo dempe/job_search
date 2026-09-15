@@ -1,0 +1,7 @@
+dry run of dapplication Steps 3-5 against Job Applications/ (today=2026-09-14, cutoff=2026-03-14)
+Lithic: matches=["Lithic.md@2026-09-04"] -> ABORT duplicate: Lithic.md (applied 2026-09-04)
+Meta: matches=["Meta (1).md@2023-08-24", "Meta (2).md@2025-04-21"] -> create Meta (3).md
+Walmart: matches=["Walmart (1).md@2024-12-02", "Walmart (2).md@2025-10-21", "Walmart (3).md@2025-11-04"] -> create Walmart (4).md
+Close: matches=["Close (0).md@2023-05-21", "Close (1).md@2024-09-29"] -> create Close (2).md
+Privacy: matches=[] -> create Privacy.md
+Allstate: matches=["Allstate (0).md@2026-08-10"] -> ABORT duplicate: Allstate (0).md (applied 2026-08-10)
