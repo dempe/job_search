@@ -27,7 +27,7 @@ source: simplyhired
 
 > (In 2-3 sentences) What about Recidiviz's mission or approach makes you excited to contribute your specific skills here, and not somewhere else?(Required)
 
-[[Seeking mission-driven work#Recidiviz|Seeking mission-driven work]]
+[[Why Company X#Recidiviz|Why Company X]]
 
 > In 2-3 sentences, describe the most recent full-stack project you worked on.(Required)
 

@@ -1,15 +1,3 @@
-## ControlHub
-
-[[ControlHub]]
-
->  Why are you interested in joining our team?
-
-```
-For the past two years I’ve been running Dempewolf Apps, shipping React Native products end-to-end on AWS, but I'm looking to return to working on a team where I can work in collaboration, tackle new problems, and focus exclusively on engineering work. My main goal for my next role is to grow as an engineer.
-
-ControlHub has a proven track record, and being accepted to both YC and StartX are strong indicators that the founders really know the space and what they are doing. I believe in this mission and would love to be a part of the team.
-```
-
 ## Grass
 
 [[Grass]]

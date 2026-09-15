@@ -31,7 +31,7 @@ Here are a few Qs from their application form:
 
 >  Why do you want to work with us? *
 
-[[Moving toward full-stack ownership#JustPaid|Moving toward full-stack ownership]]
+[[Why Company X#JustPaid|Why Company X]]
 
 >  What are you looking for? *
 

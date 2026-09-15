@@ -33,7 +33,7 @@ My goal is to someday reach the level of staff engineer or tech lead.  I'm looki
 
 > Why are you interested in working at Jump? We'd love to hear what caught your attention!
 
-[[Interest in Jump's engineering culture#Jump|Interest in Jump's engineering culture]]
+[[Why Company X#Jump|Why Company X]]
 
 ## Rejection
 

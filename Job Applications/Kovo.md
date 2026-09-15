@@ -20,7 +20,7 @@ date_modified: 2026-06-08 10:15
 
 > Why do you want to work at Kovo?
 
-[[Seeking engineering growth and meaningful work#Kovo|Seeking engineering growth and meaningful work]]
+[[Why Company X#Kovo|Why Company X]]
 
 > What exceptional work have you done?
 

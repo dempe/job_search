@@ -17,13 +17,3 @@ I want to push my skills as a backend software engineer to the limit, make meani
 ```
 The biggest thing i'm looking for right now is to grow as an engineer. that requires constantly improving my technical knowledge. that, in turn, requires, working on challenging problems that push me to the limit, working with skilled coworkers, and having a good manager for mentorship and feedback. aside from technical knowledge, to keep growing as an engineer, i need to take on more leadership responsibilities. not immediately, and nothing like becoming a manager (though that is a future possibility for me), but i do need to get a taste of what it's like to own a project end-to-end. in terms of titles, my immediate goal is to get hired as a senior engineer and work my way up to staff within 1 to 2 years.
 ```
-
-## Kovo
-
-[[Kovo]]
-
-> Why do you want to work at Kovo?
-
-```
-I want to work for a company that is serious about getting work done and improving. I also want to grow as an engieer and advance my career. Kovo sounds like a great place to get this kind of exposure. I'd love to be a part of the team and work alongside other engineers with a strong work ethic.
-```
