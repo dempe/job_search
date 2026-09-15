@@ -1,7 +1,7 @@
 ---
 name: dapplication
 description: Create a new job application note in `Job Applications/` from a job description text file (e.g. jd.txt), filling its YAML frontmatter from the JD and recording the application form's questions with empty answer blocks. Use when the user wants to log, record, or start a job application note from a JD file.
-argument-hint: <path-to-jd.txt>
+argument-hint: <path-to-jd.txt> <source> <listing-url>
 ---
 
 <!-- auto-fill-applications T0: FR0, FR1, NFR1 -->
@@ -26,13 +26,25 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST NOT create or modify anything in `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
 
+## Output
+
+- The only output of this skill is the new application note.
+- The assistant MUST NOT write any text to the user before, between, or after tool calls. That includes narration, progress updates, summaries, and a completion report.
+- There are two exceptions, and each MUST be as short as possible:
+  - A question the user must answer to continue: the JD path (Step 1), the company name (Step 2), or a missing `source` or `listing` (Step 6).
+  - A single line explaining why the run stopped without creating a note: an unreadable JD (Step 1), a duplicate application (Step 4), or an existing target file (Step 11).
+
 ## Step 1: Input
 
 <!-- auto-fill-applications T2: FR2, FR3, FR4 -->
 
-- The JD path is the skill's argument. A relative path resolves against the current working directory (the vault root).
-- If no path was provided, the assistant MUST STOP and ask the user for the path to the JD text file.
-- If the file does not exist or cannot be read, the assistant MUST STOP and report the path and the error. No note is created.
+- The skill's arguments (or, when invoked without the slash command, the user's request) are expected to contain three values, in any order:
+  - `{jd_path}`: the path to the JD text file. A relative path resolves against the current working directory (the vault root).
+  - `{listing}`: the listing URL, i.e. the value starting with `http://` or `https://`.
+  - `{source}`: where the listing was found, i.e. the remaining word (for example `matcha` or `4dayweek.io`).
+  For example: `/dapplication /tmp/jd.txt matcha https://job-boards.greenhouse.io/afresh/jobs/6190640004`.
+- If no JD path was provided, the assistant MUST STOP and ask the user for it.
+- If the file does not exist or cannot be read, the assistant MUST STOP with one line giving the path and the error. No note is created.
 - Otherwise, read the whole file. Its contents are referred to below as the JD.
 
 ## Step 2: Company name
@@ -71,11 +83,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - Compute `{cutoff}` as `{today}` minus six calendar months: the same day of the month, six months earlier. If that day doesn't exist in that month, use the month's last day. For example, `2026-09-14` gives `2026-03-14`, and `2026-08-31` gives `2026-02-28`.
 - For each existing application from Step 3, take its `applied` value, ignoring surrounding quotes.
 - An existing application whose `applied` value is missing or blank MUST NOT cause an abort.
-- If any existing application has an `applied` date on or after `{cutoff}`, it is a duplicate. The assistant MUST:
-  - report that a recent application for `{Company}` already exists
-  - report the matching note's filename
-  - report the matching note's `applied` date
-  - STOP without creating a note and without asking for `listing` or `source`
+- If any existing application has an `applied` date on or after `{cutoff}`, it is a duplicate. The assistant MUST STOP without creating a note and without asking for `listing` or `source`, after one line naming the matching note and its `applied` date (for example, `Duplicate: Job Applications/Lithic.md applied 2026-09-04`).
 
 ## Step 5: Filename
 
@@ -93,7 +101,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 <!-- auto-fill-applications T7: FR14, FR30, FR31, FR32 -->
 
 - This step runs only after Step 4 finds no duplicate.
-- Ask the user, in a single message, for:
+- If both `{source}` and `{listing}` were provided in Step 1, the assistant MUST NOT ask for them. Skip to Step 7.
+- Otherwise, ask the user only for the missing value or values, in a single message:
   - the `listing` URL of the job posting
   - the `source` where the listing was found (for example `matcha` or `4dayweek.io`)
 - Wait for the reply. Any value the user leaves unanswered or blank MUST be written as blank.
@@ -117,8 +126,6 @@ Find the application form in the JD. It usually follows the job description, aft
 7. **Prior employment.** Whether the candidate has previously worked for the company. For example, "Have you previously been employed by Techstars?"
 8. **Demographics.** Demographic and EEO questions, such as gender, race or ethnicity, veteran status, and disability status.
 9. **Excluded follow-ups.** Fields that only apply to an excluded question. For example, "If so, please specify the type of sponsorship required" or "If you have selected Other for the travel requirement question, please provide more details".
-
-For each excluded question, record which category excluded it, for the report in Step 11.
 
 **Reading the form.**
 
@@ -155,8 +162,8 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 | `recruited` | `false` |
 | `status` | `awaiting-reply` |
 | `interviews` | blank |
-| `source` | from Step 6, or blank |
-| `listing` | from Step 6, or blank |
+| `source` | `{source}` from Step 1 or Step 6, or blank |
+| `listing` | `{listing}` from Step 1 or Step 6, or blank |
 | `company` | `{Company}` |
 | `position` | the job title from the JD, verbatim |
 | `contract` | `true` if the role is a contract role, otherwise `false` |
@@ -183,17 +190,13 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - Separate consecutive question/answer pairs with exactly one blank line.
 - If every question was excluded, the body is only the `## Application` heading.
 
-## Step 11: Write and report
+## Step 11: Write
 
-<!-- auto-fill-applications T12: FR17, FR52, FR53, FR54 -->
+<!-- auto-fill-applications T12: FR17 -->
 
-- Immediately before writing, check with Bash (`test -e "Job Applications/{filename}"`) that the note still does not exist. If it exists, the assistant MUST STOP and report the conflict without writing anything.
+- Immediately before writing, check with Bash (`test -e "Job Applications/{filename}"`) that the note still does not exist. If it exists, the assistant MUST STOP with one line naming the existing file, without writing anything.
 - Write the note to `Job Applications/{filename}` with the Write tool.
-- Report to the user:
-  1. The created note's path.
-  2. The included questions, in order. A long preceding-content block MAY be shortened to its first line in the report, but never in the note.
-  3. The excluded questions, each with the category that excluded it (Step 7).
-- STOP.
+- STOP. The assistant MUST NOT write any text to the user after the note is written.
 
 ## Worked example
 
@@ -209,10 +212,12 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 **Run.**
 
-- Step 2: the user chooses `Privacy` over `Lithic`.
+- Step 1: invoked as `/dapplication /tmp/jd.txt matcha`, so `{source}` is `matcha` and `{listing}` is missing.
+- Step 2: the assistant asks which company name to use. The user chooses `Privacy` over `Lithic`.
 - Step 3: no filename matches `Privacy.md` or `Privacy ({n}).md`.
 - Step 4: `date` prints `2026-09-14 18:30`.
-- Step 6: the user answers `source` with `matcha` and leaves `listing` blank.
+- Step 6: the assistant asks only for the listing URL. The user leaves it blank.
+- Step 11: the note is written, and the run ends with no further text.
 
 **Expected note** at `Job Applications/Privacy.md`. `{encoded blob, verbatim}` stands in for the JD's full encoded string. A real run copies it exactly.
 
@@ -251,23 +256,3 @@ date_modified: "2026-09-14 18:30"
 ```
 ```
 ````
-
-**Expected report.**
-
-```text
-Created: Job Applications/Privacy.md
-
-Included questions:
-1. What do you think are our most complex technical challenges based on the very little you know about Lithic?
-2. Crack the code … What did you get when you cracked the code?
-
-Excluded questions:
-- First Name, Last Name, Preferred First Name, Email, Phone, Country, Location (City), Resume/CV, LinkedIn Profile, Website → identity and contact
-- Will you now or in the future require sponsorship to work in the US? (incl. but not limited to, H1-B, OPT, O-1, etc) → work authorization
-- If so, please specify the type of sponsorship required. → excluded follow-up
-- What are your salary expectations? → compensation
-- Our interviews require you to be on video. Can you confirm that you can keep your camera on for the entire duration of the interview? → condition confirmation
-- Can you please confirm your working location? City and State → location and logistics
-- Travel Expectation: We ask our new hires to join us in person for their first week in our NYC office… → location and logistics
-- If you have selected Other for the travel requirement question, please provide more details on your situation. → excluded follow-up
-```
