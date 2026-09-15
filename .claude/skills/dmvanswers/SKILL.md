@@ -1,5 +1,5 @@
 ---
-name: danswers
+name: dmvanswers
 description: Migrate answered application questions out of a job application note into topic-based notes in `Answers/`, replacing each answer code block with a backlink. Takes the application note's name (e.g. `Rivora`). Use when the user wants to file, move, or link an application's answers into Answer notes.
 argument-hint: <application-note-name>
 ---
