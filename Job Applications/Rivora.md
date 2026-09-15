@@ -14,7 +14,7 @@ remote: true
 compensation: $135k – $177k • No equity
 title: Rivora
 date_created: "2026-09-14 23:09"
-date_modified: "2026-09-14 23:15"
+date_modified: "2026-09-15 00:37"
 ---
 
 ## Application
@@ -34,10 +34,8 @@ date_modified: "2026-09-14 23:15"
 
 > Describe a time you had to work across two systems where one side didn't fully control the other, an API you didn't own, a data format shared with another service, anything like that. What broke or almost broke?
 
-```
-```
+[[Building the wholesale customer map#Rivora|Building the wholesale customer map]]
 
 > Tell us about the last time you had to get productive in an unfamiliar codebase or tool within a few days, not weeks. What was your actual approach?
 
-```
-```
+[[Learning new technologies#Rivora|Learning new technologies]]
