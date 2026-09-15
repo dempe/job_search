@@ -99,6 +99,24 @@ For the payment integration app that I built, this cycle surfaced a number of am
 In the end, it was a complete success, and the client was able to switch their payment provider before their existing contract ran out. I now rely heavily on this flow for new projects. I'm still making refinements, though the core scope->plan->implement->review remains.
 ```
 
+## Rivora
+
+[[Rivora]]
+
+> Describe a specific time you used an AI coding assistant (Copilot, Cursor, Claude, ChatGPT, whatever you use) on a real task recently. What did it get right, and what did you have to fix or reject?
+
+```
+I recently used Claude Code to build out a Node.JS app for a client's payment provider. The app needed to sync payment data between the provider and Shopify. Since it was touching payments, it was imperative that my code was correct.
+
+I use a scope->plan->implement->review cycle built from skills. First, I give the agent a rough overview of the problem in Markdown (mostly what the client said and my own interpretations/follow-up questions). The `scope` skill formalizes that into concrete functional and non-functional requirements, and the `plan` skill turns those into an implementation plan. Both require a lot of back-and-forth with the model, but it helps me really understand the problem.
+
+What it got right: this cycle surfaced a number of ambiguities in the provider's API documentation, which I was able to bring up to the provider and client and have reconciled. Then, once we hit the `implement` phase, it was mostly smooth sailing, since all the hard questions had already been addressed.
+
+What I had to fix or reject: Claude wanted to hand-roll a SQL migration runner and a config loader when libraries already exist for those things. I rejected both and had it use off-the-shelf solutions. It also started editing the implementation before any test existed, so I stopped it and made it write a failing unit test first, then fix the code until the test passed.
+
+In the end, it was a complete success, and the client was able to switch their payment provider before their existing contract ran out.
+```
+
 ## Starbridge
 
 [[Starbridge]]
