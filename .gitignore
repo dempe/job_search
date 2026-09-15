@@ -2,6 +2,9 @@
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
+# Scratch job description read by /dapplication.
+/jd.txt
+
 # This repository keeps project plans and decision records in .agents.
 !.agents/
 !.agents/**

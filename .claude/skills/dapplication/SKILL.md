@@ -1,7 +1,7 @@
 ---
 name: dapplication
-description: Create a new job application note in `Job Applications/` from a job description text file (e.g. jd.txt), filling its YAML frontmatter from the JD and recording the application form's questions with empty answer blocks. Use when the user wants to log, record, or start a job application note from a JD file.
-argument-hint: <path-to-jd.txt> <source> <listing-url>
+description: Create a new job application note in `Job Applications/` from a job description text file (`./jd.txt` by default), filling its YAML frontmatter from the JD and recording the application form's questions with empty answer blocks. Use when the user wants to log, record, or start a job application note from a JD file.
+argument-hint: <source> <listing-url> [path-to-jd.txt]
 ---
 
 <!-- auto-fill-applications T0: FR0, FR1, NFR1 -->
@@ -31,19 +31,19 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The only output of this skill is the new application note.
 - The assistant MUST NOT write any text to the user before, between, or after tool calls. That includes narration, progress updates, summaries, and a completion report.
 - There are two exceptions, and each MUST be as short as possible:
-  - A question the user must answer to continue: the JD path (Step 1), the company name (Step 2), or a missing `source` or `listing` (Step 6).
+  - A question the user must answer to continue: the company name (Step 2), or a missing `source` or `listing` (Step 6).
   - A single line explaining why the run stopped without creating a note: an unreadable JD (Step 1), a duplicate application (Step 4), or an existing target file (Step 11).
 
 ## Step 1: Input
 
 <!-- auto-fill-applications T2: FR2, FR3, FR4 -->
 
-- The skill's arguments (or, when invoked without the slash command, the user's request) are expected to contain three values, in any order:
-  - `{jd_path}`: the path to the JD text file. A relative path resolves against the current working directory (the vault root).
+- The skill's arguments (or, when invoked without the slash command, the user's request) may contain these values, in any order:
   - `{listing}`: the listing URL, i.e. the value starting with `http://` or `https://`.
+  - `{jd_path}` (optional): a path to the JD text file, i.e. a value ending in `.txt` or containing `/`. A relative path resolves against the current working directory (the vault root).
   - `{source}`: where the listing was found, i.e. the remaining word (for example `matcha` or `4dayweek.io`).
-  For example: `/dapplication /tmp/jd.txt matcha https://job-boards.greenhouse.io/afresh/jobs/6190640004`.
-- If no JD path was provided, the assistant MUST STOP and ask the user for it.
+  For example: `/dapplication matcha https://job-boards.greenhouse.io/afresh/jobs/6190640004`.
+- If no JD path was provided, `{jd_path}` is `./jd.txt`. The assistant MUST NOT ask for it.
 - If the file does not exist or cannot be read, the assistant MUST STOP with one line giving the path and the error. No note is created.
 - Otherwise, read the whole file. Its contents are referred to below as the JD.
 
@@ -212,7 +212,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 **Run.**
 
-- Step 1: invoked as `/dapplication /tmp/jd.txt matcha`, so `{source}` is `matcha` and `{listing}` is missing.
+- Step 1: invoked as `/dapplication matcha`, so `{jd_path}` is `./jd.txt`, `{source}` is `matcha`, and `{listing}` is missing.
 - Step 2: the assistant asks which company name to use. The user chooses `Privacy` over `Lithic`.
 - Step 3: no filename matches `Privacy.md` or `Privacy ({n}).md`.
 - Step 4: `date` prints `2026-09-14 18:30`.
