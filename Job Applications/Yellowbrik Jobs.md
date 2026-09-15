@@ -25,4 +25,4 @@ date_modified: "2025-05-31 13:30"
 
 > What interests you about working for this company?
 
-Answer: [[Introduction#Yellowbrik Jobs|Introduction]]
+[[Introduction#Yellowbrik Jobs|Introduction]]

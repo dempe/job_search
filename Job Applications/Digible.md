@@ -25,7 +25,7 @@ date_modified: "2024-09-05 09:30"
 
 > How do you handle and respond to feedback, both negative and positive?
 
-Answer: [[Responding to feedback#Digible|Responding to feedback]]
+[[Responding to feedback#Digible|Responding to feedback]]
 
 ## Rejected
 

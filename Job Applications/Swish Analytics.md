@@ -20,4 +20,4 @@ date_modified: "2026-06-15 11:49"
 
 > Cover Letter
 
-Answer: [[Introduction#Swish Analytics|Introduction]]
+[[Introduction#Swish Analytics|Introduction]]

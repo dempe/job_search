@@ -20,4 +20,4 @@ date_modified: 2026-07-29 18:40
 
 > Have you been involved in designing and developing the architecture of complex software systems? If yes, please confirm which part you were involved in.
 
-Answer: [[Replacing batch analytics with Kafka Streams#Certa|Replacing batch analytics with Kafka Streams]]
+[[Replacing batch analytics with Kafka Streams#Certa|Replacing batch analytics with Kafka Streams]]

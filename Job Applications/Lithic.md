@@ -21,4 +21,4 @@ date_modified: "2026-09-04 10:32"
 
 > What do you think are our most complex technical challenges based on the very little you know about Lithic?
 
-Answer: [[Distributed payments system challenges#Lithic|Distributed payments system challenges]]
+[[Distributed payments system challenges#Lithic|Distributed payments system challenges]]

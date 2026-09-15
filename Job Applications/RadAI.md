@@ -21,4 +21,4 @@ date_modified: 2026-07-29 10:36
 
 > Describe a concrete example from the last month where AI meaningfully improved your work (tool used + impact)
 
-Answer: [[AI-assisted development workflow#RadAI|AI-assisted development workflow]]
+[[AI-assisted development workflow#RadAI|AI-assisted development workflow]]

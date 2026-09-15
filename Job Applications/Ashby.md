@@ -25,7 +25,7 @@ date_modified: 2026-08-04 21:58
 
 > In our initial calls, we'll cover this in more detail, so please keep your response brief (~3 paragraphs maximum). Write enough detail so we can understand the problem and meet the requirements outlined above.
 
-Answer: [[Building DataRank social API ingestion#Ashby|Building DataRank social API ingestion]]
+[[Building DataRank social API ingestion#Ashby|Building DataRank social API ingestion]]
 
 ## Rejection
 

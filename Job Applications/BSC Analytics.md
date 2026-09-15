@@ -26,15 +26,15 @@ date_modified: "2025-10-29 10:06"
 
 > Personal Summary
 
-Answer: [[Introduction#BSC Analytics|Introduction]]
+[[Introduction#BSC Analytics|Introduction]]
 
 > In one sentence, what is the most important thing you are looking for in your next role?
 
-Answer: [[Seeking engineering growth and meaningful work#BSC Analytics|Seeking engineering growth and meaningful work]]
+[[Seeking engineering growth and meaningful work#BSC Analytics|Seeking engineering growth and meaningful work]]
 
 > Please describe your experience with Kubernetes, DevOps, and AI/ML lifecycles (include number of years and typical project scope).
 
-Answer: [[Kubernetes, DevOps, and AI experience#BSC Analytics|Kubernetes, DevOps, and AI experience]]
+[[Kubernetes, DevOps, and AI experience#BSC Analytics|Kubernetes, DevOps, and AI experience]]
 
 Scratch that^. I think this was a filter question. There is only 1 accepted answer: `abcdef`.
 

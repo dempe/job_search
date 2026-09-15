@@ -23,7 +23,7 @@ date_modified: "2025-05-31 13:30"
 
 > Please describe your background and how it relates to this role.
 
-Answer: [[Introduction#GHX|Introduction]]
+[[Introduction#GHX|Introduction]]
 
 Along with a bunch of other silly questions w/ drop-downs.
 

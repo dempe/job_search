@@ -27,4 +27,4 @@ date_modified: "2025-11-28 10:23"
 
 > Please include your updated resume when applying for this role.
 
-Answer: [[Introduction#MixRank|Introduction]]
+[[Introduction#MixRank|Introduction]]

@@ -26,23 +26,23 @@ date_modified: 2025-05-31 13:30
 
 > Tell Us about Something You Built that You're Proud Of. (We like seeing URLs if Available, but not as a Replacement for a description)
 
-Answer: [[Building my personal website#Close (0)|Building my personal website]]
+[[Building my personal website#Close (0)|Building my personal website]]
 
 > Describe a Software Development Project You Led and Any Lessons Learned from It.
 
-Answer: [[Replacing batch analytics with Kafka Streams#Close (0)|Replacing batch analytics with Kafka Streams]]
+[[Replacing batch analytics with Kafka Streams#Close (0)|Replacing batch analytics with Kafka Streams]]
 
 > Where Did You Hear about This Role?
 
-Answer: [[Where I found job listings#Close (0)|Where I found job listings]]
+[[Where I found job listings#Close (0)|Where I found job listings]]
 
 > Describe Your Experience Working Remotely and if You Have Any Experience Working across Multiple time Zones in an Asynchronous Environment.
 
-Answer: [[Working remotely across time zones#Close (0)|Working remotely across time zones]]
+[[Working remotely across time zones#Close (0)|Working remotely across time zones]]
 
 > Anything Else You'd like to Share?
 
-Answer: [[Closing remarks for Close applications#Close (0)|Closing remarks for Close applications]]
+[[Closing remarks for Close applications#Close (0)|Closing remarks for Close applications]]
 
 ### Additional Information
 

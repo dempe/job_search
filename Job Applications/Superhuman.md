@@ -21,4 +21,4 @@ date_modified: 2026-08-12 19:31
 
 > What are some of your personal interests/hobbies? We'd love to get to know more about yourself 😊
 
-Answer: [[Personal background and interests#Superhuman|Personal background and interests]]
+[[Personal background and interests#Superhuman|Personal background and interests]]

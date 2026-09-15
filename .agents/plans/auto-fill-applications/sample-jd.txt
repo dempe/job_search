@@ -1,0 +1,116 @@
+Staff Software Engineer
+Remote
+Privacy is the virtual card platform giving consumers and small businesses complete control over their online payments.
+
+Our virtual cards protect 250,000+ users across the U.S., processing over $3 billion in transactions with bank-level security and encryption. From merchant-locked cards that can't be used anywhere else if stolen, to spending limits that block unauthorized charges, to one-click pausing that stops subscriptions instantly, Privacy puts financial control back in users' hands.
+
+We're building a future where every online payment is secure by default, free from data breaches, unauthorized charges, and hidden fees. We're proud to have been named one of Forbes' "Top 100 Most Customer-Centric Companies" and featured in The Wall Street Journal, TechCrunch, and Wirecutter.
+
+Privacy is the product that started it all. What began as Privacy.com grew into Lithic, now a Series C company backed by world-class investors including Bessemer Venture Partners, Index Ventures, Spark Capital, Stripes, and Mastercard, along with many others. Our dedicated team of 35 sits at the heart of Lithic's 170+ person organization, spanning 26 states and 7 countries, headquartered in New York City. 
+
+What we do:
+
+Generate virtual payment cards backed by debit cards or bank accounts
+Enable users to set spending limits, pause cards, and close them instantly
+Protect users from merchant data breaches and unauthorized recurring charges
+Help users organize their spending with merchant-locked cards
+Why it matters:
+With data breaches becoming increasingly common and subscription traps everywhere, consumers need better tools to protect their financial information. Privacy.com processes millions of transactions and serves hundreds of thousands of users who trust us to keep their payment information secure.
+
+The technical challenge:
+Building a secure, reliable payments product requires solving complex problems at the intersection of fintech infrastructure, security, user experience, and regulatory compliance. You'll work with real-time transaction processing, fraud detection, payment network integrations, and systems that need to be both fast and bulletproof.
+
+The opportunity:
+We're experiencing significant growth from strong product-market fit. We are at the transition point which require scaling the stack, team, and processes.
+
+You'll have the chance to work on features that directly impact over 100K users, with a modern tech stack and a team that values ownership, collaboration, and moving fast.
+
+Job Description
+Privacy.com is hiring a Staff Software Engineer to scale to meet the needs of our growth. You will split your time between being hands on coding as well as demonstrate technical leadership in evolving the platform for scale.
+
+You'll become an expert in card payments, solve distributed systems problems at scale, make architectural and product decisions, and mentor other engineers. The team is distributed across the US and Europe. The stack is predominantly NodeJS, DocumentDB and hosted in AWS.
+
+Job responsibilities:
+Ensure high reliability and correctness for Privacy.com card processing
+Understand the challenges of the current system and propose step function changes to future architecture
+Drive large multi-month initiatives and roadmap.
+Ensure that the team is delivering reliable, secure, and scalable code.
+Lead efforts to improve system and processes within the team and across engineering
+Help drive strategic planning in collaboration with engineering, product, and cross-functional leaders.
+Make tradeoffs between long term investment and delivering on immediate product value
+Participate in team on-call rotations
+Qualifications:
+8+ years of experience shipping code in a fast paced production environment
+Experience building event-based and advanced distributed systems.
+Strong sense of ownership and accountability for your work
+Technical lead for a small team
+Driven large multi-month migration/re-architecturing projects
+Experience mentoring and coaching other engineers on distributed systems patterns and best practices
+Ability to collaborate effectively with cross-functional teams (designers, PMs, operations)
+Excellent communication skills and enthusiasm for learning
+The annual US salary range for this role is $200,000 - $220,000 plus equity. This salary range may be inclusive of several career levels at Lithic and will be narrowed during the interview process based on the candidate’s experience and qualifications. 
+
+This is a remote position. However, candidates must be located in the United States, Canada (Ontario or British Columbia), Netherlands, Poland, or Czech Republic. We do not offer visa sponsorship or assistance.
+
+Crack the code
+
+A hidden code is tucked into this application. Find it and enter it below to continue.
+
+IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJUaGUgYW5zd2VyIHRvIGxpZmUsIHRoZSB1bml2ZXJzZSwgYW5kIGV2ZXJ5dGhpbmcg4oCUIGVuY3J5cHRlZC4iIiIKCnBhc3N3b3JkID0gYiJceGVkXHhjMSIKX2tleSA9IGIiXHhkOVx4ZjNceGVkXHhmYlx4ODBceGM0flx4YTdcblx4YjhceGZiPFx4ZmJPXlx4ZmIiCgpkZWYgZGVjcnlwdF9wYXNzd29yZCgpIC0+IHN0cjoKICAgIHJldHVybiBieXRlcyhhIF4gYiBmb3IgYSwgYiBpbiB6aXAocGFzc3dvcmQsIF9rZXkpKS5kZWNvZGUoKQoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHJlc3VsdCA9IGRlY3J5cHRfcGFzc3dvcmQoKQogICAgcHJpbnQoZiJEZWNyeXB0ZWQgcGFzc3dvcmQ6IHtyZXN1bHR9IikKICAgIGFzc2VydCByZXN1bHQgPT0gIjQyIiwgIkRvbid0IHBhbmljIOKAlCBidXQgZGVjcnlwdGlvbiBmYWlsZWQhIgo=
+Benefits for US Employees: 
+
+Unlimited PTO
+12-weeks fully paid parental leave
+4-Week Fully Paid Sabbatical (earned at your 5-year anniversary)
+Work From Anywhere: work from anywhere in the world 4-weeks each year
+3% cashback on card purchases with your complimentary Privacy.com employee account
+Health, vision, and dental insurance; HSA Contribution Match
+401(k) match
+Voluntary Life Insurance and STD/LTD
+Create a Job Alert
+
+Interested in building your career at Privacy? Get future opportunities sent straight to your email.
+
+Create alert
+Apply for this job
+*
+
+indicates a required field
+
+First Name*
+Last Name*
+Preferred First Name
+Email*
+Phone
+Country*
+
+Phone*
+Location (City)*
+Locate me
+Resume/CV*
+AttachNo file chosen
+Enter manually
+Accepted file types: pdf, doc, docx, txt, rtf
+
+LinkedIn Profile*
+Website
+Will you now or in the future require sponsorship to work in the US? (incl. but not limited to, H1-B, OPT, O-1, etc)*
+Select...
+
+If so, please specify the type of sponsorship required.
+What are your salary expectations?*
+What do you think are our most complex technical challenges based on the very little you know about Lithic? *
+
+Our interviews require you to be on video. Can you confirm that you can keep your camera on for the entire duration of the interview?*
+Select...
+
+What did you get when you cracked the code?*
+Select...
+
+Can you please confirm your working location? City and State*
+Travel Expectation: We ask our new hires to join us in person for their first week in our NYC office to receive equipment and complete their I-9 verification. Travel expenses will be covered by Lithic. Please select the option below that best applies to you.*
+Select...
+
+If you have selected Other for the travel requirement question, please provide more details on your situation.
+
+

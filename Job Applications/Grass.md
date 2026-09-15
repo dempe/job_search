@@ -40,31 +40,31 @@ Chris
 
 > BS or MS degree in a STEM major or equivalent job experience required*
 
-Answer: [[Computer science education#Grass|Computer science education]]
+[[Computer science education#Grass|Computer science education]]
 
 > 4+ years experience in software development and writing very high quality code that is robust and easy to maintain*
 
-Answer: [[Engineering experience and code quality#Grass|Engineering experience and code quality]]
+[[Engineering experience and code quality#Grass|Engineering experience and code quality]]
 
 > Knowledge on how to build large scalable systems*
 
-Answer: [[Replacing batch analytics with Kafka Streams#Grass|Replacing batch analytics with Kafka Streams]]
+[[Replacing batch analytics with Kafka Streams#Grass|Replacing batch analytics with Kafka Streams]]
 
 > Strong experience with Backend technologies such as C++, Go & Javascript. *
 
-Answer: [[Backend language experience#Grass|Backend language experience]]
+[[Backend language experience#Grass|Backend language experience]]
 
 > Knowledge and experience in identifying and solving issues with intricate, live software systems, as well as in-depth familiarity with contemporary software development processes such as continuous integration and continuous deployment.*
 
-Answer: [[Production reliability and delivery practices#Grass|Production reliability and delivery practices]]
+[[Production reliability and delivery practices#Grass|Production reliability and delivery practices]]
 
 > What are your annual salary expectations? ($ USD)*
 
-Answer: [[Salary expectations#Grass|Salary expectations]]
+[[Salary expectations#Grass|Salary expectations]]
 
 > Optional: Please add anything else you would like to highlight about yourself
 
-Answer: [[Returning to a collaborative engineering team#Grass|Returning to a collaborative engineering team]]
+[[Returning to a collaborative engineering team#Grass|Returning to a collaborative engineering team]]
 
 ## Interviews
 

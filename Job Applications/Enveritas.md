@@ -21,16 +21,16 @@ date_modified: "2026-06-04 13:39"
 
 > Why do you want to work with us? (A few brief sentences is fine.)
 
-Answer: [[Seeking mission-driven work#Enveritas|Seeking mission-driven work]]
+[[Seeking mission-driven work#Enveritas|Seeking mission-driven work]]
 
 > Purely optional, do you have any questions for us about Enveritas, the team, or this role? We can spend some time via email or in our interviews to answer your questions. (It's fine to leave this blank if you don't have any specific questions at this time.)
 
-Answer: [[Questions for prospective employers#Enveritas|Questions for prospective employers]]
+[[Questions for prospective employers#Enveritas|Questions for prospective employers]]
 
 > What are your favorite ways to learn about new trends and advancements in software development?
 
-Answer: [[Learning new technologies#Enveritas|Learning new technologies]]
+[[Learning new technologies#Enveritas|Learning new technologies]]
 
 > Any other information on availability or employment eligibility you'd like to share?
 
-Answer: [[Work authorization and availability#Enveritas|Work authorization and availability]]
+[[Work authorization and availability#Enveritas|Work authorization and availability]]

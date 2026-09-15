@@ -27,20 +27,20 @@ date_modified: "2026-02-24 13:04"
 
 > What's one thing you'd improve about Ghost's developer experience, and why? *
 
-Answer: [[Improving Ghost developer setup#Ghost|Improving Ghost developer setup]]
+[[Improving Ghost developer setup#Ghost|Improving Ghost developer setup]]
 
 > Tell us about a tool or product you shipped that you're proud of. What made it great? *
 
-Answer: [[Building Athena Math#Ghost|Building Athena Math]]
+[[Building Athena Math#Ghost|Building Athena Math]]
 
 > How are you using AI in your day-to-day work right now? *
 
-Answer: [[AI-assisted development workflow#Ghost|AI-assisted development workflow]]
+[[AI-assisted development workflow#Ghost|AI-assisted development workflow]]
 
 > What do you hope to find here, that you haven't found at current or previous jobs? *
 
-Answer: [[Seeking mission-driven work#Ghost|Seeking mission-driven work]]
+[[Seeking mission-driven work#Ghost|Seeking mission-driven work]]
 
 > What are your salary expectations (in USD)? *
 
-Answer: [[Salary expectations#Ghost|Salary expectations]]
+[[Salary expectations#Ghost|Salary expectations]]

@@ -25,7 +25,7 @@ date_modified: "2025-05-31 13:30"
 
 > Email to justin@starbridge.ai:
 
-Answer: [[Introduction#Starbridge|Introduction]]
+[[Introduction#Starbridge|Introduction]]
 
 Todo:
 
@@ -44,11 +44,11 @@ Don't mention anything about being in mexico. Mention nothing about having a mex
 
 > Tell me about yourself
 
-Answer: [[Introduction#Starbridge (interview preparation)|Introduction]]
+[[Introduction#Starbridge (interview preparation)|Introduction]]
 
 > Probably will ask something about "prompt engineering." it's mentioned in the job description and it appears their "AI proposal writer" makes heavy use of LLMs.
 
-Answer: [[AI-assisted development workflow#Starbridge|AI-assisted development workflow]]
+[[AI-assisted development workflow#Starbridge|AI-assisted development workflow]]
 
 **What are you gonna ask?**
 

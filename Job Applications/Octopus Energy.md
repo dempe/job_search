@@ -20,7 +20,7 @@ date_modified: "2026-07-13 21:31"
 
 > Before your skills and experience, we're looking for the right kind of person – the kind who is utterly passionate about our mission and who thrives working how we work. So, please let us know why the Octopus Energy Group stands out to you?
 
-Answer: [[Seeking mission-driven work#Octopus Energy|Seeking mission-driven work]]
+[[Seeking mission-driven work#Octopus Energy|Seeking mission-driven work]]
 
 ## Rejection
 

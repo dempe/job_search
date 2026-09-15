@@ -20,4 +20,4 @@ date_modified: 2025-05-31 13:29
 
 > What is a meaningful accomplishment outside of work that you are proud of? (For example: athletic, academic, creative, entrepreneurial, etc.)
 
-Answer: [[Learning languages outside work#SentiLink (1)|Learning languages outside work]]
+[[Learning languages outside work#SentiLink (1)|Learning languages outside work]]

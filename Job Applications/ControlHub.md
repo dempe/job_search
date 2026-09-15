@@ -27,8 +27,8 @@ date_modified: 2025-11-12 12:07
 
 >  What is the most relevant experience you have for this job?
 
-Answer: [[Introduction#ControlHub|Introduction]]
+[[Introduction#ControlHub|Introduction]]
 
 >  Why are you interested in joining our team?
 
-Answer: [[Returning to a collaborative engineering team#ControlHub|Returning to a collaborative engineering team]]
+[[Returning to a collaborative engineering team#ControlHub|Returning to a collaborative engineering team]]

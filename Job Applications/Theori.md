@@ -20,8 +20,8 @@ date_modified: 2026-06-11 10:45
 
 > How do you think AI is changing your role?
 
-Answer: [[AI-assisted development workflow#Theori|AI-assisted development workflow]]
+[[AI-assisted development workflow#Theori|AI-assisted development workflow]]
 
 > What is your preferred IDE or coding tool?
 
-Answer: [[Favorite development tools#Theori|Favorite development tools]]
+[[Favorite development tools#Theori|Favorite development tools]]

@@ -21,13 +21,13 @@ date_modified: 2026-06-18 17:12
 > Personal Summary<br/>
 This section is optional. Use it to tell us a little more about yourself.
 
-Answer: [[Personal background and interests#In Tandem|Personal background and interests]]
+[[Personal background and interests#In Tandem|Personal background and interests]]
 
 > Cover Letter (Optional)
 
-Answer: [[Introduction#In Tandem|Introduction]]
+[[Introduction#In Tandem|Introduction]]
 
 > Describe your AI-enabled development workflow, from ideation through release.<br/>
 Please don't rely on it to write your responses for you - we're most interested in your own voice, experiences, and perspective. Trust us, it's surprisingly easy to spot AI-written answers.
 
-Answer: [[AI-assisted development workflow#In Tandem|AI-assisted development workflow]]
+[[AI-assisted development workflow#In Tandem|AI-assisted development workflow]]

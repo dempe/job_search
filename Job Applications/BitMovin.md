@@ -20,4 +20,4 @@ date_modified: 2026-07-29 10:22
 
 > Tell me about a time you used AI to improve how you work. What tool did you use, what was the task, and what changed as a result?
 
-Answer: [[AI-assisted development workflow#BitMovin|AI-assisted development workflow]]
+[[AI-assisted development workflow#BitMovin|AI-assisted development workflow]]

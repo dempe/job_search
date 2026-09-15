@@ -27,4 +27,4 @@ date_modified: 2025-11-24 13:00
 
 >  Describe one development project you made better. What was one thing you did to make it better?
 
-Answer: [[Replacing batch analytics with Kafka Streams#Galactic Advisors|Replacing batch analytics with Kafka Streams]]
+[[Replacing batch analytics with Kafka Streams#Galactic Advisors|Replacing batch analytics with Kafka Streams]]

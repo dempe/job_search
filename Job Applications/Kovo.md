@@ -20,8 +20,8 @@ date_modified: 2026-06-08 10:15
 
 > Why do you want to work at Kovo?
 
-Answer: [[Seeking engineering growth and meaningful work#Kovo|Seeking engineering growth and meaningful work]]
+[[Seeking engineering growth and meaningful work#Kovo|Seeking engineering growth and meaningful work]]
 
 > What exceptional work have you done?
 
-Answer: [[Replacing batch analytics with Kafka Streams#Kovo|Replacing batch analytics with Kafka Streams]]
+[[Replacing batch analytics with Kafka Streams#Kovo|Replacing batch analytics with Kafka Streams]]

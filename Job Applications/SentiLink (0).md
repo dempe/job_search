@@ -27,4 +27,4 @@ date_modified: 2026-02-25 13:29
 
 >  What is a meaningful accomplishment outside of work that you are proud of? (For example: athletic, academic, creative, entrepreneurial, etc.)
 
-Answer: [[Building Athena Math#SentiLink (0)|Building Athena Math]]
+[[Building Athena Math#SentiLink (0)|Building Athena Math]]
