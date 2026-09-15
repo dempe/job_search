@@ -1,6 +1,6 @@
 ## Aescape
 
-Source: [[Aescape]]
+[[Aescape]]
 
 > Please describe your experience using production Golang.
 

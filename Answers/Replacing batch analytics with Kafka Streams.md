@@ -1,6 +1,6 @@
 ## Certa
 
-Source: [[Certa]]
+[[Certa]]
 
 > Have you been involved in designing and developing the architecture of complex software systems? If yes, please confirm which part you were involved in.
 
@@ -18,7 +18,7 @@ After it was completed, the new pipeline was much more durable. All analytics we
 
 ## Close (0)
 
-Source: [[Close (0)]]
+[[Close (0)]]
 
 > Describe a Software Development Project You Led and Any Lessons Learned from It.
 
@@ -32,7 +32,7 @@ Lesson learned: do more research. If no one on your team is knowledgeable, ask a
 
 ## Close (1)
 
-Source: [[Close (1)]]
+[[Close (1)]]
 
 > Describe a software development project you led and any lessons learned from it.
 
@@ -46,7 +46,7 @@ Lesson learned: do more research. If no one on your team is knowledgeable, ask a
 
 ## Galactic Advisors
 
-Source: [[Galactic Advisors]]
+[[Galactic Advisors]]
 
 >  Describe one development project you made better. What was one thing you did to make it better?
 
@@ -56,7 +56,7 @@ At Octimine, I replaced a weekly batch job that took 2 days to run with a real-t
 
 ## Grass
 
-Source: [[Grass]]
+[[Grass]]
 
 > Knowledge on how to build large scalable systems*
 
@@ -66,7 +66,7 @@ I have built real-time, event-driven systems from the ground up, including a Kaf
 
 ## HireGlide
 
-Source: [[HireGlide]]
+[[HireGlide]]
 
 >  Great! I see from your CV that you've worked with a diverse tech stack including Java, Kotlin, Python, and AWS. What technologies are you most comfortable with, and what's a project you've built that you're particularly proud of?
 
@@ -76,7 +76,7 @@ the four technologies that you listed are my strong points - java, kotlin, pytho
 
 ## JustPaid
 
-Source: [[JustPaid]]
+[[JustPaid]]
 
 >  Please tell us in one or two sentences about the most impressive thing you have built or achieved. *
 
@@ -86,7 +86,7 @@ The biggest project I have built in my professional career would likely be an an
 
 ## Kovo
 
-Source: [[Kovo]]
+[[Kovo]]
 
 > What exceptional work have you done?
 
@@ -98,7 +98,7 @@ Aside from that, my main work has been in AWS. I'm currently running a one-man c
 
 ## Resend
 
-Source: [[Resend]]
+[[Resend]]
 
 > Tell us the most impactful project you've worked on before and what your role was in it. Share numbers that help us understand the workload (number of customers, requests per second, etc) and your impact on the project.<br/>
 > Answer example: At my previous job, I led the rebuild of our payments service, handling checkout for ~2.3M monthly users at ~1,200 RPS peak.) I owned the technical design and the zero-downtime migration from a Rails monolith to a Go service with Kafka-based event distribution. After 4 months in production, p95 latency dropped from 800ms to 180ms.

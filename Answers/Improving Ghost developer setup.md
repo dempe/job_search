@@ -1,6 +1,6 @@
 ## Ghost
 
-Source: [[Ghost]]
+[[Ghost]]
 
 > What's one thing you'd improve about Ghost's developer experience, and why? *
 

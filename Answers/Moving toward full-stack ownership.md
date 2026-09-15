@@ -1,6 +1,6 @@
 ## JustPaid
 
-Source: [[JustPaid]]
+[[JustPaid]]
 
 >  Why do you want to work with us? *
 

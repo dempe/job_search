@@ -1,6 +1,6 @@
 ## ControlHub
 
-Source: [[ControlHub]]
+[[ControlHub]]
 
 >  Why are you interested in joining our team?
 
@@ -12,7 +12,7 @@ ControlHub has a proven track record, and being accepted to both YC and StartX a
 
 ## Grass
 
-Source: [[Grass]]
+[[Grass]]
 
 > Optional: Please add anything else you would like to highlight about yourself
 
@@ -22,7 +22,7 @@ I'm currently running my own company, Dempewolf Apps, shipping React Native/Type
 
 ## JustPaid
 
-Source: [[JustPaid]]
+[[JustPaid]]
 
 >  What are you looking for? *
 

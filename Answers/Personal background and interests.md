@@ -1,6 +1,6 @@
 ## In Tandem
 
-Source: [[In Tandem]]
+[[In Tandem]]
 
 > Personal Summary<br/>
 This section is optional. Use it to tell us a little more about yourself.
@@ -17,7 +17,7 @@ I'm pretty open-minded and strongly believe in a growth mindset -- learning from
 
 ## Superhuman
 
-Source: [[Superhuman]]
+[[Superhuman]]
 
 > What are some of your personal interests/hobbies? We'd love to get to know more about yourself 😊
 

@@ -1,6 +1,6 @@
 ## SentiLink (1)
 
-Source: [[SentiLink (1)]]
+[[SentiLink (1)]]
 
 > What is a meaningful accomplishment outside of work that you are proud of? (For example: athletic, academic, creative, entrepreneurial, etc.)
 

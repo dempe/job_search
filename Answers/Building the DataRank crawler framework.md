@@ -1,6 +1,6 @@
 ## Archy
 
-Source: [[Archy]]
+[[Archy]]
 
 > Please tell us about a time you identified a technical bottleneck or a looming scalability issue that others had overlooked. How did you build a case for fixing it, and what was the measurable impact on the system's performance or reliability?
 
@@ -14,7 +14,7 @@ After implementation, adding a new data source went from manual server edits to 
 
 ## HireGlide
 
-Source: [[HireGlide]]
+[[HireGlide]]
 
 >  Makes sense. Describe a project where you had to make tradeoffs between getting something out the door vs making it perfect. What did you choose and why?
 
@@ -24,7 +24,7 @@ i worked for a company that needed to gather a large amount of data from web scr
 
 ## JustPaid
 
-Source: [[JustPaid]]
+[[JustPaid]]
 
 >  What is one thing you have built in the past? Please describe your product and what it did.
 

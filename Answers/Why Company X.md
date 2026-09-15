@@ -1,6 +1,6 @@
 ## Afresh
 
-Source: [[Afresh]]
+[[Afresh]]
 
 > Why Afresh? Tell us what makes you excited to join our team.
 

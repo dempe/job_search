@@ -1,6 +1,6 @@
 ## Resend
 
-Source: [[Resend]]
+[[Resend]]
 
 > Tell us your favorite tools (editor, terminal, productivity tools, etc.).
 
@@ -20,7 +20,7 @@ I use...
 
 ## Theori
 
-Source: [[Theori]]
+[[Theori]]
 
 > What is your preferred IDE or coding tool?
 

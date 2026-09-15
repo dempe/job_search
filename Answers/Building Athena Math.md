@@ -1,6 +1,6 @@
 ## Ghost
 
-Source: [[Ghost]]
+[[Ghost]]
 
 > Tell us about a tool or product you shipped that you're proud of. What made it great? *
 
@@ -14,7 +14,7 @@ If you'd like to check out the app, here it is:  https://apps.apple.com/us/app/a
 
 ## HireGlide
 
-Source: [[HireGlide]]
+[[HireGlide]]
 
 >  Got it. What's something technically challenging you're working on right now that's pushing your skills?
 
@@ -24,7 +24,7 @@ i'm currently building a react native app in typescript. as mentioned, my backgr
 
 ## Recidiviz
 
-Source: [[Recidiviz]]
+[[Recidiviz]]
 
 > In 2-3 sentences, describe the most recent full-stack project you worked on.(Required)
 
@@ -34,7 +34,7 @@ My most recent full-stack project is Athena Math, a mobile app I built with Reac
 
 ## SentiLink (0)
 
-Source: [[SentiLink (0)]]
+[[SentiLink (0)]]
 
 >  What is a meaningful accomplishment outside of work that you are proud of? (For example: athletic, academic, creative, entrepreneurial, etc.)
 

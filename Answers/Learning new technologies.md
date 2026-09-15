@@ -1,6 +1,6 @@
 ## Enveritas
 
-Source: [[Enveritas]]
+[[Enveritas]]
 
 > What are your favorite ways to learn about new trends and advancements in software development?
 

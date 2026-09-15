@@ -1,6 +1,6 @@
 ## Ghost
 
-Source: [[Ghost]]
+[[Ghost]]
 
 > What are your salary expectations (in USD)? *
 
@@ -10,7 +10,7 @@ $163,000
 
 ## Grass
 
-Source: [[Grass]]
+[[Grass]]
 
 > What are your annual salary expectations? ($ USD)*
 
@@ -20,7 +20,7 @@ Source: [[Grass]]
 
 ## HireGlide
 
-Source: [[HireGlide]]
+[[HireGlide]]
 
 >  What are your salary expectations or current compensation range?
 

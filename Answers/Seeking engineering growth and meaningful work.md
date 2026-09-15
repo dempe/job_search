@@ -1,6 +1,6 @@
 ## BSC Analytics
 
-Source: [[BSC Analytics]]
+[[BSC Analytics]]
 
 > In one sentence, what is the most important thing you are looking for in your next role?
 
@@ -10,7 +10,7 @@ I want to push my skills as a backend software engineer to the limit, make meani
 
 ## HireGlide
 
-Source: [[HireGlide]]
+[[HireGlide]]
 
 >  Got it, backend makes sense. What matters most to you in your next role - work-life balance, compensation, learning opportunities, or something else?
 
@@ -20,7 +20,7 @@ The biggest thing i'm looking for right now is to grow as an engineer. that requ
 
 ## Kovo
 
-Source: [[Kovo]]
+[[Kovo]]
 
 > Why do you want to work at Kovo?
 

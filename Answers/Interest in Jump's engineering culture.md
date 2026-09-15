@@ -1,6 +1,6 @@
 ## Jump
 
-Source: [[Jump]]
+[[Jump]]
 
 > Why are you interested in working at Jump? We'd love to hear what caught your attention!
 

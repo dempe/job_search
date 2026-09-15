@@ -1,6 +1,6 @@
 ## Enveritas
 
-Source: [[Enveritas]]
+[[Enveritas]]
 
 > Why do you want to work with us? (A few brief sentences is fine.)
 
@@ -14,7 +14,7 @@ After going back to software engineering, I've missed having that sense of fulfi
 
 ## Ghost
 
-Source: [[Ghost]]
+[[Ghost]]
 
 > What do you hope to find here, that you haven't found at current or previous jobs? *
 
@@ -24,7 +24,7 @@ Fulfillment.  I'm an amateur writer, so publishing is something I'm fond of, esp
 
 ## Octopus Energy
 
-Source: [[Octopus Energy]]
+[[Octopus Energy]]
 
 > Before your skills and experience, we're looking for the right kind of person – the kind who is utterly passionate about our mission and who thrives working how we work. So, please let us know why the Octopus Energy Group stands out to you?
 
@@ -38,7 +38,7 @@ I see Octopus as a place where I can do something positive and regain a sense of
 
 ## Recidiviz
 
-Source: [[Recidiviz]]
+[[Recidiviz]]
 
 > (In 2-3 sentences) What about Recidiviz's mission or approach makes you excited to contribute your specific skills here, and not somewhere else?(Required)
 

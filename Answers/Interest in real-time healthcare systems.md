@@ -1,6 +1,6 @@
 ## Aescape
 
-Source: [[Aescape]]
+[[Aescape]]
 
 > Why Aescape?
 

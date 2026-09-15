@@ -1,6 +1,6 @@
 ## Close (0)
 
-Source: [[Close (0)]]
+[[Close (0)]]
 
 > Anything Else You'd like to Share?
 
@@ -14,7 +14,7 @@ Oh yeah, and your product looks pretty slick, too! I watched the demo.
 
 ## Close (1)
 
-Source: [[Close (1)]]
+[[Close (1)]]
 
 > Anything else you'd like to share?
 

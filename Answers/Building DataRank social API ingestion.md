@@ -1,6 +1,6 @@
 ## Ashby
 
-Source: [[Ashby]]
+[[Ashby]]
 
 > Describe an interesting software abstraction you've built and or made major contributions to in a professional context.
 
@@ -18,7 +18,7 @@ The solution I came up with was distributed across 4 servers and had generic que
 
 ## Openly
 
-Source: [[Openly]]
+[[Openly]]
 
 > Please briefly describe your experience with API management:*
 

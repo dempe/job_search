@@ -1,6 +1,6 @@
 ## Aescape
 
-Source: [[Aescape]]
+[[Aescape]]
 
 > Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
 
@@ -20,7 +20,7 @@ Since so much time is invested in scoping and planning, the execution and verifi
 
 ## BitMovin
 
-Source: [[BitMovin]]
+[[BitMovin]]
 
 > Tell me about a time you used AI to improve how you work. What tool did you use, what was the task, and what changed as a result?
 
@@ -44,7 +44,7 @@ In the end, it was a complete success, and the client was able to switch their p
 
 ## Ghost
 
-Source: [[Ghost]]
+[[Ghost]]
 
 > How are you using AI in your day-to-day work right now? *
 
@@ -60,7 +60,7 @@ I haven't written any custom MCP stuff yet, but I have some ideas that have been
 
 ## In Tandem
 
-Source: [[In Tandem]]
+[[In Tandem]]
 
 > Describe your AI-enabled development workflow, from ideation through release.<br/>
 Please don't rely on it to write your responses for you - we're most interested in your own voice, experiences, and perspective. Trust us, it's surprisingly easy to spot AI-written answers.
@@ -77,7 +77,7 @@ Since so much time is invested in scoping and planning, the execution and verifi
 
 ## RadAI
 
-Source: [[RadAI]]
+[[RadAI]]
 
 > Describe a concrete example from the last month where AI meaningfully improved your work (tool used + impact)
 
@@ -101,7 +101,7 @@ In the end, it was a complete success, and the client was able to switch their p
 
 ## Starbridge
 
-Source: [[Starbridge]]
+[[Starbridge]]
 
 > Probably will ask something about "prompt engineering." it's mentioned in the job description and it appears their "AI proposal writer" makes heavy use of LLMs.
 
@@ -111,7 +111,7 @@ not sure what to say other than I'm a daily user of ChatGPT. i do have various c
 
 ## Theori
 
-Source: [[Theori]]
+[[Theori]]
 
 > How do you think AI is changing your role?
 

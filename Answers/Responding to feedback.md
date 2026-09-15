@@ -1,6 +1,6 @@
 ## Digible
 
-Source: [[Digible]]
+[[Digible]]
 
 > How do you handle and respond to feedback, both negative and positive?
 

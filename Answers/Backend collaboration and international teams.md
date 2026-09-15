@@ -1,6 +1,6 @@
 ## Resend
 
-Source: [[Resend]]
+[[Resend]]
 
 > Why do you want to join Resend?<br/>
 > Send an engaging message and tell us why you want to join us, what excites you about the problem we're solving, and how you envision your role at Resend.

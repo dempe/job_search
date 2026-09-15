@@ -1,6 +1,6 @@
 ## Close (0)
 
-Source: [[Close (0)]]
+[[Close (0)]]
 
 > Describe Your Experience Working Remotely and if You Have Any Experience Working across Multiple time Zones in an Asynchronous Environment.
 
@@ -10,7 +10,7 @@ I worked remotely for a company based in Germany. Their standups were at noon Mu
 
 ## Close (1)
 
-Source: [[Close (1)]]
+[[Close (1)]]
 
 > Describe your experience working remotely and if you have any experience working across multiple time zones in an asynchronous environment.
 
@@ -26,7 +26,7 @@ Documentation is a form of communication, and it's essential in a remote workpla
 
 ## HireGlide
 
-Source: [[HireGlide]]
+[[HireGlide]]
 
 >  What's your preferred work arrangement - fully remote, hybrid, or in-office?
 
@@ -38,7 +38,7 @@ that being said, I'm not opposed to in-person collaboration when it's purposeful
 
 ## Openly
 
-Source: [[Openly]]
+[[Openly]]
 
 > How have you performed in a fully remote/distributed organization? What do you like or dislike about remote work? *
 
