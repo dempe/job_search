@@ -1,14 +1,14 @@
 ---
 title: _MOC Jobs
 date_created: "2023-05-30 15:06"
-date_modified: "2026-08-10 16:57"
+date_modified: "2026-09-15 01:02"
 ---
 
 ## Upcoming Interview
 
 ```dataview
 TABLE interviews AS "Interviews", source AS "Source"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE status = "interview"
 ```
 
@@ -20,7 +20,7 @@ TABLE choice(
     "today",
     date(today) - date(applied) + " ago"
   ) AS "Applied", source AS "Source"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE status = "follow-up"
 ```
 
@@ -32,7 +32,7 @@ TABLE choice(
     "today",
     date(today) - date(applied) + " ago"
   ) AS "Applied", source AS "Source", contract AS "Contract"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE status = "awaiting-reply"
 SORT date(applied) ASC
 ```
@@ -41,7 +41,7 @@ SORT date(applied) ASC
 
 ```dataview
 TABLE date(applied) AS "Applied", source AS "Source"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE date(applied) >= date("2026-01-01")
 SORT applied DESC
 ```
@@ -50,7 +50,7 @@ SORT applied DESC
 
 ```dataview
 TABLE interviews AS "Interviews", source AS "Source"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE status = "offer"
 ```
 
@@ -58,7 +58,7 @@ WHERE status = "offer"
 
 ```dataview
 TABLE applied AS "Applied", source AS "Source", length(interviews) AS "Num Interviews"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE status = "declined"
 SORT applied DESC
 ```
@@ -67,7 +67,7 @@ SORT applied DESC
 
 ```dataview
 TABLE applied AS "Applied", source AS "Source", length(interviews) AS "Num Interviews"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE status = "rejected"
 SORT applied DESC
 ```
@@ -76,7 +76,7 @@ SORT applied DESC
 
 ```dataview
 TABLE applied AS "Applied", source AS "Source", length(interviews) AS "Num Interviews"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE status = "ghosted"
 SORT applied DESC
 ```
@@ -85,7 +85,7 @@ SORT applied DESC
 
 ```dataview
 TABLE interviews AS "Interviews", source AS "Source", recruited AS "Recruited"
-FROM "Jobs/Job Applications"
+FROM "Job Applications"
 WHERE length(interviews) > 0
 SORT recruited, interviews DESC
 ```

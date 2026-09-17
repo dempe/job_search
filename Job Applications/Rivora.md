@@ -14,15 +14,14 @@ remote: true
 compensation: $135k – $177k • No equity
 title: Rivora
 date_created: "2026-09-14 23:09"
-date_modified: "2026-09-15 00:37"
+date_modified: "2026-09-15 10:58"
 ---
 
 ## Application
 
 > Tell us about the last bug you fixed where a type system, type annotations, or a linter caught something before it reached users. What was the bug, and what would have broken if it had shipped?
 
-```
-```
+[[Catching type drift in the payments app#Rivora|Catching type drift in the payments app]]
 
 > Describe a specific time you used an AI coding assistant (Copilot, Cursor, Claude, ChatGPT, whatever you use) on a real task recently. What did it get right, and what did you have to fix or reject?
 

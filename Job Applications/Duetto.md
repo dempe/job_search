@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-07-28
-status: ghosted
+status: rejected
 interviews:
 job_type: fulltime
 source: matcha

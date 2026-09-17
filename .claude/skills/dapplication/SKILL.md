@@ -18,10 +18,10 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 <!-- auto-fill-applications T1: NFR0, NFR2, NFR4, FR55, FR56, FR57 -->
 
-- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, and asking the user). It MUST NOT write or run scripts.
+- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, Skill, and asking the user). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"` and read-only file listing commands (`ls`, `test -e`).
 - The only file this skill creates is the new application note. The assistant MUST NOT rename, modify, or overwrite any existing note.
-- The assistant MUST NOT write answers to any application question.
+- This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `danswers` skill (Step 12).
 - The assistant MUST NOT create or modify anything in `Answers/`.
 - The assistant MUST NOT create or modify anything in `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
@@ -196,7 +196,12 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 - Immediately before writing, check with Bash (`test -e "Job Applications/{filename}"`) that the note still does not exist. If it exists, the assistant MUST STOP with one line naming the existing file, without writing anything.
 - Write the note to `Job Applications/{filename}` with the Write tool.
-- STOP. The assistant MUST NOT write any text to the user after the note is written.
+- The assistant MUST NOT write any text to the user after the note is written.
+
+## Step 12: Draft answers
+
+- Immediately after writing the note, invoke the `danswers` skill with the Skill tool, passing `{title}` as its argument.
+- From this point, follow `danswers`'s instructions, including its output rules. `danswers` writes its drafts directly into the empty answer blocks of the note created in Step 11.
 
 ## Worked example
 
@@ -217,9 +222,10 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - Step 3: no filename matches `Privacy.md` or `Privacy ({n}).md`.
 - Step 4: `date` prints `2026-09-14 18:30`.
 - Step 6: the assistant asks only for the listing URL. The user leaves it blank.
-- Step 11: the note is written, and the run ends with no further text.
+- Step 11: the note below is written, with empty answer blocks.
+- Step 12: `danswers Privacy` runs and fills in the answer blocks it has evidence for.
 
-**Expected note** at `Job Applications/Privacy.md`. `{encoded blob, verbatim}` stands in for the JD's full encoded string. A real run copies it exactly.
+**Expected note** at `Job Applications/Privacy.md`, as written in Step 11 before `danswers` runs. `{encoded blob, verbatim}` stands in for the JD's full encoded string. A real run copies it exactly.
 
 ````markdown
 ---
