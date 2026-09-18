@@ -113,7 +113,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 Find the application form in the JD. It usually follows the job description, after text such as "Apply for this job". Every field label in the form is a question.
 
-**Include by default.** The assistant MUST include every question unless it clearly falls into one of the exclusion categories below. This holds whatever the answer format: free text, a dropdown, or a selection. For example, "What did you get when you cracked the code?" is answered with a dropdown, but it is not in any exclusion category, so it MUST be included.
+**Include by default.** The assistant MUST include every free-text question unless it clearly falls into one of the exclusion categories below. A question is included even when it is unusual, long, or hard to answer. For example, a puzzle or a code exercise with a free-text box is included.
 
 **Exclusion categories.** This list is closed. A question that doesn't clearly fit a category MUST be included.
 
@@ -125,12 +125,15 @@ Find the application form in the JD. It usually follows the job description, aft
 6. **Referral source.** How the candidate heard about the role, or who referred them. For example, "How did you hear about this opportunity? (if referred please give employee name)" or "Where did you hear about this role?"
 7. **Prior employment.** Whether the candidate has previously worked for the company. For example, "Have you previously been employed by Techstars?"
 8. **Demographics.** Demographic and EEO questions, such as gender, race or ethnicity, veteran status, and disability status.
-9. **Excluded follow-ups.** Fields that only apply to an excluded question. For example, "If so, please specify the type of sponsorship required" or "If you have selected Other for the travel requirement question, please provide more details".
+9. **Compliance disclosures.** Legal, regulatory, and policy disclosures the employer collects about the candidate's circumstances rather than their work. For example, government-official status, close relatives who are government officials, conflicts of interest with clients or partners, criminal history, non-compete or confidentiality obligations, age confirmation, background-check consent, and acknowledgments of the employer's policies.
+10. **Resume transcription.** Form blocks that restate what the resume already contains, such as employment history (company name, title, start and end dates, current role) and education (school, degree, discipline).
+11. **Dropdowns.** Any question answered by choosing from a list, i.e. a label with `Select...` on the next line. The JD text never carries the options, so nothing is lost by leaving them out: the `djfill` skill reads the real options off the live form, and anything it can't match is answered by hand. This holds even for a dropdown that takes real work, such as "What did you get when you cracked the code?".
+12. **Excluded follow-ups.** Fields that only apply to an excluded question. For example, "If so, please specify the type of sponsorship required" or "If you have selected Other for the travel requirement question, please provide more details".
 
 **Reading the form.**
 
 - A trailing `*` on a label marks a required field. It is not part of the question.
-- `Select...` on the line after a label marks a dropdown. That is not grounds for exclusion.
+- `Select...` on the line after a label marks a dropdown, which is excluded. A label with nothing after it is a free-text field.
 - Widget text is not a question. Examples: "Attach", "No file chosen", "Enter manually", "Accepted file types: …", "Locate me", "indicates a required field".
 
 ## Step 8: Question formatting
@@ -140,7 +143,7 @@ Find the application form in the JD. It usually follows the job description, aft
 - Included questions MUST keep the order in which they appear in the JD.
 - Each question MUST be written as a Markdown blockquote: each line starts with `> `.
 - The question text MUST be copied verbatim. The only change is removing a trailing required-field marker `*`, along with any whitespace before it.
-- **Preceding content.** Sometimes a question can't be answered without text or embedded content that comes before it, such as a heading, instructions, a code snippet, an encoded string, or a passage the question refers to. That content MUST be copied verbatim into the same blockquote, before the question text. For example, "What did you get when you cracked the code?" is preceded by the "Crack the code" heading, its instructions, and the encoded blob.
+- **Preceding content.** Sometimes a question can't be answered without text or embedded content that comes before it, such as a heading, instructions, a code snippet, an encoded string, or a passage the question refers to. That content MUST be copied verbatim into the same blockquote, before the question text. For example, a question asking what a line of pseudocode evaluates to needs the line printed above it.
 - **Multi-line blockquotes.** A multi-line blockquote puts each non-blank source line on its own `> ` line. Every line except the last ends with `<br/>`. Blank lines between source lines are omitted. For example:
 
   ```markdown
@@ -213,7 +216,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - is marked Remote
 - states "The annual US salary range for this role is $200,000 - $220,000 plus equity"
 - contains a "Crack the code" section with instructions and an encoded blob
-- ends with an application form
+- ends with an application form whose only free-text question is the technical-challenges one; the rest are contact fields, sponsorship, salary, location, and dropdowns (including "What did you get when you cracked the code?")
 
 **Run.**
 
@@ -225,7 +228,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - Step 11: the note below is written, with empty answer blocks.
 - Step 12: `danswers Privacy` runs and fills in the answer blocks it has evidence for.
 
-**Expected note** at `Job Applications/Privacy.md`, as written in Step 11 before `danswers` runs. `{encoded blob, verbatim}` stands in for the JD's full encoded string. A real run copies it exactly.
+**Expected note** at `Job Applications/Privacy.md`, as written in Step 11 before `danswers` runs.
 
 ````markdown
 ---
@@ -250,14 +253,6 @@ date_modified: "2026-09-14 18:30"
 ## Application
 
 > What do you think are our most complex technical challenges based on the very little you know about Lithic?
-
-```
-```
-
-> Crack the code<br/>
-> A hidden code is tucked into this application. Find it and enter it below to continue.<br/>
-> {encoded blob, verbatim}<br/>
-> What did you get when you cracked the code?
 
 ```
 ```

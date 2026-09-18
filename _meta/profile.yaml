@@ -1,0 +1,98 @@
+# Facts that job application forms ask for and the resume can't supply.
+# Read by the `djfill` skill (.claude/skills/djfill/SKILL.md) to fill forms in
+# the browser. Nothing else reads this file.
+#
+# TODO markers below are values only you can supply. Fill them before the first
+# `djfill` run, and review `standard_answers` so the skill answers as you would.
+
+identity:
+  first_name: Christopher
+  last_name: Dempewolf
+  preferred_first_name: Chris
+  email: chris@chrisdempewolf.com
+  phone: 479-301-0763
+  city: Fort Smith
+  state: AR
+  postal_code: 72908
+  country: United States
+
+links:
+  website: https://chrisdempewolf.com
+  linkedin: https://www.linkedin.com/in/chris-dempewolf-534b74a1/
+  github: https://github.com/dempe
+
+# One entry per job in ../resume/resume.yaml, most recent first. That file
+# records years only, so the months are TODO.
+employment:
+  - company: Dekstech LLC
+    title: Senior Software Engineer
+    start_year: 2026
+    start_month: Feb
+    end_year:
+    end_month:
+    current: true
+
+  - company: Dempewolf LLC
+    title: Software Engineer
+    start_year: 2022
+    start_month: Nov
+    end_year: 2026
+    end_month: Aug
+    current: false
+
+  - company: Octimine/Dennemeyer
+    title: Senior Data Engineer
+    start_year: 2021
+    start_month: Jun
+    end_year: 2022
+    end_month: Aug
+    current: false
+
+  - company: Mexico
+    title: English Teacher
+    start_year: 2019
+    start_month: Jun
+    end_year: 2021
+    end_month: Feb
+    current: false
+
+  - company: SimplyMeasured/Sprout Social
+    title: Software Engineer II
+    start_year: 2015
+    start_month: Oct
+    end_year: 2018
+    end_month: Jun
+    current: false
+
+  - company: DataRank
+    title: Software Engineer
+    start_year: 2013
+    start_month: Aug
+    end_year: 2015
+    end_month: Oct
+    current: false
+
+education:
+  - school: University of Arkansas
+    degree: Bachelor's Degree
+    discipline: Computer Science
+    end_year: 2013
+    end_month: May
+
+# Canned answers for the questions every form repeats. The skill matches these
+# against the options the live form actually offers, and never invents an option.
+standard_answers:
+  work_authorized_us: "Yes"
+  requires_sponsorship: "No"
+  over_18: "Yes"
+  background_check_consent: "Yes"
+  government_official: "No"
+  relative_of_government_official: "No"
+  conflict_of_interest: "No"
+  previously_employed_here: "No"
+  how_did_you_hear: "Job board"
+  eeo:
+    gender: "Decline to self identify"
+    race: "Decline to self identify"
+    veteran_status: "I am not a protected veteran"
+    disability_status: "I do not wish to answer"

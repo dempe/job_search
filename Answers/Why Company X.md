@@ -24,6 +24,16 @@ I'm also excited about the ownership and mentorship side of this role. I've spen
 And "billions of decisions from the store floor to the distribution center" sounds like a really fun domain to dig into!
 ```
 
+## Beacon Biosignals
+
+[[Beacon Biosignals]]
+
+> In 1-2 sentences, please tell us what drew you to apply to Beacon Biosignals.
+
+```
+Most of my career I've moved data around reliably, like what the Datastore team does with brain recordings. Since teaching English to underserved children, I've wanted a job with both challenging engineering problems *and* a fulfilling mission.
+```
+
 ## ControlHub
 
 [[ControlHub]]
