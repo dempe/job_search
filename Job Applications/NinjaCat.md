@@ -41,7 +41,7 @@ It seems like we'd be a great fit! Call me? 🤙🏼
 
 ## Interview Screen Prep
 
-### Questions to Ask the Interviewers:
+### Questions to Ask
 
 1. Can you provide an example of a recent product feature or enhancement that the engineering team at NinjaCat developed? How did this impact the users?
 2. What's the most challenging aspect of handling high-volume data for marketing analytics? How does NinjaCat approach these challenges?

@@ -36,7 +36,7 @@ This is a recruiter screen, so the same theme as always applies — demonstratin
 
 I need to be sure to mention that I actually started my career in software at Walmart, but be sure to not mention anything about *why* I didn't continue to work there. Mention you had an internship. If pressed, mention that you had to complete college.
 
-### Questions
+### Questions to Ask
 
 - "Can you tell me more about the systems the Store Associate Technology team maintains?"
 - "How are the engineering levels structured — what differentiates Senior from Staff?"

@@ -79,15 +79,58 @@ I sent a follow-up email thanking him and trying to show that I researched some 
 
 ### Questions
 
-- Okay, so you are working for Dennemyer/Octimine now?
-- Can you tell me the difference between a GET and a POST request?
-- What are the differences in terms of caching and security between a GET and a POST request?
-- Can you describe the anatomy of an HTTP request? How are the bytes structured? What do the headers look like?
-- Please review [this code](https://gist.github.com/jkemp101/9e35a7801a8a93e029c7e62dff6031df)
-	- Summary: it's a flask server with a POST end point to change a user's username in the database by submitting a task to their asynchronous task queue (TaskTiger) and uses SQLAlchemy as an ORM.
-	- I kept thinking it was updating the actual user session in the browser. I missed the SQLAlchemy line at the top. It is a database session. `Session = sqlalchemy.orm.sessionmaker(bind=sqlalchemy.create_engine(autocommit=True))`
-	- At least I pointed out that returning a 500 error is not the most informative - should return "unacceptable entity"
-	- There's no authentication or authorization
+Model answers, not a record of what was said.
+
+> Okay, so you are working for Dennemyer/Octimine now?
+
+```
+Yes, I'm a Senior Data Engineer at Octimine, which was acquired by Dennemeyer. We do machine learning on patent data. My main project there has been replacing a weekly Python batch job -- it took 48 hours minimum and processed about 30 million patent documents a week -- with a real-time, event-driven pipeline in Java and Kafka Streams. The data was arriving continuously the whole time, so batching it never made sense. Now customers get their data as it lands instead of waiting a week.
+```
+
+> Can you tell me the difference between a GET and a POST request?
+
+```
+A GET asks for a resource and shouldn't change anything on the server. It's safe and idempotent -- you can send it ten times and get the same result. Its parameters go in the query string.
+
+A POST submits data in the request body, and it's expected to change state: create a record, kick off a job, that kind of thing. It's not idempotent, which is why browsers warn you about resubmitting a form.
+
+In practice the important part is the contract you're promising. If a GET has side effects, you'll get bitten by anything that retries or prefetches.
+```
+
+> What are the differences in terms of caching and security between a GET and a POST request?
+
+```
+Caching: a GET is cacheable by default -- browsers, proxies, and CDNs will all happily cache it based on the URL and cache headers. A POST isn't cached by default, since the server can't assume repeating it is safe.
+
+Security: the difference is smaller than people think. A GET's parameters sit in the URL, so they show up in browser history, server logs, and referrer headers, which is why you never put a token or a password in a query string. A POST's body stays out of those places by default. But neither is encrypted on its own -- that's TLS's job. Over plain HTTP both are equally readable.
+```
+
+> Can you describe the anatomy of an HTTP request? How are the bytes structured? What do the headers look like?
+
+```
+In HTTP/1.1 it's plain text. The first line is the request line: method, path, and version, like `GET /users/1 HTTP/1.1`. Then the headers, one per line, each `Name: value`, with `Host` being the one that's required. Every line ends with a carriage return and line feed. Then a blank line -- that's the delimiter -- and after it the body, if there is one.
+
+The body's length comes from `Content-Length`, or it arrives in chunks if `Transfer-Encoding: chunked` is set. That framing is how the server knows where one request ends and the next begins on a keep-alive connection.
+
+HTTP/2 changes the wire format: it's binary frames rather than text, the headers are compressed with HPACK, and multiple requests are multiplexed over one connection. The semantics -- method, path, headers, body -- stay the same.
+```
+
+> Please review [this code](https://gist.github.com/jkemp101/9e35a7801a8a93e029c7e62dff6031df)
+
+```
+The thing that jumps out first is that there's no authentication or authorization. The endpoint takes a user id and a new username and writes it, so any caller can rename any user.
+
+Second, there's no validation. Nothing checks that the username is present, the right length, or unique, and nothing handles the collision when it isn't. A failure there returns a 500, which tells the client "we broke" when the truth is "your input was unacceptable" -- that should be a 422.
+
+Third, the SQLAlchemy session is created with autocommit, and the endpoint hands work to an async task queue. So the write can be committed before the task runs, and if the task fails there's nothing to roll back. I'd want the task to take the user id and re-read inside its own transaction, not carry a model object across the boundary, and I'd want it idempotent so a retry doesn't produce a surprising result.
+
+Finally, no tests, and the endpoint has no logging around a change that affects an account's identity.
+```
+
+- Summary: it's a flask server with a POST end point to change a user's username in the database by submitting a task to their asynchronous task queue (TaskTiger) and uses SQLAlchemy as an ORM.
+- I kept thinking it was updating the actual user session in the browser. I missed the SQLAlchemy line at the top. It is a database session. `Session = sqlalchemy.orm.sessionmaker(bind=sqlalchemy.create_engine(autocommit=True))`
+- At least I pointed out that returning a 500 error is not the most informative - should return "unacceptable entity"
+- There's no authentication or authorization
 
 ### ChatGPT's Advice
 

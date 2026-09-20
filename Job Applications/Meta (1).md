@@ -56,15 +56,69 @@ He responded by offering a meeting time next Thursday.
 
 ## Interview 1 — Recruiter Screen
 
-### Questions Asked
+### Questions
 
-- I see you've never interviewed with FB before, but you must have been recruited. **Why do you want to work for FB now?**
-- What is your current role? What projects have you worked on in this role?
-- What percentage of your working time did you spend developing and designing? Did you have any responsibilities outside of development?
-- In which FB area would you be most fit to work at? (he gave list of FB, WhatsApp, IG, and VR)
-- What language do you have most experience in? (java, super simple)
-- What area of development do you have most experience in? (data, super simple)
-- Would you be willing to relocate to Seattle? (yes, super simple)
+Model answers, not a record of what was said.
+
+> I see you've never interviewed with FB before, but you must have been recruited. Why do you want to work for FB now?
+
+```
+Scale, mostly. I've spent my career on data ingestion and distributed systems, and the problems I find interesting -- keeping throughput and correctness up as volume grows -- get more interesting the bigger the system is. There aren't many places operating at Facebook's volume, and the infrastructure work that comes out of them tends to set the pattern everyone else follows a few years later.
+
+The honest answer on timing is that earlier in my career I wasn't ready for that bar, and now I think I am. I've architected a company's data ingestion from scratch and rebuilt a batch pipeline as an event-driven one, so I've made these tradeoffs at a smaller scale and want to make them at a much larger one.
+```
+
+> What is your current role? What projects have you worked on in this role?
+
+```
+I'm a Senior Data Engineer at Octimine, a patent analytics company acquired by Dennemeyer.
+
+The main project has been replacing a weekly Python batch job -- 48 hours minimum, processing roughly 30 million patent documents a week -- with a real-time pipeline built on Kafka Streams in Java. I analyzed what the job actually did, saw the data was arriving continuously, and argued for Kafka Streams over Airflow because the work was analytics-heavy rather than a simple ETL job: joins, windowing, and compaction came out of the box.
+
+I designed it source to sink, got agreement from my manager and the other backend engineers, and built it with two of them. The result had a dead-letter queue, unit tests on every analytic, and no more runs halted by one bad message. Customers went from weekly data to real-time.
+```
+
+> What percentage of your working time did you spend developing and designing? Did you have any responsibilities outside of development?
+
+```
+Roughly 70% hands-on development, 30% design and planning -- more design at the start of the Kafka migration, more coding once the topology was settled.
+
+Outside of development: I was the only data engineer, so I owned the pipeline in production, including on-call for it. I also wrote the documentation for the whole ingestion flow, especially the recovery procedures, which ended a set of recurring incidents that kept waking people up. And I set up a peer-reviewed CI/CD pipeline for our Elasticsearch schema changes, which had been a nerve-wracking manual deploy.
+```
+
+> In which FB area would you be most fit to work at?
+
+```
+Infrastructure, wherever data moves at volume -- ingestion, streaming pipelines, storage. That's where my experience is deepest and where I do my best work.
+
+Of the products you listed, I'd be most useful somewhere the data problem is the product problem rather than the UI. I'd rather be judged on throughput and correctness than on pixels.
+```
+
+- He gave a list of FB, WhatsApp, IG, and VR.
+
+> What language do you have most experience in?
+
+```
+Java, by a wide margin -- it's what the ingestion framework at DataRank, the microservices at SimplyMeasured, and the Kafka Streams topology at Octimine were all written in. After that, Python for data processing and automation, and some Go from my time at SimplyMeasured.
+```
+
+- java, super simple
+
+> What area of development do you have most experience in?
+
+```
+Backend data work: ingestion, ETL and streaming pipelines, and the APIs that serve the results. Concretely, that's a distributed framework for pulling from external APIs, HBase map/reduce analytics, and a Kafka Streams pipeline replacing a batch job.
+```
+
+- data, super simple
+
+> Would you be willing to relocate to Seattle?
+
+```
+Yes. I've lived in Seattle before -- SimplyMeasured was based there -- so I know the city and would be glad to be back.
+```
+
+- yes, super simple
 
 ### Pros
 

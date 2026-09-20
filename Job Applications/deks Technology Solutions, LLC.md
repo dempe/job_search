@@ -336,7 +336,7 @@ Chris
 
 ## Interview Prep
 
-### Questions
+### Questions to Ask
 
 - Is there a contract to sign?
 - How do you currently handle deployments? Is infra managed manually or through IaC?

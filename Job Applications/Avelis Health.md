@@ -246,7 +246,7 @@ They're already doing detection → they'll need validated recoveries to feed ba
 
 Because this is healthcare, every automated recovery needs an **audit trail**. Think structured logging, versioned models, immutable evidence storage (S3 + Dynamo metadata, signed digests). This is a critical "founding engineer mindset" piece — technical + regulatory.
 
-### Questions
+### Questions to Ask
 
 - Speaking with Angel, you guys are working with TPAs instead of self-insured employers directly. This makes sense since TPAs cover many clients. You currently have two clients. Did you get these clients from a TPA? Will you be working with the same TPA in the future to get more clients? What's the plan in general for acquiring new clients?
 - [Insert competitor list] are some competitors in this space. What does Avelis do differently? Faster turnaround? More accuracy? Catching unique patterns? Lower false positive rate?
