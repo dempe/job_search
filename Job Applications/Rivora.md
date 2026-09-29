@@ -3,19 +3,19 @@ type: job
 applied: 2026-09-14
 job_type: contractor
 recruited: false
-status: interview
+status: rejected
 interviews:
   - 2026-09-18 14:00
 source: wellfound
-listing: "https://wellfound.com/jobs?job_listing_slug=4697979-backend-engineer-5-8-years"
+listing: https://wellfound.com/jobs?job_listing_slug=4697979-backend-engineer-5-8-years
 company: Rivora
 position: Backend Engineer (5-8 years)
 contract: true
 remote: true
 compensation: $135k – $177k • No equity
 title: Rivora
-date_created: "2026-09-14 23:09"
-date_modified: "2026-09-19 19:39"
+date_created: 2026-09-14 23:09
+date_modified: 2026-09-19 19:39
 ---
 
 ## Application
