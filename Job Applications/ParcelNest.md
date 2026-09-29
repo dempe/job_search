@@ -22,7 +22,7 @@ date_modified: "2026-09-28 18:13"
 > What interests you about working for this company?
 
 ```
-A lot of my work recently has centered around payments. Some examples include Shopify integrations, order and fulfillment flows, and payment middleware sitting between a store and a gateway. So I know how these systems break -- a webhook that arrives twice, a third-party API that times out mid-write, an order marked paid that never gets fulfilled. I built an idempotency key scoped per payment session for one client specifically so a retry couldn't double-charge anyone. It's satisfying work, and it's refreshing to see a job description that names retries, duplicate events, and failure recovery up front instead of leaving them to be discovered later.
+A lot of my work recently has centered around payments. I built a greenfield payment integration between Shopify and a payment 
 
 The bigger draw for me is ownership. With project-based client work, the priority is almost always speed. They want the thing shipped, and I rarely get to stay for the long-term maintainability part, which I think is a big part of engineering and something I very much enjoy.
 ```
