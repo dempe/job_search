@@ -14,8 +14,8 @@ contract: true
 remote: true
 compensation: $135k – $177k • No equity
 title: Rivora
-date_created: 2026-09-14 23:09
-date_modified: 2026-09-19 19:39
+date_created: "2026-09-15 10:58"
+date_modified: "2026-09-28 18:07"
 ---
 
 ## Application
@@ -100,4 +100,31 @@ You would think so, but it works the other way. I want the next project from tha
 There's also competition. If someone else can deliver in half the time, my incentive to pad the schedule is worth nothing.
 
 The same logic is behind why I'm applying here. Project work is great for variety and autonomy, but clients mostly want the thing as fast as possible -- they aren't paying for the long-term maintainability that I think is a big part of good engineering. I'd rather own systems I have to live with.
+```
+
+## Follow-Up
+
+
+
+## Rejection
+
+```
+Hi Chris, thank you so much for following up.
+After some careful consideration, we have decided to move forward with other candidates whose skills are more closely aligned with our current needs. However I'd love to stay in touch, and will happily reach out as more roles become available.
+Wishing you the best!
+Vera
+```
+
+### Follow-up
+
+```
+Hi Vera,
+
+Thanks for letting me know.  That is totally understandable.
+
+I'd definitely be happy to stay in touch. Any future senior backend opportunities related to in Java, Python, Node.js, AWS, distributed systems, and/or event-driven architectures may be a closer fit!
+
+Wishing you and the team the best.
+
+Chris
 ```
