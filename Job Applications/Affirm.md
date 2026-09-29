@@ -2,7 +2,7 @@
 type: job
 applied: 2026-04-29
 interviews:
-status: ghosted
+status: rejected
 job_type: fulltime
 source: linkedin
 position: Senior Software Engineer, Backend (Merchant Advocacy)
@@ -20,7 +20,7 @@ correspondence:
 compensation: $169,000-219,000
 title: Affirm
 date_created: "2026-04-29 13:17"
-date_modified: "2026-04-29 13:19"
+date_modified: "2026-09-28 18:07"
 ---
 
 ## Application
@@ -43,3 +43,7 @@ I'm looking to return to a team environment. That's where I learn and do my best
 Best,
 Chris
 ```
+
+## Rejection
+
+They rejected my application almost exactly 5 months to

@@ -104,7 +104,16 @@ The same logic is behind why I'm applying here. Project work is great for variet
 
 ## Follow-Up
 
+```
+Hi Vera,
 
+Thanks again for speaking with me last Friday. It sounds like you guys have a great product and a great team.
+
+I just wanted see if there were any updates.  I'm still very interest in the role, so please let me know!
+
+Thank you,
+Chris
+```
 
 ## Rejection
 
