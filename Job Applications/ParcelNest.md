@@ -22,7 +22,7 @@ date_modified: "2026-09-28 18:13"
 > What interests you about working for this company?
 
 ```
-A lot of my work recently has centered around payments. I built a greenfield payment integration between Shopify and a payment 
+A lot of my work recently has centered around payments. I built a greenfield payment integration between Shopify and a payment provider.
 
 The bigger draw for me is ownership. With project-based client work, the priority is almost always speed. They want the thing shipped, and I rarely get to stay for the long-term maintainability part, which I think is a big part of engineering and something I very much enjoy.
 ```
