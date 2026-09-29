@@ -20,7 +20,7 @@ correspondence:
 compensation: $169,000-219,000
 title: Affirm
 date_created: "2026-04-29 13:17"
-date_modified: "2026-09-28 18:07"
+date_modified: "2026-09-28 18:08"
 ---
 
 ## Application
@@ -46,4 +46,4 @@ Chris
 
 ## Rejection
 
-They rejected my application almost exactly 5 months to
+They rejected my application almost exactly 5 months to the day that I applied.
