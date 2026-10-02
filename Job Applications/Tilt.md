@@ -22,11 +22,9 @@ date_modified: "2026-10-02 17:51"
 > What frontend languages have you used in production?
 
 ```
-TypeScript and JavaScript, plus HTML and CSS.
+TypeScript, JavaScript, HTML, CSS, PHP.
 
 The two projects I'd point to: Athena Math, an iOS app I built in React Native and TypeScript, and a Shopify-embedded Node/React app for a B2B coffee distributor that plots their wholesale customers on an interactive Google Map so the sales team can see which accounts have lapsed.
-
-I'll be straightforward that my background is backend-heavy -- most of my career has been Java and Python on data pipelines and distributed systems. The frontend work is real and shipped, but it's the newer half of my experience.
 ```
 
 > Why do you believe you are the best fit for our SWE II position?
