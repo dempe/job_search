@@ -24,7 +24,7 @@ date_modified: "2026-10-02 17:51"
 ```
 TypeScript and JavaScript, plus HTML and CSS.
 
-The two I'd point to: Athena Math, an iOS app I built in React Native and TypeScript that's live in the App Store, and a Shopify-embedded Node/React app for a B2B coffee distributor that plots their wholesale customers on an interactive Google Map so the sales team can see which accounts have lapsed.
+The two projects I'd point to: Athena Math, an iOS app I built in React Native and TypeScript, and a Shopify-embedded Node/React app for a B2B coffee distributor that plots their wholesale customers on an interactive Google Map so the sales team can see which accounts have lapsed.
 
 I'll be straightforward that my background is backend-heavy -- most of my career has been Java and Python on data pipelines and distributed systems. The frontend work is real and shipped, but it's the newer half of my experience.
 ```
