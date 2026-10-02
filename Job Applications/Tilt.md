@@ -32,7 +32,7 @@ I'll be straightforward that my background is backend-heavy -- most of my career
 > Why do you believe you are the best fit for our SWE II position?
 
 ```
-I have 11 years of experience, which is more than this role asks for. I thought I'd still apply because I liked that you mentioned owning components end to end. I've been working as a contractor for the past few years, and the thing I miss most is the ownership and responsibility for long-term maintainability of my work. My clients generally value 
+I have 11 years of experience, which is more than this role asks for. I thought I'd still apply because I liked that you mentioned owning components end to end. I've been working as a contractor for the past few years, and the thing I miss most is the ownership and responsibility for long-term maintainability of my work. My clients generally value speed over everything else
 
 On the specifics you listed:
 
