@@ -22,9 +22,9 @@ date_modified: "2026-10-02 18:01"
 > What area of full-stack web development do you find yourself gravitating towards the most? Why?
 
 ```
-Backend, and specifically the integration layer -- APIs, webhooks, and the data modeling behind them. I enjoy solving problems at the intersection of scalability, reliability, and maintainability.
+Backend, and specifically the integration layer -- APIs, webhooks, and the data modeling behind them. I enjoy solving problems at the intersection of scalability, reliability, and maintainability. I really got interested in those types of problems after readying Designing Data Intensive Applications.
 
-However, I do work across the stack. I shipped a React Native app and the React frontend for that distributor's app -- but the frontend is the newer half of my experience, and the backend is where I'm strongest.
+However, I do work across the stack. I shipped React app and the React frontend for that distributor's app.
 ```
 
 > What project are you most proud of from your recent role? Why?
