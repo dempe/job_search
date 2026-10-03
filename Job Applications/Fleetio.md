@@ -25,8 +25,6 @@ date_modified: "2026-10-02 18:12"
 I found the listing through Matcha, which surfaces roles that match my background.
 
 What compelled me to apply was the Marketplace team specifically. Most of my recent work has been integrations with systems I don't control -- Shopify, payment gateways, shipping and fulfillment platforms. Your marketplace is that same problem with more parties in it: fleets on one side, shops on the other, and approvals, service records, and payments passing between them. Getting that to behave correctly when one side is slow or wrong is the work I find most interesting, and I'd rather do it on a product I stay with than as a series of client projects.
-
-It also helps that you hire in Mexico. I spend a good part of the year in Veracruz, where my wife is from, and very few US remote roles allow for that.
 ```
 
 > What area of full-stack web development do you find yourself gravitating towards the most? Why?
