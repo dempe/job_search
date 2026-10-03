@@ -32,4 +32,3 @@ The two projects I'd point to: Athena Math, an iOS app I built in React Native a
 ```
 I have 11 years of experience, which is more than this role asks for. I thought I'd still apply because I liked that you mentioned owning components end to end. I've been working as a contractor for the past few years, and the thing I miss most is the ownership and responsibility for long-term maintainability of my work. My clients generally value speed over everything else.
 ```
-**
