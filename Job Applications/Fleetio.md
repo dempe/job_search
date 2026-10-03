@@ -14,7 +14,7 @@ remote: true
 compensation:
 title: Fleetio
 date_created: "2026-10-02 18:01"
-date_modified: "2026-10-02 18:01"
+date_modified: "2026-10-02 18:12"
 ---
 
 ## Application
@@ -34,7 +34,7 @@ Payment middleware I built for a health-wearable brand. They sold through Shopif
 
 I built a Node/TypeScript service that brokered payments between the store and the gateway's hosted checkout, then reconciled the result back to Shopify so orders were marked paid, voided, refunded, or cancelled correctly. Since it was touching payments, it was imperative that my code was correct. I scoped an idempotency key to each payment session and reused it across retries, so a retried request couldn't double-charge anyone.
 
-I'm proud of it for two reasons. The first is that we made the deadline with zero interruptions. The second is that it was touching payments, so it demanded a type of correctness that I'd never been held to before. It was stressful at times, but I got through it with a lot of TDD and rigorous designs.
+I'm proud of it for two reasons. The first is that we made the deadline with zero interruptions. The second is that it was touching payments, so it demanded a type of correctness that I'd never been held to before. It was stressful at times, but I got through it with a lot of TDD and rigorous designing.
 
 Oh, and coffee.
 ```
