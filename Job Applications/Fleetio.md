@@ -24,7 +24,7 @@ date_modified: "2026-10-02 18:01"
 ```
 Backend, and specifically the integration layer -- APIs, webhooks, and the data modeling behind them. I enjoy solving problems at the intersection of scalability, reliability, and maintainability. I really got interested in those types of problems after readying Designing Data Intensive Applications.
 
-However, I do work across the stack. I shipped React app and the React frontend for that distributor's app.
+However, I do work across the stack. I shipped React apps both mobile and Shopify embedded apps.
 ```
 
 > What project are you most proud of from your recent role? Why?
