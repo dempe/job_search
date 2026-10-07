@@ -2,13 +2,13 @@ Subject: Re: Lead Software Engineer Opportunity | 365 Member Access & 10 Fitness
 
 Hi Bill,
 
-Thanks for reaching out. This sounds interesting. The stack is a close match for what I've been working in: TypeScript/Node, React, and AWS serverless (Lambda, API Gateway, DynamoDB). Most of my recent work has been owning production systems end to end and handling the incidents, so the on-call part makes sense to me.
+Thanks for sending the job description. I've read it through, and it lines up well with the work I've been doing: AWS serverless, third-party integrations, and owning production systems end to end, including the documentation and on-call side.
 
-I'd be glad to set up a call, and I'd like to see the full job description first if you can send it.
+A hybrid arrangement sounds good, and I agree that time together in the office matters, especially when you're taking over an established system and getting to know the team. What I have in mind is one week per month on-site in Maumelle, plus any extra trips needed for hardware or kiosk issues. Would that work for you? If it does, I'd also want to talk about whether help with travel and lodging for those weeks could take the place of relocation assistance.
 
-Before we talk, I should mention that I'm in Fort Smith, about two and a half hours from Maumelle. Could you tell me what the in-office expectation looks like for this role (fully on-site, hybrid, or some remote flexibility), and the compensation range? That way we can both tell quickly whether it's likely to work.
+For salary, I'm looking at a base in the $130,000 to $150,000 range. I'm flexible depending on the full package and how we structure the arrangement.
 
-I'm generally free [DAYS/TIMES]. Let me know what suits you.
+I'm happy to get on a call whenever works for you. I'm generally free [DAYS/TIMES].
 
 Best,
 Chris
