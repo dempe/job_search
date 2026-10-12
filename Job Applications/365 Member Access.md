@@ -14,7 +14,7 @@ remote: false
 compensation:
 title: 365 Member Access
 date_created: "2026-10-07 14:10"
-date_modified: "2026-10-12 14:15"
+date_modified: "2026-10-12 14:17"
 ---
 
 ## Application
@@ -86,11 +86,7 @@ I also think teaching makes you better. You have to really know something to exp
 > Do you have any experience with Android? I know you've created some iOS apps.
 
 ```
-Not production Android, no. My mobile work has been React Native on iOS, and I've written Kotlin, but not for Android.
-
-What I do have is a lot of JVM background -- about seven years of Java -- so Kotlin and the Android SDK aren't foreign territory. The parts that would be new to me are the Android lifecycle, threading, and memory management on a long-running kiosk, and the hardware side -- drivers, the relay, and dealing with new motherboards from a new shipment.
-
-I'd ramp up the way I always do. Read through the kiosk codebase, get one running on my desk, and ask Swathi a lot of questions early. I'm also planning an Android release of my own apps, so I'll be getting hands-on practice either way.
+Not production Android, no. My mobile work has been React Native on iOS, and I've written Kotlin, but not for Android, so I have experience with tangential technologies.
 ```
 
 > With your business and your contract work, are you wanting to do this role and those roles simultaneously?
