@@ -66,7 +66,7 @@ The upside is that I owned everything end to end, from architecture to deploys t
 > Your recent role is a contract. Do you work under people, or do you have people working under you? Are you working in a team?
 
 ```
-I report to the CEO, and there are other engineers I work alongside. In June the CEO asked if I would be comfortable moving into a tech lead position that involved mentoring the other engineers. However, that has yet to be realized in practice -- it's been entirely ad-hoc mentoring, with no new 
+I report to the CEO, and there are other engineers I work alongside. In June the CEO asked if I would be comfortable moving into a tech lead position that involved mentoring the other engineers. However, even despite a pay rthat has yet to be realized in practice -- it's been entirely ad-hoc mentoring, with no new processes, so I kept "Senior Engineer" on my resume to more accurately reflect the work I've been doing.
 
 Before that, at DataRank, I onboarded and mentored two junior developers. So I've done mentoring, but I haven't had the formal lead title yet, and that's one of the things that draws me to this role.
 ```
