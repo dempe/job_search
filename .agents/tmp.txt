@@ -1,10 +1,10 @@
-Hi Cameron,
+Hi Matt,
 
-I saw you shared the Software Engineer III role at FanThreeSixty. We spoke back in 2023 when I interviewed at Reasint, and I've applied for this one.
+Cameron shared your post for the Software Engineer III position, so I thought I'd reach out directly. A lot of the responsibilities line up with what I've been doing, especially owning features end to end, chasing bugs down to the root cause, and building the CI/CD behind them.
 
-It lines up well with what I've been doing: owning features end to end, chasing bugs down to the root cause, and building the CI/CD and infrastructure as code behind them rather than just using someone else's pipeline. I'm also looking to take on more mentoring, which the role calls out.
+I'm currently doing contract work, but looking to return to a team-based environment.
 
-Would you be open to a quick call about the role? I've attached my resume, and I'm generally free [DAYS/TIMES].
+Let me know if you'd be open to a call! FWIW, I've also submitted a formal application.
 
-Thanks,
+Best,
 Chris

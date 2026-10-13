@@ -26,7 +26,7 @@ I saw your post for the Software Engineer III position from an acquaintance of m
 
 I'm currently doing contract work, but looking to return to a team-based environment.
 
-Let me know if you'd be open to a call.  I also applied
+Let me know if you'd be open to a call!  FWIW, I've also submitted a formal application.
 
 Best,
 Chris
