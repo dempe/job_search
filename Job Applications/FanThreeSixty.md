@@ -22,5 +22,7 @@ date_modified: "2026-10-13 13:11"
 ```
 Hi Matt,
 
-I saw your post for the Software Engineer III position from an acquaintance of mine.  I thought I'd reach directly
+I saw your post for the Software Engineer III position from an acquaintance of mine.  I thought I'd reach directly.  A lot 
+
+I've got 11 years of backend experience.  I'm currently doing contract work, but looking to return to a team-based environment.
 ```
