@@ -22,11 +22,11 @@ date_modified: "2026-10-13 13:11"
 ```
 Hi Matt,
 
-I saw Cameron from Reasint shared your post for the Software Engineer III position.  I thought I'd reach directly.
+I saw Cameron from Reasint shared your post for the Software Engineer III position, and I thought I'd reach directly.
 
 A lot of the responsibilities for this role line up with what I've been doing. E.g., I'm doing contracting, and specing out nebulous requirements is basically the name of the game hah.
 
-I'm job searching right now, beca looking to return to a more team-based environment and to take on more leadership/mentorship opportunities.
+I'm job searching right now, because I want to return to a more team-based environment and to take on more leadership/mentorship opportunities.
 
 Let me know if you'd be open to a call!  FWIW, I've also submitted a formal application.
 
