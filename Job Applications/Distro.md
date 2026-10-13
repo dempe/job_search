@@ -13,7 +13,7 @@ industry: sales
 website:
 location: Palo Alto, California, United States
 company_size: 16
-recruited: false
+channel: form
 listing: Senior Full Stack Software Engineer
 blog:
 correspondence: workatastartup

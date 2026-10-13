@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size: 50
-recruited: false
+channel: form
 listing: https://share.Hirechain.Io/apply/x3t00er61q/wmw9pcjer0
 blog:
 correspondence:

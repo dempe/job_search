@@ -13,7 +13,7 @@ industry:
 website: https://www.Controlhub.Com/
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.controlhub.com/careers/backend-engineer
 blog:
 correspondence:

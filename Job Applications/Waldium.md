@@ -15,7 +15,7 @@ industry:
 website:
 location: San Francisco, CA
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/85114
 blog:
 correspondence:

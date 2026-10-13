@@ -84,8 +84,8 @@ SORT applied DESC
 ## Total Interviews
 
 ```dataview
-TABLE interviews AS "Interviews", source AS "Source", recruited AS "Recruited"
+TABLE interviews AS "Interviews", source AS "Source", channel AS "Channel"
 FROM "Job Applications"
 WHERE length(interviews) > 0
-SORT recruited, interviews DESC
+SORT channel, interviews DESC
 ```

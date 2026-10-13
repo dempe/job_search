@@ -12,7 +12,7 @@ industry:
 website: https://starbridgeadvisors.com/
 location: NYC
 company_size:
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/starbridge/f74bbcff-15b2-4875-9dac-e99eb2ff587b/application
 blog: https://starbridgeadvisors.Com/home/blog/
 correspondence:

@@ -2,7 +2,7 @@
 type: job
 applied: 2026-08-04
 job_type: fulltime
-recruited: false
+channel: form
 status: rejected
 interviews:
 source: matcha

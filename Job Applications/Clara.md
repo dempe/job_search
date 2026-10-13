@@ -15,7 +15,7 @@ industry: healthcare
 website:
 location: San Francisco, CA
 company_size: 5
-recruited: true
+channel: recruited
 listing: https://www.Workatastartup.Com/jobs/89493
 blog:
 correspondence: workatastartup

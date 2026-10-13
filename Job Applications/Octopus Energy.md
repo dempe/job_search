@@ -8,7 +8,7 @@ source: wellfound
 position: Backend Engineer II
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4294338-backend-engineer-ii
 compensation: $108k – $138k
 title: Octopus Energy

@@ -14,7 +14,7 @@ industry:
 website:
 location: Hartford, CN
 company_size:
-recruited: false
+channel: form
 listing:
 blog:
 correspondence:

@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Indeed.Com/?From=gnav-notifcenter&vjk=db7f243655cd3ec1&advn=5702412436030254
 blog:
 correspondence:

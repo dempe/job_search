@@ -11,7 +11,7 @@ industry: Digital Marketing
 website: digible.com
 location: 
 company_size: 
-recruited: false
+channel: form
 listing: https://boards.greenhouse.io/embed/job_app?for=digible&token=5208005004&gh_src=bb68585a4us&utm_source=4dayweek.io&utm_medium=4dayweek.io&utm_campaign=4dayweek.io&ref=4dayweek.io&source=4dayweek.io
 blog: https://digible.com/blog/
 correspondence: 

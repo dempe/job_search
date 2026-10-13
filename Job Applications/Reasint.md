@@ -16,7 +16,7 @@ industry: healthcare
 website: 
 location: "Kansas City, MO"
 company_size: medium
-recruited: false
+channel: referral
 referred: true
 listing: https://reasint.prismhr-hire.com/job/373803/senior-software-engineer-platform
 blog: 

@@ -11,7 +11,7 @@ industry: sales
 website:
 location:
 company_size:
-recruited: "false"
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/senior-staff-software-engineer-backend-python-1655963
 title: Close (1)
 date_created: 2023-05-29 20:53

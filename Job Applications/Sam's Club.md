@@ -13,7 +13,7 @@ industry: retail
 website:
 location: Bentonville, AR
 company_size:
-recruited: false
+channel: form
 listing:
 blog:
 correspondence:

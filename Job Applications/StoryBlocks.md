@@ -8,7 +8,7 @@ source: matcha
 position: Platforms Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://job-boards.Greenhouse.Io/storyblocks/jobs/8068087
 compensation: $122,000 - $129,200
 title: StoryBlocks

@@ -8,7 +8,7 @@ source: previously worked there
 position:
 contract:
 remote: true
-recruited: false
+channel: form
 listing:
 compensation:
 title: Octimine

@@ -13,7 +13,7 @@ industry: finance
 website:
 location: Tempe, AZ
 company_size: 50
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/81856
 blog:
 correspondence:

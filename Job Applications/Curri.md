@@ -13,7 +13,7 @@ industry: logistics
 website:
 location: Austin, TX
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/83886
 blog:
 correspondence:

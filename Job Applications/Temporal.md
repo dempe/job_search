@@ -11,7 +11,7 @@ industry:
 website: https://temporal.io/
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://boards.greenhouse.io/temporaltechnologies/jobs/4359845007?gh_src=7e95c2ed7us
 blog: https://temporal.io/blog
 correspondence:

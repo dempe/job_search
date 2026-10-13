@@ -13,7 +13,7 @@ industry: healthcare
 website: https://www.Cliniko.Com/blog/
 location: Australia
 company_size: 60
-recruited: false
+channel: form
 listing: https://apply.Workable.Com/cliniko/j/B8F753BB53/apply/?Autofill
 blog: https://www.Cliniko.Com/blog/
 correspondence:

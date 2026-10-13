@@ -12,7 +12,7 @@ industry: Legal
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Simplyhired.Com/job/Cjx8tty1i3N9gfmlWe5BtU299JSurVMbcsbCCeNOWd63ixg9gcz7Qg
 blog:
 correspondence: email

@@ -8,7 +8,7 @@ source: wellfound
 position: Cloud Solutions Architect
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=2776300-2-cloud-solutions-architect
 compensation: $100k – $135k • No equity
 title: Archesys

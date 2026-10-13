@@ -13,7 +13,7 @@ industry: construction
 website:
 location: San Francisco, CA
 company_size: 3
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/78717
 blog:
 correspondence:

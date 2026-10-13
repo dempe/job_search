@@ -13,7 +13,7 @@ industry:
 website:
 location: New York, NY
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/recommended/?CurrentJobId=4391876513&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII
 blog:
 correspondence:

@@ -8,7 +8,7 @@ source: 4dayweek.io
 position: Senior Software Engineer, Cloud Platform
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://job-boards.Greenhouse.Io/signifyd95/jobs/7811547?Utm_source=4dayweek.Io&utm_medium=job-board&utm_campaign=4dayweek.Io&utm_content=4dayweek.Io&ref=4dayweek.Io&source=4dayweek.Io&gh_src=4dayweek.Io
 compensation: $150,000 – $165,000
 title: Signifyd (2)

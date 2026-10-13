@@ -13,7 +13,7 @@ industry:
 website:
 location: Okemos, MI
 company_size:
-recruited: false
+channel: form
 listing: https://recruiting.Paylocity.Com/Recruiting/jobs/Apply/3643044
 blog:
 correspondence:

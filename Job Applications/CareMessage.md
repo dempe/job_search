@@ -13,7 +13,7 @@ industry: healthcare
 website:
 location: USA
 company_size: 10-50
-recruited: false
+channel: form
 listing: https://4dayweek.Io/remote-job/software-engineer-ii-integrations-YcOhb-caremessage
 blog:
 correspondence:

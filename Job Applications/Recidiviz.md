@@ -12,7 +12,7 @@ industry: law-enforcement
 website:
 location: Oakland, CA
 company_size:
-recruited: false
+channel: form
 listing: https://www.Simplyhired.Com/job/FCTtoBHn1e1GYskAW5GElSPaj_T3FWS_7GXWeW7_pHwSi83CAmWdvQ
 blog:
 correspondence: email

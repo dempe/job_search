@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4085466-senior-software-developer-1099-contractor
 blog:
 correspondence: email

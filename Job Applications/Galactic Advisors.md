@@ -13,7 +13,7 @@ industry: security
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Indeed.Com/cmp/Galactic-Advisors/jobs?Jk=3a08f1eac629ca88&start=0
 blog:
 correspondence:

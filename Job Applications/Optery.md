@@ -12,7 +12,7 @@ industry: security
 website:
 location: San Francisco
 company_size: 55
-recruited: false
+channel: form
 listing:
 blog:
 correspondence: workatastartup

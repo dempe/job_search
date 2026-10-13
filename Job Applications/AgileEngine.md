@@ -12,7 +12,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://mx.Indeed.Com/?From=gnav-passport--passport-webapp&vjk=d62751b1546af77b&advn=8624272146122276
 blog:
 correspondence:

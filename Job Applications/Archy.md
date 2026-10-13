@@ -8,7 +8,7 @@ source: matcha
 position: Senior Backend Software Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/Archy/9cf41704-3950-417d-be81-114c27ecf892
 compensation: 160,000 - 190,000
 title: Archy

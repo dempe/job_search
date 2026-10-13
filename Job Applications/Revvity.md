@@ -12,7 +12,7 @@ industry: biotechnology
 website: revvity.com
 location: Waltham, MA
 company_size:
-recruited: false
+channel: form
 listing: https://jobs.Revvity.Com/job/waltham/senior-back-end-software-engineer-biologics-java-vert-x-aws-remote-us/20539/79298911488?Utm_source=chatgpt.Com
 blog:
 correspondence:

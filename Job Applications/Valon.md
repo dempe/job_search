@@ -12,7 +12,7 @@ industry:
 website:
 location: New York, New York
 company_size:
-recruited: false
+channel: form
 listing: https://www.simplyhired.com/job/-aV7Br2mGBLUpitBb92TFJMbqPvhcbUi6FW7ErTF_-jL1TmI4e7ckA
 blog:
 correspondence: email

@@ -12,7 +12,7 @@ industry: education
 website:
 location:
 company_size: small
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/56582
 blog:
 correspondence:

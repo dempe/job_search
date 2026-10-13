@@ -11,7 +11,7 @@ industry: LLM
 website: https://starbridge.ai/
 location: NYC
 company_size: small
-recruited: false
+channel: form
 listing: https://weworkremotely.com/remote-jobs/starbridge-senior-backend-engineer-java-kotlin
 blog: 
 correspondence: email

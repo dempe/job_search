@@ -10,7 +10,7 @@ industry: video
 website: https://www.ipconfigure.com/
 location: Norfolk, VA
 company_size: 
-recruited: false
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/senior-java-software-developer-1768637
 blog: 
 correspondence: 

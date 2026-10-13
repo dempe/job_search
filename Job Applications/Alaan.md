@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/73389
 blog:
 correspondence:

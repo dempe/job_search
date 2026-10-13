@@ -8,7 +8,7 @@ source: hackernews
 position: Founding Backend Software Engineer
 contract:
 remote: true
-recruited: false
+channel: form
 listing: https://matcha.Fm/apply/be
 compensation:
 title: Matcha

@@ -10,7 +10,7 @@ industry: sports
 website: https://jump.com/
 location: 
 company_size: 
-recruited: 
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/senior-software-engineer-1733346
 blog: 
 correspondence: 

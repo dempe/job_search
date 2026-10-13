@@ -2,7 +2,7 @@
 type: job
 applied: {{date}}
 job_type: fulltime
-recruited: false
+channel: form
 status: awaiting-reply
 interviews:
 source:

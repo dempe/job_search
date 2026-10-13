@@ -13,7 +13,7 @@ industry:
 website:
 location: Kansas City, MO
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/recommended/?CurrentJobId=4401493054&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII&start=48
 blog:
 correspondence:

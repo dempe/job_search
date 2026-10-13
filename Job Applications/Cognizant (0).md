@@ -13,7 +13,7 @@ industry:
 website:
 location: Bentonville, AR
 company_size:
-recruited: true
+channel: recruited
 listing: https://careers.Cognizant.Com/us-en/jobs/00068229591/java-senior-backend-engineer/
 blog:
 correspondence: Linkedin

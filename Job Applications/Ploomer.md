@@ -12,7 +12,7 @@ industry:
 website:
 location: NYC
 company_size: small
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/52522
 blog:
 correspondence:

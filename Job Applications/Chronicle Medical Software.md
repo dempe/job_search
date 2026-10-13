@@ -13,7 +13,7 @@ industry: healthcare
 website:
 location: Boston, MA
 company_size: 10
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs/4050142-cloud-platform-engineer-iac-fractional-work
 blog:
 correspondence:

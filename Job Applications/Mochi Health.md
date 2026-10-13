@@ -13,7 +13,7 @@ industry: healthcare
 website:
 location: San Francisco, CA
 company_size: 51 - 200
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=3775243-senior-backend-engineer-pharmacy
 blog:
 correspondence:

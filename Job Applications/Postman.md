@@ -13,7 +13,7 @@ industry:
 website:
 location: San Francisco
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs/3476317-senior-backend-engineer-cloud-platform
 blog:
 correspondence:

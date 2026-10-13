@@ -8,7 +8,7 @@ source: wellfound
 position: Senior Backend Engineer
 contract: true
 remote: true
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4277096-senior-backend-engineer
 compensation: $144k – $204k
 title: CollectiveOS

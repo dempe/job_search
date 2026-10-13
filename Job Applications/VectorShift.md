@@ -13,7 +13,7 @@ industry:
 website:
 location: India
 company_size:
-recruited: false
+channel: form
 listing:
 blog:
 correspondence:

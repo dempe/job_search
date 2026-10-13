@@ -8,7 +8,7 @@ source: wellfound
 position: Senior Backend Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://job-boards.Greenhouse.Io/openly/jobs/4697076005
 compensation: $145k – $218k
 title: Openly

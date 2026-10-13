@@ -13,7 +13,7 @@ industry: tech
 website: 
 location: san_francisco
 company_size: very_large
-recruited: true
+channel: recruited
 listing: 
 blog: 
 correspondence:

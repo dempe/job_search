@@ -162,7 +162,7 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 | `type` | `job` |
 | `applied` | `{today}` |
 | `job_type` | `fulltime`, `parttime`, or `contractor`, as stated in the JD. Use `fulltime` if the JD doesn't say. |
-| `recruited` | `false` |
+| `channel` | `form`. The other values are `recruited`, `referral`, and `direct`; the user sets those by hand. |
 | `status` | `awaiting-reply` |
 | `interviews` | blank |
 | `source` | `{source}` from Step 1 or Step 6, or blank |
@@ -235,7 +235,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 type: job
 applied: 2026-09-14
 job_type: fulltime
-recruited: false
+channel: form
 status: awaiting-reply
 interviews:
 source: matcha

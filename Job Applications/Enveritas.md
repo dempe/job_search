@@ -8,7 +8,7 @@ source: whoshiring
 position: Backend Software Engineer - Python/Postgres [Remote / Global]
 contract: false
 remote: true
-recruited: false
+channel: form
 correspondence: email
 listing: https://job-boards.Greenhouse.Io/enveritas/jobs/4006514008
 compensation: $135,000 and $155,000

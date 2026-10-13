@@ -8,7 +8,7 @@ source: wellfound
 position: Senior Backend Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4296008-senior-backend-engineer
 compensation:
 title: Astra

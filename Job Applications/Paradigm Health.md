@@ -8,7 +8,7 @@ source: matcha
 position: Senior Software Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/paradigm-health/62b01402-e705-4eb9-8279-960378ba02ce
 compensation: 160,000 - 200,000
 title: Paradigm Health

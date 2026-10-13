@@ -13,7 +13,7 @@ industry: tax
 website:
 location: Santa Ana, CA
 company_size:
-recruited: false
+channel: form
 listing: https://www.Indeed.Com/jobs?Q=software+engineer&l=&ts=1764007417582&rq=1&from=HPRecent&rsIdx=0&fromage=last&newcount=4229&vjk=2eacea8c61fdb2cf&advn=9985897988310993
 blog:
 correspondence:

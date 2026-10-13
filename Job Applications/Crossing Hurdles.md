@@ -9,7 +9,7 @@ source: linkedin
 position: Back End Developer - Python & Go
 contract: true
 remote: true
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/easy-apply/?CurrentJobId=4400710825&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII
 compensation: $80/hr
 title: Crossing Hurdles

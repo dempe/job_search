@@ -13,7 +13,7 @@ industry: finance
 website:
 location: New York, NY
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/82954
 blog:
 correspondence:

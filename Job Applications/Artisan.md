@@ -13,7 +13,7 @@ industry: AI
 website:
 location: San Francisco, CA
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/84026
 blog:
 correspondence:

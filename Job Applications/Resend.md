@@ -8,7 +8,7 @@ source: matcha
 position: Backend Engineer (Infra), Core Sending
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.ashbyhq.com/resend/d5bc5890-847d-4bc5-bbd7-d0d72021ff3c
 compensation: $150,000 - $170,000
 title: Resend

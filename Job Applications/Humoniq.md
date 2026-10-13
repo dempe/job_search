@@ -12,7 +12,7 @@ industry:
 website:
 location: Montreal, CA
 company_size: small
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/84379
 blog:
 correspondence: workatastartup

@@ -12,7 +12,7 @@ industry:
 website: https://www.atob.com/
 location: "CElegans Labs, Inc. Four Embarcadero Center, Suite #1400 San Francisco, 94111"
 company_size: small
-recruited: false
+channel: form
 listing: 
 blog: https://www.atob.com/blog
 correspondence:

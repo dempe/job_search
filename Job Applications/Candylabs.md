@@ -13,7 +13,7 @@ industry: NFTs
 website: candylabs.gg
 location: Tokyo, JP
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs/3621097-backend-engineer
 blog:
 correspondence:

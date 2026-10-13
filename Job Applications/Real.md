@@ -12,7 +12,7 @@ industry: real-estate
 website: https://onereal.com/
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/real/d1037122-8fb8-4936-a53d-d2edc383f593/application
 blog:
 correspondence:

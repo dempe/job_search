@@ -13,7 +13,7 @@ industry:
 website:
 location: New York, NY
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/86216
 blog:
 correspondence:

@@ -12,7 +12,7 @@ industry: AI
 website:
 location: Berlin
 company_size:
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/telli/cd0e72a4-6568-4559-b44e-2829e4eaceb2
 blog:
 correspondence: email

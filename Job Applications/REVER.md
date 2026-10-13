@@ -13,7 +13,7 @@ industry:
 website:
 location: Barcelona, ES
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/78494
 blog:
 correspondence:

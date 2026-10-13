@@ -13,7 +13,7 @@ industry: AI
 website:
 location: Toronto, ON
 company_size: 11 - 50
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4012986-ai-automation-specialist
 blog:
 correspondence: wellfound

@@ -15,7 +15,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.indeed.com/viewjob?from=app-tracker-post_apply-appcard&hl=en&jk=4d84a4910d04a555&tk=1jauaf87doii3800
 blog:
 correspondence:

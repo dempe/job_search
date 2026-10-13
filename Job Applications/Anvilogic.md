@@ -11,7 +11,7 @@ industry: security
 website:
 location: "Palo Alto, California, United States"
 company_size:
-recruited:
+channel: form
 listing:
 blog:
 correspondence:

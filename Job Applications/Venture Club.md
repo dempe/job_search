@@ -13,7 +13,7 @@ industry:
 website:
 location: San Diego, CA
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4002507-founding-backend-engineer-systems-booking-policy-engine
 blog:
 correspondence:

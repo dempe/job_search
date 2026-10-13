@@ -13,7 +13,7 @@ industry: blockchain
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4079915-senior-infrastructure-backend-engineer
 blog:
 correspondence:

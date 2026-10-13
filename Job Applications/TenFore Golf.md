@@ -13,7 +13,7 @@ industry: sports
 website:
 location: TX
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs/3605012-senior-backend-engineer?Utm_campaign=startup_share&utm_content=startup_share_module&utm_medium=social&utm_term=tenfore-golf-1
 blog:
 correspondence:

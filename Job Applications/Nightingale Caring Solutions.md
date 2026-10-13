@@ -13,7 +13,7 @@ industry: healthcare
 website: https://nightingalecaringsolutions.com/
 location: Philidelphia
 company_size: 15
-recruited: false
+channel: form
 listing: https://wellfound.com/jobs/2928736-backend-engineer
 blog:
 correspondence: wellfound

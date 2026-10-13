@@ -9,7 +9,7 @@ industry: consulting
 website: https://platform.a.team/chrisdempewolf
 location:
 company_size:
-recruited:
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/senior-independent-software-developer-814298
 title: A Team
 date_created: "2023-06-02 18:10"

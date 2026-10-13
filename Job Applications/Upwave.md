@@ -8,7 +8,7 @@ source: hn
 position: Senior Software Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://www.Upwave.Com/job/8547924002/
 compensation: $150,000 - $175,000 + bonus + equity + benefits
 title: Upwave

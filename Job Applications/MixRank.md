@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size: 45
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/68661
 blog:
 correspondence: workatastartup

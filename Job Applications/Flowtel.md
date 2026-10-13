@@ -13,7 +13,7 @@ industry: AI
 website: j
 location: San Francisco, CA
 company_size: 6
-recruited: true
+channel: recruited
 listing:
 blog:
 correspondence: email

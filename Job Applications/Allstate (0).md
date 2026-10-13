@@ -2,7 +2,7 @@
 type: job
 applied: 2026-08-10
 job_type: fulltime
-recruited: false
+channel: form
 status: rejected
 interviews:
 source: indeed

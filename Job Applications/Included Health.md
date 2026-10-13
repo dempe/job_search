@@ -13,7 +13,7 @@ industry: healthcare
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/remote-jobs/?CurrentJobId=4305253048&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII
 blog:
 correspondence:

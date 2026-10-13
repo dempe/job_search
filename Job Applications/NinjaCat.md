@@ -14,7 +14,7 @@ industry: marketing
 website: https://www.ninjacat.io/
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/associate-software-engineer-1701757
 blog: https://www.ninjacat.io/resources/blog
 correspondence: email

@@ -11,7 +11,7 @@ industry: analytics
 website: https://appfigures.com/
 location: "New York, New York"
 company_size: 
-recruited: false
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/backend-engineer-1698908
 blog: 
 correspondence:

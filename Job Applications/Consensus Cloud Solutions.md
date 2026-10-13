@@ -2,7 +2,7 @@
 type: job
 applied: 2026-09-26
 job_type: fulltime
-recruited: false
+channel: form
 status: awaiting-reply
 interviews:
 source: matcha

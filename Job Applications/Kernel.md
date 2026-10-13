@@ -12,7 +12,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=3541646-backend-systems-engineer-freelance-contract-us-based
 blog:
 correspondence:

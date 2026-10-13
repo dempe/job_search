@@ -8,7 +8,7 @@ source: matcha
 position: Backend Software Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/theori/e043b073-3807-4d94-9e87-0c7d7356da18
 compensation:
 title: Theori

@@ -11,7 +11,7 @@ industry: privacy
 website: https://anonos.com
 location: "New York, New York"
 company_size:
-recruited:
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/senior-java-developer-1727581
 blog: https://www.anonos.com/resources?category=blog
 correspondence:

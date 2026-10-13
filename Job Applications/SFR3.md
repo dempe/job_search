@@ -10,7 +10,7 @@ industry: real-estate
 website: https://sfr3.com/
 location: 
 company_size: 
-recruited: 
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/backend-engineer-10x-1725330
 blog: 
 correspondence: 

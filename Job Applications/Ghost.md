@@ -13,7 +13,7 @@ industry: publishing
 website: https://ghost.Org/
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://4dayweek.io/remote-job/senior-platform-engineer-AJcvL-ghost
 blog:
 correspondence:

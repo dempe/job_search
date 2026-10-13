@@ -12,7 +12,7 @@ industry:
 website:
 location: Philidelphia, PA
 company_size:
-recruited: false
+channel: form
 listing: https://motionrecruitment.Com/tech-jobs/philadelphia/direct-hire/senior-java-software-engineer-remote/767406?Utm_source=chatgpt.Com
 blog:
 correspondence:

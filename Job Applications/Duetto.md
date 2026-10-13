@@ -8,7 +8,7 @@ source: matcha
 position: Senior DevOps Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://job-boards.Greenhouse.Io/duettoresearch/jobs/8077087
 compensation:
 title: Duetto

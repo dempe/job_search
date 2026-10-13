@@ -12,7 +12,7 @@ industry: AI
 website:
 location:
 company_size: small
-recruited: false
+channel: form
 listing: https://bluesentry.Pinpointhq.Com/postings/07c3d62f-4420-4ab5-932d-1ed892ae4a6c
 blog:
 correspondence:

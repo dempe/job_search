@@ -8,7 +8,7 @@ source: wellfound
 position:
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://careers.Intandem.Com/en/postings/6192d461-9b92-4ddb-bb27-c5fb4ab4fc11/applications/new
 compensation: 120,000 - 140,000
 title: In Tandem

@@ -13,7 +13,7 @@ industry: finance
 website:
 location: Saint Louis, MO
 company_size:
-recruited: false
+channel: form
 listing: https://job-boards.Greenhouse.Io/affirm/jobs/7636414003?Gh_src=689c81d53us
 blog:
 correspondence:

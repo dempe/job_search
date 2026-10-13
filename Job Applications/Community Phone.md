@@ -10,7 +10,7 @@ industry: telecommunications
 website:
 location: "SLC, San Francisco, Austin"
 company_size:
-recruited:
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/onboarding-engineer-1672244
 blog:
 correspondence:

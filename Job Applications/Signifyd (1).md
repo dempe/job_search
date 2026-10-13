@@ -11,7 +11,7 @@ industry: Cloud
 website: www.signifyd.com/
 location: Denver, CO; New York City, NY
 company_size: 
-recruited: false
+channel: form
 listing: https://boards.greenhouse.io/signifyd95/jobs/5892165
 blog: https://www.signifyd.com/blog/
 correspondence: 

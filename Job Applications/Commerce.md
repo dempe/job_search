@@ -8,7 +8,7 @@ source: matcha
 position: Senior Software Engineer - Backend (Go)
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: Senior Software Engineer - Backend (Go) at Commerce
 compensation: $204k
 title: Commerce

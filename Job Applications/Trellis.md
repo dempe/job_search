@@ -8,7 +8,7 @@ source: matcha
 position: Senior Backend Engineer, Provider Integrations
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/savvyinsurance-trellis/542186a1-7632-4b5d-b0b8-42bad348c360
 compensation: $159K – $210K • Offers Equity • Offers Bonus
 title: Trellis

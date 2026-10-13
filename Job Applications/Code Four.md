@@ -13,7 +13,7 @@ industry: law-enforcement
 website:
 location: San Francisco
 company_size: 3
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/79247
 blog:
 correspondence:

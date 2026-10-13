@@ -12,7 +12,7 @@ industry: EV
 website:
 location: Munich, Bavaria
 company_size: 17
-recruited: false
+channel: form
 listing: https://www.Ycombinator.Com/companies/heycharge/jobs/TE1lwbO-senior-backend-engineer
 blog:
 correspondence: workatastartup

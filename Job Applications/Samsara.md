@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/recommended/?CurrentJobId=4356633753&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII
 blog:
 correspondence:

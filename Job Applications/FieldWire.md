@@ -8,7 +8,7 @@ source: matcha
 position: Senior Platform Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://www.Fieldwire.Com/job/8635948002/?Gh_jid=8635948002
 compensation: $170,000 - $195,000
 title: FieldWire

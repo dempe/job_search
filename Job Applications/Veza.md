@@ -8,7 +8,7 @@ source: Matcha
 position: Senior Backend Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://job-boards.Greenhouse.Io/veza/jobs/5678127004
 compensation: $154,000 - $210,000 USD
 title: Veza

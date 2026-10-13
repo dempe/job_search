@@ -12,7 +12,7 @@ industry: healthcare
 website: https://www.ollihomehealth.ai/
 location:
 company_size: small
-recruited: false
+channel: form
 listing: https://www.Ollihomehealth.Ai/news/olli-health-lead-automation-engineer-agentic-ai-rpa-for-healthcare
 blog:
 correspondence: email

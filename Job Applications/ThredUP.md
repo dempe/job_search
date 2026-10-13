@@ -11,7 +11,7 @@ industry: clothing
 website: https://www.thredup.com
 location: "Oakland, CA"
 company_size: 
-recruited: false
+channel: form
 listing: 
 blog: 
 correspondence:

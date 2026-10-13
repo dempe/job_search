@@ -11,7 +11,7 @@ industry: retail
 website: 
 location: Bentonville, AR
 company_size: yoooge
-recruited: false
+channel: form
 listing: https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/Bentonville-AR/Distinguished--Software-Engineer_R-2004553?source=Job_Board_LinkedIn&utm_source=Job_Board_LinkedIn&_ccid=1732997512941egn6bajgo
 blog: 
 correspondence: email

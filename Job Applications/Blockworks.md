@@ -10,7 +10,7 @@ industry: crypto
 website: https://blockworks.co/
 location: 
 company_size: 
-recruited: false
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/senior-backend-engineer-1733115
 blog: 
 correspondence: email

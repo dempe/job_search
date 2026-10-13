@@ -13,7 +13,7 @@ industry: sports
 website:
 location: New Orleans, LA
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4011668-backend-engineer
 blog:
 correspondence:

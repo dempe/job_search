@@ -13,7 +13,7 @@ industry:
 website:
 location: San Francisco
 company_size: 10
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs/3390454-backend-engineer?Utm_campaign=startup_share&utm_content=startup_share_module&utm_medium=social&utm_term=genios-ai
 blog:
 correspondence:

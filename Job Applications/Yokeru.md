@@ -14,7 +14,7 @@ industry: AI
 website:
 location: London, England, GB
 company_size: 10
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4126078-integrations-engineer
 blog: https://www.Yokeru.Ai/blog
 correspondence:

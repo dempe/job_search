@@ -12,7 +12,7 @@ industry:
 website:
 location: Reston,VA
 company_size:
-recruited: false
+channel: form
 listing: https://www.Usa.Jobs/jobs/167514317-senior-software-engineer-java-remote-us?Utm_source=chatgpt.Com
 blog:
 correspondence:

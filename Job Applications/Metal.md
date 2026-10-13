@@ -12,7 +12,7 @@ industry: investment
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/79633
 blog:
 correspondence: workatastartup

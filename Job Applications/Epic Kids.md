@@ -8,7 +8,7 @@ source: matcha
 position: Senior Site Reliability Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://job-boards.Greenhouse.Io/epickids/jobs/7806300003
 compensation: 160K to 200K (bonus included)
 title: Epic Kids

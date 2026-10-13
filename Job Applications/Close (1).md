@@ -11,7 +11,7 @@ industry:
 website: http://www.close.com/
 location: 
 company_size: 
-recruited: 
+channel: form
 listing: https://weworkremotely.com/remote-jobs/close-senior-staff-software-engineer-backend-python-usa-100-remote-3
 blog: https://making.close.com/posts/native-enums-or-check-constraints-in-postgresql
 correspondence: 

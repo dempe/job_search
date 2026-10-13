@@ -12,7 +12,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.simplyhired.com/search?q=software+engineer&l=Remote&job=Ed8whr1C5wZOr8NI2dN0vslzfFiELu91drZp1eNUXXWN-SpaY3EqWw&from=smart-apply
 blog:
 correspondence:

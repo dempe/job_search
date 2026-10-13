@@ -13,7 +13,7 @@ industry: AI
 website: www.Spott.Io
 location: Leuven, Flanders, BE
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/77342
 blog:
 correspondence:

@@ -8,7 +8,7 @@ source: matcha
 position: Software Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/nous-research/c0c86c4a-19fd-405d-a3bc-453b91f5066d
 compensation:
 title: Nous Research

@@ -8,7 +8,7 @@ source: matcha
 position: Software Engineer, Quality Engineering
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/oneapp/2e3129b5-8af9-435c-8bb2-51f1d3491277/application
 compensation: $140K – $170K • Offers Equity
 title: OnePay

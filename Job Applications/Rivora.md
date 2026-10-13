@@ -2,7 +2,7 @@
 type: job
 applied: 2026-09-14
 job_type: contractor
-recruited: false
+channel: form
 status: rejected
 interviews:
   - 2026-09-18 14:00

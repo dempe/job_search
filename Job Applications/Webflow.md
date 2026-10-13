@@ -12,7 +12,7 @@ industry:
 website:
 location: Plano, TX
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/unicorn-companies/?CurrentJobId=4312912336&discover=true
 blog:
 correspondence:

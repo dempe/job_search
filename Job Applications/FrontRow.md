@@ -14,7 +14,7 @@ location:
   - New York
   - San Francisco
 company_size: 11-50
-recruited: false
+channel: form
 listing: https://wellfound.com/company/frontrowxp
 blog:
 correspondence: wellfound

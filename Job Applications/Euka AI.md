@@ -12,7 +12,7 @@ industry: insurance
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Simplyhired.Com/search?Q=software+engineer&l=Remote&job=x-MzIHkcWFgrh0RWc0Qs6mg6eXSGDdcSvqrA37lHHkFtBAVvzJLTCg&from=smart-apply
 blog:
 correspondence: email

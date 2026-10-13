@@ -11,7 +11,7 @@ industry: Jobs
 website: https://www.yellowbrikjobs.com/
 location: St. Louis
 company_size: 1-10
-recruited: false
+channel: form
 listing: https://wellfound.com/jobs/3086108-backend-engineer
 blog: 
 correspondence: 

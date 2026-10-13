@@ -13,7 +13,7 @@ industry:
 website:
 location: London, England, GB
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/85543
 blog:
 correspondence:

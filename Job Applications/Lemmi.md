@@ -13,7 +13,7 @@ industry: AI
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4065117-python-engineer-early-stage-entry-level-friendly
 blog:
 correspondence:

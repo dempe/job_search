@@ -2,7 +2,7 @@
 type: job
 applied: 2026-10-13
 job_type: fulltime
-recruited: false
+channel: direct
 status: awaiting-reply
 interviews:
 source: linkedin

@@ -14,7 +14,7 @@ industry: AI
 website:
 location: Seattle, WA
 company_size:
-recruited: false
+channel: form
 listing: https://www.workatastartup.com/jobs/92516
 blog:
 correspondence:

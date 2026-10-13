@@ -14,7 +14,7 @@ industry:
 website:
 location: San Francisco, CA
 company_size:
-recruited: false
+channel: form
 listing:
 blog:
 correspondence:

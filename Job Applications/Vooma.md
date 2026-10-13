@@ -14,7 +14,7 @@ industry: trucking
 website:
 location: San Francisco
 company_size: 3
-recruited: true
+channel: recruited
 listing:
 blog:
 correspondence: workatastartup

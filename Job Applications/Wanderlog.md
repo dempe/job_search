@@ -13,7 +13,7 @@ industry: travel
 website:
 location: San Francisco, CA
 company_size: small
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/88700
 blog:
 correspondence:

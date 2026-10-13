@@ -13,7 +13,7 @@ industry: advertising
 website:
 location: San Francisco, CA
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/86313
 blog:
 correspondence:

@@ -8,7 +8,7 @@ source: matcha
 position: Senior Software Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://swishanalytics.Na.Teamtailor.Com/jobs/632202-senior-software-engineer
 compensation: 150,000 - 190,000
 title: Swish Analytics

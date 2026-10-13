@@ -12,7 +12,7 @@ industry: advertising
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/unicorn-companies/?CurrentJobId=4282877161&discover=true
 blog:
 correspondence:

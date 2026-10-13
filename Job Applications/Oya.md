@@ -13,7 +13,7 @@ industry:
 website:
 location: Houston, TX
 company_size: 10
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs/3544212-senior-backend-engineer
 blog:
 correspondence:

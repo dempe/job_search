@@ -13,7 +13,7 @@ industry: AI
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=3878543-senior-software-engineer-platform-backend
 blog:
 correspondence:

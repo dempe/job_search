@@ -13,7 +13,7 @@ industry: hospitality
 website:
 location: US
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=3851877-senior-backend-engineer
 blog:
 correspondence:

@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/remote-jobs/?CurrentJobId=4405167214&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII
 blog:
 correspondence:

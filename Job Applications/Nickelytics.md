@@ -11,7 +11,7 @@ industry: advertising
 website: https://www.nickelytics.com/
 location: Tampa, FL
 company_size: 11 - 50
-recruited: false
+channel: form
 listing: https://wellfound.com/jobs/3098146-senior-software-engineer
 blog: 
 correspondence: 

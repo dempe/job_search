@@ -8,7 +8,7 @@ source: matcha
 position: Senior Data Platform Engineer
 contract: false
 remote: true
-recruited: false
+channel: form
 listing: https://jobs.Ashbyhq.Com/sentilink/17997e89-d67b-4365-b673-f7521ac4dcb0
 compensation: $170,000/year - $230,000/year + equity + benefits
 title: Job Template

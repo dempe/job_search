@@ -13,7 +13,7 @@ industry: AI
 website:
 location: San Francisco, CA
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs/3626373-distributed-systems-engineer-open-source-runtime-for-ai-node-ts-python-gcp?Utm_campaign=startup_share&utm_content=startup_share_module&utm_medium=social&utm_term=trustin-1
 blog:
 correspondence:

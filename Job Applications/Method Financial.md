@@ -13,7 +13,7 @@ industry: finance
 website:
 location:
 company_size: 17
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/80177
 blog:
 correspondence:

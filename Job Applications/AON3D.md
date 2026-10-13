@@ -12,7 +12,7 @@ industry: 3D printing
 website:
 location: Montreal, CA
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/83827
 blog:
 correspondence:

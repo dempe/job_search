@@ -13,7 +13,7 @@ industry: AI
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://wellfound.Com/jobs?Job_listing_slug=4020275-sr-java-back-end-engineer
 blog:
 correspondence:

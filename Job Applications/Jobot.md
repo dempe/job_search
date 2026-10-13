@@ -15,7 +15,7 @@ industry:
 website:
 location: Columbus, OH
 company_size:
-recruited: false
+channel: form
 listing: https://www.Linkedin.Com/jobs/collections/recommended/?CurrentJobId=4402867404&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII
 blog:
 correspondence:

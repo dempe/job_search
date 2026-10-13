@@ -12,7 +12,7 @@ industry:
 website:
 location:
 company_size:
-recruited: true
+channel: recruited
 listing:
 blog:
 correspondence: email

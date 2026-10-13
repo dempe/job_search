@@ -2,7 +2,7 @@
 type: job
 applied: 2026-10-07
 job_type: fulltime
-recruited: true
+channel: recruited
 status: awaiting-reply
 interviews:
 source: inbound

@@ -13,7 +13,7 @@ industry: job-market
 website:
 location: San Francisco
 company_size: 3
-recruited: false
+channel: form
 listing: https://www.workatastartup.com/jobs/85182
 blog:
 correspondence:

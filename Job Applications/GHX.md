@@ -10,7 +10,7 @@ industry: healthcare
 website: ghx.com
 location: 1315 W. Century Drive, Louisville, CO 80027
 company_size: 
-recruited: false
+channel: form
 listing: 
 blog: 
 correspondence: email

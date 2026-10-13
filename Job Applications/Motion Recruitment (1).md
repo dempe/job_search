@@ -11,7 +11,7 @@ industry:
 website:
 location: Los Angeles, CA
 company_size:
-recruited: false
+channel: form
 listing: https://motionrecruitment.Com/tech-jobs/los-angeles/contract/senior-python-developer-aws-fully-remote/783209
 blog:
 correspondence:

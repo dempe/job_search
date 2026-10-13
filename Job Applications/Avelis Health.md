@@ -14,7 +14,7 @@ industry: healthcare
 website:
 location:
 company_size: 2
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/84328
 blog:
 correspondence: workatastartup

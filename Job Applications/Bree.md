@@ -13,7 +13,7 @@ industry: finance
 website:
 location: Toronto, ON
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/84274
 blog:
 correspondence:

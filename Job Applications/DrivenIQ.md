@@ -10,7 +10,7 @@ industry: advertisement
 website: https://www.driveniq.com/
 location: "722 Dulaney Valley Rd, Towson, MD 21204, USA"
 company_size:
-recruited: false
+channel: form
 listing: https://remotive.com/remote-jobs/software-dev/senior-backend-software-engineer-1734588
 blog:
 correspondence:

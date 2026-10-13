@@ -9,7 +9,7 @@ position: Senior Software Engineer
 contract: false
 remote: true
 compensation:
-recruited: false
+channel: form
 listing: https://bitmovin.Com/careers/8653416002?Gh_jid=8653416002
 title: BitMovin
 date_created: 2026-07-29 09:45

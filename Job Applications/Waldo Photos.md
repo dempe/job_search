@@ -12,7 +12,7 @@ industry: photography
 website: https://waldophotos.com/
 location: Austin, TX
 company_size: 11-50
-recruited: false
+channel: form
 listing: https://wellfound.com/jobs/2886940-backend-platform-engineer
 blog:
 correspondence: wellfound

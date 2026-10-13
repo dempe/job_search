@@ -13,7 +13,7 @@ industry: AI
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://www.Workatastartup.Com/jobs/86773
 blog:
 correspondence:

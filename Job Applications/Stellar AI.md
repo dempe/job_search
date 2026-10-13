@@ -13,7 +13,7 @@ industry:
 website:
 location:
 company_size:
-recruited: false
+channel: form
 listing: https://joinstellar.ai/apply/senior-software-engineer/?from=indeed.com
 correspondence:
 compensation: $70/hr
