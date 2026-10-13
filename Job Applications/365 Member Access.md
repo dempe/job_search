@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-07
 job_type: fulltime
 channel: recruited
-status: awaiting-reply
+status: rejected
 interviews:
 source: inbound
 listing:
@@ -13,8 +13,8 @@ contract: false
 remote: false
 compensation:
 title: 365 Member Access
-date_created: "2026-10-07 14:10"
-date_modified: "2026-10-12 14:17"
+date_created: 2026-10-07 14:10
+date_modified: 2026-10-12 14:17
 ---
 
 ## Application
