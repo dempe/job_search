@@ -26,7 +26,7 @@ I saw Cameron from Reasint shared your post for the Software Engineer III positi
 
 A lot of the responsibilities for this role line up with what I've been doing. E.g., I'm doing contracting, and specing out nebulous requirements is basically the name of the game hah.
 
-I'm currently doing contract work (AWS and Node apps), but looking to return to a team-based environment.
+I'm job searching right now, beca looking to return to a more team-based environment and to take on more leadership/mentorship opportunities.
 
 Let me know if you'd be open to a call!  FWIW, I've also submitted a formal application.
 
