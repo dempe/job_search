@@ -1,3 +1,15 @@
+## 365 Member Access
+
+[[365 Member Access]]
+
+> I see you've been a founder and software engineer. Did you have a team, or were you just working on your own?
+
+```
+That was entirely solo. I was building apps I wanted to build, mostly mental math training apps, like Athena Math. It was React Native on iOS with a serverless AWS backend -- Lambda, API Gateway, DynamoDB -- plus CI/CD and monitoring that I set up myself.
+
+The upside is that I owned everything end to end, from architecture to deploys to getting woken up when something broke. The downside is that there's nobody to bounce ideas off or learn from. That's honestly a big part of why I'm looking to get back onto a team.
+```
+
 ## Grass
 
 [[Grass]]

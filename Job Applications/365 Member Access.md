@@ -37,85 +37,39 @@ Model answers, not a record of what was said.
 
 > This is an odd role. We're likely to say, "Hey Chris, we've got this crazy idea for this thing. How do you think we could pull it off?" I hope that is something that's attractive to you.
 
-```
-Definitely. That's a big part of what I've been doing as a contractor. Clients come to me with something pretty loosely defined, and my job is to turn it into an actual problem we can solve.
-
-The way I approach it is the same every time. First, figure out what we're really trying to accomplish and what success looks like for the business. Then the requirements, constraints, and risks. If there's a real unknown, like whether a piece of hardware or a third-party API can actually do what we need, I'd rather do a small, bounded proof of concept than guess. Then I can come back to you with an honest estimate, the tradeoffs, and my recommendation.
-
-The other thing I'd consider is the long-term view. A crazy idea that works is great, but it also has to be something we can support, monitor, and maintain a year or two from now, especially with physical constraints, like gym access.
-```
+[[Turning loose ideas into plans#365 Member Access|Turning loose ideas into plans]]
 
 > Have you ever had to manage an emergency or a big outage or anything like that? Something high stress.
 
-```
-Yes. The one that stands out is at Octimine. We had a weekly Python batch job that processed around 30 million documents, and it was fragile. A couple of times it kept failing and retrying until it ran into the next week's job. That meant customers weren't getting their data.
-
-In those situations, I try to stay as calm as possible. Getting stressed doesn't solve the problem. It just makes it take longer. So I isolate the issue and sort out what we actually know from what we're assuming, and work from the facts. I'm also big on communication in these scenarios and do my best to keep everyone informed until the problem is resolved.
-
-Once it's fixed, I do a root-cause analysis and document the incident and how to recover from it, so if it ever happens again, anyone on the team can handle it. At Octimine, that turned into a whole set of recovery documentation, and it cut down on recurring on-call incidents. The long-term fix was replacing the batch job with a Kafka Streams pipeline with a dead-letter queue, so one bad document couldn't take the whole run down.
-```
+[[Handling production incidents#365 Member Access|Handling production incidents]]
 
 > I see you've been a founder and software engineer. Did you have a team, or were you just working on your own?
 
-```
-That was entirely solo. I was building apps I wanted to build, mostly mental math training apps, like Athena Math. It was React Native on iOS with a serverless AWS backend -- Lambda, API Gateway, DynamoDB -- plus CI/CD and monitoring that I set up myself.
-
-The upside is that I owned everything end to end, from architecture to deploys to getting woken up when something broke. The downside is that there's nobody to bounce ideas off or learn from. That's honestly a big part of why I'm looking to get back onto a team.
-```
+[[Returning to a collaborative engineering team#365 Member Access|Returning to a collaborative engineering team]]
 
 > Your recent role is a contract. Do you work under people, or do you have people working under you? Are you working in a team?
 
-```
-I report to the CEO, and there are other engineers I work alongside. In June the CEO asked if I would be comfortable moving into a tech lead position that involved mentoring the other engineers. However, even despite a pay raise, that has yet to be realized in practice -- it's been entirely ad-hoc mentoring, with no new processes, so I kept "Senior Engineer" on my resume to more accurately reflect the work I've been doing.
-
-Before that, at DataRank, I onboarded and mentored two junior developers. So I've done mentoring, but I haven't had the formal lead title yet, and that's one of the things that draws me to this role.
-```
+[[Mentoring and leadership experience#365 Member Access|Mentoring and leadership experience]]
 
 > What do you think about transitioning from mostly individual work to team work, where you'd also be managing me as my direct lead? Do you have any plans for how you'd handle that?
 
-```
-It's exactly the transition I want to make. I do my best work on a team, working through problems with other people, and I'm not getting enough of that right now.
-
-For the first month or so, I'd mostly be learning from you. You know this system and its history far better than I do, and I'd want to lean on that rather than come in and start changing things. Alongside that, I'd want regular one-on-ones to understand what you want to grow into, and to make sure feedback goes both ways.
-
-Day to day, I see code reviews and pairing, especially on incidents, as the main ways to teach. I'd also want us to write down how the critical parts work, so no single person -- including me -- is the only one who can fix something at 9 p.m. And I'd want you to own real areas of the system, not just tickets.
-
-I also think teaching makes you better. You have to really know something to explain it well, so I expect to learn a lot from mentoring you too.
-```
+[[Mentoring and leadership experience#365 Member Access (leading a direct report)|Mentoring and leadership experience]]
 
 > Do you have any experience with Android? I know you've created some iOS apps.
 
-```
-Not production Android, no. My mobile work has been React Native on iOS, and I've written Kotlin, but not for Android, so I have experience with tangential technologies.
-```
+[[Mobile and Android experience#365 Member Access|Mobile and Android experience]]
 
 > With your business and your contract work, are you wanting to do this role and those roles simultaneously?
 
-```
-No. This would be my full-time job. I'd wrap up my current contract responsibly, and I'm not taking on new clients.
-
-To be honest, part of why I'm interested is that this is the kind of long-term ownership that contracting doesn't give me. I know I've got broad interests, but that's one of the reasons this role fits. Cloud, integrations, Android, hardware, and a steady stream of new ideas is enough variety to keep me engaged for a long time.
-```
+[[Committing to a full-time role#365 Member Access|Committing to a full-time role]]
 
 > Do you currently use AI for any of your development?
 
-```
-Yes, extensively. I've built a four-step process out of agent skills: scope, plan, execute, and review.
-
-Scoping turns a loose problem into functional and non-functional requirements, assumptions, constraints, and risks. Planning turns that into an implementation plan. Those first two steps take a lot of back-and-forth, but by the time we get to implementation, it goes quickly because the hard questions are already answered.
-
-I used it on a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced several ambiguities in the provider's API docs that I got resolved with the provider before writing code.
-
-I never take the output on trust, though. I make it write a failing test before it changes code, I review everything, and I've rejected things like a hand-rolled SQL migration runner when a well-tested library already existed.
-```
+[[AI-assisted development workflow#365 Member Access|AI-assisted development workflow]]
 
 > What AI agents do you prefer?
 
-```
-Mostly Claude Code. I also use Codex, and DeepSeek through OpenCode. My skills are agent-agnostic -- the same files work with each tool, and the plans live in the repo -- so one agent can pick up where another left off. I can send a harder problem to a more capable model and an easier one to a cheaper one.
-
-At the end of the day, we're still solving problems. The pipeline is really just the problem-solving and debugging steps I used as an engineer before AI, turned into something an agent can follow. The tools have changed a lot, but the thinking hasn't.
-```
+[[AI-assisted development workflow#365 Member Access (preferred AI agents)|AI-assisted development workflow]]
 
 ## Rejection
 

@@ -1,3 +1,31 @@
+## 365 Member Access
+
+[[365 Member Access]]
+
+> Do you currently use AI for any of your development?
+
+```
+Yes, extensively. I've built a four-step process out of agent skills: scope, plan, execute, and review.
+
+Scoping turns a loose problem into functional and non-functional requirements, assumptions, constraints, and risks. Planning turns that into an implementation plan. Those first two steps take a lot of back-and-forth, but by the time we get to implementation, it goes quickly because the hard questions are already answered.
+
+I used it on a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced several ambiguities in the provider's API docs that I got resolved with the provider before writing code.
+
+I never take the output on trust, though. I make it write a failing test before it changes code, I review everything, and I've rejected things like a hand-rolled SQL migration runner when a well-tested library already existed.
+```
+
+## 365 Member Access (preferred AI agents)
+
+[[365 Member Access]]
+
+> What AI agents do you prefer?
+
+```
+Mostly Claude Code. I also use Codex, and DeepSeek through OpenCode. My skills are agent-agnostic -- the same files work with each tool, and the plans live in the repo -- so one agent can pick up where another left off. I can send a harder problem to a more capable model and an easier one to a cheaper one.
+
+At the end of the day, we're still solving problems. The pipeline is really just the problem-solving and debugging steps I used as an engineer before AI, turned into something an agent can follow. The tools have changed a lot, but the thinking hasn't.
+```
+
 ## Aescape
 
 [[Aescape]]
