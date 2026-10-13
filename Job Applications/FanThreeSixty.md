@@ -22,9 +22,9 @@ date_modified: "2026-10-13 13:11"
 ```
 Hi Matt,
 
-I saw your post for the Software Engineer III position.  I thought I'd reach directly.  A lot of the responsibilities line up with what I've been doing.
+I saw Cameron from Reasint shared your post for the Software Engineer III position.  I thought I'd reach directly.  A lot of the responsibilities for this role line up with what I've been doing.
 
-I'm currently doing contract work, but looking to return to a team-based environment.
+I'm currently doing contract work (AWS and Node apps), but looking to return to a team-based environment.
 
 Let me know if you'd be open to a call!  FWIW, I've also submitted a formal application.
 
