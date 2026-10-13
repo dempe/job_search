@@ -1,13 +1,14 @@
-Bill,
+Dear Hiring Team at Reasint,
 
-Thanks for sending the JD over. I've been doing a lot of Node and AWS work lately and looking to take on more leadership responsibilities, so this is a genuinely exciting opportunity!
+I'm writing to apply for the Senior Software Engineer role. I interviewed with Reasint for the Senior Software Engineer, Platform role in 2023, and I'm glad to have the chance to apply again. I'm a backend engineer with eleven years of experience, most of it in Java, and the past few years in TypeScript and Node.js.
 
-And I totally understand the in-office time. If a hybrid option is on the table, I'd love to set up a call. I'm generally free [DAYS/TIMES].
+Most of my Java work has been the kind of backend you describe: APIs and event processors. At Octimine, I replaced a fragile weekly Python batch job processing ~30 million documents with an event-driven Kafka Streams pipeline in Java, with a dead-letter queue for anything that failed. I unit-tested every analytic in the pipeline, so we could update analytics in CI/CD without risking data corruption. At DataRank, I built the company's Java data ingestion, normalizing data from external APIs and websites into a canonical model.
 
-As for salary requirements, I'm targeting a base of $130,000, but I'm flexible depending on the full package/hybrid arrangement.
+More recently, I've been working across the stack. At Dekstech, I built a Node.js/React app for a B2B distributor backed by a Postgres projection of their Shopify data, and Node.js middleware reconciling a client's payment provider with their Shopify orders. Since it was touching payments, it was imperative that my code was correct. I prevented duplicate charges with idempotency keys scoped to each payment session, and covered the payment flow with 32 tests against a stubbed gateway. I've also built the deployment side, from GitHub Actions and infrastructure as code to tools for people outside engineering, like a Jenkins status page at DataRank that let our support team see which crawlers had broken without asking an engineer.
 
-I've attached my resume in case you don't have it.
+What draws me to Reasint is the customer. You need to understand the customer to understand the product, and you need to understand the product to decide what to build. At Octimine, I asked a colleague to put together an hour-long presentation on the three main personas we sold to, so the engineering team understood who we were building for. Automating busywork for coding teams is concrete work with real people on the other end, and that's the kind of work I want to be doing.
 
-Thanks,
-Chris
-479-301-0763
+I'd welcome the chance to talk again. Thank you for your time and consideration.
+
+Sincerely,
+Chris Dempewolf
