@@ -2,7 +2,7 @@
 type: job
 applied: 2026-08-12
 job_type: fulltime
-channel: form
+channel: direct
 status: ghosted
 interviews:
 source: wellfound
