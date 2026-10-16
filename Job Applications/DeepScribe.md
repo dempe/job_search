@@ -14,7 +14,7 @@ remote: true
 compensation: USD 100,000-185,000 / year
 title: DeepScribe
 date_created: "2026-10-15 18:24"
-date_modified: "2026-10-15 18:24"
+date_modified: "2026-10-15 18:32"
 ---
 
 ## Application
@@ -34,5 +34,5 @@ Lastly, I'm looking to get back on a team. I've spent the past few years running
 ```
 I built a Node.js/React app for a B2B coffee distributor that shows the sales team the status of customer accounts (particularly lapsed customers), on an interactive Google Map.
 
-In Phase I also built a prospecting sweep over the Google Places API to surface candidate wholesale accounts across two states. Places caps the number of results per query, so I used an adaptive tile grid that recursively subdivides any tile that hits the cap. That way it finds every candidate while staying within the platform's request timeouts, with no background worker.
+In Phase 2, I built a prospecting sweep over the Google Places API to surface candidate customers across two states. Places caps the number of results per query, so I used an adaptive tile grid that recursively subdivides any tile that hits the cap. That way it finds every candidate while staying within the platform's request timeouts, with no background worker.
 ```
