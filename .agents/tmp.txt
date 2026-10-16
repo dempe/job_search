@@ -1,10 +1,1 @@
-Hi Matt,
-
-Cameron shared your post for the Software Engineer III position, so I thought I'd reach out directly. A lot of the responsibilities line up with what I've been doing, especially owning features end to end, chasing bugs down to the root cause, and building the CI/CD behind them.
-
-I'm currently doing contract work, but looking to return to a team-based environment.
-
-Let me know if you'd be open to a call! FWIW, I've also submitted a formal application.
-
-Best,
-Chris
+Hi [Name], fellow Razorback here -- looks like we both graduated from UA in 2013 (I was in engineering). I just applied for the Staff Software Engineer role at Elation and would love to hear what it's like working there, if you're open to a quick chat. Thanks!
