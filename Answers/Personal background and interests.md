@@ -1,3 +1,8 @@
+---
+title: Personal background and interests
+date_created: "2026-10-15 18:06"
+date_modified: "2026-10-15 18:06"
+---
 ## GrowthLoop
 
 [[GrowthLoop]]
@@ -13,7 +18,7 @@ EDIT:
 I should have also added something about what I'm looking for:
 
 ```
-I'm based in the US (Arkansas, Central Time) and work fully remote. I occasionally post tech-related articles on my blog here: https://chrisdempewolf.com/. I'm currently working as a contractor, but looking to re-join a tea
+I'm based in the US (Arkansas, Central Time) and work fully remote. I occasionally post tech-related articles on my blog here: https://chrisdempewolf.com/. I'm currently working as a contractor, but looking to re-join a team where I can have more collaboration and ownership. In the future I hope to take on more leadership responsibilities.
 ```
 
 ## In Tandem
