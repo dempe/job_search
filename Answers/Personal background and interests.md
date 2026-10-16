@@ -8,6 +8,10 @@
 I'm based in the US (Arkansas, Central Time) and work fully remote. I occasionally post tech-related articles on my blog here: https://chrisdempewolf.com/
 ```
 
+EDIT:
+
+I should have also added 
+
 ## In Tandem
 
 [[In Tandem]]
