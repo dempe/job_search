@@ -49,7 +49,9 @@ If I remember correctly, you are based in Arkansas but not opposed to working ou
 Me:
 
 ```
+Hey Cameron,
+
 Thanks for the update. Sounds great!
 
-Yes, I am based in Arkansas. Last time, we settled on a hybrid plan where I come up one week per month.
+Yes, I'm based in Arkansas. Last time we settled on a hybrid plan where I come up one week per month. That still works 
 ```
