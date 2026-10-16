@@ -19,6 +19,8 @@ date_modified: "2026-10-13 12:05"
 
 ## Application
 
+Me:
+
 ```
 Hi Cameron,
 
@@ -31,3 +33,18 @@ Chris
 ```
 I'll go ahead and submit a formal application, but wanted to let you.  Thanks!
 ```
+
+Cameron:
+
+```
+Hey Chris 👋
+
+Hope everything has been great with you. Thanks for keeping an eye on us and applying!
+
+We're working on setting up interviews now and will reach out if we get to that point.
+
+If I remember correctly, you are based in Arkansas but not opposed to working out a pattern where you could get to the office in KC occasionally? A couple days every other month or something like that?
+```
+
+Me:
+
