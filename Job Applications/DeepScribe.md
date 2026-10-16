@@ -24,7 +24,7 @@ date_modified: "2026-10-15 18:24"
 ```
 I've been looking for work that combines engineering challenges with a strong sense of fulfillment. Giving doctors hours back from documentation so they can actually focus on their patients is something I can get behind.
 
-I also use AI every day. I've built my own scope -> plan -> implement -> review pipeline out of agent skills, and I've learned a lot about . Applying that to clinical workflows, where correctness really matters, is a problem I'd love to dig into.
+I also use AI every day. I've built my own scope -> plan -> implement -> review pipeline out of agent skills, and I've learned a lot about how to most effectively use them. At the end of the day, we're still just solving problems -- it's just that the tools havApplying that to clinical workflows, where correctness really matters, is a problem I'd love to dig into.
 
 And I'm looking to get back on a team. I've spent the past few years running my own company and contracting, shipping products end to end, and I've found that I really enjoy seeing how everything fits together. But I do my best work and learn the most in collaboration, and DeepScribe sounds like a place where I could do both.
 ```
