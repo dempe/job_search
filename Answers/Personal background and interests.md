@@ -1,3 +1,13 @@
+## GrowthLoop
+
+[[GrowthLoop]]
+
+> Please feel free to use this space to share anything else you'd like us to know.
+
+```
+I'm based in the US (Arkansas, Central Time) and work fully remote. I occasionally post tech-related articles on my blog here: https://chrisdempewolf.com/
+```
+
 ## In Tandem
 
 [[In Tandem]]
