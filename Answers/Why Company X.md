@@ -46,6 +46,20 @@ For the past two years I’ve been running Dempewolf Apps, shipping React Native
 ControlHub has a proven track record, and being accepted to both YC and StartX are strong indicators that the founders really know the space and what they are doing. I believe in this mission and would love to be a part of the team.
 ```
 
+## DeepScribe
+
+[[DeepScribe]]
+
+> Why do you want to work at DeepScribe?
+
+```
+I've been looking for work that combines engineering challenges with a strong sense of fulfillment. Giving doctors hours back from documentation so they can actually focus on their patients is something I can get behind.
+
+I also use AI every day. I've built my own scope -> plan -> implement -> review pipeline out of agent skills, and I've learned a lot about how to most effectively use them. At the end of the day, we're still just solving problems -- it's just that the tools have changed.
+
+Lastly, I'm looking to get back on a team. I've spent the past few years running my own company and contracting, shipping products end to end, and I've found that I really enjoy seeing how everything fits together. But I do my best work and learn the most in collaboration, and DeepScribe sounds like a place where I could do both.
+```
+
 ## Enveritas
 
 [[Enveritas]]
