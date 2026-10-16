@@ -22,7 +22,7 @@ date_modified: "2026-10-15 18:24"
 > Why do you want to work at DeepScribe?
 
 ```
-I taught English for two years in Mexico, some of it to students who were extremely poor. Helping them learn was the most fulfilling experience of my life, and since going back to software engineering, I've been looking for work that gives me that same sense of fulfillment. Giving doctors hours back from documentation so they can actually focus on their patients is something I can wholeheartedly get behind.
+I've been looking for work that gives me that same sense of fulfillment. Giving doctors hours back from documentation so they can actually focus on their patients is something I can wholeheartedly get behind.
 
 I also use AI every day. I've built my own scope -> plan -> implement -> review pipeline out of agent skills, and I've learned a lot about where LLMs are great and where you can't take their output on trust. Applying that to clinical workflows, where correctness really matters, is a problem I'd love to dig into.
 
