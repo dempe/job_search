@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-10
 job_type: fulltime
 channel: recruited
-status: awaiting-reply
+status: ghosted
 interviews:
 source: email
 listing:

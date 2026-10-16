@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-16
 job_type: fulltime
 channel: form
-status: awaiting-reply
+status: ghosted
 interviews:
 source: matcha
 listing: "https://job-boards.greenhouse.io/beaconbiosignals/jobs/4407556009"
