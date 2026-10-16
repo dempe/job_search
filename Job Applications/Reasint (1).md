@@ -53,5 +53,8 @@ Hey Cameron,
 
 Thanks for the update. Sounds great!
 
-Yes, I'm based in Arkansas. Last time we settled on a hybrid plan where I would come up one week per month. That still works perfectly for me. I'm also open to discussing other options if needed.
+Yes, I'm based in Arkansas. Last time we settled on a hybrid plan where I would come up one week per month. That still works perfectly for me, but I'm also open to discussing other options if needed.
+
+Best,
+Chris
 ```
