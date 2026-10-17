@@ -28,5 +28,5 @@ I recently ran into this exact scenario at Dekstech when I was adding support fo
 
 Before adding a new migration, I had to normalize the legacy status flags, backfill, and recompute each estimate's totals from the source of truth, the payment rows.
 
-To architect around it, keep derived state recomputable from a single source of truth, break migrations into small, verifiable stages, and put schema changes through CI and code review like any other code. 
+To architect around it, *keep derived state recomputable* from a single source of truth, break migrations into small, verifiable stages, and put schema changes through CI and code review like any other code. 
 ```
