@@ -46,6 +46,16 @@ There is a lot of back-and-forth with the AI on these first two phases, but it r
 Since so much time is invested in scoping and planning, the execution and verification phases usually go by pretty quickly, since we know exactly what we need to do by that point.
 ```
 
+## AudioEye
+
+[[AudioEye]]
+
+> What is one technology you have stopped using recently and why?
+
+```
+Cursor. I tried it, but it was too opinionated for me. I'd rather keep my own editor and run agents like Claude Code and Codex from the terminal, with my own workflow.
+```
+
 ## BitMovin
 
 [[BitMovin]]

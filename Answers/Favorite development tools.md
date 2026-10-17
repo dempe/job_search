@@ -1,3 +1,18 @@
+## AudioEye
+
+[[AudioEye]]
+
+> What does your local dev setup look like (OS, editor, tools, etc)?
+
+```
+- macOS for my operating system
+- Nix for package management, config management, and reproducible dev environments
+- Neovim (heavily customized) for most editing, and IntelliJ for larger JVM projects
+- Ghostty as my terminal, with a heavily configured Zsh
+- Claude Code as my main AI agent, plus Codex and OpenCode
+- Obsidian for notes, and Emacs Org Mode for task tracking
+```
+
 ## Resend
 
 [[Resend]]
