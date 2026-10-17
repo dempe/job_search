@@ -23,10 +23,10 @@ date_modified: "2026-10-16 19:13"
 
 ```
 - macOS for my operating system
-- Nix for package management, config management, and reproducible dev environments (basically IaC for your personal computer), with direnv for per-project shells
+- Nix for package management, config management, and reproducible dev environments
 - Neovim (heavily customized) for most editing, and IntelliJ for larger JVM projects
 - Ghostty as my terminal, with a heavily configured Zsh
-- Claude Code as my main AI agent, plus Codex and OpenCode. I run my own chain of agent skills (scope -> plan -> implement -> review), and the same skill files work in each tool, so any agent can pick up where another left off
+- Claude Code as my main AI agent, plus Codex and OpenCode
 - Obsidian for notes, and Emacs Org Mode for task tracking
 ```
 
