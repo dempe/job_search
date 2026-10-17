@@ -14,7 +14,7 @@ remote: true
 compensation: $170K – $190K • Offers Equity
 title: Hims & Hers
 date_created: "2026-10-16 18:05"
-date_modified: "2026-10-16 18:05"
+date_modified: "2026-10-16 18:24"
 ---
 
 ## Application
@@ -22,13 +22,13 @@ date_modified: "2026-10-16 18:05"
 > What languages, frameworks and libraries are you most proficient with?
 
 ```
-Java (Spring Boot, Hibernate/JPA, Kafka Streams), Python, and TypeScript/Node.js, with React and React Native/Expo on the frontend. I've also worked professionally in Go and use Kotlin in side projects. On the infrastructure side, AWS serverless (Lambda, API Gateway, DynamoDB, SQS/SNS) with SAM/CloudFormation, Docker, Terraform, and GitHub Actions.
+Java/Kotlin (Spring Boot, Hibernate/JPA, Kafka Streams), Python, and TypeScript/Node.js, with React and React Native/Expo on the frontend.
 ```
 
 > Briefly describe a backend distributed system you designed, built, or maintained, and your specific role in it. (1 to 3 sentences)
 
 ```
-At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system from source to sink, proposed it to my manager and the other backend engineers, and then built it with two other engineers. It had a DLQ, so one bad document couldn't take down the whole run, and customers got their data in real time instead of waiting a week.
+At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system, proposed it to my manager and the other backend engineers, and then built it with two other engineers. It had a DLQ, so one bad document couldn't take down the whole run, and customers got their data in real time instead of waiting a week.
 ```
 
 > Briefly describe your experience designing and building scalable back end services or distributed systems, including which cloud environment you used. (1 to 2 sentences)
