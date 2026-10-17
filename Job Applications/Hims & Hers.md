@@ -28,7 +28,7 @@ Java/Kotlin (Spring Boot, Hibernate/JPA, Kafka Streams), Python, and TypeScript/
 > Briefly describe a backend distributed system you designed, built, or maintained, and your specific role in it. (1 to 3 sentences)
 
 ```
-At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system
+At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system to read from our data warehouse, process each message via various Kafka topics, and write out to ElasticSearch/the API.
 ```
 
 > Briefly describe your experience designing and building scalable back end services or distributed systems, including which cloud environment you used. (1 to 2 sentences)
