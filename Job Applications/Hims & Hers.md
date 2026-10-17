@@ -21,24 +21,16 @@ date_modified: "2026-10-16 18:28"
 
 > What languages, frameworks and libraries are you most proficient with?
 
-```
-Java/Kotlin (Spring Boot, Hibernate/JPA, Kafka Streams), Python, and TypeScript/Node.js, with React and React Native/Expo on the frontend.
-```
+[[Backend language experience#Hims & Hers|Backend language experience]]
 
 > Briefly describe a backend distributed system you designed, built, or maintained, and your specific role in it. (1 to 3 sentences)
 
-```
-At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system to read from our data warehouse, process each message via various Kafka topics, and write out to ElasticSearch/the API. Customers got their data in real-time, and we no longer had to rely on a finicky weekly batch job.
-```
+[[Replacing batch analytics with Kafka Streams#Hims & Hers|Replacing batch analytics with Kafka Streams]]
 
 > Briefly describe your experience designing and building scalable back end services or distributed systems, including which cloud environment you used. (1 to 2 sentences)
 
-```
-Mostly AWS: I built a serverless backend on Lambda, API Gateway, DynamoDB, and SQS/SNS with idempotent processing and retries, defined in SAM/CloudFormation with GitHub Actions CI/CD and automated rollbacks. Before that, I designed Spring Boot and Go microservices at SimplyMeasured/Sprout Social behind an API gateway I set up to centralize auth, rate limiting, and request transforms.
-```
+[[Building scalable backend services on AWS#Hims & Hers|Building scalable backend services on AWS]]
 
 > Which relational database(s) have you worked with?
 
-```
-PostgreSQL, MySQL, and SQLite
-```
+[[Relational database experience#Hims & Hers|Relational database experience]]

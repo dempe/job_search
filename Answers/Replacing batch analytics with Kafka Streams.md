@@ -86,6 +86,16 @@ At Octimine, I replaced a weekly batch job that took 2 days to run with a real-t
 I have built real-time, event-driven systems from the ground up, including a Kafka-based ETL pipeline that scaled from weekly batch jobs to real-time processing.
 ```
 
+## Hims & Hers
+
+[[Hims & Hers]]
+
+> Briefly describe a backend distributed system you designed, built, or maintained, and your specific role in it. (1 to 3 sentences)
+
+```
+At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system to read from our data warehouse, process each message via various Kafka topics, and write out to ElasticSearch/the API. Customers got their data in real-time, and we no longer had to rely on a finicky weekly batch job.
+```
+
 ## HireGlide
 
 [[HireGlide]]
