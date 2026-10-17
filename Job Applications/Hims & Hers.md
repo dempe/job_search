@@ -14,7 +14,7 @@ remote: true
 compensation: $170K – $190K • Offers Equity
 title: Hims & Hers
 date_created: "2026-10-16 18:05"
-date_modified: "2026-10-16 18:24"
+date_modified: "2026-10-16 18:28"
 ---
 
 ## Application
@@ -28,7 +28,7 @@ Java/Kotlin (Spring Boot, Hibernate/JPA, Kafka Streams), Python, and TypeScript/
 > Briefly describe a backend distributed system you designed, built, or maintained, and your specific role in it. (1 to 3 sentences)
 
 ```
-At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system to read from our data warehouse, process each message via various Kafka topics, and write out to ElasticSearch/the API.
+At Octimine, I replaced a fragile weekly Python batch job processing ~30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. I designed the system to read from our data warehouse, process each message via various Kafka topics, and write out to ElasticSearch/the API. Customers got their data in real-time, and we no longer had to rely on a finicky weekly batch job.
 ```
 
 > Briefly describe your experience designing and building scalable back end services or distributed systems, including which cloud environment you used. (1 to 2 sentences)
