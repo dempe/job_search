@@ -33,5 +33,5 @@ date_modified: "2026-10-16 19:13"
 > What is one technology you have stopped using recently and why?
 
 ```
-Cursor. I tried it, but I found batteries-included AI IDEs a bit too opinionated for my tastes. I'd rather keep my own editor and run agents like Claude Code and Codex from the terminal, with my own workflow on top: skills for scoping, planning, implementing, and reviewing that live as Markdown in the repo. That keeps the workflow agent-agnostic, and I stay in control of the context the model sees.
+Cursor. I tried it, but it was too opinionated for me. I'd rather keep my own editor and run agents like Claude Code and Codex from the terminal, with my own workflow.
 ```
