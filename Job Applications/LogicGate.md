@@ -24,9 +24,9 @@ date_modified: "2026-10-16 18:33"
 ```
 The older a system gets, the less the existing data matches what the schema says. A migration might be trivial against a clean dev database, but in prod it gets complicated with years of legacy rows in production.
 
-I recently ran into this exact scenario at Dekstech when I was adding support for partial payments to our internal app. Legacy payments had a `PAID` or `CONFIRMED` status without the corresponding flags set, so a naive backfill of the new `amountPaid` column would have produced wrong totals. People would have gotten paid twice or not at all.
+I recently ran into this exact scenario at Dekstech when I was adding support for partial payments to our internal app. Legacy payments had a `PAID` or `CONFIRMED` status without the corresponding flags set, so a naive backfill of the new `amountPaid` column would have produced wrong totals.
 
-Before adding new migrations, I had to normalize the legacy status flags, backfill, and recompute each estimate's totals from the source of truth, the payment rows.
+Before adding a new migration, I had to normalize the legacy status flags, backfill, and recompute each estimate's totals from the source of truth, the payment rows.
 
-So the way I architect around it is to keep derived state recomputable from a single source of truth, break migrations into small, verifiable stages, and put schema changes through CI and code review like any other code. At Octimine, for example, I set up a peer-reviewed CI/CD pipeline for our Elasticsearch schema updates, which cut down on conflicts and made deployments faster and safer.
+To architect around it, keep derived state recomputable from a single source of truth, break migrations into small, verifiable stages, and put schema changes through CI and code review like any other code. 
 ```
