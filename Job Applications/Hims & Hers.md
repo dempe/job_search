@@ -40,5 +40,5 @@ Mostly AWS: I built a serverless backend on Lambda, API Gateway, DynamoDB, and S
 > Which relational database(s) have you worked with?
 
 ```
-PostgreSQL, MySQL, and SQLite. Most recently, I designed a Postgres projection of a wholesale distributor's Shopify customer and order data, refreshed in the background, to keep lapsed accounts visible beyond the Admin API's 60-day window.
+PostgreSQL, MySQL, and SQLite
 ```
