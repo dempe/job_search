@@ -24,7 +24,11 @@ date_modified: "2026-10-16 18:33"
 ```
 The older a system gets, the less the existing data matches what the schema says. A migration might be trivial against a clean dev database, but in prod it gets complicated with years of legacy rows in production.
 
-I recently ran into this exact scenario at Dekstech when I was adding support for partial payments to our internal app. Legacy payments had a `PAID` or `CONFIRMED` status without the corresponding flags set, so a naive backfill of the new `amountPaid` column would have produced wrong totals, and people would have gotten paid twice or not at all. I did it in stages: normalize the legacy status flags first, then backfill only the payments that were actually paid, then recompute every estimate's totals from the payment rows themselves, the source of truth. I also pulled the payment math out of the controllers into its own module with unit tests for underpayment, overpayment, and failed or cancelled submissions.
+I recently ran into this exact scenario at Dekstech when I was adding support for partial payments to our internal app. Legacy payments had a `PAID` or `CONFIRMED` status without the corresponding flags set, so a naive backfill of the new `amountPaid` column would have produced wrong totals. People would have gotten paid twice or not at all.
+
+Before adding new migrations, I had to normalize the legacy 
+
+I had to run the migration in stages: normalize the legacy status flags first, then backfill only the payments that were actually paid, then recompute every estimate's totals from the payment rows themselves, the source of truth. I also pulled the payment math out of the controllers into its own module with unit tests for underpayment, overpayment, and failed or cancelled submissions.
 
 So the way I architect around it is to keep derived state recomputable from a single source of truth, break migrations into small, verifiable stages, and put schema changes through CI and code review like any other code. At Octimine, for example, I set up a peer-reviewed CI/CD pipeline for our Elasticsearch schema updates, which cut down on conflicts and made deployments faster and safer.
 ```
