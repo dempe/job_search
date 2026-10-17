@@ -26,7 +26,7 @@ The older a system gets, the less the existing data matches what the schema says
 
 I recently ran into this exact scenario at Dekstech when I was adding support for partial payments to our internal app. Legacy payments had a `PAID` or `CONFIRMED` status without the corresponding flags set, so a naive backfill of the new `amountPaid` column would have produced wrong totals.
 
-Before adding a new migration, I had to normalize the legacy status flags, backfill, and recompute each estimate's totals from the source of truth, the payment rows.
+I split the migration into phases: normalize the legacy status flags, backfill, and recompute each estimate's totals from the source of truth, the payment rows.
 
 To architect around it, *keep derived state recomputable* from a single source of truth, break migrations into small, verifiable stages, and put schema changes through CI and code review like any other code. 
 ```
