@@ -32,4 +32,5 @@ Custom software: As a contractor at Dekstech, I build and support custom apps fo
 > Do you have experience working in the sports industry?
 
 ```
+No, I haven't worked in the sports industry.
 ```
