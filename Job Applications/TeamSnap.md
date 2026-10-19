@@ -32,5 +32,5 @@ As for custom software, as a contractor at Dekstech, building and supporting cus
 > Do you have experience working in the sports industry?
 
 ```
-I do not.
+I do not, but I'd love to get into it. I've got a two-year-old, so youth sports aren't too far off for us. Taking the busywork out of it so coaches and parents can focus on the kids is a mission I can get behind.
 ```
