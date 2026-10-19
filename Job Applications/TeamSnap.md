@@ -32,5 +32,5 @@ As for custom software, as a contractor at Dekstech, building and supporting cus
 > Do you have experience working in the sports industry?
 
 ```
-I do not, but I'd love to be. My six-year-old is just star. Taking the busywork out of it so coaches and parents can focus on the kids is a mission I can get behind.
+I do not, but I'd love to be. My six-year-old is just starting out in some sports, so making it easier for coaches and parents is a win for me.
 ```
