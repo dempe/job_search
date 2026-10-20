@@ -2,7 +2,7 @@
 type: job
 applied: 2026-04-29
 interviews:
-  - 22026-04-30
+  - 2026-04-30
 status: ghosted
 job_type: fulltime
 source: linkedin
@@ -20,8 +20,8 @@ blog:
 correspondence:
 compensation:
 title: Turing
-date_created: 2026-04-29 14:50
-date_modified: 2026-04-30 14:00
+date_created: "2026-10-13 12:09"
+date_modified: "2026-10-20 09:41"
 ---
 
 ## Application
