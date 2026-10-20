@@ -2,7 +2,7 @@
 type: job
 applied: 2026-04-30
 interviews:
-  - 22026-04-30
+  - 2026-04-30
 status: declined
 job_type: fulltime
 source: linkedin
@@ -21,8 +21,8 @@ blog:
 correspondence:
 compensation: $80,000 - $165,000
 title: Jobot
-date_created: 2026-04-30 12:07
-date_modified: 2026-04-30 12:25
+date_created: "2026-10-13 12:09"
+date_modified: "2026-10-20 09:41"
 ---
 
 ## Application
