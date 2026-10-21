@@ -14,8 +14,8 @@ channel: form
 listing: https://jobs.Ashbyhq.Com/aescape/0f620725-524d-4722-955b-385fe04ee4b8
 compensation: $180,000-$220,000 + 10% discretionary bonus
 title: Aescape
-date_created: 2026-06-30 15:13
-date_modified: 2026-07-16 20:52
+date_created: "2026-10-13 12:09"
+date_modified: "2026-10-21 17:34"
 ---
 
 ## Application
@@ -50,6 +50,6 @@ Chris Dempewolf
 
 [[Why Company X#Aescape|Why Company X]]
 
-## 
+##
 
 I feel like it went really well.
