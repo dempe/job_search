@@ -15,7 +15,7 @@ remote: true
 compensation: $160K - $200K
 title: People Data Labs
 date_created: "2026-10-22 15:11"
-date_modified: "2026-10-22 15:18"
+date_modified: "2026-10-22 15:26"
 ---
 
 ## Application
@@ -39,7 +39,7 @@ First, determine the cuase of the failure. A 429 requires exponential-backoff wi
 
 If there's an explicit Captcha or access protenction, stop the crawl and check if there's API access.
 
-Also, I make sure that my crawlers have a circuit breaker built in so that they don't keep hitting a site that's blocking them. At DataRank, I even had a live dashboard built in Jenkins that showed crawler status (via automated system tests).  Mostly for the customer success team to get immediate info.
+Also, I make sure that my crawlers have a circuit breaker built in so that they don't keep hitting a site that's blocking them. At DataRank, I even had a live dashboard built in Jenkins that showed crawler status (via automated system tests) for observability.  Mostly for the customer success team to get immediate info.
 ```
 
 > Is there anything else you'd like us to know about you? (Optional)
