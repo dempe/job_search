@@ -20,8 +20,8 @@ blog:
 correspondence: workatastartup
 compensation: $150K - $250K
 title: Avelis Health
-date_created: 2025-11-03 15:09
-date_modified: 2025-11-10 17:16
+date_created: "2026-10-13 12:09"
+date_modified: "2026-10-21 18:18"
 source: workatastartup
 ---
 
@@ -46,7 +46,7 @@ Best,
 Chris
 ```
 
-## Interview
+## Interview 1
 
 ### Preparation
 
@@ -90,7 +90,7 @@ But i guess this logic is flawed. If we sell to a single TPA, we get access to ~
 
 #### Founding Engineer Mindset
 
-### Follow-up
+### Retrospective
 
 I asked a lot of good questions. I did a lot of research. I think that part went well. But i got nervous and felt like i talked too much.
 
@@ -109,9 +109,11 @@ Anyways, here are the questions he asked me:
 - So you spent some time down in Mexico during the pandemic?
 - Salary expectations?
 
-## Interview with CTO
+## Interview 2
 
-### My Background
+### Preparation
+
+#### My Background
 
 my background isn't so much research, but more phrasing to make it not just a long blog of verbal diarrhea.
 
@@ -150,7 +152,7 @@ Then I took a deliberate pivot. I founded my own company to build educational mo
 Now I’m looking to bring those experiences back into a collaborative team setting — ideally one working in healthcare and machine learning, where data quality, reliability, and privacy really matter. I’d love to help Avelis design resilient backend systems that make recovery automation both trustworthy and scalable.
 ```
 
-### What I've Learned from Javascript
+#### What I've Learned from Javascript
 
 This isn't guaranteed to be asked, but it's good to be ready to speak intelligently and fluently about what lessons I've learned doing frontend development to show that it was not just a stint but actively made me a better engineer.
 
@@ -190,9 +192,9 @@ There are two broad paths for ML in AWS: managed and unmanaged.
 
 The managed route uses **SageMaker**, a fully managed ML pipeline that covers everything from data prep to deployment. Basically, AWS's "ML OS".
 
-Here's what a typical pipeline might look like: `Data → Prepare → Train → Evaluate → Deploy → Monitor`.  You can use any or all of these steps independently or combined.
+Here's what a typical pipeline might look like: `Data → Prepare → Train → Evaluate → Deploy → Monitor`. You can use any or all of these steps independently or combined.
 
-SM automates a lot.  It can launch Jupyter Notebooks in a private VPC (no internet). Can detect data drift or prediction drift, which is crucial for medical data ensuring that model accuracy does not decline. Can build reusable workflows defined in YAML based on Step Functions. Also contains built-in algorithms for many common ML models like XGBoost or logistic regression (via Linear Learner).  It reduces infrastructure complexity (e.g., no EC2 babysitting).
+SM automates a lot. It can launch Jupyter Notebooks in a private VPC (no internet). Can detect data drift or prediction drift, which is crucial for medical data ensuring that model accuracy does not decline. Can build reusable workflows defined in YAML based on Step Functions. Also contains built-in algorithms for many common ML models like XGBoost or logistic regression (via Linear Learner). It reduces infrastructure complexity (e.g., no EC2 babysitting).
 
 SM integrates data science, dev ops, and compliance into one unified system.
 
