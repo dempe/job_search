@@ -35,6 +35,7 @@ This allowed us to scale our bespoke scraping framework to dozens of websites in
 > How do you handle anti-scraping mechanisms or bot detection while crawling?
 
 ```
+First, determine the actual error. If it's a 
 ```
 
 > Is there anything else you'd like us to know about you? (Optional)
