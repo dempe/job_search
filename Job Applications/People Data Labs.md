@@ -23,7 +23,7 @@ date_modified: "2026-10-22 15:11"
 > Briefly describe your web crawling experience
 
 ```
-I actually set up the entire web scraping stack at my first company DataRank. We were creating bespoke crawlers for various websites (mostly forums) that transformed scraped content into a common, canonical comment model.
+At DataRank, my first company, I set up the entire web scraping stack. We were creating bespoke crawlers for various websites (mostly forums) that transformed scraped content into a common, canonical comment model.
 
 They needed a way to spin up new crawlers for new websites quickly.
 
