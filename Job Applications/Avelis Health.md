@@ -111,6 +111,12 @@ Anyways, here are the questions he asked me:
 
 ## Interview 2
 
+### Transcript
+
+```
+
+```
+
 ### Preparation
 
 #### My Background
@@ -160,11 +166,11 @@ This isn't guaranteed to be asked, but it's good to be ready to speak intelligen
 - Async/await has made me think about asynchronicity within systems, not just between systems. I've got plenty of experience with asynchronous message queues, but now I think in terms of "okay, can i put this process on a separate thread so that it doesn't hold up the build process?"
 - React has also taught me a lot about statefulness. Its system of hooks and composed functions are a masterclass in how to manage state and dependencies in a complex, asynchronous environment.
 
-### Technical Details of the Role
+#### Technical Details of the Role
 
-#### Talk Fluently about Everything You've Touched in AWS. Make Sure You Can Explain Your Resume.
+##### Talk Fluently about Everything You've Touched in AWS. Make Sure You Can Explain Your Resume.
 
-#### AWS as it Relates to Health Data
+##### AWS as it Relates to Health Data
 
 VPC isolation, encryption, PHI handling
 
@@ -184,11 +190,11 @@ Some necessary services to use for HIPPA compliance:
 - **Config Rules**: tracks config changes like version control. Can specify rules that ensure that, for example, all EBS volumes are encrypted or there's no public access to S3 buckets or that DynamoDB tables have PITR enabled, etc.
 - **Security Hub**: unified compliance dashboard. Aggregates data from GuardDuty etc. More of a high-level tool for compliance. Can enable **automatic remediation** by sending output to Lambda and EventBridge to enable **self-healing infrastructure**.
 
-#### AWS as it Relates to ML
+##### AWS as it Relates to ML
 
 There are two broad paths for ML in AWS: managed and unmanaged.
 
-##### SageMaker
+###### SageMaker
 
 The managed route uses **SageMaker**, a fully managed ML pipeline that covers everything from data prep to deployment. Basically, AWS's "ML OS".
 
@@ -198,11 +204,11 @@ SM automates a lot. It can launch Jupyter Notebooks in a private VPC (no interne
 
 SM integrates data science, dev ops, and compliance into one unified system.
 
-##### Customer Managed Pipeline
+###### Customer Managed Pipeline
 
 A lot more work, but you could squeeze out a few more dollars. You'll be training on EC2 spot instances for training since Lambda has ephemeral memory, low memory, and a 15 min cap on run time.
 
-#### The Medical Claims Recovery Process in General
+##### The Medical Claims Recovery Process in General
 
 Know: CMS-1500, UB-04, CPT, ICD-10, adjudication process
 
@@ -226,7 +232,7 @@ Error detection can happen either pre-adjudication or post-adjudication. Pre-adj
 
 With post-adjudication error detection, you have to deal with recovery; however, you get access to 835 remittance reports which are gold for training ML models.
 
-#### How Can We Automate Recovery? What Would a Recovery Pipeline Look Like?
+##### How Can We Automate Recovery? What Would a Recovery Pipeline Look Like?
 
 i need to think about how to automate recovery using AWS technologies so that i can think of a potential working pipeline and how that pipeline might hook into their existing detection pipeline.
 
@@ -234,29 +240,29 @@ where is the data stored? what data is stored? how are errors presented to TPAs/
 
 triggering audits, notifying TPAs. how detection feeds recovery?
 
-#### Potential Challenges, Problems, Bottlenecks in Recovery
+##### Potential Challenges, Problems, Bottlenecks in Recovery
 
-#### Basic ML Models
+##### Basic ML Models
 
 they mentioned that i will not be working on the detection process, but i want to be familiar with what they have (they're likely using xgboost or catboost with SHAP values for auditability), but how are errors manifested?
 
-#### What (if any) ML Can Be Used in the Recovery Process?
+##### What (if any) ML Can Be Used in the Recovery Process?
 
-#### Data Pipeline + Feedback Loops
+##### Data Pipeline + Feedback Loops
 
 They're already doing detection → they'll need validated recoveries to feed back into model training and confidence calibration. You can discuss how to close that loop (data lake partitioning, labeling confirmed recoveries, feature drift tracking).
 
-#### Auditability and Trust
+##### Auditability and Trust
 
 Because this is healthcare, every automated recovery needs an **audit trail**. Think structured logging, versioned models, immutable evidence storage (S3 + Dynamo metadata, signed digests). This is a critical "founding engineer mindset" piece — technical + regulatory.
 
-### Questions to Ask
+#### Questions to Ask
 
 - Speaking with Angel, you guys are working with TPAs instead of self-insured employers directly. This makes sense since TPAs cover many clients. You currently have two clients. Did you get these clients from a TPA? Will you be working with the same TPA in the future to get more clients? What's the plan in general for acquiring new clients?
 - [Insert competitor list] are some competitors in this space. What does Avelis do differently? Faster turnaround? More accuracy? Catching unique patterns? Lower false positive rate?
 - I mentioned to Angel, that I'm currently in Veracruz, Mexico visiting my wife's family. He mentioned that you guys are fully remote. Working on my personal company, I spend about half my time down here between Mexico and the US. Will that be a problem? Or would you prefer that I spend more time in the US?
 
-### Framing Effect
+#### Framing Effect
 
 There are three ways to frame my questions. Examples:
 
