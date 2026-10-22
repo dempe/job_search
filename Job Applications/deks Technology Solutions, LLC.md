@@ -21,8 +21,8 @@ blog:
 correspondence:
 compensation: $25 - $60 an hour
 title: deks Technology Solutions, LLC
-date_created: 2025-11-24 15:04
-date_modified: 2025-12-03 15:02
+date_created: "2026-10-13 12:09"
+date_modified: "2026-10-21 18:13"
 ---
 
 ## Listing
@@ -286,6 +286,7 @@ chris@chrisdempewolf.com
 ```
 
 ## Interview 1
+
 ### Preparation
 
 I've used PHP plenty, but I'm no expert. That being said, their problems are likely more to do with AWS-ops, infrastructure, background job orchestration, debugging, performance tuning, and distributed systems thinking.
@@ -302,11 +303,11 @@ One concern that I do have is that they only pay upon project completion. Really
 
 Apparently, there was a transcript with LLM-generated notes: <https://app.Fireflies.Ai/view/Chris-Dempewolf-and-Autumn-Gross>::01KAXV7S2NATXFM56Z93A0CTKH?Ref=recap&track=01KAXV7S2NATXFM56Z93A0CTKH&sg=nb>
 
-### What Went well
+#### What Went well
 
 - Calm, confident, good explanations
 
-### What Needs Improvement
+#### What Needs Improvement
 
 - Should have asked if they have contracts
 
@@ -335,9 +336,17 @@ Thanks,
 Chris
 ```
 
-## Interview Prep
+## Interview 2
 
-### Questions to Ask
+### Transcript
+
+```
+
+```
+
+### Preparation
+
+#### Questions to Ask
 
 - Is there a contract to sign?
 - How do you currently handle deployments? Is infra managed manually or through IaC?
