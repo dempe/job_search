@@ -163,6 +163,7 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 | `applied` | `{today}` |
 | `job_type` | `fulltime`, `parttime`, or `contractor`, as stated in the JD. Use `fulltime` if the JD doesn't say. |
 | `channel` | `form`. The other values are `recruited`, `referral`, and `direct`; the user sets those by hand. |
+| `contact` | blank. The user fills it in by hand with whom they reached out to, e.g. `Matt (recruiter)`. |
 | `status` | `awaiting-reply` |
 | `interviews` | blank |
 | `source` | `{source}` from Step 1 or Step 6, or blank |
@@ -236,6 +237,7 @@ type: job
 applied: 2026-09-14
 job_type: fulltime
 channel: form
+contact:
 status: awaiting-reply
 interviews:
 source: matcha

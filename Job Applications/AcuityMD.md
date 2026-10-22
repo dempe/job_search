@@ -2,7 +2,8 @@
 type: job
 applied: 2026-10-22
 job_type: fulltime
-channel: form
+channel: direct
+contact: Matt (recruiter)
 status: awaiting-reply
 interviews:
 source: linkedin
@@ -18,3 +19,16 @@ date_modified: "2026-10-22 13:54"
 ---
 
 ## Application
+
+Message to Matt (recruiter):
+
+```
+Hey Matt,
+
+I just applied for the Senior Software Engineer role at AcuityMD.  Are you handling recruiting for that?  I'd love to see where my experience would fit in the Apps team.
+
+A little about myself: senior engineer with 11 years of experience across backend and frontend (Java/Kotlin, Python, AWS, data pipelines, Node, React). Currently contracting, but looking for a role with more long-term ownership.
+
+Thanks,
+Chris
+```

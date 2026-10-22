@@ -3,6 +3,7 @@ type: job
 applied: {{date}}
 job_type: fulltime
 channel: form
+contact:
 status: awaiting-reply
 interviews:
 source:
