@@ -27,7 +27,7 @@ I've used GitHub Actions, GitLab CICD, and Jenkins.
 
 GitHub Actions: I built and maintain the CI/CD for my own company's app. It's a serverless AWS backend (Lambda, API Gateway, DynamoDB) defined in SAM/CloudFormation. The pipeline deploys it with automatic rollbacks.
 
-Jenkins: At DataRank, our crawler deploys ran through Jenkins, so adding a new data source went from manual server edits to a simple redeploy. I also turned Jenkins into a live status page for the crawler fleet so the support team could see which scrapers had broken without going through an engineer.
-
 At Octimine, I designed a peer-reviewed CI/CD pipeline for Elasticsearch schema updates, made the unit tests for every analytic in our Kafka Streams pipeline run as regression tests in CI, and moved recurring manual tasks into CI/CD.
+
+Jenkins: At DataRank, our crawler deploys ran through Jenkins, which I set up. I also built a live status page for the crawlers s
 ```
