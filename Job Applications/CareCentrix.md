@@ -15,19 +15,11 @@ remote: true
 compensation: $90,000 - $100,000 a year
 title: CareCentrix
 date_created: "2026-10-22 14:52"
-date_modified: "2026-10-22 14:52"
+date_modified: "2026-10-22 15:01"
 ---
 
 ## Application
 
 > Please briefly describe your hands-on experience with CI/CD pipelines, including the tools used (e.g., GitHub Actions, Jenkins, Azure DevOps, GitLab CI) and your role in building, maintaining, or supporting those pipelines.
 
-```
-I've used GitHub Actions, GitLab CICD, and Jenkins.
-
-GitHub Actions: I built and maintain the CI/CD for my own company's app. It's a serverless AWS backend (Lambda, API Gateway, DynamoDB) defined in SAM/CloudFormation. The pipeline deploys it with automatic rollbacks.
-
-At Octimine, I designed a peer-reviewed CI/CD pipeline for Elasticsearch schema updates, made the unit tests for every analytic in our Kafka Streams pipeline run as regression tests in CI, and moved recurring manual tasks into CI/CD.
-
-Jenkins: At DataRank, our crawler deploys ran through Jenkins, which I set up. I also built a live status page for the crawlers s
-```
+[[Production reliability and delivery practices#CareCentrix|Production reliability and delivery practices]]
