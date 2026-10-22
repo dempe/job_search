@@ -22,7 +22,7 @@ correspondence: workatastartup
 compensation: $250K - $280K  •  0.10% - 0.40%
 title: Clara
 date_created: "2026-02-01 13:30"
-date_modified: "2026-02-12 16:27"
+date_modified: "2026-10-21 18:00"
 ---
 
 ## Application
@@ -99,9 +99,17 @@ Best,
 Chris
 ```
 
-## Interview 
+## Interview 1
 
-## Second Interview Prep
+## Interview 2
+
+### Transcript
+
+```
+
+```
+
+### Preparation
 
 ```
 Hey Chris,
@@ -124,13 +132,13 @@ Best,
 Cuau
 ```
 
-## Second Interview Retrospective
+### Retrospective
 
 Went pretty well except for technical difficulties. *Really* need to buy a new computer. Will buy a Mac Mini when I go back to AR in March.
 
 I think they would likely want a follow-up actually, but… They are exclusively in-office, so even with a relocation package and competitive pay, this is a no-go. They basically told me there is zero chance of any hybrid setup.
 
-## Declined
+## Declination
 
 ```
 Hey Cuau,
