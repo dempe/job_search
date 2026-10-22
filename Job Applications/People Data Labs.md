@@ -23,7 +23,7 @@ date_modified: "2026-10-22 15:11"
 > Briefly describe your web crawling experience
 
 ```
-
+I actually set up the entire web scraping stack at my first company DataRank. We were creating bespoke crawlers for various websites (mostly forums) that transformed scraped content into a 
 ```
 
 > How do you handle anti-scraping mechanisms or bot detection while crawling?
