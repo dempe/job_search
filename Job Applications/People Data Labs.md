@@ -29,7 +29,7 @@ They needed a way to spin up new crawlers for new websites quickly.
 
 I built a distributed framework that consisted of a central job queue in a MySQL table.  A orchestrator that ran on each server would pull from the queue and announce the work to available crawlers in its pool.  Crawlers would accept the work based on a `canHandle` regex rule based on the URL.  They could then feed new pages to new crawlers in a chain if needed for further processing.
 
-Not
+This was back in 2013/2014 before there were many standardized web scraping solutions.
 ```
 
 > How do you handle anti-scraping mechanisms or bot detection while crawling?
