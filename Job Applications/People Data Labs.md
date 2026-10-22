@@ -15,7 +15,7 @@ remote: true
 compensation: $160K - $200K
 title: People Data Labs
 date_created: "2026-10-22 15:11"
-date_modified: "2026-10-22 15:11"
+date_modified: "2026-10-22 15:18"
 ---
 
 ## Application
@@ -29,7 +29,7 @@ They needed a way to spin up new crawlers for new websites quickly.
 
 I built a distributed framework that consisted of a central job queue in a MySQL table.  A orchestrator that ran on each server would pull from the queue and announce the work to available crawlers in its pool.  Crawlers would accept the work based on a `canHandle` regex rule based on the URL.  They could then feed new pages to new crawlers in a chain if needed for further processing.
 
-This was back in 2013/2014 before there were many standardized web scraping solutions.
+This allowed us to scale our bespoke scraping framework to dozens of websites in just a few months (was only about 5 or 6 before my framework).
 ```
 
 > How do you handle anti-scraping mechanisms or bot detection while crawling?
