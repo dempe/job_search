@@ -22,7 +22,7 @@ correspondence: workatastartup
 compensation: $250K - $280K  •  0.10% - 0.40%
 title: Clara
 date_created: "2026-02-01 13:30"
-date_modified: "2026-10-21 18:00"
+date_modified: "2026-10-21 18:04"
 ---
 
 ## Application
