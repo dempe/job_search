@@ -33,3 +33,19 @@ One company I worked for needed to ingest large amounts of data from the web fro
 
 Everything was built in Java using generics, so it was really easy to spin up new data sources, allowing us to ingest more and more diverse comment data to perform product market analytics for our clients.
 ```
+
+## People Data Labs
+
+[[People Data Labs]]
+
+> Briefly describe your web crawling experience
+
+```
+At DataRank, my first company, I set up the entire web scraping stack. We were creating bespoke crawlers for various websites (mostly forums) that transformed scraped content into a common, canonical comment model.
+
+They needed a way to spin up new crawlers for new websites quickly.
+
+I built a distributed framework that consisted of a central job queue in a MySQL table.  A orchestrator that ran on each server would pull from the queue and announce the work to available crawlers in its pool.  Crawlers would accept the work based on a `canHandle` regex rule based on the URL.  They could then feed new pages to new crawlers in a chain if needed for further processing.
+
+This allowed us to scale our bespoke scraping framework to dozens of websites in just a few months (was only about 5 or 6 before my framework).
+```

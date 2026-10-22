@@ -48,6 +48,18 @@ I am husband and a proud father of a two-year-old.
 I'm pretty open-minded and strongly believe in a growth mindset -- learning from your mistakes.
 ```
 
+## People Data Labs
+
+[[People Data Labs]]
+
+> Is there anything else you'd like us to know about you? (Optional)
+
+```
+Most of my career has been data ingestion. After DataRank, I was the senior data engineer at Octimine, where I replaced a fragile weekly Python batch job processing ~30 million documents a week with a real-time Kafka Streams pipeline in Java, including a DLQ and unit tests for every analytic.
+
+I'm based in the US (Arkansas, Central Time) and work fully remote. I'm currently working as a contractor, but looking to re-join a team where I can have more collaboration and ownership.
+```
+
 ## Superhuman
 
 [[Superhuman]]
