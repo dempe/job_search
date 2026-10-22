@@ -46,9 +46,11 @@ Best,
 Chris
 ```
 
-## Interview Preparation
+## Interview
 
-### Healthcare Background
+### Preparation
+
+#### Healthcare Background
 
 A **self-insured employer** is an employer who pays their employees' medical expense directly instead of paying through an insurer. That is they assume the financial risk directly rather than paying fixed premiums to an insurance carrier. They can save money this way if their workforce is relatively healthy. However, medical billing errors are systemic. According to Avelis's blog (and many external sources), around 80% of medical claims have errors. That's hard cash left on the table. So what do we do?
 
@@ -61,7 +63,7 @@ ML will also start to recognize patterns that a rule-based TPA would miss. And t
 **Question**: would we work with TPAs and integrate at that layer to streamline the process? What do other companies in this space do?<br/>
 **Question**: medical claims data is heavily regulated (HIPAA). How will we get access to data to build our models? Partnerships? Synthetic data?
 
-#### Competition
+##### Competition
 
 This space isn't empty. What makes Avelis different?
 
@@ -69,7 +71,7 @@ This space isn't empty. What makes Avelis different?
 - Fewer false positives?
 - Unique error detection that others don't handle?
 
-#### Business Model
+##### Business Model
 
 - Will we charge per claim reviewed?
 - Percent of savings?
@@ -82,13 +84,13 @@ My initial thought was to target SEIs directly. Why? You get more clients that w
 
 But i guess this logic is flawed. If we sell to a single TPA, we get access to ~50 companies' claims data with only one sale, one integration, one contract negotiation. Moreover, selling to a TPA might be easier — they understand the space deeply in a way that an SEI would not.
 
-### Technical Background
+#### Technical Background
 
-### Go the Extra Mile
+#### Go the Extra Mile
 
-### Founding Engineer Mindset
+#### Founding Engineer Mindset
 
-## Follow-up
+### Follow-up
 
 I asked a lot of good questions. I did a lot of research. I think that part went well. But i got nervous and felt like i talked too much.
 
