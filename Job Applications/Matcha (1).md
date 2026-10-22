@@ -5,7 +5,7 @@ job_type: fulltime
 channel: direct
 status: awaiting-reply
 interviews:
-source: hackernews
+source: linkedin
 listing: "https://matcha.Fm/apply/be"
 company: Matcha
 position: Founding Backend Software Engineer
