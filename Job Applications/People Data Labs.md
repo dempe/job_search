@@ -39,7 +39,7 @@ First, determine the actual error. A 429 requires exponential-backoff with jitte
 
 If there's an explicit Captcha or access protenction, stop the crawl and check if there's API access.
 
-Also, track 
+Also, I make sure that my crawlers have a circuit breaker built in so that they don't keep hitting a site that's blocking them.
 ```
 
 > Is there anything else you'd like us to know about you? (Optional)
