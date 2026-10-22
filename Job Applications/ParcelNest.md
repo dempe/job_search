@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-28
 job_type: fulltime
 channel: form
-status: awaiting-reply
+status: ghosted
 interviews:
 source: wellfound
 listing: "https://wellfound.com/jobs?job_listing_slug=4756714-senior-backend-engineer-e-commerce-platform"
@@ -14,7 +14,7 @@ remote: true
 compensation: $175k – $205k • No equity
 title: ParcelNest
 date_created: "2026-09-28 18:13"
-date_modified: "2026-09-28 19:23"
+date_modified: "2026-10-22 14:42"
 ---
 
 ## Application
