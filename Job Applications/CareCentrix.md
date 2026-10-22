@@ -23,7 +23,7 @@ date_modified: "2026-10-22 14:52"
 > Please briefly describe your hands-on experience with CI/CD pipelines, including the tools used (e.g., GitHub Actions, Jenkins, Azure DevOps, GitLab CI) and your role in building, maintaining, or supporting those pipelines.
 
 ```
-Mostly GitHub Actions and Jenkins.
+I've used GitHub Actions, GitLab CICD, and 
 
 GitHub Actions: I built and maintain the CI/CD for my own company's app, Athena Math. Its serverless AWS backend (Lambda, API Gateway, DynamoDB) is defined in SAM/CloudFormation, and the pipeline deploys it automatically with CloudFormation-backed rollbacks. I also set up CI/CD in GitHub Actions for my personal site, which builds and deploys to S3/CloudFront on every push to main, plus a scheduled weekly job that builds a stats page from the CloudFront logs.
 
