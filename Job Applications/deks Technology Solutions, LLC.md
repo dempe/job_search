@@ -285,13 +285,14 @@ Chris Dempewolf
 chris@chrisdempewolf.com
 ```
 
-## Interview Preparation
+## Interview 1
+### Preparation
 
 I've used PHP plenty, but I'm no expert. That being said, their problems are likely more to do with AWS-ops, infrastructure, background job orchestration, debugging, performance tuning, and distributed systems thinking.
 
 "Steeldash" is almost certainly a Shopify store + PHP backend + job queues + AWS hosting.
 
-## Interview Retrospective
+### Retrospective
 
 Turns out it was just an intro call…
 
