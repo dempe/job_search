@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-07-16
-status: ghosted
+status: rejected
 interviews:
 job_type: fulltime
 source: matcha
@@ -12,8 +12,8 @@ channel: form
 listing: https://job-boards.Greenhouse.Io/storyblocks/jobs/8068087
 compensation: $122,000 - $129,200
 title: StoryBlocks
-date_created: 2026-07-16 21:10
-date_modified: 2026-07-16 21:27
+date_created: "2026-10-13 12:09"
+date_modified: "2026-10-22 15:44"
 ---
 
 ## Application
