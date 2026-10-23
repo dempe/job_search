@@ -27,7 +27,9 @@ Hi Umar,
 
 I'm Chris, a backend engineer with 11 YOE. I work extensively with AI, AWS, and have a lot of experience with integrations ()
 
-I've been working as a contractor, but currently looking to re-join a team. I do my best work in collaboration. I'm also looking for more long-term ownership over the projects I build. Long-term maintainability is an important aspect of software 
+I've been working as a contractor, but currently looking to re-join a team. I do my best work in collaboration. I'm also looking for more long-term ownership over the projects I build.
+
+I worked at DataRank (S1)
 
 Would love to chat!
 
