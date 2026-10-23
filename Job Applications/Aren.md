@@ -25,7 +25,9 @@ date_modified: "2026-10-23 14:15"
 ```
 Hi Umar,
 
-I'm Chris, a backend engineer with 11 YOE. I work extensive
+I'm Chris, a backend engineer with 11 YOE. I work extensively with AI, AWS, and have a lot of experience with integrations ()
+
+I've been working as a contractor, but cu
 
 Would love to chat!
 
