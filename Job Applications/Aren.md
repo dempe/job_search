@@ -25,13 +25,11 @@ date_modified: "2026-10-23 14:15"
 ```
 Hi Umar,
 
-I'm Chris, a backend engineer with 11 YOE. Most of my career has been data ingestion and distributed systems -- at Octimine, I replaced a fragile weekly batch job processing ~30 million documents with a real-time Kafka Streams pipeline, including a DLQ and unit tests for every analytic.
+I'm Chris, a backend engineer with 11 YOE. What caught my eye is the EHR integrations -- most of my work has been integrating with systems I don't control. Recently, Shopify's Admin API only returned 60 days of orders, so I built a Postgres projection to keep lapsed customers from silently disappearing. I also shipped Athena Math, a React Native app with an AWS backend.
 
-More recently, I've been shipping products end to end. I built Athena Math, a React Native/TypeScript app on the App Store with a serverless AWS backend, and as a contractor I've built payment and Shopify integrations against APIs I didn't control. Since it was touching payments, it was imperative that my code was correct. I'd bring that same attitude to software nurses rely on during a shift.
+I haven't shipped an LLM product yet, but I use agents daily with my own scope -> plan -> implement -> review workflow, and I built a personal RAG in Python over my notes.
 
-I've been looking for work that combines engineering challenges with a strong sense of fulfillment. Helping nurses spend less time documenting and more time with their patients is something I can get behind.
-
-I'm currently working as a contractor, but I'm looking to re-join a team. I do my best work and learn the most in collaboration. I'd love to hear more about Aren!
+Would love to chat!
 
 Best,
 Chris
