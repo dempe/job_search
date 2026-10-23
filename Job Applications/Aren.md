@@ -15,7 +15,7 @@ remote: true
 compensation: $145K - $175K • 0.25% - 1.00%
 title: Aren
 date_created: "2026-10-23 14:15"
-date_modified: "2026-10-23 14:15"
+date_modified: "2026-10-23 17:39"
 ---
 
 ## Application
@@ -27,7 +27,7 @@ Hi Umar,
 
 I'm Chris, a backend engineer with 11 YOE in distributed systems, cloud (AWS and some GCP), data ingestion/integrations.
 
-I've been working as a contractor, but currently looking to re-join a team. I do my best work in collaboration. I'm also looking for more long-term ownership over the projects I build.
+I'm currently working as a contractor, but looking to re-join a team. I work best in collaboration. I'm also looking for more long-term ownership over the projects I build.
 
 I worked at DataRank (S13) when it was 5 people, so I know what's it's like to work at a startup.
 
