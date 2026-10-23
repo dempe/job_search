@@ -15,7 +15,7 @@ remote: true
 compensation: $145K - $175K • 0.25% - 1.00%
 title: Aren
 date_created: "2026-10-23 14:15"
-date_modified: "2026-10-23 17:39"
+date_modified: "2026-10-23 17:40"
 ---
 
 ## Application
