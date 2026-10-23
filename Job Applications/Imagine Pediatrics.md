@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-16
 job_type: fulltime
 channel: form
-status: ghosted
+status: rejected
 interviews:
 source: matcha
 listing: "https://job-boards.greenhouse.io/imaginepediatrics/jobs/4694659005"
@@ -14,7 +14,7 @@ remote: true
 compensation: $160,000 - $180,000
 title: Imagine Pediatrics
 date_created: "2026-09-16 18:59"
-date_modified: "2026-09-16 18:59"
+date_modified: "2026-10-23 17:59"
 ---
 
 ## Application
