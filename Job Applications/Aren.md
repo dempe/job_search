@@ -25,7 +25,7 @@ date_modified: "2026-10-23 14:15"
 ```
 Hi Umar,
 
-I'm Chris, a backend engineer with 11 YOE. 
+I'm Chris, a backend engineer with 11 YOE. I work extensive
 
 Would love to chat!
 
