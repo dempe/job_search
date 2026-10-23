@@ -25,7 +25,7 @@ date_modified: "2026-10-23 14:15"
 ```
 Hi Umar,
 
-I'm Chris, a backend engineer with 11 YOE. 
+I'm Chris, a backend engineer with 11 YOE in distributed systems, cloud (AWS and some GCP), data ingestion/integrations.
 
 I've been working as a contractor, but currently looking to re-join a team. I do my best work in collaboration. I'm also looking for more long-term ownership over the projects I build.
 
