@@ -21,6 +21,27 @@ Best,
 Chris
 ```
 
+## Aren
+
+[[Aren]]
+
+> Start a conversation with the team at Aren. Share something about you, what you're looking for, or why Aren interests you. Human-written messages are more likely to get a response.
+
+```
+Hi Umar,
+
+I'm Chris, a backend engineer with 11 YOE in distributed systems, cloud (AWS and some GCP), data ingestion/integrations.
+
+I'm currently working as a contractor, but looking to re-join a team. I work best in collaboration. I'm also looking for more long-term ownership over the projects I build.
+
+I worked at DataRank (S13) when it was 5 people, so I know what's it's like to work at a startup.
+
+Would love to chat!
+
+Best,
+Chris
+```
+
 ## BSC Analytics
 
 [[BSC Analytics]]
