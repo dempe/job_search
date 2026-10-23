@@ -25,9 +25,7 @@ date_modified: "2026-10-23 14:15"
 ```
 Hi Umar,
 
-I'm Chris, a backend engineer with 11 YOE. What caught my eye is the EHR integrations -- most of my work has been integrating with systems I don't control. Recently, Shopify's Admin API only returned 60 days of orders, so I built a Postgres projection to keep lapsed customers from silently disappearing. I also shipped Athena Math, a React Native app with an AWS backend.
-
-I haven't shipped an LLM product yet, but I use agents daily with my own scope -> plan -> implement -> review workflow, and I built a personal RAG in Python over my notes.
+I'm Chris, a backend engineer with 11 YOE. 
 
 Would love to chat!
 
