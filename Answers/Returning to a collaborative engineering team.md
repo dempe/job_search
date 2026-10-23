@@ -33,3 +33,13 @@ I've been running my own company for three years now.  It's something that I've 
 2. I would like to focus specifically on engineering.  Running my own company, I have to do finances, marketing, etc.
 3. I would like new problems to solve to continue growing as an engineer.  I've learned a lot running my own company, but I feel like I've hit a plateau on new engineering problems to solve. I would like to work with new technologies and ship products end-to-end.
 ```
+
+## Neros
+
+[[Neros]]
+
+> Any additional information you would like to share?
+
+```
+I'm currently working as a contractor building AWS solutions and greenfield Node apps for clients.  I'm looking to rejoin a team environment, as I find I do my best work in collaboration.  I'm also looking for a role that allows me to take more long-term ownership over the projects that I build.  Building for maintainability is an important part of software engineering, but it's often undervalued in project-based contract work, hence why I value it in my next role.
+```
