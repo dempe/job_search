@@ -25,11 +25,11 @@ date_modified: "2026-10-23 14:15"
 ```
 Hi Umar,
 
-I'm Chris, a backend engineer with 11 YOE. I work extensively with AI, AWS, and have a lot of experience with integrations ()
+I'm Chris, a backend engineer with 11 YOE. 
 
 I've been working as a contractor, but currently looking to re-join a team. I do my best work in collaboration. I'm also looking for more long-term ownership over the projects I build.
 
-I worked at DataRank (S1)
+I worked at DataRank (S13) when it was 5 people, so I know what's it's like to work at a startup.
 
 Would love to chat!
 
