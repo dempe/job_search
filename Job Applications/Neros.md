@@ -23,5 +23,5 @@ date_modified: "2026-10-23 14:02"
 > Any additional information you would like to share?
 
 ```
-
+I'm currently working as a contractor building AWS solutions and greenfield Node apps for clients.  I'm looking 
 ```
