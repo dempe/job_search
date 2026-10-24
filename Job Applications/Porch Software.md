@@ -15,7 +15,31 @@ remote: true
 compensation: $110,000 - $120,000 a year
 title: Porch Software
 date_created: "2026-10-23 19:48"
-date_modified: "2026-10-23 19:48"
+date_modified: "2026-10-23 20:09"
 ---
 
 ## Application
+
+> Great, let's start with the first interview question. What's your experience building front-end features with JavaScript and Vue.js, and what kinds of components or pages have you worked on most often?
+
+```
+i've used javascript on-and-off for over a decade now, but my first real javascript project was a react native app in typescript that i built from start to finish and published on the app store. i haven't worked with vue.js before outside of a single commit at my previous employer. but i understand that it's a SPA framework, and i'm sure my react experience will transfer well. i've also worked some with next.js for a client project sure. in my react app, i had pages (screens) for the about page, home page, practice, history, stats, etc. i tried to make extremely modular components to increase usability and consistency. for example, i had various heading text components with the style included in the component that i used throughout my app. i made similar components for other common elements in my app.
+```
+
+> Thanks for the details on your front-end components and pages. Next, I'd like to discuss your backend experience. Can you briefly describe your backend experience with ASP.NET and.NET Core, including the kinds of services or applications you've built?
+
+```
+```
+most of my backend experience has been in java, kotlin, python, and most recently node.js, where i've build various greenfield apps for clients that run on heroku. i don't have direct hands-on experience with either asp.net or .net core<br/>
+Question 3<br/>
+Thanks for sharing your backend experience. Next, what kinds of REST APIs have you worked with or built, and what do you focus on to make an API reliable and easy to use?
+
+my philosophy is that a good API should be forgettable. by that i mean that an API is fundamentally an integration, and a good one gets out of your way and allows you to focus on the real problem at hand. specifically, that means returning meaningful http statuses, clear error messages, intuitive and predicable resource paths, and consistent responses. as for my personal experience, i've been on both the consuming and producing end of APIs for much of my career, since i've worked heavily in both data ingestion (integrations) and microservices, which use REST APIs for synchronous communication.<br/>
+Question 4<br/>
+Thanks for explaining your approach to REST APIs and your experience with them. Next, what's your experience working with SQL Server or MySQL, and what types of database tasks do you usually handle yourself?
+
+I've worked briefly with sql server, but have worked with mysql for over a decade. i work on optimizing queries, adding indexes where needed, making complex joins more performant, and understanding the nuances of mysql's sql dialect. for example, just a few days ago, i found a bug in a client's sql. they were querying for NOT IN("a", null), but they had null rows, so it was not returning anything. comparing null to null in mysql results in UNKNOWN, not true, not false, because mysql uses a three value logic.<br/>
+Question 5<br/>
+Good detail on your SQL experience and query optimization. For the final question, how do you usually balance working independently with staying aligned with teammates when you're building features or fixing issues?
+
+i communicate at regular intervals with all major milestones. i don't want to flood my team with updates, but i do think that, when working remotely, you should err on the side of more communication over less. at the very least, ensure that you are not solving the exact same problem as someone else.
