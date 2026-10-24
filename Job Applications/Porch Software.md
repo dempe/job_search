@@ -15,12 +15,12 @@ remote: true
 compensation: $110,000 - $120,000 a year
 title: Porch Software
 date_created: "2026-10-23 19:48"
-date_modified: "2026-10-23 20:11"
+date_modified: "2026-10-23 20:12"
 ---
 
 ## Application
 
-This "interview" was an application follow-up with a chat message-based AI.  I'm just going to included it here as par
+This "interview" was an application follow-up with a chat message-based AI. I'm just going to included it here as part of the application, not a veritable interview.
 
 > Great, let's start with the first interview question. What's your experience building front-end features with JavaScript and Vue.js, and what kinds of components or pages have you worked on most often?
 
