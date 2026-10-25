@@ -80,7 +80,7 @@ Rules:
 
 - The assistant MUST choose only from the options the form presents. If nothing matches closely, skip the field and report it.
 - The assistant MUST NOT infer an answer from the resume when `profile.yaml` has a `# TODO` for it.
-- A question in the form that the note doesn't answer MUST be left blank and reported. The assistant MUST NOT compose a new answer here; drafting belongs to `danswers`.
+- A question in the form that the note doesn't answer MUST be left blank and reported. The assistant MUST NOT compose a new answer here; drafting belongs to `djanswers`.
 - `previously_employed_here` in `profile.yaml` is a default. If the vault shows a previous application or employment at this company that contradicts it, skip the field and report it.
 
 ## Step 6: Fill

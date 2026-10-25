@@ -1,12 +1,12 @@
 ---
-title: Exclusion-only question selection in dapplication
+title: Exclusion-only question selection in djapplication
 status: accepted
 superseded_by:
 ---
 
 # Context
 
-The `dapplication` skill (`.claude/skills/dapplication/SKILL.md`) records application-form questions from a JD into a new note in `Job Applications/`. Some questions are trivial and shouldn't be recorded, such as contact fields, sponsorship, and salary.
+The `djapplication` skill (`.claude/skills/djapplication/SKILL.md`) records application-form questions from a JD into a new note in `Job Applications/`. Some questions are trivial and shouldn't be recorded, such as contact fields, sponsorship, and salary.
 
 Defining which questions to *include* (e.g. "asks for composed prose about experience") is subjective and tied to answer format. A dropdown-answered puzzle like "What did you get when you cracked the code?" is substantive, but an inclusion rule based on prose or free text would drop it.
 

@@ -10,7 +10,7 @@ answer
 
 i've recently used another AI agent to parse these into an explicit answer note type in order to improve retrievability.  job application questions now link back to the corresponding answer note.
 
-i would like to create a claude code skill, `dapplication` that does the following:
+i would like to create a claude code skill, `djapplication` that does the following:
 
 - take a specified `jd.txt` as input (see this plan's directory's `sample-jd.txt` for an example).
 - create a job application note under `./Job Applications` (append a increasing number like `(1)` if an application for this company already exists in  the directory.

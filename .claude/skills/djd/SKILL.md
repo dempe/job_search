@@ -1,12 +1,12 @@
 ---
 name: djd
-description: Evaluate the job description in `./jd.txt` against the user's experience. Summarizes the role, calls out noteworthy details, lists strong fits and gaps, and gives a candid hiring-manager verdict, then creates the application note with `dapplication`. Use when the user wants a JD assessed or asks whether they're a fit for a role.
+description: Evaluate the job description in `./jd.txt` against the user's experience. Summarizes the role, calls out noteworthy details, lists strong fits and gaps, and gives a candid hiring-manager verdict, then creates the application note with `djapplication`. Use when the user wants a JD assessed or asks whether they're a fit for a role.
 argument-hint: <source> <listing-url>
 ---
 
 # Job Description Assessment
 
-Read `./jd.txt`, assess the role against the user's experience, then hand off to the `dapplication` skill to create the application note.
+Read `./jd.txt`, assess the role against the user's experience, then hand off to the `djapplication` skill to create the application note.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -15,7 +15,7 @@ Follow the steps below in order.
 ## Constraints
 
 - The assistant MUST use only Claude Code's built-in tools (Read, Bash for read-only `ls`, and Skill). It MUST NOT write or run scripts.
-- This skill MUST NOT create or modify any file. The only file created in the run is the application note, and `dapplication` creates it.
+- This skill MUST NOT create or modify any file. The only file created in the run is the application note, and `djapplication` creates it.
 - Every claim about the user's experience MUST be backed by the sources in Step 2. The assistant MUST NOT invent or inflate experience, and MUST NOT count a skill as a fit just because it is adjacent to one the user has.
 - The assessment MUST be candid. It MUST NOT flatter the user or soften real gaps.
 
@@ -27,7 +27,7 @@ Follow the steps below in order.
 ## Step 1: Read the JD
 
 - Read `./jd.txt` (relative to the vault root).
-- If it does not exist, cannot be read, or is empty, the assistant MUST STOP with one line saying so. It MUST NOT invoke `dapplication`.
+- If it does not exist, cannot be read, or is empty, the assistant MUST STOP with one line saying so. It MUST NOT invoke `djapplication`.
 
 ## Step 2: Read the user's experience
 
@@ -92,6 +92,6 @@ The verdict MUST:
 
 ## Step 5: Create the application note
 
-- Immediately after writing the assessment, invoke the `dapplication` skill with the Skill tool.
-- Pass this skill's arguments through unchanged as `dapplication`'s arguments (the source and listing URL). Do not add a JD path; `dapplication` defaults to `./jd.txt`.
-- From this point, follow `dapplication`'s instructions, including its output rules. Do not add any text after the assessment.
+- Immediately after writing the assessment, invoke the `djapplication` skill with the Skill tool.
+- Pass this skill's arguments through unchanged as `djapplication`'s arguments (the source and listing URL). Do not add a JD path; `djapplication` defaults to `./jd.txt`.
+- From this point, follow `djapplication`'s instructions, including its output rules. Do not add any text after the assessment.

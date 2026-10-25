@@ -1,12 +1,12 @@
 ---
-name: danswers
+name: djanswers
 description: Draft answers to every unanswered question in a job application note, in the user's own voice, using their Answers notes, resume, client project notes, and past Claude Code conversations. Answers are written directly into the note's empty answer code blocks for the user to review. Takes the application note's name (e.g. `Rivora`).
 argument-hint: <application-note-name>
 ---
 
 # Draft Application Answers
 
-Fill in the empty answer code blocks in one `Job Applications/` note with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/dmvanswers` to file them into `Answers/`.
+Fill in the empty answer code blocks in one `Job Applications/` note with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 

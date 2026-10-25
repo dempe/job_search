@@ -17,7 +17,7 @@ Application notes track two different things: where the listing was found, and h
   - `direct`: the user contacted the hiring manager or someone on the team themselves.
 - The values aren't mutually exclusive. `channel` records the most personal route used, not the only one. A `direct` application implies a form was also submitted. A `recruited` or `referral` application may or may not have gone through the form too, and the note doesn't record which.
 - `source` stays limited to where the listing was found. It does not encode the channel.
-- `_meta/Templates/Job Template.md` and the `dapplication` skill write `channel: form`. The user changes it by hand for the other three values.
+- `_meta/Templates/Job Template.md` and the `djapplication` skill write `channel: form`. The user changes it by hand for the other three values.
 
 # Consequences
 

@@ -6,7 +6,7 @@ date: 2026-09-14 17:51:46
 
 ## Summary
 
-Create a reusable Claude Code skill, `dapplication`, that takes a job description text file (`jd.txt`) and creates a new job application note under `Job Applications/`. The skill fills the note's YAML frontmatter from the JD and adds every application question that isn't in an excluded category, each with an empty answer block. It aborts if an application for the same company was made within the last six months. The deliverable is the skill's Markdown file only. No scripts or other code.
+Create a reusable Claude Code skill, `djapplication`, that takes a job description text file (`jd.txt`) and creates a new job application note under `Job Applications/`. The skill fills the note's YAML frontmatter from the JD and adds every application question that isn't in an excluded category, each with an empty answer block. It aborts if an application for the same company was made within the last six months. The deliverable is the skill's Markdown file only. No scripts or other code.
 
 ## Requirements
 
@@ -14,8 +14,8 @@ Create a reusable Claude Code skill, `dapplication`, that takes a job descriptio
 
 **Skill packaging**
 
-- FR0: The deliverable MUST be a Claude Code skill named `dapplication`.
-- FR1: The skill MUST be located at `.claude/skills/dapplication/SKILL.md` in this repository.
+- FR0: The deliverable MUST be a Claude Code skill named `djapplication`.
+- FR1: The skill MUST be located at `.claude/skills/djapplication/SKILL.md` in this repository.
 - FR2: The skill MUST accept the path to a JD text file as its argument.
 - FR3: If no JD path is provided, the skill MUST stop and ask the user for one.
 - FR4: If the JD path does not exist or is unreadable, the skill MUST stop and report the problem to the user.
@@ -94,7 +94,7 @@ Create a reusable Claude Code skill, `dapplication`, that takes a job descriptio
 ### Non-Functional
 
 - NFR0: The skill MUST be a single Markdown instruction file. It MUST NOT depend on scripts, binaries, or packages beyond Claude Code's built-in tools.
-- NFR1: The skill file MUST include YAML frontmatter with `name` and `description`, so Claude Code can discover it and it can be invoked as `/dapplication <path>`.
+- NFR1: The skill file MUST include YAML frontmatter with `name` and `description`, so Claude Code can discover it and it can be invoked as `/djapplication <path>`.
 - NFR2: The skill's instructions SHOULD use RFC 2119 terminology, consistent with the existing `d*` skills (e.g. `dscope`).
 - NFR3: Frontmatter values the skill writes MUST be valid YAML. Values containing `:` or leading special characters MUST be quoted.
 - NFR4: The skill MUST NOT commit or push changes to git.
@@ -130,7 +130,7 @@ Create a reusable Claude Code skill, `dapplication`, that takes a job descriptio
 - Two candidate company names, "Privacy" (product) and "Lithic" (parent). The salary range is "$200,000 - $220,000 plus equity". The job title is "Staff Software Engineer" and the role is Remote.
 - `Job Applications/Lithic.md` has `applied: 2026-09-04`. A run on the sample using company "Lithic" within six months of that date is a duplicate under FR10.
 
-**Related skills.** The user's `d*` workflow skills (`dscope`, `dplan`, etc.) live in home-manager at `~/.config/home-manager/files/.claude/skills/` and are the stylistic reference for skill structure. `dapplication` is vault-specific, so it lives in this repo instead.
+**Related skills.** The user's `d*` workflow skills (`dscope`, `dplan`, etc.) live in home-manager at `~/.config/home-manager/files/.claude/skills/` and are the stylistic reference for skill structure. `djapplication` is vault-specific, so it lives in this repo instead.
 
 ## Risks
 
@@ -152,5 +152,5 @@ Create a reusable Claude Code skill, `dapplication`, that takes a job descriptio
 - A3: Existing notes are never renamed to normalize duplicate numbering. Only the new note's suffix is chosen.
 - A4: Only the frontmatter keys in `_meta/Templates/Job Template.md` are emitted. Extra keys seen in older notes are not.
 - A5: Linking questions to `Answers/` notes and updating `Questions/` notes stays manual.
-- A6: The user runs Claude Code from the vault root, so the repo-local skill at `.claude/skills/dapplication/SKILL.md` is discovered.
+- A6: The user runs Claude Code from the vault root, so the repo-local skill at `.claude/skills/djapplication/SKILL.md` is discovered.
 - A7: "Within the last six months" means an `applied` date on or after the current date minus six calendar months.

@@ -1,5 +1,5 @@
 ---
-name: dapplication
+name: djapplication
 description: Create a new job application note in `Job Applications/` from a job description text file (`./jd.txt` by default), filling its YAML frontmatter from the JD and recording the application form's questions with empty answer blocks. Use when the user wants to log, record, or start a job application note from a JD file.
 argument-hint: <source> <listing-url> [path-to-jd.txt]
 ---
@@ -21,7 +21,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, Skill, and asking the user). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"` and read-only file listing commands (`ls`, `test -e`).
 - The only file this skill creates is the new application note. The assistant MUST NOT rename, modify, or overwrite any existing note.
-- This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `danswers` skill (Step 12).
+- This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
 - The assistant MUST NOT create or modify anything in `Answers/`.
 - The assistant MUST NOT create or modify anything in `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
@@ -42,7 +42,7 @@ Follow the steps below in order. A step that says STOP ends the run.
   - `{listing}`: the listing URL, i.e. the value starting with `http://` or `https://`.
   - `{jd_path}` (optional): a path to the JD text file, i.e. a value ending in `.txt` or containing `/`. A relative path resolves against the current working directory (the vault root).
   - `{source}`: where the listing was found, i.e. the remaining word (for example `matcha` or `4dayweek.io`).
-  For example: `/dapplication matcha https://job-boards.greenhouse.io/afresh/jobs/6190640004`.
+  For example: `/djapplication matcha https://job-boards.greenhouse.io/afresh/jobs/6190640004`.
 - If no JD path was provided, `{jd_path}` is `./jd.txt`. The assistant MUST NOT ask for it.
 - If the file does not exist or cannot be read, the assistant MUST STOP with one line giving the path and the error. No note is created.
 - Otherwise, read the whole file. Its contents are referred to below as the JD.
@@ -204,8 +204,8 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 ## Step 12: Draft answers
 
-- Immediately after writing the note, invoke the `danswers` skill with the Skill tool, passing `{title}` as its argument.
-- From this point, follow `danswers`'s instructions, including its output rules. `danswers` writes its drafts directly into the empty answer blocks of the note created in Step 11.
+- Immediately after writing the note, invoke the `djanswers` skill with the Skill tool, passing `{title}` as its argument.
+- From this point, follow `djanswers`'s instructions, including its output rules. `djanswers` writes its drafts directly into the empty answer blocks of the note created in Step 11.
 
 ## Worked example
 
@@ -221,15 +221,15 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 **Run.**
 
-- Step 1: invoked as `/dapplication matcha`, so `{jd_path}` is `./jd.txt`, `{source}` is `matcha`, and `{listing}` is missing.
+- Step 1: invoked as `/djapplication matcha`, so `{jd_path}` is `./jd.txt`, `{source}` is `matcha`, and `{listing}` is missing.
 - Step 2: the assistant asks which company name to use. The user chooses `Privacy` over `Lithic`.
 - Step 3: no filename matches `Privacy.md` or `Privacy ({n}).md`.
 - Step 4: `date` prints `2026-09-14 18:30`.
 - Step 6: the assistant asks only for the listing URL. The user leaves it blank.
 - Step 11: the note below is written, with empty answer blocks.
-- Step 12: `danswers Privacy` runs and fills in the answer blocks it has evidence for.
+- Step 12: `djanswers Privacy` runs and fills in the answer blocks it has evidence for.
 
-**Expected note** at `Job Applications/Privacy.md`, as written in Step 11 before `danswers` runs.
+**Expected note** at `Job Applications/Privacy.md`, as written in Step 11 before `djanswers` runs.
 
 ````markdown
 ---

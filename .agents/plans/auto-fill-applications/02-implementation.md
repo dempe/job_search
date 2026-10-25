@@ -6,11 +6,11 @@ date: 2026-09-14 18:02:35
 
 ## Summary
 
-Write a single repo-local skill file, `.claude/skills/dapplication/SKILL.md`, that tells Claude Code to create an application note in steps. The steps are: read the JD, settle the company name, abort on a recent duplicate, choose the filename, ask for `listing` and `source`, extract questions using an exclusion-only rule, compose the note, write it, and report. The file contains no code. All behavior is expressed as ordered RFC 2119 instructions plus a worked example of the output format.
+Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, that tells Claude Code to create an application note in steps. The steps are: read the JD, settle the company name, abort on a recent duplicate, choose the filename, ask for `listing` and `source`, extract questions using an exclusion-only rule, compose the note, write it, and report. The file contains no code. All behavior is expressed as ordered RFC 2119 instructions plus a worked example of the output format.
 
 ## Architecture
 
-**Form.** The skill is one Markdown file with YAML frontmatter (`name`, `description`, `argument-hint`). It has no `disable-model-invocation`, so Claude may invoke it automatically when a request matches the description, as well as via `/dapplication <path>`. The body is a numbered procedure. Claude executes it top to bottom using only built-in tools:
+**Form.** The skill is one Markdown file with YAML frontmatter (`name`, `description`, `argument-hint`). It has no `disable-model-invocation`, so Claude may invoke it automatically when a request matches the description, as well as via `/djapplication <path>`. The body is a numbered procedure. Claude executes it top to bottom using only built-in tools:
 
 - Read, to load the JD, the template, and existing notes' `applied` lines.
 - Glob or Grep, to list `Job Applications/` and read `applied`.
@@ -60,8 +60,8 @@ Write a single repo-local skill file, `.claude/skills/dapplication/SKILL.md`, th
 
 ### Phase A: Skill scaffold
 
-- [x] **T0** (FR0, FR1, NFR1): Create `.claude/skills/dapplication/SKILL.md` with YAML frontmatter:
-  - `name: dapplication`
+- [x] **T0** (FR0, FR1, NFR1): Create `.claude/skills/djapplication/SKILL.md` with YAML frontmatter:
+  - `name: djapplication`
   - a `description` that says it creates a job application note in `Job Applications/` from a JD text file, specific enough to trigger auto-invocation on requests to log or record a job application from a JD
   - `argument-hint: <path-to-jd.txt>`
   - no `disable-model-invocation`

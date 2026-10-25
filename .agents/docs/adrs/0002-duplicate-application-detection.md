@@ -6,7 +6,7 @@ superseded_by:
 
 # Context
 
-The `dapplication` skill creates a new application note per JD. Re-applying to a company shortly after a previous application is almost always a mistake. Existing notes are an imperfect source for detecting this:
+The `djapplication` skill creates a new application note per JD. Re-applying to a company shortly after a previous application is almost always a mistake. Existing notes are an imperfect source for detecting this:
 
 - Numbering is inconsistent (`Close (0)`/`Close (1)`, `Walmart (1)`–`(3)` with no bare note).
 - `title` sometimes disagrees with the filename (`Close (1).md` has `title: Close (2)`).
