@@ -1,5 +1,5 @@
 ---
-name: dquestion
+name: djq
 description: Pick one question at random from all the job application notes in `Job Applications/`, for interview practice. Takes no arguments.
 ---
 
@@ -20,7 +20,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 Run the bundled script with Bash:
 
 ```bash
-bash .claude/skills/dquestion/pick.sh
+bash .claude/skills/djq/pick.sh
 ```
 
 - The first line of output is the application note's name. The rest is the question, verbatim, as `>` lines.
