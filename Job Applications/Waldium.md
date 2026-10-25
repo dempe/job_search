@@ -132,7 +132,7 @@ Reactive and seeded. We never crawled the open web. Customers told us which topi
 From there it was bounded discovery. A crawler could enqueue new URLs, but only the kinds it expected -- the next page of a thread, or a product's comment pages -- and only on sites we had crawlers for. Anything no crawler could handle went to the dead-letter table instead of growing the crawl. Seeders also ran on a schedule, and the checksum log meant re-crawls only produced new records when the content had actually changed.
 ```
 
-> What exactly was this for? Was it for building an internal search engine, or for extracting structured data so your analysts or customers could build BI dashboards?
+> What exactly was this [DataRank crawler framework] for? Was it for building an internal search engine, or for extracting structured data so your analysts or customers could build BI dashboards?
 
 ```
 Structured data for analytics. The product answered "what are people saying about X?" Customers defined topics, first with Boolean queries and later with a custom query language, and we matched them against everything we collected.
