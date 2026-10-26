@@ -15,7 +15,7 @@ remote: true
 compensation: $190,500 USD annually
 title: DuckDuckGo
 date_created: "2026-10-26 12:29"
-date_modified: "2026-10-26 12:29"
+date_modified: "2026-10-26 12:56"
 ---
 
 ## Application
@@ -25,6 +25,6 @@ date_modified: "2026-10-26 12:29"
 ```
 I've used DuckDuckGo as my search engine on all my devices for over a decade now. Actually contributing personally to this project would just be amazing.
 
-What interests me most right now is Duck.ai and AI-assisted answers. I'm a daily AI user myself (if you're a serious software engineer, you gotta be these days). I love experimenting with new AI techniques -- skills, RAG, MCP servers, "software factories", loops, etc. This is Software 2.0, and we're still figuring it out as an industry. Reminds me of when people starting publishing books about OOP patterns in the 2000s. This is the same thing, but much more widespread
+What interests me most right now is Duck.ai and AI-assisted answers. I'm a daily AI user myself (if you're a serious software engineer, you gotta be these days). I love experimenting with new AI techniques -- skills, RAG, MCP servers, "software factories", loops, etc. This is Software 2.0, and we're still figuring it out as an industry. Reminds me of when people starting publishing books about OOP patterns in the 2000s. This is the same thing, but much more widespread. It's fascinating stuff, and I love being at the forefront of it.
 
 ```
