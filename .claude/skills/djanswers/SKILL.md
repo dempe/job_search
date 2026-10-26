@@ -87,6 +87,24 @@ For each unanswered question, in order:
   - `--` for dashes, never em dashes
   - no corporate filler ("I'm passionate about…", "leverage", "synergy"), no generic AI-sounding sentences
 - **No markup around the answer.** The answer is plain text inside the code block. No headings, no preamble such as "Here's a draft".
+- **Motivation questions** ("why us?", "what interests you about this company?", intros and cover messages) need extra care, because a generic answer is the default failure:
+  - Lead with the one thing that is distinctive to this company: the problem only it has, or what is hard about what it's building. Don't lead with a value the user merely shares with it.
+  - If the sources show the user personally uses the company's product, say so in one sentence. If they don't, MUST NOT imply it.
+  - Frame motivation as something the user is drawn to, not as a deal-breaker the company happens to avoid.
+  - Connect the user's experience to the role honestly. Name the actual overlap ("I've built ingestion pipelines and want to apply that to search"), not an implied equivalence ("pipelines that keep search relevant are what I do").
+  - A gap can be part of the motivation when it's true (e.g. the company's AI work is something the user wants to grow into). Don't hide it, and don't claim it's covered.
+  - Aim for about 100 words unless the question asks for more.
+
+## Step 4b: Review each draft
+
+Before writing, check every draft against this rubric, and revise it until it passes:
+
+- **Swap test.** Replace the company's name with a close competitor's. If most sentences still work, the draft is generic. Rewrite it around what is specific to this company.
+- **No template structure.** No "three reasons" layout ("Mostly X… The work itself… Lastly, the culture"), no list of virtues. One clear point with support beats three thin ones.
+- **No JD echo.** Don't restate facts from the JD back to the company (founding year, revenue, "profitable since…"), and don't paraphrase the JD's own phrases (e.g. "scoping to postmortem"). They know their company; it reads as skimming the page.
+- **Answer this question.** Cut sentences that answer a different one, e.g. "I'm looking to get back on a team" answers "why are you job-hunting?", not "why us?".
+- **No stretched evidence.** Each claim about the user's experience must hold up if an interviewer asks a follow-up. Wording that implies more overlap than the sources show counts as upgrading the evidence (see Honesty).
+- **Survives summarization.** Assume an AI or a skimming reader reduces the answer to one line. That line should be about this candidate and this company, not "likes the mission, has relevant experience, wants remote."
 
 ## Step 5: Write the answers into the note
 
