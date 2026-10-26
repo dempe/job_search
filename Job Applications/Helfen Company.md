@@ -33,9 +33,9 @@ It's a chain of agent-agnostic skills: scope -> plan -> implement -> review.
 - scope takes a loosely defined problem (mostly what the client said, plus my own interpretations and follow-up questions) and formalizes it into functional and non-functional requirements, constraints, assumptions, and risks.
 - plan reads the scope and builds an implementation plan that covers every requirement and dependency.
 - implement follows the plan step by step. It has to write a failing test before it changes code.
-- review is a final check by another agent to make sure that each re
+- review is a final check by another agent to make sure that the code actually meets each requirement
 
-Coordination happens through files, not chat history. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope and the plan. Any agent can pick up where another left off, so I can send a harder problem to a more capable model and an easier one to a cheaper one. Durable decisions go into ADRs in the repo, and my global preferences live in one central file, so one project's context doesn't leak into another. Since it's all Markdown in git, people and agents read and edit the same thing.
+Coordination happens through files, allowing one agent to pick up where another left off. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope, plan, and other relevant. Any agent can pick up where another left off, so I can send a harder problem to a more capable model and an easier one to a cheaper one. Durable decisions go into ADRs in the repo, and my global preferences live in one central file, so one project's context doesn't leak into another. Since it's all Markdown in git, people and agents read and edit the same thing.
 
 The human checkpoints are scope and plan. Those take a lot of back-and-forth, but by implementation the hard questions are answered. I used it to build a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced ambiguities in the provider's API docs that I got resolved with the provider before writing code, and I rejected a hand-rolled SQL migration runner and config loader in favor of well-tested libraries. The client switched payment providers before their old contract ran out.
 
