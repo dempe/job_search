@@ -25,6 +25,6 @@ date_modified: "2026-10-26 12:29"
 ```
 I've used DuckDuckGo as my search engine on all my devices for over a decade now. Actually contributing personally to this project would just be amazing.
 
-What interests me most right now is Duck.ai and AI-assisted answers. I'm a daily AI user myself (if you're a serious software engineer, you gotta be these days). I love experimenting with new AI techniques -- skills, RAG, MCP servers, "softwa"
+What interests me most right now is Duck.ai and AI-assisted answers. I'm a daily AI user myself (if you're a serious software engineer, you gotta be these days). I love experimenting with new AI techniques -- skills, RAG, MCP servers, "software factories", loops, etc. This is Software 2.0, and we're still figuring it out as an industry. It reminds me of when 
 
 ```
