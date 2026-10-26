@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-13
 job_type: fulltime
 channel: form
-status: rec-reply
+status: rejected
 interviews:
 source: matcha
 listing: "https://servicetrade.com/company/careers/careers-posting/?gh_jid=8028013003"
@@ -14,7 +14,7 @@ remote: true
 compensation:
 title: ServiceTrade
 date_created: "2026-10-13 11:46"
-date_modified: "2026-10-13 11:46"
+date_modified: "2026-10-26 14:21"
 ---
 
 ## Application
