@@ -60,6 +60,19 @@ I also use AI every day. I've built my own scope -> plan -> implement -> review 
 Lastly, I'm looking to get back on a team. I've spent the past few years running my own company and contracting, shipping products end to end, and I've found that I really enjoy seeing how everything fits together. But I do my best work and learn the most in collaboration, and DeepScribe sounds like a place where I could do both.
 ```
 
+## DuckDuckGo
+
+[[DuckDuckGo]]
+
+> What interests you about working for this company?
+
+```
+I've used DuckDuckGo as my search engine on all my devices for over a decade now. Actually contributing personally to this project would just be amazing.
+
+What interests me most right now is Duck.ai and AI-assisted answers. I'm a daily AI user myself (if you're a serious software engineer, you gotta be these days). I love experimenting with new AI techniques -- skills, RAG, MCP servers, "software factories", loops, etc. This is Software 2.0, and we're still figuring it out as an industry. Reminds me of when people starting publishing books about OOP patterns in the 2000s. This is the same thing, but much more widespread. It's fascinating stuff, and I love being at the forefront of it.
+
+```
+
 ## Enveritas
 
 [[Enveritas]]
