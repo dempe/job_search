@@ -23,7 +23,7 @@ date_modified: "2026-10-26 12:29"
 > What interests you about working for this company?
 
 ```
-I've used DuckDuckGo as my search engine on all my devices for over a decade, so this would mean working on something I already rely on every day.
+I've used DuckDuckGo as my search engine on all my devices for over a decade now. Actually contributing personl
 
 What interests me most right now is Duck.ai and AI-assisted answers. I use AI daily -- I've built my own scope -> plan -> implement -> review workflow out of agent skills -- and making tools like that genuinely useful without collecting what people type into them is a hard problem. It's one I'd like to grow into.
 
