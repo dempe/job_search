@@ -23,9 +23,9 @@ date_modified: "2026-10-26 13:47"
 > What interests you about working for this company?
 
 ```
-You build with Claude Code as the main tool, not as an add-on, and that's already how I work every day.
+Building with Claude Code as your main tool is exactly how I already work. I'm a daily AI user (if you're a serious software engineer, you gotta be these days), and I love experimenting with new AI techniques -- skills, RAG, MCP servers, "software factories", loops, etc. This is Software 2.0, and we're still figuring it out as an industry. It reminds me of when people started publishing books about OOP patterns in the 2000s.
 
-I've built my own scope -> plan -> implement -> review workflow out of agent skills, and I used it to build a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced ambiguities in the provider's API docs before I wrote any code, and I rejected the hand-rolled SQL migration runner Claude proposed in favor of a well-tested library.
+My own workflow is a scope -> plan -> implement -> review chain built from agent skills. I used it to build a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced ambiguities in the provider's API docs before I wrote any code, and I rejected the hand-rolled SQL migration runner Claude proposed in favor of a well-tested library.
 
 Payments integrations I've done. Telephony would be new to me, and I'd like to learn it.
 ```
