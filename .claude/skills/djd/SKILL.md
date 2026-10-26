@@ -60,6 +60,7 @@ If `../resume/resume.yaml` is missing, continue with `Answers/` alone and say so
   - **partial**: related but weaker experience (e.g. Go at SimplyMeasured a decade ago vs. "real fluency in Go")
   - **unclear**: the sources don't say either way
 - **Preferences.** Note where the role matches or conflicts with what the user says they want or won't do (backend vs. full-stack, remote, mission, growth, deal-breakers).
+- **Time to first paycheck.** The user needs income as soon as possible (see ADR 0007). Note every signal of how fast the role would start paying: contract or contract-to-hire, "immediate start", "responds within days", a short hiring process, or a long one (many rounds, take-home challenges, "around 6 weeks"). Low pay is not on its own a reason to advise against applying; say what the pay is and leave the choice to the user.
 
 ## Step 4: Write the assessment
 
@@ -89,6 +90,7 @@ The verdict MUST:
 - answer the question "if you were the hiring manager for this role, would you hire this candidate?" directly, in the first sentence
 - give the two or three deciding reasons
 - say what would most likely sink the application (e.g. a hard requirement the user doesn't meet) and, if applicable, what to emphasize in the application to offset it
+- end with one line on time to first paycheck: fast, slow, or unclear, and why
 
 ## Step 5: Create the application note
 
