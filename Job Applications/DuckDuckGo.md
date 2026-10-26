@@ -23,9 +23,9 @@ date_modified: "2026-10-26 12:29"
 > What interests you about working for this company?
 
 ```
-Mostly the mission. One of the few hard lines I have is that I don't want to work on products that knowingly misuse user data. DuckDuckGo is the opposite of that -- the whole business is built around not doing it, and it's been profitable doing so since 2014. That's a product I'd be proud to work on.
+I've used DuckDuckGo as my search engine on all my devices for over a decade, so this would mean working on something I already rely on every day.
 
-The work itself also lines up with my background. Most of my career has been in data ingestion: a distributed crawler and social API framework at DataRank that fed our Elasticsearch-backed analytics, and an event-driven Kafka Streams pipeline at Octimine processing ~30 million documents a week. Pipelines that keep search relevant are exactly the kind of problem I like.
+What interests me most right now is Duck.ai and AI-assisted answers. I use AI daily -- I've built my own scope -> plan -> implement -> review workflow out of agent skills -- and making tools like that genuinely useful without collecting what people type into them is a hard problem. It's one I'd like to grow into.
 
-Lastly, the culture. I do my best work in a remote-first environment with real ownership -- scoping a project, building it, and owning what happens after. I've been running my own company and contracting for the past few years, and I'm looking to get back on a team where I can do that alongside other engineers.
+Most of my career has been building data ingestion pipelines, a distributed crawler at DataRank and a Kafka Streams pipeline at Octimine, and I'd like to apply that experience to search.
 ```
