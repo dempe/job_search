@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-13
 job_type: fulltime
 channel: form
-status: awaiting-reply
+status: rec-reply
 interviews:
 source: matcha
 listing: "https://servicetrade.com/company/careers/careers-posting/?gh_jid=8028013003"
