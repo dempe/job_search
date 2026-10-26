@@ -15,7 +15,7 @@ remote: true
 compensation: $80,000–$120,000 depending on experience
 title: Helfen Company
 date_created: "2026-10-26 16:57"
-date_modified: "2026-10-26 17:23"
+date_modified: "2026-10-26 17:44"
 ---
 
 ## Application
@@ -37,9 +37,7 @@ It's a chain of agent-agnostic skills: scope -> plan -> implement -> review.
 
 Coordination happens through files, allowing one agent to pick up where another left off. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope, plan, and other relevant files. Architectural decisions go into ADRs inside the repo, which gives a lot more context than code or commit history alone provide. Since it's all Markdown in git, people and agents read and edit the same thing.
 
-I've used this workflow to build all kinds of client projects. The one I'm most proud of was a payment provider integration that needed to sync order status between Shopify and the new payment provider. It's a Node app that runs on Heroku, includes idempotency keys
+I've used this workflow to build all kinds of client projects. The one I'm most proud of was a payment provider integration that needed to sync order status between Shopify and the new payment provider. It's a Node app that runs on Heroku, including idempotency keys to prevent duplicate payments.
 
 What I'd change: rules in prose only hold as well as the model follows them, so I'd move more of the deterministic parts into code from the start. This would work well with my TDD setup already in place.
-
-Most of my recent contract work has been Shopify: payment integrations, order automation in Shopify Flow, a returns-platform migration, and a multi-warehouse catalog design. I'd like to put the two together.
 ```
