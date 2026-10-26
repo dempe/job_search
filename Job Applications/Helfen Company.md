@@ -26,14 +26,14 @@ date_modified: "2026-10-26 16:57"
 > What interests you about working for this company?
 
 ```
-To be upfront: my agent system is a development workflow with me in the loop, not an unattended business operation. But what I use to ship real client work.
+To be upfront: my agent system is a development workflow with me in the loop, not an unattended business operation. But I use it to ship real client work.
 
-It's a chain of agent skills: scope -> plan -> implement -> review. The same skill files work in Claude Code, Codex, and OpenCode, so it's agent-agnostic.
+It's a chain of agent-agnostic skills: scope -> plan -> implement -> review.
 
 - scope takes a loosely defined problem (mostly what the client said, plus my own interpretations and follow-up questions) and formalizes it into functional and non-functional requirements, constraints, assumptions, and risks.
 - plan reads the scope and builds an implementation plan that covers every requirement and dependency.
 - implement follows the plan step by step. It has to write a failing test before it changes code.
-- review is me. I never take the output on trust.
+- review is a final check by another agent to make sure that each re
 
 Coordination happens through files, not chat history. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope and the plan. Any agent can pick up where another left off, so I can send a harder problem to a more capable model and an easier one to a cheaper one. Durable decisions go into ADRs in the repo, and my global preferences live in one central file, so one project's context doesn't leak into another. Since it's all Markdown in git, people and agents read and edit the same thing.
 
