@@ -37,9 +37,7 @@ It's a chain of agent-agnostic skills: scope -> plan -> implement -> review.
 
 Coordination happens through files, allowing one agent to pick up where another left off. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope, plan, and other relevant files. Architectural decisions go into ADRs inside the repo, which gives a lot more context than code or commit history alone provide. Since it's all Markdown in git, people and agents read and edit the same thing.
 
-I've used this workflow to build all kinds of client projects. The one I'm most proud of was a payment provider integration that needed to sync order status between Shopify and the new payment provider.
-
-
+I've used this workflow to build all kinds of client projects. The one I'm most proud of was a payment provider integration that needed to sync order status between Shopify and the new payment provider. It's a Node app that runs on Heroku, includes idempotency keys
 
 What I'd change: rules in prose only hold as well as the model follows them, so I'd move more of the deterministic parts into code from the start. This would work well with my TDD setup already in place.
 
