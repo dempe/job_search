@@ -15,7 +15,7 @@ remote: true
 compensation: $80,000–$120,000 depending on experience
 title: Helfen Company
 date_created: "2026-10-26 16:57"
-date_modified: "2026-10-26 16:57"
+date_modified: "2026-10-26 17:23"
 ---
 
 ## Application
@@ -35,7 +35,7 @@ It's a chain of agent-agnostic skills: scope -> plan -> implement -> review.
 - implement follows the plan step by step. It has to write a failing test before it changes code.
 - review is a final check by another agent to make sure that the code actually meets each requirement
 
-Coordination happens through files, allowing one agent to pick up where another left off. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope, plan, and other relevant files. Architectural decisions go into ADRs inside the repo. Since it's all Markdown in git, people and agents read and edit the same thing.
+Coordination happens through files, allowing one agent to pick up where another left off. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope, plan, and other relevant files. Architectural decisions go into ADRs inside the repo, which gives a lot more context than code or commit history alone provide. Since it's all Markdown in git, people and agents read and edit the same thing.
 
 The human checkpoints are scope and plan. Those take a lot of back-and-forth, but by implementation the hard questions are answered. I used it to build a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced ambiguities in the provider's API docs that I got resolved with the provider before writing code, and I rejected a hand-rolled SQL migration runner and config loader in favor of well-tested libraries. The client switched payment providers before their old contract ran out.
 
