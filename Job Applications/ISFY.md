@@ -25,7 +25,5 @@ date_modified: "2026-10-26 13:47"
 ```
 I work with Claude Code daily. If you're a serious software engineer, you have to be using AI. I love experimenting with new AI techniques -- skills, RAG, MCP servers, "software factories", loops, etc. This is Software 2.0, and we're still figuring it out as an industry. It reminds me of when people started publishing books about OOP patterns in the 2000s.
 
-My own workflow is a scope -> plan -> implement -> review chain built from agent skills. I used it to build a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced ambiguities in the provider's API docs before I wrote any code, and I rejected the hand-rolled SQL migration runner Claude proposed in favor of a well-tested library.
-
-Payments integrations I've done. Telephony would be new to me, and I'd like to learn it.
+My own workflow is a scope -> plan -> implement -> review chain built from agent-agnostic skills. I used it to build a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced ambiguities in the provider's API docs before I wrote any code.
 ```
