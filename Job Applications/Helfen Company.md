@@ -26,21 +26,22 @@ date_modified: "2026-10-26 16:57"
 > What interests you about working for this company?
 
 ```
-To be upfront: the agent system I run daily is a personal one, not an unattended business operation. It runs my job search end to end, with me reviewing everything before it goes out.
+To be upfront: my agent system is a development workflow with me in the loop, not an unattended business operation. But what I use to ship real client work.
 
-It's a chain of Claude Code skills (agent-agnostic, so Codex or OpenCode can run them too):
+It's a chain of agent skills: scope -> plan -> implement -> review. The same skill files work in Claude Code, Codex, and OpenCode, so it's agent-agnostic.
 
-- djd reads a job description and writes a candid fit assessment, using only my resume and my past answers as evidence.
-- djapplication creates the application note: metadata, a duplicate check against anything I applied to in the last six months, and the form's questions.
-- djanswers drafts each answer from my past answers, resume, client project notes, and past agent conversations. Every claim has to be backed by a source, and it reviews its own drafts against a rubric before writing.
-- djmvanswers files approved answers verbatim into topic notes, leaving a backlink, so the next draft can reuse them.
-- djtrans turns interview transcripts into the questions I was asked, with model answers to study.
+- scope takes a loosely defined problem (mostly what the client said, plus my own interpretations and follow-up questions) and formalizes it into functional and non-functional requirements, constraints, assumptions, and risks.
+- plan reads the scope and builds an implementation plan that covers every requirement and dependency.
+- implement follows the plan step by step. It has to write a failing test before it changes code.
+- review is me. I never take the output on trust.
 
-Coordination is simple: each skill hands off to the next, and they share state through files, not through a chat history.
+Coordination happens through files, not chat history. Each plan gets a `.agents/plans/{plan-name}/` directory in the project repo, holding the scope and the plan. Any agent can pick up where another left off, so I can send a harder problem to a more capable model and an easier one to a cheaper one. Durable decisions go into ADRs in the repo, and my global preferences live in one central file, so one project's context doesn't leak into another. Since it's all Markdown in git, people and agents read and edit the same thing.
 
-Memory is plain Markdown in a git repo (an Obsidian vault), which is what makes it shareable between agents and people. I read and edit the same notes the agents do. Project decisions live in ADRs in the repo, and global preferences live in one central file, so context for one project doesn't leak into another.
+The human checkpoints are scope and plan. Those take a lot of back-and-forth, but by implementation the hard questions are answered. I used it to build a Node.js app syncing a client's payment provider with Shopify. Since it was touching payments, it was imperative that my code was correct. Scoping surfaced ambiguities in the provider's API docs that I got resolved with the provider before writing code, and I rejected a hand-rolled SQL migration runner and config loader in favor of well-tested libraries. The client switched payment providers before their old contract ran out.
 
-What I'd change: rules written in prose only hold as well as the model follows them. When I needed a random practice question, I moved the picking into a script, because a model's "random" isn't random. I'd push more of the deterministic parts into code from the start. I also added the review rubric only after a draft came out generic, so I'd build the review step in on day one.
+What I'd change: rules in prose only hold as well as the model follows them, so I'd move more of the deterministic parts into code from the start.
 
-On the e-commerce side, most of my recent contract work has been Shopify: payment integrations, order automation in Shopify Flow, a returns-platform migration, and a multi-warehouse catalog design. I'd like to put the two together.
+I've also built the same pattern for my job search: a chain of skills that assesses a job posting, creates the application note, drafts answers from my past answers and resume with every claim sourced, and files approved answers so the next draft can reuse them.
+
+Most of my recent contract work has been Shopify: payment integrations, order automation in Shopify Flow, a returns-platform migration, and a multi-warehouse catalog design. I'd like to put the two together.
 ```
