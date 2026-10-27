@@ -37,8 +37,8 @@ The "external system ruins everyone's afternoon" part is most of what I've been 
 
 A couple of quick questions:
 
-1. Is the team remote, hybrid, or on-site in NWA? I'm in Fort Smith, so I'm close either way.
-2. What does the interview process look like, and how quickly are they hoping to fill the role?
+1. Is the team remote, hybrid, or on-site in NWA? I'm fine with which ever, but would like to know for planning purposes.
+2. What the interview process look like?
 
 I'm available to start soon. Happy to grab a time on your calendar this week.
 
