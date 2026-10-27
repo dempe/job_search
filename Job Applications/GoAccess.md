@@ -31,7 +31,7 @@ date_modified: "2026-10-26 18:37"
 ```
 Hi Doug,
 
-Guilty as charged on the idempotency front 😄 Thanks for reaching out -- this sounds like a great fit.
+Guilty as charged on the idempotency front 😄 Thanks for reaching out -- this sounds like a great fit. As a matter of fact, I used GoAccess just last week on a client project!
 
 The "external system ruins everyone's afternoon" part is most of what I've been doing lately. My latest was a Node.js app syncing a payment provider with Shopify, using idempotency keys so retries couldn't double-charge anyone. Before that, I worked on a Postgres projection to work around Shopify's 60-day order window.
 
