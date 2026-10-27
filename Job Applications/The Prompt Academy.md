@@ -23,7 +23,7 @@ date_modified: "2026-10-27 16:00"
 > What interests you about working for this company?
 
 ```
-At my current company, DeksTech, I've been teaching people how to use AI well. I use Claude Code every day, and getting to a workflow I trust has taken constant refinement: a scope -> plan -> implement -> review chain of agent skills, with the plans living as Markdown in the repo. Most of what I learned wasn't about prompts. It was about defining the problem before any code gets written and never taking the output on trust.
+At my current company, DeksTech, I've been teaching people how to use AI well. I use Claude Code every day, and getting to a workflow I trust has taken constant refinement: a scope -> plan -> implement -> review chain of agent skills, with the plans living as Markdown in the repo. To me, the most important thing is defining the problem before any code gets written and never taking the output on trust.
 
 Teaching is also the most fulfilling work I've done. I taught English in Mexico for two years, and I've since built Athena Math, a mental math training app. This role would bring those two together.
 ```
