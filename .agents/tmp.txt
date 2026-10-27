@@ -1,1 +1,15 @@
-Hi [Name], fellow Razorback here -- looks like we both graduated from UA in 2013 (I was in engineering). I just applied for the Staff Software Engineer role at Elation and would love to hear what it's like working there, if you're open to a quick chat. Thanks!
+Hi Doug,
+
+Guilty as charged on the idempotency front 😄 Thanks for reaching out -- this sounds like a great fit.
+
+The "external system ruins everyone's afternoon" part is most of what I've been doing lately. My latest was a Node.js app syncing a payment provider with Shopify, using idempotency keys so retries couldn't double-charge anyone. Before that, I worked on a Postgres projection to work around Shopify's 60-day order window.
+
+A couple of quick questions:
+
+1. Is the team remote, hybrid, or on-site in NWA? I'm in Fort Smith, so I'm close either way.
+2. What does the interview process look like, and how quickly are they hoping to fill the role?
+
+I'm available to start soon. Happy to grab a time on your calendar this week.
+
+Best,
+Chris
