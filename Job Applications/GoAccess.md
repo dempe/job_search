@@ -40,7 +40,7 @@ A couple of quick questions:
 1. Is the team remote, hybrid, or on-site in NWA? I'm fine with whichever, but would like to know for planning purposes.
 2. What's the interview process?
 
-I'm available to start soon. Happy to grab a time on your calendar this week.
+I just booked a slot on your calendar for Wednesday morning. See you then!
 
 Best,
 Chris
