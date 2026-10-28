@@ -4,8 +4,9 @@ applied: 2026-10-26
 job_type: fulltime
 channel: form
 contact:
-status: awaiting-reply
+status: interview
 interviews:
+  -
 source: linkedin
 listing:
 company: GoAccess
