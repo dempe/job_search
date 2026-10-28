@@ -6,7 +6,7 @@ channel: form
 contact:
 status: interview
 interviews:
-  -
+  - 2026-10-28 10:00
 source: linkedin
 listing:
 company: GoAccess
@@ -16,7 +16,7 @@ remote:
 compensation: $120K–$140K base + potential equity.
 title: GoAccess
 date_created: "2026-10-26 18:37"
-date_modified: "2026-10-26 18:37"
+date_modified: "2026-10-27 20:24"
 ---
 
 ## Application
