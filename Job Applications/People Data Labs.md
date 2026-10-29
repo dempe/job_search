@@ -116,7 +116,7 @@ Today I'd add a few things: metrics on success rate, yield, and latency per sour
 ```
 Not necessarily. The status dashboard was more a problem of growth that manifested later as our collection of scrapers grew and grew.  The framework allowed us to grow and grow, and as we grew our data sources, problems became more frequent (changes in Markup, A/B testing, etc.).
 
-We built out the tests that dr
+We built out the tests that drove the dashboard from day 1, so, in a sense, we did start building the dashboard from the beginning.  But I think that focus on the UI manifestation would have been premature optimization.  We needed to focus on expanding our data sources
 ```
 
 > Have you worked with asynchronous programming in your crawlers?
