@@ -20,3 +20,5 @@ date_modified: "2026-10-29 11:24"
 ---
 
 ## Application
+
+Dan said that I did not have to submit a formal application, but I took a look at it anyways.  Many of the questions have changed slightly since the 
