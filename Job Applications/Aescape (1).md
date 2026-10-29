@@ -17,7 +17,7 @@ remote: true
 compensation:
 title: Aescape (1)
 date_created: "2026-10-29 11:11"
-date_modified: "2026-10-29 17:16"
+date_modified: "2026-10-29 17:17"
 ---
 
 ## Application
@@ -41,7 +41,7 @@ So it's been a while. Since then I've worked mostly in typed languages (TypeScri
 ```
 At Dekstech, I built a greenfield Node.js middleware on Heroku connecting a client's Shopify store to their new payment provider, ahead of a hard deadline to migrate off their old processor. Customers paid through the provider's hosted checkout, and the middleware reconciled each checkout session with its Shopify order.
 
-Scoping surfaced a few ambiguities in the provider's API docs before I wrote any code (e.g., the docs warned not to treat redirects to `/payment/success` and `/payment/cancelled` as definitive, contradicting the CTO). They eventually added a webhook for use to use for reconciliation.
+Scoping surfaced a few ambiguities in the provider's API docs before I wrote any code (e.g., the docs warned not to treat redirects to `/payment/success` and `/payment/cancelled` as definitive, contradicting the CTO). They eventually added a webhook for payment reconciliation upon mine (and my client's urging).
 
 Since it was touching payments, it was imperative that my code was correct. Each payment session got its own idempotency key, reused across retries, so a retry couldn't double-charge anyone. Gateway errors were mapped to typed errors, so a decline was handled differently from a transient gateway failure. Every request boundary was validated with schema parsing, and 32 tests against a stubbed gateway proved that a declined or interrupted payment couldn't leave an order paid but unfulfilled.
 ```
