@@ -16,7 +16,7 @@ remote: true
 compensation: $160K - $200K
 title: People Data Labs
 date_created: "2026-10-22 15:11"
-date_modified: "2026-10-29 11:24"
+date_modified: "2026-10-29 11:59"
 ---
 
 ## Application
@@ -39,17 +39,17 @@ date_modified: "2026-10-29 11:24"
 
 #### Stories
 
-##### Crawling at scale
+##### Crawling at Scale
 
-At DataRank, my first company, I set up the entire web scraping stack. When I joined, our crawlers were a collection of ad hoc scripts run manually across four servers. Maintaining them meant SSH'ing in and editing scripts by hand.  And to add a new data source, we had to start all over from scratch with no re-usable code.
+At DataRank, my first company, I set up the entire web scraping stack. When I joined, our crawlers were a collection of ad hoc scripts run manually across four servers. Maintaining them meant SSH'ing in and editing scripts by hand. And to add a new data source, we had to start all over from scratch with no re-usable code.
 
 I built a distributed framework around a central job queue in a MySQL table. An orchestrator on each server pulled work off the queue and announced it to the crawlers in its pool. Each crawler claimed work based on a `canHandle` regex against the URL, and crawlers could feed new pages to other crawlers in a chain for further processing. Everything was transformed into a common, canonical comment model.
 
-That took us from 5 or 6 sites to dozens in just a few months. Adding a new source went from writing manual server edits to a redeploy through Jenkins, and the two junior engineers we onboarded could contribute new crawlers on their own without touching server configuration.
+That took us from 5 or 6 sites to dozens in just a few months. Adding a new source went from writing brand new code and manual server edits to a redeploy through Jenkins, and the two junior engineers we onboarded could contribute new crawlers on their own without touching server configuration.
 
 One tradeoff I'd make again: I didn't build a fully generic plugin system up front. I built for the first few sources with clear boundaries, then refactored the hot paths into shared components once we knew what actually needed to be generic.
 
-##### Bot detection and anti-scraping
+##### Bot Detection and Anti-scraping
 
 First, figure out why the request is failing. A 429 means exponential backoff with jitter. The site might require logging in. If the site needs JavaScript to render, use a JavaScript-capable browser.
 
@@ -57,7 +57,7 @@ If there's an explicit CAPTCHA or access protection, stop the crawl and check wh
 
 I also build a circuit breaker into my crawlers, so they don't keep hitting a site that's blocking them. At DataRank, I turned Jenkins into a live status page for the crawler fleet, backed by automated system tests, so the customer success team could see for themselves which scrapers had broken after a site change instead of routing every question through an engineer.
 
-##### Backpressure and message-driven design
+##### Backpressure and Message-driven Design
 
 At Octimine, I replaced a fragile weekly Python batch job processing about 30 million patent documents with a real-time, event-driven Kafka Streams pipeline in Java. Message-driven design is what made it durable. Each stage consumes at its own pace from a topic, so a slow stage falls behind and catches up instead of taking the whole run down. Records that failed went to a dead-letter queue, and everything else kept flowing. In the old batch job, it kept failing and retrying until it ran into the next week's job.
 
@@ -65,7 +65,7 @@ At DataRank, the backpressure came from the other side: the APIs we consumed. Th
 
 More recently, on my own app's serverless backend, failed operations go onto an SQS retry queue, with idempotent processing so a retry can never apply something twice.
 
-##### Data quality
+##### Data Quality
 
 At DataRank, the whole point of the ingestion layer was normalizing messy data from forums, review sites, and social APIs into one canonical model, so analysts were working with consistent data no matter where it came from.
 
@@ -73,13 +73,13 @@ At Octimine, I unit-tested every analytic in the Kafka Streams pipeline and ran 
 
 At Dekstech, I added partial payments to an internal app, and legacy rows had a `PAID` or `CONFIRMED` status without the matching flags set, so a naive backfill would have produced wrong totals. I normalized the legacy flags first, then backfilled, then recomputed every derived total from the payment rows, the source of truth. The general principle: keep derived data recomputable from a single source of truth.
 
-##### Browser rendering and network debugging
+##### Browser Rendering and Network Debugging
 
 At Dekstech, I audited a bedding retailer's Shopify storefront for Core Web Vitals. I traced their LCP regressions and redundant tracking traffic to third-party scripts, render-blocking legacy dependencies, and duplicate pixels injected through Google Tag Manager.
 
 On another client, what was reported as a mislabeled tracking issue turned out to be a broken integration between the storefront and a third-party fulfillment platform. And on a third, I investigated an anomalous spike in third-party API events and traced the root cause to legacy server code.
 
-##### Reliability and observability
+##### Reliability and Observability
 
 The one that stands out is at Octimine. The weekly batch job would fail and retry until it ran into the next week's job, which meant customers weren't getting their data. The long-term fix was the Kafka Streams pipeline with a dead-letter queue, so one bad document couldn't take the whole run down.
 
