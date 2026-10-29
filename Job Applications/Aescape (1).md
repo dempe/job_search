@@ -53,4 +53,6 @@ I figured that it would be a good idea to have an answer to each, even though it
 
 #### Stories
 
+Dan mentioned that he wants to hear about my recent contracting work, so I better make sure I have those stories down pat.
 
+#####
