@@ -41,7 +41,7 @@ So it's been a while. Since then I've worked mostly in typed languages (TypeScri
 ```
 At Dekstech, I built a greenfield Node.js middleware on Heroku connecting a client's Shopify store to their new payment provider, ahead of a hard deadline to migrate off their old processor. Customers paid through the provider's hosted checkout, and the middleware reconciled each checkout session with its Shopify order.
 
-Scoping surfaced a few ambiguities in the provider's API docs before I wrote any code. Since it was touching payments, it was imperative that my code was correct. Each payment session got its own idempotency key, reused across retries, so a retry couldn't double-charge anyone. Gateway errors were mapped to typed errors, so a decline was handled differently from a transient gateway failure. Every request boundary was validated with schema parsing, and 32 tests against a stubbed gateway proved that a declined or interrupted payment couldn't leave an order paid but unfulfilled.
+Scoping surfaced a few ambiguities in the provider's API docs before I wrote any code (e.g., treating redirects to `/payment/success` and `/payment/cancelled. Since it was touching payments, it was imperative that my code was correct. Each payment session got its own idempotency key, reused across retries, so a retry couldn't double-charge anyone. Gateway errors were mapped to typed errors, so a decline was handled differently from a transient gateway failure. Every request boundary was validated with schema parsing, and 32 tests against a stubbed gateway proved that a declined or interrupted payment couldn't leave an order paid but unfulfilled.
 ```
 
 > Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
@@ -63,9 +63,6 @@ Since so much time is invested in scoping and planning, the execution and verifi
 > Why Aescape?
 
 ```
-A booking at Aescape is a physical slot on a robot. If an integration drifts out of sync, it's not just a stale row -- it's a member standing in front of a machine someone else already booked. Getting three outside booking platforms, each with its own ideas about availability, cancellations, and retries, to agree with your booking service is exactly the kind of problem I've been working on lately, most recently keeping a payment provider and Shopify in sync.
-
-I'd also be building it to be handed off, which is how I like to build anyway. Long-term maintainability is the part of engineering I care about most, and it's usually the first thing cut in contract work.
 ```
 
 ## Interview 1
