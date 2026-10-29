@@ -114,9 +114,7 @@ Today I'd add a few things: metrics on success rate, yield, and latency per sour
 > Do you wish you had built the crawler status dashboard sooner?
 
 ```
-Partly. The tests came first, and they were the part that mattered -- they told us when a crawler broke. The dashboard solved a different problem that came with growth: once the framework let us add crawlers quickly, the customer insights team was coming to us constantly asking what was broken. Building a self-serve dashboard on day one, with a handful of crawlers, would have been building for a problem we didn't have yet.
-
-What I'd do sooner is push alerting. Finding out about a broken crawler from a test run or a customer is slower than being paged with the error. The lesson I took is to build observability into the system from the start, and add the tooling around it as the scale actually demands it.
+Not nec
 ```
 
 > Have you worked with asynchronous programming in your crawlers?
