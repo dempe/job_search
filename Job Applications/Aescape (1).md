@@ -16,12 +16,12 @@ remote: true
 compensation:
 title: Aescape (1)
 date_created: "2026-10-29 11:11"
-date_modified: "2026-10-29 11:24"
+date_modified: "2026-10-29 16:44"
 ---
 
 ## Application
 
-Dan said that I did not have to submit a formal application, but I took a look at it anyways.  Many of the questions have changed slightly since my last application or are net new.
+Dan said that I did not have to submit a formal application, but I took a look at it anyways. Many of the questions have changed slightly since my last application or are net new.
 
 I figured that it would be a good idea to have an answer to each, even though it's not necessary.
 
@@ -37,4 +37,20 @@ I figured that it would be a good idea to have an answer to each, even though it
 ```
 ```
 
-> 
+> Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
+
+```
+```
+
+> Why Aescape?
+
+```
+```
+
+## Interview 1
+
+### Preparation
+
+#### Stories
+
+
