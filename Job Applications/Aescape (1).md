@@ -17,7 +17,7 @@ remote: true
 compensation:
 title: Aescape (1)
 date_created: "2026-10-29 11:11"
-date_modified: "2026-10-29 16:44"
+date_modified: "2026-10-29 16:59"
 ---
 
 ## Application
@@ -30,21 +30,12 @@ I figured that it would be a good idea to have an answer to each, even though it
 
 > Please describe your most recent production Golang experience: what you built, roughly when, and for how long.
 
-```
-I shipped production features in Go at SimplyMeasured, but that was
-over a decade ago. However, I do still work primarily in typed languages
-(Typescript, Java, Kotlin). I'd expect it'd take me few weeks to get fluent.
-```
-
 > Describe a third-party API integration you built and shipped in production.
-
-```
-```
 
 > Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
 
 ```
-I use a variety of models, but primarily Code.  I use the OpenCode harness.
+I mostly use Codex and Opus, but use DeepSeek for lighter weight stuff.  I use the OpenCode harness in addition to the TUIs for Opus and Codex.
 
 As for how I actually use AI, I have a pretty detailed, constantly-evolving workflow that's really a chain of model-agnostic skills:
 
@@ -71,6 +62,4 @@ Dan mentioned that he wants to hear about my recent contracting work, so I bette
 
 ##### Interactive Customer Map App
 
-##### Athena Math (Focusing on  Infrastructure)
-
-
+##### Athena Math (Focusing on Infrastructure)
