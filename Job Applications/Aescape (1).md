@@ -44,7 +44,7 @@ over a decade ago. However, I do still work primarily in typed languages
 > Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
 
 ```
-I use a variety of models -- mostly DeepSeek v4 and Opus 4.8.  I use the OpenCode harness.
+I use a variety of models, but primarily Code.  I use the OpenCode harness.
 
 As for how I actually use AI, I have a pretty detailed, constantly-evolving workflow that's really a chain of model-agnostic skills:
 
@@ -58,10 +58,6 @@ Since so much time is invested in scoping and planning, the execution and verifi
 ```
 
 > Why Aescape?
-
-```
-The real-time body mapping and precision robotics stack is genuinely interesting to me. Sounds like a system where latency and reliability really matter on a physical level. I'd love to be a part of that! My work building real-time pipelines with sub-second latency should map well here.
-```
 
 ## Interview 1
 
