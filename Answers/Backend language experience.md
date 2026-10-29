@@ -17,3 +17,13 @@ I have extensive experience with Java, Spring Boot, Python, and JavaScript/TypeS
 ```
 Java/Kotlin (Spring Boot, Hibernate/JPA, Kafka Streams), Python, and TypeScript/Node.js, with React and React Native/Expo on the frontend.
 ```
+
+## People Data Labs
+
+[[People Data Labs]]
+
+> Are you comfortable with Python?
+
+```
+Yes. I've used Python throughout my career -- the batch processing at Octimine, data processing pipelines automated in CI, parts of the API gateway at SimplyMeasured, an Anki add-on I published, and my Advent of Code solutions. Most of my day-to-day lately has been TypeScript and Java, so before a live coding round, I'd spend some time warming back up on idiomatic Python and the standard library.
+```

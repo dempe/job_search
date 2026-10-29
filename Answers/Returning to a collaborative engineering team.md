@@ -43,3 +43,17 @@ I've been running my own company for three years now.  It's something that I've 
 ```
 I'm currently working as a contractor building AWS solutions and greenfield Node apps for clients.  I'm looking to rejoin a team environment, as I find I do my best work in collaboration.  I'm also looking for a role that allows me to take more long-term ownership over the projects that I build.  Building for maintainability is an important part of software engineering, but it's often undervalued in project-based contract work, hence why I value it in my next role.
 ```
+
+## People Data Labs
+
+[[People Data Labs]]
+
+> Why are you looking to leave?
+
+```
+Two reasons: collaboration and ownership.
+
+I've been contracting for about three years, and it's been a good run, but I do my best work alongside other engineers. I collaborate with people at Dekstech, but it's not the same as being on a team that owns a system together.
+
+And with contract work, clients want the project out the door. Nobody's paying for the long-term trajectory of what I build -- how it's maintained, how it scales, what breaks two years from now. That's a big part of engineering, and it's the part I miss. I want to build something and then stick around to own it.
+```
