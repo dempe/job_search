@@ -31,7 +31,7 @@ I figured that it would be a good idea to have an answer to each, even though it
 > Please describe your most recent production Golang experience: what you built, roughly when, and for how long.
 
 ```
-My most recent production Go was at SimplyMeasured (later Sprout Social), from 2015 to 2018 -- about two and a half years. Most of the backend there was in Go. I designed and built APIs and microservices in Go and Spring Boot, sitting behind an API gateway I set up to centralize auth, rate limiting, and request transforms.
+My most recent production Go was at SimplyMeasured (later Sprout Social), from 2016 through mid 2018. Most of the backend there was in Go an. I designed and built APIs and microservices in Go and Spring Boot, sitting behind an API gateway I set up to centralize auth, rate limiting, and request transforms.
 
 So it's been a while. Since then I've worked mostly in typed languages (TypeScript, Java, Kotlin), and I'd expect it to take me a few weeks to get fluent in Go again.
 ```
