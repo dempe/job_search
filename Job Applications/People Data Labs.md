@@ -4,8 +4,9 @@ applied: 2026-10-22
 job_type: fulltime
 channel: form
 contact:
-status: awaiting-reply
+status: interview
 interviews:
+  - 2026-10-29 12:30 - 13:00
 source: matcha
 listing: "https://jobs.ashbyhq.com/people-data-labs/5108aa65-f7cc-4d41-92fe-a3a5373d705d"
 company: People Data Labs
@@ -15,7 +16,7 @@ remote: true
 compensation: $160K - $200K
 title: People Data Labs
 date_created: "2026-10-22 15:11"
-date_modified: "2026-10-22 15:26"
+date_modified: "2026-10-29 11:24"
 ---
 
 ## Application
