@@ -45,7 +45,7 @@ At DataRank, my first company, I set up the entire web scraping stack. When I jo
 
 I built a distributed framework around a central job queue in a MySQL table. An orchestrator on each server pulled work off the queue and announced it to the crawlers in its pool. Each crawler claimed work based on a `canHandle` regex against the URL, and crawlers could feed new pages to other crawlers in a chain for further processing. Everything was transformed into a common, canonical comment model.
 
-That took us from 5 or 6 sites to dozens in just a few months. Adding a new source went from manual server edits to a redeploy through Jenkins, and the two junior engineers we onboarded could contribute new crawlers on their own without touching server configuration.
+That took us from 5 or 6 sites to dozens in just a few months. Adding a new source went from writing manual server edits to a redeploy through Jenkins, and the two junior engineers we onboarded could contribute new crawlers on their own without touching server configuration.
 
 One tradeoff I'd make again: I didn't build a fully generic plugin system up front. I built for the first few sources with clear boundaries, then refactored the hot paths into shared components once we knew what actually needed to be generic.
 
