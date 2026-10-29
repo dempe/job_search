@@ -114,7 +114,9 @@ Today I'd add a few things: metrics on success rate, yield, and latency per sour
 > Do you wish you had built the crawler status dashboard sooner?
 
 ```
-Not necessarily. The status dashboard was more a problem of growth that manifested later as our collection of scrapers grew and grew.  So the framework allowed us to grow and grow
+Not necessarily. The status dashboard was more a problem of growth that manifested later as our collection of scrapers grew and grew.  The framework allowed us to grow and grow, and as we grew our data sources, problems became more frequent (changes in Markup, A/B testing, etc.).
+
+We built out the tests that dr
 ```
 
 > Have you worked with asynchronous programming in your crawlers?
