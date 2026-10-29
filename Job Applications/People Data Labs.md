@@ -47,111 +47,47 @@ Model answers, not a record of what was said.
 
 > Why are you looking to leave?
 
-```
-Two reasons: collaboration and ownership.
-
-I've been contracting for about three years, and it's been a good run, but I do my best work alongside other engineers. I collaborate with people at Dekstech, but it's not the same as being on a team that owns a system together.
-
-And with contract work, clients want the project out the door. Nobody's paying for the long-term trajectory of what I build -- how it's maintained, how it scales, what breaks two years from now. That's a big part of engineering, and it's the part I miss. I want to build something and then stick around to own it.
-```
+[[Returning to a collaborative engineering team#People Data Labs|Returning to a collaborative engineering team]]
 
 > What attracted you to the data acquisition role, and what have you done that overlaps with what we're doing? Have you done data acquisition in your previous jobs?
 
-```
-Data acquisition is where my career started, and it's the thread through most of it.
-
-At DataRank, I was the second engineer at a five-person startup collecting what people said online about products. We pulled from two kinds of sources: social media APIs like Facebook and Twitter, and niche forums and review sites that had no API. I built the framework for both -- the crawler framework for the sites, and an API framework with token pools, rate limiting, and retries for the social platforms. Everything was normalized into one canonical model.
-
-At SimplyMeasured, I kept working on social data ingestion, plus microservices and an API gateway. At Octimine, I was hired as the senior data engineer and replaced a fragile weekly batch job processing about 30 million patent documents with a real-time Kafka Streams pipeline, from the data warehouse all the way to the customer dashboard.
-
-What attracts me here is that acquisition is the core of the product, not a side function. The problems I enjoy most -- sources that change under you, rate limits, messy data that has to come out clean -- are the whole job.
-```
+[[Data acquisition experience#People Data Labs|Data acquisition experience]]
 
 > What tools or strategies have you used for web crawling at scale?
 
-```
-The main strategy was separating the plumbing from the crawling logic, so we only ever wrote the part that was specific to a site.
-
-At DataRank, every crawler used to be built from scratch and run by hand on a server. I built a framework with a single central job queue of URLs in MySQL. An orchestrator on each of our four servers pulled from the queue continuously, managed a thread pool of crawlers, and offered each URL to them. Each crawler had a `canHandle` rule matched against the URL, claimed the work, parsed the page, and could pass new URLs on to the next crawler in a chain asynchronously via the central job queue. Crawlers implemented standard interfaces with the boilerplate extracted out.
-
-That scaled horizontally -- more throughput meant adding another server running an orchestrator, with no changes to the crawlers. It took us from 5 or 6 sites to dozens in a few months.
-
-For fetching, we escalated through browsers by cost: a plain lightweight HTTP client first, then a headless browser that executes JavaScript, then a full browser through Selenium, only when the cheaper options failed. Failed URLs went to a failure queue instead of being dropped.
-```
+[[Building the DataRank crawler framework#People Data Labs (crawling at scale)|Building the DataRank crawler framework]]
 
 > Have you used any tools such as Scrapy, Selenium, or Puppeteer?
 
-```
-Selenium, yes -- heavily. It drove the browser tiers in our framework, from headless with JavaScript up to a full browser with a custom user agent when we needed it.
-
-I haven't used Scrapy or Puppeteer in production. Our framework was custom because when we built it, around 2013, the off-the-shelf options didn't fit what we needed. If I were building it today, I'd look hard at Scrapy for the plain HTTP crawling, since it already handles scheduling, throttling, and retries, and Playwright for anything that needs a real browser. I'd rather use a well-tested framework than maintain my own plumbing, and spend our code on what's specific to our sources.
-```
+[[Building the DataRank crawler framework#People Data Labs (crawling tools)|Building the DataRank crawler framework]]
 
 > How did you handle anti-scraping mechanisms or bot detection while crawling?
 
-```
-It depends on what's actually blocking you, so the first step is diagnosing it.
-
-Before any of that: if a site's robots.txt or terms say don't crawl, we don't. We'd tell the customer, or reach out to the site about access.
-
-For rate limiting, like a 429, it's exponential backoff with jitter, and per-domain rate limits so we never hammer a single site. For sites that need JavaScript, we escalated to a headless browser, and for login walls, we automated the login form.
-
-Beyond that, the standard techniques are making traffic look less mechanical: rotating proxies so requests don't all come from one IP, rotating and randomizing user agents and headers, randomizing request timing, and keeping sessions and cookies consistent the way a real browser would.
-
-I'd also build in a circuit breaker per site, so if we start getting blocked, the crawler stops instead of burning through proxies and making it worse. If we hit an explicit CAPTCHA or access protection, that's a signal to stop and check whether there's an API or a data partnership, not to escalate.
-```
+[[Handling bot detection while crawling#People Data Labs (interview)|Handling bot detection while crawling]]
 
 > How do you monitor the health of your crawlers and their long-term reliability?
 
-```
-Crawlers break constantly, because sites change their markup. Sites also run A/B tests, so a crawler can suddenly get a version of the page it was never written for. So monitoring has to catch breakage you didn't cause.
-
-At DataRank, I added end-to-end system tests for every crawler, which hadn't existed before, run centrally through Jenkins on a schedule. A failing test meant a site had changed. Later I turned that into a status dashboard the customer insights team could check themselves, with alerts to us including the error.
-
-Today I'd add a few things: metrics on success rate, yield, and latency per source, so a crawler that quietly returns half as many records gets flagged even if nothing errors. Data-quality checks on the output, like required fields suddenly going null. And a failure queue with the error attached, so we can fix the crawler and replay what we missed.
-```
+[[Building the DataRank crawler framework#People Data Labs (crawler health monitoring)|Building the DataRank crawler framework]]
 
 > Do you wish you had built the crawler status dashboard sooner?
 
-```
-Not necessarily. The status dashboard was more a problem of growth that manifested later as our collection of scrapers grew and grew.  The framework allowed us to grow and grow, and as we grew our data sources, problems became more frequent (changes in Markup, A/B testing, etc.).
-
-We built out the tests that drove the dashboard from day 1, so, in a sense, we did start building the dashboard from the beginning.  But I think that focus on the UI manifestation would have been premature optimization.  We needed to focus on expanding our data sources after the framework was complete, and that's exactly what we did.
-```
+[[Building the DataRank crawler framework#People Data Labs (status dashboard timing)|Building the DataRank crawler framework]]
 
 > Have you worked with asynchronous programming in your crawlers?
 
-```
-Yes. At DataRank, each orchestrator managed a bounded thread pool of crawlers. Work ran concurrently, and when the pool was full, the orchestrator stopped pulling from the queue until crawlers freed up. That bounded pool was effectively our backpressure -- we never pulled more work than we could process.
-
-Crawling is I/O-bound, almost all waiting on the network, so today I'd do it with async I/O instead of threads -- in Python, asyncio with an async HTTP client like aiohttp or httpx. The same principles apply: a semaphore to cap total concurrency, separate per-domain limits so one site doesn't eat the whole budget, bounded queues between stages for backpressure, and timeouts and retries on every request so one slow site can't stall everything.
-
-I've also built asynchronous systems outside crawling: the Kafka Streams pipeline at Octimine, and an SQS-based retry system on my own app's serverless backend.
-```
+[[Building the DataRank crawler framework#People Data Labs (asynchronous crawling)|Building the DataRank crawler framework]]
 
 > Describe how you've structured unstructured or semi-structured data into a useful schema.
 
-```
-At DataRank, everything we collected -- crawled forum posts, review sites, and social API data -- had to land in one canonical model, so analysts worked with the same shape no matter where the data came from.
-
-We split it into two entities: authors and comments. The author had demographic fields where we could get them -- name, gender, age, location, etc. The comment had the text, posting date, a link back to the source, and the author reference. Every crawler and API handler parsed its source and filled in that model, and it was persisted to HBase.
-
-The decisions that made it useful: every record kept the source and the source's own ID, so we could deduplicate and trace anything back to where it came from. Dates and locations were normalized to one format. Fields that many sources didn't have were optional instead of filled with guesses.  We also stored all the raw data for both author and comment in the model as well, so if a parsing error was ever discovered down the line, it did not require a re-crawl, we could just fix the parser and re-run on the already collected data.
-```
+[[Designing the DataRank canonical data model#People Data Labs|Designing the DataRank canonical data model]]
 
 > Are you interested in going back to data acquisition?
 
-```
-Yes, definitely. I've worked in data acquisition and ingestion for most of my career -- crawling at DataRank, social data at SimplyMeasured, and the patent pipeline at Octimine through 2022. My recent work has kept the same core: integrations with APIs I don't control, like a Google Places sweep that recursively subdivides a tile grid to work around the per-query result cap.
-
-It's the kind of work I enjoy most. The sources change, the data's messy, and getting it to come out complete and correct takes real engineering. Doing that at PDL's scale, as the core of the product, is a big part of why this role stands out to me.
-```
+[[Data acquisition experience#People Data Labs (returning to data acquisition)|Data acquisition experience]]
 
 > Are you comfortable with Python?
 
-```
-Yes. I've used Python throughout my career -- the batch processing at Octimine, data processing pipelines automated in CI, parts of the API gateway at SimplyMeasured, an Anki add-on I published, and my Advent of Code solutions. Most of my day-to-day lately has been TypeScript and Java, so before a live coding round, I'd spend some time warming back up on idiomatic Python and the standard library.
-```
+[[Backend language experience#People Data Labs|Backend language experience]]
 
 ### Preparation
 
