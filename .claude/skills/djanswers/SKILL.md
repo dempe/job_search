@@ -89,6 +89,7 @@ For each unanswered question, in order:
 - **No markup around the answer.** The answer is plain text inside the code block. No headings, no preamble such as "Here's a draft".
 - **Motivation questions** ("why us?", "what interests you about this company?", intros and cover messages) need extra care, because a generic answer is the default failure:
   - Lead with the one thing that is distinctive to this company: the problem only it has, or what is hard about what it's building. Don't lead with a value the user merely shares with it.
+  - Tailor it to the role in the JD, not only the company. A company the user applied to before may be hiring for a different problem now, so an earlier answer for the same company is a starting point, not a final answer.
   - If the sources show the user personally uses the company's product, say so in one sentence. If they don't, MUST NOT imply it.
   - Frame motivation as something the user is drawn to, not as a deal-breaker the company happens to avoid.
   - Connect the user's experience to the role honestly. Name the actual overlap ("I've built ingestion pipelines and want to apply that to search"), not an implied equivalence ("pipelines that keep search relevant are what I do").

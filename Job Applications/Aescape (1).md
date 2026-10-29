@@ -17,7 +17,7 @@ remote: true
 compensation:
 title: Aescape (1)
 date_created: "2026-10-29 11:11"
-date_modified: "2026-10-29 16:59"
+date_modified: "2026-10-29 17:01"
 ---
 
 ## Application
@@ -30,7 +30,13 @@ I figured that it would be a good idea to have an answer to each, even though it
 
 > Please describe your most recent production Golang experience: what you built, roughly when, and for how long.
 
+```
+```
+
 > Describe a third-party API integration you built and shipped in production.
+
+```
+```
 
 > Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
 
@@ -49,6 +55,9 @@ Since so much time is invested in scoping and planning, the execution and verifi
 ```
 
 > Why Aescape?
+
+```
+```
 
 ## Interview 1
 
