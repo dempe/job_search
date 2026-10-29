@@ -72,7 +72,7 @@ What attracts me here is that acquisition is the core of the product, not a side
 ```
 The main strategy was separating the plumbing from the crawling logic, so we only ever wrote the part that was specific to a site.
 
-At DataRank, every crawler used to be built from scratch and run by hand on a server. I built a framework with a single central job queue of URLs in MySQL. An orchestrator on each of our four servers pulled from the queue continuously, managed a thread pool of crawlers, and offered each URL to them. Each crawler had a `canHandle` rule matched against the URL, claimed the work, parsed the page, and could pass new URLs on to the next crawler in a chain. Crawlers implemented standard interfaces with the boilerplate extracted out.
+At DataRank, every crawler used to be built from scratch and run by hand on a server. I built a framework with a single central job queue of URLs in MySQL. An orchestrator on each of our four servers pulled from the queue continuously, managed a thread pool of crawlers, and offered each URL to them. Each crawler had a `canHandle` rule matched against the URL, claimed the work, parsed the page, and could pass new URLs on to the next crawler in a chain asynchronously via the central job queue. Crawlers implemented standard interfaces with the boilerplate extracted out.
 
 That scaled horizontally -- more throughput meant adding another server running an orchestrator, with no changes to the crawlers. It took us from 5 or 6 sites to dozens in a few months.
 
