@@ -41,7 +41,7 @@ date_modified: "2026-10-29 11:24"
 
 ##### Crawling at scale
 
-At DataRank, my first company, I set up the entire web scraping stack. When I joined, our crawlers were a collection of ad hoc scripts run manually across four servers. Adding a new data source meant SSH'ing in and editing scripts by hand.
+At DataRank, my first company, I set up the entire web scraping stack. When I joined, our crawlers were a collection of ad hoc scripts run manually across four servers. Maintaining them meant SSH'ing in and editing scripts by hand.  And to add a new data source, we had to start all over from scratch with no re-usable code.
 
 I built a distributed framework around a central job queue in a MySQL table. An orchestrator on each server pulled work off the queue and announced it to the crawlers in its pool. Each crawler claimed work based on a `canHandle` regex against the URL, and crawlers could feed new pages to other crawlers in a chain for further processing. Everything was transformed into a common, canonical comment model.
 
