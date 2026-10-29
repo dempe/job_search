@@ -41,11 +41,13 @@ date_modified: "2026-10-29 11:59"
 
 ##### Crawling at Scale
 
-At DataRank, my first company, I set up the entire web scraping stack. When I joined, our crawlers were a collection of ad hoc scripts run manually across four servers. Maintaining them meant SSH'ing in and editing scripts by hand. And to add a new data source, we had to start all over from scratch with no re-usable code.
+At DataRank, my first company, I set up the entire web scraping stack. When I joined, our crawlers were a collection of ad hoc scripts run manually across four servers. Every new data source started from scratch: its own job queue, its own threading, no reusable code, and no tests. Maintaining them meant SSH'ing in and editing scripts by hand.
 
-I built a distributed framework around a central job queue in a MySQL table. An orchestrator on each server pulled work off the queue and announced it to the crawlers in its pool. Each crawler claimed work based on a `canHandle` regex against the URL, and crawlers could feed new pages to other crawlers in a chain for further processing. Everything was transformed into a common, canonical comment model.
+I built a distributed framework around a single central job queue in a MySQL table. An orchestrator on each server pulled work off the queue continuously, handled the threading and parallelization, and announced work to the crawlers in its pool. Each crawler claimed work based on a `canHandle` regex against the URL, and crawlers could feed new pages to other crawlers in a chain. Crawlers implemented standard interfaces with the boilerplate extracted out, and everything was transformed into a common, canonical comment model.
 
-That took us from 5 or 6 sites to dozens in just a few months. Adding a new source went from writing brand new code and manual server edits to a redeploy through Jenkins, and the two junior engineers we onboarded could contribute new crawlers on their own without touching server configuration.
+Each site still needed custom crawling code, but the plumbing was already there. That took us from 5 or 6 sites to dozens in just a few months, and the two junior engineers we onboarded could add crawlers on their own, deployed through Jenkins.
+
+Since crawlers broke constantly as sites changed their markup, I also added end-to-end system tests, which hadn't existed before, run from one central place. Later I turned that into a status dashboard so the customer success team could see which crawlers were broken.
 
 One tradeoff I'd make again: I didn't build a fully generic plugin system up front. I built for the first few sources with clear boundaries, then refactored the hot paths into shared components once we knew what actually needed to be generic.
 
