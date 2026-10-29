@@ -15,7 +15,7 @@ Follow the steps below in order.
 ## Constraints
 
 - The assistant MUST use only Claude Code's built-in tools (Read, Bash for read-only `ls`, and Skill). It MUST NOT write or run scripts.
-- This skill MUST NOT create or modify any file. The only file created in the run is the application note, and `djapplication` creates it.
+- This skill MUST NOT create or modify any file. The only files created in the run are the application note and its saved JD, and `djapplication` creates them.
 - Every claim about the user's experience MUST be backed by the sources in Step 2. The assistant MUST NOT invent or inflate experience, and MUST NOT count a skill as a fit just because it is adjacent to one the user has.
 - The assessment MUST be candid. It MUST NOT flatter the user or soften real gaps.
 

@@ -67,7 +67,7 @@ Read these sources. They are listed from most to least authoritative for the use
 3. **`Consulting/` notes in this vault.** The user's working notes, time logs, and learnings from client projects.
 4. **Client project repositories under `/Users/cld/workspace/clients/`.** Use `find` and `grep` to locate relevant decision records and plans (`docs/adr/`, `.agents/docs/adrs/`, `.agents/plans/`) and each project's `package.json` for the libraries it actually used. Read only what's relevant to a question.
 5. **Past Claude Code conversations,** stored as JSONL transcripts in `/Users/cld/.claude/projects/*/*.jsonl`. `grep` them for keywords from a question (technologies, project or client names, incident terms) to find stories the other sources don't record. Apply the Honesty rules about what counts as evidence.
-6. **The job description.** If `./jd.txt` exists and names the note's company, use it for company and role context (mission, stack, what they value, word limits in the application instructions). Otherwise, work from the note alone.
+6. **The job description.** If the note's `jd` frontmatter links to a saved JD in `Job Descriptions/`, read it. Otherwise, if `./jd.txt` exists and names the note's company, read that. Use it for company and role context (mission, stack, what they value, word limits in the application instructions). Otherwise, work from the note alone.
 
 Also use what the user's global `CLAUDE.md` records about how they work, when it is relevant to a question. It doesn't record which project an incident happened on, so don't attach one to a specific project unless another source confirms it.
 

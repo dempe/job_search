@@ -8,6 +8,7 @@ status: awaiting-reply
 interviews:
 source:
 listing:
+jd:
 company: 
 position: 
 contract: 

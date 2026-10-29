@@ -19,8 +19,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 <!-- auto-fill-applications T1: NFR0, NFR2, NFR4, FR55, FR56, FR57 -->
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, Skill, and asking the user). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"` and read-only file listing commands (`ls`, `test -e`).
-- The only file this skill creates is the new application note. The assistant MUST NOT rename, modify, or overwrite any existing note.
+- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only file listing commands (`ls`, `test -e`), and the JD copy in Step 11 (`mkdir -p`, `cp -n`).
+- The only files this skill creates are the new application note and its saved JD in `Job Descriptions/`. The assistant MUST NOT rename, modify, or overwrite any existing note or saved JD.
 - This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
 - The assistant MUST NOT create or modify anything in `Answers/`.
 - The assistant MUST NOT create or modify anything in `Questions/`.
@@ -28,7 +28,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Output
 
-- The only output of this skill is the new application note.
+- The only output of this skill is the new application note and its saved JD.
 - The assistant MUST NOT write any text to the user before, between, or after tool calls. That includes narration, progress updates, summaries, and a completion report.
 - There are two exceptions, and each MUST be as short as possible:
   - A question the user must answer to continue: the company name (Step 2), or a missing `source` or `listing` (Step 6).
@@ -168,6 +168,7 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 | `interviews` | blank |
 | `source` | `{source}` from Step 1 or Step 6, or blank |
 | `listing` | `{listing}` from Step 1 or Step 6, or blank |
+| `jd` | `"[[Job Descriptions/{title}]]"`: a link to the JD saved in Step 11 |
 | `company` | `{Company}` |
 | `position` | the job title from the JD, verbatim |
 | `contract` | `true` if the role is a contract role, otherwise `false` |
@@ -198,7 +199,8 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 <!-- auto-fill-applications T12: FR17 -->
 
-- Immediately before writing, check with Bash (`test -e "Job Applications/{filename}"`) that the note still does not exist. If it exists, the assistant MUST STOP with one line naming the existing file, without writing anything.
+- Immediately before writing, check with Bash (`test -e`) that neither `Job Applications/{filename}` nor `Job Descriptions/{filename}` exists. If either exists, the assistant MUST STOP with one line naming the existing file, without writing anything.
+- Save the JD by copying it byte for byte with Bash: `mkdir -p "Job Descriptions" && cp -n "{jd_path}" "Job Descriptions/{filename}"`. The assistant MUST NOT retype or reformat it.
 - Write the note to `Job Applications/{filename}` with the Write tool.
 - The assistant MUST NOT write any text to the user after the note is written.
 
@@ -226,7 +228,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - Step 3: no filename matches `Privacy.md` or `Privacy ({n}).md`.
 - Step 4: `date` prints `2026-09-14 18:30`.
 - Step 6: the assistant asks only for the listing URL. The user leaves it blank.
-- Step 11: the note below is written, with empty answer blocks.
+- Step 11: `./jd.txt` is copied to `Job Descriptions/Privacy.md`, and the note below is written, with empty answer blocks.
 - Step 12: `djanswers Privacy` runs and fills in the answer blocks it has evidence for.
 
 **Expected note** at `Job Applications/Privacy.md`, as written in Step 11 before `djanswers` runs.
@@ -242,6 +244,7 @@ status: awaiting-reply
 interviews:
 source: matcha
 listing:
+jd: "[[Job Descriptions/Privacy]]"
 company: Privacy
 position: Staff Software Engineer
 contract: false
