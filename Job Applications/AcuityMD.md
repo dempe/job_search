@@ -4,7 +4,7 @@ applied: 2026-10-22
 job_type: fulltime
 channel: direct
 contact: Matt (recruiter)
-status: awaiting-reply
+status: rejected
 interviews:
 source: linkedin
 listing: "https://job-boards.greenhouse.io/acuitymd/jobs/6212199004?gh_src=sh6nlep24us"
@@ -15,7 +15,7 @@ remote: true
 compensation: "Salary Range: 155k-215k for Senior Software Engineer 1, 175k-250k for Senior Software Engineer 2"
 title: AcuityMD
 date_created: "2026-10-22 13:54"
-date_modified: "2026-10-22 13:54"
+date_modified: "2026-10-30 14:57"
 ---
 
 ## Application
