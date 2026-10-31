@@ -146,4 +146,5 @@ On my own serverless backend, I set up structured logging, CloudWatch alarms, an
 
 ## Interview 2
 
-### Preparatio
+### Preparation
+
