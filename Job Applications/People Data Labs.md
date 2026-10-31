@@ -148,3 +148,67 @@ On my own serverless backend, I set up structured logging, CloudWatch alarms, an
 
 ### Preparation
 
+#### Hiring Manager Interview with Jake Berry
+
+Tuesday, Nov 3, 2:00–2:45 (45 min).
+
+##### Who Jake Is
+
+- Manages data acquisition and the Platform team (build tools, CI/CD, AWS infrastructure, logging and monitoring). The recruiter also said he manages SRE.
+- He's also a hands-on data engineer in PySpark. He rewrote PDL's core entity resolution in PySpark, cut days off build time by better task sequencing and job tuning, and led customer-centric data quality improvements.
+- Self-rated expert in application architecture, AWS (serverless, EC2, CloudFormation), and AWS analytics (Glue, EMR, Athena, Redshift). Intermediate in Python and SQL.
+- Values: hiring and keeping strong people, playing to people's strengths, clear priorities, learning from failure, curiosity and tinkering, working sustainably. He's spent years managing enterprise and ERP systems, so he'll care about systems that are maintainable and easy to operate.
+
+##### What He'll Probably Dig Into
+
+- **The crawler framework, in depth.** The orchestrator and `canHandle`, the shared queue, how the system tests caught breakage, what I'd do differently today (async I/O, Scrapy/Playwright instead of my own plumbing).
+- **Data quality.** This is his area. Lead with storing raw data so a fixed parser could re-run without a re-crawl (I missed this on the screen). Then the canonical model with source IDs for dedupe and traceability, and the Octimine analytics regression tests.
+- **Reliability and operations.** He runs Platform/SRE. The Octimine batch-to-Kafka-Streams story (DLQ), the recovery documentation that cut recurring incidents, monitoring crawlers for silent degradation (yield dropping, required fields going null), not just errors.
+- **CI/CD and build time.** He cut days of build time, so he'll appreciate:
+  - the peer-reviewed CI/CD pipeline for Elasticsearch schema changes at Octimine
+  - adding recurring tasks to CI/CD there
+  - GitHub Actions + SAM with automated deploys and rollbacks
+  - Jenkins at DataRank
+
+##### AWS: Know What I Built Cold, and Don't Bluff the Rest
+
+He's the expert in the room. He won't need me to know every service. He'll notice if I overclaim.
+
+Know these well, including *why* I chose each:
+- Serverless backend (Athena Math): Lambda, API Gateway, DynamoDB, SQS/SNS, CloudWatch alarms, SAM/CloudFormation, GitHub Actions.
+  - Idempotent writes for duplicate notifications, conditional writes for out-of-order notifications (lifetime beats subscription, later subscription wins), SQS retries with a DLQ.
+  - Be ready for Lambda tradeoffs: timeouts, cold starts, concurrency limits, when I'd move to containers instead.
+- EC2 production deploy at Dekstech: reverse proxy, process management, SSL, migrations, repeatable deploys.
+- CloudFront + OAC with signed cookies replacing public S3 ACLs.
+- AWS Certified Developer – Associate (2024).
+
+Gap: Glue, EMR, Athena, Redshift, and Spark. I haven't used them in production. Read up on the basics so I can follow the conversation, and say plainly that they're new to me:
+- S3 as a data lake, partitioned Parquet, Athena querying S3 directly, Glue as catalog and ETL, EMR as managed Spark.
+- Spark basics: partitions, shuffles, why joins are expensive, why sequencing and tuning jobs saves time.
+- Closest real experience: Java HBase MapReduce jobs at SimplyMeasured, and Kafka Streams joins, windowing, and compaction at Octimine.
+
+##### Questions for Jake
+
+- What's the biggest reliability problem on the data acquisition side right now? (The recruiter said to ask him.)
+- What does on-call look like for this team?
+- How do you find out a crawler is broken or quietly degraded today?
+- How do you measure data quality for acquisition, and how does it flow back from entity resolution? (He rewrote it.)
+- How do data acquisition and Platform split ownership of crawler infrastructure?
+- What would a strong first 90 days look like for this role?
+
+#### Live Python Coding Round
+
+The step after this interview. 1 hour on CoderPad: about 15 minutes of conversation, then two exercises in order (finish the first to get the second). Not finishing isn't held against me.
+
+##### What to Practice
+
+I don't know the exercises. For a data acquisition team, plausible themes are parsing and cleaning messy records, deduplicating or merging records about the same person, counting and grouping, processing a stream or file, and maybe a rate-limited or concurrent fetcher.
+
+- Standard library until it's automatic:
+  - `collections` (`Counter`, `defaultdict`, `deque`)
+  - `heapq`, `itertools`, `dataclasses`
+  - `json`, `csv`, `re`
+  - generators, `sorted(..., key=...)`
+- Live-coding habits: restate the problem, ask about edge cases, get a simple version working first, then improve it. Talk through it. Test with quick `assert`s on small inputs.
+- Timed practice: a few medium, data-processing-style problems at about 25 minutes each, in a plain editor without autocomplete.
+
