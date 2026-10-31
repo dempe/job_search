@@ -7,6 +7,7 @@ contact:
 status: interview
 interviews:
   - 2026-10-29 12:30 - 13:00
+  - 2026-11-03 14:00 - 14:45
 source: matcha
 listing: "https://jobs.ashbyhq.com/people-data-labs/5108aa65-f7cc-4d41-92fe-a3a5373d705d"
 company: People Data Labs
@@ -16,7 +17,7 @@ remote: true
 compensation: $160K - $200K
 title: People Data Labs
 date_created: "2026-10-22 15:11"
-date_modified: "2026-10-29 15:00"
+date_modified: "2026-10-31 12:34"
 ---
 
 ## Application
@@ -142,3 +143,7 @@ The one that stands out is at Octimine. The weekly batch job would fail and retr
 After every incident, I do a root-cause analysis and document how to recover, so anyone on the team can handle it next time. At Octimine, that turned into a whole set of recovery documentation, and it cut down on recurring on-call incidents.
 
 On my own serverless backend, I set up structured logging, CloudWatch alarms, and SQS/SNS retries, so I'm alerted to failures immediately. And at DataRank, the Jenkins crawler status page meant broken scrapers were visible to the whole company, not just engineering.
+
+## Interview 2
+
+### Preparatio
