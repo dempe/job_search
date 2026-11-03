@@ -6,7 +6,7 @@ channel: form
 contact:
 status: interview
 interviews:
-  - 
+  - 2026-11-04 10:00 - 10:30
 source: wellfound
 listing: "https://wellfound.com/jobs?job_listing_slug=4890552-senior-backend-distributed-systems-engineer-founding-team-interest-equity-only"
 company: i.Wonder
@@ -16,7 +16,7 @@ remote: true
 compensation: 0.6% – 0.6%
 title: i.Wonder
 date_created: "2026-10-26 16:54"
-date_modified: "2026-10-26 16:54"
+date_modified: "2026-11-02 20:53"
 ---
 
 ## Application
