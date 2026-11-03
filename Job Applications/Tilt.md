@@ -3,18 +3,18 @@ type: job
 applied: 2026-10-02
 job_type: fulltime
 channel: form
-status: awaiting-reply
+status: ghosted
 interviews:
 source: matcha
-listing: "https://hellotilt.hiringthing.com/job/1062558/software-engineer-ii"
+listing: https://hellotilt.hiringthing.com/job/1062558/software-engineer-ii
 company: Tilt
 position: Software Engineer II
 contract: false
 remote: true
 compensation: $125,000 ‒ $135,000 Annually
 title: Tilt
-date_created: "2026-10-02 17:43"
-date_modified: "2026-10-02 17:51"
+date_created: 2026-10-02 17:43
+date_modified: 2026-10-02 17:51
 ---
 
 ## Application
