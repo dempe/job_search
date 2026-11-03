@@ -3,18 +3,18 @@ type: job
 applied: 2026-10-02
 job_type: fulltime
 channel: form
-status: awaiting-reply
+status: ghosted
 interviews:
 source: matcha
-listing: "https://job-boards.greenhouse.io/fleetio/jobs/5253664007"
+listing: https://job-boards.greenhouse.io/fleetio/jobs/5253664007
 company: Fleetio
 position: Senior Software Engineer, Marketplace
 contract: false
 remote: true
 compensation:
 title: Fleetio
-date_created: "2026-10-02 18:01"
-date_modified: "2026-10-02 18:12"
+date_created: 2026-10-02 18:01
+date_modified: 2026-10-02 18:12
 ---
 
 ## Application
