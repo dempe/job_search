@@ -16,10 +16,11 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Constraints
 
-- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
-- The only file this skill modifies is `Job Applications/{Application}.md`, and only by adding `### Questions` sections.
-- The assistant MUST NOT modify anything in `Transcripts/`. The `### Transcript` sections and every other section of the note MUST stay byte-for-byte unchanged.
+- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is the bundled `extract.py` (Step 2).
+- Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
+- `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
+- The assistant modifies `Job Applications/{Application}.md` only by adding `### Questions` sections. Every other section MUST stay byte-for-byte unchanged.
+- The assistant MUST NOT modify any existing file in `Transcripts/`.
 - The assistant MUST NOT create or modify anything in `Answers/` or `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
 
@@ -38,8 +39,15 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Step 2: Find the transcripts
 
+Transcripts live in their own files in `Transcripts/`, named `{Application} - {parent heading}.md` (e.g. `People Data Labs - Interview 2.md`), and the note embeds each one. The user pastes a new transcript into the note as a fenced block, so move those out first:
+
+- Run `python3 -I .claude/skills/djtrans/extract.py "Job Applications/{filename}"`. For each `### Transcript` section holding a fenced block, it writes the block's text to its file in `Transcripts/` and replaces the block with an embed, e.g. `![[Transcripts/People Data Labs - Interview 2]]`. Sections that already embed a file are left alone.
+- Each `skipped:` line it prints is reported in Step 8. If it printed any `moved:` line, Read the note again.
+
+Then:
+
 - Find every `### Transcript` section. A note may have several, one per interview.
-- Transcripts live in their own files in `Transcripts/`, named `{Application} - {parent heading}.md` (e.g. `People Data Labs - Interview 2.md`). A transcript section's content MUST be a single embed of one, e.g. `![[Transcripts/People Data Labs - Interview 2]]`. Read the embedded file; its whole content is the transcript.
+- A transcript section's content MUST be a single embed of a file in `Transcripts/`. Read the embedded file; its whole content is the transcript.
 - A section that is empty, holds anything other than one embed, or embeds a file that doesn't exist (`test -e`) is skipped and reported.
 - Record each transcript's parent `##` section (e.g. `## Interview 1`). The new section goes in that same parent.
 - If the note has no `### Transcript` section, the assistant MUST STOP with one line saying so.
