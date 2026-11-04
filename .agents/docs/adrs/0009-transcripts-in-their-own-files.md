@@ -15,4 +15,3 @@ Interview transcripts run 5–70k characters each. Inline in an application note
 
 - To add a transcript for a new interview: save the text to `Transcripts/{title} - Interview {n}.md`, then put the embed under that interview's `### Transcript` heading.
 - `djtrans` reads transcripts through these embeds and never edits them.
-- Skills that look for Q/As in application notes no longer see transcript text, so a quoted question inside a transcript can't be mistaken for an application Q/A.
