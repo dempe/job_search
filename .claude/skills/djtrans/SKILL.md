@@ -1,12 +1,12 @@
 ---
 name: djtrans
-description: Turn an interview transcript in a job application note into question/answer blocks. Extracts the substantive questions the interviewer asked and writes the ideal answer to each, in a new `### Questions` section beside the transcript. Takes the application note's name (e.g. `Rivora`).
+description: Turn the interview transcripts embedded in a job application note into question/answer blocks. Extracts the substantive questions the interviewer asked and writes the ideal answer to each, in a new `### Questions` section beside the transcript. Takes the application note's name (e.g. `Rivora`).
 argument-hint: <application-note-name>
 ---
 
 # Interview Transcript to Questions
 
-Read the `### Transcript` sections of one application note, pull out the questions the interviewer asked, and write the answer that should have been given to each.
+Read the transcripts embedded in the `### Transcript` sections of one application note, pull out the questions the interviewer asked, and write the answer that should have been given to each.
 
 The answers are model answers for study, not a record of what was said and not restricted to what the vault can evidence. Each generated section says so, so a later reader never mistakes them for the user's own words.
 
@@ -19,7 +19,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
 - The only file this skill modifies is `Job Applications/{Application}.md`, and only by adding `### Questions` sections.
-- The transcript, its fences, and every other section MUST stay byte-for-byte unchanged.
+- The assistant MUST NOT modify anything in `Transcripts/`. The `### Transcript` sections and every other section of the note MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT create or modify anything in `Answers/` or `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
 
@@ -39,7 +39,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Step 2: Find the transcripts
 
 - Find every `### Transcript` section. A note may have several, one per interview.
-- A transcript section's content MUST be a single fenced code block with no language. A section that is empty, holds prose, or holds more than one block is skipped and reported.
+- Transcripts live in their own files in `Transcripts/`, named `{Application} - {parent heading}.md` (e.g. `People Data Labs - Interview 2.md`). A transcript section's content MUST be a single embed of one, e.g. `![[Transcripts/People Data Labs - Interview 2]]`. Read the embedded file; its whole content is the transcript.
+- A section that is empty, holds anything other than one embed, or embeds a file that doesn't exist (`test -e`) is skipped and reported.
 - Record each transcript's parent `##` section (e.g. `## Interview 1`). The new section goes in that same parent.
 - If the note has no `### Transcript` section, the assistant MUST STOP with one line saying so.
 
@@ -110,7 +111,7 @@ Model answers, not a record of what was said.
 - Question/answer pairs are separated by exactly one blank line.
 - A multi-line question follows the vault's convention: every line starts with `> `, and every line but the last ends with `<br/>`.
 - The answer goes in a fenced code block with no language, matching the rest of the vault.
-- Use Edit, anchoring on the end of the transcript's closing fence and the heading that follows it, so nothing else moves.
+- Use Edit, anchoring on the transcript's embed line and whatever follows it, so nothing else moves.
 
 ## Step 8: Report and stop
 
