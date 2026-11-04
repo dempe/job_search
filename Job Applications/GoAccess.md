@@ -4,7 +4,7 @@ applied: 2026-10-26
 job_type: fulltime
 channel: form
 contact:
-status: interview
+status: rejected
 interviews:
   - 2026-10-28 10:00
 source: linkedin
@@ -16,7 +16,7 @@ remote:
 compensation: $120K–$140K base + potential equity.
 title: GoAccess
 date_created: "2026-10-26 18:37"
-date_modified: "2026-10-29 11:25"
+date_modified: "2026-11-04 11:23"
 ---
 
 ## Application
