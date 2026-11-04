@@ -17,7 +17,7 @@ remote: true
 compensation: $160K - $200K
 title: People Data Labs
 date_created: "2026-10-22 15:11"
-date_modified: "2026-11-03 15:29"
+date_modified: "2026-11-04 17:24"
 ---
 
 ## Application
@@ -171,7 +171,7 @@ At Octimine, we sold patent analytics -- things like citation counts and how tec
 
 I made the case for an event-driven pipeline and built it in Kafka Streams. A source connector read the warehouse's write-ahead log, so every change landed in a source topic. We deserialized the XML into one canonical record per patent family, then fanned out to independent processors, one per analytic. Each one emitted a partial update to Elasticsearch, keyed by family ID, applied with doc_as_upsert, so Elasticsearch was an eventually consistent view of everything. Failed records went to a dead-letter topic instead of stopping the run, and every analytic had unit tests that ran as regression tests in CI. Because the analytics were decoupled, one breaking didn't take down the others -- you fixed it and replayed.
 
-I designed and built it, mostly on my own. The hardest part was the technological-distance analytic, which I'll come back to if you want. I left Germany before it cut over to production -- I gave my six months' notice and finished in staging -- but in staging it was clearly more reliable than the batch job.
+I designed and built it. I left Germany before it cut over to production -- I gave my six months' notice and finished in staging -- but in staging it was clearly more reliable than the batch job.
 ```
 
 > You said the original job was janky and took a lot of time to support. What specifically about the original architecture made it janky and difficult to support?
