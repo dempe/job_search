@@ -17,7 +17,7 @@ remote: true
 compensation:
 title: Aescape (1)
 date_created: "2026-10-29 11:11"
-date_modified: "2026-10-29 17:25"
+date_modified: "2026-11-04 17:20"
 ---
 
 ## Application
