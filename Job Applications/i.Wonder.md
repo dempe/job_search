@@ -24,3 +24,11 @@ date_modified: "2026-11-02 20:53"
 > What interests you about working for this company?
 
 [[Why Company X#i.Wonder|Why Company X]]
+
+## Interview 1
+
+### Transcript
+
+```
+
+```
