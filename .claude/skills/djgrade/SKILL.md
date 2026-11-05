@@ -43,17 +43,18 @@ Score the answer against the question and the reference answer, check by check, 
 
 Each check is worth exactly **1 point**. A check either passes (1) or fails (0); there is no partial credit within a check.
 
-**Every question: 5 checks, 5 points possible**
+**Every question: 6 checks, 6 points possible**
 
 | Check | Passes (1 point) if… |
 |---|---|
-| `answered` | It answers this question. It is not wrong, not a non-answer ("I forget", "I don't know", trailing off), and not an answer to a different question. |
+| `answered` | It answers this question. It is not wrong, not a non-answer ("I forget", "I don't know", trailing off), and not an answer to a different question. A real but weak answer passes this check; its weakness shows in the other checks. |
 | `complete` | Every part of the question gets an actual answer. Mentioning every topic the reference answer covers isn't enough. |
-| `specifics` | It gives concrete names, numbers, technologies, and actions, not generalities. |
+| `specifics` | It gives concrete names, numbers, technologies, and actions, not generalities. **A yes/no or one-fact question** ("Did you only build the mobile app?", "Are you doing both roles at once?") **passes with a direct answer.** Ratings and "are you comfortable with X" are not one-fact questions: they need something to back them up ("About an 8 -- I've used it daily for pipelines and APIs"). |
 | `lead` | The first sentence or two directly answers the question, before any background, context, or detail. Direct leads look like "Yes, twice -- the worst was…", "Kafka, because…", "About an 8.", "Mostly TypeScript and Node, with…" |
 | `accurate` | It claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply), and nothing in it is technically wrong. |
+| `substance` | It covers the key points a strong answer to this question needs, judged against the substance of the reference answer, not its polish or length. For example, "standard HTTPS" alone fails a question about securing service-to-service calls, and an answer about why you want a job that gives no reason specific to the company fails a question asking about that company. |
 
-**Story questions: 4 more checks, 9 points possible**
+**Story questions: 4 more checks, 10 points possible**
 
 A story question asks for an experience: "tell me about a time…", "have you ever…", "walk me through a project…", "what was the most difficult…". For these, also score:
 
@@ -66,7 +67,7 @@ A story question asks for an experience: "tell me about a time…", "have you ev
 
 ### From score to grade
 
-- `points` is the number of checks passed. `possible` is 5, or 9 for a story question.
+- `points` is the number of checks passed. `possible` is 6, or 10 for a story question.
 - **`answered` is a gate:** if it fails, every check fails, `points` is 0, and the grade is `missed`.
 - If every check passes, the grade is `right`.
 - Otherwise the grade is `partial`.
@@ -84,7 +85,7 @@ The grade is always derived this way, so it can never disagree with the score.
 
 Answer: on-call at a previous job as a junior and "had to ask for some help"; at Octimine "there were 2 times where it would just like keep failing", "I had to babysit it", "It wasn't a complete outage"; staying calm and separating what's known from what isn't; a root cause analysis and incident documentation afterwards.
 
-This is a story question, so `possible` is 9.
+This is a story question, so `possible` is 10.
 
 | Check | Result | Why |
 |---|---|---|
@@ -93,12 +94,13 @@ This is a story question, so `possible` is 9.
 | `specifics` | fail | It never says what was failing or what was done. |
 | `lead` | fail | It opens with on-call as a junior at a previous job, and never states up front whether there was an emergency. |
 | `accurate` | pass | Nothing is overclaimed or wrong. |
+| `substance` | fail | A strong answer needs a real incident and how it was handled; the approach alone isn't it. |
 | `beginning` | fail | No specific problem or impact is stated. |
 | `middle` | fail | "I had to babysit it" and the approach stand in for actions. |
 | `end` | fail | No outcome. |
 | `fits` | fail | A failing, late batch job isn't an outage ("It wasn't a complete outage"), and "I think there were 2 times" shrinks it. |
 
-Score: 3/9. Grade: `partial`. A full-score answer leads with a direct yes and the incident it will describe, then tells that one incident: what broke and who it hurt, the specific steps taken, and the outcome.
+Score: 3/10. Grade: `partial`. A full-score answer leads with a direct yes and the incident it will describe, then tells that one incident: what broke and who it hurt, the specific steps taken, and the outcome.
 
 ## Output
 
@@ -107,7 +109,7 @@ For each item, exactly this shape, one field per list item:
 ```markdown
 - grade:: {right | partial | missed}
 - points:: {checks passed}
-- possible:: {5, or 9 for a story question}
+- possible:: {6, or 10 for a story question}
 - failed:: {comma-separated names of the failed checks}
 - answer:: {what the candidate said}
 - missing:: {what was missing or wrong}

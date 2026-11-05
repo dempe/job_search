@@ -18,7 +18,7 @@ SORT day ASC
 ## Scorecard
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "right")) AS "Right", length(filter(file.lists, (l) => l.grade = "partial")) AS "Partial", length(filter(file.lists, (l) => l.grade = "missed")) AS "Missed", round(100 * length(filter(file.lists, (l) => l.grade = "right")) / length(filter(file.lists, (l) => l.grade))) + "%" AS "%", choice(length(filter(file.lists, (l) => l.possible)) > 0, round(100 * sum(map(filter(file.lists, (l) => l.possible), (l) => l.points)) / sum(map(filter(file.lists, (l) => l.possible), (l) => l.possible))) + "%", "-") AS "Score", outcome AS "Outcome"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "right")) AS "Right", length(filter(file.lists, (l) => l.grade = "partial")) AS "Partial", length(filter(file.lists, (l) => l.grade = "missed")) AS "Missed", round(100 * length(filter(file.lists, (l) => l.grade = "right")) / length(filter(file.lists, (l) => l.grade))) + "%" AS "%", round(100 * default(sum(filter(file.lists, (l) => l.possible).points), 0) / default(sum(filter(file.lists, (l) => l.possible).possible), 1)) + "%" AS "Score", outcome AS "Outcome"
 FROM "Applications"
 WHERE type = "interview" AND length(filter(file.lists, (l) => l.grade)) > 0
 SORT date(substring(string(date), 0, 10)) DESC
@@ -27,7 +27,7 @@ SORT date(substring(string(date), 0, 10)) DESC
 ## Missed or Partial
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", L.section AS "Question"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * default(L.points, 0) / default(L.possible, 1)) + "%" AS "Score", L.section AS "Question"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
@@ -38,7 +38,7 @@ SORT date(substring(string(date), 0, 10)) DESC, L.grade ASC
 ## Right
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", L.section AS "Question"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * default(L.points, 0) / default(L.possible, 1)) + "%" AS "Score", L.section AS "Question"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
