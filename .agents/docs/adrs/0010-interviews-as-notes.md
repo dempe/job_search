@@ -12,8 +12,8 @@ Interviews lived as `## Interview N` sections inside application notes. That lef
   - `company`, `round`, `date`: `date` uses the same string format as the application's `interviews` list
   - `interviewers`
   - `outcome`: one of `pending`, `advanced`, `rejected`, `declined`, `ghosted`, `offer`
-- Its body holds everything about that interview: prep, the `### Transcript` embed (ADR 0009), `### Questions` model answers, `### Review`, and retros.
-- `### Review` grades each question's real answer against its model answer, with one `####` subheading per question, titled with the complete question, holding `grade::` (right, partial, or missed), `answer::`, and `missing::` as separate Dataview list items. `djtrans` writes it, and `Interviews.md` aggregates the grades into a Missed and Partial list and a per-interview scorecard.
+- Its body holds everything about that interview: prep, the `### Transcript` embed (ADR 0009), `### Questions`, and retros.
+- `### Questions` has one `####` heading per question, titled with the complete question. Under it are the grade of the user's real answer as separate Dataview list items (`grade::` right, partial, or missed; `answer::`; `missing::`), then the model answer as a fenced block, or a link once filed to `Answers/`. Each question appears once. A tally line opens the section. `djtrans` writes it, and `Interviews.md` aggregates the grades into a Missed and Partial list and a per-interview scorecard.
 - The application note keeps a `## Interview {n}` heading for each round, holding only `![[Applications/{title}/Interviews/{n}/{n}]]`. The full application still reads top to bottom in Obsidian.
 - The interview's transcript is `transcript.md` beside it (ADR 0009).
 - `Interviews.md`, at the vault root, is the interview-centric view. It's a set of Dataview queries over `Applications/` for `type: interview`.

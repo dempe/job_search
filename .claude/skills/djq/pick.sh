@@ -4,6 +4,9 @@
 # (Applications/{title}/Interviews/{n}/{n}.md). A question is a run of consecutive `>` lines followed by
 # one blank line and then an answer: a ``` fence or a [[link]] line. Blockquotes
 # that aren't followed by an answer (quoted emails, notes) are not questions.
+# Inside an interview note's `### Questions` section, a question is instead a
+# `#### {question}` heading followed (after any `- field::` grade bullets) by an
+# answer; it is printed as a `> ` line so the output looks the same.
 #
 # Output: the note's name on the first line ("{title}" or "{title} - Interview {n}"),
 # then the question's `>` lines verbatim.
@@ -24,8 +27,15 @@ done
 
 awk '
   function flush() { if (blk != "") { n++; file[n] = FILENAME; q[n] = blk } }
-  FNR == 1 { inq = 0; state = 0; blk = "" }
+  FNR == 1 { inq = 0; state = 0; blk = ""; inqs = 0; hstate = 0 }
   state == 2 { if ($0 ~ /^```/ || $0 ~ /^\[\[/) flush(); state = 0; blk = "" }
+  /^#{2,3} / { inqs = ($0 == "### Questions") }
+  inqs && /^#### / { hq = "> " substr($0, 6) "\n"; hstate = 1; next }
+  hstate {
+    if ($0 ~ /^```/ || $0 ~ /^\[\[/) { blk = hq; flush(); blk = ""; hstate = 0 }
+    else if ($0 != "" && $0 !~ /^- [a-z]+:: /) hstate = 0
+    next
+  }
   /^>/ { if (!inq) blk = ""; blk = blk $0 "\n"; inq = 1; next }
   inq { inq = 0; state = ($0 == "") ? 2 : 0; if (state == 0) blk = ""; next }
   END {

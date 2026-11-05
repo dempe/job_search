@@ -1,6 +1,6 @@
 ---
 name: djtrans
-description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Extracts the substantive questions the interviewer asked, writes the ideal answer to each in a `### Questions` section beside the transcript, and grades each real answer right / partial / missed in a `### Review` section. Takes the application note's name (e.g. `Rivora`).
+description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Extracts the substantive questions the interviewer asked, and writes a `### Questions` section beside the transcript with, for each question, a right / partial / missed grade of the real answer and the ideal answer. Takes the application note's name (e.g. `Rivora`).
 argument-hint: <application-note-name>
 ---
 
@@ -19,7 +19,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is the bundled `extract.py` (Step 2).
 - Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
 - `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
-- The assistant modifies the application's interview notes only by adding `### Questions` and `### Review` sections. Every other part of them MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
+- The assistant modifies the application's interview notes only by adding a `### Questions` section, or by adding the tally and grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and links, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
 - The assistant MUST NOT modify any existing `transcript.md`.
 - The assistant MUST NOT create or modify anything in `Answers/`. It MAY read `Answers/` notes (Step 8).
 - The assistant MUST NOT commit or push anything to git.
@@ -43,7 +43,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 Each transcript is a `transcript.md` beside its interview note (e.g. `Applications/People Data Labs/Interviews/2/2.md` has `Applications/People Data Labs/Interviews/2/transcript.md`), and the interview note embeds it. The user pastes a new transcript into the interview note as a fenced block under `### Transcript`, so move those out first:
 
 - For each interview note, run `python3 -I .claude/skills/djtrans/extract.py "Applications/{Application}/Interviews/{n}/{n}.md"`. For each `### Transcript` section holding a fenced block, it writes the block's text to `transcript.md` beside the note and replaces the block with an embed, e.g. `![[Applications/People Data Labs/Interviews/2/transcript]]`. Sections that already embed a file are left alone.
-- Each `skipped:` line it prints is reported in Step 10. If it printed any `moved:` line, Read that interview note again.
+- Each `skipped:` line it prints is reported in Step 9. If it printed any `moved:` line, Read that interview note again.
 
 Then, in each interview note:
 
@@ -54,8 +54,8 @@ Then, in each interview note:
 
 ## Step 3: Skip work already done
 
-- If an interview note contains both `### Questions` and `### Review`, it is skipped and reported.
-- If it contains `### Questions` but no `### Review`, skip Steps 4–7 for it and go straight to Step 8, grading against the existing questions and model answers.
+- If an interview note's `### Questions` section already contains `grade::` items, it is skipped and reported.
+- If it has a `### Questions` section without grades (written before its transcript existed), skip Steps 4–6 for it: grade its existing questions in Step 7, then in Step 8 add only the tally line and each question's grade bullets.
 - Re-running the skill is therefore safe.
 
 ## Step 4: Extract the interviewer's questions
@@ -102,32 +102,11 @@ For each question, write the answer that should have been given:
 
 These answers are not constrained by what the user actually said in the interview, nor by what the vault can evidence. That is deliberate: they are the target to study toward. The user decides what to adapt.
 
-## Step 7: Write the section
+## Step 7: Grade each answer
 
-In the interview note, immediately after the `### Transcript` section, add:
+For each question, in order:
 
-````markdown
-### Questions
-
-Model answers, not a record of what was said.
-
-> {question}
-
-```
-{ideal answer}
-```
-````
-
-- Question/answer pairs are separated by exactly one blank line.
-- A multi-line question follows the vault's convention: every line starts with `> `, and every line but the last ends with `<br/>`.
-- The answer goes in a fenced code block with no language, matching the rest of the vault.
-- Use Edit, anchoring on the transcript's embed line and whatever follows it, so nothing else moves.
-
-## Step 8: Grade each answer
-
-For each question in the interview note's `### Questions` section, in order:
-
-- Get its model answer: the fenced block after the question, or, if the question is followed by a `[[Note#Heading|Note]]` link because the answer was filed with `djmvanswers`, the code block in that `Answers/` section.
+- Its model answer is the one written in Step 6, or, in an existing section, the fenced block under its heading. If the heading is followed by a `[[Note#Heading|Note]]` link because the answer was filed with `djmvanswers`, read the code block in that `Answers/` section.
 - Find the user's actual answer in the transcript: what the candidate said in response to that question, including any follow-up exchange on the same point.
 - Grade the substance of the answer against the question and the model answer:
   - `right`: answered every part of the question correctly, with concrete specifics.
@@ -136,28 +115,34 @@ For each question in the interview note's `### Questions` section, in order:
 - Ignore filler, stutters, and transcription errors. Judge delivery only when rambling buried the answer.
 - The grade is about the answer, not about the model answer's extra polish: a short answer that hits every point the question asked for is `right`.
 
-## Step 9: Write the review
+## Step 8: Write the section
 
-In the interview note, immediately after the `### Questions` section (before whatever section follows it), add:
+In the interview note, immediately after the `### Transcript` section, add:
 
-```markdown
-### Review
+````markdown
+### Questions
 
-Graded against the transcript: {r} right, {p} partial, {m} missed.
+Graded against the transcript: {r} right, {p} partial, {m} missed. Each question shows how you answered, then a model answer to study.
 
 #### {question}
 
 - grade:: {grade}
 - answer:: {what the user said}
 - missing:: {what was missing or wrong}
-```
 
-- One `####` subheading per question, in the same order as `### Questions`. `{question}` is the complete question text from `### Questions`, on one line, with `<br/>` and `> ` removed, and any `#`, `|`, `^`, `[`, or `]` replaced (with `(` and `)` for brackets) so the heading still works as a link. `Interviews.md` shows it as the link to the review.
+```
+{ideal answer}
+```
+````
+
+- One `####` heading per question, in the order asked. `{question}` is the complete question on one line, with any `#`, `|`, or `^` removed and `[`/`]` replaced with `(`/`)` (a Markdown link becomes `text (url)`), so the heading still works as a link. `Interviews.md` links to it.
 - Each field is its own list item, so Dataview reads it per section.
 - `answer::` is a short verbatim quote from the transcript in double quotes, or a faithful paraphrase without quotes. It MUST NOT attribute anything to the user that the transcript doesn't show.
 - `missing::` names what the answer lacked or got wrong, concretely (e.g. "the re-key to family ID before the join"). Omit it for `right`.
-- Use Edit, anchoring on the end of the `### Questions` section and the heading that follows it (or the end of the file), so nothing else moves.
+- The ideal answer goes in a fenced code block with no language, matching the rest of the vault. Blocks are separated by exactly one blank line.
+- For an existing ungraded section (Step 3), replace its intro line with the tally line and insert each question's bullets between its heading and its model answer. Nothing else in it changes.
+- Use Edit, anchoring on the transcript's embed line (or on each heading) and whatever follows it, so nothing else moves.
 
-## Step 10: Report and stop
+## Step 9: Report and stop
 
 Report one line per interview note (for example, `Interview 1: 5 questions (3 right, 1 partial, 1 missed)`), plus a line for any transcript skipped and why. Then STOP.
