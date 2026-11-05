@@ -145,14 +145,19 @@ In the interview note, immediately after the `### Questions` section (before wha
 
 Graded against the transcript: {r} right, {p} partial, {m} missed.
 
-- [grade:: {grade}] [question:: {question}]
-  You said: {what the user said}
-  Missing: {what was missing or wrong}
+#### {title}
+
+- grade:: {grade}
+- question:: {question}
+- answer:: {what the user said}
+- missing:: {what was missing or wrong}
 ```
 
-- One list item per question, in the same order as `### Questions`. `{question}` is the question text from `### Questions`, on one line, with `<br/>` and `> ` removed, and any `[` or `]` replaced with `(` or `)` so the inline field parses.
-- `You said:` is a short verbatim quote from the transcript in double quotes, or a faithful paraphrase without quotes. It MUST NOT attribute anything to the user that the transcript doesn't show.
-- `Missing:` names what the answer lacked or got wrong, concretely (e.g. "the re-key to family ID before the join"). Omit the line for `right`.
+- One `####` subheading per question, in the same order as `### Questions`. `{title}` is a short label for the question, three to six words in sentence case (e.g. `What made the batch job janky`), unique within the note. `Interviews.md` shows it as the link to the question.
+- Each field is its own list item, so Dataview reads it per section.
+- `{question}` is the question text from `### Questions`, on one line, with `<br/>` and `> ` removed.
+- `answer::` is a short verbatim quote from the transcript in double quotes, or a faithful paraphrase without quotes. It MUST NOT attribute anything to the user that the transcript doesn't show.
+- `missing::` names what the answer lacked or got wrong, concretely (e.g. "the re-key to family ID before the join"). Omit it for `right`.
 - Use Edit, anchoring on the end of the `### Questions` section and the heading that follows it (or the end of the file), so nothing else moves.
 
 ## Step 10: Report and stop

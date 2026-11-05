@@ -36,7 +36,7 @@ SORT file.path ASC
 ## Missed and Partial
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", L.question AS "Question"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", L.section AS "Question"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
