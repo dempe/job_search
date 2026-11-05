@@ -1,12 +1,12 @@
 ---
 name: djtrans
-description: Turn the interview transcripts embedded in a job application note into question/answer blocks. Extracts the substantive questions the interviewer asked and writes the ideal answer to each, in a new `### Questions` section beside the transcript. Takes the application note's name (e.g. `Rivora`).
+description: Turn the interview transcripts in an application's interview notes into question/answer blocks. Extracts the substantive questions the interviewer asked and writes the ideal answer to each, in a new `### Questions` section beside the transcript. Takes the application note's name (e.g. `Rivora`).
 argument-hint: <application-note-name>
 ---
 
 # Interview Transcript to Questions
 
-Read the transcripts embedded in the `### Transcript` sections of one application note, pull out the questions the interviewer asked, and write the answer that should have been given to each.
+Each interview is its own note in `Interviews/`, embedded in its application note (see ADR 0010). Read the transcripts in one application's interview notes, pull out the questions the interviewer asked, and write the answer that should have been given to each.
 
 The answers are model answers for study, not a record of what was said and not restricted to what the vault can evidence. Each generated section says so, so a later reader never mistakes them for the user's own words.
 
@@ -19,7 +19,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is the bundled `extract.py` (Step 2).
 - Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
 - `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
-- The assistant modifies `Job Applications/{Application}.md` only by adding `### Questions` sections. Every other section MUST stay byte-for-byte unchanged.
+- The assistant modifies the application's interview notes in `Interviews/` only by adding `### Questions` sections. Every other part of them MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
 - The assistant MUST NOT modify any existing file in `Transcripts/`.
 - The assistant MUST NOT create or modify anything in `Answers/` or `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
@@ -27,7 +27,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Output
 
 - The assistant MUST NOT narrate while working.
-- The assistant MUST end with one line per interview section giving the number of questions captured, and one line for any transcript that was skipped and why.
+- The assistant MUST end with one line per interview note giving the number of questions captured, and one line for any transcript that was skipped and why.
 - A run that stops early MUST say why in one line.
 
 ## Step 1: Input
@@ -35,26 +35,26 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The argument is `{Application}`, an application note's name without `.md`. Resolve it to the real filename in `Job Applications/` (`ls`), matching case-insensitively, and use that file's casing.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
-- Read the whole note.
+- Read the whole note. Its interview notes are the `![[Interviews/...]]` embeds under its `## Interview…` headings. Read each one.
+- If the note embeds no interview notes, the assistant MUST STOP with one line saying so.
 
 ## Step 2: Find the transcripts
 
-Transcripts live in their own files in `Transcripts/`, named `{Application} - {parent heading}.md` (e.g. `People Data Labs - Interview 2.md`), and the note embeds each one. The user pastes a new transcript into the note as a fenced block, so move those out first:
+Transcripts live in their own files in `Transcripts/`, named after their interview note (e.g. `Interviews/People Data Labs - Interview 2.md` has `Transcripts/People Data Labs - Interview 2.md`), and the interview note embeds it. The user pastes a new transcript into the interview note as a fenced block under `### Transcript`, so move those out first:
 
-- Run `python3 -I .claude/skills/djtrans/extract.py "Job Applications/{filename}"`. For each `### Transcript` section holding a fenced block, it writes the block's text to its file in `Transcripts/` and replaces the block with an embed, e.g. `![[Transcripts/People Data Labs - Interview 2]]`. Sections that already embed a file are left alone.
-- Each `skipped:` line it prints is reported in Step 8. If it printed any `moved:` line, Read the note again.
+- For each interview note, run `python3 -I .claude/skills/djtrans/extract.py "Interviews/{interview note}.md"`. For each `### Transcript` section holding a fenced block, it writes the block's text to its file in `Transcripts/` and replaces the block with an embed, e.g. `![[Transcripts/People Data Labs - Interview 2]]`. Sections that already embed a file are left alone.
+- Each `skipped:` line it prints is reported in Step 8. If it printed any `moved:` line, Read that interview note again.
 
-Then:
+Then, in each interview note:
 
-- Find every `### Transcript` section. A note may have several, one per interview.
+- Find its `### Transcript` section. An interview note without one is passed over silently: not every interview has a transcript.
 - A transcript section's content MUST be a single embed of a file in `Transcripts/`. Read the embedded file; its whole content is the transcript.
 - A section that is empty, holds anything other than one embed, or embeds a file that doesn't exist (`test -e`) is skipped and reported.
-- Record each transcript's parent `##` section (e.g. `## Interview 1`). The new section goes in that same parent.
-- If the note has no `### Transcript` section, the assistant MUST STOP with one line saying so.
+- If none of the interview notes has a `### Transcript` section, the assistant MUST STOP with one line saying so.
 
 ## Step 3: Skip work already done
 
-- If a transcript's parent section already contains a `### Questions` section, that transcript is skipped and reported. Re-running the skill is therefore safe.
+- If an interview note already contains a `### Questions` section, its transcript is skipped and reported. Re-running the skill is therefore safe.
 
 ## Step 4: Extract the interviewer's questions
 
@@ -102,7 +102,7 @@ These answers are not constrained by what the user actually said in the intervie
 
 ## Step 7: Write the section
 
-In the transcript's parent section, immediately after the `### Transcript` section, add:
+In the interview note, immediately after the `### Transcript` section, add:
 
 ````markdown
 ### Questions
@@ -123,4 +123,4 @@ Model answers, not a record of what was said.
 
 ## Step 8: Report and stop
 
-Report one line per interview section (for example, `Interview 1: 5 questions`), plus a line for any transcript skipped and why. Then STOP.
+Report one line per interview note (for example, `Interview 1: 5 questions`), plus a line for any transcript skipped and why. Then STOP.
