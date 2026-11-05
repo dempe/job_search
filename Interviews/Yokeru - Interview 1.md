@@ -2,18 +2,18 @@
 type: interview
 application: "[[Job Applications/Yokeru]]"
 company: Yokeru
-round: 2
+round: 1
 date: 2026-04-27
 interviewers:
 outcome: declined
-title: Yokeru - Interview 2
+title: Yokeru - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"
 ---
 
 ### Transcript
 
-![[Transcripts/Yokeru - Interview 2]]
+![[Transcripts/Yokeru - Interview 1]]
 
 ### Questions
 

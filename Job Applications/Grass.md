@@ -65,7 +65,3 @@ Chris
 > Optional: Please add anything else you would like to highlight about yourself
 
 [[Returning to a collaborative engineering team#Grass|Returning to a collaborative engineering team]]
-
-## Interview 1
-
-![[Interviews/Grass - Interview 1]]

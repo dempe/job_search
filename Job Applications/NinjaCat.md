@@ -3,9 +3,11 @@ type: job
 applied: 2023-06-03
 interviews:
   - 2023-06-22 10:00
+  - 2023-07-09 13:00
   - 2023-07-10 13:00
   - 2023-07-10 14:00
-  - 2023-07-11 14:00
+  - 2023-07-11 13:00
+  - 2023-07-12 14:00
 status: rejected
 source: remotive
 job_type: fulltime

@@ -35,7 +35,3 @@ Mention
 - [x] Website
 - [x] Something about working at Starbridge
 - [ ] Working in their industry
-
-## Interview 1
-
-![[Interviews/Starbridge - Interview 1]]

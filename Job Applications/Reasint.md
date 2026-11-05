@@ -1,11 +1,9 @@
 ---
 type: job
 applied: 
-interviews: 
+interviews:
   - 2023-11-17 10:00
   - 2023-11-29 14:00
-  - 2023-11-29 15:00
-  - 2023-11-29 15:30
 status: rejected
 source: reference
 job_type: fulltime

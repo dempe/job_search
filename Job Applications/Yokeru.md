@@ -42,7 +42,3 @@ Chris
 ## Interview 1
 
 ![[Interviews/Yokeru - Interview 1]]
-
-## Interview 2
-
-![[Interviews/Yokeru - Interview 2]]
