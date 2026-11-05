@@ -1,13 +1,13 @@
 ---
 title: Interviews
 date_created: "2026-11-04 19:08"
-date_modified: "2026-11-04 21:19"
+date_modified: "2026-11-04 21:26"
 ---
 
 ## Upcoming
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", file.link AS "Interview", date AS "When", interviewers AS "Interviewers", outcome AS "Outcome"
+TABLE WITHOUT ID application AS "Application", file.link AS "Interview", date AS "When", interviewers AS "Interviewers"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN date(substring(string(date), 0, 10)) AS day
