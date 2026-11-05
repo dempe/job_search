@@ -117,7 +117,10 @@ For each item, exactly this shape, one field per list item:
 
 - `failed::` lists check names exactly as in the tables (e.g. `lead, specifics`). Omit it when every check passes.
 
-- `answer::` is a short verbatim quote from the candidate's answer in double quotes, or a faithful paraphrase without quotes. It MUST NOT attribute anything to the candidate that their answer doesn't show.
+- `answer::` is a verbatim quote of the candidate's answer, in double quotes. It MUST NOT be a paraphrase or summary.
+  - It starts with the answer's opening sentence, exactly as said, so a weak lead is visible.
+  - It MAY add one more verbatim excerpt with the core of the answer, joined to the first with ` … `.
+  - Keep it under about 80 words. Quote transcription errors as they appear; don't correct them.
 - `missing::` names what the answer lacked or got wrong, concretely (e.g. "the re-key to family ID before the join"). Omit it for `right`.
 
 **Ad hoc:** print the block for each item, with the score as a percentage after it (`points / possible`), then one or two sentences of coaching on what to add or change next time. Then STOP.
