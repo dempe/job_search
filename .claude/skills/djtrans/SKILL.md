@@ -104,16 +104,8 @@ These answers are not constrained by what the user actually said in the intervie
 
 ## Step 7: Grade each answer
 
-For each question, in order:
-
-- Its model answer is the one written in Step 6, or, in an existing section, the fenced block under its heading. If the heading is followed by a `[[Note#Heading|Note]]` link because the answer was filed with `djmvanswers`, read the code block in that `Answers/` section.
-- Find the user's actual answer in the transcript: what the candidate said in response to that question, including any follow-up exchange on the same point.
-- Grade the substance of the answer against the question and the model answer:
-  - `right`: answered every part of the question correctly, with concrete specifics.
-  - `partial`: correct but thin, missing a part the question asked for, vague when asked for specifics, or claiming more than the user's experience supports (e.g. rating themselves 9–10 at something they use routinely but not deeply).
-  - `missed`: wrong, a non-answer ("I forget", "I don't know", trailing off), or an answer to a different question.
-- Ignore filler, stutters, and transcription errors. Judge delivery only when rambling buried the answer.
-- The grade is about the answer, not about the model answer's extra polish: a short answer that hits every point the question asked for is `right`.
+- Invoke the `djgrade` skill once with the Skill tool, then grade every question by its rubric and output rules.
+- For each question, the candidate's answer is what the user said in response in the transcript, including any follow-up exchange on the same point. The reference answer is the model answer from Step 6, or, for an existing section, the one `djgrade` finds under the question's heading.
 
 ## Step 8: Write the section
 
@@ -136,9 +128,7 @@ Graded against the transcript: {r} right, {p} partial, {m} missed. Each question
 ````
 
 - One `####` heading per question, in the order asked. `{question}` is the complete question on one line, with any `#`, `|`, or `^` removed and `[`/`]` replaced with `(`/`)` (a Markdown link becomes `text (url)`), so the heading still works as a link. `Interviews.md` links to it.
-- Each field is its own list item, so Dataview reads it per section.
-- `answer::` is a short verbatim quote from the transcript in double quotes, or a faithful paraphrase without quotes. It MUST NOT attribute anything to the user that the transcript doesn't show.
-- `missing::` names what the answer lacked or got wrong, concretely (e.g. "the re-key to family ID before the join"). Omit it for `right`.
+- The bullets are `djgrade`'s output for that question, written as is. Each field is its own list item, so Dataview reads it per section.
 - The ideal answer goes in a fenced code block with no language, matching the rest of the vault. Blocks are separated by exactly one blank line.
 - For an existing ungraded section (Step 3), replace its intro line with the tally line and insert each question's bullets between its heading and its model answer. Nothing else in it changes.
 - Use Edit, anchoring on the transcript's embed line (or on each heading) and whatever follows it, so nothing else moves.

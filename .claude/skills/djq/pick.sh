@@ -9,7 +9,7 @@
 # answer; it is printed as a `> ` line so the output looks the same.
 #
 # Output: the note's name on the first line ("{title}" or "{title} - Interview {n}"),
-# then the question's `>` lines verbatim.
+# its vault path without `.md` on the second, then the question's `>` lines verbatim.
 set -euo pipefail
 shopt -s nullglob
 
@@ -42,11 +42,12 @@ awk '
     if (n == 0) exit 1
     srand()
     i = int(rand() * n) + 1
+    path = file[i]; sub(/\.md$/, "", path)
     name = file[i]; sub(/^Applications\//, "", name)
     if (match(name, /\/Interviews\/[0-9]+\/[0-9]+\.md$/)) {
       n = substr(name, RSTART + 12); sub(/\/.*/, "", n)
       name = substr(name, 1, RSTART - 1) " - Interview " n
     } else sub(/\/.*/, "", name)
-    printf "%s\n%s", name, q[i]
+    printf "%s\n%s\n%s", name, path, q[i]
   }
 ' "${notes[@]}"

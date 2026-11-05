@@ -44,7 +44,7 @@ A question followed by a link line (e.g. `[[Why Company X#Afresh|Why Company X]]
 **Q/A in an interview note.** Inside an interview note's `### Questions` section, a Q/A is instead:
 
 1. A question: a `#### {question}` heading, holding the whole question on one line.
-2. Optionally, grade bullets (`- grade:: …`, `- answer:: …`, `- missing:: …`). These are the user's graded answer, not the answer being filed, and MUST stay in place.
+2. Optionally, bullets (`- grade:: …`, `- answer:: …`, `- missing:: …`, `- practice:: …`). These record the user's own answers, not the answer being filed, and MUST stay in place.
 3. An answer: the fenced code block after the bullets (the model answer), or a link line if already migrated.
 
 When filing one, the `Answers/` section's `> {question}` line is the heading text, so the Answers format doesn't change.
@@ -120,5 +120,5 @@ For each answered Q/A, in the order they appear:
 ## Step 7: Replace the answer with a backlink
 
 - In the note the Q/A is in (the application note or one of its interview notes), use Edit to replace the answer's code block, from its opening fence through its closing fence, with `[[{Answer note}#{Heading}|{Answer note}]]`.
-- The question (blockquote or `####` heading), any grade bullets, and the blank lines around them MUST stay in place.
+- The question (blockquote or `####` heading), any `- field::` bullets (including `- practice::` lines after an application-note answer), and the blank lines around them MUST stay in place.
 - Repeat Steps 4–7 for each answered Q/A, then STOP.
