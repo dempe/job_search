@@ -1,7 +1,7 @@
 ---
 title: Interviews
 date_created: "2026-11-04 19:08"
-date_modified: "2026-11-04 21:26"
+date_modified: "2026-11-05 12:43"
 ---
 
 ## Upcoming Interviews
@@ -27,7 +27,7 @@ SORT date(substring(string(date), 0, 10)) DESC
 ## Missed or Partial Questions
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * P.points / Q.possible) + "%" AS "Score", L.section AS "Question"
+TABLE WITHOUT ID application AS "Application", L.section AS "Question", date AS "When", round(100 * P.points / Q.possible) + "%" AS "Score"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
@@ -38,7 +38,7 @@ FLATTEN filter(file.lists, (x) => x.section = sec AND x.possible != null)[0] AS 
 SORT date(substring(string(date), 0, 10)) DESC, L.grade ASC
 ```
 
-## Questions got Right
+## Questions Got Right
 
 ```dataview
 TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * P.points / Q.possible) + "%" AS "Score", L.section AS "Question"
