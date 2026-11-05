@@ -6,7 +6,7 @@ argument-hint: <application-note-name>
 
 # Draft Application Answers
 
-Fill in the empty answer code blocks in one `Job Applications/` note with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
+Fill in the empty answer code blocks in one `Job Applications/` note, and in the interview notes it embeds (`![[Interviews/...]]`, see ADR 0010), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -16,7 +16,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only for read-only commands: `ls`, `find`, `grep`, `test -e`.
-- The only file this skill modifies is `Job Applications/{Application}.md`, and only by writing answer text inside empty answer code blocks. Everything else in the note (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
+- The only files this skill modifies are `Job Applications/{Application}.md` and the interview notes it embeds, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT create or modify anything in `Answers/`, `Questions/`, `../resume/`, client repositories, or anywhere else.
 - The assistant MUST NOT commit or push anything to git.
 
@@ -51,11 +51,11 @@ A Q/A in an application note is a question (one or more consecutive `>` lines, e
 - The argument is `{Application}`, the application note's name without `.md`. Resolve it to the actual filename in `Job Applications/` (`ls`), matching case-insensitively, and use the real filename's casing.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
-- Read the whole note.
+- Read the whole note, then every interview note it embeds.
 
 ## Step 2: Find unanswered questions
 
-- Find every unanswered Q/A in the note, in any section.
+- Find every unanswered Q/A in the note and its interview notes, in any section.
 - If there are none, the assistant MUST STOP with one line saying so.
 
 ## Step 3: Gather evidence

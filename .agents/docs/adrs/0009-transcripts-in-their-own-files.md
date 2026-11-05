@@ -13,6 +13,7 @@ Interview transcripts run 5–70k characters each. Inline in an application note
 
 ## How to apply
 
-- The user adds a new transcript by pasting it into the note as a fenced block under the interview's `### Transcript` heading. The agent moves it out, not the user.
+- Interviews are now their own notes (ADR 0010), so the `### Transcript` section lives in `Interviews/{title} - Interview {n}.md`, and its transcript is `Transcripts/{title} - Interview {n}.md`.
+- The user adds a new transcript by pasting it into the interview note as a fenced block under `### Transcript`. The agent moves it out, not the user.
 - `djtrans` runs its bundled `extract.py` first. It copies each fenced transcript byte for byte to its file and replaces the block with the embed, so the text is never retyped. To move one outside of `djtrans`, run the same script on the note.
 - `djtrans` then reads transcripts through the embeds and never edits the files.
