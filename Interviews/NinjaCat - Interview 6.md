@@ -3,12 +3,12 @@ type: interview
 application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 6
-date:
+date: 2023-07-11 14:00
 interviewers: Winnie
 outcome: rejected
 title: NinjaCat - Interview 6
-date_created: "2026-11-04 18:10"
-date_modified: "2026-11-04 18:10"
+date_created: 2026-11-04 18:10
+date_modified: 2026-11-04 18:10
 ---
 
 ## Hiring Manager Interview (30 min)
