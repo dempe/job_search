@@ -44,7 +44,7 @@ A question followed by a link line (e.g. `[[Why Company X#Afresh|Why Company X]]
 **Q/A in an interview note.** Inside an interview note's `### Questions` section, a Q/A is instead:
 
 1. A question: a `#### {question}` heading, holding the whole question on one line.
-2. Optionally, bullets (`- grade:: …`, `- points:: …`, `- possible:: …`, `- failed:: …`, `- answer:: …`, `- missing:: …`, `- practice:: …`). These record the user's own answers, not the answer being filed, and MUST stay in place.
+2. Optionally, bullets (`- grade:: …`, `- qtype:: …`, `- content:: …`, `- content_max:: …`, `- delivery:: …`, `- delivery_max:: …`, `- failed:: …`, `- answer:: …`, `- missing::` with its sub-bullets, `- practice:: …`). These record the user's own answers, not the answer being filed, and MUST stay in place.
 3. An answer: the fenced code block after the bullets (the model answer), or a link line if already migrated.
 
 When filing one, the `Answers/` section's `> {question}` line is the heading text, so the Answers format doesn't change.

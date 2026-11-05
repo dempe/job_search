@@ -1,6 +1,6 @@
 ---
 name: djgrade
-description: Score and grade an answer to an interview or application question: points per rubric check, right / partial / missed, what was said, and what was missing. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
+description: Score and grade an answer to an interview or application question: question type, content and delivery points per rubric check, right / partial / missed, what was said, and what was missing. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
 argument-hint: <question> <answer>
 ---
 
@@ -37,70 +37,82 @@ If there's no reference answer, grade against the question alone, using correct 
 
 ## Rubric
 
-Score the answer against the question and the reference answer, check by check, then derive the grade from the score.
+Classify the question, score its **content** and its **delivery** check by check, then derive the grade from the scores.
 
-### Checks and points
+### Question type
 
-Each check is worth exactly **1 point**. A check either passes (1) or fails (0); there is no partial credit within a check.
+Pick exactly one `qtype` (the field is named `qtype`, not `type`, because the interview note's frontmatter already uses `type: interview`). It decides which substance dimensions are scored.
 
-**Every question: 6 checks, 6 points possible**
+| type | asked like | substance dimensions (1 point each) |
+|---|---|---|
+| `design` | "how would you build / scale / handle X" | `diagnose`: clarifies the workload and finds the limits or bottleneck · `mechanism`: how the proposal works, including constraints like shared state · `reliability`: containing failures, changing safely, tradeoffs · `validate`: how testing and metrics guide the next step |
+| `technical` | "what is / explain / what's the difference" | `concept`: the correct core idea · `how`: the mechanism or internals · `when`: when it applies, and the tradeoffs · `example`: a concrete use or case |
+| `story` | "tell me about a time / have you ever / walk me through a project / most difficult…" | `beginning`: one specific problem, and who or what it affected · `middle`: what the candidate personally did (an approach like "I stay calm" or "I had to deal with it" doesn't count) · `end`: the outcome · `fits`: the example matches what was asked, not a smaller or different kind of situation, unless the candidate says plainly it's the closest they've had and why it still counts |
+| `experience` | "what have you used / are you comfortable with / rate yourself / your background" | `claim`: a direct statement of level or extent · `evidence`: where and what they did with it · `depth`: how recently and how deeply · `relevance`: a tie to this role or stack |
+| `motivation` | "why us / why leave / what are you looking for / how do you feel about" | `reason`: a clear reason · `specific`: specific to this company and role · `grounded`: tied to the candidate's real experience · `forward`: what they'd bring or want next |
+| `simple` | yes/no or one-fact questions ("Did you only build the mobile app?") | none |
 
-| Check | Passes (1 point) if… |
+**Substance is judged on reasoning, not on matching the reference answer.** The reference answer is one good example. Any sound approach that covers a dimension earns its point, even if it uses a different design or technology.
+
+### Content: `content` out of `content_max`
+
+Every point is all-or-nothing.
+
+| Check | Points |
 |---|---|
-| `answered` | It answers this question. It is not wrong, not a non-answer ("I forget", "I don't know", trailing off), and not an answer to a different question. A real but weak answer passes this check; its weakness shows in the other checks. |
-| `complete` | Every part of the question gets an actual answer. Mentioning every topic the reference answer covers isn't enough. |
-| `specifics` | It gives concrete names, numbers, technologies, and actions, not generalities. **A yes/no or one-fact question** ("Did you only build the mobile app?", "Are you doing both roles at once?") **passes with a direct answer.** Ratings and "are you comfortable with X" are not one-fact questions: they need something to back them up ("About an 8 -- I've used it daily for pipelines and APIs"). |
-| `lead` | The first sentence or two directly answers the question, before any background, context, or detail. Direct leads look like "Yes, twice -- the worst was…", "Kafka, because…", "About an 8.", "Mostly TypeScript and Node, with…" |
-| `accurate` | It claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply), and nothing in it is technically wrong. |
-| `substance` | It covers the key points a strong answer to this question needs, judged against the substance of the reference answer, not its polish or length. For example, "standard HTTPS" alone fails a question about securing service-to-service calls, and an answer about why you want a job that gives no reason specific to the company fails a question asking about that company. |
+| `answered` | 1 if it answers this question: not wrong, not a non-answer ("I forget", "I don't know", trailing off), not an answer to a different question. A real but weak answer passes; its weakness shows elsewhere. **Gate:** if it fails, `content` is 0 and the grade is `missed`. |
+| `complete` | 1 if every named part of the question is addressed. Leaving out a part ("…without sacrificing reliability?") fails it. |
+| `specifics` | 1 if it gives concrete names, numbers, technologies and actions, not generalities. A `simple` question passes with a direct answer. Ratings and "are you comfortable with X" are `experience`, not `simple`, and need backing. |
+| `accurate` | 1 if nothing in it is technically wrong and it claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply). |
+| `substance:{dimension}` | 1 per dimension of the type that the answer actually covers: 0–4 points. Not scored for `simple`. |
 
-**Story questions: 4 more checks, 10 points possible**
+`content_max` is 8, or 4 for `simple`.
 
-A story question asks for an experience: "tell me about a time…", "have you ever…", "walk me through a project…", "what was the most difficult…". For these, also score:
+### Delivery: `delivery` out of `delivery_max` (3)
 
-| Check | Passes (1 point) if… |
+| Check | 1 point if… |
 |---|---|
-| `beginning` | It states one specific problem, and who or what it affected. |
-| `middle` | It says what the candidate personally did to fix it. Describing an approach ("I stay calm and isolate the issue") or "I had to deal with it" does not pass. |
-| `end` | It gives the outcome. |
-| `fits` | The example matches what was asked, not a smaller or different kind of situation (a slow or failing job when asked about an outage), unless the candidate says plainly it's the closest they've had and why it still counts. Hedges that shrink the example ("I think it happened twice") fail it. |
+| `lead` | The first sentence or two directly answers the question. Stalling ("Um… let's see… that's a huge increase"), background, or context before the point fails it. Direct leads look like "Yes, twice -- the worst was…", "Kafka, because…", "About an 8." |
+| `confident` | No hedges that shrink the candidate's own claims ("I think it was twice", "maybe I would have…", "it wasn't really…"). Honest uncertainty about a fact ("I don't remember the exact number") is fine. |
+| `focused` | It stays on the question, with no long backstory or tangent that buries the answer. |
 
-### From score to grade
+Filler words and transcription errors on their own don't fail a delivery check; judge the structure of the answer.
 
-- `points` is the number of checks passed. `possible` is 6, or 10 for a story question.
-- **`answered` is a gate:** if it fails, every check fails, `points` is 0, and the grade is `missed`.
-- If every check passes, the grade is `right`.
-- Otherwise the grade is `partial`.
+### Grade
 
-The grade is always derived this way, so it can never disagree with the score.
+- `missed` if `answered` fails.
+- `right` only if every content and delivery point is earned.
+- `partial` otherwise.
 
-### What to ignore
+The grade is always derived this way, so it can never disagree with the scores.
 
-- Filler, stutters, and transcription errors. Delivery only matters through `lead`, or when rambling buried the answer so a check fails.
-- The reference answer's extra polish. A short answer that passes every check is `right`.
+### Reference examples
 
-### Reference example
+**1. Story question**
 
 > Have you ever had to manage an emergency or a big outage or anything like that? Something high stress.
 
 Answer: on-call at a previous job as a junior and "had to ask for some help"; at Octimine "there were 2 times where it would just like keep failing", "I had to babysit it", "It wasn't a complete outage"; staying calm and separating what's known from what isn't; a root cause analysis and incident documentation afterwards.
 
-This is a story question, so `possible` is 10.
+- **Content: 2/8.**
+  - pass: `answered`, `accurate`
+  - fail: `complete` (no actual emergency handled), `specifics` (never says what failed or what was done)
+  - substance: no story dimension passes. There's no specific problem or impact (`beginning`), the approach stands in for actions (`middle`), there's no outcome (`end`), and a failing, late batch job isn't an outage (`fits`).
+- **Delivery: 0/3.** It doesn't lead (it opens with on-call as a junior), it hedges ("I think there were 2 times"), and the backstory buries the point.
+- **Grade:** `partial`.
 
-| Check | Result | Why |
-|---|---|---|
-| `answered` | pass | It addresses the question. |
-| `complete` | pass | The question has one part, and it gets a response. |
-| `specifics` | fail | It never says what was failing or what was done. |
-| `lead` | fail | It opens with on-call as a junior at a previous job, and never states up front whether there was an emergency. |
-| `accurate` | pass | Nothing is overclaimed or wrong. |
-| `substance` | fail | A strong answer needs a real incident and how it was handled; the approach alone isn't it. |
-| `beginning` | fail | No specific problem or impact is stated. |
-| `middle` | fail | "I had to babysit it" and the approach stand in for actions. |
-| `end` | fail | No outcome. |
-| `fits` | fail | A failing, late batch job isn't an outage ("It wasn't a complete outage"), and "I think there were 2 times" shrinks it. |
+**2. Design question**
 
-Score: 3/10. Grade: `partial`. A full-score answer leads with a direct yes and the incident it will describe, then tells that one incident: what broke and who it hurt, the specific steps taken, and the outcome.
+> If Wonderland suddenly grows from 1,000 to a million users, how would you approach scaling the infrastructure without sacrificing reliability?
+
+Answer: "Um... Let's see. That's a huge increase. 1000 to a million." Then: deploy to a small number of servers with a standard configuration, and add more servers seamlessly as users grow.
+
+- **Content: 3/8.**
+  - pass: `answered`, `accurate`
+  - fail: `complete` (the reliability half is unaddressed), `specifics` (no mechanisms named)
+  - substance: only `mechanism` passes (standardized configuration, horizontal scaling). There's no `diagnose`, `reliability` or `validate`. A threshold on user count is a weak capacity signal.
+- **Delivery: 2/3.** `lead` fails (it stalls before the point). `confident` and `focused` pass.
+- **Grade:** `partial`.
 
 ## Output
 
@@ -108,25 +120,28 @@ For each item, exactly this shape, one field per list item:
 
 ```markdown
 - grade:: {right | partial | missed}
-- points:: {checks passed}
-- possible:: {6, or 10 for a story question}
-- failed:: {comma-separated names of the failed checks}
+- qtype:: {design | technical | story | experience | motivation | simple}
+- content:: {content points}
+- content_max:: {8, or 4 for simple}
+- delivery:: {delivery points}
+- delivery_max:: 3
+- failed:: {comma-separated failed checks}
 - answer:: {what the candidate said}
 - missing::
   - **{check}:** {what was missing or wrong, for that check}
 ```
 
-- `failed::` lists check names exactly as in the tables (e.g. `lead, specifics`). Omit it when every check passes.
+- `failed::` lists every failed check by name, content first, then delivery. A failed substance dimension is written `substance:{dimension}` (e.g. `complete, substance:validate, lead`). Omit it when every check passes.
 
 - `answer::` is a verbatim quote of the candidate's answer, in double quotes. It MUST NOT be a paraphrase or summary.
   - It starts with the answer's opening sentence, exactly as said, so a weak lead is visible.
   - It MAY add one more verbatim excerpt with the core of the answer, joined to the first with ` … `.
   - Keep it under about 80 words. Quote transcription errors as they appear; don't correct them.
 - `missing::` has no value on its own line. Under it, indented two spaces, is one sub-bullet per failed check, in the same order as `failed::`, labelled with the check name in bold: `  - **lead:** …`.
-  - Each sub-bullet names, concretely, what that check needed (e.g. `**substance:** the re-key to family ID before the join`). For `lead`, give the direct first sentence the answer should have opened with.
+  - Each sub-bullet names, concretely, what that check needed. For a substance dimension, describe the gap and give one possible example ("e.g. …"), never a required solution. For `lead`, give the direct first sentence the answer could have opened with.
   - For `missed`, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
   - Omit `missing::` entirely for `right`.
 
-**Ad hoc:** print the block for each item, with the score as a percentage after it (`points / possible`), then one or two sentences of coaching on what to add or change next time. Then STOP.
+**Ad hoc:** print the block for each item, with both scores as percentages after it (content and delivery), then one or two sentences of coaching on what to add or change next time. Then STOP.
 
 **Invoked by another skill:** produce the blocks and continue with the caller's steps. The caller's output rules apply.
