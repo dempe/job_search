@@ -1,12 +1,12 @@
 ---
 name: djinterview
-description: Add a new interview to a job application. Creates the next `Interviews/{Application} - Interview {n}.md` note, adds its date to the application's `interviews` frontmatter, and embeds it under a new `## Interview {n}` heading. Takes the application note's name and the interview's date/time (e.g. `People Data Labs 2026-11-10 14:00 - 15:00`).
+description: Add a new interview to a job application. Creates the next `Applications/{Application}/Interviews/{n}/{n}.md` note, adds its date to the application's `interviews` frontmatter, and embeds it under a new `## Interview {n}` heading. Takes the application note's name and the interview's date/time (e.g. `People Data Labs 2026-11-10 14:00 - 15:00`).
 argument-hint: <application-note-name> <date/time>
 ---
 
 # New Interview Note
 
-Each interview is its own note in `Interviews/`, embedded in its application note (see ADR 0010). Create the note for one new interview and wire it into its application.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note (see ADRs 0010 and 0011). Create the note for one new interview and wire it into its application.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -15,7 +15,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Constraints
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"` and read-only commands (`ls`, `test -e`).
+- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only commands (`ls`, `test -e`), and `mkdir -p` for the new interview's folder.
 - The assistant creates exactly one file, the new interview note. In the application note it MAY only add one `interviews` list item and one `## Interview {n}` section. Everything else MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT commit or push anything to git.
 
@@ -28,7 +28,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Step 1: Input
 
 - The arguments are `{Application}`, an application note's name without `.md`, and `{date}`, the interview's date and time as the user wrote it. The user MAY also say who the interviewer is.
-- Resolve `{Application}` to the real filename in `Applications/` (`ls`), matching case-insensitively, and use that file's casing.
+- Resolve `{Application}` to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If the application or the date is missing, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
 - Normalize `{date}` to the vault's format: `YYYY-MM-DD HH:mm`, or `YYYY-MM-DD HH:mm - HH:mm` when an end time is given, in 24-hour time. If the user gave a relative date ("next Tuesday"), resolve it against `date "+%Y-%m-%d %H:%M"`.
@@ -36,8 +36,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Step 2: Round number
 
-- `{n}` is one more than the highest `{n}` among the note's `![[Interviews/{Application} - Interview {n}]]` embeds, or `1` if there are none.
-- If `Interviews/{Application} - Interview {n}.md` already exists (`test -e`), the assistant MUST STOP with one line naming it.
+- `{n}` is one more than the highest numbered folder in `Applications/{Application}/Interviews/` (`ls`), or `1` if there are none.
+- If `Applications/{Application}/Interviews/{n}/{n}.md` already exists (`test -e`), the assistant MUST STOP with one line naming it.
 
 ## Step 3: Create the interview note
 
@@ -46,18 +46,18 @@ Follow the steps below in order. A step that says STOP ends the run.
 | Key | Value |
 | --- | --- |
 | `type` | `interview` |
-| `application` | `"[[Applications/{Application}]]"` |
+| `application` | `"[[Applications/{Application}/{Application}]]"` |
 | `company` | the application note's `company` value, verbatim |
 | `round` | `{n}` |
 | `date` | `{date}` |
 | `interviewers` | the interviewer's name(s) if the user gave them; otherwise blank |
 | `outcome` | `pending` |
-| `title` | `{Application} - Interview {n}` |
+| `title` | `{n}` |
 | `date_created` | `"{now}"` from `date "+%Y-%m-%d %H:%M"` |
 | `date_modified` | the same as `date_created` |
 
 - The body is empty. Prep, the transcript (as a fenced block under `### Transcript`, which `djtrans` moves out), and notes are added later.
-- Write it to `Interviews/{Application} - Interview {n}.md`.
+- Create the folder with `mkdir -p "Applications/{Application}/Interviews/{n}"`, then write the note to `Applications/{Application}/Interviews/{n}/{n}.md`.
 
 ## Step 4: Wire it into the application
 
@@ -67,7 +67,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 ```markdown
 ## Interview {n}
 
-![[Interviews/{Application} - Interview {n}]]
+![[Applications/{Application}/Interviews/{n}/{n}]]
 ```
 
 - Keep exactly one blank line between sections and the file ending in a single newline. Then STOP.

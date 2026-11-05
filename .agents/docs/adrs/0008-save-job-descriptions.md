@@ -6,9 +6,9 @@
 
 ## Decision
 
-- `djapplication` copies the JD byte for byte to `Job Descriptions/{title}.md`, where `{title}` is the application note's title (e.g. `Aescape (1)`).
-- Application notes link to it in a `jd` frontmatter key, right after `listing`: `jd: "[[Job Descriptions/{title}]]"`. The key is part of `_meta/Templates/Job Template.md`, so the link is part of the schema.
-- JDs live in their own folder, not in the application note, so their quotes and lists aren't mistaken for Q/As by `djq`, `djmvanswers`, or `djtrans`.
+- `djapplication` copies the JD byte for byte to `Applications/{title}/jd.md`, in the application's folder (ADR 0011), where `{title}` is the application note's title (e.g. `Aescape (1)`).
+- Application notes link to it in a `jd` frontmatter key, right after `listing`: `jd: "[[Applications/{title}/jd]]"`. The key is part of `_meta/Templates/Job Template.md`, so the link is part of the schema.
+- JDs live in their own file, not in the application note, so their quotes and lists aren't mistaken for Q/As by `djq`, `djmvanswers`, or `djtrans`.
 
 ## How to apply
 

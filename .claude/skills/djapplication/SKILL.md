@@ -8,7 +8,7 @@ argument-hint: <source> <listing-url> [path-to-jd.txt]
 
 # Job Application Note
 
-Create a new job application note under `./Applications/` from a job description (JD) text file. The note's YAML frontmatter is filled from the JD, and the application form's questions are recorded with empty answer blocks for the user to fill in later.
+Create a new job application note at `./Applications/{title}/{title}.md` from a job description (JD) text file. The note's YAML frontmatter is filled from the JD, and the application form's questions are recorded with empty answer blocks for the user to fill in later.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -20,7 +20,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, Skill, and asking the user). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only file listing commands (`ls`, `test -e`), and the JD copy in Step 11 (`mkdir -p`, `cp -n`).
-- The only files this skill creates are the new application note and its saved JD in `Job Descriptions/`. The assistant MUST NOT rename, modify, or overwrite any existing note or saved JD.
+- The only files this skill creates are the new application's folder, its note, and its saved JD (`jd.md`). The assistant MUST NOT rename, modify, or overwrite any existing folder, note, or saved JD.
 - This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
 - The assistant MUST NOT create or modify anything in `Answers/`.
 - The assistant MUST NOT create or modify anything in `Questions/`.
@@ -56,21 +56,22 @@ Follow the steps below in order. A step that says STOP ends the run.
   - A product brand and its parent company. For example, a JD for "Privacy" (Privacy.com) that describes it as part of "Lithic".
   - A recruiting agency and the employer it hires for.
   - A job board and the employer whose listing it hosts.
-- The chosen name is `{Company}`. It is used verbatim for matching existing notes, for the new filename, and for the `company` frontmatter value.
+- The chosen name is `{Company}`. It is used verbatim for matching existing applications, for the new folder and note name, and for the `company` frontmatter value.
 
 ## Step 3: Existing applications
 
 <!-- auto-fill-applications T4: FR7, FR8, FR9 -->
 
-- List the notes in `Applications/` with Bash (`ls "Applications"`).
-- A note is an existing application for `{Company}` if and only if its filename is exactly one of:
-  - `{Company}.md`
-  - `{Company} ({n}).md`, where `{n}` is a non-negative integer
-- Matching MUST be exact on the whole filename. For `Meta`, `Meta (1).md` and `Meta (2).md` match, but `Metal.md` and `Meta Platforms.md` do not.
-- Existing applications MUST be identified by filename only. Do not use a note's `title`, its `company` value, or its contents.
-- For each matching note, record:
-  - its suffix: `{n}`, or `0` for a bare `{Company}.md`
-  - its `applied` frontmatter value, read with the Read tool from that note's frontmatter
+- Each application has its own folder, `Applications/{title}/`, holding the application note `{title}.md`, its saved JD `jd.md`, and its interviews as `Interviews/{n}/{n}.md`, each with an optional `transcript.md` beside it (see ADR 0011).
+- List the application folders with Bash (`ls "Applications"`).
+- A folder is an existing application for `{Company}` if and only if its name is exactly one of:
+  - `{Company}`
+  - `{Company} ({n})`, where `{n}` is a non-negative integer
+- Matching MUST be exact on the whole folder name. For `Meta`, `Meta (1)` and `Meta (2)` match, but `Metal` and `Meta Platforms` do not.
+- Existing applications MUST be identified by folder name only. Do not use a note's `title`, its `company` value, or its contents.
+- For each matching folder `{name}`, record:
+  - its suffix: `{n}`, or `0` for a bare `{Company}`
+  - its `applied` frontmatter value, read with the Read tool from `Applications/{name}/{name}.md`
 - The assistant MUST NOT read or use any other field or content from existing notes.
 
 ## Step 4: Clock and duplicate check
@@ -83,18 +84,18 @@ Follow the steps below in order. A step that says STOP ends the run.
 - Compute `{cutoff}` as `{today}` minus six calendar months: the same day of the month, six months earlier. If that day doesn't exist in that month, use the month's last day. For example, `2026-09-14` gives `2026-03-14`, and `2026-08-31` gives `2026-02-28`.
 - For each existing application from Step 3, take its `applied` value, ignoring surrounding quotes.
 - An existing application whose `applied` value is missing or blank MUST NOT cause an abort.
-- If any existing application has an `applied` date on or after `{cutoff}`, it is a duplicate. The assistant MUST STOP without creating a note and without asking for `listing` or `source`, after one line naming the matching note and its `applied` date (for example, `Duplicate: Applications/Lithic.md applied 2026-09-04`).
+- If any existing application has an `applied` date on or after `{cutoff}`, it is a duplicate. The assistant MUST STOP without creating a note and without asking for `listing` or `source`, after one line naming the matching note and its `applied` date (for example, `Duplicate: Applications/Lithic/Lithic.md applied 2026-09-04`).
 
-## Step 5: Filename
+## Step 5: Title
 
 <!-- auto-fill-applications T6: FR15, FR16, FR17 -->
 
-- If Step 3 found no existing applications, `{filename}` is `{Company}.md`.
-- Otherwise, `{filename}` is `{Company} ({m}).md`, where `{m}` is one greater than the highest recorded suffix. For example:
-  - with `Lithic.md` only, it is `Lithic (1).md`
-  - with `Walmart (1).md` through `Walmart (3).md`, it is `Walmart (4).md`
-- `{title}` is `{filename}` without the `.md` extension.
-- Existing notes MUST NOT be renamed, modified, or overwritten, even when their numbering is inconsistent.
+- If Step 3 found no existing applications, `{title}` is `{Company}`.
+- Otherwise, `{title}` is `{Company} ({m})`, where `{m}` is one greater than the highest recorded suffix. For example:
+  - with `Lithic` only, it is `Lithic (1)`
+  - with `Walmart (1)` through `Walmart (3)`, it is `Walmart (4)`
+- The new application's folder is `Applications/{title}/`, and its note is `Applications/{title}/{title}.md`.
+- Existing folders and notes MUST NOT be renamed, modified, or overwritten, even when their numbering is inconsistent.
 
 ## Step 6: Listing and source
 
@@ -168,7 +169,7 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 | `interviews` | blank |
 | `source` | `{source}` from Step 1 or Step 6, or blank |
 | `listing` | `{listing}` from Step 1 or Step 6, or blank |
-| `jd` | `"[[Job Descriptions/{title}]]"`: a link to the JD saved in Step 11 |
+| `jd` | `"[[Applications/{title}/jd]]"`: a link to the JD saved in Step 11 |
 | `company` | `{Company}` |
 | `position` | the job title from the JD, verbatim |
 | `contract` | `true` if the role is a contract role, otherwise `false` |
@@ -199,9 +200,9 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 <!-- auto-fill-applications T12: FR17 -->
 
-- Immediately before writing, check with Bash (`test -e`) that neither `Applications/{filename}` nor `Job Descriptions/{filename}` exists. If either exists, the assistant MUST STOP with one line naming the existing file, without writing anything.
-- Save the JD by copying it byte for byte with Bash: `mkdir -p "Job Descriptions" && cp -n "{jd_path}" "Job Descriptions/{filename}"`. The assistant MUST NOT retype or reformat it.
-- Write the note to `Applications/{filename}` with the Write tool.
+- Immediately before writing, check with Bash (`test -e "Applications/{title}"`) that the folder does not exist. If it exists, the assistant MUST STOP with one line naming it, without writing anything.
+- Save the JD by copying it byte for byte with Bash: `mkdir -p "Applications/{title}" && cp -n "{jd_path}" "Applications/{title}/jd.md"`. The assistant MUST NOT retype or reformat it.
+- Write the note to `Applications/{title}/{title}.md` with the Write tool.
 - The assistant MUST NOT write any text to the user after the note is written.
 
 ## Step 12: Draft answers
@@ -225,13 +226,13 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 - Step 1: invoked as `/djapplication matcha`, so `{jd_path}` is `./jd.txt`, `{source}` is `matcha`, and `{listing}` is missing.
 - Step 2: the assistant asks which company name to use. The user chooses `Privacy` over `Lithic`.
-- Step 3: no filename matches `Privacy.md` or `Privacy ({n}).md`.
+- Step 3: no folder in `Applications/` is named `Privacy` or `Privacy ({n})`.
 - Step 4: `date` prints `2026-09-14 18:30`.
 - Step 6: the assistant asks only for the listing URL. The user leaves it blank.
-- Step 11: `./jd.txt` is copied to `Job Descriptions/Privacy.md`, and the note below is written, with empty answer blocks.
+- Step 11: `./jd.txt` is copied to `Applications/Privacy/jd.md`, and the note below is written, with empty answer blocks.
 - Step 12: `djanswers Privacy` runs and fills in the answer blocks it has evidence for.
 
-**Expected note** at `Applications/Privacy.md`, as written in Step 11 before `djanswers` runs.
+**Expected note** at `Applications/Privacy/Privacy.md`, as written in Step 11 before `djanswers` runs.
 
 ````markdown
 ---
@@ -244,7 +245,7 @@ status: awaiting-reply
 interviews:
 source: matcha
 listing:
-jd: "[[Job Descriptions/Privacy]]"
+jd: "[[Applications/Privacy/jd]]"
 company: Privacy
 position: Staff Software Engineer
 contract: false

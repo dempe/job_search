@@ -1,12 +1,10 @@
-"""Move inline interview transcripts out of an interview or application note.
+"""Move an inline interview transcript out of an interview note.
 
-Each `### Transcript` section holding a fenced block is written byte for byte to
-`Transcripts/`, and the block is replaced with an embed of that file. In an
-interview note (`Interviews/{name}.md`) the file is `Transcripts/{name}.md`; in an
-application note it's `Transcripts/{note title} - {interview heading}.md`.
-Sections that already embed a file are left alone.
+The `### Transcript` section's fenced block is written byte for byte to
+`transcript.md` beside the interview note, and the block is replaced with an
+embed of that file. A section that already embeds a file is left alone.
 
-Usage: python3 -I extract.py "Interviews/{note}.md"
+Usage: python3 -I extract.py "Applications/{title}/Interviews/{n}/{n}.md"
 """
 
 import pathlib
@@ -18,31 +16,22 @@ BLOCK = re.compile(r"### Transcript\n\n```\n(.*?)\n```\n", re.S)
 
 def main(note_path):
     note = pathlib.Path(note_path)
-    transcripts = note.parent.parent / "Transcripts"
+    target = note.parent / "transcript.md"
+    vault_path = pathlib.Path(*note.parent.parts[note.parent.parts.index("Applications"):])
     text = note.read_text(encoding="utf-8")
-    new_text = text
-    for m in reversed(list(BLOCK.finditer(text))):
-        body = m.group(1)
-        if note.parent.name == "Interviews":
-            name = label = note.stem
-        else:
-            parents = re.findall(r"^## (.+)$", text[: m.start()], re.M)
-            if not parents:
-                print(f"skipped: transcript at offset {m.start()} has no ## parent heading")
-                continue
-            label = parents[-1]
-            name = f"{note.stem} - {label}"
-        target = transcripts / f"{name}.md"
-        content = body + "\n"
+    matches = list(BLOCK.finditer(text))
+    if len(matches) > 1:
+        print(f"skipped: {note} has more than one inline transcript")
+        return
+    for m in matches:
+        content = m.group(1) + "\n"
         if target.exists() and target.read_text(encoding="utf-8") != content:
             print(f"skipped: {target} already exists with different content")
-            continue
-        transcripts.mkdir(exist_ok=True)
+            return
         target.write_text(content, encoding="utf-8")
-        new_text = new_text[: m.start()] + f"### Transcript\n\n![[Transcripts/{name}]]\n" + new_text[m.end():]
-        print(f"moved: {label} -> {target}")
-    if new_text != text:
-        note.write_text(new_text, encoding="utf-8")
+        embed = f"![[{vault_path.as_posix()}/transcript]]"
+        note.write_text(text[: m.start()] + f"### Transcript\n\n{embed}\n" + text[m.end():], encoding="utf-8")
+        print(f"moved: {note} -> {target}")
 
 
 if __name__ == "__main__":

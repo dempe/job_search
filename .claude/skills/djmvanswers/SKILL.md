@@ -8,7 +8,7 @@ argument-hint: <application-note-name>
 
 Move every answered question in one `Applications/` note, and in the interview notes it embeds, into an Answer note in `Answers/`. Each answer goes to an existing note whose topic fits, or to a new note when nothing fits. Where the Q/A was, the answer's code block is replaced with a link to its new home.
 
-Each interview is its own note in `Interviews/`, embedded in its application note as `![[Interviews/{Application} - Interview {n}]]` (see ADR 0010). Below, "the application's notes" means the application note plus every interview note it embeds.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note as `![[Applications/{Application}/Interviews/{n}/{n}]]` (see ADRs 0010 and 0011). Below, "the application's notes" means the application note plus every interview note it embeds.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -65,7 +65,7 @@ A question followed by a link line (e.g. `[[Why Company X#Afresh|Why Company X]]
 
 - The argument is `{Application}`, the application note's name without `.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
-- If `Applications/{Application}.md` does not exist (check with `test -e`), the assistant MUST STOP with one line naming the missing file.
+- If `Applications/{Application}/{Application}.md` does not exist (check with `test -e`), the assistant MUST STOP with one line naming the missing file.
 - Read the whole note, then every interview note it embeds.
 
 ## Step 2: Find answered Q/As

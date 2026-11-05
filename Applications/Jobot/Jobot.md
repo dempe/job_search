@@ -1,0 +1,32 @@
+---
+type: job
+applied: 2026-04-30
+interviews:
+  - 2026-04-30
+status: declined
+job_type: fulltime
+source: linkedin
+position: Senior Software Engineer (Python / Django)
+contract: false
+application_channel: recruiter
+remote:
+4day: false
+industry:
+website:
+location: Columbus, OH
+company_size:
+channel: form
+listing: https://www.Linkedin.Com/jobs/collections/recommended/?CurrentJobId=4402867404&discover=recommended&discoveryOrigin=JOBS_HOME_JYMBII
+blog:
+correspondence:
+compensation: $80,000 - $165,000
+title: Jobot
+date_created: "2026-10-13 12:09"
+date_modified: "2026-10-20 09:41"
+---
+
+## Application
+
+## Interview 1
+
+![[Applications/Jobot/Interviews/1/1]]

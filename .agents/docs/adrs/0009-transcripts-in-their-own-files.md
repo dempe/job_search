@@ -6,14 +6,13 @@ Interview transcripts run 5–70k characters each. Inline in an application note
 
 ## Decision
 
-- Each transcript lives in `Transcripts/{title} - {interview heading}.md`, where `{title}` is the application note's title and `{interview heading}` is the `##` heading of the interview it belongs to (e.g. `People Data Labs - Interview 2.md`, `Cognizant (1) - Interview.md`).
+- Each transcript lives in its own file, `transcript.md`, beside its interview note: `Applications/{title}/Interviews/{n}/transcript.md` (ADRs 0010 and 0011).
 - The file holds only the raw transcript text, with no frontmatter and no fence.
-- In the application note, the interview's `### Transcript` section holds one embed: `![[Transcripts/{title} - {interview heading}]]`. Obsidian renders it inline, but the source stays short.
-- The link lives in the body, not in frontmatter, because a note has one transcript per interview and each belongs beside that interview's prep and `### Questions`.
+- In the interview note, the `### Transcript` section holds one embed: `![[Applications/{title}/Interviews/{n}/transcript]]`. Obsidian renders it inline, but the source stays short.
+- The link lives in the body, not in frontmatter, so the transcript sits beside that interview's prep and `### Questions`.
 
 ## How to apply
 
-- Interviews are now their own notes (ADR 0010), so the `### Transcript` section lives in `Interviews/{title} - Interview {n}.md`, and its transcript is `Transcripts/{title} - Interview {n}.md`.
 - The user adds a new transcript by pasting it into the interview note as a fenced block under `### Transcript`. The agent moves it out, not the user.
-- `djtrans` runs its bundled `extract.py` first. It copies each fenced transcript byte for byte to its file and replaces the block with the embed, so the text is never retyped. To move one outside of `djtrans`, run the same script on the note.
+- `djtrans` runs its bundled `extract.py` first. It copies each fenced transcript byte for byte to `transcript.md` and replaces the block with the embed, so the text is never retyped. To move one outside of `djtrans`, run the same script on the note.
 - `djtrans` then reads transcripts through the embeds and never edits the files.

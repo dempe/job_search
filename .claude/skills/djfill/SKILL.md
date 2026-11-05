@@ -1,6 +1,6 @@
 ---
 name: djfill
-description: Fill out a job application form in Chrome from an existing note in `Applications/`, using the note's answers and `_meta/profile.yaml`. Fills every field it can, skips file uploads, and never submits. Takes the application note's name (e.g. `Coinbase`).
+description: Fill out a job application form in Chrome from an existing application note in `Applications/`, using the note's answers and `_meta/profile.yaml`. Fills every field it can, skips file uploads, and never submits. Takes the application note's name (e.g. `Coinbase`).
 argument-hint: <application-note-name>
 ---
 
@@ -32,7 +32,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Step 1: Inputs
 
-- The argument is `{Application}`, an application note's name without `.md`. Resolve it to the real filename in `Applications/` (`ls`), matching case-insensitively, and use that file's casing.
+- The argument is `{Application}`, an application note's name without `.md`. Resolve it to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
 - Read the note. Take `{listing}` from its frontmatter. If `listing` is blank, the assistant MUST STOP and ask for the URL.

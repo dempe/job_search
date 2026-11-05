@@ -6,7 +6,7 @@ argument-hint: <application-note-name>
 
 # Draft Application Answers
 
-Fill in the empty answer code blocks in one `Applications/` note, and in the interview notes it embeds (`![[Interviews/...]]`, see ADR 0010), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
+Fill in the empty answer code blocks in one `Applications/` note, and in the interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`, see ADRs 0010 and 0011), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -16,7 +16,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only for read-only commands: `ls`, `find`, `grep`, `test -e`.
-- The only files this skill modifies are `Applications/{Application}.md` and the interview notes it embeds, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
+- The only files this skill modifies are `Applications/{Application}/{Application}.md` and the interview notes it embeds, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT create or modify anything in `Answers/`, `Questions/`, `../resume/`, client repositories, or anywhere else.
 - The assistant MUST NOT commit or push anything to git.
 
@@ -48,7 +48,7 @@ A Q/A in an application note is a question (one or more consecutive `>` lines, e
 
 ## Step 1: Application note
 
-- The argument is `{Application}`, the application note's name without `.md`. Resolve it to the actual filename in `Applications/` (`ls`), matching case-insensitively, and use the real filename's casing.
+- The argument is `{Application}`, the application note's name without `.md`. Resolve it to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
 - Read the whole note, then every interview note it embeds.
@@ -67,7 +67,7 @@ Read these sources. They are listed from most to least authoritative for the use
 3. **`Consulting/` notes in this vault.** The user's working notes, time logs, and learnings from client projects.
 4. **Client project repositories under `/Users/cld/workspace/clients/`.** Use `find` and `grep` to locate relevant decision records and plans (`docs/adr/`, `.agents/docs/adrs/`, `.agents/plans/`) and each project's `package.json` for the libraries it actually used. Read only what's relevant to a question.
 5. **Past Claude Code conversations,** stored as JSONL transcripts in `/Users/cld/.claude/projects/*/*.jsonl`. `grep` them for keywords from a question (technologies, project or client names, incident terms) to find stories the other sources don't record. Apply the Honesty rules about what counts as evidence.
-6. **The job description.** If the note's `jd` frontmatter links to a saved JD in `Job Descriptions/`, read it. Otherwise, if `./jd.txt` exists and names the note's company, read that. Use it for company and role context (mission, stack, what they value, word limits in the application instructions). Otherwise, work from the note alone.
+6. **The job description.** If the note's `jd` frontmatter links to a saved JD (`Applications/{Application}/jd.md`), read it. Otherwise, if `./jd.txt` exists and names the note's company, read that. Use it for company and role context (mission, stack, what they value, word limits in the application instructions). Otherwise, work from the note alone.
 
 Also use what the user's global `CLAUDE.md` records about how they work, when it is relevant to a question. It doesn't record which project an incident happened on, so don't attach one to a specific project unless another source confirms it.
 

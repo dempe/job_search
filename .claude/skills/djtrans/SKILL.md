@@ -6,7 +6,7 @@ argument-hint: <application-note-name>
 
 # Interview Transcript to Questions
 
-Each interview is its own note in `Interviews/`, embedded in its application note (see ADR 0010). Read the transcripts in one application's interview notes, pull out the questions the interviewer asked, and write the answer that should have been given to each.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note (see ADRs 0010 and 0011). Read the transcripts in one application's interview notes, pull out the questions the interviewer asked, and write the answer that should have been given to each.
 
 The answers are model answers for study, not a record of what was said and not restricted to what the vault can evidence. Each generated section says so, so a later reader never mistakes them for the user's own words.
 
@@ -19,8 +19,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is the bundled `extract.py` (Step 2).
 - Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
 - `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
-- The assistant modifies the application's interview notes in `Interviews/` only by adding `### Questions` sections. Every other part of them MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
-- The assistant MUST NOT modify any existing file in `Transcripts/`.
+- The assistant modifies the application's interview notes only by adding `### Questions` sections. Every other part of them MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
+- The assistant MUST NOT modify any existing `transcript.md`.
 - The assistant MUST NOT create or modify anything in `Answers/` or `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
 
@@ -32,23 +32,23 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Step 1: Input
 
-- The argument is `{Application}`, an application note's name without `.md`. Resolve it to the real filename in `Applications/` (`ls`), matching case-insensitively, and use that file's casing.
+- The argument is `{Application}`, an application note's name without `.md`. Resolve it to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
-- Read the whole note. Its interview notes are the `![[Interviews/...]]` embeds under its `## Interview…` headings. Read each one.
+- Read the whole note. Its interview notes are the `![[Applications/{Application}/Interviews/{n}/{n}]]` embeds under its `## Interview…` headings. Read each one.
 - If the note embeds no interview notes, the assistant MUST STOP with one line saying so.
 
 ## Step 2: Find the transcripts
 
-Transcripts live in their own files in `Transcripts/`, named after their interview note (e.g. `Interviews/People Data Labs - Interview 2.md` has `Transcripts/People Data Labs - Interview 2.md`), and the interview note embeds it. The user pastes a new transcript into the interview note as a fenced block under `### Transcript`, so move those out first:
+Each transcript is a `transcript.md` beside its interview note (e.g. `Applications/People Data Labs/Interviews/2/2.md` has `Applications/People Data Labs/Interviews/2/transcript.md`), and the interview note embeds it. The user pastes a new transcript into the interview note as a fenced block under `### Transcript`, so move those out first:
 
-- For each interview note, run `python3 -I .claude/skills/djtrans/extract.py "Interviews/{interview note}.md"`. For each `### Transcript` section holding a fenced block, it writes the block's text to its file in `Transcripts/` and replaces the block with an embed, e.g. `![[Transcripts/People Data Labs - Interview 2]]`. Sections that already embed a file are left alone.
+- For each interview note, run `python3 -I .claude/skills/djtrans/extract.py "Applications/{Application}/Interviews/{n}/{n}.md"`. For each `### Transcript` section holding a fenced block, it writes the block's text to `transcript.md` beside the note and replaces the block with an embed, e.g. `![[Applications/People Data Labs/Interviews/2/transcript]]`. Sections that already embed a file are left alone.
 - Each `skipped:` line it prints is reported in Step 8. If it printed any `moved:` line, Read that interview note again.
 
 Then, in each interview note:
 
 - Find its `### Transcript` section. An interview note without one is passed over silently: not every interview has a transcript.
-- A transcript section's content MUST be a single embed of a file in `Transcripts/`. Read the embedded file; its whole content is the transcript.
+- A transcript section's content MUST be a single embed of the `transcript.md` beside the interview note. Read the embedded file; its whole content is the transcript.
 - A section that is empty, holds anything other than one embed, or embeds a file that doesn't exist (`test -e`) is skipped and reported.
 - If none of the interview notes has a `### Transcript` section, the assistant MUST STOP with one line saying so.
 
