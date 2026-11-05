@@ -16,12 +16,12 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Constraints
 
-- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is the bundled `extract.py` (Step 2).
+- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, and Agent for grading in Step 7). It MUST NOT write scripts, and the only script it runs is the bundled `extract.py` (Step 2).
 - Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
 - `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
 - The assistant modifies the application's interview notes only by adding a `### Questions` section, or by adding the tally and grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and links, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
 - The assistant MUST NOT modify any existing `transcript.md`.
-- The assistant MUST NOT create or modify anything in `Answers/`. It MAY read `Answers/` notes (Step 8).
+- The assistant MUST NOT create or modify anything in `Answers/`. It MAY read `Answers/` notes (Step 7).
 - The assistant MUST NOT commit or push anything to git.
 
 ## Output
@@ -104,8 +104,16 @@ These answers are not constrained by what the user actually said in the intervie
 
 ## Step 7: Grade each answer
 
-- Invoke the `djgrade` skill once with the Skill tool, then grade every question by its rubric and output rules.
-- For each question, the candidate's answer is what the user said in response in the transcript, including any follow-up exchange on the same point. The reference answer is the model answer from Step 6, or, for an existing section, the one `djgrade` finds under the question's heading.
+Grading runs in a fresh context, so it isn't biased by having just written the model answers.
+
+- For each interview note to grade, launch one `general-purpose` agent with the Agent tool. Its prompt MUST include:
+  - the path of `.claude/skills/djgrade/SKILL.md`, to read and follow as its grading rules
+  - the path of the interview's `transcript.md`, to read in full
+  - every question, in order, with its reference answer: the model answer from Step 6, or, for an existing section, the fenced block under the question's heading (or, if the heading is followed by an `Answers/` link, that section's code block, read by the assistant first)
+  - the instruction to find the user's answer to each question in the transcript (including follow-up exchanges on the same point), grade it, and return only `djgrade`'s output block for each question, in order, labeled by question number
+  - the instruction not to create or modify any file
+- Launch the agents for different notes in parallel.
+- Use each agent's blocks as is in Step 8. If an agent returns the wrong number of blocks or a block that doesn't match `djgrade`'s output shape, re-run that agent once. If it fails again, STOP that note and report it.
 
 ## Step 8: Write the section
 

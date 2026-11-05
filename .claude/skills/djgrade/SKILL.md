@@ -45,6 +45,22 @@ Grade the substance of the answer against the question and the reference answer:
 
 - Ignore filler, stutters, and transcription errors. Judge delivery only when rambling buried the answer.
 - The grade is about the answer, not about the reference answer's extra polish: a short answer that hits every point the question asked for is `right`.
+- **Story questions** ("tell me about a time…", "have you ever…", "walk me through a project…") are `right` only if the answer tells one specific situation, what the candidate personally did, and the result. Describing an approach ("I stay calm and isolate the issue"), saying "I had to deal with it", or listing topics without the actions and the outcome is `partial`. Hedges that weaken the example ("I think it happened twice") count against it. The example must also match what was asked: a smaller or different kind of situation (a slow or failing job when asked about an outage) is at best `partial`, unless the candidate says plainly that it's the closest they've had and why it still counts.
+- **Grade the answer, not the coverage.** Mentioning every topic the reference answer covers isn't enough; each part has to actually be answered. When unsure between `right` and `partial`, re-read the question and check each part it asked for.
+
+### Reference example
+
+> Have you ever had to manage an emergency or a big outage or anything like that? Something high stress.
+
+Answer: on-call at a previous job as a junior and "had to ask for some help"; at Octimine "there were 2 times where it would just like keep failing", "I had to babysit it", "It wasn't a complete outage"; staying calm and separating what's known from what isn't; a root cause analysis and incident documentation afterwards.
+
+Grade: `partial`, for three reasons:
+
+- **The example doesn't fit the question.** A batch job that kept failing and running late isn't an emergency or an outage: nothing was down, and the candidate said so ("It wasn't a complete outage"). The answer swapped in a smaller problem instead of telling a real high-stress incident, or saying plainly that the closest thing they'd handled was a recurring failure and explaining why it was still high stakes.
+- **The story has no middle or end.** It never says what was failing, what the candidate did to fix it, or how it ended. The hedges ("I think there were 2 times") shrink it further.
+- **Approach replaces action.** Staying calm and separating what's known from what isn't is a reasonable approach, but the answer describes the approach in place of what was actually done.
+
+A `right` answer tells one incident that matches what was asked, end to end: what broke and who it hurt, the specific steps taken, the outcome, and what changed afterwards.
 
 ## Output
 
