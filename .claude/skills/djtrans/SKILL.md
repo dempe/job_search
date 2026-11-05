@@ -131,7 +131,8 @@ Graded against the transcript: {r} right, {p} partial, {m} missed. Each question
 - possible:: {possible}
 - failed:: {failed checks}
 - answer:: {what the user said}
-- missing:: {what was missing or wrong}
+- missing::
+  - **{check}:** {what was missing or wrong, for that check}
 
 ```
 {ideal answer}

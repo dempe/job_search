@@ -49,7 +49,7 @@ If the user replies with an answer to the question (typed, or pasted from speech
 3. Run `date +%F` and log the attempt as one line under the question:
 
    ```markdown
-   - practice:: {YYYY-MM-DD} {grade} {points}/{possible} -- {the missing:: text, or "all points covered" for right}
+   - practice:: {YYYY-MM-DD} {grade} {points}/{possible} -- {the failed checks, e.g. "lead, substance", or "all points covered" for right}
    ```
 
    - **Interview note** (`#### {question}` heading): append the line after the last `- field::` bullet under the heading, or, if the question has no bullets, directly under the heading, separated from it by one blank line.

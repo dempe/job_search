@@ -112,7 +112,8 @@ For each item, exactly this shape, one field per list item:
 - possible:: {6, or 10 for a story question}
 - failed:: {comma-separated names of the failed checks}
 - answer:: {what the candidate said}
-- missing:: {what was missing or wrong}
+- missing::
+  - **{check}:** {what was missing or wrong, for that check}
 ```
 
 - `failed::` lists check names exactly as in the tables (e.g. `lead, specifics`). Omit it when every check passes.
@@ -121,7 +122,10 @@ For each item, exactly this shape, one field per list item:
   - It starts with the answer's opening sentence, exactly as said, so a weak lead is visible.
   - It MAY add one more verbatim excerpt with the core of the answer, joined to the first with ` … `.
   - Keep it under about 80 words. Quote transcription errors as they appear; don't correct them.
-- `missing::` names what the answer lacked or got wrong, concretely (e.g. "the re-key to family ID before the join"). Omit it for `right`.
+- `missing::` has no value on its own line. Under it, indented two spaces, is one sub-bullet per failed check, in the same order as `failed::`, labelled with the check name in bold: `  - **lead:** …`.
+  - Each sub-bullet names, concretely, what that check needed (e.g. `**substance:** the re-key to family ID before the join`). For `lead`, give the direct first sentence the answer should have opened with.
+  - For `missed`, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
+  - Omit `missing::` entirely for `right`.
 
 **Ad hoc:** print the block for each item, with the score as a percentage after it (`points / possible`), then one or two sentences of coaching on what to add or change next time. Then STOP.
 

@@ -33,7 +33,7 @@ awk '
   inqs && /^#### / { hq = "> " substr($0, 6) "\n"; hstate = 1; next }
   hstate {
     if ($0 ~ /^```/ || $0 ~ /^\[\[/) { blk = hq; flush(); blk = ""; hstate = 0 }
-    else if ($0 != "" && $0 !~ /^- [a-z]+:: /) hstate = 0
+    else if ($0 != "" && $0 !~ /^- [a-z]+::( |$)/ && $0 !~ /^[ \t]+- /) hstate = 0
     next
   }
   /^>/ { if (!inq) blk = ""; blk = blk $0 "\n"; inq = 1; next }
