@@ -3,7 +3,7 @@ type: interview
 application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 6
-date: 2023-07-11 14:00
+date: 2023-07-12 14:00
 interviewers: Winnie
 outcome: rejected
 title: NinjaCat - Interview 6
