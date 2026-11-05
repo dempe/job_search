@@ -4,7 +4,7 @@ date_created: "2026-11-04 19:08"
 date_modified: "2026-11-04 21:26"
 ---
 
-## Upcoming
+## Upcoming Interviews
 
 ```dataview
 TABLE WITHOUT ID application AS "Application", file.link AS "Interview", date AS "When", interviewers AS "Interviewers"
@@ -15,38 +15,44 @@ WHERE day >= date(today)
 SORT day ASC
 ```
 
-## Scorecard
+## Interview Scorecard
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "right")) AS "Right", length(filter(file.lists, (l) => l.grade = "partial")) AS "Partial", length(filter(file.lists, (l) => l.grade = "missed")) AS "Missed", round(100 * length(filter(file.lists, (l) => l.grade = "right")) / length(filter(file.lists, (l) => l.grade))) + "%" AS "%", round(100 * default(sum(filter(file.lists, (l) => l.possible).points), 0) / default(sum(filter(file.lists, (l) => l.possible).possible), 1)) + "%" AS "Score", outcome AS "Outcome"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "right")) AS "Right", length(filter(file.lists, (l) => l.grade = "partial")) AS "Partial", length(filter(file.lists, (l) => l.grade = "missed")) AS "Missed", round(100 * length(filter(file.lists, (l) => l.grade = "right")) / length(filter(file.lists, (l) => l.grade))) + "%" AS "%", round(100 * sum(filter(file.lists, (l) => l.points != null).points) / sum(filter(file.lists, (l) => l.possible != null).possible)) + "%" AS "Score", outcome AS "Outcome"
 FROM "Applications"
 WHERE type = "interview" AND length(filter(file.lists, (l) => l.grade)) > 0
 SORT date(substring(string(date), 0, 10)) DESC
 ```
 
-## Missed or Partial
+## Missed or Partial Questions
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * default(L.points, 0) / default(L.possible, 1)) + "%" AS "Score", L.section AS "Question"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * P.points / Q.possible) + "%" AS "Score", L.section AS "Question"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
 WHERE L.grade = "missed" OR L.grade = "partial"
+FLATTEN L.section AS sec
+FLATTEN filter(file.lists, (x) => x.section = sec AND x.points != null)[0] AS P
+FLATTEN filter(file.lists, (x) => x.section = sec AND x.possible != null)[0] AS Q
 SORT date(substring(string(date), 0, 10)) DESC, L.grade ASC
 ```
 
-## Right
+## Questions got Right
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * default(L.points, 0) / default(L.possible, 1)) + "%" AS "Score", L.section AS "Question"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.grade AS "Grade", round(100 * P.points / Q.possible) + "%" AS "Score", L.section AS "Question"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
 WHERE L.grade = "right"
+FLATTEN L.section AS sec
+FLATTEN filter(file.lists, (x) => x.section = sec AND x.points != null)[0] AS P
+FLATTEN filter(file.lists, (x) => x.section = sec AND x.possible != null)[0] AS Q
 SORT date(substring(string(date), 0, 10)) DESC, L.grade ASC
 ```
 
-## Past
+## Past Interviews
 
 ```dataview
 TABLE WITHOUT ID application AS "Application", file.link AS "Interview", date AS "When", outcome AS "Outcome"
