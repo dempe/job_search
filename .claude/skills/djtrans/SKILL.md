@@ -127,6 +127,9 @@ Graded against the transcript: {r} right, {p} partial, {m} missed. Each question
 #### {question}
 
 - grade:: {grade}
+- points:: {points}
+- possible:: {possible}
+- failed:: {failed checks}
 - answer:: {what the user said}
 - missing:: {what was missing or wrong}
 

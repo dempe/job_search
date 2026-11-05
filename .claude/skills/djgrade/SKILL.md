@@ -1,6 +1,6 @@
 ---
 name: djgrade
-description: Grade an answer to an interview or application question as right, partial, or missed, with what was said and what was missing. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
+description: Score and grade an answer to an interview or application question: points per rubric check, right / partial / missed, what was said, and what was missing. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
 argument-hint: <question> <answer>
 ---
 
@@ -37,45 +37,46 @@ If there's no reference answer, grade against the question alone, using correct 
 
 ## Rubric
 
-Grade the substance of the answer against the question and the reference answer.
+Score the answer against the question and the reference answer, check by check, then derive the grade from the score.
 
-**Grades**
+### Checks and points
 
-- `right`: meets every rule below.
-- `partial`: correct, but breaks any rule below. For example:
-  - thin, or vague when asked for specifics
-  - missing a part the question asked for
-  - claiming more than the candidate's experience supports (e.g. rating themselves 9–10 at something they use routinely but not deeply)
-- `missed`:
-  - wrong
-  - a non-answer ("I forget", "I don't know", trailing off)
-  - an answer to a different question
+Each check is worth exactly **1 point**. A check either passes (1) or fails (0); there is no partial credit within a check.
 
-**Rules for `right`**
+**Every question: 5 checks, 5 points possible**
 
-- **Every part answered.** Each part of the question gets an actual answer.
-  - Mentioning every topic the reference answer covers isn't enough.
-  - When unsure between `right` and `partial`, re-read the question and check each part it asked for.
-- **Concrete specifics.** Names, numbers, technologies, and actions, not generalities.
-- **Lead with the answer.** The first sentence or two directly answers the question asked, then details follow.
-  - An answer that opens with background, context, or details and only reaches the point later (or never states it) is `partial`, even if everything it says is correct.
-  - Examples of a direct lead: "Yes, twice -- the worst was…", "Kafka, because…", "About an 8.", "Mostly TypeScript and Node, with…"
-- **Stories are real stories.** For story questions ("tell me about a time…", "have you ever…", "walk me through a project…"), the answer tells one specific situation with:
-  - a **beginning**: the problem, and who or what it affected
-  - a **middle**: what the candidate personally did to fix it
-  - an **end**: the outcome
-- **What doesn't count as a story** (each is `partial`):
-  - describing an approach ("I stay calm and isolate the issue")
-  - "I had to deal with it"
-  - listing topics without the actions and the outcome
-  - a story missing its beginning, middle, or end
-- **The example matches the question.** A smaller or different kind of situation (a slow or failing job when asked about an outage) is at best `partial`, unless the candidate says plainly that it's the closest they've had and why it still counts.
-  - Hedges that shrink the example ("I think it happened twice") count against it.
+| Check | Passes (1 point) if… |
+|---|---|
+| `answered` | It answers this question. It is not wrong, not a non-answer ("I forget", "I don't know", trailing off), and not an answer to a different question. |
+| `complete` | Every part of the question gets an actual answer. Mentioning every topic the reference answer covers isn't enough. |
+| `specifics` | It gives concrete names, numbers, technologies, and actions, not generalities. |
+| `lead` | The first sentence or two directly answers the question, before any background, context, or detail. Direct leads look like "Yes, twice -- the worst was…", "Kafka, because…", "About an 8.", "Mostly TypeScript and Node, with…" |
+| `accurate` | It claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply), and nothing in it is technically wrong. |
 
-**What to ignore**
+**Story questions: 4 more checks, 9 points possible**
 
-- Filler, stutters, and transcription errors. Judge delivery only when rambling buried the answer, or when the answer didn't lead with the point.
-- The reference answer's extra polish. A short answer that leads with the point and hits every part the question asked for is `right`.
+A story question asks for an experience: "tell me about a time…", "have you ever…", "walk me through a project…", "what was the most difficult…". For these, also score:
+
+| Check | Passes (1 point) if… |
+|---|---|
+| `beginning` | It states one specific problem, and who or what it affected. |
+| `middle` | It says what the candidate personally did to fix it. Describing an approach ("I stay calm and isolate the issue") or "I had to deal with it" does not pass. |
+| `end` | It gives the outcome. |
+| `fits` | The example matches what was asked, not a smaller or different kind of situation (a slow or failing job when asked about an outage), unless the candidate says plainly it's the closest they've had and why it still counts. Hedges that shrink the example ("I think it happened twice") fail it. |
+
+### From score to grade
+
+- `points` is the number of checks passed. `possible` is 5, or 9 for a story question.
+- **`answered` is a gate:** if it fails, every check fails, `points` is 0, and the grade is `missed`.
+- If every check passes, the grade is `right`.
+- Otherwise the grade is `partial`.
+
+The grade is always derived this way, so it can never disagree with the score.
+
+### What to ignore
+
+- Filler, stutters, and transcription errors. Delivery only matters through `lead`, or when rambling buried the answer so a check fails.
+- The reference answer's extra polish. A short answer that passes every check is `right`.
 
 ### Reference example
 
@@ -83,18 +84,21 @@ Grade the substance of the answer against the question and the reference answer.
 
 Answer: on-call at a previous job as a junior and "had to ask for some help"; at Octimine "there were 2 times where it would just like keep failing", "I had to babysit it", "It wasn't a complete outage"; staying calm and separating what's known from what isn't; a root cause analysis and incident documentation afterwards.
 
-Grade: `partial`, for four reasons:
+This is a story question, so `possible` is 9.
 
-- **The example doesn't fit the question.** A batch job that kept failing and running late isn't an emergency or an outage: nothing was down, and the candidate said so ("It wasn't a complete outage"). The answer swapped in a smaller problem instead of telling a real high-stress incident, or saying plainly that the closest thing they'd handled was a recurring failure and explaining why it was still high stakes.
-- **The story has no middle or end.** It never says what was failing, what the candidate did to fix it, or how it ended. The hedges ("I think there were 2 times") shrink it further.
-- **It doesn't lead with the answer.** It opens with on-call as a junior at a previous job before reaching any incident, and never states up front whether there was an emergency.
-- **Approach replaces action.** Staying calm and separating what's known from what isn't is a reasonable approach, but the answer describes the approach in place of what was actually done.
+| Check | Result | Why |
+|---|---|---|
+| `answered` | pass | It addresses the question. |
+| `complete` | pass | The question has one part, and it gets a response. |
+| `specifics` | fail | It never says what was failing or what was done. |
+| `lead` | fail | It opens with on-call as a junior at a previous job, and never states up front whether there was an emergency. |
+| `accurate` | pass | Nothing is overclaimed or wrong. |
+| `beginning` | fail | No specific problem or impact is stated. |
+| `middle` | fail | "I had to babysit it" and the approach stand in for actions. |
+| `end` | fail | No outcome. |
+| `fits` | fail | A failing, late batch job isn't an outage ("It wasn't a complete outage"), and "I think there were 2 times" shrinks it. |
 
-A `right` answer leads with a direct yes, and the incident it will describe, then tells that one incident end to end:
-
-- **beginning:** what broke and who it hurt
-- **middle:** the specific steps the candidate took
-- **end:** the outcome, and what changed afterwards
+Score: 3/9. Grade: `partial`. A full-score answer leads with a direct yes and the incident it will describe, then tells that one incident: what broke and who it hurt, the specific steps taken, and the outcome.
 
 ## Output
 
@@ -102,13 +106,18 @@ For each item, exactly this shape, one field per list item:
 
 ```markdown
 - grade:: {right | partial | missed}
+- points:: {checks passed}
+- possible:: {5, or 9 for a story question}
+- failed:: {comma-separated names of the failed checks}
 - answer:: {what the candidate said}
 - missing:: {what was missing or wrong}
 ```
 
+- `failed::` lists check names exactly as in the tables (e.g. `lead, specifics`). Omit it when every check passes.
+
 - `answer::` is a short verbatim quote from the candidate's answer in double quotes, or a faithful paraphrase without quotes. It MUST NOT attribute anything to the candidate that their answer doesn't show.
 - `missing::` names what the answer lacked or got wrong, concretely (e.g. "the re-key to family ID before the join"). Omit it for `right`.
 
-**Ad hoc:** print the block for each item, then one or two sentences of coaching on what to add or change next time. Then STOP.
+**Ad hoc:** print the block for each item, with the score as a percentage after it (`points / possible`), then one or two sentences of coaching on what to add or change next time. Then STOP.
 
 **Invoked by another skill:** produce the blocks and continue with the caller's steps. The caller's output rules apply.
