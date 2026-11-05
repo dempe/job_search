@@ -1,0 +1,46 @@
+---
+type: interview
+application: "[[Job Applications/NinjaCat]]"
+company: NinjaCat
+round: 5
+date:
+kind:
+interviewers:
+outcome:
+title: NinjaCat - Interview 5
+date_created: "2026-11-04 18:10"
+date_modified: "2026-11-04 18:10"
+---
+
+## Product Manager Interview (30 min)
+
+
+> Interview with a PM or designer. This interview should focus on how you collaborate with product, design, and other teams.
+
+Probably also a lot of behavioral stuff.
+
+**Things to study**:
+
+1. Past experiences with PMs
+
+- Can talk about previous experience with monitoring PM at Octimine. We'll call him "Agasthya" because I don't remember his real name.
+	- Old data ingestion pipeline might fail (take more than 7 days to complete). This meant monitoring emails would not be sent out correctly for that week.
+	- Meant keeping Agasthya up-to-date on everything that's happening — **what** the problem is, **why** the problem is happening, **what I'm doing to fix it**, and **how long** I expect it to take
+	- Emphasize that you understand the stress that PMs go through, and are appreciative of their role as interface to stakeholders.
+	- Also, provide regular updates if something is not going as planned.
+- Maybe talk about problem resolution if it comes up:
+	- First identify all unknowns
+	- Start filling in unknowns
+	- Connections will start to form. If you still aren't able to figure it out, list what you known so far.
+	- If you still aren't able to figure it out, go to a fellow engineer. But never blindly. Tell them everything you've tried, everything you know, and everything you don't know (and why you don't know)
+
+### Retrospective
+
+#### Pros
+
+- Laughed and smiled.
+- Chatted
+
+#### Cons
+
+- Talked too much I think. I went into a lot of details about previous projects that they didn't specifically ask about.

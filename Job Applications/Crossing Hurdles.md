@@ -18,3 +18,7 @@ date_modified: "2026-10-20 09:42"
 ---
 
 ## Application
+
+## Interview 1
+
+![[Interviews/Crossing Hurdles - Interview 1]]

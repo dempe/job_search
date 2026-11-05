@@ -28,8 +28,6 @@ date_modified: "2026-10-20 09:41"
 
 Nothing to see here.
 
-## Interview
+## Interview 1
 
-Was a degrading AI interview. Ended up mostly focusing on my data engineering experience.
-
-Forgot to record it dagnabbit!
+![[Interviews/Turing - Interview 1]]

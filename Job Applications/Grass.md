@@ -66,6 +66,6 @@ Chris
 
 [[Returning to a collaborative engineering team#Grass|Returning to a collaborative engineering team]]
 
-## Interviews
+## Interview 1
 
-I think it was a recruiter from India bc all his time slots were in the madrugada.  Anyways, he cancelled the interview, with no follow-up.  I don't have his email to ask why, so counting it as `ghosted`.  I haven't used C++ in over a decade and it's not something I'm particularly interested in (dying tech due to memory safety) anyways.
+![[Interviews/Grass - Interview 1]]

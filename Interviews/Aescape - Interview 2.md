@@ -1,0 +1,221 @@
+---
+type: interview
+application: "[[Job Applications/Aescape]]"
+company: Aescape
+round: 2
+date: 2026-07-20 13:00
+kind:
+interviewers:
+outcome:
+title: Aescape - Interview 2
+date_created: "2026-11-04 18:10"
+date_modified: "2026-11-04 18:10"
+---
+
+### Transcript
+
+![[Transcripts/Aescape - Interview 2]]
+
+### Questions
+
+Model answers, not a record of what was said.
+
+> I'd love to hear a little bit about you.
+
+```
+Sure. I'm a backend engineer with about 11 years of experience, mostly on the data side -- ingestion, processing, and the services around it.
+
+I started at DataRank, a YC startup, as the fifth employee. I built their web crawling framework -- a shared queue with crawlers distributed across four servers -- and a similar framework for social media APIs with shared token pools and rate limiting. Then at SimplyMeasured, which was acquired by Sprout Social, I built microservices in Spring Boot and Go and set up the API gateway in front of them. That's where I did most of my API design.
+
+After a couple of years teaching English in Mexico, I joined Octimine as senior data engineer and replaced a fragile weekly batch job with a real-time Kafka Streams pipeline.
+
+Since 2022 I've been on my own. I built Athena Math, an iOS app with a serverless AWS backend, and I've been contracting, most recently building a Node.js payment integration between Shopify and a payment provider. What I'm looking for now is a team again. I do my best work and learn the most working with other people, and a team with backgrounds as mixed as yours sounds like a great place to do that.
+```
+
+> When you were building the Kafka Streams setup, you said it was heavier weight, so you didn't want to go with a basic directed-graph solution that just did ETL through a pipeline. Was that obvious from the outset? Was it clear that they had a lot of transformation work going on, or did that come up during further investigation? How early on in the design proposal stage were the requirements clear?
+
+```
+It was clear from the outset. Before proposing anything, I went through what the batch job was actually doing, and it wasn't just moving data from A to B. It was joins, aggregations, and windowed analytics across documents. That told me the hard part was the computation, not the scheduling.
+
+The team's first suggestion was Airflow, and that's a fair instinct for ETL. But Airflow orchestrates tasks -- it would have left us hand-rolling the joins, state, and aggregations inside those tasks. Kafka Streams gives you joins, windowing, aggregations, compacted topics for state, and exactly-once processing out of the box.
+
+What did take investigation was confirming that every existing analytic could actually be expressed in a Streams topology. So I mapped each one before writing the proposal. Then I designed the system from source to sink and walked my manager and the backend engineers through it before we started building.
+```
+
+> One of the other consequences of this was real-time data availability instead of batches. Was that explicitly part of the pitch, or was it a happy side effect? How did that interact with customer needs?
+
+```
+Honestly, a happy side effect. The pitch was reliability. The batch job took two days or more, it was fragile, and a few times it failed and retried until it ran into the next week's run -- which meant customers weren't getting their data at all.
+
+Our customers were using patent data for things like competitive analysis, and that doesn't change minute to minute, so a week of latency was acceptable to them. What wasn't acceptable was the job not finishing. So I framed it around durability: per-record processing, a dead-letter queue so one bad document couldn't take down the whole run, and unit-tested analytics.
+
+Real-time was a bonus I mentioned, but I didn't sell it as the reason. If I had, I'd have been solving a problem the customers didn't have.
+```
+
+> What sort of third-party APIs or libraries did you have to interact with, and how did navigating that go?
+
+```
+The main external dependency was our patent data supplier. They gave us access to their Postgres data warehouse, with the documents stored as XML. So the integration was: read new and updated records from their warehouse into a source topic, parse the XML, run the analytics through the Streams topology, and write to a sink topic that loaded Elasticsearch, which backed our API and the frontend.
+
+The challenges were the usual ones with data you don't control -- records arriving as updates rather than new documents, and the occasional malformed record. Updates were handled by keying on the document ID, so the latest version replaced the old one downstream. Malformed records are where the dead-letter queue paid off: a bad document got parked with its error so we could inspect it and replay it, instead of failing the whole pipeline.
+```
+
+> Would you have done anything differently at the end of the project, based on what you learned going through it?
+
+```
+Yes. The hardest part was translating the existing analytics from the Python batch job into Java. They were written by data scientists, and it wasn't always clear what the intent was, which meant a lot of back-and-forth.
+
+If I did it again, I'd start with characterization tests. Run the old Python job on a fixed set of documents, capture the outputs, and make those the expected values for the Java tests before translating anything. Analytics are very easy to unit test -- input in, number out -- so that would have given us a precise definition of "correct" that didn't depend on reading anyone's intent from the code. It would have cut down the back-and-forth and caught discrepancies immediately instead of at the end.
+
+I'd also have pushed for a parallel run earlier -- the batch job and the pipeline running side by side with their outputs diffed -- so we had evidence the new system matched before we switched over.
+```
+
+> Were the data scientists handing you Java that you were integrating, or what were they handing over?
+
+```
+Both. There were existing analytics already baked into the Python batch job, which I had to translate, and the data scientists were writing new analytics at the same time -- they worked with a professor, and new research turned into new analytics written in Java.
+
+I could have dropped their Java in as-is with a unit test around it. But I was going to be responsible for maintaining that pipeline, and I wasn't comfortable putting code I didn't fully understand into it. So I'd restructure it to fit the topology and confirm the output matched theirs.
+
+Looking back, the better approach would have been an agreed contract: they hand over each analytic along with test cases -- inputs and expected outputs -- and I own fitting it into the pipeline. That keeps them the source of truth for what the math should be, and me the owner of how it runs.
+```
+
+> Your resume calls out that for Athena Math you implemented a secure purchase verification process. Can you tell me a little bit about how you decided to work on that?
+
+```
+Athena Math has in-app purchases and subscriptions, so I needed a backend that could reliably tell the app what a user had paid for. I couldn't trust the device for that -- anything the client says about a purchase can be faked -- so verification had to happen server-side.
+
+It's all AWS serverless, because I wanted something with almost no maintenance. Apple sends signed server notifications to an API Gateway endpoint, which triggers a Lambda. Before doing anything else, the Lambda validates the JWS signature and walks the x5c certificate chain from the leaf through the intermediates to Apple's root, so only genuine Apple messages can unlock content. Then it records the transaction -- one-time purchase or subscription, and when it expires -- in DynamoDB for fast lookups.
+
+Processing is idempotent, since Apple retries notifications. There's SQS for retries with a dead-letter queue, and CloudWatch alarms, all defined in SAM. And since I'm building more apps, the endpoint is namespaced per app, so they all share the same infrastructure.
+```
+
+> Did going from the Apple developer API documentation to actually using it translate pretty smoothly, or were there gaps between using it and the documentation?
+
+```
+Not perfectly. The verification itself was well documented once I found the right pieces -- the JWS format for server notifications is clear. The gaps were more about how everything fits together: which identifiers show up where, how sandbox and production behave differently, and the App Store Connect configuration, which is a lot of manual setup.
+
+What helped was testing against the sandbox early, logging the full decoded payloads so I could see what Apple actually sent rather than what I assumed, and using LLMs to navigate the docs faster. And for the App Store Connect setup, I later found tooling that automates it and added it to my build process, so it's repeatable instead of a set of clicks I have to remember.
+```
+
+> There are a lot of developer experience changes going on right now. Especially working primarily solo, what has your experience interacting with these new developer tools been like?
+
+```
+It's changed my work more than anything else in my career. But I don't think the underlying job has changed. We're still solving problems, and we still solve them the same way.
+
+Over years of debugging, I'd settled into a sequence: first make sure I really understand the problem -- requirements, assumptions, constraints, risks. Then plan the implementation. Only then build. I've turned that into a set of skills for Claude Code: scope, plan, implement, review. The first two phases take a lot of back-and-forth with the model, and that's the point -- that's where the understanding happens. By the time we implement, the hard questions are answered, so it goes quickly.
+
+The skills are agent-agnostic and the plans live in the repo, so I can switch between Claude Code and Codex. And I don't take the output on trust. I review everything, I make it write a failing test first, and I've rejected things like a hand-rolled migration runner when a well-tested library already existed.
+```
+
+> Do you change the way you do testing at all, given that it's now possible to have a whole bunch of code that you've never necessarily read?
+
+```
+Yes -- it's made TDD a lot more practical. I always wanted to work test-first, but it often felt like more friction than it was worth. Now I tell the agent: write one failing test, confirm it fails, implement until it's green, then the next test. One test at a time, not a whole suite up front.
+
+And the tests become the part I read most carefully. If I'm not reading every line of generated code, the tests are my specification of what the code has to do, so I review them like a spec. On a payment integration, I covered the flow with 32 tests against a stubbed gateway, specifically to prove a declined or interrupted payment couldn't leave an order paid but unfulfilled. I didn't need to trust the implementation as much, because I trusted what the tests were checking.
+```
+
+> Have you run into tests being less helpful? If you leave tests unsupervised to some of these tools, they can deteriorate. How do you think about making sure the tests are measuring the right things?
+
+```
+Yes, unsupervised they drift. The common failure modes are tests that assert what the code does instead of what it should do, mocking so much that the test only checks the mock, and the agent "fixing" a failing test by weakening the assertion.
+
+A few things I do. Test cases come from the scope, not the code -- the requirements and edge cases are written down before implementation, and each test maps to one. I make sure each new test fails for the right reason before the code exists. I treat any change to an existing test's assertions as suspicious and review it specifically. And I mock only at the system boundary -- the payment gateway, an external API -- not internal pieces.
+
+For logic-heavy code, I also like known-answer tests, where the expected values come from somewhere independent, like hand-calculated cases or the output of the old system.
+```
+
+> What does the handoff process look like?
+
+```
+I host it somewhere the client can own -- Heroku, Render, or their own AWS account -- and walk them through how it works. Before that, I do a QA pass against the requirements we agreed on during scoping, so the handoff is checking against a list, not just a demo.
+
+They get the repo, the tests, CI, and the scope and plan documents that explain what was built and why, plus how to deploy and roll back. On one project, I moved a live service from the agency's hosting to the client's own account using declarative infrastructure export and import, so they ended up fully owning their production stack.
+
+After handoff, feedback usually comes back as tweaks. If it fits the agreed scope, I do it. If it doesn't, I tell them what the change involves and how long it'll take, and they decide.
+```
+
+> Do you hand the tests and everything over as part of the delivery artifact?
+
+```
+Yes. The tests, the CI config that runs them on every push, and the plan documents all live in the repo. That way whoever maintains it next -- the client's developers or me -- can change things without guessing whether they've broken something.
+```
+
+> Back at SimplyMeasured, when you were working in Go and doing API design, what lifecycle stage were you generally operating in? Were there new functions that needed microservices built around them, or was it updates to existing services?
+
+```
+Mostly adding functionality to existing services -- new endpoints, or extending existing ones as the product grew. I had one or two greenfield services, but most of the work was evolving APIs that already had consumers.
+
+That meant a big part of the job was keeping things consistent and not breaking anyone. And because I owned the API gateway, I was usually the one thinking about how a change in one microservice looked from the outside, since external users only ever saw a single API.
+```
+
+> Was this completely new endpoints, or management of existing endpoints?
+
+```
+Roughly half and half. New endpoints came from new product features. Changes to existing endpoints usually came from new fields customers wanted, or from bugs.
+
+For bugs, a customer would report a data issue, and I'd trace it through the whole system -- from data collection through the analytics and Elasticsearch to the API. Most of the time the root cause was upstream. When it did land in the API layer, that's when I'd change an existing endpoint, and I was careful to keep the change backward compatible so existing clients didn't break.
+```
+
+> Could you walk me through the lifecycle of working on one -- from somebody saying "Chris, please work on this," to you figuring out what "work on this" means, to shipping it?
+
+```
+Sure. Say the request is a new endpoint for some data customers want.
+
+First, I'd clarify what the consumer is actually trying to do, with the product manager or whoever asked, because that should drive the shape of the response, not the other way around.
+
+Then I'd look at the existing API so the new endpoint follows the same conventions: resource naming, the right HTTP verbs -- GET for reads, POST to create, PUT or PATCH to update -- pagination, filtering, and the error format. I'd write up the contract -- path, parameters, response shape, error cases -- and have whoever consumes it review it before I write any code. Changing a contract on paper is cheap. Changing it after clients depend on it isn't.
+
+Then implementation with tests, code review, deploy to staging, and wire it into the gateway with auth and rate limits. After it ships, I watch the logs and error rates, and update the API docs.
+```
+
+> Were you meeting with some representative of the end user? Did you have a product person you were collaborating with, or what did figuring that out look like?
+
+```
+We had a product manager, but he worked at the feature level, not the API level. So the API design was mostly on me and whoever was reviewing my code.
+
+Since I owned the API gateway, external users saw one unified API, not the microservice boundaries behind it. So for most of the internal API work, my real stakeholders were other developers -- the frontend and the other services consuming it -- and I'd go to them directly with the proposed contract. For anything customer-facing, I'd check with the PM that the data we were exposing matched what customers were actually asking for.
+```
+
+> What did you do -- or what would you, in an ideal situation, do -- for testing and QA on a change like adding a new endpoint inside an existing microservice?
+
+```
+I'd test in layers.
+
+Unit tests on the handler and any logic, with the data layer mocked. We were JSON over HTTP, so that means fixture data and asserting on the exact output, including error cases like bad parameters and not-found.
+
+Then an integration test against a real instance of the data store -- for us that was Elasticsearch, which you can run in Docker -- because a mock won't tell you your query is wrong. Then a check that existing responses haven't changed, so existing clients don't break.
+
+After that, deploy to staging and run it through the gateway to check auth and routing. Once it's in production, watch error rates and latency. For anything risky, I'd put it behind a feature flag so it can be turned off without a rollback.
+```
+
+> You've been working on your own for a while now. How do you think about code review given that, and how would you like to approach it transitioning back to a team?
+
+```
+Right now my reviewer is mostly AI. Review is the fourth step in my workflow, after implementation, and I run it with a different model in a fresh context, so it isn't carrying the same assumptions as the session that wrote the code. I also review every diff myself. That catches a lot, but it's not the same as a person who knows the system and has more experience than me in some area.
+
+That's one of the main things I want from going back to a team. Having more experienced engineers review my code is how I learned a lot of what I know. And I'd want reviews to go both ways. I'd review other people's code as seriously as I want mine reviewed, because reading their code and explaining my comments is also how I'd learn the system.
+```
+
+> If you're back on a team and trying to learn or grow from a PR review, what sort of value are you looking to get from it? What are you hoping to experience there?
+
+```
+Mainly, closing knowledge gaps I didn't know I had. If there's a mistake in my code, I want to understand the underlying reason so I don't make it again. If it's not a mistake but could be done better, I want to know why the other way is better.
+
+Some of that is system-specific -- how this codebase handles errors, where the sharp edges are, why something was done a certain way. That's the stuff you can't get from documentation, and it's the fastest way to get up to speed on a new team. The rest is general engineering knowledge that carries into everything I do afterward.
+
+So the end goal is becoming a better engineer, faster. I'd much rather get a blunt comment than a rubber-stamp approval.
+```
+
+> Is there anything we haven't had a chance to talk about that would help me understand you or your experience better?
+
+```
+Two things, both related to what you said about the apps team.
+
+First, payments. You mentioned rebuilding how packages and subscriptions work with your payment processor. That's close to what I've been doing recently. I built a Node.js integration between a Shopify store and its payment provider, with idempotency keys scoped to each payment session so retries couldn't double-charge, typed errors that tell declines apart from transient gateway failures, and tests proving an interrupted payment couldn't leave an order paid but unfulfilled. And Athena Math handles App Store subscriptions server-side.
+
+Second, the longitudinal personalization data. Storing data with different sensitivity levels and a proper lifecycle, without boxing yourself in later, is a data-modeling problem, and that's where most of my career has been.
+
+Beyond that, I'm diligent, and I like learning about pretty much everything. My weakness is that I can go too deep into research, so I time-box it.
+```

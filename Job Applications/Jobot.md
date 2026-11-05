@@ -27,6 +27,6 @@ date_modified: "2026-10-20 09:41"
 
 ## Application
 
-## Interview
+## Interview 1
 
-First interview is a screening session with an AI. How fun!
+![[Interviews/Jobot - Interview 1]]

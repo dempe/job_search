@@ -1,0 +1,69 @@
+---
+type: interview
+application: "[[Job Applications/Yokeru]]"
+company: Yokeru
+round: 2
+date: 2026-04-27
+kind:
+interviewers:
+outcome:
+title: Yokeru - Interview 2
+date_created: "2026-11-04 18:10"
+date_modified: "2026-11-04 18:10"
+---
+
+### Transcript
+
+![[Transcripts/Yokeru - Interview 2]]
+
+### Questions
+
+Model answers, not a record of what was said.
+
+> I'd like to know a little more about your background, but mostly, tell me about a project you really enjoyed working on.
+
+```
+I've been a backend engineer for about 11 years, mostly on the data-ingestion side -- getting data into a company from outside sources. At DataRank I built the frameworks that pulled data from social APIs like Facebook and Twitter and crawled the web. At Octimine I built a real-time Kafka pipeline for patent data. For the past few years I've run my own company, doing contract work and building my own apps.
+
+The project I enjoyed most recently was an integration for a client. They took payments through a hosted checkout, and orders had to land correctly in Shopify. I built the middleware in between in Node. The interesting part was reliability. Webhooks can arrive late, twice, or not at all, so every payment carried an idempotency key, and the middleware reconciled each checkout session against the Shopify orders so nothing got charged without an order, or ordered without a charge. I wrote 32 tests around the failure cases. Since it was touching payments, it was imperative that my code was correct.
+
+I enjoyed it because it's exactly what integration work is: two systems that don't know about each other, and making the connection between them trustworthy. That's what drew me to this role.
+```
+
+> Your experience is mostly backend. How do you feel about a role that's different from what you've been doing? Is it exciting for you to learn and work with?
+
+```
+Yes, and it's closer to what I've done than it might look. Most of my backend work has been integration work: pulling from third-party APIs with rate limits and OAuth at DataRank, building the OAuth flow and API gateway at SimplyMeasured, and recently webhook-driven payment and Shopify integrations for clients. Making unreliable external systems behave reliably is the core of what I do.
+
+What's new is telephony and voice agents, and working directly with customers on scoping. I'm genuinely excited about both. I like learning how a new domain works, and I picked up React Native from scratch for my own app last year.
+
+The mission matters to me too. A lot of my earlier work was helping brands count their likes and mentions. Making sure an elderly person actually gets their check-in call is a much better reason to get an integration right.
+```
+
+> Is there anything in the stack that you haven't worked with that would be a challenge for you? We use Lambda functions, n8n, Retell, Twilio for the telephony side, Python, TypeScript, some JavaScript, and AWS for our data.
+
+```
+Most of it I'm comfortable with today. I'm an AWS Certified Developer -- Associate, I run a production backend on Lambda, API Gateway, DynamoDB, and SQS, and I write Python and TypeScript regularly.
+
+The new parts would be Twilio, Retell, and n8n. I haven't built on telephony yet. But the integration pattern is the same one I use every day: the platform calls your webhooks with call events, you respond quickly, and you do the real work asynchronously. The telephony-specific challenges I'd want to learn fast are the failure modes -- calls that aren't answered, voicemail, dropped connections, and latency on a live conversation, where a slow webhook is something the person on the phone actually hears. I'd also want to make sure every call's status callback is recorded, so we always know which calls actually happened.
+
+n8n is a workflow automation tool, and I'd treat it like any orchestration layer. It's great for wiring steps together quickly, but I'd keep the critical logic in tested code that it calls.
+```
+
+> How would you feel being on a call with a customer who is very concerned and complaining that, say, last week calls were failing or things weren't going right? What would your approach be?
+
+```
+I'd be comfortable with it. For these customers, a failed call might mean a vulnerable person didn't get checked on, so I'd treat their worry as completely legitimate.
+
+First, I'd listen and get specifics: which calls, roughly when, which numbers, and what they or the people being called saw. Then I'd be honest about what we know. If I can check the call logs while we're talking, I'd do that, so we're talking about facts instead of guesses. I wouldn't speculate about the cause just to fill silence.
+
+Before the call ends, they should know three things: what we're doing right now, any workaround to protect the people being called in the meantime -- for example, a list of missed calls so their staff can follow up by hand -- and when they'll hear from us next. I'd send that in writing right after. Then the follow-through matters most: find the root cause, explain it to them in plain language without the jargon, and tell them what we changed so it doesn't happen again.
+```
+
+> Rank these five words in order of importance to you right now -- what's motivating you: finance, freedom, impact, growth, and stability.
+
+```
+Growth, impact, stability, freedom, finance.
+
+Growth is first because I want to keep getting better as an engineer, and that comes from new problems and from working alongside other people -- running my own company, I've plateaued on the kind of problems I can take on. Impact is second because I want my work to matter. Helping people stay connected to care is a lot more meaningful than counting social media likes. Stability is third because my contract income is project-based right now, and I want a long-term role I can commit to. Freedom matters, and remote async work already gives me most of it. And finance is last -- it needs to work, but it's not what I'm choosing a job on.
+```
