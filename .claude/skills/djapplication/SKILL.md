@@ -1,6 +1,6 @@
 ---
 name: djapplication
-description: Create a new job application note in `Job Applications/` from a job description text file (`./jd.txt` by default), filling its YAML frontmatter from the JD and recording the application form's questions with empty answer blocks. Use when the user wants to log, record, or start a job application note from a JD file.
+description: Create a new job application note in `Applications/` from a job description text file (`./jd.txt` by default), filling its YAML frontmatter from the JD and recording the application form's questions with empty answer blocks. Use when the user wants to log, record, or start a job application note from a JD file.
 argument-hint: <source> <listing-url> [path-to-jd.txt]
 ---
 
@@ -8,7 +8,7 @@ argument-hint: <source> <listing-url> [path-to-jd.txt]
 
 # Job Application Note
 
-Create a new job application note under `./Job Applications/` from a job description (JD) text file. The note's YAML frontmatter is filled from the JD, and the application form's questions are recorded with empty answer blocks for the user to fill in later.
+Create a new job application note under `./Applications/` from a job description (JD) text file. The note's YAML frontmatter is filled from the JD, and the application form's questions are recorded with empty answer blocks for the user to fill in later.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -62,7 +62,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 <!-- auto-fill-applications T4: FR7, FR8, FR9 -->
 
-- List the notes in `Job Applications/` with Bash (`ls "Job Applications"`).
+- List the notes in `Applications/` with Bash (`ls "Applications"`).
 - A note is an existing application for `{Company}` if and only if its filename is exactly one of:
   - `{Company}.md`
   - `{Company} ({n}).md`, where `{n}` is a non-negative integer
@@ -83,7 +83,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - Compute `{cutoff}` as `{today}` minus six calendar months: the same day of the month, six months earlier. If that day doesn't exist in that month, use the month's last day. For example, `2026-09-14` gives `2026-03-14`, and `2026-08-31` gives `2026-02-28`.
 - For each existing application from Step 3, take its `applied` value, ignoring surrounding quotes.
 - An existing application whose `applied` value is missing or blank MUST NOT cause an abort.
-- If any existing application has an `applied` date on or after `{cutoff}`, it is a duplicate. The assistant MUST STOP without creating a note and without asking for `listing` or `source`, after one line naming the matching note and its `applied` date (for example, `Duplicate: Job Applications/Lithic.md applied 2026-09-04`).
+- If any existing application has an `applied` date on or after `{cutoff}`, it is a duplicate. The assistant MUST STOP without creating a note and without asking for `listing` or `source`, after one line naming the matching note and its `applied` date (for example, `Duplicate: Applications/Lithic.md applied 2026-09-04`).
 
 ## Step 5: Filename
 
@@ -199,9 +199,9 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 <!-- auto-fill-applications T12: FR17 -->
 
-- Immediately before writing, check with Bash (`test -e`) that neither `Job Applications/{filename}` nor `Job Descriptions/{filename}` exists. If either exists, the assistant MUST STOP with one line naming the existing file, without writing anything.
+- Immediately before writing, check with Bash (`test -e`) that neither `Applications/{filename}` nor `Job Descriptions/{filename}` exists. If either exists, the assistant MUST STOP with one line naming the existing file, without writing anything.
 - Save the JD by copying it byte for byte with Bash: `mkdir -p "Job Descriptions" && cp -n "{jd_path}" "Job Descriptions/{filename}"`. The assistant MUST NOT retype or reformat it.
-- Write the note to `Job Applications/{filename}` with the Write tool.
+- Write the note to `Applications/{filename}` with the Write tool.
 - The assistant MUST NOT write any text to the user after the note is written.
 
 ## Step 12: Draft answers
@@ -231,7 +231,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - Step 11: `./jd.txt` is copied to `Job Descriptions/Privacy.md`, and the note below is written, with empty answer blocks.
 - Step 12: `djanswers Privacy` runs and fills in the answer blocks it has evidence for.
 
-**Expected note** at `Job Applications/Privacy.md`, as written in Step 11 before `djanswers` runs.
+**Expected note** at `Applications/Privacy.md`, as written in Step 11 before `djanswers` runs.
 
 ````markdown
 ---

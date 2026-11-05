@@ -13,7 +13,7 @@ i've recently used another AI agent to parse these into an explicit answer note 
 i would like to create a claude code skill, `djapplication` that does the following:
 
 - take a specified `jd.txt` as input (see this plan's directory's `sample-jd.txt` for an example).
-- create a job application note under `./Job Applications` (append a increasing number like `(1)` if an application for this company already exists in  the directory.
+- create a job application note under `./Applications` (append a increasing number like `(1)` if an application for this company already exists in  the directory.
 - otherwise, application note title/filename should be the name of the company.
 - fill out the new application note's YAML frontmatter with data from `jd.txt` (see `./_meta/Templates/Job Template.md` for an example frontmatter).
 - parse all non-trivial questions from `jd.txt`.  for example, visa questions, salary questions, should *NOT* be included.  all non-trivial questions should be added to the application note using the markdown question/answer convention above.  fill out `> question`, but leave the answer block empty for now.

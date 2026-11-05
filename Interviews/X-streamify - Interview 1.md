@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/X-streamify]]"
+application: "[[Applications/X-streamify]]"
 company: X-streamify
 round: 1
 date: 2026-03-26 11:00

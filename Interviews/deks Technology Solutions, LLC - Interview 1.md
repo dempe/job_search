@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/deks Technology Solutions, LLC]]"
+application: "[[Applications/deks Technology Solutions, LLC]]"
 company: deks Technology Solutions, LLC
 round: 1
 date: 2025-11-26 11:00

@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/GoAccess]]"
+application: "[[Applications/GoAccess]]"
 company: GoAccess
 round: 1
 date: 2026-10-28 10:00

@@ -28,7 +28,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Step 1: Input
 
 - The arguments are `{Application}`, an application note's name without `.md`, and `{date}`, the interview's date and time as the user wrote it. The user MAY also say who the interviewer is.
-- Resolve `{Application}` to the real filename in `Job Applications/` (`ls`), matching case-insensitively, and use that file's casing.
+- Resolve `{Application}` to the real filename in `Applications/` (`ls`), matching case-insensitively, and use that file's casing.
 - If the application or the date is missing, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
 - Normalize `{date}` to the vault's format: `YYYY-MM-DD HH:mm`, or `YYYY-MM-DD HH:mm - HH:mm` when an end time is given, in 24-hour time. If the user gave a relative date ("next Tuesday"), resolve it against `date "+%Y-%m-%d %H:%M"`.
@@ -46,7 +46,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 | Key | Value |
 | --- | --- |
 | `type` | `interview` |
-| `application` | `"[[Job Applications/{Application}]]"` |
+| `application` | `"[[Applications/{Application}]]"` |
 | `company` | the application note's `company` value, verbatim |
 | `round` | `{n}` |
 | `date` | `{date}` |

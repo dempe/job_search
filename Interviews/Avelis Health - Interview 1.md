@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Avelis Health]]"
+application: "[[Applications/Avelis Health]]"
 company: Avelis Health
 round: 1
 date: 2025-11-05 10:30

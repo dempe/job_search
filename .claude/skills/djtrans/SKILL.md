@@ -32,7 +32,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Step 1: Input
 
-- The argument is `{Application}`, an application note's name without `.md`. Resolve it to the real filename in `Job Applications/` (`ls`), matching case-insensitively, and use that file's casing.
+- The argument is `{Application}`, an application note's name without `.md`. Resolve it to the real filename in `Applications/` (`ls`), matching case-insensitively, and use that file's casing.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
 - Read the whole note. Its interview notes are the `![[Interviews/...]]` embeds under its `## Interview…` headings. Read each one.

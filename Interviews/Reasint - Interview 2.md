@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Reasint]]"
+application: "[[Applications/Reasint]]"
 company: Reasint
 round: 2
 date: 2023-11-29 14:00

@@ -6,7 +6,7 @@ superseded_by:
 
 # Context
 
-The vault has two question/answer conventions in `Job Applications/`:
+The vault has two question/answer conventions in `Applications/`:
 
 - Older notes put the answer in a fenced code block under the `> question`.
 - Recently reorganized notes (e.g. `Lithic.md`, `Resend.md`) put `Answer: [[<Answer note>#<Application>|<Answer note>]]` under the question, and the answer text lives in `Answers/`.

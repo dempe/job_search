@@ -13,7 +13,7 @@ Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, t
 **Form.** The skill is one Markdown file with YAML frontmatter (`name`, `description`, `argument-hint`). It has no `disable-model-invocation`, so Claude may invoke it automatically when a request matches the description, as well as via `/djapplication <path>`. The body is a numbered procedure. Claude executes it top to bottom using only built-in tools:
 
 - Read, to load the JD, the template, and existing notes' `applied` lines.
-- Glob or Grep, to list `Job Applications/` and read `applied`.
+- Glob or Grep, to list `Applications/` and read `applied`.
 - Bash, for `date "+%Y-%m-%d %H:%M"` only.
 - AskUserQuestion, or a plain question in chat, for the company name choice and for `listing`/`source`.
 - Write, to create the note.
@@ -23,13 +23,13 @@ Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, t
 1. **Input.** Resolve the JD path. Missing path → ask. Unreadable path → stop and report. Produces: JD text.
 2. **Company.** Derive the company name. Multiple plausible names → ask. Produces: `Company`.
 3. **Clock.** Run `date` once. Produces: `today` (`YYYY-MM-DD`) and `now` (`YYYY-MM-DD HH:mm`). Claude derives the six-month cutoff from `today` by calendar-month subtraction, with no platform-specific `date` flags.
-4. **Existing applications.** List `Job Applications/`. Keep filenames that exactly match `<Company>.md` or `<Company> (n).md`, where `n` is an integer. Read only each match's `applied` value. Produces: the list of matching notes with their dates and suffixes.
+4. **Existing applications.** List `Applications/`. Keep filenames that exactly match `<Company>.md` or `<Company> (n).md`, where `n` is an integer. Read only each match's `applied` value. Produces: the list of matching notes with their dates and suffixes.
 5. **Duplicate gate.** If any `applied` date is on or after the cutoff → **abort**. Report the note's filename and `applied` date, and write nothing. A missing or blank `applied` never aborts.
 6. **Filename.** No matches → `<Company>.md`. Otherwise → `<Company> (max suffix + 1).md`, where a bare name counts as `0`. Produces: `filename` and `title`.
 7. **Listing and source.** Ask the user for both, after the gate has passed. Blank answers are allowed. Produces: `listing` and `source`.
 8. **Questions.** Walk the JD's application form in order. Include every question unless it falls in an exclusion category or is a follow-up to an excluded question. Carry preceding prompt text or embedded content into the question when it's needed to answer it. Produces: the included and excluded question lists.
 9. **Compose.** Build the frontmatter in template key order with the fixed and derived values, quoting YAML where needed. Add the `## Application` heading and the question blocks.
-10. **Write.** Re-check that `Job Applications/<filename>` does not exist, then write it. If it exists, stop rather than overwrite.
+10. **Write.** Re-check that `Applications/<filename>` does not exist, then write it. If it exists, stop rather than overwrite.
 11. **Report.** Report the path, the included questions, and the excluded questions. Then stop.
 
 **Invariants stated in the skill:**
@@ -62,7 +62,7 @@ Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, t
 
 - [x] **T0** (FR0, FR1, NFR1): Create `.claude/skills/djapplication/SKILL.md` with YAML frontmatter:
   - `name: djapplication`
-  - a `description` that says it creates a job application note in `Job Applications/` from a JD text file, specific enough to trigger auto-invocation on requests to log or record a job application from a JD
+  - a `description` that says it creates a job application note in `Applications/` from a JD text file, specific enough to trigger auto-invocation on requests to log or record a job application from a JD
   - `argument-hint: <path-to-jd.txt>`
   - no `disable-model-invocation`
 - [x] **T1** (NFR0, NFR2, NFR4, FR55, FR56, FR57): Add a short purpose statement and a "Constraints" section. It states:
@@ -76,7 +76,7 @@ Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, t
 ### Phase B: Pre-write gates
 
 - [x] **T3** (FR5, FR6): Add the "Company name" step. Derive the hiring company from the JD. When more than one plausible name appears (product brand vs. parent company, recruiter vs. employer), ask the user to choose, using the Privacy/Lithic case as the illustrative example.
-- [x] **T4** (FR7, FR8, FR9): Add the "Existing applications" step. List `Job Applications/` and keep only filenames that exactly equal `<Company>.md` or `<Company> (<integer>).md`. Include the `Metal.md` vs. `Meta` example of what must not match. From each match, read only the `applied` frontmatter value, and record its numeric suffix (bare = `0`).
+- [x] **T4** (FR7, FR8, FR9): Add the "Existing applications" step. List `Applications/` and keep only filenames that exactly equal `<Company>.md` or `<Company> (<integer>).md`. Include the `Metal.md` vs. `Meta` example of what must not match. From each match, read only the `applied` frontmatter value, and record its numeric suffix (bare = `0`).
 - [x] **T5** (FR10, FR11, FR12, FR13): Add the "Clock" and "Duplicate check" steps.
   - Run `date "+%Y-%m-%d %H:%M"` once and keep `today` and `now`.
   - Compute the cutoff as `today` minus six calendar months (per scope A7).
@@ -133,7 +133,7 @@ Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, t
   - Question/answer pairs are separated by one blank line.
   - If every question was excluded, the body is just the heading.
 - [x] **T12** (FR17, FR52, FR53, FR54): Add the "Write and report" step.
-  - Immediately before writing, confirm `Job Applications/<filename>` still does not exist. If it does, stop without writing.
+  - Immediately before writing, confirm `Applications/<filename>` still does not exist. If it does, stop without writing.
   - Write the note.
   - Report the created path, the included questions, and the excluded questions with the exclusion category for each. Then stop.
 - [x] **T13** (NFR5, FR47, FR48, FR49, FR54): Add a worked example section based on `sample-jd.txt` (company "Privacy" chosen, no prior applications). It shows:

@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Aescape]]"
+application: "[[Applications/Aescape]]"
 company: Aescape
 round: 2
 date: 2026-07-20 13:00

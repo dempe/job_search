@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/NinjaCat]]"
+application: "[[Applications/NinjaCat]]"
 company: NinjaCat
 round: 1
 date: 2023-06-22 10:00

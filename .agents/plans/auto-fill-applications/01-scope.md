@@ -6,7 +6,7 @@ date: 2026-09-14 17:51:46
 
 ## Summary
 
-Create a reusable Claude Code skill, `djapplication`, that takes a job description text file (`jd.txt`) and creates a new job application note under `Job Applications/`. The skill fills the note's YAML frontmatter from the JD and adds every application question that isn't in an excluded category, each with an empty answer block. It aborts if an application for the same company was made within the last six months. The deliverable is the skill's Markdown file only. No scripts or other code.
+Create a reusable Claude Code skill, `djapplication`, that takes a job description text file (`jd.txt`) and creates a new job application note under `Applications/`. The skill fills the note's YAML frontmatter from the JD and adds every application question that isn't in an excluded category, each with an empty answer block. It aborts if an application for the same company was made within the last six months. The deliverable is the skill's Markdown file only. No scripts or other code.
 
 ## Requirements
 
@@ -27,7 +27,7 @@ Create a reusable Claude Code skill, `djapplication`, that takes a job descripti
 
 **Existing applications**
 
-- FR7: The skill MUST identify existing applications for the company solely by note filename in `Job Applications/`: `<Company>.md` or `<Company> (n).md`.
+- FR7: The skill MUST identify existing applications for the company solely by note filename in `Applications/`: `<Company>.md` or `<Company> (n).md`.
 - FR8: Filename matching MUST be exact on the company name, so that e.g. `Metal.md` does not count as a note for `Meta`.
 - FR9: The only field the skill reads from an existing application note MUST be its `applied` frontmatter date.
 - FR10: If any existing application for the company has an `applied` date within the six months before the current date, the skill MUST abort without creating a note.
@@ -77,7 +77,7 @@ Create a reusable Claude Code skill, `djapplication`, that takes a job descripti
 - FR45: Each question MUST be written as a Markdown blockquote (`> question`).
 - FR46: Question text MUST be preserved verbatim, except that a trailing required-field marker (`*`) MUST be removed.
 - FR47: When a question depends on preceding prompt text or embedded content to be answerable (e.g. the "Crack the code" instructions and encoded blob in `sample-jd.txt`), that content MUST be included verbatim in the question's blockquote, before the question text.
-- FR48: A multi-line question (e.g. a prompt followed by helper text) MUST put every line in the blockquote, joining lines with `<br/>` at the end of each non-final line. This matches existing notes such as `Job Applications/Resend.md`.
+- FR48: A multi-line question (e.g. a prompt followed by helper text) MUST put every line in the blockquote, joining lines with `<br/>` at the end of each non-final line. This matches existing notes such as `Applications/Resend.md`.
 - FR49: Each question MUST be followed by an empty fenced code block (a ```` ``` ```` line immediately followed by a closing ```` ``` ```` line).
 - FR50: Question/answer pairs MUST be separated from each other by one blank line.
 - FR51: If every question is excluded, the note MUST still be created with only the frontmatter and the `## Application` heading.
@@ -105,14 +105,14 @@ Create a reusable Claude Code skill, `djapplication`, that takes a job descripti
 
 **Repository.** `/Users/cld/workspace/job_search` is an Obsidian vault tracked in git. It has no existing `.claude/` directory. Relevant top-level folders:
 
-- `Job Applications/`: about 200 application notes, one per application.
+- `Applications/`: about 200 application notes, one per application.
 - `Answers/`: answer notes created by a recent reorganization. Each has one `## <Application>` section per use, containing `Source: [[<Application>]]`, the `> question`, and the answer in a fenced code block.
 - `Questions/`: question notes with `aliases` and backlink lists to applications. Out of scope for this skill.
 - `_meta/Templates/Job Template.md`: the application note template. Its frontmatter keys, in order: `type, applied, job_type, recruited, status, interviews, source, listing, company, position, contract, remote, compensation, title, date_created, date_modified`. The body is `## Application`.
 
 **Existing application note conventions.**
 
-- Recent notes (e.g. `Job Applications/Lithic.md`, `Archy.md`, `Resend.md`) put `Answer: [[<Answer note>#<Application>|<Answer note>]]` under each `> question`. Older notes, and the problem statement, use an inline fenced code block under the question. This skill uses the empty fenced code block form. Moving answers into `Answers/` and linking them stays a manual step.
+- Recent notes (e.g. `Applications/Lithic.md`, `Archy.md`, `Resend.md`) put `Answer: [[<Answer note>#<Application>|<Answer note>]]` under each `> question`. Older notes, and the problem statement, use an inline fenced code block under the question. This skill uses the empty fenced code block form. Moving answers into `Answers/` and linking them stays a manual step.
 - Some notes carry extra keys not in the template (`4day`, `industry`, `website`, `location`, `company_size`, `blog`, `correspondence`). The skill emits only template keys.
 - `applied` is a `YYYY-MM-DD` date in 206 application notes. One note has a blank `applied` and one has no `applied` key.
 - Observed `status` values: `awaiting-reply`, `ghosted`, `rejected`, `declined`, `cancelled`, `offer`. Observed `job_type` values: `fulltime`, `parttime`, `contractor`.
@@ -128,7 +128,7 @@ Create a reusable Claude Code skill, `djapplication`, that takes a job descripti
   - "What did you get when you cracked the code?", preceded by its "Crack the code" instructions and encoded blob.
 - Excluded fields: contact and identity fields, sponsorship and its follow-up, salary expectations, camera confirmation, working location, the travel expectation question and its "Other" follow-up.
 - Two candidate company names, "Privacy" (product) and "Lithic" (parent). The salary range is "$200,000 - $220,000 plus equity". The job title is "Staff Software Engineer" and the role is Remote.
-- `Job Applications/Lithic.md` has `applied: 2026-09-04`. A run on the sample using company "Lithic" within six months of that date is a duplicate under FR10.
+- `Applications/Lithic.md` has `applied: 2026-09-04`. A run on the sample using company "Lithic" within six months of that date is a duplicate under FR10.
 
 **Related skills.** The user's `d*` workflow skills (`dscope`, `dplan`, etc.) live in home-manager at `~/.config/home-manager/files/.claude/skills/` and are the stylistic reference for skill structure. `djapplication` is vault-specific, so it lives in this repo instead.
 

@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Nightingale Caring Solutions]]"
+application: "[[Applications/Nightingale Caring Solutions]]"
 company: Nightingale Caring Solutions
 round: 1
 date: 2024-02-23

@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Waldium]]"
+application: "[[Applications/Waldium]]"
 company: Waldium
 round: 1
 date: 2025-12-11 11:00

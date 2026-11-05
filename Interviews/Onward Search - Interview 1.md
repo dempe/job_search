@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Onward Search]]"
+application: "[[Applications/Onward Search]]"
 company: Onward Search
 round: 1
 date: 2025-12-08 11:00

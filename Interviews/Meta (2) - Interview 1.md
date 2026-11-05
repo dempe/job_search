@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Meta (2)]]"
+application: "[[Applications/Meta (2)]]"
 company: Meta (2)
 round: 1
 date: 2025-04-23 10:30

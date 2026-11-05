@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Walmart (3)]]"
+application: "[[Applications/Walmart (3)]]"
 company: Walmart (3)
 round: 1
 date: 2025-11-06 15:00

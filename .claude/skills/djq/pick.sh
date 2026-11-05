@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Print one question, chosen uniformly at random, from the notes in
-# "Job Applications/" and "Interviews/". A question is a run of consecutive `>` lines followed by
+# "Applications/" and "Interviews/". A question is a run of consecutive `>` lines followed by
 # one blank line and then an answer: a ``` fence or a [[link]] line. Blockquotes
 # that aren't followed by an answer (quoted emails, notes) are not questions.
 #
@@ -19,7 +19,7 @@ awk '
     if (n == 0) exit 1
     srand()
     i = int(rand() * n) + 1
-    name = file[i]; sub(/^(Job Applications|Interviews)\//, "", name); sub(/\.md$/, "", name)
+    name = file[i]; sub(/^(Applications|Interviews)\//, "", name); sub(/\.md$/, "", name)
     printf "%s\n%s", name, q[i]
   }
-' "Job Applications"/*.md Interviews/*.md
+' "Applications"/*.md Interviews/*.md

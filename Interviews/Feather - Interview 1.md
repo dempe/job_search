@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Feather]]"
+application: "[[Applications/Feather]]"
 company: Feather
 round: 1
 date: 2026-04-22 10:40

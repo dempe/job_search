@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Turing]]"
+application: "[[Applications/Turing]]"
 company: Turing
 round: 1
 date: 2026-04-30

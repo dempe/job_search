@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/i.Wonder]]"
+application: "[[Applications/i.Wonder]]"
 company: i.Wonder
 round: 1
 date: 2026-11-04 12:00 - 12:30

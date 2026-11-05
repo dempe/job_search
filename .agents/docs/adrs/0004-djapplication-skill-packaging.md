@@ -6,7 +6,7 @@ superseded_by:
 
 # Context
 
-The user's other `d*` skills are global and managed by home-manager (`~/.config/home-manager/files/.claude/skills/`). `djapplication` only makes sense inside this Obsidian vault, because it depends on `Job Applications/` and `_meta/Templates/Job Template.md`.
+The user's other `d*` skills are global and managed by home-manager (`~/.config/home-manager/files/.claude/skills/`). `djapplication` only makes sense inside this Obsidian vault, because it depends on `Applications/` and `_meta/Templates/Job Template.md`.
 
 The note needs a current local timestamp (`YYYY-MM-DD HH:mm`) for `date_created` and `date_modified`, which Claude Code doesn't otherwise know.
 

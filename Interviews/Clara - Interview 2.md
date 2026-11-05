@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Clara]]"
+application: "[[Applications/Clara]]"
 company: Clara
 round: 2
 date: 2024-02-11 14:00

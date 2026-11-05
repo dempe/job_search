@@ -1,11 +1,11 @@
 ---
 name: djq
-description: Pick one question at random from all the job application notes in `Job Applications/` and interview notes in `Interviews/`, for interview practice. Takes no arguments.
+description: Pick one question at random from all the job application notes in `Applications/` and interview notes in `Interviews/`, for interview practice. Takes no arguments.
 ---
 
 # Random Application Question
 
-Show the user one question chosen at random from every note in `Job Applications/` and `Interviews/`.
+Show the user one question chosen at random from every note in `Applications/` and `Interviews/`.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 

@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Crossing Hurdles]]"
+application: "[[Applications/Crossing Hurdles]]"
 company: Crossing Hurdles
 round: 1
 date: 2026-04-30

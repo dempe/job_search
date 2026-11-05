@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Cognizant (1)]]"
+application: "[[Applications/Cognizant (1)]]"
 company: Cognizant
 round: 2
 date: 2026-08-19 12:00

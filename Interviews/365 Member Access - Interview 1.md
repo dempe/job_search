@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/365 Member Access]]"
+application: "[[Applications/365 Member Access]]"
 company: 365 Member Access
 round: 1
 date: 2026-10-09 11:30 - 12:00

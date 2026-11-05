@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Yokeru]]"
+application: "[[Applications/Yokeru]]"
 company: Yokeru
 round: 1
 date: 2026-04-27

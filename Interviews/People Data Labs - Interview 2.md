@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/People Data Labs]]"
+application: "[[Applications/People Data Labs]]"
 company: People Data Labs
 round: 2
 date: 2026-11-03 14:00 - 14:45

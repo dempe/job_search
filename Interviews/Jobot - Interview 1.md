@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Jobot]]"
+application: "[[Applications/Jobot]]"
 company: Jobot
 round: 1
 date: 2026-04-30

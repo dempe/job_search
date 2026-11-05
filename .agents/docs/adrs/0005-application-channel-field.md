@@ -10,7 +10,7 @@ Application notes track two different things: where the listing was found, and h
 
 # Decision
 
-- Every note in `Job Applications/` has a `channel` field with exactly one of these values:
+- Every note in `Applications/` has a `channel` field with exactly one of these values:
   - `form`: a normal application through the posting. The default.
   - `recruited`: the employer or a recruiter reached out first.
   - `referral`: someone inside the company referred the user.
@@ -21,5 +21,5 @@ Application notes track two different things: where the listing was found, and h
 
 # Consequences
 
-- Dataview queries group and sort by `channel` (see `Job Applications/_MOC Jobs.md`).
+- Dataview queries group and sort by `channel` (see `Applications/_MOC Jobs.md`).
 - A few older notes still have channel-like `source` values (`email`, `reference`, `previously worked there`, `inbound`). Those values don't say where the listing was found.

@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Close (0)]]"
+application: "[[Applications/Close (0)]]"
 company: Close (0)
 round: 1
 date: 2023-06-15

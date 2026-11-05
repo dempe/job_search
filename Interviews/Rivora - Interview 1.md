@@ -1,6 +1,6 @@
 ---
 type: interview
-application: "[[Job Applications/Rivora]]"
+application: "[[Applications/Rivora]]"
 company: Rivora
 round: 1
 date: 2026-09-18 14:00
