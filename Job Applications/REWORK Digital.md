@@ -20,7 +20,7 @@ correspondence: wellfound
 compensation: $50k – $80k
 title: REWORK Digital
 date_created: "2026-10-13 12:09"
-date_modified: "2026-11-04 18:26"
+date_modified: "2026-11-04 18:27"
 ---
 
 ## Application
@@ -37,6 +37,8 @@ Would love to learn more about the role!
 Best,
 Chris
 ```
+
+They accepted my application, but their "interview" was just a series of questions that I had to write an answer for. Seems like companies are getting lazier and lazier with all the advantage they have right now — Loom videos, essays, etc. No one actually wants to sit down and interview anymore.
 
 ```
 Hi Hannah,
@@ -77,7 +79,3 @@ The problem here is that OpenAI and HubSpot are communicating synchronously. Tha
 
 We'd also want to use idempotency keys to ensure no duplicated messages, a DLQ to save failed messages, structured logging, monitoring, and alerting to ensure that we are aware of any dropped leads and can investigate manually if need be.
 ```
-
-## Interview 1
-
-![[Interviews/REWORK Digital - Interview 1]]
