@@ -4,9 +4,9 @@ application: "[[Job Applications/Grass]]"
 company: Grass
 round: 1
 date:
-kind:
+kind: recruiter
 interviewers:
-outcome:
+outcome: ghosted
 title: Grass - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

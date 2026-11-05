@@ -4,9 +4,9 @@ application: "[[Job Applications/deks Technology Solutions, LLC]]"
 company: deks Technology Solutions, LLC
 round: 2
 date: 2025-12-05 11:00
-kind:
-interviewers:
-outcome:
+kind: hiring-manager
+interviewers: Luke
+outcome: offer
 title: deks Technology Solutions, LLC - Interview 2
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

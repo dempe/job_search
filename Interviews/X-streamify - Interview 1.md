@@ -5,8 +5,8 @@ company: X-streamify
 round: 1
 date: 2026-03-26 11:00
 kind:
-interviewers:
-outcome:
+interviewers: Greg
+outcome: declined
 title: X-streamify - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

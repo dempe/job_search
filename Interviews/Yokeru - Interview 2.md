@@ -4,9 +4,9 @@ application: "[[Job Applications/Yokeru]]"
 company: Yokeru
 round: 2
 date: 2026-04-27
-kind:
+kind: recruiter
 interviewers:
-outcome:
+outcome: declined
 title: Yokeru - Interview 2
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

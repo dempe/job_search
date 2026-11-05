@@ -4,9 +4,9 @@ application: "[[Job Applications/Clara]]"
 company: Clara
 round: 1
 date: 2024-02-04 14:30
-kind:
+kind: hiring-manager
 interviewers:
-outcome:
+outcome: advanced
 title: Clara - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

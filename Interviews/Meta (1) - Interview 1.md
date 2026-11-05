@@ -4,9 +4,9 @@ application: "[[Job Applications/Meta (1)]]"
 company: Meta (1)
 round: 1
 date: 2023-08-31
-kind:
+kind: recruiter
 interviewers:
-outcome:
+outcome: advanced
 title: Meta (1) - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

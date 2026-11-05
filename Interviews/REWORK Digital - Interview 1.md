@@ -4,9 +4,9 @@ application: "[[Job Applications/REWORK Digital]]"
 company: REWORK Digital
 round: 1
 date:
-kind:
+kind: async
 interviewers:
-outcome:
+outcome: rejected
 title: REWORK Digital - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

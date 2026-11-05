@@ -4,9 +4,9 @@ application: "[[Job Applications/Feather]]"
 company: Feather
 round: 1
 date: 2026-04-22 10:40
-kind:
+kind: technical
 interviewers:
-outcome:
+outcome: declined
 title: Feather - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

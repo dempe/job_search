@@ -4,9 +4,9 @@ application: "[[Job Applications/People Data Labs]]"
 company: People Data Labs
 round: 1
 date: 2026-10-29 12:30 - 13:00
-kind:
-interviewers:
-outcome:
+kind: recruiter
+interviewers: Isabel
+outcome: advanced
 title: People Data Labs - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

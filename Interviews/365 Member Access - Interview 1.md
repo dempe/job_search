@@ -4,9 +4,9 @@ application: "[[Job Applications/365 Member Access]]"
 company: 365 Member Access
 round: 1
 date: 2026-10-09 11:30 - 12:00
-kind:
-interviewers:
-outcome:
+kind: hiring-manager
+interviewers: Bill
+outcome: rejected
 title: 365 Member Access - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

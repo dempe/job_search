@@ -4,9 +4,9 @@ application: "[[Job Applications/Reasint]]"
 company: Reasint
 round: 2
 date: 2023-11-29 14:00
-kind:
+kind: technical
 interviewers:
-outcome:
+outcome: rejected
 title: Reasint - Interview 2
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

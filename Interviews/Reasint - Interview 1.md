@@ -5,8 +5,8 @@ company: Reasint
 round: 1
 date: 2023-11-17 10:00
 kind:
-interviewers:
-outcome:
+interviewers: Cameron
+outcome: advanced
 title: Reasint - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

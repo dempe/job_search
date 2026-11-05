@@ -6,7 +6,7 @@ round: 2
 date: 2025-12-19 11:00
 kind:
 interviewers:
-outcome:
+outcome: rejected
 title: Waldium - Interview 2
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

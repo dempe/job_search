@@ -4,9 +4,9 @@ application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 1
 date: 2023-06-22 10:00
-kind:
-interviewers:
-outcome:
+kind: hiring-manager
+interviewers: Andy, Winnie
+outcome: advanced
 title: NinjaCat - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

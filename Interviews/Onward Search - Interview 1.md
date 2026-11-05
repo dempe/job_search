@@ -4,9 +4,9 @@ application: "[[Job Applications/Onward Search]]"
 company: Onward Search
 round: 1
 date: 2025-12-08 11:00
-kind:
+kind: ai-screen
 interviewers:
-outcome:
+outcome: rejected
 title: Onward Search - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

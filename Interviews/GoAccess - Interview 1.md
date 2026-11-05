@@ -4,9 +4,9 @@ application: "[[Job Applications/GoAccess]]"
 company: GoAccess
 round: 1
 date: 2026-10-28 10:00
-kind:
-interviewers:
-outcome:
+kind: recruiter
+interviewers: Doug
+outcome: rejected
 title: GoAccess - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

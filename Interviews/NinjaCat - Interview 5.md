@@ -4,9 +4,9 @@ application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 5
 date:
-kind:
+kind: product
 interviewers:
-outcome:
+outcome: advanced
 title: NinjaCat - Interview 5
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

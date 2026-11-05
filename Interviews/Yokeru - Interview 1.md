@@ -4,9 +4,9 @@ application: "[[Job Applications/Yokeru]]"
 company: Yokeru
 round: 1
 date:
-kind:
+kind: async
 interviewers:
-outcome:
+outcome: advanced
 title: Yokeru - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"

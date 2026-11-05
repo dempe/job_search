@@ -4,9 +4,9 @@ application: "[[Job Applications/Walmart (3)]]"
 company: Walmart (3)
 round: 1
 date: 2025-11-06 15:00
-kind:
-interviewers:
-outcome:
+kind: recruiter
+interviewers: Darby
+outcome: rejected
 title: Walmart (3) - Interview 1
 date_created: "2026-11-04 18:10"
 date_modified: "2026-11-04 18:10"
