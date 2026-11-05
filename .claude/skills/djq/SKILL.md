@@ -12,7 +12,6 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 ## Constraints
 
 - The assistant MUST pick the question by running `pick.sh`. It MUST NOT choose one itself, because a model's "random" choice isn't random.
-- The assistant MUST NOT read or use the legacy `Questions/` directory.
 - This skill MUST NOT create or modify any file.
 
 ## Step 1: Pick

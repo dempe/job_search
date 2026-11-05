@@ -17,7 +17,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only for read-only commands: `ls`, `find`, `grep`, `test -e`.
 - The only files this skill modifies are `Applications/{Application}/{Application}.md` and the interview notes it embeds, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
-- The assistant MUST NOT create or modify anything in `Answers/`, `Questions/`, `../resume/`, client repositories, or anywhere else.
+- The assistant MUST NOT create or modify anything in `Answers/`, `../resume/`, client repositories, or anywhere else.
 - The assistant MUST NOT commit or push anything to git.
 
 ## Honesty

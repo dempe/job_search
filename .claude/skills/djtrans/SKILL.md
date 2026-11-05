@@ -21,7 +21,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
 - The assistant modifies the application's interview notes only by adding `### Questions` sections. Every other part of them MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
 - The assistant MUST NOT modify any existing `transcript.md`.
-- The assistant MUST NOT create or modify anything in `Answers/` or `Questions/`.
+- The assistant MUST NOT create or modify anything in `Answers/`.
 - The assistant MUST NOT commit or push anything to git.
 
 ## Output

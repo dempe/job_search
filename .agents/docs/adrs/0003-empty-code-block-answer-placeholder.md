@@ -13,13 +13,13 @@ The vault has two question/answer conventions in `Applications/`:
 
 The `djapplication` skill needs a placeholder under each recorded question.
 
-Plan: `auto-fill-applications` (FR49, FR55–FR57).
+Plan: `auto-fill-applications` (FR49, FR55, FR56).
 
 # Decision
 
 New notes use the original convention: `> question`, one blank line, then an empty fenced code block (an opening and a closing fence with nothing between them). Pairs are separated by one blank line. This matches the pre-reorganization notes in git history.
 
-The skill writes no answers and doesn't touch `Answers/` or `Questions/`.
+The skill writes no answers and doesn't touch `Answers/`.
 
 # Consequences
 

@@ -89,7 +89,6 @@ Create a reusable Claude Code skill, `djapplication`, that takes a job descripti
 - FR54: After writing the note, the skill MUST list the excluded questions for the user, so misclassifications can be reviewed.
 - FR55: The skill MUST NOT write answers to any question.
 - FR56: The skill MUST NOT create or modify notes in `Answers/`.
-- FR57: The skill MUST NOT create or modify notes in `Questions/`.
 
 ### Non-Functional
 
@@ -107,7 +106,6 @@ Create a reusable Claude Code skill, `djapplication`, that takes a job descripti
 
 - `Applications/`: about 200 application notes, one per application.
 - `Answers/`: answer notes created by a recent reorganization. Each has one `## <Application>` section per use, containing `Source: [[<Application>]]`, the `> question`, and the answer in a fenced code block.
-- `Questions/`: question notes with `aliases` and backlink lists to applications. Out of scope for this skill.
 - `_meta/Templates/Job Template.md`: the application note template. Its frontmatter keys, in order: `type, applied, job_type, recruited, status, interviews, source, listing, company, position, contract, remote, compensation, title, date_created, date_modified`. The body is `## Application`.
 
 **Existing application note conventions.**
@@ -151,6 +149,6 @@ Create a reusable Claude Code skill, `djapplication`, that takes a job descripti
 - A2: Input JD files are plain text copied from a job posting page and include the application form's questions, in the shape of `sample-jd.txt`.
 - A3: Existing notes are never renamed to normalize duplicate numbering. Only the new note's suffix is chosen.
 - A4: Only the frontmatter keys in `_meta/Templates/Job Template.md` are emitted. Extra keys seen in older notes are not.
-- A5: Linking questions to `Answers/` notes and updating `Questions/` notes stays manual.
+- A5: Linking questions to `Answers/` notes stays manual.
 - A6: The user runs Claude Code from the vault root, so the repo-local skill at `.claude/skills/djapplication/SKILL.md` is discovered.
 - A7: "Within the last six months" means an `applied` date on or after the current date minus six calendar months.

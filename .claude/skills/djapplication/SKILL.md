@@ -16,14 +16,13 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Constraints
 
-<!-- auto-fill-applications T1: NFR0, NFR2, NFR4, FR55, FR56, FR57 -->
+<!-- auto-fill-applications T1: NFR0, NFR2, NFR4, FR55, FR56 -->
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, Skill, and asking the user). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only file listing commands (`ls`, `test -e`), and the JD copy in Step 11 (`mkdir -p`, `cp -n`).
 - The only files this skill creates are the new application's folder, its note, and its saved JD (`jd.md`). The assistant MUST NOT rename, modify, or overwrite any existing folder, note, or saved JD.
 - This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
 - The assistant MUST NOT create or modify anything in `Answers/`.
-- The assistant MUST NOT create or modify anything in `Questions/`.
 - The assistant MUST NOT commit or push anything to git.
 
 ## Output

@@ -34,7 +34,7 @@ Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, t
 
 **Invariants stated in the skill:**
 
-- The skill never modifies existing notes, `Answers/`, or `Questions/`.
+- The skill never modifies existing notes or `Answers/`.
 - It never writes answers.
 - It never commits or pushes.
 - Bash is used only for `date`.
@@ -65,11 +65,11 @@ Write a single repo-local skill file, `.claude/skills/djapplication/SKILL.md`, t
   - a `description` that says it creates a job application note in `Applications/` from a JD text file, specific enough to trigger auto-invocation on requests to log or record a job application from a JD
   - `argument-hint: <path-to-jd.txt>`
   - no `disable-model-invocation`
-- [x] **T1** (NFR0, NFR2, NFR4, FR55, FR56, FR57): Add a short purpose statement and a "Constraints" section. It states:
+- [x] **T1** (NFR0, NFR2, NFR4, FR55, FR56): Add a short purpose statement and a "Constraints" section. It states:
   - RFC 2119 keywords apply.
   - Only built-in tools are used, with Bash restricted to `date`.
   - The skill MUST NOT write answers.
-  - The skill MUST NOT create or modify anything in `Answers/` or `Questions/`.
+  - The skill MUST NOT create or modify anything in `Answers/`.
   - The skill MUST NOT commit or push.
 - [x] **T2** (FR2, FR3, FR4): Add the "Input" step. The JD path comes from the skill argument and resolves relative to the working directory. With no argument, the skill MUST stop and ask for the path. If the file is missing or unreadable, it MUST stop and report the path and error.
 
