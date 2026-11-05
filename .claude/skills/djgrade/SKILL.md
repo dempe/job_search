@@ -37,16 +37,45 @@ If there's no reference answer, grade against the question alone, using correct 
 
 ## Rubric
 
-Grade the substance of the answer against the question and the reference answer:
+Grade the substance of the answer against the question and the reference answer.
 
-- `right`: answered every part of the question correctly, with concrete specifics.
-- `partial`: correct but thin, missing a part the question asked for, vague when asked for specifics, or claiming more than the user's experience supports (e.g. rating themselves 9–10 at something they use routinely but not deeply).
-- `missed`: wrong, a non-answer ("I forget", "I don't know", trailing off), or an answer to a different question.
+**Grades**
 
-- Ignore filler, stutters, and transcription errors. Judge delivery only when rambling buried the answer.
-- The grade is about the answer, not about the reference answer's extra polish: a short answer that hits every point the question asked for is `right`.
-- **Story questions** ("tell me about a time…", "have you ever…", "walk me through a project…") are `right` only if the answer tells one specific situation, what the candidate personally did, and the result. Describing an approach ("I stay calm and isolate the issue"), saying "I had to deal with it", or listing topics without the actions and the outcome is `partial`. Hedges that weaken the example ("I think it happened twice") count against it. The example must also match what was asked: a smaller or different kind of situation (a slow or failing job when asked about an outage) is at best `partial`, unless the candidate says plainly that it's the closest they've had and why it still counts.
-- **Grade the answer, not the coverage.** Mentioning every topic the reference answer covers isn't enough; each part has to actually be answered. When unsure between `right` and `partial`, re-read the question and check each part it asked for.
+- `right`: meets every rule below.
+- `partial`: correct, but breaks any rule below. For example:
+  - thin, or vague when asked for specifics
+  - missing a part the question asked for
+  - claiming more than the candidate's experience supports (e.g. rating themselves 9–10 at something they use routinely but not deeply)
+- `missed`:
+  - wrong
+  - a non-answer ("I forget", "I don't know", trailing off)
+  - an answer to a different question
+
+**Rules for `right`**
+
+- **Every part answered.** Each part of the question gets an actual answer.
+  - Mentioning every topic the reference answer covers isn't enough.
+  - When unsure between `right` and `partial`, re-read the question and check each part it asked for.
+- **Concrete specifics.** Names, numbers, technologies, and actions, not generalities.
+- **Lead with the answer.** The first sentence or two directly answers the question asked, then details follow.
+  - An answer that opens with background, context, or details and only reaches the point later (or never states it) is `partial`, even if everything it says is correct.
+  - Examples of a direct lead: "Yes, twice -- the worst was…", "Kafka, because…", "About an 8.", "Mostly TypeScript and Node, with…"
+- **Stories are real stories.** For story questions ("tell me about a time…", "have you ever…", "walk me through a project…"), the answer tells one specific situation with:
+  - a **beginning**: the problem, and who or what it affected
+  - a **middle**: what the candidate personally did to fix it
+  - an **end**: the outcome
+- **What doesn't count as a story** (each is `partial`):
+  - describing an approach ("I stay calm and isolate the issue")
+  - "I had to deal with it"
+  - listing topics without the actions and the outcome
+  - a story missing its beginning, middle, or end
+- **The example matches the question.** A smaller or different kind of situation (a slow or failing job when asked about an outage) is at best `partial`, unless the candidate says plainly that it's the closest they've had and why it still counts.
+  - Hedges that shrink the example ("I think it happened twice") count against it.
+
+**What to ignore**
+
+- Filler, stutters, and transcription errors. Judge delivery only when rambling buried the answer, or when the answer didn't lead with the point.
+- The reference answer's extra polish. A short answer that leads with the point and hits every part the question asked for is `right`.
 
 ### Reference example
 
@@ -54,13 +83,18 @@ Grade the substance of the answer against the question and the reference answer:
 
 Answer: on-call at a previous job as a junior and "had to ask for some help"; at Octimine "there were 2 times where it would just like keep failing", "I had to babysit it", "It wasn't a complete outage"; staying calm and separating what's known from what isn't; a root cause analysis and incident documentation afterwards.
 
-Grade: `partial`, for three reasons:
+Grade: `partial`, for four reasons:
 
 - **The example doesn't fit the question.** A batch job that kept failing and running late isn't an emergency or an outage: nothing was down, and the candidate said so ("It wasn't a complete outage"). The answer swapped in a smaller problem instead of telling a real high-stress incident, or saying plainly that the closest thing they'd handled was a recurring failure and explaining why it was still high stakes.
 - **The story has no middle or end.** It never says what was failing, what the candidate did to fix it, or how it ended. The hedges ("I think there were 2 times") shrink it further.
+- **It doesn't lead with the answer.** It opens with on-call as a junior at a previous job before reaching any incident, and never states up front whether there was an emergency.
 - **Approach replaces action.** Staying calm and separating what's known from what isn't is a reasonable approach, but the answer describes the approach in place of what was actually done.
 
-A `right` answer tells one incident that matches what was asked, end to end: what broke and who it hurt, the specific steps taken, the outcome, and what changed afterwards.
+A `right` answer leads with a direct yes, and the incident it will describe, then tells that one incident end to end:
+
+- **beginning:** what broke and who it hurt
+- **middle:** the specific steps the candidate took
+- **end:** the outcome, and what changed afterwards
 
 ## Output
 
