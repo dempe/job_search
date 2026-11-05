@@ -22,12 +22,12 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Output
 
 - The assistant MUST NOT narrate while working.
-- It MUST end with one line naming the new interview note, plus one line listing any field it left blank because the user didn't give it (`kind`, `interviewers`).
+- It MUST end with one line naming the new interview note, plus one line listing any field it left blank because the user didn't give it (`interviewers`).
 - A run that stops early MUST say why in one line.
 
 ## Step 1: Input
 
-- The arguments are `{Application}`, an application note's name without `.md`, and `{date}`, the interview's date and time as the user wrote it. The user MAY also say who the interviewer is or what kind of interview it is.
+- The arguments are `{Application}`, an application note's name without `.md`, and `{date}`, the interview's date and time as the user wrote it. The user MAY also say who the interviewer is.
 - Resolve `{Application}` to the real filename in `Job Applications/` (`ls`), matching case-insensitively, and use that file's casing.
 - If the application or the date is missing, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
@@ -50,7 +50,6 @@ Follow the steps below in order. A step that says STOP ends the run.
 | `company` | the application note's `company` value, verbatim |
 | `round` | `{n}` |
 | `date` | `{date}` |
-| `kind` | one of `recruiter`, `hiring-manager`, `technical`, `peer`, `product`, `ai-screen`, `async`, `other` if the user said which; otherwise blank |
 | `interviewers` | the interviewer's name(s) if the user gave them; otherwise blank |
 | `outcome` | `pending` |
 | `title` | `{Application} - Interview {n}` |

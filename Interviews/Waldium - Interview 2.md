@@ -4,7 +4,6 @@ application: "[[Job Applications/Waldium]]"
 company: Waldium
 round: 2
 date: 2025-12-19 11:00
-kind:
 interviewers:
 outcome: rejected
 title: Waldium - Interview 2

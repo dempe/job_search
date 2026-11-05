@@ -4,7 +4,6 @@ application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 3
 date:
-kind: technical
 interviewers:
 outcome: advanced
 title: NinjaCat - Interview 3

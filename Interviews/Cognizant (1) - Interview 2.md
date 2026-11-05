@@ -4,7 +4,6 @@ application: "[[Job Applications/Cognizant (1)]]"
 company: Cognizant
 round: 2
 date: 2026-08-19 12:00
-kind: technical
 interviewers: Si Barash
 outcome: ghosted
 title: Cognizant (1) - Interview 2

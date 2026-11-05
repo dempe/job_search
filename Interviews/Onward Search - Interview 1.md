@@ -4,7 +4,6 @@ application: "[[Job Applications/Onward Search]]"
 company: Onward Search
 round: 1
 date: 2025-12-08 11:00
-kind: ai-screen
 interviewers:
 outcome: rejected
 title: Onward Search - Interview 1

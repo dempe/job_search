@@ -4,7 +4,6 @@ application: "[[Job Applications/Turing]]"
 company: Turing
 round: 1
 date: 2026-04-30
-kind: ai-screen
 interviewers:
 outcome: ghosted
 title: Turing - Interview 1

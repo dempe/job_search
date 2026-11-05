@@ -4,7 +4,6 @@ application: "[[Job Applications/Reasint]]"
 company: Reasint
 round: 1
 date: 2023-11-17 10:00
-kind:
 interviewers: Cameron
 outcome: advanced
 title: Reasint - Interview 1

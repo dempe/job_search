@@ -4,7 +4,6 @@ application: "[[Job Applications/Clara]]"
 company: Clara
 round: 2
 date: 2024-02-11 14:00
-kind: technical
 interviewers:
 outcome: declined
 title: Clara - Interview 2

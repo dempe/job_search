@@ -4,7 +4,6 @@ application:
 company:
 round:
 date:
-kind:
 interviewers:
 outcome: pending
 title: Interview Template

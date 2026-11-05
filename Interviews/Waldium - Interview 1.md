@@ -4,7 +4,6 @@ application: "[[Job Applications/Waldium]]"
 company: Waldium
 round: 1
 date: 2025-12-11 11:00
-kind:
 interviewers:
 outcome: advanced
 title: Waldium - Interview 1

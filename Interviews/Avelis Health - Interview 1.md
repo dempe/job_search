@@ -4,7 +4,6 @@ application: "[[Job Applications/Avelis Health]]"
 company: Avelis Health
 round: 1
 date: 2025-11-05 10:30
-kind:
 interviewers:
 outcome: advanced
 title: Avelis Health - Interview 1

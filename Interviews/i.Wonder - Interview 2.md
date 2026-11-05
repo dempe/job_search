@@ -4,7 +4,6 @@ application: "[[Job Applications/i.Wonder]]"
 company: i.Wonder
 round: 2
 date: 2026-11-13 12:00 - 12:30
-kind: hiring-manager
 interviewers: Rob Godfrey
 outcome: pending
 title: i.Wonder - Interview 2

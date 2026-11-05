@@ -4,7 +4,6 @@ application: "[[Job Applications/Meta (1)]]"
 company: Meta (1)
 round: 3
 date: 2023-10-19
-kind: technical
 interviewers:
 outcome: rejected
 title: Meta (1) - Interview 3

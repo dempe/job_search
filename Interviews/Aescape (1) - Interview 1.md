@@ -4,7 +4,6 @@ application: "[[Job Applications/Aescape (1)]]"
 company: Aescape
 round: 1
 date: 2026-10-30 13:00 - 13:30
-kind: recruiter
 interviewers: Dan
 outcome: pending
 title: Aescape (1) - Interview 1

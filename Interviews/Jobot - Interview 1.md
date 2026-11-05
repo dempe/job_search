@@ -4,7 +4,6 @@ application: "[[Job Applications/Jobot]]"
 company: Jobot
 round: 1
 date: 2026-04-30
-kind: ai-screen
 interviewers:
 outcome: declined
 title: Jobot - Interview 1

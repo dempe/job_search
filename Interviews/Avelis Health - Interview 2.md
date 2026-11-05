@@ -4,7 +4,6 @@ application: "[[Job Applications/Avelis Health]]"
 company: Avelis Health
 round: 2
 date: 2025-11-11 14:00
-kind: technical
 interviewers: Chris
 outcome: rejected
 title: Avelis Health - Interview 2

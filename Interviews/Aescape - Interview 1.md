@@ -4,7 +4,6 @@ application: "[[Job Applications/Aescape]]"
 company: Aescape
 round: 1
 date: 2026-07-14 14:00
-kind:
 interviewers:
 outcome: advanced
 title: Aescape - Interview 1

@@ -4,7 +4,6 @@ application: "[[Job Applications/Rivora]]"
 company: Rivora
 round: 1
 date: 2026-09-18 14:00
-kind:
 interviewers:
 outcome: rejected
 title: Rivora - Interview 1

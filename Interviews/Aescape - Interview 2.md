@@ -4,7 +4,6 @@ application: "[[Job Applications/Aescape]]"
 company: Aescape
 round: 2
 date: 2026-07-20 13:00
-kind: hiring-manager
 interviewers: Bill
 outcome: rejected
 title: Aescape - Interview 2

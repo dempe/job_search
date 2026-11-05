@@ -4,7 +4,6 @@ application: "[[Job Applications/Starbridge]]"
 company: Starbridge
 round: 1
 date:
-kind:
 interviewers:
 outcome: ghosted
 title: Starbridge - Interview 1

@@ -4,7 +4,6 @@ application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 2
 date: 2023-07-10 13:00
-kind: technical
 interviewers:
 outcome: advanced
 title: NinjaCat - Interview 2

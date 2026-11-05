@@ -4,7 +4,6 @@ application: "[[Job Applications/Crossing Hurdles]]"
 company: Crossing Hurdles
 round: 1
 date: 2026-04-30
-kind:
 interviewers:
 outcome: ghosted
 title: Crossing Hurdles - Interview 1

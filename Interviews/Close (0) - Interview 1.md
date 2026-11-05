@@ -4,7 +4,6 @@ application: "[[Job Applications/Close (0)]]"
 company: Close (0)
 round: 1
 date: 2023-06-15
-kind:
 interviewers:
 outcome: rejected
 title: Close (0) - Interview 1

@@ -4,7 +4,6 @@ application: "[[Job Applications/Vooma]]"
 company: Vooma
 round: 1
 date: 2025-11-19 12:15
-kind:
 interviewers:
 outcome: rejected
 title: Vooma - Interview 1

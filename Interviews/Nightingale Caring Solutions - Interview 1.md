@@ -4,7 +4,6 @@ application: "[[Job Applications/Nightingale Caring Solutions]]"
 company: Nightingale Caring Solutions
 round: 1
 date: 2024-02-23
-kind:
 interviewers:
 outcome: rejected
 title: Nightingale Caring Solutions - Interview 1

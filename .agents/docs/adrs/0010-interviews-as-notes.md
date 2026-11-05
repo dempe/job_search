@@ -10,7 +10,6 @@ Interviews lived as `## Interview N` sections inside application notes. That lef
   - `type: interview`
   - `application`: a link to the application note
   - `company`, `round`, `date`: `date` uses the same string format as the application's `interviews` list
-  - `kind`: one of `recruiter`, `hiring-manager`, `technical`, `peer`, `product`, `ai-screen`, `async`, `other`
   - `interviewers`
   - `outcome`: one of `pending`, `advanced`, `rejected`, `declined`, `ghosted`, `offer`
 - Its body holds everything about that interview: prep, the `### Transcript` embed (ADR 0009), `### Questions` model answers, and retros.
@@ -28,4 +27,4 @@ The interview date is stored twice: in the interview note's `date` and in the ap
 - Interview prep, transcripts, and retros go in the interview note, not in the application note.
 - Skills that read an application's Q/As (`djanswers`, `djmvanswers`, `djtrans`) also read the interview notes it embeds. `djq` picks from both folders.
 - When an interview's outcome becomes known, update its `outcome`. Set it to `advanced` when a later round is scheduled.
-- The `kind`, `interviewers`, and `outcome` values on interviews migrated on 2026-11-04 were inferred from their content. A blank field means the content didn't say.
+- The `interviewers` and `outcome` values on interviews migrated on 2026-11-04 were inferred from their content. A blank field means the content didn't say.

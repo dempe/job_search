@@ -4,7 +4,6 @@ application: "[[Job Applications/X-streamify]]"
 company: X-streamify
 round: 1
 date: 2026-03-26 11:00
-kind:
 interviewers: Greg
 outcome: declined
 title: X-streamify - Interview 1

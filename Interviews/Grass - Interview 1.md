@@ -4,7 +4,6 @@ application: "[[Job Applications/Grass]]"
 company: Grass
 round: 1
 date:
-kind: recruiter
 interviewers:
 outcome: ghosted
 title: Grass - Interview 1

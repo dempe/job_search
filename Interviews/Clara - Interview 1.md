@@ -4,7 +4,6 @@ application: "[[Job Applications/Clara]]"
 company: Clara
 round: 1
 date: 2024-02-04 14:30
-kind: hiring-manager
 interviewers:
 outcome: advanced
 title: Clara - Interview 1

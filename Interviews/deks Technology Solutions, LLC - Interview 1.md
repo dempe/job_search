@@ -4,7 +4,6 @@ application: "[[Job Applications/deks Technology Solutions, LLC]]"
 company: deks Technology Solutions, LLC
 round: 1
 date: 2025-11-26 11:00
-kind: recruiter
 interviewers: Autumn
 outcome: advanced
 title: deks Technology Solutions, LLC - Interview 1

@@ -4,7 +4,6 @@ application: "[[Job Applications/People Data Labs]]"
 company: People Data Labs
 round: 2
 date: 2026-11-03 14:00 - 14:45
-kind: hiring-manager
 interviewers: Jake Berry
 outcome: pending
 title: People Data Labs - Interview 2

@@ -4,7 +4,6 @@ application: "[[Job Applications/Walmart (3)]]"
 company: Walmart (3)
 round: 1
 date: 2025-11-06 15:00
-kind: recruiter
 interviewers: Darby
 outcome: rejected
 title: Walmart (3) - Interview 1
