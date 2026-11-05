@@ -3,12 +3,12 @@ type: interview
 application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 4
-date:
+date: 2023-07-10 14:00
 interviewers:
 outcome: advanced
 title: NinjaCat - Interview 4
-date_created: "2026-11-04 18:10"
-date_modified: "2026-11-04 18:10"
+date_created: 2026-11-04 18:10
+date_modified: 2026-11-04 18:10
 ---
 
 ## Peer Interview (30 min)

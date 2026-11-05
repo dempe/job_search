@@ -3,12 +3,12 @@ type: interview
 application: "[[Job Applications/NinjaCat]]"
 company: NinjaCat
 round: 3
-date:
+date: 2023-07-10 13:00
 interviewers:
 outcome: advanced
 title: NinjaCat - Interview 3
-date_created: "2026-11-04 18:10"
-date_modified: "2026-11-04 18:10"
+date_created: 2026-11-04 18:10
+date_modified: 2026-11-04 18:10
 ---
 
 ## Pair-programming Interview (45 min)
