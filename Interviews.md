@@ -18,7 +18,7 @@ SORT day ASC
 ## Scorecard
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "right")) AS "Right", length(filter(file.lists, (l) => l.grade = "partial")) AS "Partial", length(filter(file.lists, (l) => l.grade = "missed")) AS "Missed"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "right")) AS "Right", length(filter(file.lists, (l) => l.grade = "partial")) AS "Partial", length(filter(file.lists, (l) => l.grade = "missed")) AS "Missed", round(100 * length(filter(file.lists, (l) => l.grade = "right")) / length(filter(file.lists, (l) => l.grade))) + "%" AS "% Right"
 FROM "Applications"
 WHERE type = "interview" AND length(filter(file.lists, (l) => l.grade)) > 0
 SORT date(substring(string(date), 0, 10)) DESC
