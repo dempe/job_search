@@ -1,6 +1,6 @@
 ---
 name: djtrans
-description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Extracts the substantive questions the interviewer asked, and writes a `### Questions` section beside the transcript with, for each question, a right / partial / missed grade of the real answer and the ideal answer. Takes the application note's name (e.g. `Rivora`).
+description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Extracts the substantive questions the interviewer asked, and writes a `### Questions` section beside the transcript with, for each question, a pass / fail grade of the real answer and the ideal answer. Takes the application note's name (e.g. `Rivora`).
 argument-hint: <application-note-name>
 ---
 
@@ -122,7 +122,7 @@ In the interview note, immediately after the `### Transcript` section, add:
 ````markdown
 ### Questions
 
-Graded against the transcript: {r} right, {p} partial, {m} missed. Each question shows how you answered, then a model answer to study.
+Graded against the transcript: {p} pass, {f} fail. Each question shows how you answered, then a model answer to study.
 
 #### {question}
 
@@ -144,4 +144,4 @@ Graded against the transcript: {r} right, {p} partial, {m} missed. Each question
 
 ## Step 9: Report and stop
 
-Report one line per interview note (for example, `Interview 1: 5 questions (3 right, 1 partial, 1 missed)`), plus a line for any transcript skipped and why. Then STOP.
+Report one line per interview note (for example, `Interview 1: 5 questions (3 pass, 2 fail)`), plus a line for any transcript skipped and why. Then STOP.

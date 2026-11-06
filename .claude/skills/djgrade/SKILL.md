@@ -1,6 +1,6 @@
 ---
 name: djgrade
-description: Grade an answer to an interview or application question against content and delivery checks: right / partial / missed, what was said, and what was missing for each failed check. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
+description: Grade an answer to an interview or application question against content and delivery checks: pass / fail, what was said, and what was missing for each failed check. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
 argument-hint: <question> <answer>
 ---
 
@@ -63,7 +63,7 @@ Every point is all-or-nothing.
 
 | Check | Points |
 |---|---|
-| `answered` | 1 if it answers this question: not wrong, not a non-answer ("I forget", "I don't know", trailing off), not an answer to a different question. A real but weak answer passes; its weakness shows elsewhere. **Gate:** if it fails, `content` is 0 and the grade is `missed`. |
+| `answered` | 1 if it answers this question: not wrong, not a non-answer ("I forget", "I don't know", trailing off), not an answer to a different question. A real but weak answer passes; its weakness shows elsewhere. **Gate:** if it fails, `content` is 0. |
 | `complete` | 1 if every named part of the question is addressed. Leaving out a part ("…without sacrificing reliability?") fails it. |
 | `specifics` | 1 if it gives concrete names, numbers, technologies and actions, not generalities. A `simple` question passes with a direct answer. Ratings and "are you comfortable with X" are `experience`, not `simple`, and need backing. |
 | `accurate` | 1 if nothing in it is technically wrong and it claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply). |
@@ -83,9 +83,8 @@ Filler words and transcription errors on their own don't fail a delivery check; 
 
 ### Grade
 
-- `missed` if `answered` fails.
-- `right` only if every content and delivery point is earned.
-- `partial` otherwise.
+- `pass` only if every content and delivery point is earned.
+- `fail` otherwise.
 
 The grade is always derived this way, so it can never disagree with the scores.
 
@@ -102,7 +101,7 @@ Answer: on-call at a previous job as a junior and "had to ask for some help"; at
   - fail: `complete` (no actual emergency handled), `specifics` (never says what failed or what was done)
   - substance: no story dimension passes. There's no specific problem or impact (`beginning`), the approach stands in for actions (`middle`), there's no outcome (`end`), and a failing, late batch job isn't an outage (`fits`).
 - **Delivery: 0/3.** It doesn't lead (it opens with on-call as a junior), it hedges ("I think there were 2 times"), and the backstory buries the point.
-- **Grade:** `partial`.
+- **Grade:** `fail`.
 
 **2. Design question**
 
@@ -115,14 +114,14 @@ Answer: "Um... Let's see. That's a huge increase. 1000 to a million." Then: depl
   - fail: `complete` (the reliability half is unaddressed), `specifics` (no mechanisms named)
   - substance: only `mechanism` passes (standardized configuration, horizontal scaling). There's no `diagnose`, `reliability` or `validate`. A threshold on user count is a weak capacity signal.
 - **Delivery: 2/3.** `lead` fails (it stalls before the point). `confident` and `focused` pass.
-- **Grade:** `partial`.
+- **Grade:** `fail`.
 
 ## Output
 
 For each item, exactly this shape, one field per list item:
 
 ```markdown
-- grade:: {right | partial | missed}
+- grade:: {pass | fail}
 - answer:: {what the candidate said}
 - missing::
   - **{check}:** {what was missing or wrong, for that check}
@@ -136,8 +135,8 @@ The type and the scores are worked out to derive the grade, but they aren't part
   - Keep it under about 80 words. Quote transcription errors as they appear; don't correct them.
 - `missing::` has no value on its own line. Under it, indented two spaces, is one sub-bullet per failed check, content checks first, then delivery, labelled with the check name in bold: `  - **lead:** …`. A substance dimension is labelled `substance:{dimension}` (e.g. `  - **substance:validate:** …`).
   - Each sub-bullet names, concretely, what that check needed. For a substance dimension, describe the gap and give one possible example ("e.g. …"), never a required solution. For `lead`, give the direct first sentence the answer could have opened with.
-  - For `missed`, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
-  - Omit `missing::` entirely for `right`.
+  - If `answered` fails, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
+  - Omit `missing::` entirely for `pass`.
 
 **Ad hoc:** print the block for each item, with both scores as percentages after it (content and delivery), then one or two sentences of coaching on what to add or change next time. Then STOP.
 

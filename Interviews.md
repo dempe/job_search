@@ -18,31 +18,31 @@ SORT day ASC
 ## Interview Scorecard
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "right")) AS "Right", length(filter(file.lists, (l) => l.grade = "partial")) AS "Partial", length(filter(file.lists, (l) => l.grade = "missed")) AS "Missed", round(100 * length(filter(file.lists, (l) => l.grade = "right")) / length(filter(file.lists, (l) => l.grade))) + "%" AS "%", outcome AS "Outcome"
+TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", length(filter(file.lists, (l) => l.grade = "pass")) AS "Pass", length(filter(file.lists, (l) => l.grade = "fail")) AS "Fail", round(100 * length(filter(file.lists, (l) => l.grade = "pass")) / length(filter(file.lists, (l) => l.grade))) + "%" AS "%", outcome AS "Outcome"
 FROM "Applications"
 WHERE type = "interview" AND length(filter(file.lists, (l) => l.grade)) > 0
 SORT date(substring(string(date), 0, 10)) DESC
 ```
 
-## Missed or Partial Questions
+## Failed Questions
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", L.section AS "Question", date AS "When", L.grade AS "Grade"
+TABLE WITHOUT ID application AS "Application", L.section AS "Question", date AS "When"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
-WHERE L.grade = "missed" OR L.grade = "partial"
-SORT date(substring(string(date), 0, 10)) DESC, L.grade ASC
+WHERE L.grade = "fail"
+SORT date(substring(string(date), 0, 10)) DESC
 ```
 
-## Questions Got Right
+## Passed Questions
 
 ```dataview
 TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.section AS "Question"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
-WHERE L.grade = "right"
+WHERE L.grade = "pass"
 SORT date(substring(string(date), 0, 10)) DESC
 ```
 
