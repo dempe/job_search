@@ -1,3 +1,13 @@
+## dekstech
+
+[[dekstech]]
+
+> Do You Have Experience with AWS?
+
+```
+Yes. I'm an AWS Certified Developer Associate. I run my own production backend on AWS serverless: API Gateway, Lambda, DynamoDB, SQS and SNS for async work, CloudWatch for logs and alarms, CloudFront and S3 for static hosting, and KMS for secrets. All of it is defined as infrastructure as code with SAM and deployed through GitHub Actions, with separate staging and prod. I've also worked with EC2, S3, CloudFront, and Athena.
+```
+
 ## Hims & Hers
 
 [[Hims & Hers]]
