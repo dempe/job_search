@@ -133,9 +133,11 @@ Graded against the transcript: {p} pass, {f} fail. Each question shows how you a
 ### {question}
 
 - grade:: {grade}
+- score:: {score}
 - answer:: {what the user said}
 - missing::
   - **{check}:** {what was missing or wrong, for that check}
+- feedback:: {feedback}
 
 ```
 {ideal answer}

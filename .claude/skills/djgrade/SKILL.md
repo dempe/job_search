@@ -1,6 +1,6 @@
 ---
 name: djgrade
-description: Grade an answer to an interview or application question: what was said, what was missing (from content and delivery checks), and pass if nothing was missing, else fail. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
+description: Grade an answer to an interview or application question: what was said, what was missing (from content and delivery checks), pass if nothing was missing else fail, plus the grader's own 1–12 score and feedback. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
 argument-hint: <question> <answer>
 ---
 
@@ -118,9 +118,11 @@ For each item, exactly this shape, one field per list item:
 
 ```markdown
 - grade:: {pass | fail}
+- score:: {1–12}
 - answer:: {what the candidate said}
 - missing::
   - **{check}:** {what was missing or wrong, for that check}
+- feedback:: {the grader's own thoughts on the answer}
 ```
 
 The question type is worked out to choose the substance checks, but it isn't part of the output.
@@ -133,7 +135,9 @@ The question type is worked out to choose the substance checks, but it isn't par
   - Each sub-bullet names, concretely, what that check needed. For a substance dimension, describe the gap and give one possible example ("e.g. …"), never a required solution. For `lead`, give the direct first sentence the answer could have opened with.
   - If `answered` fails, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
   - Omit `missing::` entirely for `pass`.
+- `score::` is a whole number from 1 to 12: the grader's own overall judgment of how well the candidate did on this question. It's entirely subjective. It isn't computed from the checks, the `missing::` list or the grade, and two answers with the same grade can score very differently.
+- `feedback::` is the grader's own thoughts on the answer, in a few sentences of plain prose on one line. It's entirely subjective and can cover anything: what worked, what didn't, how it would land with an interviewer, what to change. It isn't limited to the rubric, and it's written for `pass` as well as `fail`.
 
-**Ad hoc:** print the block for each item, then one or two sentences of coaching on what to add or change next time. Then STOP.
+**Ad hoc:** print the block for each item. Then STOP.
 
 **Invoked by another skill:** produce the blocks and continue with the caller's steps. The caller's output rules apply.
