@@ -287,7 +287,7 @@ chris@chrisdempewolf.com
 
 ## Interview 1
 
-![[Applications/deks Technology Solutions, LLC/Interviews/1/1]]
+![[Applications/dekstech/Interviews/1/1]]
 
 ## Follow-up Email with Portfolio
 
@@ -316,4 +316,4 @@ Chris
 
 ## Interview 2
 
-![[Applications/deks Technology Solutions, LLC/Interviews/2/2]]
+![[Applications/dekstech/Interviews/2/2]]
