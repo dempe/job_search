@@ -38,7 +38,7 @@ SORT date(substring(string(date), 0, 10)) DESC
 ## Passed Questions
 
 ```dataview
-TABLE WITHOUT ID application AS "Application", round AS "Round", date AS "When", L.section AS "Question"
+TABLE WITHOUT ID application AS "Application", file.link AS "Interview", date AS "When", L.section AS "Question"
 FROM "Applications"
 WHERE type = "interview"
 FLATTEN file.lists AS L
