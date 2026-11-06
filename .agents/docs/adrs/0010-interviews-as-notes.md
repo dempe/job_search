@@ -27,6 +27,6 @@ The interview date is stored twice: in the interview note's `date` and in the ap
 
 - To add an interview, run `djinterview {Application} {date/time}`. Don't add `## Interview` sections to application notes by hand.
 - Interview prep, transcripts, and retros go in the interview note, not in the application note.
-- Skills that read an application's Q/As (`djanswers`, `djmvanswers`, `djtrans`) also read the interview notes it embeds. `djq` picks from both application and interview notes.
+- Skills that read an application's Q/As (`djanswers`, `djtrans`) also read the interview notes it embeds. `djmvanswers` works on one note per run: the application note on its own, or one interview note given by its number. `djq` picks from both application and interview notes.
 - When an interview's outcome becomes known, update its `outcome`. Set it to `advanced` when a later round is scheduled.
 - The `interviewers` and `outcome` values on interviews migrated on 2026-11-04 were inferred from their content. A blank field means the content didn't say.

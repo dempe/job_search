@@ -1,14 +1,17 @@
 ---
 name: djmvanswers
-description: Migrate answered application questions out of a job application note into topic-based notes in `Answers/`, replacing each answer code block with a backlink. Takes the application note's name (e.g. `Rivora`). Use when the user wants to file, move, or link an application's answers into Answer notes.
-argument-hint: <application-note-name>
+description: Migrate answered questions out of one job application note, or out of one of its interview notes, into topic-based notes in `Answers/`, replacing each answer code block with a backlink. Takes the application note's name and an optional interview number (e.g. `Rivora`, or `Rivora 2` for interview 2). Use when the user wants to file, move, or link an application's or an interview's answers into Answer notes.
+argument-hint: <application-note-name> [interview-number]
 ---
 
 # Migrate Application Answers
 
-Move every answered question in one `Applications/` note, and in the interview notes it embeds, into an Answer note in `Answers/`. Each answer goes to an existing note whose topic fits, or to a new note when nothing fits. Where the Q/A was, the answer's code block is replaced with a link to its new home.
+Move every answered question in one note into an Answer note in `Answers/`. Each answer goes to an existing note whose topic fits, or to a new note when nothing fits. Where the Q/A was, the answer's code block is replaced with a link to its new home.
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note as `![[Applications/{Application}/Interviews/{n}/{n}]]` (see ADRs 0010 and 0011). Below, "the application's notes" means the application note plus every interview note it embeds.
+The run works on exactly one note, **the target note**:
+
+- With an interview number `{n}`: the interview note `Applications/{Application}/Interviews/{n}/{n}.md` (see ADRs 0010 and 0011).
+- Without one: the application note `Applications/{Application}/{Application}.md`, and only the Q/As written in it. The interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`) are not part of the run; each is migrated separately by its number.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -19,7 +22,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only for read-only file listing commands (`ls`, `test -e`).
 - The assistant MAY modify only:
-  - the application's notes, and only by replacing answer code blocks with backlinks
+  - the target note, and only by replacing answer code blocks with backlinks
   - notes in `Answers/`, and only by adding sections or creating new notes
 - Answer text and question text MUST be moved verbatim: every character, blank line, and trailing space. The assistant MUST NOT fix typos, reword, reformat, or trim anything it moves.
 - The assistant MUST NOT delete, reorder, or edit existing sections in `Answers/` notes.
@@ -71,17 +74,19 @@ When filing one, the `Answers/` section's `> {question}` line is the heading tex
 
 ## Step 1: Application note
 
-- The argument is `{Application}`, the application note's name without `.md`.
+- The arguments are `{Application}`, the application note's name without `.md`, and optionally `{n}`, an interview number.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If `Applications/{Application}/{Application}.md` does not exist (check with `test -e`), the assistant MUST STOP with one line naming the missing file.
-- Read the whole note, then every interview note it embeds.
+- With `{n}`: if `Applications/{Application}/Interviews/{n}/{n}.md` does not exist, the assistant MUST STOP with one line naming the missing file. Otherwise that interview note is the target note.
+- Without `{n}`: the application note is the target note.
+- Read the whole target note.
 
 ## Step 2: Find answered Q/As
 
-- Find every Q/A in the application's notes (see Formats), in any section, not only `## Application`.
+- Find every Q/A in the target note (see Formats), in any section, not only `## Application`. In an interview note, that means the `####` Q/As in its `### Questions` section; in the application note, the `> ` blockquote Q/As.
 - A Q/A is **answered** if its code block contains at least one non-whitespace character. Empty code blocks are unanswered and MUST be left untouched.
 - Questions already followed by a link line MUST be left untouched.
-- If there are no answered Q/As, the assistant MUST STOP with one line saying so.
+- If the target note has no answered Q/As, the assistant MUST STOP with one line saying so.
 
 ## Step 3: Learn the Answer notes
 
@@ -119,6 +124,6 @@ For each answered Q/A, in the order they appear:
 
 ## Step 7: Replace the answer with a backlink
 
-- In the note the Q/A is in (the application note or one of its interview notes), use Edit to replace the answer's code block, from its opening fence through its closing fence, with `[[{Answer note}#{Heading}|{Answer note}]]`.
+- In the target note, use Edit to replace the answer's code block, from its opening fence through its closing fence, with `[[{Answer note}#{Heading}|{Answer note}]]`.
 - The question (blockquote or `####` heading), any `- field::` bullets (including `- practice::` lines after an application-note answer), and the blank lines around them MUST stay in place.
 - Repeat Steps 4–7 for each answered Q/A, then STOP.
