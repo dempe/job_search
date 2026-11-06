@@ -50,7 +50,10 @@ Pick exactly one `qtype` (the field is named `qtype`, not `type`, because the in
 | `story` | "tell me about a time / have you ever / walk me through a project / most difficult…" | `beginning`: one specific problem, and who or what it affected · `middle`: what the candidate personally did (an approach like "I stay calm" or "I had to deal with it" doesn't count) · `end`: the outcome · `fits`: the example matches what was asked, not a smaller or different kind of situation, unless the candidate says plainly it's the closest they've had and why it still counts |
 | `experience` | "what have you used / are you comfortable with / rate yourself / your background" | `claim`: a direct statement of level or extent · `evidence`: where and what they did with it · `depth`: how recently and how deeply · `relevance`: a tie to this role or stack |
 | `motivation` | "why us / why leave / what are you looking for / how do you feel about" | `reason`: a clear reason · `specific`: specific to this company and role · `grounded`: tied to the candidate's real experience · `forward`: what they'd bring or want next |
-| `simple` | yes/no or one-fact questions ("Did you only build the mobile app?") | none |
+| `simple` | yes/no or one-fact questions ("Did you only build the mobile app?"), and coding tasks answered with correct code | none |
+
+- **Fit dimensions apply only to fit questions.** `relevance` (`experience`) and `specific` (`motivation`) are scored only when the question asks about fit, the role or the company ("why this role", "how would your experience help here"). For any other question ("Which AWS services have you used?", "Tell me about yourself") that dimension passes automatically.
+- **Coding tasks with correct code are `simple`.** A request to write or fix code that the answer gets right is typed `simple`, so it isn't marked down for `when` or `example`. Incorrect or incomplete code stays `technical`.
 
 **Substance is judged on reasoning, not on matching the reference answer.** The reference answer is one good example. Any sound approach that covers a dimension earns its point, even if it uses a different design or technology.
 
