@@ -61,7 +61,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 <!-- auto-fill-applications T4: FR7, FR8, FR9 -->
 
-- Each application has its own folder, `Applications/{title}/`, holding the application note `{title}.md`, its saved JD `jd.md`, and its interviews as `Interviews/{n}/{n}.md`, each with an optional `transcript.md` beside it (see ADR 0011).
+- Each application has its own folder, `Applications/{title}/`, holding the application note `{title}.md`, its saved JD `jd.md`, and its interviews as `Interviews/{n}/{n}.md`, each with an optional `transcript.md` beside it.
 - List the application folders with Bash (`ls "Applications"`).
 - A folder is an existing application for `{Company}` if and only if its name is exactly one of:
   - `{Company}`

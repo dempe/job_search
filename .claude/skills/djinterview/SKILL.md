@@ -6,7 +6,7 @@ argument-hint: <application-note-name> <date/time>
 
 # New Interview Note
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note (see ADRs 0010 and 0011). Create the note for one new interview and wire it into its application.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note. Create the note for one new interview and wire it into its application.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 

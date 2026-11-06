@@ -6,7 +6,7 @@ argument-hint: <application-note-name>
 
 # Draft Application Answers
 
-Fill in the empty answer code blocks in one `Applications/` note, and in the interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`, see ADRs 0010 and 0011), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
+Fill in the empty answer code blocks in one `Applications/` note, and in the interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 

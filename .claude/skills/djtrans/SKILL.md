@@ -6,7 +6,7 @@ argument-hint: <application-note-name>
 
 # Interview Transcript to Questions
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note (see ADRs 0010 and 0011). Read the transcripts in one application's interview notes, pull out the questions the interviewer asked, write the answer that should have been given to each, and grade the answer the user actually gave.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note. Read the transcripts in one application's interview notes, pull out the questions the interviewer asked, write the answer that should have been given to each, and grade the answer the user actually gave.
 
 The answers are model answers for study, not a record of what was said and not restricted to what the vault can evidence. Each generated section says so, so a later reader never mistakes them for the user's own words.
 
@@ -52,7 +52,7 @@ Then, in each interview note:
 - A section that is empty, holds anything other than one embed, or embeds a file that doesn't exist (`test -e`) is skipped and reported.
 - If none of the interview notes has a `## Transcript` section, the assistant MUST STOP with one line saying so.
 
-Then make sure each transcript to process has a speaker-labelled copy, `transcript-processed.md`, beside it, embedded in the note (ADR 0012):
+Then make sure each transcript to process has a speaker-labelled copy, `transcript-processed.md`, beside it, embedded in the note:
 
 - If any is missing, invoke the `djspeakers` skill with the Skill tool for this application, and report its uncertain speaker calls in Step 9. It writes the file and switches the note's embed to it, so Read those notes again.
 - If `djspeakers` couldn't label a transcript, skip that transcript and report it.

@@ -6,7 +6,7 @@ argument-hint: <application-note-name> [interview-number]
 
 # Label Transcript Speakers
 
-The user records interviews with Apple Voice Memos, whose transcripts have no speaker labels: just text, broken into chunks at pauses, not at speaker changes. This skill decides who said what and writes a speaker-labelled copy, `transcript-processed.md`, beside the raw transcript, then points the interview note's transcript embed at it (ADR 0012). The raw `transcript.md` stays as it is.
+The user records interviews with Apple Voice Memos, whose transcripts have no speaker labels: just text, broken into chunks at pauses, not at speaker changes. This skill decides who said what and writes a speaker-labelled copy, `transcript-processed.md`, beside the raw transcript, then points the interview note's transcript embed at it. The raw `transcript.md` stays as it is.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 

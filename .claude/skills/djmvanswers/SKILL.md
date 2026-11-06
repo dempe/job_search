@@ -10,7 +10,7 @@ Move every answered question in one note into an Answer note in `Answers/`. Each
 
 The run works on exactly one note, **the target note**:
 
-- With an interview number `{n}`: the interview note `Applications/{Application}/Interviews/{n}/{n}.md` (see ADRs 0010 and 0011).
+- With an interview number `{n}`: the interview note `Applications/{Application}/Interviews/{n}/{n}.md`.
 - Without one: the application note `Applications/{Application}/{Application}.md`, and only the Q/As written in it. The interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`) are not part of the run; each is migrated separately by its number.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
