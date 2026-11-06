@@ -129,10 +129,10 @@ For each item, exactly this shape, one field per list item:
 
 The type and the scores are worked out to derive the grade, but they aren't part of the output.
 
-- `answer::` is a verbatim quote of the candidate's answer, in double quotes. It MUST NOT be a paraphrase or summary.
-  - It starts with the answer's opening sentence, exactly as said, so a weak lead is visible.
-  - It MAY add one more verbatim excerpt with the core of the answer, joined to the first with ` … `.
-  - Keep it under about 80 words. Quote transcription errors as they appear; don't correct them.
+- `answer::` is the candidate's whole answer, verbatim, in double quotes, on one line. It MUST NOT be a paraphrase, a summary or an excerpt: every point the candidate made is in it, so the `missing::` list can be checked against it.
+  - It runs from the candidate's first word on the question to their last, including any follow-up exchange on the same point.
+  - Leave out the interviewer's words (questions, interjections like "Okay." or "Yeah, that's great."). Where the interviewer's words split the answer, join the candidate's parts with ` … `.
+  - Quote filler and transcription errors as they appear; don't correct them.
 - `missing::` has no value on its own line. Under it, indented two spaces, is one sub-bullet per failed check, content checks first, then delivery, labelled with the check name in bold: `  - **lead:** …`. A substance dimension is labelled `substance:{dimension}` (e.g. `  - **substance:validate:** …`).
   - Each sub-bullet names, concretely, what that check needed. For a substance dimension, describe the gap and give one possible example ("e.g. …"), never a required solution. For `lead`, give the direct first sentence the answer could have opened with.
   - If `answered` fails, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
