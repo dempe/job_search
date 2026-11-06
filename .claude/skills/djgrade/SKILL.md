@@ -1,7 +1,7 @@
 ---
 name: djgrade
-description: Grade an answer to an interview or application question: what was said, what was missing (from content and delivery checks), pass if nothing was missing else fail, plus the grader's own 1–12 score and feedback. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
-argument-hint: <question> <answer>
+description: Grade an answer to an interview or application question: what was said, what was missing (from content and delivery checks), pass if nothing was missing else fail, plus the grader's own 1–12 score and feedback. Use ad hoc to grade a practice answer, from another skill (djtrans, djq), or on a whole interview to re-grade every question in its note. Takes a question and an answer (optionally a reference answer or the note the question lives in), or an application note's name and an interview number (e.g. `Rivora 1`).
+argument-hint: <question> <answer> | <application> <interview-number>
 ---
 
 # Grade an Answer
@@ -10,12 +10,20 @@ Grade a candidate's answer to a question against a reference answer, and return 
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
+## Modes
+
+- **Item mode:** grade the question/answer items given, and print or return the blocks (see Output). This is the mode when invoked by another skill, and ad hoc when given a question and an answer.
+- **Interview mode:** `/djgrade {Application} {n}`. Re-grade every question in one interview note from its transcript, and write the results into the note (see Interview mode).
+
+Use interview mode when the arguments are an application name followed by a number, and `Applications/{Application}/Interviews/{n}/{n}.md` exists (resolve `{Application}` to its folder in `Applications/` with `ls`, matching case-insensitively). Otherwise use item mode.
+
 ## Constraints
 
-- This skill only grades. It MUST NOT create or modify any file. Callers decide where results go.
+- In item mode, the assistant MUST NOT create or modify any file. Callers decide where results go.
+- In interview mode, the assistant modifies only the target interview note, and only its `## Questions` section: the field bullets under each `###` question, and the tally line. Question headings, model answers and their `[[…]]` links, `- practice::` lines, and everything outside the section MUST stay byte-for-byte unchanged. It MUST NOT modify any transcript.
 - The assistant MUST NOT commit or push anything to git.
 
-## Input
+## Input (item mode)
 
 One or more items. Each item is:
 
@@ -112,6 +120,19 @@ Answer: "Um... Let's see. That's a huge increase. 1000 to a million." Then: depl
 - **Delivery:** `lead` fails (it stalls before the point). `confident` and `focused` pass.
 - **Grade:** `fail`.
 
+## Interview mode
+
+1. **Read the note.** Read `Applications/{Application}/Interviews/{n}/{n}.md`. If it has no `## Questions` section with at least one `### {question}` heading, STOP with one line saying so.
+2. **Get the transcript.** If `transcript-processed.md` doesn't exist beside the note, invoke the `djspeakers` skill with the Skill tool for `{Application} {n}` first; if it can't label the transcript, STOP with one line saying why. Read `transcript-processed.md` in full. `**Me:**` turns are the candidate's; every other label is an interviewer's.
+3. **Gather the items.** For each `###` question in `## Questions`, in order:
+   - the question: the heading text
+   - the reference answer: the fenced block after the question's bullets, or, if the question is followed by a `[[Note#Heading|Note]]` link, the code block in that `Answers/` section (see Finding the reference answer)
+   - the candidate's answer: the text of their `**Me:**` turns from where the interviewer asks that question until the interviewer moves on, including follow-up exchanges on the same point, copied exactly and joined with ` … `. If the question can't be found in the transcript, grade it as unanswered (`answered` fails, with the `answered` item explaining that the transcript has no answer to it).
+4. **Grade** each item by the Rubric, into the block shape in Output.
+5. **Write the results.** For each question, replace its existing field bullets (`grade`, `score`, `answer`, `missing` with its sub-bullets, `feedback`, and any other `- field::` bullets except `- practice::`) with the new block, using Edit anchored on the question's heading. The new block sits between the heading's blank line and the model answer; keep any `- practice::` lines right after it. A question with no bullets gets the block inserted under its heading, separated by one blank line on each side.
+6. **Update the tally.** Set the section's intro line to `Graded against the transcript: {p} pass, {f} fail. Each question shows how you answered, then a model answer to study.` with the new counts, replacing the existing line if there is one, or adding it as the section's first line if not.
+7. **Report and stop.** One line: the note, the number of questions, the pass/fail tally, and the average score. Then STOP.
+
 ## Output
 
 For each item, exactly this shape, one field per list item:
@@ -138,6 +159,8 @@ The question type is worked out to choose the substance checks, but it isn't par
 - `score::` is a whole number from 1 to 12: the grader's own overall judgment of how well the candidate did on this question. It's entirely subjective. It isn't computed from the checks, the `missing::` list or the grade, and two answers with the same grade can score very differently.
 - `feedback::` is the grader's own thoughts on the answer, in a few sentences of plain prose on one line. It's entirely subjective and can cover anything: what worked, what didn't, how it would land with an interviewer, what to change. It isn't limited to the rubric, and it's written for `pass` as well as `fail`.
 
-**Ad hoc:** print the block for each item. Then STOP.
+**Item mode, ad hoc:** print the block for each item. Then STOP.
 
-**Invoked by another skill:** produce the blocks and continue with the caller's steps. The caller's output rules apply.
+**Item mode, invoked by another skill:** produce the blocks and continue with the caller's steps. The caller's output rules apply.
+
+**Interview mode:** write the blocks into the note (see Interview mode); don't print them.
