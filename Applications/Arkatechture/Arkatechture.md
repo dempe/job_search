@@ -23,4 +23,4 @@ date_modified: "2026-09-14 19:25"
 > Tell us about a complex data or software engineering solution you personally designed and delivered. What problem were you solving, what technologies and approach did you use, and what was the outcome? Please also briefly describe your role in guiding other engineers or improving the team's technical approach along the way. (250 words or less.)<br/>
 > Cover Letter
 
-[[Replacing batch analytics with Kafka Streams#Arkatechture|Replacing batch analytics with Kafka Streams]]
+![[Replacing batch analytics with Kafka Streams#Arkatechture]]

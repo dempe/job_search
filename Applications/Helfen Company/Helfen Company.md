@@ -25,4 +25,4 @@ date_modified: "2026-10-26 17:44"
 > Describe an agent system you've built that runs in production. What does each agent do, and how do they coordinate? How is memory and context stored, and how is it shared between agents and between people? What would you change if you built it again? Links, demos, or diagrams are welcome.<br/>
 > What interests you about working for this company?
 
-[[AI-assisted development workflow#Helfen Company|AI-assisted development workflow]]
+![[AI-assisted development workflow#Helfen Company]]

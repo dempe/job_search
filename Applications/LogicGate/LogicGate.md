@@ -21,4 +21,4 @@ date_modified: "2026-10-16 18:33"
 
 > What's one thing about migrations that frustrates you as a service scales and how do you architect around it?
 
-[[Running a risky database migration#LogicGate|Running a risky database migration]]
+![[Running a risky database migration#LogicGate]]

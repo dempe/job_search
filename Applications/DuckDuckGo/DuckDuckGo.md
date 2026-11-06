@@ -22,4 +22,4 @@ date_modified: "2026-10-26 12:56"
 
 > What interests you about working for this company?
 
-[[Why Company X#DuckDuckGo|Why Company X]]
+![[Why Company X#DuckDuckGo]]

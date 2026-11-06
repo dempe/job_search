@@ -21,4 +21,4 @@ date_modified: 2026-09-26 18:23
 
 > Cover Letter
 
-[[Introduction#Consensus Cloud Solutions|Introduction]]
+![[Introduction#Consensus Cloud Solutions]]

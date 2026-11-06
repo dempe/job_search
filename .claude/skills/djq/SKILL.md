@@ -24,7 +24,7 @@ bash .claude/skills/djq/pick.sh
 ```
 
 - The first line of output is the note's name: `{title}` for an application note, `{title} - Interview {n}` for an interview note. The second line is the note's vault path without `.md`. The rest is the question, verbatim, as `>` lines.
-- A question is a blockquote followed by one blank line and then an answer (a ```` ``` ```` fence or a `[[link]]` line), or, in an interview note's `## Questions` section, a `### {question}` heading followed by its answer. Quoted emails and notes are not questions.
+- A question is a blockquote followed by one blank line and then an answer (a ```` ``` ```` fence or a `![[…]]` embed line), or, in an interview note's `## Questions` section, a `### {question}` heading followed by its answer. Quoted emails and notes are not questions.
 - If the script exits non-zero, STOP with one line saying no questions were found.
 
 ## Step 2: Show it
@@ -38,7 +38,7 @@ From [[{note path}|{note name}]]
 ```
 
 - MUST NOT show the answer, comment on the question, or add anything else. The user is practicing.
-- If the user then asks for the answer, read it from the note: the code block after the question, or the `Answers/` section its link points to.
+- If the user then asks for the answer, read it from the note: the code block after the question, or the `Answers/` section its embed points to.
 
 ## Step 3: Grade an attempt
 
@@ -53,7 +53,7 @@ If the user replies with an answer to the question (typed, or pasted from speech
    ```
 
    - **Interview note** (`### {question}` heading): append the line after the last `- field::` bullet under the heading, or, if the question has no bullets, directly under the heading, separated from it by one blank line.
-   - **Application note** (`> ` blockquote): add one blank line and the line immediately after the question's answer fence or link line, or after the last `- practice::` line already there. It MUST NOT go between the question and its answer, which would break the Q/A format the other skills rely on.
+   - **Application note** (`> ` blockquote): add one blank line and the line immediately after the question's answer fence or embed line, or after the last `- practice::` line already there. It MUST NOT go between the question and its answer, which would break the Q/A format the other skills rely on.
    - Use Edit, anchoring on the question's heading or blockquote and its answer, so nothing else moves.
 
 4. STOP. If the user wants another question, they run `/djq` again.

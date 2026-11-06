@@ -60,36 +60,36 @@ I'll post the questions from the product analysis:
 
 >  Great! I see from your CV that you've worked with a diverse tech stack including Java, Kotlin, Python, and AWS. What technologies are you most comfortable with, and what's a project you've built that you're particularly proud of?
 
-[[Replacing batch analytics with Kafka Streams#HireGlide|Replacing batch analytics with Kafka Streams]]
+![[Replacing batch analytics with Kafka Streams#HireGlide]]
 
 >  Cool. So you've built a real-time data pipeline with Kafka. Between frontend, backend, and full-stack work, which do you prefer and why?
 
-[[Preferring backend engineering#HireGlide|Preferring backend engineering]]
+![[Preferring backend engineering#HireGlide]]
 
 >  Got it, backend makes sense. What matters most to you in your next role - work-life balance, compensation, learning opportunities, or something else?
 
-[[Seeking engineering growth and meaningful work#HireGlide|Seeking engineering growth and meaningful work]]
+![[Seeking engineering growth and meaningful work#HireGlide]]
 
 >  Makes sense. Describe a project where you had to make tradeoffs between getting something out the door vs making it perfect. What did you choose and why?
 
-[[Building the DataRank crawler framework#HireGlide|Building the DataRank crawler framework]]
+![[Building the DataRank crawler framework#HireGlide]]
 
 >  Got it. What's something technically challenging you're working on right now that's pushing your skills?
 
-[[Building Athena Math#HireGlide|Building Athena Math]]
+![[Building Athena Math#HireGlide]]
 
 >  Got it. Any absolute deal-breakers for you - like company values, industries you won't work in, or technical constraints?
 
-[[Engineering values and deal-breakers#HireGlide|Engineering values and deal-breakers]]
+![[Engineering values and deal-breakers#HireGlide]]
 
 >  Great work! Just a few quick logistics questions to wrap up. Where are you currently based, and do you have work authorization for the US/UK/EU?
 
-[[Work authorization and availability#HireGlide|Work authorization and availability]]
+![[Work authorization and availability#HireGlide]]
 
 >  What's your preferred work arrangement - fully remote, hybrid, or in-office?
 
-[[Working remotely across time zones#HireGlide|Working remotely across time zones]]
+![[Working remotely across time zones#HireGlide]]
 
 >  What are your salary expectations or current compensation range?
 
-[[Salary expectations#HireGlide|Salary expectations]]
+![[Salary expectations#HireGlide]]

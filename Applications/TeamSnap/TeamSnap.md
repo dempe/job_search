@@ -21,8 +21,8 @@ date_modified: "2026-10-19 10:18"
 
 > Have you previously supported a SaaS company or a custom software application?
 
-[[SaaS and custom software experience#TeamSnap|SaaS and custom software experience]]
+![[SaaS and custom software experience#TeamSnap]]
 
 > Do you have experience working in the sports industry?
 
-[[Sports industry experience#TeamSnap|Sports industry experience]]
+![[Sports industry experience#TeamSnap]]

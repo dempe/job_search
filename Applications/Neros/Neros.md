@@ -22,4 +22,4 @@ date_modified: "2026-10-23 14:02"
 
 > Any additional information you would like to share?
 
-[[Returning to a collaborative engineering team#Neros|Returning to a collaborative engineering team]]
+![[Returning to a collaborative engineering team#Neros]]

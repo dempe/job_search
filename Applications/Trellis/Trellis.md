@@ -39,8 +39,8 @@ Chris
 
 > If you could refactor or redesign one system or app you've used, what would it be and why?
 
-[[System redesign idea#Trellis|System redesign idea]]
+![[System redesign idea#Trellis]]
 
 > If you could take any roadtrip, where would you be going? Why?
 
-[[Travel interests#Trellis|Travel interests]]
+![[Travel interests#Trellis]]

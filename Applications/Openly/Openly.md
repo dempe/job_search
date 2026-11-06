@@ -41,12 +41,12 @@ Chris
 
 > If you have any Google certifications, please include a link to your credential verification page (unique credential URL).*
 
-[[Cloud certifications#Openly|Cloud certifications]]
+![[Cloud certifications#Openly]]
 
 > Please briefly describe your experience with API management:*
 
-[[Building DataRank social API ingestion#Openly|Building DataRank social API ingestion]]
+![[Building DataRank social API ingestion#Openly]]
 
 > How have you performed in a fully remote/distributed organization? What do you like or dislike about remote work? *
 
-[[Working remotely across time zones#Openly|Working remotely across time zones]]
+![[Working remotely across time zones#Openly]]

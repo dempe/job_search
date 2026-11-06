@@ -21,4 +21,4 @@ date_modified: "2026-10-15 18:02"
 
 > Please feel free to use this space to share anything else you'd like us to know.
 
-[[Personal background and interests#GrowthLoop|Personal background and interests]]
+![[Personal background and interests#GrowthLoop]]

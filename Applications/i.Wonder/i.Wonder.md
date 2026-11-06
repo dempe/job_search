@@ -24,7 +24,7 @@ date_modified: "2026-11-04 17:33"
 
 > What interests you about working for this company?
 
-[[Why Company X#i.Wonder|Why Company X]]
+![[Why Company X#i.Wonder]]
 
 ## Interview 1
 

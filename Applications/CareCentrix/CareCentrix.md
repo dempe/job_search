@@ -22,4 +22,4 @@ date_modified: "2026-10-22 15:01"
 
 > Please briefly describe your hands-on experience with CI/CD pipelines, including the tools used (e.g., GitHub Actions, Jenkins, Azure DevOps, GitLab CI) and your role in building, maintaining, or supporting those pipelines.
 
-[[Production reliability and delivery practices#CareCentrix|Production reliability and delivery practices]]
+![[Production reliability and delivery practices#CareCentrix]]

@@ -26,4 +26,4 @@ date_modified: 2026-09-14 18:57
 
 > Why Afresh? Tell us what makes you excited to join our team.
 
-[[Why Company X#Afresh|Why Company X]]
+![[Why Company X#Afresh]]

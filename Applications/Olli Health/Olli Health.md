@@ -27,7 +27,7 @@ source: workatastartup
 
 > To apply send cover letter and resume to hiring@ollihomehealth.ai
 
-[[Introduction#Olli Health|Introduction]]
+![[Introduction#Olli Health]]
 
 Man, I really like this cover letter.  Need to send it to other companies.
 

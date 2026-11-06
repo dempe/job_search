@@ -21,4 +21,4 @@ date_modified: "2026-10-22 14:42"
 
 > What interests you about working for this company?
 
-[[Why Company X#ParcelNest|Why Company X]]
+![[Why Company X#ParcelNest]]

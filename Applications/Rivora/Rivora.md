@@ -22,23 +22,23 @@ date_modified: "2026-09-28 18:07"
 
 > Tell us about the last bug you fixed where a type system, type annotations, or a linter caught something before it reached users. What was the bug, and what would have broken if it had shipped?
 
-[[Catching type drift in the payments app#Rivora|Catching type drift in the payments app]]
+![[Catching type drift in the payments app#Rivora]]
 
 > Describe a specific time you used an AI coding assistant (Copilot, Cursor, Claude, ChatGPT, whatever you use) on a real task recently. What did it get right, and what did you have to fix or reject?
 
-[[AI-assisted development workflow#Rivora|AI-assisted development workflow]]
+![[AI-assisted development workflow#Rivora]]
 
 > Tell us about the last time you chose between an existing library/package and writing something yourself for the same problem. What did you pick, and why?
 
-[[Choosing between libraries and custom code#Rivora|Choosing between libraries and custom code]]
+![[Choosing between libraries and custom code#Rivora]]
 
 > Describe a time you had to work across two systems where one side didn't fully control the other, an API you didn't own, a data format shared with another service, anything like that. What broke or almost broke?
 
-[[Building the wholesale customer map#Rivora|Building the wholesale customer map]]
+![[Building the wholesale customer map#Rivora]]
 
 > Tell us about the last time you had to get productive in an unfamiliar codebase or tool within a few days, not weeks. What was your actual approach?
 
-[[Learning new technologies#Rivora|Learning new technologies]]
+![[Learning new technologies#Rivora]]
 
 ## Interview 1
 

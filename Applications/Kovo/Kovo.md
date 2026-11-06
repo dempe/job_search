@@ -20,8 +20,8 @@ date_modified: 2026-06-08 10:15
 
 > Why do you want to work at Kovo?
 
-[[Why Company X#Kovo|Why Company X]]
+![[Why Company X#Kovo]]
 
 > What exceptional work have you done?
 
-[[Replacing batch analytics with Kafka Streams#Kovo|Replacing batch analytics with Kafka Streams]]
+![[Replacing batch analytics with Kafka Streams#Kovo]]

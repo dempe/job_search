@@ -2,7 +2,7 @@
 # Print one question, chosen uniformly at random, from the application notes
 # (Applications/{title}/{title}.md) and interview notes
 # (Applications/{title}/Interviews/{n}/{n}.md). A question is a run of consecutive `>` lines followed by
-# one blank line and then an answer: a ``` fence or a [[link]] line. Blockquotes
+# one blank line and then an answer: a ``` fence or an ![[embed]] of its Answers section. Blockquotes
 # that aren't followed by an answer (quoted emails, notes) are not questions.
 # Inside an interview note's `## Questions` section, a question is instead a
 # `### {question}` heading followed (after any `- field::` grade bullets) by an
@@ -28,11 +28,11 @@ done
 awk '
   function flush() { if (blk != "") { n++; file[n] = FILENAME; q[n] = blk } }
   FNR == 1 { inq = 0; state = 0; blk = ""; inqs = 0; hstate = 0 }
-  state == 2 { if ($0 ~ /^```/ || $0 ~ /^\[\[/) flush(); state = 0; blk = "" }
+  state == 2 { if ($0 ~ /^```/ || $0 ~ /^!?\[\[/) flush(); state = 0; blk = "" }
   /^## / { inqs = ($0 == "## Questions") }
   inqs && /^### / { hq = "> " substr($0, 5) "\n"; hstate = 1; next }
   hstate {
-    if ($0 ~ /^```/ || $0 ~ /^\[\[/) { blk = hq; flush(); blk = ""; hstate = 0 }
+    if ($0 ~ /^```/ || $0 ~ /^!?\[\[/) { blk = hq; flush(); blk = ""; hstate = 0 }
     else if ($0 != "" && $0 !~ /^- [a-z_]+::( |$)/ && $0 !~ /^[ \t]+- /) hstate = 0
     next
   }

@@ -21,8 +21,8 @@ date_modified: "2026-09-16 19:35"
 
 > In 1-2 sentences, please tell us what drew you to apply to Beacon Biosignals.
 
-[[Why Company X#Beacon Biosignals|Why Company X]]
+![[Why Company X#Beacon Biosignals]]
 
 > In a few sentences sentences, describe a tricky database migration or schema change you led. What was the blast-radius risk and how did you mitigate it?
 
-[[Running a risky database migration#Beacon Biosignals|Running a risky database migration]]
+![[Running a risky database migration#Beacon Biosignals]]

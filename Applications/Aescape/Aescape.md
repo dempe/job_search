@@ -40,15 +40,15 @@ Chris Dempewolf
 
 > Please describe your experience using production Golang.
 
-[[Production Go experience#Aescape|Production Go experience]]
+![[Production Go experience#Aescape]]
 
 > Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
 
-[[AI-assisted development workflow#Aescape|AI-assisted development workflow]]
+![[AI-assisted development workflow#Aescape]]
 
 > Why Aescape?
 
-[[Why Company X#Aescape|Why Company X]]
+![[Why Company X#Aescape]]
 
 ## Interview 1
 

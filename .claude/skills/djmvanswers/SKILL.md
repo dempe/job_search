@@ -1,12 +1,12 @@
 ---
 name: djmvanswers
-description: Migrate answered questions out of one job application note, or out of one of its interview notes, into topic-based notes in `Answers/`, replacing each answer code block with a backlink. Takes the application note's name and an optional interview number (e.g. `Rivora`, or `Rivora 2` for interview 2). Use when the user wants to file, move, or link an application's or an interview's answers into Answer notes.
+description: Migrate answered questions out of one job application note, or out of one of its interview notes, into topic-based notes in `Answers/`, replacing each answer code block with an embed of its new section. Takes the application note's name and an optional interview number (e.g. `Rivora`, or `Rivora 2` for interview 2). Use when the user wants to file, move, or link an application's or an interview's answers into Answer notes.
 argument-hint: <application-note-name> [interview-number]
 ---
 
 # Migrate Application Answers
 
-Move every answered question in one note into an Answer note in `Answers/`. Each answer goes to an existing note whose topic fits, or to a new note when nothing fits. Where the Q/A was, the answer's code block is replaced with a link to its new home.
+Move every answered question in one note into an Answer note in `Answers/`. Each answer goes to an existing note whose topic fits, or to a new note when nothing fits. Where the Q/A was, the answer's code block is replaced with an embed of its new home, so it still shows inline.
 
 The run works on exactly one note, **the target note**:
 
@@ -22,7 +22,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only for read-only file listing commands (`ls`, `test -e`).
 - The assistant MAY modify only:
-  - the target note, and only by replacing answer code blocks with backlinks
+  - the target note, and only by replacing answer code blocks with embeds
   - notes in `Answers/`, and only by adding sections or creating new notes
 - Answer text and question text MUST be moved verbatim: every character, blank line, and trailing space. The assistant MUST NOT fix typos, reword, reformat, or trim anything it moves.
 - The assistant MUST NOT delete, reorder, or edit existing sections in `Answers/` notes.
@@ -42,13 +42,13 @@ Follow the steps below in order. A step that says STOP ends the run.
 2. Exactly one blank line.
 3. An answer: a fenced code block whose opening line is exactly ```` ``` ```` (no language), followed by the answer lines, followed by a closing ```` ``` ```` line.
 
-A question followed by a link line (e.g. `[[Why Company X#Afresh|Why Company X]]`) instead of a code block has already been migrated.
+A question followed by an embed line (e.g. `![[Why Company X#Afresh]]`) instead of a code block has already been migrated.
 
 **Q/A in an interview note.** Inside an interview note's `## Questions` section, a Q/A is instead:
 
 1. A question: a `### {question}` heading, holding the whole question on one line.
 2. Optionally, bullets (`- grade:: …`, `- score:: …`, `- answer:: …`, `- missing::` with its sub-bullets, `- feedback:: …`, `- practice:: …`). These record the user's own answers, not the answer being filed, and MUST stay in place.
-3. An answer: the fenced code block after the bullets (the model answer), or a link line if already migrated.
+3. An answer: the fenced code block after the bullets (the model answer), or an embed line if already migrated.
 
 When filing one, the `Answers/` section's `> {question}` line is the heading text, so the Answers format doesn't change.
 
@@ -66,10 +66,10 @@ When filing one, the `Answers/` section's `> {question}` line is the heading tex
 ```
 ````
 
-**Backlink in the application note.** The code block is replaced by one line:
+**Embed in the target note.** The code block is replaced by one line, which shows the Answers section inline:
 
 ```markdown
-[[{Answer note}#{Heading}|{Answer note}]]
+![[{Answer note}#{Heading}]]
 ```
 
 ## Step 1: Application note
@@ -85,7 +85,7 @@ When filing one, the `Answers/` section's `> {question}` line is the heading tex
 
 - Find every Q/A in the target note (see Formats), in any section, not only `## Application`. In an interview note, that means the `###` Q/As in its `## Questions` section; in the application note, the `> ` blockquote Q/As.
 - A Q/A is **answered** if its code block contains at least one non-whitespace character. Empty code blocks are unanswered and MUST be left untouched.
-- Questions already followed by a link line MUST be left untouched.
+- Questions already followed by an embed line MUST be left untouched.
 - If the target note has no answered Q/As, the assistant MUST STOP with one line saying so.
 
 ## Step 3: Learn the Answer notes
@@ -122,8 +122,8 @@ For each answered Q/A, in the order they appear:
 - **Existing note:** insert the section with Edit at its alphabetical position (case-insensitive) among the note's `##` headings. Keep exactly one blank line between sections, and keep the file ending in a single newline.
 - **New note:** create `Answers/{Answer note}.md` with Write, containing only the section and a trailing newline.
 
-## Step 7: Replace the answer with a backlink
+## Step 7: Replace the answer with an embed
 
-- In the target note, use Edit to replace the answer's code block, from its opening fence through its closing fence, with `[[{Answer note}#{Heading}|{Answer note}]]`.
+- In the target note, use Edit to replace the answer's code block, from its opening fence through its closing fence, with `![[{Answer note}#{Heading}]]`.
 - The question (blockquote or `###` heading), any `- field::` bullets (including `- practice::` lines after an application-note answer), and the blank lines around them MUST stay in place.
 - Repeat Steps 4–7 for each answered Q/A, then STOP.

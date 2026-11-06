@@ -29,7 +29,7 @@ date_modified: "2026-11-04 11:23"
 > $120K–$140K base + potential equity.<br/>
 > If broader product ownership alongside the backend work sounds interesting, let's compare notes.
 
-[[Introduction#GoAccess|Introduction]]
+![[Introduction#GoAccess]]
 
 ## Interview 1
 

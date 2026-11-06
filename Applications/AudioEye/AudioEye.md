@@ -21,8 +21,8 @@ date_modified: "2026-10-16 19:13"
 
 > What does your local dev setup look like (OS, editor, tools, etc)?
 
-[[Favorite development tools#AudioEye|Favorite development tools]]
+![[Favorite development tools#AudioEye]]
 
 > What is one technology you have stopped using recently and why?
 
-[[AI-assisted development workflow#AudioEye|AI-assisted development workflow]]
+![[AI-assisted development workflow#AudioEye]]

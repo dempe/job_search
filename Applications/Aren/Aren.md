@@ -22,4 +22,4 @@ date_modified: "2026-10-23 17:40"
 
 > Start a conversation with the team at Aren. Share something about you, what you're looking for, or why Aren interests you. Human-written messages are more likely to get a response.
 
-[[Introduction#Aren|Introduction]]
+![[Introduction#Aren]]

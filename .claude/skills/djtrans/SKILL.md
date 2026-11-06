@@ -19,7 +19,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Skill for `djspeakers` in Step 2, and Agent for grading in Step 7). It MUST NOT write scripts, and the only script it runs itself is the bundled `extract.py` (Step 2).
 - Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
 - `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
-- The assistant modifies the application's interview notes only by adding a `## Questions` section, or by adding the tally and grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and links, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
+- The assistant modifies the application's interview notes only by adding a `## Questions` section, or by adding the tally and grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and their embeds, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
 - The assistant MUST NOT modify any existing `transcript.md` or `transcript-processed.md`.
 - The assistant MUST NOT create or modify anything in `Answers/`. It MAY read `Answers/` notes (Step 7).
 - The assistant MUST NOT commit or push anything to git.
@@ -115,7 +115,7 @@ Grading runs in a fresh context, so it isn't biased by having just written the m
 - For each interview note to grade, launch one `general-purpose` agent with the Agent tool. Its prompt MUST include:
   - the path of `.claude/skills/djgrade/SKILL.md`, to read and follow as its grading rules
   - the path of the interview's `transcript-processed.md`, to read in full, and that `**Me:**` turns are the user's
-  - every question, in order, with its reference answer: the model answer from Step 6, or, for an existing section, the fenced block under the question's heading (or, if the heading is followed by an `Answers/` link, that section's code block, read by the assistant first)
+  - every question, in order, with its reference answer: the model answer from Step 6, or, for an existing section, the fenced block under the question's heading (or, if the heading is followed by an `Answers/` embed, that section's code block, read by the assistant first)
   - the instruction to take the user's answer to each question from the transcript: the text of their `**Me:**` turns from that question until the interviewer moves on (including follow-up exchanges on the same point), copied exactly and joined with ` … `; then grade it, and return only `djgrade`'s output block for each question, in order, labeled by question number
   - the instruction not to create or modify any file
 - Launch the agents for different notes in parallel.

@@ -27,8 +27,8 @@ source: simplyhired
 
 > (In 2-3 sentences) What about Recidiviz's mission or approach makes you excited to contribute your specific skills here, and not somewhere else?(Required)
 
-[[Why Company X#Recidiviz|Why Company X]]
+![[Why Company X#Recidiviz]]
 
 > In 2-3 sentences, describe the most recent full-stack project you worked on.(Required)
 
-[[Building Athena Math#Recidiviz|Building Athena Math]]
+![[Building Athena Math#Recidiviz]]

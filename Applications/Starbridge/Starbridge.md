@@ -25,7 +25,7 @@ date_modified: "2025-05-31 13:30"
 
 > Email to justin@starbridge.ai:
 
-[[Introduction#Starbridge|Introduction]]
+![[Introduction#Starbridge]]
 
 Todo:
 

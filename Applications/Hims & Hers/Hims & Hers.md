@@ -21,16 +21,16 @@ date_modified: "2026-10-16 18:28"
 
 > What languages, frameworks and libraries are you most proficient with?
 
-[[Backend language experience#Hims & Hers|Backend language experience]]
+![[Backend language experience#Hims & Hers]]
 
 > Briefly describe a backend distributed system you designed, built, or maintained, and your specific role in it. (1 to 3 sentences)
 
-[[Replacing batch analytics with Kafka Streams#Hims & Hers|Replacing batch analytics with Kafka Streams]]
+![[Replacing batch analytics with Kafka Streams#Hims & Hers]]
 
 > Briefly describe your experience designing and building scalable back end services or distributed systems, including which cloud environment you used. (1 to 2 sentences)
 
-[[Building scalable backend services on AWS#Hims & Hers|Building scalable backend services on AWS]]
+![[Building scalable backend services on AWS#Hims & Hers]]
 
 > Which relational database(s) have you worked with?
 
-[[Relational database experience#Hims & Hers|Relational database experience]]
+![[Relational database experience#Hims & Hers]]

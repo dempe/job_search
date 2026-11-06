@@ -24,15 +24,15 @@ date_modified: "2026-11-04 17:24"
 
 > Briefly describe your web crawling experience
 
-[[Building the DataRank crawler framework#People Data Labs|Building the DataRank crawler framework]]
+![[Building the DataRank crawler framework#People Data Labs]]
 
 > How do you handle anti-scraping mechanisms or bot detection while crawling?
 
-[[Handling bot detection while crawling#People Data Labs|Handling bot detection while crawling]]
+![[Handling bot detection while crawling#People Data Labs]]
 
 > Is there anything else you'd like us to know about you? (Optional)
 
-[[Personal background and interests#People Data Labs|Personal background and interests]]
+![[Personal background and interests#People Data Labs]]
 
 ## Interview 1
 

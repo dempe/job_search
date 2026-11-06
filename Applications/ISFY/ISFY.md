@@ -22,4 +22,4 @@ date_modified: "2026-10-26 16:52"
 
 > What interests you about working for this company?
 
-[[Why Company X#ISFY|Why Company X]]
+![[Why Company X#ISFY]]
