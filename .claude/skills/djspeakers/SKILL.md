@@ -1,26 +1,26 @@
 ---
 name: djspeakers
-description: Label who is speaking in an application's raw interview transcripts. Writes `transcript-speakers.md` beside each `transcript.md`, with one `**Me:**` or `**{Interviewer}:**` paragraph per turn, cut from the raw text by a bundled script so no word is retyped. Use before grading (djtrans does), or when the user wants a transcript split by speaker. Takes the application note's name (e.g. `Rivora`), and optionally an interview number.
+description: Label who is speaking in an application's raw interview transcripts. Writes `transcript-processed.md` beside each `transcript.md`, with one `**Me:**` or `**{Interviewer}:**` paragraph per turn, cut from the raw text by a bundled script so no word is retyped. Use before grading (djtrans does), or when the user wants a transcript split by speaker. Takes the application note's name (e.g. `Rivora`), and optionally an interview number.
 argument-hint: <application-note-name> [interview-number]
 ---
 
 # Label Transcript Speakers
 
-The user records interviews with Apple Voice Memos, whose transcripts have no speaker labels: just text, broken into chunks at pauses, not at speaker changes. This skill decides who said what and writes a speaker-labelled copy beside the raw transcript (ADR 0012). The raw `transcript.md` stays as it is.
+The user records interviews with Apple Voice Memos, whose transcripts have no speaker labels: just text, broken into chunks at pauses, not at speaker changes. This skill decides who said what and writes a speaker-labelled copy, `transcript-processed.md`, beside the raw transcript, then points the interview note's transcript embed at it (ADR 0012). The raw `transcript.md` stays as it is.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
 ## Constraints
 
-- The assistant MUST NOT modify any `transcript.md` or interview note.
-- The only file it writes is `transcript-speakers.md`, and only through the bundled `label.py`. It MUST NOT write or edit that file any other way, so the transcript's words are never retyped.
+- The assistant MUST NOT modify any `transcript.md`.
+- It writes `transcript-processed.md` and switches the interview note's `![[…/transcript]]` embed to `![[…/transcript-processed]]` only through the bundled `label.py`. It MUST NOT write or edit either file any other way, so the transcript's words are never retyped and nothing else in the note changes.
 - The Bash tool MUST be used only for `ls`, `test -e`, and `label.py`.
 
 ## Step 1: Input
 
 - The argument is `{Application}`, an application note's name, plus an optional interview number `{n}`. Resolve the application to its folder in `Applications/` (`ls`), matching case-insensitively. If no argument was given, STOP and ask for it. If no folder matches, STOP with one line saying so.
 - The transcripts are `Applications/{Application}/Interviews/{n}/transcript.md`. With `{n}`, take only that one; otherwise every interview that has one.
-- Skip, and report, any transcript that already has a `transcript-speakers.md` beside it. To redo one, the user deletes that file first.
+- Skip, and report, any transcript that already has a `transcript-processed.md` beside it. To redo one, the user deletes that file first.
 - If there's nothing left to do, STOP with one line saying so.
 
 ## Step 2: Gather context
@@ -61,14 +61,14 @@ An anchor is one line per turn: `{Label}: {the turn's first words}`.
 Run, with the anchors in a quoted heredoc:
 
 ```bash
-python3 -I .claude/skills/djspeakers/label.py "Applications/{Application}/Interviews/{n}/transcript.md" "Applications/{Application}/Interviews/{n}/transcript-speakers.md" <<'ANCHORS'
+python3 -I .claude/skills/djspeakers/label.py "Applications/{Application}/Interviews/{n}/transcript.md" "Applications/{Application}/Interviews/{n}/transcript-processed.md" <<'ANCHORS'
 Interviewer: Hi, Chris.
 Me: Hi. Can you hear
 ...
 ANCHORS
 ```
 
-- On success it prints `wrote: … (N turns: …)`. By construction the turns, joined, equal the raw transcript.
+- On success it prints `wrote: … (N turns: …)`, and `embedded: …` when it switched the note's embed. By construction the turns, joined, equal the raw transcript.
 - On `error: line N: …`, fix that anchor (not found: copy the words exactly; ambiguous: add words so it's unique before the next anchor) and run it again with all the anchors. After three failed runs for one transcript, STOP that transcript and report the error.
 
 ## Step 6: Report and stop

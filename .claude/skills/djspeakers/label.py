@@ -13,7 +13,11 @@ transcript's words are never retyped: joined back together, the turns equal
 the raw transcript (whitespace collapsed). Consecutive turns by the same
 speaker are merged.
 
-Usage: python3 -I label.py <transcript.md> <out.md> < anchors.txt
+The output is `transcript-processed.md` beside the raw transcript. The
+interview note's `### Transcript` embed is then pointed at it, so the note
+shows the labelled transcript; the raw `transcript.md` is never changed.
+
+Usage: python3 -I label.py <transcript.md> <transcript-processed.md> < anchors.txt
 """
 
 import pathlib
@@ -74,6 +78,11 @@ def render(turns):
     return "\n\n".join(f"**{speaker}:** {text}" for speaker, text in turns) + "\n"
 
 
+def switch_embed(note, folder):
+    """Point the note's embed of {folder}/transcript at {folder}/transcript-processed."""
+    return note.replace(f"![[{folder}/transcript]]", f"![[{folder}/transcript-processed]]")
+
+
 def main(transcript, out):
     raw = pathlib.Path(transcript).read_text(encoding="utf-8")
     try:
@@ -81,7 +90,16 @@ def main(transcript, out):
     except ValueError as e:
         print(f"error: {e}")
         sys.exit(1)
-    pathlib.Path(out).write_text(render(turns), encoding="utf-8")
+    out = pathlib.Path(out)
+    out.write_text(render(turns), encoding="utf-8")
+    note = out.parent / f"{out.parent.name}.md"
+    if note.exists() and "Applications" in out.parent.parts:
+        folder = pathlib.Path(*out.parent.parts[out.parent.parts.index("Applications"):]).as_posix()
+        text = note.read_text(encoding="utf-8")
+        switched = switch_embed(text, folder)
+        if switched != text:
+            note.write_text(switched, encoding="utf-8")
+            print(f"embedded: {note} now embeds {folder}/transcript-processed")
     counts = {}
     for speaker, _ in turns:
         counts[speaker] = counts.get(speaker, 0) + 1

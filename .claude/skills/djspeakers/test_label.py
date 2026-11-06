@@ -6,7 +6,9 @@ import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 
-from label import label, render  # noqa: E402
+from label import label, render, switch_embed  # noqa: E402
+
+NOTE = "---\ntype: interview\n---\n\n### Transcript\n\n![[Applications/Acme/Interviews/2/transcript]]\n\n### Questions\n"
 
 RAW = "Hi, Chris. Hi.  Can you hear me?  Yeah, I can hear you.\nSo tell me about Kafka. Kafka is a log. Okay.  Yeah."
 
@@ -58,6 +60,21 @@ class LabelTest(unittest.TestCase):
     def test_blank_lines_in_anchors_are_ignored(self):
         turns = label(RAW, "Interviewer: Hi, Chris.\n\nMe: Hi.\n")
         self.assertEqual([s for s, _ in turns], ["Interviewer", "Me"])
+
+
+class SwitchEmbedTest(unittest.TestCase):
+    def test_points_the_raw_transcript_embed_at_the_processed_file(self):
+        self.assertEqual(
+            switch_embed(NOTE, "Applications/Acme/Interviews/2"),
+            NOTE.replace("/transcript]]", "/transcript-processed]]"),
+        )
+
+    def test_already_switched_note_is_unchanged(self):
+        switched = NOTE.replace("/transcript]]", "/transcript-processed]]")
+        self.assertEqual(switch_embed(switched, "Applications/Acme/Interviews/2"), switched)
+
+    def test_embed_of_another_interview_is_left_alone(self):
+        self.assertEqual(switch_embed(NOTE, "Applications/Acme/Interviews/1"), NOTE)
 
 
 if __name__ == "__main__":

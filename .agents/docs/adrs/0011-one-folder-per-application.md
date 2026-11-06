@@ -17,7 +17,8 @@ Applications/
     Interviews/
       {n}/
         {n}.md            interview note (ADR 0010)
-        transcript.md     transcript (ADR 0009)
+        transcript.md     raw transcript (ADR 0009)
+        transcript-processed.md  speaker-labelled transcript (ADR 0012)
 ```
 
 - `{title}` is the application's title, e.g. `People Data Labs` or `Aescape (1)`. The folder and the note share it.

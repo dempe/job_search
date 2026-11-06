@@ -20,7 +20,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
 - `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
 - The assistant modifies the application's interview notes only by adding a `### Questions` section, or by adding the tally and grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and links, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
-- The assistant MUST NOT modify any existing `transcript.md` or `transcript-speakers.md`.
+- The assistant MUST NOT modify any existing `transcript.md` or `transcript-processed.md`.
 - The assistant MUST NOT create or modify anything in `Answers/`. It MAY read `Answers/` notes (Step 7).
 - The assistant MUST NOT commit or push anything to git.
 
@@ -48,15 +48,15 @@ Each transcript is a `transcript.md` beside its interview note (e.g. `Applicatio
 Then, in each interview note:
 
 - Find its `### Transcript` section. An interview note without one is passed over silently: not every interview has a transcript.
-- A transcript section's content MUST be a single embed of the `transcript.md` beside the interview note. Read the embedded file; its whole content is the transcript.
+- A transcript section's content MUST be a single embed of the `transcript-processed.md` or `transcript.md` beside the interview note.
 - A section that is empty, holds anything other than one embed, or embeds a file that doesn't exist (`test -e`) is skipped and reported.
 - If none of the interview notes has a `### Transcript` section, the assistant MUST STOP with one line saying so.
 
-Then make sure each transcript to process has a speaker-labelled copy, `transcript-speakers.md`, beside it (ADR 0012):
+Then make sure each transcript to process has a speaker-labelled copy, `transcript-processed.md`, beside it, embedded in the note (ADR 0012):
 
-- If any is missing, invoke the `djspeakers` skill with the Skill tool for this application, and report its uncertain speaker calls in Step 9.
+- If any is missing, invoke the `djspeakers` skill with the Skill tool for this application, and report its uncertain speaker calls in Step 9. It writes the file and switches the note's embed to it, so Read those notes again.
 - If `djspeakers` couldn't label a transcript, skip that transcript and report it.
-- Read each `transcript-speakers.md`. From here on, it's the transcript: `**Me:**` turns are the user's and every other label is an interviewer's.
+- Read each `transcript-processed.md`. From here on, it's the transcript: `**Me:**` turns are the user's and every other label is an interviewer's. The raw `transcript.md` is not read.
 
 ## Step 3: Skip work already done
 
@@ -114,7 +114,7 @@ Grading runs in a fresh context, so it isn't biased by having just written the m
 
 - For each interview note to grade, launch one `general-purpose` agent with the Agent tool. Its prompt MUST include:
   - the path of `.claude/skills/djgrade/SKILL.md`, to read and follow as its grading rules
-  - the path of the interview's `transcript-speakers.md`, to read in full, and that `**Me:**` turns are the user's
+  - the path of the interview's `transcript-processed.md`, to read in full, and that `**Me:**` turns are the user's
   - every question, in order, with its reference answer: the model answer from Step 6, or, for an existing section, the fenced block under the question's heading (or, if the heading is followed by an `Answers/` link, that section's code block, read by the assistant first)
   - the instruction to take the user's answer to each question from the transcript: the text of their `**Me:**` turns from that question until the interviewer moves on (including follow-up exchanges on the same point), copied exactly and joined with ` … `; then grade it, and return only `djgrade`'s output block for each question, in order, labeled by question number
   - the instruction not to create or modify any file
