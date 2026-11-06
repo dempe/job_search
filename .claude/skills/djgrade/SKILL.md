@@ -1,6 +1,6 @@
 ---
 name: djgrade
-description: Grade an answer to an interview or application question against content and delivery checks: pass / fail, what was said, and what was missing for each failed check. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
+description: Grade an answer to an interview or application question: what was said, what was missing (from content and delivery checks), and pass if nothing was missing, else fail. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
 argument-hint: <question> <answer>
 ---
 
@@ -37,13 +37,13 @@ If there's no reference answer, grade against the question alone, using correct 
 
 ## Rubric
 
-Classify the question, score its **content** and its **delivery** check by check, then derive the grade from the scores.
+Classify the question, then go through its **content** and **delivery** checks. Each failed check becomes one `missing::` item. The rubric decides what goes in `missing::`; it doesn't set the grade directly (see Grade).
 
 ### Question type
 
-Pick exactly one type. It decides which substance dimensions are scored.
+Pick exactly one type. It decides which substance dimensions are checked.
 
-| type | asked like | substance dimensions (1 point each) |
+| type | asked like | substance dimensions |
 |---|---|---|
 | `design` | "how would you build / scale / handle X" | `diagnose`: clarifies the workload and finds the limits or bottleneck · `mechanism`: how the proposal works, including constraints like shared state · `reliability`: containing failures, changing safely, tradeoffs · `validate`: how testing and metrics guide the next step |
 | `technical` | "what is / explain / what's the difference" | `concept`: the correct core idea · `how`: the mechanism or internals · `when`: when it applies, and the tradeoffs · `example`: a concrete use or case |
@@ -52,28 +52,24 @@ Pick exactly one type. It decides which substance dimensions are scored.
 | `motivation` | "why us / why leave / what are you looking for / how do you feel about" | `reason`: a clear reason · `specific`: specific to this company and role · `grounded`: tied to the candidate's real experience · `forward`: what they'd bring or want next |
 | `simple` | yes/no or one-fact questions ("Did you only build the mobile app?"), and coding tasks answered with correct code | none |
 
-- **Fit dimensions apply only to fit questions.** `relevance` (`experience`) and `specific` (`motivation`) are scored only when the question asks about fit, the role or the company ("why this role", "how would your experience help here"). For any other question ("Which AWS services have you used?", "Tell me about yourself") that dimension passes automatically.
+- **Fit dimensions apply only to fit questions.** `relevance` (`experience`) and `specific` (`motivation`) are checked only when the question asks about fit, the role or the company ("why this role", "how would your experience help here"). For any other question ("Which AWS services have you used?", "Tell me about yourself") that dimension passes automatically.
 - **Coding tasks with correct code are `simple`.** A request to write or fix code that the answer gets right is typed `simple`, so it isn't marked down for `when` or `example`. Incorrect or incomplete code stays `technical`.
 
-**Substance is judged on reasoning, not on matching the reference answer.** The reference answer is one good example. Any sound approach that covers a dimension earns its point, even if it uses a different design or technology.
+**Substance is judged on reasoning, not on matching the reference answer.** The reference answer is one good example. Any sound approach that covers a dimension passes it, even if it uses a different design or technology.
 
 ### Content
 
-Every point is all-or-nothing.
-
-| Check | Points |
+| Check | Passes if… |
 |---|---|
-| `answered` | 1 if it answers this question: not wrong, not a non-answer ("I forget", "I don't know", trailing off), not an answer to a different question. A real but weak answer passes; its weakness shows elsewhere. **Gate:** if it fails, `content` is 0. |
-| `complete` | 1 if every named part of the question is addressed. Leaving out a part ("…without sacrificing reliability?") fails it. |
-| `specifics` | 1 if it gives concrete names, numbers, technologies and actions, not generalities. A `simple` question passes with a direct answer. Ratings and "are you comfortable with X" are `experience`, not `simple`, and need backing. |
-| `accurate` | 1 if nothing in it is technically wrong and it claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply). |
-| `substance:{dimension}` | 1 per dimension of the type that the answer actually covers: 0–4 points. Not scored for `simple`. |
+| `answered` | it answers this question: not wrong, not a non-answer ("I forget", "I don't know", trailing off), not an answer to a different question. A real but weak answer passes; its weakness shows elsewhere. **Gate:** if it fails, `missing::` holds only the `answered` item (see Output). |
+| `complete` | every named part of the question is addressed. Leaving out a part ("…without sacrificing reliability?") fails it. |
+| `specifics` | it gives concrete names, numbers, technologies and actions, not generalities. A `simple` question passes with a direct answer. Ratings and "are you comfortable with X" are `experience`, not `simple`, and need backing. |
+| `accurate` | nothing in it is technically wrong and it claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply). |
+| `substance:{dimension}` | the answer covers that dimension of the question's type. One check per dimension; none for `simple`. |
 
-Content is out of 8, or 4 for `simple`.
+### Delivery
 
-### Delivery (out of 3)
-
-| Check | 1 point if… |
+| Check | Passes if… |
 |---|---|
 | `lead` | The first words directly answer the question. Anything before the point fails it: stalling ("Um… let's see… that's a huge increase"), a run of filler and hedging ("Um, so, I think, in this case, we'd want to make sure to have, uh, …"), background, or context. Direct leads look like "Yes, twice -- the worst was…", "Kafka, because…", "About an 8." |
 | `confident` | No hedges that shrink the candidate's own claims ("I think it was twice", "maybe I would have…", "it wasn't really…"). Honest uncertainty about a fact ("I don't remember the exact number") is fine. |
@@ -83,10 +79,10 @@ Transcription errors don't fail a delivery check. A stray filler word mid-answer
 
 ### Grade
 
-- `pass` only if every content and delivery point is earned.
+- `pass` if `missing::` is empty.
 - `fail` otherwise.
 
-The grade is always derived this way, so it can never disagree with the scores.
+The grade comes only from the `missing::` list, so it can never disagree with it.
 
 ### Reference examples
 
@@ -96,11 +92,11 @@ The grade is always derived this way, so it can never disagree with the scores.
 
 Answer: on-call at a previous job as a junior and "had to ask for some help"; at Octimine "there were 2 times where it would just like keep failing", "I had to babysit it", "It wasn't a complete outage"; staying calm and separating what's known from what isn't; a root cause analysis and incident documentation afterwards.
 
-- **Content: 2/8.**
+- **Content:**
   - pass: `answered`, `accurate`
   - fail: `complete` (no actual emergency handled), `specifics` (never says what failed or what was done)
   - substance: no story dimension passes. There's no specific problem or impact (`beginning`), the approach stands in for actions (`middle`), there's no outcome (`end`), and a failing, late batch job isn't an outage (`fits`).
-- **Delivery: 0/3.** It doesn't lead (it opens with on-call as a junior), it hedges ("I think there were 2 times"), and the backstory buries the point.
+- **Delivery:** all three fail. It doesn't lead (it opens with on-call as a junior), it hedges ("I think there were 2 times"), and the backstory buries the point.
 - **Grade:** `fail`.
 
 **2. Design question**
@@ -109,11 +105,11 @@ Answer: on-call at a previous job as a junior and "had to ask for some help"; at
 
 Answer: "Um... Let's see. That's a huge increase. 1000 to a million." Then: deploy to a small number of servers with a standard configuration, and add more servers seamlessly as users grow.
 
-- **Content: 3/8.**
+- **Content:**
   - pass: `answered`, `accurate`
   - fail: `complete` (the reliability half is unaddressed), `specifics` (no mechanisms named)
   - substance: only `mechanism` passes (standardized configuration, horizontal scaling). There's no `diagnose`, `reliability` or `validate`. A threshold on user count is a weak capacity signal.
-- **Delivery: 2/3.** `lead` fails (it stalls before the point). `confident` and `focused` pass.
+- **Delivery:** `lead` fails (it stalls before the point). `confident` and `focused` pass.
 - **Grade:** `fail`.
 
 ## Output
@@ -127,7 +123,7 @@ For each item, exactly this shape, one field per list item:
   - **{check}:** {what was missing or wrong, for that check}
 ```
 
-The type and the scores are worked out to derive the grade, but they aren't part of the output.
+The question type is worked out to choose the substance checks, but it isn't part of the output.
 
 - `answer::` is the candidate's whole answer, verbatim, in double quotes, on one line. It MUST NOT be a paraphrase, a summary or an excerpt: every point the candidate made is in it, so the `missing::` list can be checked against it.
   - It runs from the candidate's first word on the question to their last, including any follow-up exchange on the same point.
@@ -138,6 +134,6 @@ The type and the scores are worked out to derive the grade, but they aren't part
   - If `answered` fails, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
   - Omit `missing::` entirely for `pass`.
 
-**Ad hoc:** print the block for each item, with both scores as percentages after it (content and delivery), then one or two sentences of coaching on what to add or change next time. Then STOP.
+**Ad hoc:** print the block for each item, then one or two sentences of coaching on what to add or change next time. Then STOP.
 
 **Invoked by another skill:** produce the blocks and continue with the caller's steps. The caller's output rules apply.
