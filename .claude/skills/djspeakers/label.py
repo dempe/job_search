@@ -14,7 +14,7 @@ the raw transcript (whitespace collapsed). Consecutive turns by the same
 speaker are merged.
 
 The output is `transcript-processed.md` beside the raw transcript. The
-interview note's `### Transcript` embed is then pointed at it, so the note
+interview note's `## Transcript` embed is then pointed at it, so the note
 shows the labelled transcript; the raw `transcript.md` is never changed.
 
 Usage: python3 -I label.py <transcript.md> <transcript-processed.md> < anchors.txt

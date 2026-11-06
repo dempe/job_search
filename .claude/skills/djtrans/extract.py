@@ -1,6 +1,6 @@
 """Move an inline interview transcript out of an interview note.
 
-The `### Transcript` section's fenced block is written byte for byte to
+The `## Transcript` section's fenced block is written byte for byte to
 `transcript.md` beside the interview note, and the block is replaced with an
 embed of that file. A section that already embeds a file is left alone.
 
@@ -11,7 +11,7 @@ import pathlib
 import re
 import sys
 
-BLOCK = re.compile(r"### Transcript\n\n```\n(.*?)\n```\n", re.S)
+BLOCK = re.compile(r"## Transcript\n\n```\n(.*?)\n```\n", re.S)
 
 
 def main(note_path):
@@ -30,7 +30,7 @@ def main(note_path):
             return
         target.write_text(content, encoding="utf-8")
         embed = f"![[{vault_path.as_posix()}/transcript]]"
-        note.write_text(text[: m.start()] + f"### Transcript\n\n{embed}\n" + text[m.end():], encoding="utf-8")
+        note.write_text(text[: m.start()] + f"## Transcript\n\n{embed}\n" + text[m.end():], encoding="utf-8")
         print(f"moved: {note} -> {target}")
 
 

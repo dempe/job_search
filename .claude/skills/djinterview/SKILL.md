@@ -56,7 +56,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 | `date_created` | `"{now}"` from `date "+%Y-%m-%d %H:%M"` |
 | `date_modified` | the same as `date_created` |
 
-- The body is empty. Prep, the transcript (as a fenced block under `### Transcript`, which `djtrans` moves out), and notes are added later.
+- The body is empty. Prep, the transcript (as a fenced block under `## Transcript`, which `djtrans` moves out), and notes are added later.
 - Create the folder with `mkdir -p "Applications/{Application}/Interviews/{n}"`, then write the note to `Applications/{Application}/Interviews/{n}/{n}.md`.
 
 ## Step 4: Wire it into the application

@@ -8,7 +8,7 @@ Interviews are recorded and transcribed with Apple Voice Memos. Its transcripts 
 
 - `djspeakers` decides who said what once per transcript and writes `transcript-processed.md` beside the raw `transcript.md`: one paragraph per turn, `**Me:** …` for the user and `**{Interviewer's first name}:** …` (or `**Interviewer:**`) for the other side.
 - The assistant never retypes the transcript. It writes one anchor per turn (a label and the turn's first words), and the bundled `label.py` cuts the raw text at those anchors. Joined back together, the turns equal the raw transcript with whitespace collapsed; the script checks this and rejects anchors that are missing or ambiguous.
-- The raw `transcript.md` stays unchanged; the labelled file is derived from it. `label.py` switches the interview note's `### Transcript` embed to `transcript-processed`, so the note shows the labelled version (ADR 0009).
+- The raw `transcript.md` stays unchanged; the labelled file is derived from it. `label.py` switches the interview note's `## Transcript` embed to `transcript-processed`, so the note shows the labelled version (ADR 0009).
 - Skills read `transcript-processed.md`, never the raw file. `djtrans` labels any transcript that has none yet, then takes questions from the interviewer's turns and the user's answers from the `**Me:**` turns.
 
 ## How to apply

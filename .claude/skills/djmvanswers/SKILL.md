@@ -44,9 +44,9 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 A question followed by a link line (e.g. `[[Why Company X#Afresh|Why Company X]]`) instead of a code block has already been migrated.
 
-**Q/A in an interview note.** Inside an interview note's `### Questions` section, a Q/A is instead:
+**Q/A in an interview note.** Inside an interview note's `## Questions` section, a Q/A is instead:
 
-1. A question: a `#### {question}` heading, holding the whole question on one line.
+1. A question: a `### {question}` heading, holding the whole question on one line.
 2. Optionally, bullets (`- grade:: …`, `- answer:: …`, `- missing::` with its sub-bullets, `- practice:: …`). These record the user's own answers, not the answer being filed, and MUST stay in place.
 3. An answer: the fenced code block after the bullets (the model answer), or a link line if already migrated.
 
@@ -83,7 +83,7 @@ When filing one, the `Answers/` section's `> {question}` line is the heading tex
 
 ## Step 2: Find answered Q/As
 
-- Find every Q/A in the target note (see Formats), in any section, not only `## Application`. In an interview note, that means the `####` Q/As in its `### Questions` section; in the application note, the `> ` blockquote Q/As.
+- Find every Q/A in the target note (see Formats), in any section, not only `## Application`. In an interview note, that means the `###` Q/As in its `## Questions` section; in the application note, the `> ` blockquote Q/As.
 - A Q/A is **answered** if its code block contains at least one non-whitespace character. Empty code blocks are unanswered and MUST be left untouched.
 - Questions already followed by a link line MUST be left untouched.
 - If the target note has no answered Q/As, the assistant MUST STOP with one line saying so.
@@ -125,5 +125,5 @@ For each answered Q/A, in the order they appear:
 ## Step 7: Replace the answer with a backlink
 
 - In the target note, use Edit to replace the answer's code block, from its opening fence through its closing fence, with `[[{Answer note}#{Heading}|{Answer note}]]`.
-- The question (blockquote or `####` heading), any `- field::` bullets (including `- practice::` lines after an application-note answer), and the blank lines around them MUST stay in place.
+- The question (blockquote or `###` heading), any `- field::` bullets (including `- practice::` lines after an application-note answer), and the blank lines around them MUST stay in place.
 - Repeat Steps 4–7 for each answered Q/A, then STOP.

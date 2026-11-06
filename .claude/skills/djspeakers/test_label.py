@@ -8,7 +8,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 
 from label import label, render, switch_embed  # noqa: E402
 
-NOTE = "---\ntype: interview\n---\n\n### Transcript\n\n![[Applications/Acme/Interviews/2/transcript]]\n\n### Questions\n"
+NOTE = "---\ntype: interview\n---\n\n## Transcript\n\n![[Applications/Acme/Interviews/2/transcript]]\n\n## Questions\n"
 
 RAW = "Hi, Chris. Hi.  Can you hear me?  Yeah, I can hear you.\nSo tell me about Kafka. Kafka is a log. Okay.  Yeah."
 

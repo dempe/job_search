@@ -29,7 +29,7 @@ When invoked ad hoc (`/djgrade`), take these from the arguments or the user's me
 
 If the caller names the note a question lives in, the reference answer is:
 
-- In an interview note's `### Questions` section, the fenced code block under the question's `#### {question}` heading, after any `- field::` bullets.
+- In an interview note's `## Questions` section, the fenced code block under the question's `### {question}` heading, after any `- field::` bullets.
 - In an application note, the fenced code block after the question's `> ` blockquote.
 - If the question is followed by a `[[Note#Heading|Note]]` link instead of a code block (the answer was filed with `djmvanswers`), the code block in that `Answers/` section.
 
