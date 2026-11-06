@@ -1,0 +1,237 @@
+**Rob:** Oh, baby. Got it? Wait. No, no, no. How's it going? Hey, can you hear me?
+
+**Me:** Yeah, I can hear you. Okay, cool. How you doing?
+
+**Rob:** I'm doing all right. How about you?
+
+**Me:** I'm doing good.
+
+**Rob:** It's probably nice to meet you.
+
+**Me:** Yeah, likewise.
+
+**Rob:** Yes, sir, yes, sir. Um, so, I just wanted to, 1st off, introduce myself. Okay. And, uh, introduce everything that's basically going on. Okay. Um, well, my name is... I said, Rob Godfrey. Um, I am the CEO and founder of I Wonder Laboratories. This is an early startup, compound, R&D lab. Okay. So, compound, AR, R&D, lab. And right now, we have been working on open world, multiplayer AI creation platforms. Um, I will be able to show you what we, we've been actually working on, 'cause I have it open, so, demonstrate. Cool. The other product that we are working on is Julius, a compound AI system. So basically, I know a lot of people aren't really familiar with compound AI. Uh, is recently, uh, emerging since, I guess, the beginning of 2024. And it's just gotten betty throughout time. Um, and I've read so many research papers on compound AI, Berkeley, uh, data bricks, and it really inspired me to start making compound AI systems myself, just because, uh, I am an agentic AI engineer, and I see that there's limits within AI agents, and generative AI as well.
+
+**Me:** Oh, wow. So what is compounds? What exactly?
+
+**Rob:** Oh, yeah, so compound AI is basically one big system, right? That has not one not one large language model occupying everything. It's multiple large language models. Okay. into one unified system. Okay. Yeah, so it's kind of like a... more like an engine, basically.
+
+**Me:** How do they work together? The different LLMs?
+
+**Rob:** So they work together through rags, they work together, do modules, predeterministic modules, and probability modules. Okay. And, uh, for my recent compound AI, oh, well, first, I'll tell you the first two I made, because Julius, which is the one I'm even working on, uh, that's the third one. That's the one that got really good to the point. I just started recruiting people to help me out with it. Okay. But the first one I made was called Alcatraz, which was a multimodel engine. So it was able to combine the intelligence of two large, large language models into one. The second one I made was a compound AI system, which was called relay, which was able to combine a large language model and an agent, and one more agent at once. Mm hmm. And I saw limitations on the large language model being the first slot, so I decided to make the whole harness agentic, so no generative AI is even around anymore. So instead of the large language model, I made it a harness in an agent, and basically, with Julius, it's three tiers, three AI slots. Okay. You have the genetic architect, which is the slot that's prompting the other agents inside Julius, and it's also researching simultaneously. And then you have the coding agent, which is executing code, is doing code reviews, opening PRs, merging. Yeah. You have the independent reviewer, which is reviewing everything, making sure that whatever the coding agent is doing is actually verified. Uh, I I love the independent reviewer because, as an agent AI engineer, when you use one agent and you try to use the same agent to review itself, it gives a lot of bias. Yeah, a lot. Yeah.
+
+**Me:** Have you read Marvin Minsky's Society of Mind or heard about that? It's from the late 80s, but he kind of makes the point that, um, uh, we're not gonna have some some single AI that's gonna be able to, um, solve everything. is kind of like how our mind works, like our, a whole brain doesn't, doesn't just one big thing. Each part of our brain has a unique specialty that works in it and they all kind of work together. And I think that's kind of what we're seeing now. like a lot about what you're describing now with compound AI that we're kind of seeing that that's, yeah, we can't just have one single AI that's good at everything. We need to have, you know, specialties. It kind of sounds like that's what you're getting at with the compound stuff. So that's kind of interesting.
+
+**Rob:** Yes, yes, thank you. I'm so glad that you already connected to it. Like, immediately. So, that's amazing to hear. And I heard of that name before. I don't know why he said that name. It just rang a bell.
+
+**Me:** He was an AI reached searcher at MIT. He's also kind of notorious. He had some other scandals, but he's a smart man. Society of Mind was the books called...
+
+**Rob:** Okay, I'm gonna check that out. Yeah. Okay, cool. So that is basically the brief rundown of what we're building.
+
+**Me:** Um, so are you building the the world, I'm using their, the AI?
+
+**Rob:** Julius? Or is offering 2 separate products? Like in my building Wonderland, using?
+
+**Me:** Yeah, or like, I guess what's the connection between your products? You have these 2 products at Wonderland and Julius, right?
+
+**Rob:** Yeah, so basically, Julius will be inside Wonderland. So they're basically interconnected products. Okay. Yeah. Yeah. And then the amazing thing about Wonderland is Julius won't be the only compound AI. It will be the only AI period you can just use. You can import the AIs you used previously into Wonderland as companions. Okay. So you can have a whole stack of AIs just working with you. So, and the really cool part is about Wonderland is that it's fully multiplayer. You could find a random person from India at 3 a.m. and you guys can make an idea about a project. It could be a multi billionaire, multi billion dollar project, right? And it all can start at 3 a.m., wonder, like, a random day in Wonderland, you know? So I just see the vision of people connecting in a way that hasn't been done before in the AI industry, just because AI creation is so isolated. You know, the environments are so isolated. Um, trying to send work with another peer is astronomically difficult, and it's just, it's a lot of clicking, and it's too bloated, so I'm just trying to solve that problem, because the vibe coders, agentic AI engineers, and AI engineers, those titles and roles are just gonna grow enormously. You know, like a market in the AI industry, specifically in the agentic AI industry, is going to be huge. Yeah. So it's just a, I believe this is a really big opportunity. Oh, yeah, so, um, I do have like a layout on how the meeting will go. Okay. The 2nd part, I was going to ask you, was just... Like, can you tell me about... what, like, your previous experiences in AWS and distributed systems, API infrastructure, like, just the back end layer?
+
+**Me:** Um, so I started writing my own company in 2023 or I guess, yeah, 2023. Um, 1st I started out building some apps and then I started doing more like consulting and contracting work. Um, but my whole back end is on AOS server list. So for my apps, for example, um, I have API gateway, so the quest come in there and then the, um, they send the request to Lambda for processing. Um, which basically sends checks to make sure that the payment is valid from, or the transaction is valid from Apple, and if it is, then I save, um, entitlements and dynamo DB. I send failures to SQS for asynchronous processing and then to a dead ladder queue if they can't be processed. So, um, yeah, I went with several there because it's like super low maintenance and I hardly had to touch it. That's all defined in like a Sam Template. Um, And then, um, some of the contracting stuff I've done, uh, for with ABS specifically was, um, So a client what had some large downloads that they needed to secure and they're asking what they should use. Okay, well, sounds like a perfect use case for CDN. So there's like some music software. I think they were selling. Um, so I set them up with um, cloudfronts there. I put the stuff, the data in AD, sorry, S3 and secured that with cloudfront to set up the OAC so that the S3 is not publicly accessible and everything's accessible via cloudfront. Um, and then another client needed to deploy some code on EC2. So I set that up for them, deploy the codes, and... Yeah, um. So I guess that's, yeah, that's that's my main ADS experience with the distributed systems. Um, I got started pretty early on those at my 1st job. Like I set up a, um, So we were collecting data about what people were saying online about different products and trying to, um, you know, collect demographic information. Um, stuff like sentiment, and so we needed to get, so there are 2 big sources of data. One was the APIs, mostly social, mostly social media, APIs, and then, um, webpages, dated for like forums or, you know, stuff that you have to scrape. Um, online review sites like um, Amazon, Walmart. So I built 2 frameworks there. One for the APIs, another one for the web scrapers because before that, like, for example, to stand up a new crawler, if some client wanted to, or a customer wanted to get data about a fishing product from some niche fishing forum, we would have to set up like a specific crawler for that and have deploys, grips, and everything. And so it was very, um, there's a lot of overhead. So I built a framework, which basically had, um, a queue in, uh, in my SQL or the MySQL table, just all the URLs needed to be crawled. And then there was an orchestrator. We had 4 servers on premise servers. This was a small company. Um, So this is where the distributed part comes in. So each server had an orchestrator that would pull from the queue, lock a row, and then send that to each orchestrator had a pool of like 100 or so workers, and they would run through the workers and see which one they can handle. Um, and then a few months later, I built, uh, as I mentioned, I built another framework, very similar to the the scraping framework, but for the APIs, so that, um, we could have a similar system for the APIs, and For example, we need to stand up a new, uh, Pinterest API, we already have the whole framework, all the boiler plates set up. There's, um, shared token pool, logic, um, for example, like, uh, rate limiting logic to handle back handle, um, back off. So all of that was generic and you could just focus on actually calling the the API through an SDK. So, um, so I got some distributed. It was, to be, yeah, to be clear, it was, you know, small distributed system 4 servers, but that was my 1st experience with the distributed systems there.
+
+**Rob:** Oh, that's that's amazing. Like, I know when it comes to server handling and API keys, it can feel, like, tangling or everything is all tangled up. So the fact that you already have expertise and knowledge, and you also have experience, and you executed well. That's really good to hear.
+
+**Me:** It was a great experience, and I had a lot of, I was still pretty junior at that time, but I had some, um, some really good mentors and senior engineers to work with, and, um, yeah, that was really, I'm very grateful to this day for that experience that I got.
+
+**Rob:** Yeah, wow, okay. Glad to hear. So I do have... Some questions pert like just pertaining, and you say you want to work with the team. Here are some type of examples that I would want to see like you answer. Okay. So the first question is, imagine Julius is executing a 40 step mission. It completes 25 steps, then a server crashes. How would you make sure it resumes from the correct point without repeating completed actions?
+
+**Me:** Um, so, I think, in this case, we'd want to make sure to have, uh, persist the data outside of whatever is processing, so make sure we have to file or something so they can just pick up where it left off instead of starting over from scratch.
+
+**Rob:** Yeah, the persistence is key. Yeah. Okay, cool, cool. Second question is, if Wonderland suddenly grows from 1,000 to a million, I could users, how would you approach scaling the infrastructure without sacrificing reliability?
+
+**Me:** Um... Let's see. That's a huge increase. 1000 to a million.
+
+**Rob:** 1000 to, like, 1000 to, like, 100,000.
+
+**Me:** Okay. um So, uh, it's, I guess, is it running on 80 of us right now?
+
+**Rob:** It's is going to. I was planning on doing that. Right now, it's crazy. You came at the right time 'cause I'm closing in on the prototype. Okay. And cloud infrastructure is definitely now, it's about to be needed. So.
+
+**Me:** Well, um, so I guess 1st we'd need to make sure that we can deploy it on, um, Well, it's going to be continuously running the service, so I'm assuming something like EC2. So make sure that we have, uh, Um, They can employ to uh, multiple, 1st times, you know, make sure we can employ it to a small number of servers and then, you know, have a, uh, a standard configuration and then so that we can, once we get to a certain number of users, we can begin to expand that to more and more servers, add more servers seamlessly without interrupting the existing servers.
+
+**Rob:** Yes, okay, that's great. Because I know the servers, that's definitely something I've been thinking about, because this is proprietary technology, basically. Like, no one, there's no open world AI creation platform. Yeah. like no anywhere else. So, there is a high chance that the users could explode at a massive rate, you know?
+
+**Me:** So, uh, so you need to preemptively plan for, um, this.
+
+**Rob:** Oh, what did you say?
+
+**Me:** Yeah, so you needed to preemptively plan for this potential spiking.
+
+**Rob:** Yeah, that makes sense. Yes, yes, because I have, you know, I've been talking to customers. I've been getting feedback and before I even asked them, they tell me, we already told our friends about this. We already told our, we're waiting for the alpha, and I'm like, okay, so there's a high chance this could spike. more than any of us think, you know, so I just like that you already have a plan layered out. You know, just in case things get overwhelming when it comes to users. Yeah. I got only one question. Yeah. Uh, one more question. If I gave you responsibility for making Julius' mission, execution, reliable, what would your first 30 days look like?
+
+**Me:** Um... Well, so we need to make sure that we have some sort of a fallback if, uh, If, like, it goes down, we need to make sure that we need to have, um, you know, standby instances. We need to make sure that, uh, the data is, um, decoupled from the processing, so we don't want to have those on the same server. So I don't know where we would, um, I guess we could use, like, something like block storage that is shared between EC2 instances instead of a particular instance. So we could decouple that. And then, of course, you need to make sure you have, we need to make sure we have monitoring and alerting setup and proper logging. So I would set up, you know, uh, monitoring and cloud watch, um, alerts for when, for example, something like traffic is increasing or there's error messages. So they make sure that we can, um, know about that as soon as it happens and see what's going on, identify the cause. Um, but then also we need to make sure that we're ready to, um, You know, have a failover or something in case we can't fix the issue before, um, before it gets to a critical state. So that would be my. Yeah, so we need to make big on observability and monitoring and alerting.
+
+**Rob:** Yes, I agree. I definitely agree. And I like how you're coming up with these answers quick. Like, I can already tell you have expertise, because the answers are coming in very, uh, very fast, so... that's good to hear. Um... I also just wanted to tell you that the equity in well found has changed. It will increase for the first members. Okay. Let you know that. I'm out.
+
+**Me:** And, sorry, yeah, I was gonna, one of the questions I wanted to ask is how is equity distributed? Like at a time or...
+
+**Rob:** Oh, we're gonna say about that.
+
+**Me:** So yeah, is it based on time or is it based on milestones or how is that equity going to be distributed?
+
+**Rob:** As soon as we start working. As soon as I choose the individual, I'm gonna send you an equity offer. Okay. And then once that's completed, then we can start getting to work. So it's a one time thing. What's I think like?
+
+**Me:** So, you mean, like, so, for example, as soon as I join, you'll send me an equity package, and then I continue from there. Will there be subsequent equity distributions?
+
+**Rob:** Okay, increase. yeah There's always gonna be benefits, of course. Okay. And it's soon as we, getting close to funding, is a couple of incubators and startup accelerators, me and the president, Tanish, has been talking to, and, um, as soon as funding is here, we're giving salaries to the founding team members.
+
+**Me:** Okay, cool. Yeah, yeah, yeah. Is there any roadmap or timeline on that?
+
+**Rob:** We're looking, like, the next 2 to 3 weeks, really pushing hard, because the prototype is getting close to finish. So it's, uh, every time the prototype is close to finished, that's more demonstrations we're able to show the investors. Okay. Cool. Yes, um, um... That... was... basically all... I was gonna ask you, have you seen the video of a demonstration simulation of Wonderland on a website?
+
+**Me:** Yeah, in this? No, not yet.
+
+**Rob:** Yeah, okay. So, here's what I'm going to do. I'll show you Wonderland currently. What is, because, um, the majority of the interface kind of changed from the live video that's on the website. Okay. So I'll show you apparently, then I'll show you the simulation video on the website, and then, after that, I'll give you the floor, any type of questions you want to ask me, I'll answer.
+
+**Me:** Okay. Cool. sounds good.
+
+**Rob:** All righty. Share my screen. Turn the air CBC real quick. Cool. This is it. Yeah, this is it. This is Wonderland. Uh... Might be a little laggy just because I have so many times opening. This is the, uh, it's, 0 my gosh, I just, it's gonna be amazing. Like, if you just imagine like 100s of 1000s of users, just building with AI with their friends, and there's just so much space to do it.
+
+**Me:** So, how do they actually... Okay, are you gonna show me? Yeah, how they build with it here?
+
+**Rob:** Yeah, so this is the terminals? On the left side, you have like GPT 6. Uh, either just companions you can import. Okay. Clog Coke, people five. The best thing about these companions, you could just use your subscription. You don't have to pay for any API keys. Um, and then for over here, this is Julius. This is the task terminal. When is the Julius Terminal? It shows, basically everything, the gentic architect, coding agent, Julius, that's controlling everything, the independent reviewer. Um, this is the usage bar. There's so many clicks to see the user's bar for any other AI agent. Like, I shouldn't have to do splash usage to see how much time I have left on my AIs. Yeah. It's right here on the top left. Below the companion terminals, these are preset, uh, preset commands. So you can just press 3 or 2 and a goal loop will instantly pop up on your terminal for Julius. And it's just way easier to start loops like that instead of Yeah. doing a lot of typing, you know? Yeah, so that's basically everything right now.
+
+**Me:** Can you give me an example of something you would build there?
+
+**Rob:** Uh, in Wonderland?
+
+**Me:** Yeah. Mm, okay.
+
+**Rob:** I would build a game, like a, like in a week or two. I was thinking about building a game, that's like merging, Call of Duty and Fortnite, like, you can build a games, you can build software, you can build, You can build compound AI agents yourself because, um, Multiple compound agents. And you can do single agents to, so there's so many things you can build in Wonderland, and you have a lot of support as well, because not only you have your companions, but you can add in your other compound AI agents as well. Or max is because we don't want the inference to go, uh, skyrocket, you know? So... Yeah.
+
+**Me:** So, so if you were to build this, um, Fortnite, um, Call of Duty crossover, This would, this would just create, um, an executable that would, you're working together on a project, collaborating on a project here in Wonderland, right? It's not the, it's not going to be executed here in, in your game. Is that correct?
+
+**Rob:** No, it is. Everything will be in the platform. So, like, Wonderland is designed, so you never have to leave one away. You're gonna have a terminal in Wonderland. Wonderland has a wonderland where you're doing, they will execute anything on the internet inside Wonderland. Um, I don't know if you see on the top right, it's your wonder wet wallet, so you're able to put money inside one of the land inside Julius for Julius to do anything with the money.
+
+**Me:** So, um, I'm doing, um, I'm searching for a job right now. How would I build a job search project in here? Would that be a good example or that would that fit well or no?
+
+**Rob:** Yeah, that piece will. You can do job search project. Julius is designed to build basically anything. Julius really isn't limited to any small task or any big task. Um... I stay...
+
+**Me:** What would it be limited to?
+
+**Rob:** I'm trying to think, 'cause there's a lot of tests I've done with Julius. I've done over, like, 200 paid live runs with Julius. And so far, there hasn't been an example where Julius just burned out of exhaustion. I do have more tests, though. thinking about doing a cyber security test to try to see if Julius can handle something that, that broad. Yeah. Cool. Yeah, so it's it's just it, uh, how do you think? What are you thinking?
+
+**Me:** So the advantage, for example, with my um, for a job search project to keep track of like jobs that I'm applying to, the status, the interview status, um, where I applied to them, the job description, stuff like that. Um, The advantage of building it here in Wonderland as opposed to just, uh, in my regular computer terminal, uh, is that I can collaborate and I can build with compound agents. Am I understanding that correctly?
+
+**Rob:** Yes, you can deal with compound agents, you can invite your friends, multiplayer AI creation is very seamless on this platform. Unlike nowhere else. And I've done my research. I've seen other multiagent orchestration, frameworks, and they're just, they're still isolated. Like, yeah, you can use claw code in GPT and rock at the same workspace, but it's still hard to work with your teammate that's in San Francisco, and you're in Vegas. So, these are the type of problems that need to be fixed, and, yeah, that's basically Wonderland, like, you get to work with your compound AI agents, you get to work with any AI, you use previously, and you get to work with your friends. Also, there's a marketplace. in Wonderland. Were you able to sell your compound AI agents, you're able to sell skills for your agents, mods, and... we can either open source it for anyone to just grab it. Or you can put a paywall under it. And anytime someone puts a paywall, we get a commission.
+
+**Me:** Nice.
+
+**Rob:** So, yeah, so, like, I've studied the economics of how Wonderland can go when it comes to profitability, and these are looking really good just because of the fact that other AI companies don't have a lot of revenue streams. And because we have Julius, our compound AI agent, and we also have Wonderland, we have multiple strings of revenue.
+
+**Me:** Right.
+
+**Rob:** Also, the software and whatever software gain that you make, it can turn into a... Project Avatar. Which is basically... I don't think it's here no more, but, um, so basically a Project Avatar is, your software will be wrapped around this entity, on his creature. And... you can enter this entity in some type of animation cut scene that, basically, it just looks cool. Like, when you enter the software, and as soon as you enter the software, after this animation, everything lights up, you get to get the software, you get the UI, the back end, everything. It all opens the window, and I promise you, there's no reason to leave Wonderland. Like, that's why I'm really trying to design it. I'm not trying to design when people get addicted or anything like the various, but I just want to make sure the users don't have to go back and forth in and out.
+
+**Me:** That's like a more cohesive environment.
+
+**Rob:** Exactly.
+
+**Me:** So I guess, sorry, go on.
+
+**Rob:** Oh, I'm sorry, what did I say?
+
+**Me:** So I guess the next biggest steps that you mentioned is, um, going to take this from a prototype to actually go live, uh, set up some real infrastructure. And open it up, probably.
+
+**Rob:** That's definitely the plan. That's definitely the plan because people are waiting, and... I think the first thing we're gonna do, I think I'm most likely sure, it's gonna be a private alpha wave one. Mm hmm. And then...
+
+**Me:** That's probably a good idea. Keep it. Like, like, the quick private, make sure, uh, we just get user feedback to people testing it out.
+
+**Rob:** Ending how fast we scale. It might be less or more waves after that, because I was thinking about a private beta wave one, right after private alpha. And really, everything just depends on where we are at that time. But definitely, the private beta waves, it's gonna be public beta. And then, Wonderland is gonna have a mechanic of Fortnite, where there's gonna be seasons. Okay. So, I don't know if you see, like, Wonderland has, like, the characters and a lot of, not things going on, but a lot of character visualization going on. So any seasons, people are able to just create with AI and gang a new type of mascot skins. That's what the characters are called. Those type of skills, mods, exclusive compound AI agents that we made. I wonder, and we can get at, like, ranked 60 or rank 70. So there's just so many ways that people are able to just go into Wonderland, get value from one day land, not just go in and have fun but actually build something that can make a living for you. And just, overall, have fun while building values of your life.
+
+**Me:** That sounds cool. Sounds like a good idea. Uh, so you built all this yourself? I'm assuming with AI?
+
+**Rob:** Uh, I, some of the code I wrote manually, but... It's like, when I started to, a gentic AI engineer, I'll give, I'll give an example like this. It's like writing a horse, right? When you're manually coding, like riding a horse, you know, sometimes the horse likes to poop and likes to delay, and it might take a little longer, but if you drive a car, you're gonna get to, you're gonna get A to B really quick, right? And that's how I explain writing code manually versus authentic AI engineering. It just feels like you're driving a car instead of riding a horse.
+
+**Me:** Yeah. I agree. I mean, I use AI pretty much, exclusively these days. For writing for writing code.
+
+**Rob:** Yeah, it's like, it's like the new way, but it's just, you know, things in history, they change. They change, so... It's just a new way to engineer now.
+
+**Me:** That's true. That's true.
+
+**Rob:** It's his engineering 2.0.
+
+**Me:** I think people, a lot of people start trying to figure out the paradigms around how to do it correctly, the patterns. Because it kind of reminds me of, well, I was still in like elementary school, junior high, but whenever like object oriented programming came out, um, in the late 90s, and you see in like the 1st decade of the 2000s, there are all these books about how to write correct object oriented programming, all the patterns, and I'm kind of seeing a similar thing now. Like people are trying to, How do we do this correctly the best way? And it's, it's an interesting problem, I think, also because the technology itself is changing so rapidly.
+
+**Rob:** Yeah, like, whoever adapts wins, you know?
+
+**Me:** That's true.
+
+**Rob:** Are you able to see the video?
+
+**Me:** Oh, yeah, yeah, I see it.
+
+**Rob:** Okay, okay, I can play it. This is how it looks in the daytime. I forgot what time it was when I showed you, but this is how it looks like when it's super bright. It's gonna show a simulation in a second. It's just gonna kind of demonstrate what it would look like when someone asked Julius a question. Mm hmm. I'm glad I showed you, what, Wonderland recently looks like, 'cause, as you can see, the terminals are very allocated.
+
+**Me:** Oh, yeah. This looks pretty good, though.
+
+**Rob:** Yeah, yeah. Thank you. This is what it'll look like. The back end and the front end of Julius are synchronized together, so... whatever happens to Julius in the back end, the compound agent, uh, kind of just synchronizes with it. So what we're calling Julius, it has, like, a... You know, like, there's something, like, a groc bot or open AI dots. Like, they have, like, their title name, right? So, an easier way to call our compound AI agent is a card. And card stands for compound agent relay dog. is just able to describe Julius fully, right? It describes it as a character, the relay dog, and it describes it as a compound AI. Okay. Yeah, it's also, like, I feel like it's a name people easily remember, like, oh, I'm a, I'm a call my card or do you want to use my card by there, you know?
+
+**Me:** Yeah. Let's catch you.
+
+**Rob:** Yes, exactly. Slow marketing. But, yeah, this is basically the premise of it. Um, it's running through a full life cycle, so it's gonna go all the way. Different animations, Julius does, through different stages of the task. So, yeah, that's basically the premise of it. People will be able to change their animation sequences as well, so it's not gonna be just a standard one for everybody.
+
+**Me:** Yeah. I was gonna ask about that. Like, is that, like, auto-generators or?
+
+**Rob:** Oh, yeah, no, that's just like the standard mission sequence, but there's gonna be so much cooler ones, like, really crazy. But yeah, that's the video. And then now, that was everything I wanted to show you. Okay. Um... So I guess are you interviewing with other people?
+
+**Me:** Um, I've got a few other interviews that I am, um, working through at the moment. Nothing is too like far along at this moment. Still early stages interviewing. But I guess when are you looking to hire somebody? Do you have any a timeline in mind?
+
+**Rob:** Uh, as, as soon as I can, as soon as we can get to work, then that will be the best plan. Yeah, just because, um, I have people I look up to. You know, I look up to Jensen Huang, I look up to Elon, and when I read their books, they always stressed me out about urgency and moving fast and making sure you're on top of the competition. So that's just the type of mental that I would love the whole team to have, because to do great things, you have to work extraordinary, right?
+
+**Me:** Yeah, and that's the, I think that's important, working hard is probably more important than anything else.
+
+**Rob:** I agree. I agree. So, uh, yeah, I'm gonna give you the floor any type of questions you want asking, I'm here.
+
+**Me:** Um, I guess I guess we covered most of the main ones I had. Um, Yeah, I guess, um, I'll be in contact, I guess, um, It was learning, so yeah, is there any, so you're just looking for, um, an answer as soon as possible?
+
+**Rob:** Yeah, as soon as possible, like, are you, like, how do you feel about how the meeting went? Are you interested or are you interested?
+
+**Me:** Yeah, for sure. Um, You mentioned that you'll be able to provide, um, I guess, uh, paychecks in a few weeks. Are those you're hoping for that?
+
+**Rob:** Yeah, like, say like a month or, yeah, around 2 weeks to a month because, okay. I'm already shorting in computers, incubators, and accelerators, and might even be shorter than that. It could be a call any day and be like, okay, you got the money, this and that, rah rah rah. So, as soon as I don't even want a salary, I'm not gonna lie. I literally just want you guys to be okay, and you guys to get what you guys deserve.
+
+**Me:** And I got kids to feed, so that's the thing that's, uh, yeah. But, um, okay, uh, I'll go ahead and I guess finish up the the other jobs that I'm interviewing for for, and, um, you know, I'll keep you posted on where I am, and are there any, I guess, follow-up rounds here with you?
+
+**Rob:** Yeah, that's what I've been doing, but the other, uh, candidates, I've been doing follow-ups with them. Okay. So did you want to schedule a follow-up right now, or do you want to just let me know?
+
+**Me:** Uh, sure, yeah.
+
+**Rob:** Yeah, okay. See what I'm free.
+
+**Me:** Um, I guess maybe yeah, maybe sometime next week. Would be good for me.
+
+**Rob:** Next week? Do you know what day for you?
+
+**Me:** I think any day should be fine. I'll let you know if anything changes though.
+
+**Rob:** Okay, okay. I will. What about... Saturday or Friday?
+
+**Me:** Um, So Saturday is not good for me, but Friday, yeah, I could do it. So let me... So that would be Friday the, would that be Friday the, 13th?
+
+**Rob:** I think yes, it's nice. I'm lucky there, but okay.
+
+**Me:** I have to say, isn't that a bad day?
+
+**Rob:** What is we're gonna put the base? Uh, no, I'm in the plan, it was funny.
+
+**Me:** I don't I don't believe in those things, so it's it's fine.
+
+**Rob:** We need to... I'm like, hey, anybody believes anything, but the real people know it's just, yes.
+
+**Me:** Cool. All right. Well, thank you so much for your time, Kayson.
+
+**Rob:** Of course. And I'll see you next week, Chris.
+
+**Me:** Yep. Bye bye. Have a good one.
+
+**Rob:** Bye. You too.
