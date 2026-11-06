@@ -6,7 +6,7 @@ The user's personal skills are namespaced `d` (`/dscope`, `/dplan`, ...), global
 
 ## Decision
 
-Every skill in this project's `.claude/skills/` is named `dj` + a short name, for example `djd`, `djapplication`, `djanswers`, `djmvanswers`, `djtrans`, `djfill`, `djq`.
+Every skill in this project's `.claude/skills/` is named `dj` + a short name, for example `djd`, `djapplication`, `djanswers`, `djmvanswers`, `djspeakers`, `djtrans`, `djfill`, `djq`.
 
 ## How to apply
 

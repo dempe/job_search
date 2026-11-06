@@ -15,4 +15,4 @@ Interview transcripts run 5–70k characters each. Inline in an application note
 
 - The user adds a new transcript by pasting it into the interview note as a fenced block under `### Transcript`. The agent moves it out, not the user.
 - `djtrans` runs its bundled `extract.py` first. It copies each fenced transcript byte for byte to `transcript.md` and replaces the block with the embed, so the text is never retyped. To move one outside of `djtrans`, run the same script on the note.
-- `djtrans` then reads transcripts through the embeds and never edits the files.
+- The raw `transcript.md` is never edited. A speaker-labelled copy, `transcript-speakers.md`, sits beside it (ADR 0012), and `djtrans` reads that.
