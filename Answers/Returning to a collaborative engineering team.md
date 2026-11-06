@@ -1,3 +1,8 @@
+---
+title: Returning to a collaborative engineering team
+date_created: "2026-10-29 15:12"
+date_modified: "2026-11-06 17:42"
+---
 ## 365 Member Access
 
 [[365 Member Access]]
@@ -24,7 +29,7 @@ I'm currently running my own company, Dempewolf Apps, shipping React Native/Type
 
 [[JustPaid]]
 
->  What are you looking for? *
+> What are you looking for? *
 
 ```
 I've been running my own company for three years now.  It's something that I've wanted to do for a while, and I've learned a lot.  But I am now looking to move on for three main reasons:
@@ -51,9 +56,9 @@ I'm currently working as a contractor building AWS solutions and greenfield Node
 > Why are you looking to leave?
 
 ```
-Two reasons: collaboration and ownership.
+Collaboration and ownership.
 
-I've been contracting for about three years, and it's been a good run, but I do my best work alongside other engineers. I collaborate with people at Dekstech, but it's not the same as being on a team that owns a system together.
+I do my best work alongside other engineers. I collaborate with people at Dekstech, but it's not the same as being on a team that owns a system together.
 
-And with contract work, clients want the project out the door. Nobody's paying for the long-term trajectory of what I build -- how it's maintained, how it scales, what breaks two years from now. That's a big part of engineering, and it's the part I miss. I want to build something and then stick around to own it.
+Maintainability and long-term ownership is a big part of engineering that I feel has been lacking with contract work.
 ```
