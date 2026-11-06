@@ -75,11 +75,11 @@ Content is out of 8, or 4 for `simple`.
 
 | Check | 1 point if… |
 |---|---|
-| `lead` | The first sentence or two directly answers the question. Stalling ("Um… let's see… that's a huge increase"), background, or context before the point fails it. Direct leads look like "Yes, twice -- the worst was…", "Kafka, because…", "About an 8." |
+| `lead` | The first words directly answer the question. Anything before the point fails it: stalling ("Um… let's see… that's a huge increase"), a run of filler and hedging ("Um, so, I think, in this case, we'd want to make sure to have, uh, …"), background, or context. Direct leads look like "Yes, twice -- the worst was…", "Kafka, because…", "About an 8." |
 | `confident` | No hedges that shrink the candidate's own claims ("I think it was twice", "maybe I would have…", "it wasn't really…"). Honest uncertainty about a fact ("I don't remember the exact number") is fine. |
 | `focused` | It stays on the question, with no long backstory or tangent that buries the answer. |
 
-Filler words and transcription errors on their own don't fail a delivery check; judge the structure of the answer.
+Transcription errors don't fail a delivery check. A stray filler word mid-answer doesn't either, but filler before the point fails `lead`.
 
 ### Grade
 
