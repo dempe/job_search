@@ -127,12 +127,6 @@ Graded against the transcript: {r} right, {p} partial, {m} missed. Each question
 #### {question}
 
 - grade:: {grade}
-- qtype:: {type}
-- content:: {content}
-- content_max:: {content_max}
-- delivery:: {delivery}
-- delivery_max:: 3
-- failed:: {failed checks}
 - answer:: {what the user said}
 - missing::
   - **{check}:** {what was missing or wrong, for that check}

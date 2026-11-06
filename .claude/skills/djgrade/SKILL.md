@@ -1,6 +1,6 @@
 ---
 name: djgrade
-description: Score and grade an answer to an interview or application question: question type, content and delivery points per rubric check, right / partial / missed, what was said, and what was missing. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
+description: Grade an answer to an interview or application question against content and delivery checks: right / partial / missed, what was said, and what was missing for each failed check. Use ad hoc to grade a practice answer, or from another skill (djtrans, djq). Takes a question and an answer, and optionally a reference answer or the note the question lives in.
 argument-hint: <question> <answer>
 ---
 
@@ -41,7 +41,7 @@ Classify the question, score its **content** and its **delivery** check by check
 
 ### Question type
 
-Pick exactly one `qtype` (the field is named `qtype`, not `type`, because the interview note's frontmatter already uses `type: interview`). It decides which substance dimensions are scored.
+Pick exactly one type. It decides which substance dimensions are scored.
 
 | type | asked like | substance dimensions (1 point each) |
 |---|---|---|
@@ -57,7 +57,7 @@ Pick exactly one `qtype` (the field is named `qtype`, not `type`, because the in
 
 **Substance is judged on reasoning, not on matching the reference answer.** The reference answer is one good example. Any sound approach that covers a dimension earns its point, even if it uses a different design or technology.
 
-### Content: `content` out of `content_max`
+### Content
 
 Every point is all-or-nothing.
 
@@ -69,9 +69,9 @@ Every point is all-or-nothing.
 | `accurate` | 1 if nothing in it is technically wrong and it claims no more than the candidate's experience supports (e.g. not rating themselves 9–10 at something they use routinely but not deeply). |
 | `substance:{dimension}` | 1 per dimension of the type that the answer actually covers: 0–4 points. Not scored for `simple`. |
 
-`content_max` is 8, or 4 for `simple`.
+Content is out of 8, or 4 for `simple`.
 
-### Delivery: `delivery` out of `delivery_max` (3)
+### Delivery (out of 3)
 
 | Check | 1 point if… |
 |---|---|
@@ -123,24 +123,18 @@ For each item, exactly this shape, one field per list item:
 
 ```markdown
 - grade:: {right | partial | missed}
-- qtype:: {design | technical | story | experience | motivation | simple}
-- content:: {content points}
-- content_max:: {8, or 4 for simple}
-- delivery:: {delivery points}
-- delivery_max:: 3
-- failed:: {comma-separated failed checks}
 - answer:: {what the candidate said}
 - missing::
   - **{check}:** {what was missing or wrong, for that check}
 ```
 
-- `failed::` lists every failed check by name, content first, then delivery. A failed substance dimension is written `substance:{dimension}` (e.g. `complete, substance:validate, lead`). Omit it when every check passes.
+The type and the scores are worked out to derive the grade, but they aren't part of the output.
 
 - `answer::` is a verbatim quote of the candidate's answer, in double quotes. It MUST NOT be a paraphrase or summary.
   - It starts with the answer's opening sentence, exactly as said, so a weak lead is visible.
   - It MAY add one more verbatim excerpt with the core of the answer, joined to the first with ` … `.
   - Keep it under about 80 words. Quote transcription errors as they appear; don't correct them.
-- `missing::` has no value on its own line. Under it, indented two spaces, is one sub-bullet per failed check, in the same order as `failed::`, labelled with the check name in bold: `  - **lead:** …`.
+- `missing::` has no value on its own line. Under it, indented two spaces, is one sub-bullet per failed check, content checks first, then delivery, labelled with the check name in bold: `  - **lead:** …`. A substance dimension is labelled `substance:{dimension}` (e.g. `  - **substance:validate:** …`).
   - Each sub-bullet names, concretely, what that check needed. For a substance dimension, describe the gap and give one possible example ("e.g. …"), never a required solution. For `lead`, give the direct first sentence the answer could have opened with.
   - For `missed`, give a single `**answered:**` sub-bullet with the correct answer in brief, instead of one per check.
   - Omit `missing::` entirely for `right`.

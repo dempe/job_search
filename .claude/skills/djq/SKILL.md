@@ -45,11 +45,11 @@ From [[{note path}|{note name}]]
 If the user replies with an answer to the question (typed, or pasted from speech) rather than asking for the model answer:
 
 1. Invoke the `djgrade` skill with the Skill tool, passing the question, the user's reply as the candidate's answer, and the note path, so it finds the reference answer.
-2. Show the user `djgrade`'s grade block, its content and delivery scores as percentages, and its one or two sentences of coaching.
+2. Show the user `djgrade`'s grade block and its one or two sentences of coaching.
 3. Run `date +%F` and log the attempt as one line under the question:
 
    ```markdown
-   - practice:: {YYYY-MM-DD} {grade} {content}/{content_max} {delivery}/{delivery_max} -- {the failed checks, e.g. "lead, substance", or "all points covered" for right}
+   - practice:: {YYYY-MM-DD} {grade} -- {the checks labelled under `missing::`, comma-separated, e.g. "specifics, substance:validate, lead", or "all points covered" for right}
    ```
 
    - **Interview note** (`#### {question}` heading): append the line after the last `- field::` bullet under the heading, or, if the question has no bullets, directly under the heading, separated from it by one blank line.
