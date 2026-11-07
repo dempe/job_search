@@ -32,11 +32,11 @@ class AttachTest(unittest.TestCase):
         attach(self.note, self.source)
         return self.note.read_text(encoding="utf-8")
 
-    def test_copies_the_source_byte_for_byte(self):
+    def test_moves_the_source_unchanged(self):
         self.attach_to("")
         self.assertEqual((self.folder / "transcript.md").read_bytes(), RAW.encode())
 
-    def test_deletes_the_source(self):
+    def test_leaves_no_source_behind(self):
         self.attach_to("")
         self.assertFalse(self.source.exists())
 

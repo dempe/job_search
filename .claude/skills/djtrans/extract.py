@@ -1,9 +1,9 @@
 """Attach a new interview transcript to an interview note.
 
-The source file (normally ./transcript.txt) is copied byte for byte to
-`transcript.md` beside the interview note, the note gets a `## Transcript`
-section embedding that file, and the source is deleted. Nothing is changed if
-the interview already has a transcript.
+The source file (normally ./transcript.txt) is moved to `transcript.md`
+beside the interview note, and the note gets a `## Transcript` section
+embedding that file. Nothing is changed if the interview already has a
+transcript.
 
 Usage: python3 -I extract.py "Applications/{title}/Interviews/{n}/{n}.md" transcript.txt
 """
@@ -34,9 +34,8 @@ def attach(note_path, source_path):
     vault_path = pathlib.Path(*note.parent.parts[note.parent.parts.index("Applications"):])
     section = f"## Transcript\n\n![[{vault_path.as_posix()}/transcript]]\n"
     rest = body.lstrip("\n")
-    shutil.copyfile(source, target)
+    shutil.move(source, target)
     note.write_text(head + "\n" + section + ("\n" + rest if rest else ""), encoding="utf-8")
-    source.unlink()
 
 
 def main(note_path, source_path):
