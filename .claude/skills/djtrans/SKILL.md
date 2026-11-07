@@ -1,12 +1,12 @@
 ---
 name: djtrans
-description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Extracts the substantive questions the interviewer asked, and writes a `## Questions` section beside the transcript with, for each question, a pass / fail grade of the real answer and the ideal answer. Takes the application note's name (e.g. `Rivora`).
-argument-hint: <application-note-name>
+description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Takes a new transcript from `./transcript.txt` (moving it into the interview's folder), extracts the substantive questions the interviewer asked, and writes a `## Questions` section beside the transcript with, for each question, a pass / fail grade of the real answer and the ideal answer. Takes the application note's name and optionally an interview number (e.g. `Rivora`, or `Rivora 2`).
+argument-hint: <application-note-name> [interview-number]
 ---
 
 # Interview Transcript to Questions
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note. Read the transcripts in one application's interview notes, pull out the questions the interviewer asked, write the answer that should have been given to each, and grade the answer the user actually gave.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note. Read the transcripts in one application's interview notes (or in one of them), pull out the questions the interviewer asked, write the answer that should have been given to each, and grade the answer the user actually gave.
 
 The answers are model answers for study, not a record of what was said and not restricted to what the vault can evidence. Each generated section says so, so a later reader never mistakes them for the user's own words.
 
@@ -18,8 +18,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Skill for `djspeakers` in Step 2, and Agent for grading in Step 7). It MUST NOT write scripts, and the only script it runs itself is the bundled `extract.py` (Step 2).
 - Other than `extract.py`, the Bash tool MUST be used only for read-only commands: `ls`, `grep`, `test -e`.
-- `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped.
-- The assistant modifies the application's interview notes only by adding a `## Questions` section, or by adding the tally and grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and their embeds, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
+- `extract.py` is the only thing that moves transcripts, so they are copied byte for byte and never retyped. It also deletes `./transcript.txt` once it's moved; the assistant MUST NOT delete or edit it any other way.
+- The assistant modifies the application's interview notes only through `extract.py` (Step 2), and by adding a `## Questions` section, or by adding the tally and grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and their embeds, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
 - The assistant MUST NOT modify any existing `transcript.md` or `transcript-processed.md`.
 - The assistant MUST NOT create or modify anything in `Answers/`. It MAY read `Answers/` notes (Step 7).
 - The assistant MUST NOT commit or push anything to git.
@@ -32,18 +32,20 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Step 1: Input
 
-- The argument is `{Application}`, an application note's name without `.md`. Resolve it to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
+- The arguments are `{Application}`, an application note's name without `.md`, and optionally `{n}`, an interview number. Resolve `{Application}` to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
-- Read the whole note. Its interview notes are the `![[Applications/{Application}/Interviews/{n}/{n}]]` embeds under its `## Interview…` headings. Read each one.
+- Read the whole note. Its interview notes are the `![[Applications/{Application}/Interviews/{n}/{n}]]` embeds under its `## Interview…` headings.
 - If the note embeds no interview notes, the assistant MUST STOP with one line saying so.
+- With `{n}`, the run works only on interview `{n}`. If the note doesn't embed `Applications/{Application}/Interviews/{n}/{n}`, the assistant MUST STOP with one line saying so. Without `{n}`, it works on every embedded interview.
+- Read each interview note the run works on.
 
 ## Step 2: Find the transcripts
 
-Each transcript is a `transcript.md` beside its interview note (e.g. `Applications/People Data Labs/Interviews/2/2.md` has `Applications/People Data Labs/Interviews/2/transcript.md`), and the interview note embeds it. The user pastes a new transcript into the interview note as a fenced block under `## Transcript`, so move those out first:
+Each transcript is a `transcript.md` beside its interview note (e.g. `Applications/People Data Labs/Interviews/2/2.md` has `Applications/People Data Labs/Interviews/2/transcript.md`), and the interview note embeds it. A new transcript arrives as `./transcript.txt` in the vault root (the raw Voice Memos text), so move it in first:
 
-- For each interview note, run `python3 -I .claude/skills/djtrans/extract.py "Applications/{Application}/Interviews/{n}/{n}.md"`. For each `## Transcript` section holding a fenced block, it writes the block's text to `transcript.md` beside the note and replaces the block with an embed, e.g. `![[Applications/People Data Labs/Interviews/2/transcript]]`. Sections that already embed a file are left alone.
-- Each `skipped:` line it prints is reported in Step 9. If it printed any `moved:` line, Read that interview note again.
+- If `./transcript.txt` exists (`test -e`), it belongs to interview `{n}`, or, without `{n}`, to the highest-numbered interview note the application embeds. Run `python3 -I .claude/skills/djtrans/extract.py "Applications/{Application}/Interviews/{n}/{n}.md" transcript.txt`. It copies the file byte for byte to `transcript.md` beside the note, adds a `## Transcript` section embedding it as the note's first section, and deletes `./transcript.txt`.
+- On `moved: …`, Read that interview note again. On `error: …` (the interview already has a transcript), nothing was changed and `./transcript.txt` is kept; report the error in Step 9 and continue with the transcripts already there.
 
 Then, in each interview note:
 

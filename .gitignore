@@ -8,3 +8,6 @@
 # This repository keeps project plans and decision records in .agents.
 !.agents/
 !.agents/**
+
+# Scratch interview transcript read by /djtrans, which deletes it.
+/transcript.txt

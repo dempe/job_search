@@ -1,12 +1,12 @@
 ---
 name: djinterview
-description: Add a new interview to a job application. Creates the next `Applications/{Application}/Interviews/{n}/{n}.md` note, adds its date to the application's `interviews` frontmatter, and embeds it under a new `## Interview {n}` heading. Takes the application note's name and the interview's date/time (e.g. `People Data Labs 2026-11-10 14:00 - 15:00`).
+description: Add a new interview to a job application. Creates the next `Applications/{Application}/Interviews/{n}/{n}.md` note, adds its date to the application's `interviews` frontmatter, and embeds it under a new `## Interview {n}` heading, then runs `djtrans` on it to file and grade `./transcript.txt` if there is one. Takes the application note's name and the interview's date/time (e.g. `People Data Labs 2026-11-10 14:00 - 15:00`).
 argument-hint: <application-note-name> <date/time>
 ---
 
 # New Interview Note
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note. Create the note for one new interview and wire it into its application.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note. Create the note for one new interview, wire it into its application, then hand off to `djtrans`, which takes the transcript from `./transcript.txt` if the interview has already happened.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -14,15 +14,15 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Constraints
 
-- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write). It MUST NOT write or run scripts.
+- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write, and Skill for `djtrans` in Step 5). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only commands (`ls`, `test -e`), and `mkdir -p` for the new interview's folder.
-- The assistant creates exactly one file, the new interview note. In the application note it MAY only add one `interviews` list item and one `## Interview {n}` section. Everything else MUST stay byte-for-byte unchanged.
+- The assistant creates exactly one file, the new interview note (`djtrans` then adds the transcript). In the application note it MAY only add one `interviews` list item and one `## Interview {n}` section. Everything else MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT commit or push anything to git.
 
 ## Output
 
 - The assistant MUST NOT narrate while working.
-- It MUST end with one line naming the new interview note, plus one line listing any field it left blank because the user didn't give it (`interviewers`).
+- After Step 4, it writes one line naming the new interview note, plus one line listing any field it left blank because the user didn't give it (`interviewers`). Then `djtrans`'s output rules apply.
 - A run that stops early MUST say why in one line.
 
 ## Step 1: Input
@@ -56,7 +56,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 | `date_created` | `"{now}"` from `date "+%Y-%m-%d %H:%M"` |
 | `date_modified` | the same as `date_created` |
 
-- The body is empty. Prep, the transcript (as a fenced block under `## Transcript`, which `djtrans` moves out), and notes are added later.
+- The body is empty. `djtrans` adds the transcript (Step 5); prep and notes are added by hand.
 - Create the folder with `mkdir -p "Applications/{Application}/Interviews/{n}"`, then write the note to `Applications/{Application}/Interviews/{n}/{n}.md`.
 
 ## Step 4: Wire it into the application
@@ -70,4 +70,10 @@ Follow the steps below in order. A step that says STOP ends the run.
 ![[Applications/{Application}/Interviews/{n}/{n}]]
 ```
 
-- Keep exactly one blank line between sections and the file ending in a single newline. Then STOP.
+- Keep exactly one blank line between sections and the file ending in a single newline.
+
+## Step 5: Transcript and grading
+
+- Write the lines described in Output.
+- If `./transcript.txt` doesn't exist (`test -e`), the interview hasn't happened yet: STOP.
+- Otherwise, invoke the `djtrans` skill with the Skill tool, with `{Application} {n}` as its arguments. From this point, follow `djtrans`'s instructions, including its output rules.
