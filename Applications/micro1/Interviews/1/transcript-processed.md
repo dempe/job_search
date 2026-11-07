@@ -1,0 +1,95 @@
+**Zara:** and avoid using external tools, including AI agents, as this will affect your final results. Feel free to ask clarifying questions during the interview, but avoid repeating the question out loud, so it doesn't get counted as part of your answer. A long pause will indicate to Zara that you've finished your answer and are ready to move on to the next question. Hi, Christopher. My name is Zara. I'm an AI recruiter at Micro One. Thank you for joining the interview. How's your day going so far?
+
+**Me:** It's going pretty good.
+
+**Zara:** Glad to hear that. Christopher. Could you please introduce yourself and share a brief overview of your background?
+
+**Me:** Sure. I'm a backing engineer with about 11 years of experience. I've worked a lot in data acquisition, data engineering, API design, microservices. My most recently, I've been working as a contractor. I stood up some mobile apps and reaction native. Um, I've also set up, um, Like a lot of services in AWS, like a serverless backend using Lambda, Dynamo DB, SQS. Um, I've also stood up a few no JS apps for clients to do various things. Both were greenfield projects for payment integrations and an interactive map for, um, so a customer, so a client could view their customers.
+
+**Zara:** What is a sequel injection vulnerability? What is the impact and how can it be prevented?
+
+**Me:** Yeah, it's whenever you, um, don't properly escape strings in your SQL. So a user could input a command into some string that does then accept it to your database and then that is, um, that string, um, Escapes out of the, uh, the quote so that they can then run arbitrary commands on your database. You, um, prevent it by using proper, um, proper escaping of, um, Of SQL, or user input to SQL. Queries.
+
+**Zara:** Thank you. What was removed in Peep 632?
+
+**Me:** I don't know. That's a python, um... It's a python update, but I don't know what 632 is.
+
+**Zara:** Thanks. Let's shift to your work history and depth, Christopher. What's the most interesting, unique, hardest, or most groundbreaking software project you've worked on that you're able to legally discuss? And what did you personally build on it?
+
+**Me:** Um, my biggest software project to date was setting up, um, a real time, event driven, streaming pipeline, analytic streaming pipeline, and Coffer streams for my previous employer. So it was for to replace an existing batch job that was really finicky and required a lot of operational overheads. It wasn't scalable. Um, and it was highly coupled. The different annalects were highly coupled, so that my new pipeline decoupled the analytics, read, they had a continuously from the database. That was another big difference. The data was coming in continuously, so we didn't really need a batch job. We could process the data in real time. Um, decoupled the analytics and each streaming processor in coffer streams, output, partial record to elastic search. Um, effectively making, uh, out to a sync topic that went to elastic search and then, um, Elastic search was, uh, would use as an upsart for each of these partial updates. So making the each elastic started document sort of like a, um, and eventually consistent view of the of the patent data. This was all patent data, by the way. Um, so my main, I, I, what I did, I was mainly, I planned the project. Um, I convinced engineers that we should go with coffee streams over um, Apache airflow, which a lot of engineers were wanting to use. Um, So yeah, it was hard. I mean, it was interesting because it was a huge project, um, and unique. We had very unique requirements with patents and the analytics that were needed. It was difficult because, yeah, it's required. Um, a lot of work to convert. I mean, it was a, it was a lot of different analytics and stuff that we needed to, that we needed to do. Um, so I think I've answered all parts of your question there.
+
+**Zara:** That's a solid modernization effort. Moving from Brittle Batch to streaming and using partial upserts into elastic search is a non to trivial design, especially with decoupled processors. Where can I find, or verify this project, get Hubblink, internal name, public service, talk, or any artifact you're allowed to share?
+
+**Me:** Um, it's an internal company tool. Uh, so I don't think there's anything public that I could share with you.
+
+**Zara:** Understood. Internal systems are common at this level. In Kafka's dreams, how did you guarantee correct upserts in elastic search under Atolli's tunes processing handling duplicates, ordering, and partial updates without corrupting the final document?
+
+**Me:** Um, so duplicates weren't, um, a big issue because, Um, it would just absert the same record twice. Uh, Everything was keyed off of patent ID. Um, Ordering what we did there was to use, um, Compaction in each of the topics so that it would compact each topic into the latest, uh, various updates into the latest updates. Um, partial updates. Well, yeah, everything was a partial update. That was a part of the. The data that came into our data warehouse was all partial. So we had to basically, um, If we wanted to reconstruct a patent within Kafka streams, you would have to join across a number of different topics to get the data that you needed. And yeah, pretty much, like I said, pretty much everything was partial.
+
+**Zara:** Got it. Keying by patent ID, and relying on compaction, plus identitant upserts, can work well. As long as each update is deterministic and safe to replay. What exactly was your elastic search upstart strategy for partial updates? Update with script, doctor's deepsert, external versioning, or something else. And how did you handle out 2 order events for the same patent ID?
+
+**Me:** Yeah, it was using DAC as absurd, um, So it would just have the patent ID and then the rec, the, the part of the data, the document that we were actually updating. Um, as far as out of order events, so everything was, we used a timestamp basically within which, with the data came in. So, From our data provider. So if anything came in afterwards, we would make sure that, um, that we don't have a newer record for that particular data point that we're trying to update. Does that make sense?
+
+**Zara:** Understood. Using Doctostopesert plus a provider timestamp check is a common way to make partial updates replay to safe and guard against stale rights. Before we begin, I would like to let you know that you are always able to return to a previous question in case I interrupt you. What is your strongest programming language?
+
+**Me:** Python?
+
+**Zara:** Understood. In Python, what is the difference between a list and a tuple in terms of mutability and hashability?
+
+**Me:** Um, well, a list is... uh, mutable, so you can always add a pen, new items or update existing items. Uh, a tuple is not, it's just a set record. You either replace it. In terms of hashability, I'm not sure.
+
+**Zara:** The key distinction is mutability. Hashability follows from being immutable, assuming elements are hashable. One would a tuple be hashable and usable as a dictionary key. And when would it not be?
+
+**Me:** Um... I think you can. What?
+
+**Zara:** A tubel is usable as a dick key, only if every element inside it is hashable, for example, I N T S,/string slash other hashable tuples. If it contains an unhashable element, like a list or dict, it is not hashable. In Python, what's the difference between equal sine equal sine and is?
+
+**Me:** It is for comparing objects and equals high and equal si is for comparing, um, just, uh, basic data type values.
+
+**Zara:** Understood. Is checks object identity same object? While equal sine equal sine checks value equality via X? What does it mean for an object to be truthy or falsy in Python? And can you name three falsy values?
+
+**Me:** So, um, Truthy and Falsy are when, um, different, um, different values for different data types that are not normally, that are not bullying, are sort of collapsed into a true false bullying value. So for example, uh, 0 is falsy, none is falsy, an empty list is falsy.
+
+**Zara:** Understood. What's the difference between a static method and a class method? Specifically what gets passed is the first argument, and when you choose each.
+
+**Me:** For a class method, the class type is always the first default argument. Um, a static method is a method that's not associated with any class and it, it's outside of the, Um...
+
+**Zara:** Understood. For a class method, the first argument is Kels, for at static method, nothing is automatically passed. If a subclass calls A at class method, what does Kells refer to at runtime?
+
+**Me:** It re... it returns... it refers to the parent glass.
+
+**Zara:** Understood. In Python, explain the gel at a high level. And what kind of workloads it most impacts CPU to bound versus ice slash Odo bound?
+
+**Me:** Uh, I don't know what GIL is.
+
+**Zara:** Understood. What is the difference between a generator function and a normal function in Python? And what does the yield keyword do?
+
+**Me:** Yeah, a generator function is lazy, so it's only executed when it's needed. And it produces um, output based on, um, Well, you can use it in a context where
+
+**Zara:** Understood. Generators produce values incrementally and preserve state between yields. What's the difference between iterating over a generator versus building a full list in memory, in terms of memory usage and reusability?
+
+**Me:** Yeah, as I mentioned previously, a generator is lazy, so it doesn't compute the values unless necessary, whereas the list computes them automatically and already it uses memory.
+
+**Zara:** That's right. Laziness and lower memory pressure are the big wins with the trade to if that generators are typically single topass unless you recreate them. Christopher, tell me about a past project where you built a testing framework for something genuinely hard to test. What made it hard, and what was your core testing approach beyond basic unit tests/mox?
+
+**Me:** Um, I guess the hardest thing was a distributed crawler, web scraping framework that I built for my 1st company. Um, the reason it was hard is because, uh, while we're testing, um, web scraping to make sure that the page is correctly scraped. Um, So we needed to make sure that we um, scraped what we were expecting from the from the page and with changing HTML, it could be very difficult, but I did set up a series of systems tests and put it into Jenkins and made a dashboard there for, um, our customer insights team to be able to view at a glance which crawlers were working in, which were not.
+
+**Zara:** That's a practical problem. HTML drift and third-party variability can make naive expected output assertions brittle, so the framework design matters a lot. In that crawler framework, how did you make the tests deterministic despite changing pages? Did you record slash replay responses, Snapshot DMs, run a controlled test site, or use some other technique?
+
+**Me:** Yeah, I took a snapshot of the page, uh, the DOM, and made sure this passed that, and I had a canonical comment model to make sure that it, what, that the correct fields were filled in, that were parsed from the DOM that I passed in. And it's made a suite of that for all the different crawlers that we had. And then for live system tests, we would just pull from the URL instead to see if it was, um, to see if it maintains the, um, the same canonical common model, and that's where we would catch HTML drift and stuff like AB testing that, um, some sites would do.
+
+**Zara:** That's helpful. Separating deterministic snapshot based checks from live drip detection is a solid pattern. How did you keep the snapshot of based test from becoming brittle to harmless DM changes, for example, class renames, or rapper dives? Did you normalize the DM assert invariants, use resilient selectors, or something else?
+
+**Me:** So for the deterministic snapshot based checks, I mean, that would just use the, they were not subject to drift since they were already a deterministic snapshot. And for the live test, okay, that there's pulling from the URL, the live URL, the live DOM, um, that's just checking to make sure that the the entity that we that we produced from this scrape had all the data fields that it needed. So it doesn't, so if something changed, it was a harmless doM change, that's not going to, if it didn't affect the scraper, then we would see it in the data model. So we just care about the data that is produced. So that's how the harmless DOM changes didn't affect it.
+
+**Zara:** Got it. You were asserting unstable outputs the canonical model, rather than fragile DOM structure, which is the right level to validate. When a live test failed, how did your framework automatically narrow it down to site changed versus parser bug versus transient network slash antitopot? And what evidence did it capture to make that diagnosis fast?
+
+**Me:** Uh, it didn't capture what happened. We saw that it was failing and then you'd have to go in and fix it mainly. The test suite was not that advanced.
+
+**Zara:** Thanks for being direct. That gap is common, and it's a big lever for making a framework height of value. Tell me about another testing framework you personally built where you added smarter failure triage or self-toe diagnosis, for example, capturing artifacts, minimization, invariants, differential checks. What was the key idea?
+
+**Me:** Um, yeah, so a big one was the Kafka pipeline that I had mentioned earlier. So the batch job that was replacing, the code was not very testable at all. So That was a big thing that I tried to design for in the new system is regression testing. So if something broke, then we could actually write a unit test for it, make sure that unit test fails, fix the logic for why it broken the 1st place. And then ensure that the unit test passes so that the same failure doesn't happen again. Um, so that was really nice to have comprehensive unit testing across all of our analytics there. And analytics were pretty simple and that they're just all numbers. So I made sure that, you know, we handle common cases for, um, null inputs, uh, You know, stuff like that. Some analytics require different types of input. So, for example, it might take 2 different data points and we might be able to calculate the analytic if one or the other is available, where ideally both are available. So, um, I tried to make sure to test all cases like that, very, all combinations of inputs.
+
+**Zara:** Thank you for your time today. It was a pleasure speaking with you. To successfully record and share the interview with the hiring manager for this position, please say save interview, and it will be successfully uploaded.
+
+**Me:** Save interview.
