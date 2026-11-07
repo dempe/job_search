@@ -5,7 +5,8 @@
 # one blank line and then an answer: a ``` fence or an ![[embed]] of its Answers section. Blockquotes
 # that aren't followed by an answer (quoted emails, notes) are not questions.
 # Inside an interview note's `## Questions` section, a question is instead a
-# `### {question}` heading followed (after any `- field::` grade bullets) by an
+# `### {question}` heading followed (after any `- field::` grade bullets and a
+# `#### Canonical Answer` heading) by an
 # answer; it is printed as a `> ` line so the output looks the same.
 #
 # Output: the note's name on the first line ("{title}" or "{title} - Interview {n}"),
@@ -44,7 +45,7 @@ awk -v all="$all" '
   inqs && /^### / { hq = "> " substr($0, 5) "\n"; hstate = 1; next }
   hstate {
     if ($0 ~ /^```/ || $0 ~ /^!?\[\[/) { blk = hq; flush(); blk = ""; hstate = 0 }
-    else if ($0 != "" && $0 !~ /^- [a-z_]+::( |$)/ && $0 !~ /^[ \t]+- /) hstate = 0
+    else if ($0 != "" && $0 != "#### Canonical Answer" && $0 !~ /^- [a-z_]+::( |$)/ && $0 !~ /^[ \t]+- /) hstate = 0
     next
   }
   /^>/ { if (!inq) blk = ""; blk = blk $0 "\n"; inq = 1; next }

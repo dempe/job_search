@@ -55,6 +55,8 @@ type: interview
 - missing::
   - **lead:** stalled
 
+#### Canonical Answer
+
 ```
 A log.
 ```
@@ -80,6 +82,8 @@ A log.
 - feedback:: Good.
 
 ### Why leave?
+
+#### Canonical Answer
 
 ![[Returning#Acme]]
 

@@ -117,7 +117,7 @@ Grading runs in a fresh context, so it isn't biased by having just written the m
 - For each interview note to grade, launch one `general-purpose` agent with the Agent tool. Its prompt MUST include:
   - the path of `.claude/skills/djgrade/SKILL.md`, to read and follow as its grading rules
   - the path of the interview's `transcript-processed.md`, to read in full, and that `**Me:**` turns are the user's
-  - every question, in order, with its reference answer: the model answer from Step 6, or, for an existing section, the fenced block under the question's heading (or, if the heading is followed by an `Answers/` embed, that section's code block, read by the assistant first)
+  - every question, in order, with its reference answer: the model answer from Step 6, or, for an existing section, the fenced block under the question's `#### Canonical Answer` subheading (or, if that subheading holds an `Answers/` embed, that section's code block, read by the assistant first)
   - the instruction to take the user's answer to each question from the transcript: the text of their `**Me:**` turns from that question until the interviewer moves on (including follow-up exchanges on the same point), copied exactly and joined with ` … `; then grade it, and return only `djgrade`'s output block for each question, in order, labeled by question number
   - the instruction not to create or modify any file
 - Launch the agents for different notes in parallel.
@@ -139,6 +139,8 @@ In the interview note, immediately after the `## Transcript` section, add:
   - **{check}:** {what was missing or wrong, for that check}
 - feedback:: {feedback}
 
+#### Canonical Answer
+
 ```
 {ideal answer}
 ```
@@ -146,9 +148,9 @@ In the interview note, immediately after the `## Transcript` section, add:
 
 - One `###` heading per question, in the order asked. `{question}` is the complete question on one line, with any `#`, `|`, or `^` removed and `[`/`]` replaced with `(`/`)` (a Markdown link becomes `text (url)`), so the heading still works as a link. `Interviews.md` links to it.
 - The bullets are `djgrade`'s output for that question, written as is. Each field is its own list item, so Dataview reads it per section.
-- The ideal answer goes in a fenced code block with no language, matching the rest of the vault. Blocks are separated by exactly one blank line.
+- The ideal answer goes under a `#### Canonical Answer` subheading, in a fenced code block with no language, matching the rest of the vault. Blocks are separated by exactly one blank line.
 - The section has no intro line: it goes straight from `## Questions` to the first `###` question.
-- For an existing ungraded section (Step 3), insert each question's bullets between its heading and its model answer. Nothing else in it changes.
+- For an existing ungraded section (Step 3), insert each question's bullets between its heading and its `#### Canonical Answer` subheading (adding the subheading before the model answer if it's missing). Nothing else in it changes.
 - Use Edit, anchoring on the transcript's embed line (or on each heading) and whatever follows it, so nothing else moves.
 - Commit each interview note as soon as its section is written, one commit per note: `git add -- "Applications/{Application}/Interviews/{n}/{n}.md" && git commit -m "Grade {Application} interview {n}" -- "Applications/{Application}/Interviews/{n}/{n}.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 

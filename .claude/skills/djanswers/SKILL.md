@@ -45,7 +45,7 @@ A Q/A in an application note is a question (one or more consecutive `>` lines, e
 - A code block with no non-whitespace content is **unanswered**.
 - A code block with content is **answered** and MUST be left untouched.
 - A question followed by an embed line (e.g. `![[Why Company X#Afresh]]`) instead of a code block is already answered and filed, and MUST be left untouched.
-- In an interview note's `## Questions` section, a question is a `### {question}` heading instead of a blockquote, and its answer is the fenced block after any `- field::` bullets and their indented sub-bullets (`grade`, `score`, `answer`, `missing`, `feedback`). The bullets, and any `#### Practice` section after the answer, MUST be left untouched.
+- In an interview note's `## Questions` section, a question is a `### {question}` heading instead of a blockquote, and its answer is the fenced block under the `#### Canonical Answer` subheading that follows any `- field::` bullets and their indented sub-bullets (`grade`, `score`, `answer`, `missing`, `feedback`). The bullets, and any `#### Practice` section after the answer, MUST be left untouched.
 
 ## Step 1: Application note
 
