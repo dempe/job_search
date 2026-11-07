@@ -19,6 +19,16 @@ type: job
 Because.
 ```
 
+#### Practice
+
+##### 1
+
+- date:: 2026-11-07 14:03:22
+- grade:: pass
+- score:: 9
+- answer:: "Because."
+- feedback:: Fine.
+
 > Quoted email, not a question.
 
 Some prose.
@@ -44,11 +54,30 @@ type: interview
 - grade:: fail
 - missing::
   - **lead:** stalled
-- practice:: 2026-11-06 fail -- lead
 
 ```
 A log.
 ```
+
+#### Practice
+
+##### 1
+
+- date:: 2026-11-07 14:03:22
+- grade:: fail
+- score:: 6
+- answer:: "It's a log."
+- missing::
+  - **specifics:** no detail
+- feedback:: Say more.
+
+##### 2
+
+- date:: 2026-11-08 09:00:00
+- grade:: pass
+- score:: 10
+- answer:: "A distributed, partitioned log."
+- feedback:: Good.
 
 ### Why leave?
 

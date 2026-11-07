@@ -12,7 +12,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 ## Constraints
 
 - The assistant MUST pick the question by running `pick.sh`. It MUST NOT choose one itself, because a model's "random" choice isn't random.
-- The only file change this skill makes is appending one `- practice::` line under the question (Step 3). Everything else in the note MUST stay byte-for-byte unchanged.
+- The only file change this skill makes is adding one practice session to the question's `#### Practice` section (Step 3). Everything else in the note MUST stay byte-for-byte unchanged.
 - The assistant commits only that note, in Step 3. It MUST NOT push.
 
 ## Step 1: Pick
@@ -45,16 +45,23 @@ From [[{note path}|{note name}]]
 If the user replies with an answer to the question (typed, or pasted from speech) rather than asking for the model answer:
 
 1. Invoke the `djgrade` skill with the Skill tool, passing the question, the user's reply as the candidate's answer, and the note path, so it finds the reference answer.
-2. Show the user `djgrade`'s grade block and its one or two sentences of coaching.
-3. Run `date +%F` and log the attempt as one line under the question:
+2. Show the user `djgrade`'s full output block.
+3. Run `date "+%Y-%m-%d %H:%M:%S"` and log the attempt as a new numbered session in the question's `#### Practice` section:
 
-   ```markdown
-   - practice:: {YYYY-MM-DD} {grade} -- {the checks labelled under `missing::`, comma-separated, e.g. "specifics, substance:validate, lead", or "nothing missing" for pass}
-   ```
+   ````markdown
+   #### Practice
 
-   - **Interview note** (`### {question}` heading): append the line after the last `- field::` bullet under the heading, or, if the question has no bullets, directly under the heading, separated from it by one blank line.
-   - **Application note** (`> ` blockquote): add one blank line and the line immediately after the question's answer fence or embed line, or after the last `- practice::` line already there. It MUST NOT go between the question and its answer, which would break the Q/A format the other skills rely on.
-   - Use Edit, anchoring on the question's heading or blockquote and its answer, so nothing else moves.
+   ##### {k}
+
+   - date:: {YYYY-MM-DD HH:mm:ss}
+   {djgrade's full output block, exactly as shown to the user}
+   ````
+
+   - The `#### Practice` section comes after the question's answer, never before it: in an interview note, after the model answer (code block or embed) under the `### {question}` heading; in an application note, after the answer fence or embed line that follows the `> ` blockquote. Putting it between the question and its answer would break the Q/A format the other skills rely on.
+   - If the question has no `#### Practice` section yet, add it there with session `##### 1`, separated by one blank line from what comes before and after.
+   - Otherwise add the new session after the section's last session. `{k}` is one more than the highest `#####` number in the section.
+   - One blank line separates the headings, the session's bullets, and the sessions.
+   - Use Edit, anchoring on the question's answer (and the section's last session, if it has one), so nothing else moves.
 
 4. Commit the note: `git add -- "{note path}.md" && git commit -m "Log {Application} practice" -- "{note path}.md"` for an application note, or the same with the message `Log {Application} interview {n} practice` for an interview note. `{note path}` is the second line of `pick.sh`'s output. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 5. STOP. If the user wants another question, they run `/djq` again.

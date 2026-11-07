@@ -13,8 +13,8 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 ## Constraints
 
 - The assistant MUST get the questions by running `pick.sh --all` (Step 2). It MUST NOT find them itself.
-- Grading, logging and committing each attempt follow djq's Step 3 exactly, including its constraints: the only file change is one `- practice::` line under the question, committed with djq's message.
-- The Bash tool MUST be used only for `ls`, `test -e`, `pick.sh`, and what djq's Step 3 runs (`date +%F`, `git add`, `git commit`). It MUST NOT push.
+- Grading, logging and committing each attempt follow djq's Step 3 exactly, including its constraints: the only file change is one session added to the question's `#### Practice` section, committed with djq's message.
+- The Bash tool MUST be used only for `ls`, `test -e`, `pick.sh`, and what djq's Step 3 runs (`date "+%Y-%m-%d %H:%M:%S"`, `git add`, `git commit`). It MUST NOT push.
 
 ## Step 1: Input
 
@@ -40,7 +40,7 @@ Starting with question 1:
 
 1. **Show it** as djq's Step 2 does, with one line before the blockquote: `Question {i} of {total}`. Then wait for the user's reply.
 2. **Handle the reply:**
-   - An answer: grade, show and log it exactly as djq's Step 3, items 1–4 (djgrade, the grade block and coaching, the `- practice::` line, the commit). Then go on to the next question.
+   - An answer: grade, show and log it exactly as djq's Step 3, items 1–4 (djgrade, its full output block, the `#### Practice` session, the commit). Then go on to the next question.
    - A request for the answer: show it as djq's Step 2 says, then wait for their answer to the same question.
    - `skip`: go on to the next question without grading or logging.
    - `stop`: go to Step 4.
