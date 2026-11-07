@@ -13,7 +13,7 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 
 - The assistant MUST pick the question by running `pick.sh`. It MUST NOT choose one itself, because a model's "random" choice isn't random.
 - The only file change this skill makes is appending one `- practice::` line under the question (Step 3). Everything else in the note MUST stay byte-for-byte unchanged.
-- The assistant MUST NOT commit or push anything to git.
+- The assistant commits only that note, in Step 3. It MUST NOT push.
 
 ## Step 1: Pick
 
@@ -56,4 +56,5 @@ If the user replies with an answer to the question (typed, or pasted from speech
    - **Application note** (`> ` blockquote): add one blank line and the line immediately after the question's answer fence or embed line, or after the last `- practice::` line already there. It MUST NOT go between the question and its answer, which would break the Q/A format the other skills rely on.
    - Use Edit, anchoring on the question's heading or blockquote and its answer, so nothing else moves.
 
-4. STOP. If the user wants another question, they run `/djq` again.
+4. Commit the note: `git add -- "{note path}.md" && git commit -m "Log {Application} practice" -- "{note path}.md"` for an application note, or the same with the message `Log {Application} interview {n} practice` for an interview note. `{note path}` is the second line of `pick.sh`'s output. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
+5. STOP. If the user wants another question, they run `/djq` again.

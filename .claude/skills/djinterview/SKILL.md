@@ -15,9 +15,9 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Constraints
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write, and Skill for `djtrans` in Step 5). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only commands (`ls`, `test -e`), and `mkdir -p` for the new interview's folder.
+- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only commands (`ls`, `test -e`), `mkdir -p` for the new interview's folder, and the commit in Step 4 (`git add`, `git commit`).
 - The assistant creates exactly one file, the new interview note (`djtrans` then adds the transcript). In the application note it MAY only add one `interviews` list item and one `## Interview {n}` section. Everything else MUST stay byte-for-byte unchanged.
-- The assistant MUST NOT commit or push anything to git.
+- The assistant commits only the new interview note and the application note, in Step 4. It MUST NOT push.
 
 ## Output
 
@@ -71,6 +71,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 ```
 
 - Keep exactly one blank line between sections and the file ending in a single newline.
+- Commit both notes: `git add -- "Applications/{Application}/Interviews/{n}/{n}.md" "Applications/{Application}/{Application}.md" && git commit -m "Add {Application} interview {n}" -- "Applications/{Application}/Interviews/{n}/{n}.md" "Applications/{Application}/{Application}.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 
 ## Step 5: Transcript and grading
 

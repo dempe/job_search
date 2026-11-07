@@ -19,11 +19,11 @@ Follow the steps below in order. A step that says STOP ends the run.
 <!-- auto-fill-applications T1: NFR0, NFR2, NFR4, FR55, FR56 -->
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, Skill, and asking the user). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only file listing commands (`ls`, `test -e`), and the JD copy in Step 11 (`mkdir -p`, `cp -n`).
+- The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only file listing commands (`ls`, `test -e`), the JD copy in Step 11 (`mkdir -p`, `cp -n`), and the commit in Step 11 (`git add`, `git commit`).
 - The only files this skill creates are the new application's folder, its note, and its saved JD (`jd.md`). The assistant MUST NOT rename, modify, or overwrite any existing folder, note, or saved JD.
 - This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
 - The assistant MUST NOT create or modify anything in `Answers/`.
-- The assistant MUST NOT commit or push anything to git.
+- The assistant commits only the files it created, in Step 11. It MUST NOT push.
 
 ## Output
 
@@ -202,6 +202,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - Immediately before writing, check with Bash (`test -e "Applications/{title}"`) that the folder does not exist. If it exists, the assistant MUST STOP with one line naming it, without writing anything.
 - Save the JD by copying it byte for byte with Bash: `mkdir -p "Applications/{title}" && cp -n "{jd_path}" "Applications/{title}/jd.md"`. The assistant MUST NOT retype or reformat it.
 - Write the note to `Applications/{title}/{title}.md` with the Write tool.
+- Commit the note and the saved JD: `git add -- "Applications/{title}/{title}.md" "Applications/{title}/jd.md" && git commit -m "Add {title} application" -- "Applications/{title}/{title}.md" "Applications/{title}/jd.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 - The assistant MUST NOT write any text to the user after the note is written.
 
 ## Step 12: Draft answers

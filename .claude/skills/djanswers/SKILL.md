@@ -15,10 +15,10 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Constraints
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only for read-only commands: `ls`, `find`, `grep`, `test -e`.
+- The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`) and the commit in Step 5 (`git add`, `git commit`).
 - The only files this skill modifies are `Applications/{Application}/{Application}.md` and the interview notes it embeds, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT create or modify anything in `Answers/`, `../resume/`, client repositories, or anywhere else.
-- The assistant MUST NOT commit or push anything to git.
+- The assistant commits only the notes it edited, in Step 5. It MUST NOT push.
 
 ## Honesty
 
@@ -113,4 +113,5 @@ Before writing, check every draft against this rubric, and revise it until it pa
 - For each drafted answer, use Edit to put the answer text between that question's opening and closing fences. The fences, the question, and the blank line between them stay exactly as they are.
 - Empty code blocks are identical, so each Edit's `old_string` MUST include the question's last line along with the empty block to make the match unique.
 - Leave the code block empty for any question the sources couldn't support.
+- If any answer was written, commit the notes that were edited: `git add -- {each edited note} && git commit -m "Draft {Application} answers" -- {each edited note}`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 - Then STOP, after the one-line list of empty questions if there are any (see Output).

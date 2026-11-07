@@ -14,7 +14,8 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 
 - The assistant MUST NOT modify any `transcript.md`.
 - It writes `transcript-processed.md` and switches the interview note's `![[…/transcript]]` embed to `![[…/transcript-processed]]` only through the bundled `label.py`. It MUST NOT write or edit either file any other way, so the transcript's words are never retyped and nothing else in the note changes.
-- The Bash tool MUST be used only for `ls`, `test -e`, and `label.py`.
+- The Bash tool MUST be used only for `ls`, `test -e`, `label.py`, and the commit in Step 5 (`git add`, `git commit`).
+- The assistant commits only the files `label.py` wrote, in Step 5. It MUST NOT push.
 
 ## Step 1: Input
 
@@ -69,6 +70,7 @@ ANCHORS
 ```
 
 - On success it prints `wrote: … (N turns: …)`, and `embedded: …` when it switched the note's embed. By construction the turns, joined, equal the raw transcript.
+- After each success, commit that transcript's files, one commit per transcript: `git add -- "Applications/{Application}/Interviews/{n}/transcript-processed.md" "Applications/{Application}/Interviews/{n}/{n}.md" && git commit -m "Label {Application} interview {n} speakers" -- "Applications/{Application}/Interviews/{n}/transcript-processed.md" "Applications/{Application}/Interviews/{n}/{n}.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 - On `error: line N: …`, fix that anchor (not found: copy the words exactly; ambiguous: add words so it's unique before the next anchor) and run it again with all the anchors. After three failed runs for one transcript, STOP that transcript and report the error.
 
 ## Step 6: Report and stop

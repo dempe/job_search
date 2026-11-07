@@ -20,13 +20,13 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Constraints
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only for read-only file listing commands (`ls`, `test -e`).
+- The Bash tool MUST be used only for read-only file listing commands (`ls`, `test -e`) and the commit in Step 7 (`git add`, `git commit`).
 - The assistant MAY modify only:
   - the target note, and only by replacing answer code blocks with embeds
   - notes in `Answers/`, and only by adding sections or creating new notes
 - Answer text and question text MUST be moved verbatim: every character, blank line, and trailing space. The assistant MUST NOT fix typos, reword, reformat, or trim anything it moves.
 - The assistant MUST NOT delete, reorder, or edit existing sections in `Answers/` notes.
-- The assistant MUST NOT commit or push anything to git.
+- The assistant commits only the target note and the `Answers/` notes it changed, in Step 7. It MUST NOT push.
 
 ## Output
 
@@ -126,4 +126,5 @@ For each answered Q/A, in the order they appear:
 
 - In the target note, use Edit to replace the answer's code block, from its opening fence through its closing fence, with `![[{Answer note}#{Heading}]]`.
 - The question (blockquote or `###` heading), any `- field::` bullets (including `- practice::` lines after an application-note answer), and the blank lines around them MUST stay in place.
-- Repeat Steps 4–7 for each answered Q/A, then STOP.
+- Repeat Steps 4–7 for each answered Q/A.
+- Then commit the target note and every `Answers/` note added to or created: `git add -- {target note} {each Answers note} && git commit -m "File {Application} answers" -- {target note} {each Answers note}` for an application note, or the same with the message `File {Application} interview {n} answers` for an interview note. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording. Then STOP.
