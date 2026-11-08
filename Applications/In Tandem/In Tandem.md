@@ -19,7 +19,7 @@ date_modified: 2026-06-18 17:12
 ## Application
 
 > Personal Summary<br/>
-This section is optional. Use it to tell us a little more about yourself.
+> This section is optional. Use it to tell us a little more about yourself.
 
 ```
 Since I covered my techincal background in my cover letter, I'll go ahead and cover my personal background here.
@@ -51,7 +51,7 @@ Chris
 ```
 
 > Describe your AI-enabled development workflow, from ideation through release.<br/>
-Please don't rely on it to write your responses for you - we're most interested in your own voice, experiences, and perspective. Trust us, it's surprisingly easy to spot AI-written answers.
+> Please don't rely on it to write your responses for you - we're most interested in your own voice, experiences, and perspective. Trust us, it's surprisingly easy to spot AI-written answers.
 
 ```
 I have a chain of constantly-evolving skills that I use: scope -> plan -> execute -> verify.  `scope` takes a loosely defined problem and turns it into a more formally defined problem in terms of functional and non-functional requirements, constraints, assumptions, and risks, and outputs `scope.md`.
