@@ -14,17 +14,28 @@
 #
 # With `--all {note}`, it reads only that note and prints every question in it,
 # in order, after the same two lines, one blank line between questions.
+#
+# With `--answers [root]`, it reads every note under root (default: the vault)
+# and prints each question that has a non-empty ``` answer: the note's vault
+# path without `.md`, the question's `>` lines, then the answer fence verbatim,
+# one blank line between them.
 set -euo pipefail
 shopt -s nullglob
 
 all=0
+answers=0
 notes=()
 if [[ "${1:-}" == "--all" ]]; then
   all=1
   notes=("$(cd "$(dirname "$2")" && pwd)/$(basename "$2")")
 fi
+root="$(cd "$(dirname "$0")/../../.." && pwd)"
+if [[ "${1:-}" == "--answers" ]]; then
+  answers=1
+  root="$(cd "${2:-$root}" && pwd)"
+fi
 
-cd "$(dirname "$0")/../../.."
+cd "$root"
 
 if (( ! all )); then
   for dir in Applications/*/; do
@@ -37,20 +48,36 @@ if (( ! all )); then
   done
 fi
 
-awk -v all="$all" '
+awk -v all="$all" -v answers="$answers" '
   function flush() { if (blk != "") { n++; file[n] = FILENAME; q[n] = blk } }
-  FNR == 1 { inq = 0; state = 0; blk = ""; inqs = 0; hstate = 0 }
-  state == 2 { if ($0 ~ /^```/ || $0 ~ /^!?\[\[/) flush(); state = 0; blk = "" }
+  function capture(question) { if (answers && $0 ~ /^```/) { cap = 1; cq = question; ans = "" } }
+  FNR == 1 { inq = 0; state = 0; blk = ""; inqs = 0; hstate = 0; cap = 0 }
+  cap {
+    if ($0 ~ /^```/) {
+      if (ans ~ /[^ \t\n]/) { m++; afile[m] = FILENAME; aq[m] = cq; aa[m] = ans }
+      cap = 0
+    } else ans = ans $0 "\n"
+    next
+  }
+  state == 2 { if ($0 ~ /^```/ || $0 ~ /^!?\[\[/) { flush(); capture(blk) } state = 0; blk = ""; if (cap) next }
   /^## / { inqs = ($0 == "## Questions") }
   inqs && /^### / { hq = "> " substr($0, 5) "\n"; hstate = 1; next }
   hstate {
-    if ($0 ~ /^```/ || $0 ~ /^!?\[\[/) { blk = hq; flush(); blk = ""; hstate = 0 }
+    if ($0 ~ /^```/ || $0 ~ /^!?\[\[/) { blk = hq; flush(); capture(hq); blk = ""; hstate = 0 }
     else if ($0 != "" && $0 != "#### Canonical Answer" && $0 !~ /^- [a-z_]+::( |$)/ && $0 !~ /^[ \t]+- /) hstate = 0
     next
   }
   /^>/ { if (!inq) blk = ""; blk = blk $0 "\n"; inq = 1; next }
   inq { inq = 0; state = ($0 == "") ? 2 : 0; if (state == 0) blk = ""; next }
   END {
+    if (answers) {
+      if (m == 0) exit 1
+      for (j = 1; j <= m; j++) {
+        path = afile[j]; sub(/\.md$/, "", path)
+        printf "%s%s\n%s```\n%s```\n", (j > 1 ? "\n" : ""), path, aq[j], aa[j]
+      }
+      exit
+    }
     if (n == 0) exit 1
     srand()
     i = all ? 1 : int(rand() * n) + 1

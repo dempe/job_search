@@ -143,5 +143,29 @@ class PickAllTest(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
 
+class PickAnswersTest(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = pathlib.Path(self.tmp.name)
+        for rel, text in [
+            ("Applications/Acme/Acme.md", APPLICATION + "\n> Unanswered?\n\n```\n  \n```\n"),
+            ("Applications/Acme/Interviews/2/2.md", INTERVIEW),
+        ]:
+            note = self.root / rel
+            note.parent.mkdir(parents=True, exist_ok=True)
+            note.write_text(text, encoding="utf-8")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_lists_every_answered_question_with_its_answer(self):
+        result = subprocess.run(["bash", str(PICK), "--answers", str(self.root)], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout, (
+            "Applications/Acme/Acme\n> Why us?\n```\nBecause.\n```\n\n"
+            "Applications/Acme/Interviews/2/2\n> What is Kafka?\n```\nA log.\n```\n"
+        ))
+
+
 if __name__ == "__main__":
     unittest.main()
