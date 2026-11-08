@@ -20,7 +20,7 @@ Use interview mode when the arguments are an application name followed by a numb
 ## Constraints
 
 - In item mode, the assistant MUST NOT create or modify any file. Callers decide where results go.
-- In interview mode, the assistant modifies only the target interview note, and only its `## Questions` section: the field bullets under each `###` question, and removing an old tally line (step 6). Question headings, model answers and their `![[…]]` embeds, `#### Practice` sections, and everything outside the section MUST stay byte-for-byte unchanged. It MUST NOT modify any transcript.
+- In interview mode, the assistant modifies only the target interview note, and only its `## Questions` section: the field bullets under each `###` question, and removing an old tally line (step 6). Question headings, model answers, `#### Practice` sections, and everything outside the section MUST stay byte-for-byte unchanged. It MUST NOT modify any transcript.
 - In item mode, the assistant MUST NOT commit anything. In interview mode, it commits only the interview note, in step 7. It MUST NOT push.
 
 ## Input (item mode)
@@ -39,7 +39,6 @@ If the caller names the note a question lives in, the reference answer is:
 
 - In an interview note's `## Questions` section, the fenced code block under the question's `#### Canonical Answer` subheading, which follows the `### {question}` heading's `- field::` bullets.
 - In an application note, the fenced code block after the question's `> ` blockquote.
-- If the question is followed by a `![[Note#Heading]]` embed instead of a code block (the answer was filed with `djmvanswers`), the code block in that `Answers/` section.
 
 If there's no reference answer, grade against the question alone, using correct technical knowledge.
 
@@ -126,7 +125,7 @@ Answer: "Um... Let's see. That's a huge increase. 1000 to a million." Then: depl
 2. **Get the transcript.** If `transcript-processed.md` doesn't exist beside the note, invoke the `djspeakers` skill with the Skill tool for `{Application} {n}` first; if it can't label the transcript, STOP with one line saying why. Read `transcript-processed.md` in full. `**Me:**` turns are the candidate's; every other label is an interviewer's.
 3. **Gather the items.** For each `###` question in `## Questions`, in order:
    - the question: the heading text
-   - the reference answer: the fenced block under the question's `#### Canonical Answer` subheading, or, if that subheading holds a `![[Note#Heading]]` embed, the code block in that `Answers/` section (see Finding the reference answer)
+   - the reference answer: the fenced block under the question's `#### Canonical Answer` subheading
    - the candidate's answer: the text of their `**Me:**` turns from where the interviewer asks that question until the interviewer moves on, including follow-up exchanges on the same point, copied exactly and joined with ` … `. If the question can't be found in the transcript, grade it as unanswered (`answered` fails, with the `answered` item explaining that the transcript has no answer to it).
 4. **Grade** each item by the Rubric, into the block shape in Output.
 5. **Write the results.** For each question, replace its existing field bullets (`grade`, `score`, `answer`, `missing` with its sub-bullets, `feedback`, and any other `- field::` bullets directly under the heading) with the new block, using Edit anchored on the question's heading. The new block sits between the heading's blank line and the `#### Canonical Answer` subheading. That subheading and its model answer, and the `#### Practice` section after it, and its sessions' bullets, MUST stay unchanged. A question with no bullets gets the block inserted under its heading, separated by one blank line on each side.

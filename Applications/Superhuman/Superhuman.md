@@ -21,4 +21,6 @@ date_modified: 2026-08-12 19:31
 
 > What are some of your personal interests/hobbies? We'd love to get to know more about yourself 😊
 
-![[Personal background and interests#Superhuman]]
+```
+I've got quite a few!  Some of the slightly more unique ones: salsa dancing and juggling (not in combination... yet).  I'm moderately proficient in Spanish and Japanese. I maintain a blog at https://chrisdempewolf.com.
+```

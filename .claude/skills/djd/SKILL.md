@@ -14,7 +14,7 @@ Follow the steps below in order.
 
 ## Constraints
 
-- The assistant MUST use only Claude Code's built-in tools (Read, Bash for read-only `ls`, and Skill). It MUST NOT write or run scripts.
+- The assistant MUST use only Claude Code's built-in tools (Read, Bash for read-only `ls` and `pick.sh --answers`, and Skill). It MUST NOT write scripts, and the only script it runs is `pick.sh --answers` (Step 2).
 - This skill MUST NOT create or modify any file. The only files created in the run are the application note and its saved JD, and `djapplication` creates them.
 - Every claim about the user's experience MUST be backed by the sources in Step 2. The assistant MUST NOT invent or inflate experience, and MUST NOT count a skill as a fit just because it is adjacent to one the user has.
 - The assessment MUST be candid. It MUST NOT flatter the user or soften real gaps.
@@ -34,13 +34,13 @@ Follow the steps below in order.
 Read all of these:
 
 - `../resume/resume.yaml`: the source of truth for jobs, dates, bullets, skills, projects, certifications, and education. Include every bullet, whatever its `resume-type`, including `resume-type: []`. Compute years of experience as the file's comments describe: current year − `career_start` − `career_gap_years`.
-- Every note in `Answers/`: the user's own accounts of projects, preferences, work style, and constraints. Pay particular attention to:
-  - `Work authorization and availability`: where the user works from, which matters for location and time-zone restrictions
-  - `Engineering values and deal-breakers`
-  - `Preferring backend engineering`, `Seeking engineering growth and meaningful work`, `Seeking mission-driven work`: what the user wants
-  - `Salary expectations`
+- The user's past answers to application and interview questions, from `bash .claude/skills/djq/pick.sh --answers`: their own accounts of projects, preferences, work style, and constraints. Each answer is printed after its note's path and its question. Pay particular attention to answers about:
+  - where the user works from, which matters for location and time-zone restrictions
+  - engineering values and deal-breakers
+  - preferring backend engineering, and seeking growth, ownership and mission-driven work: what the user wants
+  - salary expectations
 
-If `../resume/resume.yaml` is missing, continue with `Answers/` alone and say so in one line at the top of the assessment.
+If `../resume/resume.yaml` is missing, continue with the past answers alone and say so in one line at the top of the assessment.
 
 ## Step 3: Analyze
 

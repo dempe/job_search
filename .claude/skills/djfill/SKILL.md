@@ -44,7 +44,6 @@ Follow the steps below in order. A step that says STOP ends the run.
 For each question in the note (a `>` blockquote):
 
 - If a fenced code block follows it, the answer is that block's contents.
-- If an embed line follows it (e.g. `![[Why Company X#Coinbase]]`), read that note in `Answers/` and take the code block under the named `##` heading.
 - An empty code block means the question is unanswered. Record it for the report and move on.
 
 Answers MUST be entered verbatim. The assistant MUST NOT reword, shorten, or improve them on the way into the form.

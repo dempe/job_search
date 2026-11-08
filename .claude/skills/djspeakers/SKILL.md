@@ -31,7 +31,7 @@ For each transcript, read:
 - the interview note `{n}.md` beside it: its frontmatter (`company`, `interviewers`) and any prep notes
 - the whole `transcript.md`
 
-The user is Chris. Knowing his background (`_meta/profile.yaml`, `Answers/`) helps tell his answers from the interviewer's pitch about their company.
+The user is Chris. Knowing his background (`_meta/profile.yaml`, and `../resume/resume.yaml`) helps tell his answers from the interviewer's pitch about their company.
 
 ## Step 3: Choose the labels
 

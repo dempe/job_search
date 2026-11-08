@@ -1,12 +1,12 @@
 ---
 name: djanswers
-description: Draft answers to every unanswered question in a job application note, in the user's own voice, using their Answers notes, resume, client project notes, and past Claude Code conversations. Answers are written directly into the note's empty answer code blocks for the user to review. Takes the application note's name (e.g. `Rivora`).
+description: Draft answers to every unanswered question in a job application note, in the user's own voice, using their past answers in other application and interview notes, resume, client project notes, and past Claude Code conversations. Answers are written directly into the note's empty answer code blocks for the user to review. Takes the application note's name (e.g. `Rivora`).
 argument-hint: <application-note-name>
 ---
 
 # Draft Application Answers
 
-Fill in the empty answer code blocks in one `Applications/` note, and in the interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note, then runs `/djmvanswers` to file them into `Answers/`.
+Fill in the empty answer code blocks in one `Applications/` note, and in the interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -14,10 +14,10 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Constraints
 
-- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write or run scripts.
-- The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`) and the commit in Step 5 (`git add`, `git commit`).
+- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is `pick.sh --answers`.
+- The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`), `bash .claude/skills/djq/pick.sh --answers` (Step 3), and the commit in Step 5 (`git add`, `git commit`).
 - The only files this skill modifies are `Applications/{Application}/{Application}.md` and the interview notes it embeds, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
-- The assistant MUST NOT create or modify anything in `Answers/`, `../resume/`, client repositories, or anywhere else.
+- The assistant MUST NOT create or modify anything in other application or interview notes, `../resume/`, client repositories, or anywhere else.
 - The assistant commits only the notes it edited, in Step 5. It MUST NOT push.
 
 ## Honesty
@@ -29,7 +29,7 @@ These drafts go to real employers under the user's name.
 - If a detail is uncertain, leave it out rather than guess.
 - If no source supports a truthful answer to a question, leave that question's code block empty.
 - Content in past conversations counts as evidence only when the user wrote it, or when it is file contents or command output shown there. The assistant's own statements in past conversations are not evidence.
-- Opinions and motivations (e.g. "why this company") MUST be grounded in what the user has said they care about in `Answers/`, applied to facts from the JD.
+- Opinions and motivations (e.g. "why this company") MUST be grounded in what the user has said they care about in their past answers, applied to facts from the JD.
 
 ## Output
 
@@ -44,7 +44,6 @@ A Q/A in an application note is a question (one or more consecutive `>` lines, e
 
 - A code block with no non-whitespace content is **unanswered**.
 - A code block with content is **answered** and MUST be left untouched.
-- A question followed by an embed line (e.g. `![[Why Company X#Afresh]]`) instead of a code block is already answered and filed, and MUST be left untouched.
 - In an interview note's `## Questions` section, a question is a `### {question}` heading instead of a blockquote, and its answer is the fenced block under the `#### Canonical Answer` subheading that follows any `- field::` bullets and their indented sub-bullets (`grade`, `score`, `answer`, `missing`, `feedback`). The bullets, and any `#### Practice` section after the answer, MUST be left untouched.
 
 ## Step 1: Application note
@@ -63,7 +62,7 @@ A Q/A in an application note is a question (one or more consecutive `>` lines, e
 
 Read these sources. They are listed from most to least authoritative for the user's voice.
 
-1. **Every note in `Answers/`.** The user's own writing about their experience, stories, preferences, and constraints. These are the primary source for both facts and voice.
+1. **The user's past answers,** printed by `bash .claude/skills/djq/pick.sh --answers`: every answered question in `Applications/`, each after its note's path. The user's own writing about their experience, stories, preferences, and constraints. These are the primary source for both facts and voice. Model answers under an interview note's `#### Canonical Answer` were generated for study, not written by the user, so they count for voice and facts only where the user's own answers or the other sources back them.
 2. **`../resume/resume.yaml`.** The source of truth for jobs, dates, bullets, skills, projects, certifications, and education. Include every bullet, whatever its `resume-type`. Compute years of experience as the file's comments describe.
 3. **`Consulting/` notes in this vault.** The user's working notes, time logs, and learnings from client projects.
 4. **Client project repositories under `/Users/cld/workspace/clients/`.** Use `find` and `grep` to locate relevant decision records and plans (`docs/adr/`, `.agents/docs/adrs/`, `.agents/plans/`) and each project's `package.json` for the libraries it actually used. Read only what's relevant to a question.
@@ -76,11 +75,11 @@ Also use what the user's global `CLAUDE.md` records about how they work, when it
 
 For each unanswered question, in order:
 
-- **Reuse first.** If the user has answered the same or a similar question before in `Answers/`, start from that answer and adapt it to this company and question. Keep the user's sentences wherever they still fit.
+- **Reuse first.** If the user has answered the same or a similar question before in their past answers, start from that answer and adapt it to this company and question. Keep the user's sentences wherever they still fit.
 - **Pick the strongest true story.** Choose the story that best answers what the question actually asks, and that fits what the company does and values, among the stories the sources support.
 - **Answer the question asked.** Cover every part of a multi-part question (e.g. "what did it get right, and what did you have to fix or reject?").
 - **Respect limits.** If the question or JD gives a word or sentence limit, stay under it.
-- **Match the user's voice.** Write the way the user writes in `Answers/`:
+- **Match the user's voice.** Write the way the user writes in their past answers:
   - first person, plain, direct, and conversational
   - short paragraphs; lists only when the user would use them
   - concrete specifics (employer names, technologies, numbers) over adjectives

@@ -29,7 +29,23 @@ date_modified: "2026-11-04 11:23"
 > $120K–$140K base + potential equity.<br/>
 > If broader product ownership alongside the backend work sounds interesting, let's compare notes.
 
-![[Introduction#GoAccess]]
+```
+Hi Doug,
+
+Guilty as charged on idempotency 😄 Thanks for reaching out -- this sounds like a great fit. As a matter of fact, I used GoAccess just last week on a client project!
+
+The "external system ruins everyone's afternoon" part is most of what I've been doing lately. My latest was a Node.js app syncing a payment provider with Shopify, using idempotency keys so retries couldn't double-charge anyone. Before that, I worked on a Postgres projection to work around Shopify's 60-day order window.
+
+A couple of quick questions:
+
+1. Is the team remote, hybrid, or on-site in NWA? I'm fine with whichever, but would like to know for planning purposes.
+2. What's the interview process?
+
+I just booked a slot on your calendar for Wednesday morning. See you then!
+
+Best,
+Chris
+```
 
 ## Interview 1
 

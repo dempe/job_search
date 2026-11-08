@@ -41,12 +41,22 @@ Chris
 
 > If you have any Google certifications, please include a link to your credential verification page (unique credential URL).*
 
-![[Cloud certifications#Openly]]
+```
+No GCP certs, but I do have an AWS Developer Associate cert from Dec 2024
+```
 
 > Please briefly describe your experience with API management:*
 
-![[Building DataRank social API ingestion#Openly]]
+```
+At DataRank, I set up a distributed API manager to spin up generic API consumers for various social media APIs. It had a generic token pool, throttling, and SDK methods for consuming data.
+
+At SimplyMeasured and SproutSocial, I was on the producer side of APIs, where I built APIs in Go and SpringBoot for various microservices. I also setup and maintained the API gateway to our backend, so consumers could have a unified interface to our various microservices.
+```
 
 > How have you performed in a fully remote/distributed organization? What do you like or dislike about remote work? *
 
-![[Working remotely across time zones#Openly]]
+```
+I've now worked in two fully remote roles. The things that I like most about remote work are 1) not wasting time on commutes -- I can get right to work in the morning, and 2) there's way fewer distractions when working from my home office. I feel like I can get more done.
+
+That being said, I do enjoy the camaraderie of an office, but I don't think that outweighs the benefits of the increased focus and time of working from home.
+```

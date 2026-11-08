@@ -21,4 +21,14 @@ date_modified: "2026-10-15 18:02"
 
 > Please feel free to use this space to share anything else you'd like us to know.
 
-![[Personal background and interests#GrowthLoop]]
+```
+I'm based in the US (Arkansas, Central Time) and work fully remote. I occasionally post tech-related articles on my blog here: https://chrisdempewolf.com/
+```
+
+EDIT:
+
+I should have also added something about what I'm looking for:
+
+```
+I'm based in the US (Arkansas, Central Time) and work fully remote. I occasionally post tech-related articles on my blog here: https://chrisdempewolf.com/. I'm currently working as a contractor, but looking to re-join a team where I can have more collaboration and ownership. In the future I hope to take on more leadership responsibilities.
+```

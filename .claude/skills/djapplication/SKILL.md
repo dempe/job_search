@@ -22,7 +22,6 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only file listing commands (`ls`, `test -e`), the JD copy in Step 11 (`mkdir -p`, `cp -n`), and the commit in Step 11 (`git add`, `git commit`).
 - The only files this skill creates are the new application's folder, its note, and its saved JD (`jd.md`). The assistant MUST NOT rename, modify, or overwrite any existing folder, note, or saved JD.
 - This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
-- The assistant MUST NOT create or modify anything in `Answers/`.
 - The assistant commits only the files it created, in Step 11. It MUST NOT push.
 
 ## Output

@@ -36,7 +36,9 @@ Some prose.
 > Tell us about a project.<br/>
 > Keep it short.
 
-![[Answers note#Acme]]
+```
+A project.
+```
 """
 
 INTERVIEW = """---
@@ -85,7 +87,9 @@ A log.
 
 #### Canonical Answer
 
-![[Returning#Acme]]
+```
+To grow.
+```
 
 ## Retrospective
 
@@ -163,7 +167,9 @@ class PickAnswersTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout, (
             "Applications/Acme/Acme\n> Why us?\n```\nBecause.\n```\n\n"
-            "Applications/Acme/Interviews/2/2\n> What is Kafka?\n```\nA log.\n```\n"
+            "Applications/Acme/Acme\n> Tell us about a project.<br/>\n> Keep it short.\n```\nA project.\n```\n\n"
+            "Applications/Acme/Interviews/2/2\n> What is Kafka?\n```\nA log.\n```\n\n"
+            "Applications/Acme/Interviews/2/2\n> Why leave?\n```\nTo grow.\n```\n"
         ))
 
 
