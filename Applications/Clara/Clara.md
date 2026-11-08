@@ -25,7 +25,9 @@ date_created: "2026-02-01 13:30"
 date_modified: "2026-10-21 18:04"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Hiring manager (he's an engineer! I checked on LI) sent the following:
 

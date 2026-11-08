@@ -23,6 +23,8 @@ date_modified: 2025-05-31 13:29
 source: linkedin
 ---
 
-## Application
+## Questions
+
+## Notes
 
 I really don't wanna work in ads, so I'm not gonna worry about the optional cover letter.

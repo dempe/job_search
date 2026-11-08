@@ -23,6 +23,8 @@ date_modified: 2025-11-18 16:01
 source: simplyhired
 ---
 
-## Application
+## Questions
+
+## Notes
 
 I don't know if the company was called "Deplyr Corp." or "Good Taco", but w/e. Nothing special to the application process, and no hope of hearing anything back.

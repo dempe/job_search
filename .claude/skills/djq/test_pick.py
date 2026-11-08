@@ -1,4 +1,4 @@
-"""Tests for pick.sh --all. Run: python3 -I .claude/skills/djq/test_pick.py"""
+"""Tests for pick.sh --all and --answers. Run: python3 -I .claude/skills/djq/test_pick.py"""
 
 import pathlib
 import subprocess
@@ -11,13 +11,13 @@ APPLICATION = """---
 type: job
 ---
 
-## Application
+## Questions
 
-> Why us?
+### Why us?
 
-```
 Because.
-```
+
+It's a good fit.
 
 #### Practice
 
@@ -29,16 +29,24 @@ Because.
 - answer:: "Because."
 - feedback:: Fine.
 
+### Tell us about a project. Keep it short.
+
+- Built a crawler
+- Built a pipeline
+
+### Unanswered?
+
+## Notes
+
 > Quoted email, not a question.
+
+### Cover letter draft
 
 Some prose.
 
-> Tell us about a project.<br/>
-> Keep it short.
+## Rejection
 
-```
-A project.
-```
+No thanks.
 """
 
 INTERVIEW = """---
@@ -59,9 +67,7 @@ type: interview
 
 #### Canonical Answer
 
-```
 A log.
-```
 
 #### Practice
 
@@ -75,21 +81,11 @@ A log.
   - **specifics:** no detail
 - feedback:: Say more.
 
-##### 2
-
-- date:: 2026-11-08 09:00:00
-- grade:: pass
-- score:: 10
-- answer:: "A distributed, partitioned log."
-- feedback:: Good.
-
 ### Why leave?
 
 #### Canonical Answer
 
-```
 To grow.
-```
 
 ## Retrospective
 
@@ -99,7 +95,7 @@ To grow.
 """
 
 
-class PickAllTest(unittest.TestCase):
+class PickTest(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = pathlib.Path(self.tmp.name)
@@ -107,69 +103,55 @@ class PickAllTest(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
-    def run_all(self, rel, text):
+    def write(self, rel, text):
         note = self.root / rel
-        note.parent.mkdir(parents=True)
+        note.parent.mkdir(parents=True, exist_ok=True)
         note.write_text(text, encoding="utf-8")
-        result = subprocess.run(["bash", str(PICK), "--all", str(note)], capture_output=True, text=True)
+        return note
+
+    def run_pick(self, *args):
+        result = subprocess.run(["bash", str(PICK), *map(str, args)], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
         return result.stdout
 
     def test_lists_every_application_question_in_order(self):
-        out = self.run_all("Applications/Acme/Acme.md", APPLICATION)
-        self.assertEqual(out, (
+        note = self.write("Applications/Acme/Acme.md", APPLICATION)
+        self.assertEqual(self.run_pick("--all", note), (
             "Acme\nApplications/Acme/Acme\n"
             "> Why us?\n\n"
-            "> Tell us about a project.<br/>\n> Keep it short.\n"
+            "> Tell us about a project. Keep it short.\n\n"
+            "> Unanswered?\n"
         ))
 
     def test_lists_every_interview_question_in_order(self):
-        out = self.run_all("Applications/Acme/Interviews/2/2.md", INTERVIEW)
-        self.assertEqual(out, (
+        note = self.write("Applications/Acme/Interviews/2/2.md", INTERVIEW)
+        self.assertEqual(self.run_pick("--all", note), (
             "Acme - Interview 2\nApplications/Acme/Interviews/2/2\n"
             "> What is Kafka?\n\n"
             "> Why leave?\n"
         ))
 
     def test_lists_more_questions_than_the_interview_number(self):
-        out = self.run_all("Applications/Acme/Interviews/1/1.md", INTERVIEW.replace("Interviews/2", "Interviews/1"))
-        self.assertEqual(out, (
+        note = self.write("Applications/Acme/Interviews/1/1.md", INTERVIEW.replace("Interviews/2", "Interviews/1"))
+        self.assertEqual(self.run_pick("--all", note), (
             "Acme - Interview 1\nApplications/Acme/Interviews/1/1\n"
             "> What is Kafka?\n\n"
             "> Why leave?\n"
         ))
 
     def test_note_without_questions_exits_non_zero(self):
-        note = self.root / "Applications/Acme/Acme.md"
-        note.parent.mkdir(parents=True)
-        note.write_text("---\ntype: job\n---\n\n## Application\n", encoding="utf-8")
+        note = self.write("Applications/Acme/Acme.md", "---\ntype: job\n---\n\n## Notes\n\n### Not a question\n")
         result = subprocess.run(["bash", str(PICK), "--all", str(note)], capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
 
-
-class PickAnswersTest(unittest.TestCase):
-    def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
-        self.root = pathlib.Path(self.tmp.name)
-        for rel, text in [
-            ("Applications/Acme/Acme.md", APPLICATION + "\n> Unanswered?\n\n```\n  \n```\n"),
-            ("Applications/Acme/Interviews/2/2.md", INTERVIEW),
-        ]:
-            note = self.root / rel
-            note.parent.mkdir(parents=True, exist_ok=True)
-            note.write_text(text, encoding="utf-8")
-
-    def tearDown(self):
-        self.tmp.cleanup()
-
     def test_lists_every_answered_question_with_its_answer(self):
-        result = subprocess.run(["bash", str(PICK), "--answers", str(self.root)], capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(result.stdout, (
-            "Applications/Acme/Acme\n> Why us?\n```\nBecause.\n```\n\n"
-            "Applications/Acme/Acme\n> Tell us about a project.<br/>\n> Keep it short.\n```\nA project.\n```\n\n"
-            "Applications/Acme/Interviews/2/2\n> What is Kafka?\n```\nA log.\n```\n\n"
-            "Applications/Acme/Interviews/2/2\n> Why leave?\n```\nTo grow.\n```\n"
+        self.write("Applications/Acme/Acme.md", APPLICATION)
+        self.write("Applications/Acme/Interviews/2/2.md", INTERVIEW)
+        self.assertEqual(self.run_pick("--answers", self.root), (
+            "## Applications/Acme/Acme\n### Why us?\n\nBecause.\n\nIt's a good fit.\n\n"
+            "## Applications/Acme/Acme\n### Tell us about a project. Keep it short.\n\n- Built a crawler\n- Built a pipeline\n\n"
+            "## Applications/Acme/Interviews/2/2\n### What is Kafka?\n\nA log.\n\n"
+            "## Applications/Acme/Interviews/2/2\n### Why leave?\n\nTo grow.\n"
         ))
 
 

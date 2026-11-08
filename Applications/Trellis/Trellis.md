@@ -16,7 +16,17 @@ date_created: 2026-06-11 10:42
 date_modified: 2026-06-11 10:44
 ---
 
-## Application
+## Questions
+
+### If you could refactor or redesign one system or app you've used, what would it be and why?
+
+### If you could take any roadtrip, where would you be going? Why?
+
+Assuming I can start my road trip from anywhere, the French Riviera is tempting, but I think I'm gonna go with Japan. Japan has the most extensive train network in the world, but even so, there are a lot of rural communities that are only accessible by car. I spent some time in rural Japan many years ago, and I'd love to go back.
+
+Since I haven't explored northeastern Japan much, I'd start at Tokyo and go up towards Hokkaido.
+
+## Notes
 
 Cover letter
 
@@ -35,18 +45,4 @@ As mentioned, I'm running my own company, but I'm looking to return to a team. I
 
 Best,
 Chris
-```
-
-> If you could refactor or redesign one system or app you've used, what would it be and why?
-
-```
-
-```
-
-> If you could take any roadtrip, where would you be going? Why?
-
-```
-Assuming I can start my road trip from anywhere, the French Riviera is tempting, but I think I'm gonna go with Japan. Japan has the most extensive train network in the world, but even so, there are a lot of rural communities that are only accessible by car. I spent some time in rural Japan many years ago, and I'd love to go back.
-
-Since I haven't explored northeastern Japan much, I'd start at Tokyo and go up towards Hokkaido.
 ```

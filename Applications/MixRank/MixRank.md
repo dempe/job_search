@@ -23,11 +23,10 @@ date_created: "2025-11-27 12:39"
 date_modified: "2025-11-28 10:23"
 ---
 
-## Application
+## Questions
 
-> Please include your updated resume when applying for this role.
+### Please include your updated resume when applying for this role.
 
-```
 Hi Kiran,
 
 I'm Chris, a backend engineer with 9 YOE. I've worked with Python, PostgreSQL, Linux, and TypeScript, and love working on challenging technical problems at scale.
@@ -40,4 +39,3 @@ Would you have time for a quick chat?
 
 Best,
 Chris
-```

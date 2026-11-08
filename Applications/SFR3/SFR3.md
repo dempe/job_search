@@ -21,11 +21,7 @@ date_modified: "2025-05-31 13:30"
 
 No idea WTF the position title means — "Backend Engineer (10X)".
 
-## Application
-
-### Education - SILC
-
-This was a month-long, intensive program to earn a TEFL certificate. It was for learning to teach a foreign language, but I gained applicable knowledge in psychology, learning, and effective teaching strategies.
+## Questions
 
 ### Cover Letter
 
@@ -41,3 +37,9 @@ Thank you for considering my application! I am thrilled at the possibility of br
 
 Best regards,<br/>
 Chris Dempewolf
+
+## Notes
+
+### Education - SILC
+
+This was a month-long, intensive program to earn a TEFL certificate. It was for learning to teach a foreign language, but I gained applicable knowledge in psychology, learning, and effective teaching strategies.

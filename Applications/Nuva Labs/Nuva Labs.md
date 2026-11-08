@@ -25,8 +25,9 @@ date_modified: 2025-05-31 13:29
 
 They didn't list any compensation.  That's a red flag, but YOLO.
 
-## Application
+## Questions
 
+## Notes
 
 ```
 Hello,

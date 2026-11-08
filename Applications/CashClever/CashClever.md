@@ -17,10 +17,11 @@ date_created: 2026-08-12 18:19
 date_modified: 2026-08-12 18:52
 ---
 
-## Application
+## Questions
+
+## Notes
 
 I hit the "apply" button thinking it would take me to an application screen. Instead, it sent an empty message with no way back. Luckily, the job listing mentioned the hiring manager directly. I found him on LinkedIn, so I'll send him a message there. This JD, in particular, lines up really well with my experience, particularly in Kafka.
-
 
 ```
 Hi Louis,

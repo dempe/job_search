@@ -23,7 +23,9 @@ date_created: 2026-04-10 15:18
 date_modified: 2026-04-10 15:18
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi Jack,

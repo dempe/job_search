@@ -19,17 +19,10 @@ date_created: "2026-10-26 18:37"
 date_modified: "2026-11-04 11:23"
 ---
 
-## Application
+## Questions
 
-> Idempotency nerds welcome 😈<br/>
-> Hey Chris,<br/>
-> Your current Node/Postgres integration work, combined with the deeper Kafka, SQS/SNS, idempotency, retries, and distributed-data experience behind it, looked almost suspiciously relevant to what I'm searching for.<br/>
-> I'm helping GoAccess hire a Senior Full Stack Engineer for a small NWA team building operational software around physical access systems.<br/>
-> Their stack is TypeScript/Node, React, PostgreSQL and GCP, but some of the harder problems involve integrations, asynchronous processing, data reliability, and figuring out what went wrong when an external system decides to ruin everyone's afternoon.<br/>
-> $120K–$140K base + potential equity.<br/>
-> If broader product ownership alongside the backend work sounds interesting, let's compare notes.
+### Idempotency nerds welcome 😈 Hey Chris, Your current Node/Postgres integration work, combined with the deeper Kafka, SQS/SNS, idempotency, retries, and distributed-data experience behind it, looked almost suspiciously relevant to what I'm searching for. I'm helping GoAccess hire a Senior Full Stack Engineer for a small NWA team building operational software around physical access systems. Their stack is TypeScript/Node, React, PostgreSQL and GCP, but some of the harder problems involve integrations, asynchronous processing, data reliability, and figuring out what went wrong when an external system decides to ruin everyone's afternoon. $120K–$140K base + potential equity. If broader product ownership alongside the backend work sounds interesting, let's compare notes.
 
-```
 Hi Doug,
 
 Guilty as charged on idempotency 😄 Thanks for reaching out -- this sounds like a great fit. As a matter of fact, I used GoAccess just last week on a client project!
@@ -45,4 +38,3 @@ I just booked a slot on your calendar for Wednesday morning. See you then!
 
 Best,
 Chris
-```

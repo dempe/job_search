@@ -23,7 +23,9 @@ date_created: 2025-11-26 16:03
 date_modified: 2025-11-26 16:14
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi Eric,

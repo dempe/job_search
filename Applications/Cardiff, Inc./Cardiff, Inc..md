@@ -17,7 +17,9 @@ date_created: 2026-08-06 13:06
 date_modified: 2026-08-06 13:07
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 I'm drawn to Cardiff's AI-first approach.  That's also how I building software these days, and I think that any company not explicitly integrating AI into their tooling ecosystem is setting themselves up for failure.  That being said, using AI properly is a skill, and I have strong opinions about that as my methodology continues to evolve.

@@ -16,11 +16,10 @@ date_created: "2026-06-05 14:12"
 date_modified: "2026-06-15 11:49"
 ---
 
-## Application
+## Questions
 
-> Cover Letter
+### Cover Letter
 
-```
 Hello,
 
 I'm Chris, a backend engineer with 10 years of experience specializing in distributed systems and event-driven architecture.
@@ -33,4 +32,3 @@ I'm currently running Dempewolf LLC doing AWS contracting work, where I'm buildi
 
 Best,
 Chris
-```

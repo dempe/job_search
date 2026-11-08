@@ -17,7 +17,9 @@ date_created: 2026-08-10 16:40
 date_modified: 2026-08-10 16:49
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 August 10, 2026

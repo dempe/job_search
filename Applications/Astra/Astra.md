@@ -16,7 +16,9 @@ date_created: 2026-06-08 10:26
 date_modified: 2026-06-08 10:27
 ---
 
-## Application
+## Questions
+
+## Notes
 
 No compensation listed. They just asked for my LI profile and work authorization/visa status. A bit shady.
 

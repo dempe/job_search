@@ -17,5 +17,4 @@ date_created: 2026-08-12 19:33
 date_modified: 2026-08-12 19:34
 ---
 
-## Application
-
+## Questions

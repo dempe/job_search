@@ -16,7 +16,9 @@ date_created: 2026-07-06 10:22
 date_modified: 2026-07-16 17:06
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Applied directly via email:
 

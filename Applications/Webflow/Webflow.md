@@ -23,7 +23,9 @@ date_modified: 2025-11-18 15:52
 source: linkedin
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hello,

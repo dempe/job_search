@@ -23,6 +23,8 @@ date_modified: 2025-11-17 16:13
 source: workatastartup
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Rohan from Keye reached out to me to schedule a call.

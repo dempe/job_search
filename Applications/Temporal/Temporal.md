@@ -21,7 +21,9 @@ date_created: 2024-07-01 17:41
 date_modified: 2025-05-31 13:30
 ---
 
-## Application
+## Questions
+
+## Notes
 
 - I like the qualitative job description without focus on specific technologies. It's a sign of maturity, and you'd be surprised how often companies post requirements that candidates have X amount of experience in technology Y.
 - Temporal is a place

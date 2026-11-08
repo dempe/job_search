@@ -23,7 +23,9 @@ date_created: 2025-12-01 16:52
 date_modified: 2025-12-01 16:53
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi Azriel,

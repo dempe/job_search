@@ -18,14 +18,10 @@ date_created: "2026-10-26 16:57"
 date_modified: "2026-10-26 17:44"
 ---
 
-## Application
+## Questions
 
-> In the "What interests you about working for this company?" box, please describe an AI agent system you've built that runs in production — see the last section below for details.<br/>
-> Please include with your application<br/>
-> Describe an agent system you've built that runs in production. What does each agent do, and how do they coordinate? How is memory and context stored, and how is it shared between agents and between people? What would you change if you built it again? Links, demos, or diagrams are welcome.<br/>
-> What interests you about working for this company?
+### In the "What interests you about working for this company?" box, please describe an AI agent system you've built that runs in production — see the last section below for details. Please include with your application Describe an agent system you've built that runs in production. What does each agent do, and how do they coordinate? How is memory and context stored, and how is it shared between agents and between people? What would you change if you built it again? Links, demos, or diagrams are welcome. What interests you about working for this company?
 
-```
 To be upfront: my agent system is a development workflow with me in the loop, not an unattended business operation. But I use it to ship real client work.
 
 It's a chain of agent-agnostic skills: scope -> plan -> implement -> review.
@@ -40,4 +36,3 @@ Coordination happens through files, allowing one agent to pick up where another 
 I've used this workflow to build all kinds of client projects. The one I'm most proud of was a payment provider integration that needed to sync order status between Shopify and the new payment provider. It's a Node app that runs on Heroku, including idempotency keys to prevent duplicate payments.
 
 What I'd change: rules in prose only hold as well as the model follows them, so I'd move more of the deterministic parts into code from the start. This would work well with my TDD setup already in place.
-```

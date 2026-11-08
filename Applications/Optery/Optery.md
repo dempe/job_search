@@ -23,7 +23,9 @@ date_modified: 2025-11-17 13:17
 source: workatastartup
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hello Afshan,

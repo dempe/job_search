@@ -23,7 +23,9 @@ date_modified: 2025-11-03 16:09
 source: workatastartup
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hello Abhilash,

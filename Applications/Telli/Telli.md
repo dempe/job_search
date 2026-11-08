@@ -22,7 +22,9 @@ date_created: 2025-11-13 11:19
 date_modified: 2025-11-13 11:22
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Was posted to HN. Thought I'd apply, bc why not?
 

@@ -22,7 +22,9 @@ date_created: "2024-05-15 09:41"
 date_modified: "2025-11-26 20:04"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Contract position for "1 to 2 months". US residence required based on their grant requirements.
 

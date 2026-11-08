@@ -24,6 +24,8 @@ date_created: "2026-10-13 12:09"
 date_modified: "2026-10-21 18:10"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Nothing to see here. Standard application without any option for customization. They're going to check my resume and portfolio. If I match, they'll set up a interview with an AI. Great.

@@ -23,6 +23,8 @@ date_modified: 2025-05-31 13:29
 source: simplyhired
 ---
 
-## Application
+## Questions
+
+## Notes
 
 "Quick apply"

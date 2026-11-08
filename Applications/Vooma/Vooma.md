@@ -24,7 +24,9 @@ date_created: "2025-11-14 21:20"
 date_modified: "2025-11-20 19:06"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Mike from Vooma reached out to me on work at a startup. WIll have a call with him next week. Position is on-site, but we'll see what can be done.
 

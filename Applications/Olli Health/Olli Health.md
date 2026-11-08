@@ -23,11 +23,10 @@ date_modified: 2025-05-31 13:29
 source: workatastartup
 ---
 
-## Application
+## Questions
 
-> To apply send cover letter and resume to hiring@ollihomehealth.ai
+### To apply send cover letter and resume to hiring@ollihomehealth.ai
 
-```
 October 30, 2025
 
 
@@ -49,7 +48,8 @@ Thanks for reading.
 
 Best,
 Chris Dempewolf
-```
+
+## Notes
 
 Man, I really like this cover letter.  Need to send it to other companies.
 

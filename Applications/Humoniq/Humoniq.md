@@ -23,7 +23,9 @@ date_modified: 2025-11-18 12:01
 source: workatastartup
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hello Farzad,

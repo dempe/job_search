@@ -23,11 +23,10 @@ date_created: 2025-11-27 12:06
 date_modified: 2025-11-27 12:06
 ---
 
-## Application
+## Questions
 
->  Skip the cover letter. Send us something that shows you can build great products (a link, repo, demo, etc.). Recruiters: please do not reach out.
+### Skip the cover letter. Send us something that shows you can build great products (a link, repo, demo, etc.). Recruiters: please do not reach out.
 
-```
 Hi Vivek,
 
 I'm Chris. I'm a fullstack engineer with 9 YOE. I've done extensive work in Typescript, Python, and AWS. Here are a few of my projects:
@@ -46,4 +45,3 @@ Looking forward to hearing from you. Happy Thanksgiving!
 
 Best,
 Chris
-```

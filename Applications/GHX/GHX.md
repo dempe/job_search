@@ -19,11 +19,10 @@ date_created: "2023-08-03 12:37"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
 
-> Please describe your background and how it relates to this role.
+### Please describe your background and how it relates to this role.
 
-```
 Hello!
 
 I'm Chris.  I have 6 YOE as a backend software engineer.  In the listing, you mention Java, Spring Framework, AWS, MySql, MongoDB, and ElasticSearch.  I have worked in data ingestion throughout most of my career and have worked with all of these technologies, particularly Java, Spring, AWS, and ES.  For example, most recently, I built a real-time data processing queue using Kafka and Java to import data from a data warehouse to ElasticSearch.
@@ -33,7 +32,8 @@ Also mentioned in the listing, "maintaining and improving continuous integration
 If you curious to learn more about me, I recently wrote by own blog from scratch.  You can see my tech-related posts here: https://chrisdempewolf.com/tags/tech.html
 
 Thanks for reading and have a great day!
-```
+
+## Notes
 
 Along with a bunch of other silly questions w/ drop-downs.
 

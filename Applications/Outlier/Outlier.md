@@ -23,7 +23,9 @@ date_created: 2026-03-24 15:30
 date_modified: 2026-03-24 15:32
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Based on the data in the job listing, this is the strongest fit I've ever seen!
 

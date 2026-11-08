@@ -16,7 +16,9 @@ date_created: "2026-10-13 12:09"
 date_modified: "2026-10-22 15:44"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hello,

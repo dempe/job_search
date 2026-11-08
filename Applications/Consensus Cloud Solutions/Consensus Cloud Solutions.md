@@ -17,11 +17,10 @@ date_created: 2026-09-26 18:03
 date_modified: 2026-09-26 18:23
 ---
 
-## Application
+## Questions
 
-> Cover Letter
+### Cover Letter
 
-```
 Hello,
 
 I'm Chris, a backend engineer with 11 YOE, specialized in data ingestion, distributed systems, and cloud architecture.
@@ -38,4 +37,3 @@ Thanks for reading!
 
 Best,
 Chris
-```

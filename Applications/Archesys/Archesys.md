@@ -16,7 +16,9 @@ date_created: "2026-07-16 23:59"
 date_modified: "2026-07-17 14:07"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 This was the first Wellfound job that I've applied to that was just an "auto-apply" — like, answer-two-checkbox-questions-and-you've-applied type-a-thing.
 

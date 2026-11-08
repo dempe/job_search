@@ -23,11 +23,10 @@ date_modified: 2025-05-31 13:29
 source: workatastartup
 ---
 
-## Application
+## Questions
 
->  Start a conversation with the team at Ploomber. Share something about you, what you're looking for, or why Ploomber interests you.
+### Start a conversation with the team at Ploomber. Share something about you, what you're looking for, or why Ploomber interests you.
 
-```
 Hi!
 
 I'm Chris Dempewolf, founder of Dempewolf Apps, building educational mobile apps (https://dempewolfapps.com).
@@ -40,4 +39,3 @@ If you've got a minute, let's chat!
 
 Thanks,
 Chris Dempewolf
-```

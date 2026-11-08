@@ -16,7 +16,9 @@ date_created: 2026-07-16 20:29
 date_modified: 2026-07-16 20:43
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Just sent cover letter.
 

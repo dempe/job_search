@@ -16,7 +16,9 @@ date_created: 2026-06-18 16:01
 date_modified: 2026-06-18 16:34
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Correspondence will be via email, since in the original HN posting, the HM said applicants could email him directly.
 

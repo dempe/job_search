@@ -23,7 +23,37 @@ date_created: "2025-11-26 16:51"
 date_modified: "2025-11-27 10:55"
 ---
 
-## Application
+## Questions
+
+### BS or MS degree in a STEM major or equivalent job experience required*
+
+I have a BS in Computer Science from the University of Arkansas
+
+### 4+ years experience in software development and writing very high quality code that is robust and easy to maintain*
+
+I have 9 years of experience in software development. I write clean, modular code with comprehensive testing and prioritize maintainability for long-term scalability.
+
+### Knowledge on how to build large scalable systems*
+
+I have built real-time, event-driven systems from the ground up, including a Kafka-based ETL pipeline that scaled from weekly batch jobs to real-time processing.
+
+### Strong experience with Backend technologies such as C++, Go & Javascript. *
+
+I have extensive experience with Java, Spring Boot, Python, and JavaScript/TypeScript. I have some professional Go experience from a previous role and academic C++ experience. I'm comfortable working across multiple languages and picking up new tech stacks quickly.
+
+### Knowledge and experience in identifying and solving issues with intricate, live software systems, as well as in-depth familiarity with contemporary software development processes such as continuous integration and continuous deployment.*
+
+I always use structured logging with correlation IDs and robust monitoring to trace and debug issues. I use CICD and rollbacks for everything.
+
+### What are your annual salary expectations? ($ USD)*
+
+100,000 - 150,000
+
+### Optional: Please add anything else you would like to highlight about yourself
+
+I'm currently running my own company, Dempewolf Apps, shipping React Native/TypeScript apps end-to-end on AWS serverless. I'm looking to return to a team environment where I can 1) collaborate with other engineers, 2) focus on building scalable systems, and 3) tackle challenging technical problems. The work you're doing at Grass--building large-scale distributed systems--is exactly what I'm looking for in my next role.
+
+## Notes
 
 ```
 Hello,
@@ -36,46 +66,4 @@ Would love to learn more about the company and position!
 
 Best,
 Chris
-```
-
-> BS or MS degree in a STEM major or equivalent job experience required*
-
-```
-I have a BS in Computer Science from the University of Arkansas
-```
-
-> 4+ years experience in software development and writing very high quality code that is robust and easy to maintain*
-
-```
-I have 9 years of experience in software development. I write clean, modular code with comprehensive testing and prioritize maintainability for long-term scalability.
-```
-
-> Knowledge on how to build large scalable systems*
-
-```
-I have built real-time, event-driven systems from the ground up, including a Kafka-based ETL pipeline that scaled from weekly batch jobs to real-time processing.
-```
-
-> Strong experience with Backend technologies such as C++, Go & Javascript. *
-
-```
-I have extensive experience with Java, Spring Boot, Python, and JavaScript/TypeScript. I have some professional Go experience from a previous role and academic C++ experience. I'm comfortable working across multiple languages and picking up new tech stacks quickly.
-```
-
-> Knowledge and experience in identifying and solving issues with intricate, live software systems, as well as in-depth familiarity with contemporary software development processes such as continuous integration and continuous deployment.*
-
-```
-I always use structured logging with correlation IDs and robust monitoring to trace and debug issues. I use CICD and rollbacks for everything.
-```
-
-> What are your annual salary expectations? ($ USD)*
-
-```
-100,000 - 150,000
-```
-
-> Optional: Please add anything else you would like to highlight about yourself
-
-```
-I'm currently running my own company, Dempewolf Apps, shipping React Native/TypeScript apps end-to-end on AWS serverless. I'm looking to return to a team environment where I can 1) collaborate with other engineers, 2) focus on building scalable systems, and 3) tackle challenging technical problems. The work you're doing at Grass--building large-scale distributed systems--is exactly what I'm looking for in my next role.
 ```

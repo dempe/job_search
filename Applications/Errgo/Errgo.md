@@ -17,7 +17,9 @@ date_created: 2026-07-29 20:38
 date_modified: 2026-07-29 20:38
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 This role is exciting to me because it's about building a core piece of infrastructure, a rules engine, that will be used by analysts interact with data. I've done a lot of work on data processing, and would love to apply that experience here. I've dabbled in interpreters before and find them fascinating. A lot more fun that simply wiring services together.

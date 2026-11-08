@@ -25,7 +25,9 @@ date_created: "2023-08-26 12:19"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Recruiter reached out to me on Linkedin back in July. I didn't see the message till a month later. I sent him the following email:
 

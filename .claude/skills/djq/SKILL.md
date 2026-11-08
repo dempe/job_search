@@ -23,8 +23,8 @@ Run the bundled script with Bash:
 bash .claude/skills/djq/pick.sh
 ```
 
-- The first line of output is the note's name: `{title}` for an application note, `{title} - Interview {n}` for an interview note. The second line is the note's vault path without `.md`. The rest is the question, verbatim, as `>` lines.
-- A question is a blockquote followed by one blank line and then an answer (a ```` ``` ```` fence), or, in an interview note's `## Questions` section, a `### {question}` heading followed by its grade bullets and its answer under `#### Canonical Answer`. Quoted emails and notes are not questions.
+- The first line of output is the note's name: `{title}` for an application note, `{title} - Interview {n}` for an interview note. The second line is the note's vault path without `.md`. The rest is the question, verbatim, as a `>` line.
+- A question is a `### {question}` heading in a note's `## Questions` section. In an application note its answer is the plain text under the heading; in an interview note, the heading is followed by its grade bullets and its answer is the plain text under `#### Canonical Answer`. Anything outside `## Questions` (notes, quoted emails) is not a question.
 - If the script exits non-zero, STOP with one line saying no questions were found.
 
 ## Step 2: Show it
@@ -38,7 +38,7 @@ From [[{note path}|{note name}]]
 ```
 
 - MUST NOT show the answer, comment on the question, or add anything else. The user is practicing.
-- If the user then asks for the answer, read it from the note: the code block after the question (under its `#### Canonical Answer` subheading in an interview note).
+- If the user then asks for the answer, read it from the note: the text under the question's heading, up to the next heading (under its `#### Canonical Answer` subheading in an interview note).
 
 ## Step 3: Grade an attempt
 
@@ -57,7 +57,7 @@ If the user replies with an answer to the question (typed, or pasted from speech
    {djgrade's full output block, exactly as shown to the user}
    ````
 
-   - The `#### Practice` section comes after the question's answer, never before it: in an interview note, after the model answer (code block) under the question's `#### Canonical Answer` subheading; in an application note, after the answer fence that follows the `> ` blockquote. Putting it between the question and its answer would break the Q/A format the other skills rely on.
+   - The `#### Practice` section comes after the question's answer, never before it: in an interview note, after the model answer under the question's `#### Canonical Answer` subheading; in an application note, after the answer text under the `### {question}` heading (directly after the heading if it's unanswered). Putting it between the question and its answer would break the Q/A format the other skills rely on.
    - If the question has no `#### Practice` section yet, add it there with session `##### 1`, separated by one blank line from what comes before and after.
    - Otherwise add the new session after the section's last session. `{k}` is one more than the highest `#####` number in the section.
    - One blank line separates the headings, the session's bullets, and the sessions.

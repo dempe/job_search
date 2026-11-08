@@ -23,7 +23,9 @@ date_created: "2026-04-29 14:45"
 date_modified: "2026-04-30 11:18"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Apparently, CyberCoders was the recruiting agency. Everforth was the company.
 

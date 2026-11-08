@@ -21,6 +21,8 @@ date_created: "2024-09-02 11:52"
 date_modified: "2026-06-30 17:18"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 There were just basic fields in the application. They did provide an "[interview prep guide PDF](https://drive.google.com/file/d/1HeolPADYDninewCIQzBC3ckS3gkBR33L/view)."

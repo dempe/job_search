@@ -23,7 +23,9 @@ date_created: 2026-02-18 15:00
 date_modified: 2026-02-18 15:04
 ---
 
-## Application
+## Questions
+
+## Notes
 
 I got an AI-written email. I thought someone sold my cover letter data, but it appears to be a legit YC-backed company (searching for "Eylon hospitality AI YC $3M" brings back the name of the company in the email). It appears they are using a service that uses AI to write your emails for you (agent.To). Tacky, but w/e. Maybe I'll get a call out of it.
 

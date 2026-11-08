@@ -21,11 +21,10 @@ date_created: "2024-09-29 09:48"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
 
-> Email to justin@starbridge.ai:
+### Email to justin@starbridge.ai:
 
-```
 Hi Justin,
 
 
@@ -44,7 +43,16 @@ I've attached my resume, and [here's a link to my website](https://chrisdempewol
 
 Best,
 Chris
-```
+
+### Tell me about yourself
+
+I graduated and started working in 2013 for a small startup called DataRank. <talk about what you did at datarank>.  <talk about what you did at SM>. <talk about your stint as a teacher>. <talk about working for octimine>. <talk about becoming a father/SAHF>
+
+### Probably will ask something about "prompt engineering." it's mentioned in the job description and it appears their "AI proposal writer" makes heavy use of LLMs.
+
+not sure what to say other than I'm a daily user of ChatGPT. i do have various custom prompts.  one I've used for therapy.  
+
+## Notes
 
 Todo:
 
@@ -54,17 +62,3 @@ Mention
 - [x] Website
 - [x] Something about working at Starbridge
 - [ ] Working in their industry
-
-## Notes
-
-> Tell me about yourself
-
-```
-I graduated and started working in 2013 for a small startup called DataRank. <talk about what you did at datarank>.  <talk about what you did at SM>. <talk about your stint as a teacher>. <talk about working for octimine>. <talk about becoming a father/SAHF>
-```
-
-> Probably will ask something about "prompt engineering." it's mentioned in the job description and it appears their "AI proposal writer" makes heavy use of LLMs.
-
-```
-not sure what to say other than I'm a daily user of ChatGPT. i do have various custom prompts.  one I've used for therapy.  
-```

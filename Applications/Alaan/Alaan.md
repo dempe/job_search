@@ -23,7 +23,9 @@ date_created: 2025-11-26 16:18
 date_modified: 2025-11-26 16:20
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi Karun,

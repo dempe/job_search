@@ -19,7 +19,9 @@ date_created: "2023-07-27 11:52"
 date_modified: "2024-11-23 14:52"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Standard application stuff plus an optional message to the hiring manager:
 

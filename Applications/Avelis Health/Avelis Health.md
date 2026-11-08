@@ -25,7 +25,9 @@ date_modified: "2026-10-21 18:20"
 source: workatastartup
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hello Angel,

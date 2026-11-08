@@ -22,6 +22,8 @@ date_created: 2024-05-15 09:42
 date_modified: 2025-05-31 13:29
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ChatGPT suggested this to me.  They ghosted me the last time. [[Motion Recruitment (1)]].

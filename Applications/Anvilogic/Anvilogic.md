@@ -20,7 +20,9 @@ date_created: "2023-06-23 14:27"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Pretty usual stuff. Just uploaded my resume.
 

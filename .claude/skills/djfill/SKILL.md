@@ -41,10 +41,10 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Step 2: Collect the written answers
 
-For each question in the note (a `>` blockquote):
+For each question in the note (a `### {question}` heading in its `## Questions` section):
 
-- If a fenced code block follows it, the answer is that block's contents.
-- An empty code block means the question is unanswered. Record it for the report and move on.
+- The answer is the plain text directly under the heading, up to the next heading (a `#### Practice` subheading or the next question), without the blank lines around it.
+- A question with no text under it is unanswered. Record it for the report and move on.
 
 Answers MUST be entered verbatim. The assistant MUST NOT reword, shorten, or improve them on the way into the form.
 

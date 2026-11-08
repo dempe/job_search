@@ -37,8 +37,8 @@ When invoked ad hoc (`/djgrade`), take these from the arguments or the user's me
 
 If the caller names the note a question lives in, the reference answer is:
 
-- In an interview note's `## Questions` section, the fenced code block under the question's `#### Canonical Answer` subheading, which follows the `### {question}` heading's `- field::` bullets.
-- In an application note, the fenced code block after the question's `> ` blockquote.
+- In an interview note's `## Questions` section, the text under the question's `#### Canonical Answer` subheading, which follows the `### {question}` heading's `- field::` bullets, up to the next heading.
+- In an application note's `## Questions` section, the text directly under the question's `### {question}` heading, up to the next heading.
 
 If there's no reference answer, grade against the question alone, using correct technical knowledge.
 
@@ -125,7 +125,7 @@ Answer: "Um... Let's see. That's a huge increase. 1000 to a million." Then: depl
 2. **Get the transcript.** If `transcript-processed.md` doesn't exist beside the note, invoke the `djspeakers` skill with the Skill tool for `{Application} {n}` first; if it can't label the transcript, STOP with one line saying why. Read `transcript-processed.md` in full. `**Me:**` turns are the candidate's; every other label is an interviewer's.
 3. **Gather the items.** For each `###` question in `## Questions`, in order:
    - the question: the heading text
-   - the reference answer: the fenced block under the question's `#### Canonical Answer` subheading
+   - the reference answer: the text under the question's `#### Canonical Answer` subheading
    - the candidate's answer: the text of their `**Me:**` turns from where the interviewer asks that question until the interviewer moves on, including follow-up exchanges on the same point, copied exactly and joined with ` … `. If the question can't be found in the transcript, grade it as unanswered (`answered` fails, with the `answered` item explaining that the transcript has no answer to it).
 4. **Grade** each item by the Rubric, into the block shape in Output.
 5. **Write the results.** For each question, replace its existing field bullets (`grade`, `score`, `answer`, `missing` with its sub-bullets, `feedback`, and any other `- field::` bullets directly under the heading) with the new block, using Edit anchored on the question's heading. The new block sits between the heading's blank line and the `#### Canonical Answer` subheading. That subheading and its model answer, and the `#### Practice` section after it, and its sessions' bullets, MUST stay unchanged. A question with no bullets gets the block inserted under its heading, separated by one blank line on each side.

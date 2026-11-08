@@ -16,6 +16,8 @@ date_created: 2026-07-16 23:53
 date_modified: 2026-07-16 23:56
 ---
 
-## Application
+## Questions
+
+## Notes
 
 This is a QA role. I'm not getting it. I'll likely get filtered out by ATS. But it's a simply apply, so oh well. Not gonna write a CL though.

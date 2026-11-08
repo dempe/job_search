@@ -16,6 +16,8 @@ date_created: 2026-07-28 16:16
 date_modified: 2026-07-28 16:17
 ---
 
-## Application
+## Questions
+
+## Notes
 
 First job I applied to with my resume customizer/tailorer. I didn't submit a cover letter, though.

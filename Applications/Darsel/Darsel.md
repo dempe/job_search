@@ -23,7 +23,9 @@ date_modified: 2025-11-01 14:49
 source: workatastartup
 ---
 
-## Application
+## Questions
+
+## Notes
 
 A good approach for the YC jobs website is to pick a few of their problems and ask for more details on them while following up with my own experience.
 

@@ -16,7 +16,9 @@ date_created: "2023-06-02 18:10"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Submitted an application on [their site](https://platform.a.team/chrisdempewolf). Added 3 projects:
 

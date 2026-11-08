@@ -21,6 +21,8 @@ date_created: 2024-05-15 09:42
 date_modified: 2025-05-31 13:29
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Looks like a recruitment agency.  I had no customization options.  Just submitted my resume along with email, phone, name, and verification that I'm not a robot.  Or am I?

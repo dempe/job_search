@@ -23,7 +23,9 @@ date_created: "2024-09-02 14:32"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 I literally accidentally applied to this lol. There was an "Apply" button that I thought would open up a new page. Instead, it directly applied to the position using the data on my profile. Cool?
 

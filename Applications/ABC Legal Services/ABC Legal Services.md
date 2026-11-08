@@ -23,7 +23,9 @@ date_modified: 2025-11-18 15:58
 source: simplyhired
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Was just a form to fill out. There was an option at the end for a cover letter, but I didn't bother.
 

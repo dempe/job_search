@@ -16,6 +16,8 @@ date_created: 2026-06-10 20:42
 date_modified: 2026-06-10 20:43
 ---
 
-## Application
+## Questions
+
+## Notes
 
 No customization options. Not even a cover letter option. Still a great fit.

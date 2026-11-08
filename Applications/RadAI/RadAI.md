@@ -17,11 +17,10 @@ date_created: 2026-07-29 10:28
 date_modified: 2026-07-29 10:36
 ---
 
-## Application
+## Questions
 
-> Describe a concrete example from the last month where AI meaningfully improved your work (tool used + impact)
+### Describe a concrete example from the last month where AI meaningfully improved your work (tool used + impact)
 
-```
 I built a scope->plan->implement->review cycle for developing new features or projects using skills. I copy the same skill files to Claude, Codex, and OpenCode, so it's an agent-agnostic workflow, one of its main advantages, since any agent can pick up where another left off. All data stored in a central directory.
 
 I used it to build out a Node.JS app for a client's payment provider. The app needed to sync payment data between the provider and Shopify.  Since it was touching payments, it was imperative that my code was correct.
@@ -37,4 +36,3 @@ Once we hit the `implement` phase, it's normally smooth sailing, since all the h
 For the payment integration app that I built, this cycle surfaced a number of ambiguities in the provider's API documentation, which I was able to bring up to the provider and client and have reconciled.
 
 In the end, it was a complete success, and the client was able to switch their payment provider before their existing contract ran out. I now rely heavily on this flow for new projects. I'm still making refinements, though the core scope->plan->implement->review remains.
-```

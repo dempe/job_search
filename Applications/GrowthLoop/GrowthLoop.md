@@ -17,13 +17,13 @@ date_created: "2026-10-15 17:59"
 date_modified: "2026-10-15 18:02"
 ---
 
-## Application
+## Questions
 
-> Please feel free to use this space to share anything else you'd like us to know.
+### Please feel free to use this space to share anything else you'd like us to know.
 
-```
 I'm based in the US (Arkansas, Central Time) and work fully remote. I occasionally post tech-related articles on my blog here: https://chrisdempewolf.com/
-```
+
+## Notes
 
 EDIT:
 

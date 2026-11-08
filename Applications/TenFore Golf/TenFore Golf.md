@@ -23,7 +23,9 @@ date_created: 2025-11-26 19:56
 date_modified: 2025-11-26 19:57
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi,

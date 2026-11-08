@@ -23,7 +23,9 @@ date_created: 2026-02-19 17:36
 date_modified: 2026-02-19 18:19
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi, I'm Chris. I've got 10 years of backend experience, mostly centered around data pipelines, distributed systems, and API design. I've used Python throughout my career, and I'm right at home in Django. I've worked with Postgres -- optimization, ORM, migrations, schema design, etc.

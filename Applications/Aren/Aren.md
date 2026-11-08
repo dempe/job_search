@@ -18,11 +18,10 @@ date_created: "2026-10-23 14:15"
 date_modified: "2026-10-23 17:40"
 ---
 
-## Application
+## Questions
 
-> Start a conversation with the team at Aren. Share something about you, what you're looking for, or why Aren interests you. Human-written messages are more likely to get a response.
+### Start a conversation with the team at Aren. Share something about you, what you're looking for, or why Aren interests you. Human-written messages are more likely to get a response.
 
-```
 Hi Umar,
 
 I'm Chris, a backend engineer with 11 YOE in distributed systems, cloud (AWS and some GCP), data ingestion/integrations.
@@ -35,4 +34,3 @@ Would love to chat!
 
 Best,
 Chris
-```

@@ -23,7 +23,9 @@ date_created: 2025-12-09 14:54
 date_modified: 2025-12-09 14:54
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi Kenzie,

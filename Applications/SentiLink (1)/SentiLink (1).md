@@ -16,10 +16,8 @@ date_created: 2024-05-15 09:42
 date_modified: 2025-05-31 13:29
 ---
 
-## Application
+## Questions
 
-> What is a meaningful accomplishment outside of work that you are proud of? (For example: athletic, academic, creative, entrepreneurial, etc.)
+### What is a meaningful accomplishment outside of work that you are proud of? (For example: athletic, academic, creative, entrepreneurial, etc.)
 
-```
 I'm proud of myself for the work I've put into language learning.  I'm fluent in Spanish and can read and understand a lot of Japanese (though my Japanese speaking ability is slipping due to lack of use).
-```

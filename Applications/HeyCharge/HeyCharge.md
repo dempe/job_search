@@ -23,7 +23,9 @@ date_modified: 2025-11-01 14:49
 source: workatastartup
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Another YC job.
 

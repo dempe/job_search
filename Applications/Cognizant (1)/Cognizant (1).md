@@ -19,7 +19,9 @@ date_created: "2026-09-07 13:26"
 date_modified: "2026-09-19 19:39"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 A guy on Indeed messaged me about this. It's hybrid, but I'll be in AR soon, so might even be able to do an in-person interview.
 

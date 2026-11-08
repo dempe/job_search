@@ -23,7 +23,9 @@ date_created: 2025-12-02 18:45
 date_modified: 2025-12-02 18:45
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi Bishesh,

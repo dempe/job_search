@@ -23,6 +23,8 @@ date_created: 2025-11-26 20:26
 date_modified: 2025-11-26 20:27
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Nothing to see here. Probably won't hear anything.  Thought I'd apply bc there's literally nothing else to apply to.  Questions were very routine and bureaucratic.

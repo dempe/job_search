@@ -21,11 +21,10 @@ date_created: "2024-09-03 12:57"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
 
-> What interests you about working for this company?
+### What interests you about working for this company?
 
-```
 Hello!
 
 I've worked both as a Senior Backend Engineer and Senior Data Engineer. I enjoy working with data and in the backend.
@@ -43,4 +42,3 @@ I have worked at companies with thousands of employees to a company with five em
 Given my background and preferences, I think I'd make a great fit at Yellowbrik. Hope to hear from you soon!
 
 Chris
-```

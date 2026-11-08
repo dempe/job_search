@@ -21,11 +21,10 @@ date_created: "2024-10-04 10:15"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
 
-> What interests you about working for this company?
+### What interests you about working for this company?
 
-```
 Hello!
 
 Just messaging you about the postion for Senior Software Engineer.
@@ -38,4 +37,3 @@ Lemme know if you'd like to chat!
 
 Best,
 Chris
-```

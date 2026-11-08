@@ -23,7 +23,9 @@ date_created: 2026-01-29 13:51
 date_modified: 2026-01-29 13:51
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi Ethan,

@@ -22,11 +22,10 @@ date_created: "2025-10-27 17:11"
 date_modified: "2025-10-29 10:06"
 ---
 
-## Application
+## Questions
 
-> Personal Summary
+### Personal Summary
 
-```
 I've worked as a backend software engineer for 9 years. I've mostly worked closer to data ingestion/engineering and DevOps, but never specifically DevOps.
 
 I've spent the past two years building my own company, Dempewolf Apps (https://dempewolfapps.com), focusing on educational mobile apps.  I built the backend purely in AWS serverless technologies (API Gateway, Lambda DynamoDB, etc.).
@@ -41,17 +40,13 @@ Thanks for reading.  I look forward to chatting with you.
 
 Best,
 Chris Dempewolf
-```
 
-> In one sentence, what is the most important thing you are looking for in your next role?
+### In one sentence, what is the most important thing you are looking for in your next role?
 
-```
 I want to push my skills as a backend software engineer to the limit, make meaningful changes, and be part of a supportive and collaborative team.
-```
 
-> Please describe your experience with Kubernetes, DevOps, and AI/ML lifecycles (include number of years and typical project scope).
+### Please describe your experience with Kubernetes, DevOps, and AI/ML lifecycles (include number of years and typical project scope).
 
-```
 Kubernetes: I don't have hands-on Kubernetes experience. My container experience has been with Docker for local development and CI/CD pipelines, but I haven't worked with orchestration platforms like Kubernetes in production.
 
 DevOps: ~2 years of hands-on DevOps work, primarily at my own company (2023-present). I've designed and maintained CI/CD pipelines with GitHub Actions, implemented infrastructure as code with AWS SAM/CloudFormation, and managed deployments, rollbacks, and observability (CloudWatch, structured logging, alarms). I've also automated deployments with Jenkins and Ansible in previous roles. I've always worked closely with dedicated DevOps teams at larger companies.
@@ -59,7 +54,8 @@ DevOps: ~2 years of hands-on DevOps work, primarily at my own company (2023-pres
 AI/ML Lifecycles: No direct experience. I haven't been involved in training, deploying, or monitoring ML models in production. My backend work has focused on APIs, data pipelines, and distributed systems rather than ML infrastructure, specifically.
 
 I don't have extensive experience in these technologies, but I have the background knowledge to get up to speed quickly.
-```
+
+## Notes
 
 Scratch that^. I think this was a filter question. There is only 1 accepted answer: `abcdef`.
 

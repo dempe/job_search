@@ -17,6 +17,8 @@ date_created: 2026-08-10 13:25
 date_modified: 2026-08-10 13:25
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Turns out they wanted to meet me in-person in New York with three days notice. They seemed disgruntled when I told them I could not make it, and they hung up the phone.

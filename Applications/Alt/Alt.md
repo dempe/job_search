@@ -18,10 +18,8 @@ date_created: "2026-10-22 15:06"
 date_modified: "2026-10-27 20:23"
 ---
 
-## Application
+## Questions
 
-> What's your connection to trading cards, sports memorabilia, or collectibles? If you don't have one, tell us what drew you to Alt. There's no wrong answer here — plenty of people on our team came in without a collection. We're looking for curiosity about the product. If you'd like to explore before your first conversation, the Alt mobile app is a great place to start. You download the mobile app here: <https://alt.app.link/zsvZjHKuV5b>
+### What's your connection to trading cards, sports memorabilia, or collectibles? If you don't have one, tell us what drew you to Alt. There's no wrong answer here — plenty of people on our team came in without a collection. We're looking for curiosity about the product. If you'd like to explore before your first conversation, the Alt mobile app is a great place to start. You download the mobile app here: <https://alt.app.link/zsvZjHKuV5b>
 
-```
 I don't have a collection, but I do love collecting things (I've got my Pokemon cards from 30 years ago still!)
-```

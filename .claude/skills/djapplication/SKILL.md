@@ -1,6 +1,6 @@
 ---
 name: djapplication
-description: Create a new job application note in `Applications/` from a job description text file (`./jd.txt` by default), filling its YAML frontmatter from the JD and recording the application form's questions with empty answer blocks. Use when the user wants to log, record, or start a job application note from a JD file.
+description: Create a new job application note in `Applications/` from a job description text file (`./jd.txt` by default), filling its YAML frontmatter from the JD and recording the application form's questions as unanswered `###` headings under `## Questions`. Use when the user wants to log, record, or start a job application note from a JD file.
 argument-hint: <source> <listing-url> [path-to-jd.txt]
 ---
 
@@ -8,7 +8,7 @@ argument-hint: <source> <listing-url> [path-to-jd.txt]
 
 # Job Application Note
 
-Create a new job application note at `./Applications/{title}/{title}.md` from a job description (JD) text file. The note's YAML frontmatter is filled from the JD, and the application form's questions are recorded with empty answer blocks for the user to fill in later.
+Create a new job application note at `./Applications/{title}/{title}.md` from a job description (JD) text file. The note's YAML frontmatter is filled from the JD, and the application form's questions are recorded as unanswered `###` headings under `## Questions`, for the user to answer later.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -21,7 +21,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Write, Skill, and asking the user). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only file listing commands (`ls`, `test -e`), the JD copy in Step 11 (`mkdir -p`, `cp -n`), and the commit in Step 11 (`git add`, `git commit`).
 - The only files this skill creates are the new application's folder, its note, and its saved JD (`jd.md`). The assistant MUST NOT rename, modify, or overwrite any existing folder, note, or saved JD.
-- This skill MUST write the note with empty answer blocks. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
+- This skill MUST write the note with every question unanswered. Drafting answers is done afterwards by the `djanswers` skill (Step 12).
 - The assistant commits only the files it created, in Step 11. It MUST NOT push.
 
 ## Output
@@ -140,14 +140,15 @@ Find the application form in the JD. It usually follows the job description, aft
 <!-- auto-fill-applications T9: FR44, FR45, FR46, FR47, FR48 -->
 
 - Included questions MUST keep the order in which they appear in the JD.
-- Each question MUST be written as a Markdown blockquote: each line starts with `> `.
-- The question text MUST be copied verbatim. The only change is removing a trailing required-field marker `*`, along with any whitespace before it.
-- **Preceding content.** Sometimes a question can't be answered without text or embedded content that comes before it, such as a heading, instructions, a code snippet, an encoded string, or a passage the question refers to. That content MUST be copied verbatim into the same blockquote, before the question text. For example, a question asking what a line of pseudocode evaluates to needs the line printed above it.
-- **Multi-line blockquotes.** A multi-line blockquote puts each non-blank source line on its own `> ` line. Every line except the last ends with `<br/>`. Blank lines between source lines are omitted. For example:
+- Each question MUST be written as a `### {question}` heading, on one line.
+- The question text MUST be copied verbatim, with only these changes:
+  - Remove a trailing required-field marker `*`, along with any whitespace before it.
+  - Remove any `#`, `|`, or `^`, and replace `[`/`]` with `(`/`)` (a Markdown link `[text](url)` becomes `text (url)`), so the heading still works as a link.
+- **Preceding content.** Sometimes a question can't be answered without text or embedded content that comes before it, such as a heading, instructions, a code snippet, an encoded string, or a passage the question refers to. That content MUST be copied verbatim into the same heading, before the question text. For example, a question asking what a line of pseudocode evaluates to needs the line in the heading before it.
+- **Multi-line questions.** Join the non-blank source lines with single spaces into the one heading. For example:
 
   ```markdown
-  > Why do you want to join Resend?<br/>
-  > Send an engaging message and tell us why you want to join us, what excites you about the problem we're solving, and how you envision your role at Resend.
+  ### Why do you want to join Resend? Send an engaging message and tell us why you want to join us, what excites you about the problem we're solving, and how you envision your role at Resend.
   ```
 
 ## Step 9: Frontmatter
@@ -189,10 +190,9 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 
 <!-- auto-fill-applications T11: FR35, FR49, FR50, FR51 -->
 
-- After the closing `---` of the frontmatter, leave one blank line, then write the `## Application` heading followed by one blank line.
-- For each included question, write its blockquote (Step 8), then one blank line, then an empty fenced code block: an opening ```` ``` ```` line followed immediately by a closing ```` ``` ```` line. Nothing goes between them.
-- Separate consecutive question/answer pairs with exactly one blank line.
-- If every question was excluded, the body is only the `## Application` heading.
+- After the closing `---` of the frontmatter, leave one blank line, then write the `## Questions` heading followed by one blank line.
+- For each included question, write its heading (Step 8), then one blank line. The answer is the plain text under the heading, so an unanswered question has nothing under it.
+- If every question was excluded, the body is only the `## Questions` heading.
 
 ## Step 11: Write
 
@@ -207,7 +207,7 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 ## Step 12: Draft answers
 
 - Immediately after writing the note, invoke the `djanswers` skill with the Skill tool, passing `{title}` as its argument.
-- From this point, follow `djanswers`'s instructions, including its output rules. `djanswers` writes its drafts directly into the empty answer blocks of the note created in Step 11.
+- From this point, follow `djanswers`'s instructions, including its output rules. `djanswers` writes its drafts directly under the unanswered questions of the note created in Step 11.
 
 ## Worked example
 
@@ -228,8 +228,8 @@ The `YYYY-MM-DD HH:mm` timestamps and the filename-based `title` match the vault
 - Step 3: no folder in `Applications/` is named `Privacy` or `Privacy ({n})`.
 - Step 4: `date` prints `2026-09-14 18:30`.
 - Step 6: the assistant asks only for the listing URL. The user leaves it blank.
-- Step 11: `./jd.txt` is copied to `Applications/Privacy/jd.md`, and the note below is written, with empty answer blocks.
-- Step 12: `djanswers Privacy` runs and fills in the answer blocks it has evidence for.
+- Step 11: `./jd.txt` is copied to `Applications/Privacy/jd.md`, and the note below is written, with no answers.
+- Step 12: `djanswers Privacy` runs and fills in the answers it has evidence for.
 
 **Expected note** at `Applications/Privacy/Privacy.md`, as written in Step 11 before `djanswers` runs.
 
@@ -255,10 +255,7 @@ date_created: "2026-09-14 18:30"
 date_modified: "2026-09-14 18:30"
 ---
 
-## Application
+## Questions
 
-> What do you think are our most complex technical challenges based on the very little you know about Lithic?
-
-```
-```
+### What do you think are our most complex technical challenges based on the very little you know about Lithic?
 ````

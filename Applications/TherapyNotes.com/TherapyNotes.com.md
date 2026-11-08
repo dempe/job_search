@@ -23,6 +23,8 @@ date_modified: 2025-11-14 16:21
 source: simplyhired
 ---
 
-## Application
+## Questions
+
+## Notes
 
 They asked explicitly if I had experience in a number of technologies that I have no experience in, so very little hope here.

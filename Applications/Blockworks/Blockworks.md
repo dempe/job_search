@@ -19,7 +19,9 @@ date_created: "2023-07-27 12:57"
 date_modified: "2025-05-31 13:30"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 There wasn't the option to put anything other than standard questions, my resume, and my Linkedin profile. 🤷🏻‍♂️
 

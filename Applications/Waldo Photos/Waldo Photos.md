@@ -21,7 +21,9 @@ date_created: "2024-05-15 09:41"
 date_modified: "2025-11-26 20:04"
 ---
 
-## Application
+## Questions
+
+## Notes
 
 They are looking for a contractor with quite a wide breadth of experience - python, machine learning, AWS, message oriented backends, Docker, Node.JS, GraphQL. I have experience (at least tangentially) with all of these things. My lack of direct experience with ML will surely kill the application, but I'll go ahead and try.
 

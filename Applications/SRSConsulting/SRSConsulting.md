@@ -22,6 +22,8 @@ date_created: 2024-05-15 09:42
 date_modified: 2025-05-31 13:29
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Did the "Easy Apply" thing on LinkedIn.  Just click a button and it applies you.  So not much to add here.  My qualifications align really well, but there's no option for customization, so we'll see.

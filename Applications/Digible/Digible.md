@@ -21,11 +21,10 @@ date_created: "2024-09-02 11:27"
 date_modified: "2024-09-05 09:30"
 ---
 
-## Application
+## Questions
 
-> How do you handle and respond to feedback, both negative and positive?
+### How do you handle and respond to feedback, both negative and positive?
 
-```
 Great question!  I'm somewhat of a feedback aficionado.
 
 Feedback, either feedback to yourself via reflection or feedback from others, is the one and only means of improving yourself (it's necessary but not sufficient). In other words, if there is no feedback, there is no improvement.  It takes feedback to know to repeat what worked and improve, change, or eliminate what didn't.
@@ -37,7 +36,6 @@ Moreover, getting upset at negative feedback is disrespectful to the person givi
 That being said, there is a time and a place for feedback. No one appreciates constant, unsolicited advice. That's what's great about 1:1s.  You're there for the feedback.  Your manager (or spouse, therapist, etc.) is there for the feedback.  And scheduling 1:1s regularly ensures that communication is constant and explicitly agreed upon upfront.
 
 Soo... to sum it up, I value feedback a lot, and I think I take it pretty well.  Though, I might need feedback to know that for certain!
-```
 
 ## Rejected
 

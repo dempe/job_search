@@ -16,7 +16,9 @@ date_created: 2026-06-30 17:18
 date_modified: 2026-06-30 17:23
 ---
 
-## Application
+## Questions
+
+## Notes
 
 Standard application questions only.
 

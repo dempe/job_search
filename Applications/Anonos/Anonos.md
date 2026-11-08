@@ -22,7 +22,7 @@ date_modified: "2024-09-29 09:47"
 
 Feels spammy. ~~Website won't load.~~ Okay, it loaded after about 3 minutes… Still looks cheesy af. Position is for "Senior Java Developer" — odd to include "Java" in the title. Not much info about what the company actually does.
 
-## Application
+## Questions
 
 ### What is Your Desired Salary?
 

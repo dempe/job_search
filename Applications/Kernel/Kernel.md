@@ -23,7 +23,9 @@ date_modified: 2025-11-17 16:31
 source: wellfound
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi,

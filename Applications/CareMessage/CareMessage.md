@@ -23,7 +23,9 @@ date_created: 2026-02-19 18:36
 date_modified: 2026-02-19 18:37
 ---
 
-## Application
+## Questions
+
+## Notes
 
 ```
 Hi, I'm Chris.  I've worked on backend tech stacks for going on 10 years now -- mostly in data pipelines, distributed systems, and API design. I have not worked in the health industry before, but I have researched FHIR data and HIPPA compliance for previous roles.

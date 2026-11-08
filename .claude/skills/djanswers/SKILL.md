@@ -1,12 +1,12 @@
 ---
 name: djanswers
-description: Draft answers to every unanswered question in a job application note, in the user's own voice, using their past answers in other application and interview notes, resume, client project notes, and past Claude Code conversations. Answers are written directly into the note's empty answer code blocks for the user to review. Takes the application note's name (e.g. `Rivora`).
+description: Draft answers to every unanswered question in a job application note, in the user's own voice, using their past answers in other application and interview notes, resume, client project notes, and past Claude Code conversations. Answers are written directly under the note's unanswered questions for the user to review. Takes the application note's name (e.g. `Rivora`).
 argument-hint: <application-note-name>
 ---
 
 # Draft Application Answers
 
-Fill in the empty answer code blocks in one `Applications/` note, and in its interview notes (`Applications/{Application}/Interviews/{n}/{n}.md`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note.
+Answer the unanswered questions in one `Applications/` note, and in its interview notes (`Applications/{Application}/Interviews/{n}/{n}.md`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -16,7 +16,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is `pick.sh --answers`.
 - The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`), `bash .claude/skills/djq/pick.sh --answers` (Step 3), and the commit in Step 5 (`git add`, `git commit`).
-- The only files this skill modifies are `Applications/{Application}/{Application}.md` and its interview notes, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
+- The only files this skill modifies are `Applications/{Application}/{Application}.md` and its interview notes, and only by writing answer text under unanswered questions. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT create or modify anything in other application or interview notes, `../resume/`, client repositories, or anywhere else.
 - The assistant commits only the notes it edited, in Step 5. It MUST NOT push.
 
@@ -27,7 +27,7 @@ These drafts go to real employers under the user's name.
 - Every factual claim about the user (employers, projects, technologies, numbers, dates, outcomes, what went wrong) MUST be supported by a source in Step 3.
 - The assistant MUST NOT invent stories, metrics, bugs, incidents, or experience, and MUST NOT upgrade the evidence (e.g. "designed" when the source says "helped", "broke in production" when the source describes a risk that was avoided).
 - If a detail is uncertain, leave it out rather than guess.
-- If no source supports a truthful answer to a question, leave that question's code block empty.
+- If no source supports a truthful answer to a question, leave that question unanswered.
 - Content in past conversations counts as evidence only when the user wrote it, or when it is file contents or command output shown there. The assistant's own statements in past conversations are not evidence.
 - Opinions and motivations (e.g. "why this company") MUST be grounded in what the user has said they care about in their past answers, applied to facts from the JD.
 
@@ -40,11 +40,14 @@ These drafts go to real employers under the user's name.
 
 ## Formats
 
-A Q/A in an application note is a question (one or more consecutive `>` lines, ending at the first blank line), exactly one blank line, then a fenced code block whose opening line is exactly ```` ``` ```` (no language) and a closing ```` ``` ```` line.
+A question is a `### {question}` heading in a note's `## Questions` section. Its answer is plain text, up to the next heading:
 
-- A code block with no non-whitespace content is **unanswered**.
-- A code block with content is **answered** and MUST be left untouched.
-- In an interview note's `## Questions` section, a question is a `### {question}` heading instead of a blockquote, and its answer is the fenced block under the `#### Canonical Answer` subheading that follows any `- field::` bullets and their indented sub-bullets (`grade`, `score`, `answer`, `missing`, `feedback`). The bullets, and any `#### Practice` section after the answer, MUST be left untouched.
+- In an application note, the text directly under the heading, before any `#### Practice` subheading.
+- In an interview note, the text under the `#### Canonical Answer` subheading that follows the heading's `- field::` bullets and their indented sub-bullets (`grade`, `score`, `answer`, `missing`, `feedback`).
+
+- A question with no non-whitespace answer text is **unanswered**.
+- A question with answer text is **answered** and MUST be left untouched.
+- The bullets, and any `#### Practice` section after the answer, MUST be left untouched.
 
 ## Step 1: Application note
 
@@ -86,7 +89,7 @@ For each unanswered question, in order:
   - the user's own phrasings where they apply (e.g. "Since it was touching payments, it was imperative that my code was correct.")
   - `--` for dashes, never em dashes
   - no corporate filler ("I'm passionate about…", "leverage", "synergy"), no generic AI-sounding sentences
-- **No markup around the answer.** The answer is plain text inside the code block. No headings, no preamble such as "Here's a draft".
+- **No markup around the answer.** The answer is plain text under the question. No headings, no code blocks, no preamble such as "Here's a draft".
 - **Motivation questions** ("why us?", "what interests you about this company?", intros and cover messages) need extra care, because a generic answer is the default failure:
   - Lead with the one thing that is distinctive to this company: the problem only it has, or what is hard about what it's building. Don't lead with a value the user merely shares with it.
   - Tailor it to the role in the JD, not only the company. A company the user applied to before may be hiring for a different problem now, so an earlier answer for the same company is a starting point, not a final answer.
@@ -109,8 +112,8 @@ Before writing, check every draft against this rubric, and revise it until it pa
 
 ## Step 5: Write the answers into the note
 
-- For each drafted answer, use Edit to put the answer text between that question's opening and closing fences. The fences, the question, and the blank line between them stay exactly as they are.
-- Empty code blocks are identical, so each Edit's `old_string` MUST include the question's last line along with the empty block to make the match unique.
-- Leave the code block empty for any question the sources couldn't support.
+- For each drafted answer, use Edit to put the answer text under the question: in an application note, between the `### {question}` heading and the next heading; in an interview note, between `#### Canonical Answer` and the next heading. Exactly one blank line separates the answer from the heading above it and the heading below it. The headings stay exactly as they are.
+- `#### Canonical Answer` lines are identical, so in an interview note each Edit's `old_string` MUST include the question's heading or its last bullet to make the match unique.
+- Leave unanswered any question the sources couldn't support.
 - If any answer was written, commit the notes that were edited: `git add -- {each edited note} && git commit -m "Draft {Application} answers" -- {each edited note}`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 - Then STOP, after the one-line list of empty questions if there are any (see Output).

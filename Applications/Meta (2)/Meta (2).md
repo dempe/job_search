@@ -22,7 +22,11 @@ date_created: 2025-04-21 12:28
 date_modified: 2025-05-31 13:30
 ---
 
-## Application / Recruiter Screen
+## Questions
+
+## Notes
+
+### Application / Recruiter Screen
 
 Just responded to a recruiter email. There was a button to schedule a call. Though, I never replied to her emails.
 
