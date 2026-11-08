@@ -59,7 +59,3 @@ Oh yeah, and your product looks pretty slick, too! I watched the demo.
 ### Additional Information
 
 blank
-
-## Interview 1
-
-![[Applications/Close (0)/Interviews/1/1]]

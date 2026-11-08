@@ -38,7 +38,3 @@ Would love to learn more about the role!
 Best,
 Chris
 ```
-
-## Interview 1
-
-![[Applications/Yokeru/Interviews/1/1]]

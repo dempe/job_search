@@ -78,7 +78,3 @@ Belinda was super nice and very transparent.
 - Don't use multiple monitors in tech screen
 - Don't reschedule unless absolutely necessary
 - Take as much time as you need to prep, but be aware that they are currently on a "sprint" and that some positions currently open may be filled
-
-## Interview 1
-
-![[Applications/Meta (2)/Interviews/1/1]]

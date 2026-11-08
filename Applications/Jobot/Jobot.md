@@ -26,7 +26,3 @@ date_modified: "2026-10-20 09:41"
 ---
 
 ## Application
-
-## Interview 1
-
-![[Applications/Jobot/Interviews/1/1]]

@@ -6,7 +6,7 @@ argument-hint: <application-note-name> [interview-number]
 
 # Interview Transcript to Questions
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, embedded in its application note. Read the transcripts in one application's interview notes (or in one of them), pull out the questions the interviewer asked, write the answer that should have been given to each, and grade the answer the user actually gave.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, beside its application note. Read the transcripts in one application's interview notes (or in one of them), pull out the questions the interviewer asked, write the answer that should have been given to each, and grade the answer the user actually gave.
 
 The answers are model answers for study, not a record of what was said and not restricted to what the vault can evidence. Each generated section says so, so a later reader never mistakes them for the user's own words.
 
@@ -34,16 +34,16 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The arguments are `{Application}`, an application note's name without `.md`, and optionally `{n}`, an interview number. Resolve `{Application}` to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
-- Read the whole note. Its interview notes are the `![[Applications/{Application}/Interviews/{n}/{n}]]` embeds under its `## Interview…` headings.
-- If the note embeds no interview notes, the assistant MUST STOP with one line saying so.
-- With `{n}`, the run works only on interview `{n}`. If the note doesn't embed `Applications/{Application}/Interviews/{n}/{n}`, the assistant MUST STOP with one line saying so. Without `{n}`, it works on every embedded interview.
+- Its interview notes are the `Applications/{Application}/Interviews/{n}/{n}.md` files (`ls`).
+- If there are none, the assistant MUST STOP with one line saying so.
+- With `{n}`, the run works only on interview `{n}`. If `Applications/{Application}/Interviews/{n}/{n}.md` doesn't exist, the assistant MUST STOP with one line saying so. Without `{n}`, it works on every interview note.
 - Read each interview note the run works on.
 
 ## Step 2: Find the transcripts
 
 Each transcript is a `transcript.md` beside its interview note (e.g. `Applications/People Data Labs/Interviews/2/2.md` has `Applications/People Data Labs/Interviews/2/transcript.md`), and the interview note embeds it. A new transcript arrives as `./transcript.txt` in the vault root (the raw Voice Memos text), so move it in first:
 
-- If `./transcript.txt` exists (`test -e`), it belongs to interview `{n}`, or, without `{n}`, to the highest-numbered interview note the application embeds. Run `python3 -I .claude/skills/djtrans/extract.py "Applications/{Application}/Interviews/{n}/{n}.md" transcript.txt`. It moves the file to `transcript.md` beside the note and adds a `## Transcript` section embedding it as the note's first section.
+- If `./transcript.txt` exists (`test -e`), it belongs to interview `{n}`, or, without `{n}`, to the highest-numbered interview note. Run `python3 -I .claude/skills/djtrans/extract.py "Applications/{Application}/Interviews/{n}/{n}.md" transcript.txt`. It moves the file to `transcript.md` beside the note and adds a `## Transcript` section embedding it as the note's first section.
 - On `moved: …`, commit the moved transcript and the note: `git add -- "Applications/{Application}/Interviews/{n}/transcript.md" "Applications/{Application}/Interviews/{n}/{n}.md" && git commit -m "Add {Application} interview {n} transcript" -- "Applications/{Application}/Interviews/{n}/transcript.md" "Applications/{Application}/Interviews/{n}/{n}.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording. Then Read that interview note again. On `error: …` (the interview already has a transcript), nothing was changed and `./transcript.txt` is kept; report the error in Step 9 and continue with the transcripts already there.
 
 Then, in each interview note:

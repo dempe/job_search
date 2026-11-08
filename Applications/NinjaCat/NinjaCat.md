@@ -41,30 +41,6 @@ I also have experience with Kotlin — [I wrote an SDK for the Pinterest API](ht
 
 It seems like we'd be a great fit! Call me? 🤙🏼
 
-## Interview 1
-
-![[Applications/NinjaCat/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/NinjaCat/Interviews/2/2]]
-
-## Interview 3
-
-![[Applications/NinjaCat/Interviews/3/3]]
-
-## Interview 4
-
-![[Applications/NinjaCat/Interviews/4/4]]
-
-## Interview 5
-
-![[Applications/NinjaCat/Interviews/5/5]]
-
-## Interview 6
-
-![[Applications/NinjaCat/Interviews/6/6]]
-
 ## Interviews Follow-up Message
 
 I said a few things I probably shouldn't have during the interviews. For example, I mentioned how my previous manager did not like to actually manage. I mentioned that I had other interviews that. I wanted to finish. Sometimes I just talk, and dumb things come out. But I still feel bad about this and want to rectify it however I can.

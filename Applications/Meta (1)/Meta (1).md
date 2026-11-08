@@ -53,15 +53,3 @@ Chris
 ```
 
 He responded by offering a meeting time next Thursday.
-
-## Interview 1 — Recruiter Screen
-
-![[Applications/Meta (1)/Interviews/1/1]]
-
-## Interview 2 — Mock Interview
-
-![[Applications/Meta (1)/Interviews/2/2]]
-
-## Interview 3 — Screening Interview
-
-![[Applications/Meta (1)/Interviews/3/3]]

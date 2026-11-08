@@ -23,14 +23,6 @@ date_modified: "2026-09-19 19:39"
 
 A guy on Indeed messaged me about this. It's hybrid, but I'll be in AR soon, so might even be able to do an in-person interview.
 
-## Interview 1
-
-![[Applications/Cognizant (1)/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/Cognizant (1)/Interviews/2/2]]
-
 ## Ghosting
 
 This was a real legitimate, post-interview ghost.

@@ -46,14 +46,6 @@ Best,
 Chris
 ```
 
-## Interview 1
-
-![[Applications/Avelis Health/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/Avelis Health/Interviews/2/2]]
-
 ## Rejection
 
 ```

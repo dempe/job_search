@@ -29,11 +29,3 @@ Julius looks a lot like what I've been building for myself by hand. My own workf
 
 The idempotency side I've done before. At Dekstech, I prevented duplicate charges on a Shopify checkout by scoping an idempotency key to each payment session and reusing it across retries. Since it was touching payments, it was imperative that my code was correct.
 ```
-
-## Interview 1
-
-![[Applications/i.Wonder/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/i.Wonder/Interviews/2/2]]

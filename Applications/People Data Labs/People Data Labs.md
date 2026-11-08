@@ -51,11 +51,3 @@ Most of my career has been data ingestion. After DataRank, I was the senior data
 
 I'm based in the US (Arkansas, Central Time) and work fully remote. I'm currently working as a contractor, but looking to re-join a team where I can have more collaboration and ownership.
 ```
-
-## Interview 1
-
-![[Applications/People Data Labs/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/People Data Labs/Interviews/2/2]]

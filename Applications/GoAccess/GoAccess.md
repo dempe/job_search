@@ -46,7 +46,3 @@ I just booked a slot on your calendar for Wednesday morning. See you then!
 Best,
 Chris
 ```
-
-## Interview 1
-
-![[Applications/GoAccess/Interviews/1/1]]

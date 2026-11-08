@@ -6,7 +6,7 @@ argument-hint: <application-note-name>
 
 # Draft Application Answers
 
-Fill in the empty answer code blocks in one `Applications/` note, and in the interview notes it embeds (`![[Applications/{Application}/Interviews/{n}/{n}]]`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note.
+Fill in the empty answer code blocks in one `Applications/` note, and in its interview notes (`Applications/{Application}/Interviews/{n}/{n}.md`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -16,7 +16,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is `pick.sh --answers`.
 - The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`), `bash .claude/skills/djq/pick.sh --answers` (Step 3), and the commit in Step 5 (`git add`, `git commit`).
-- The only files this skill modifies are `Applications/{Application}/{Application}.md` and the interview notes it embeds, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
+- The only files this skill modifies are `Applications/{Application}/{Application}.md` and its interview notes, and only by writing answer text inside empty answer code blocks. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT create or modify anything in other application or interview notes, `../resume/`, client repositories, or anywhere else.
 - The assistant commits only the notes it edited, in Step 5. It MUST NOT push.
 
@@ -51,7 +51,7 @@ A Q/A in an application note is a question (one or more consecutive `>` lines, e
 - The argument is `{Application}`, the application note's name without `.md`. Resolve it to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
-- Read the whole note, then every interview note it embeds.
+- Read the whole note, then every interview note in `Applications/{Application}/Interviews/` (`ls`).
 
 ## Step 2: Find unanswered questions
 

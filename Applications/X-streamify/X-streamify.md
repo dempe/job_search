@@ -38,10 +38,6 @@ Best,
 Chris
 ```
 
-## Interview 1
-
-![[Applications/X-streamify/Interviews/1/1]]
-
 ## Declination
 
 ```

@@ -27,11 +27,3 @@ date_modified: "2025-05-31 13:30"
 ## Application
 
 I was referred by a friend of Sophie's.
-
-## Interview 1
-
-![[Applications/Reasint/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/Reasint/Interviews/2/2]]

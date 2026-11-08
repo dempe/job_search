@@ -67,11 +67,3 @@ Since so much time is invested in scoping and planning, the execution and verifi
 ```
 The real-time body mapping and precision robotics stack is genuinely interesting to me. Sounds like a system where latency and reliability really matter on a physical level. I'd love to be a part of that! My work building real-time pipelines with sub-second latency should map well here.
 ```
-
-## Interview 1
-
-![[Applications/Aescape/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/Aescape/Interviews/2/2]]

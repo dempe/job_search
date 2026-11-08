@@ -40,7 +40,3 @@ Would love to have a quick chat and learn more about the role!
 Best,
 Chris
 ```
-
-## Interview 1
-
-![[Applications/Feather/Interviews/1/1]]

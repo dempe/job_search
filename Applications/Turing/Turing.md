@@ -27,7 +27,3 @@ date_modified: "2026-10-20 09:41"
 ## Application
 
 Nothing to see here.
-
-## Interview 1
-
-![[Applications/Turing/Interviews/1/1]]

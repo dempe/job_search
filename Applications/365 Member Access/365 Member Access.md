@@ -20,10 +20,6 @@ date_modified: "2026-10-15 18:44"
 
 ## Application
 
-## Interview 1
-
-![[Applications/365 Member Access/Interviews/1/1]]
-
 ## Rejection
 
 ```

@@ -285,10 +285,6 @@ Chris Dempewolf
 chris@chrisdempewolf.com
 ```
 
-## Interview 1
-
-![[Applications/dekstech/Interviews/1/1]]
-
 ## Follow-up Email with Portfolio
 
 ```
@@ -313,7 +309,3 @@ Let me know if you have any questions.
 Thanks,
 Chris
 ```
-
-## Interview 2
-
-![[Applications/dekstech/Interviews/2/2]]

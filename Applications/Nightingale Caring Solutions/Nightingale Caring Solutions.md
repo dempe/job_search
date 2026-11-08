@@ -38,7 +38,3 @@ I would love to know more about what exactly your requirements are. I feel we co
 Thanks,  
 Chris
 ```
-
-## Interview 1
-
-![[Applications/Nightingale Caring Solutions/Interviews/1/1]]

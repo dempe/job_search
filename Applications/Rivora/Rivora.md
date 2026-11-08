@@ -80,10 +80,6 @@ After I had a good understanding of how everything fit together, I started on a 
 Within five days of starting, I had migrated their content to a single S3 bucket with prefix-based access behind CloudFront (OAC and signed cookies) and made the frontend updates to use it.
 ```
 
-## Interview 1
-
-![[Applications/Rivora/Interviews/1/1]]
-
 ## Follow-Up
 
 ```

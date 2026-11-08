@@ -34,10 +34,6 @@ They are a trucking company automating quotes.
 
 They mention the main skills are "GraphQL, Node.js, Python, TypeScript".
 
-## Interview 1
-
-![[Applications/Vooma/Interviews/1/1]]
-
 ## Rejection
 
 ```

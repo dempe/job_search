@@ -39,11 +39,3 @@ Let me know if you're available for a quick chat!
 Best,
 Chris
 ```
-
-## Interview 1
-
-![[Applications/Waldium/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/Waldium/Interviews/2/2]]

@@ -99,14 +99,6 @@ Best,
 Chris
 ```
 
-## Interview 1
-
-![[Applications/Clara/Interviews/1/1]]
-
-## Interview 2
-
-![[Applications/Clara/Interviews/2/2]]
-
 ## Declination
 
 ```

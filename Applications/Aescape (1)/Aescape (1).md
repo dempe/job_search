@@ -66,7 +66,3 @@ Since so much time is invested in scoping and planning, the execution and verifi
 
 ```
 ```
-
-## Interview 1
-
-![[Applications/Aescape (1)/Interviews/1/1]]

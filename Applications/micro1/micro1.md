@@ -21,7 +21,3 @@ date_modified: 2026-11-06 18:58
 ---
 
 ## Application
-
-## Interview 1
-
-![[Applications/micro1/Interviews/1/1]]
