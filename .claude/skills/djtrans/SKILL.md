@@ -1,14 +1,12 @@
 ---
 name: djtrans
-description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Takes a new transcript from `./transcript.txt` (moving it into the interview's folder), extracts the substantive questions the interviewer asked, and writes a `## Questions` section beside the transcript with, for each question, a pass / fail grade of the real answer and the ideal answer. Takes the application note's name and optionally an interview number (e.g. `Rivora`, or `Rivora 2`).
+description: Turn the interview transcripts in an application's interview notes into question/answer blocks, then grade how the user actually answered. Takes a new transcript from `./transcript.txt` (moving it into the interview's folder), extracts the substantive questions the interviewer asked, and writes a `## Questions` section beside the transcript with, for each question, a pass / fail grade of the real answer. Takes the application note's name and optionally an interview number (e.g. `Rivora`, or `Rivora 2`).
 argument-hint: <application-note-name> [interview-number]
 ---
 
 # Interview Transcript to Questions
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, beside its application note. Read the transcripts in one application's interview notes (or in one of them), pull out the questions the interviewer asked, write the answer that should have been given to each, and grade the answer the user actually gave.
-
-The answers are model answers for study, not a record of what was said and not restricted to what the vault can evidence. Each generated section says so, so a later reader never mistakes them for the user's own words.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, beside its application note. Read the transcripts in one application's interview notes (or in one of them), pull out the questions the interviewer asked, and grade the answer the user actually gave to each.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -16,12 +14,12 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 ## Constraints
 
-- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Skill for `djspeakers` in Step 2, and Agent for grading in Step 7). It MUST NOT write scripts, and the only script it runs itself is the bundled `extract.py` (Step 2).
-- Other than `extract.py`, the Bash tool MUST be used only for read-only commands (`ls`, `grep`, `test -e`), `pick.sh --answers` (Step 6), and the commits in Steps 2 and 8 (`git add`, `git commit`).
+- The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Skill for `djspeakers` in Step 2, and Agent for grading in Step 6). It MUST NOT write scripts, and the only script it runs itself is the bundled `extract.py` (Step 2).
+- Other than `extract.py`, the Bash tool MUST be used only for read-only commands (`ls`, `grep`, `test -e`) and the commits in Steps 2 and 7 (`git add`, `git commit`).
 - `extract.py` is the only thing that moves transcripts, so they are moved as is and never retyped. The assistant MUST NOT move, delete or edit `./transcript.txt` any other way.
-- The assistant modifies the application's interview notes only through `extract.py` (Step 2), and by adding a `## Questions` section, or by adding grade bullets to an existing ungraded one (Step 3). Every other part of them, including existing model answers and their embeds, MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
+- The assistant modifies the application's interview notes only through `extract.py` (Step 2), and by adding a `## Questions` section, or by adding grade bullets to an existing ungraded one (Step 3). Every other part of them MUST stay byte-for-byte unchanged. The application note itself MUST NOT be modified.
 - The assistant MUST NOT modify any existing `transcript.md` or `transcript-processed.md`.
-- The assistant commits only the files it changed, in Steps 2 and 8. It MUST NOT push.
+- The assistant commits only the files it changed, in Steps 2 and 7. It MUST NOT push.
 
 ## Output
 
@@ -55,14 +53,14 @@ Then, in each interview note:
 
 Then make sure each transcript to process has a speaker-labelled copy, `transcript-processed.md`, beside it, embedded in the note:
 
-- If any is missing, invoke the `djspeakers` skill with the Skill tool for this application, and report its uncertain speaker calls in Step 9. It writes the file and switches the note's embed to it, so Read those notes again.
+- If any is missing, invoke the `djspeakers` skill with the Skill tool for this application, and report its uncertain speaker calls in Step 8. It writes the file and switches the note's embed to it, so Read those notes again.
 - If `djspeakers` couldn't label a transcript, skip that transcript and report it.
 - Read each `transcript-processed.md`. From here on, it's the transcript: `**Me:**` turns are the user's and every other label is an interviewer's. The raw `transcript.md` is not read.
 
 ## Step 3: Skip work already done
 
 - If an interview note's `## Questions` section already contains `grade::` items, it is skipped and reported.
-- If it has a `## Questions` section without grades (written before its transcript existed), skip Steps 4–6 for it: grade its existing questions in Step 7, then in Step 8 add only each question's grade bullets.
+- If it has a `## Questions` section without grades (written before its transcript existed), skip Steps 4–5 for it: grade its existing questions in Step 6, then in Step 7 add only each question's grade bullets.
 - Re-running the skill is therefore safe.
 
 ## Step 4: Extract the interviewer's questions
@@ -96,33 +94,20 @@ Transcripts are machine-transcribed and rough. For each question:
 - The assistant MUST NOT invent a question that was not asked, and MUST NOT sharpen a vague question into a more specific one.
 - If a question genuinely has two parts, keep both parts.
 
-## Step 6: Write the ideal answer
+## Step 6: Grade each answer
 
-For each question, write the answer that should have been given:
-
-- **Technical questions** get the correct technical answer, accurate and specific.
-- **Experience and behavioral questions** get a strong, concrete, well-structured answer in first person.
-- Aim for what a person would actually say out loud: roughly 30–90 seconds, longer only when the question demands it.
-- Match the user's plain, direct voice (see the user's own answers, from `bash .claude/skills/djq/pick.sh --answers`, for tone). Use `--` for dashes, never em dashes.
-- No filler openers ("Great question"), no corporate register, no bullet-point speech.
-- The answer MUST answer every part of the question.
-
-These answers are not constrained by what the user actually said in the interview, nor by what the vault can evidence. That is deliberate: they are the target to study toward. The user decides what to adapt.
-
-## Step 7: Grade each answer
-
-Grading runs in a fresh context, so it isn't biased by having just written the model answers.
+Grading runs in a fresh context, so it isn't biased by having just extracted the questions.
 
 - For each interview note to grade, launch one `general-purpose` agent with the Agent tool. Its prompt MUST include:
   - the path of `.claude/skills/djgrade/SKILL.md`, to read and follow as its grading rules
   - the path of the interview's `transcript-processed.md`, to read in full, and that `**Me:**` turns are the user's
-  - every question, in order, with its reference answer: the model answer from Step 6, or, for an existing section, the text under the question's `#### Canonical Answer` subheading
+  - every question, in order (there is no reference answer: djgrade grades against the question alone)
   - the instruction to take the user's answer to each question from the transcript: the text of their `**Me:**` turns from that question until the interviewer moves on (including follow-up exchanges on the same point), copied exactly and joined with ` … `; then grade it, and return only `djgrade`'s output block for each question, in order, labeled by question number
   - the instruction not to create or modify any file
 - Launch the agents for different notes in parallel.
-- Use each agent's blocks as is in Step 8. If an agent returns the wrong number of blocks or a block that doesn't match `djgrade`'s output shape, re-run that agent once. If it fails again, STOP that note and report it.
+- Use each agent's blocks as is in Step 7. If an agent returns the wrong number of blocks or a block that doesn't match `djgrade`'s output shape, re-run that agent once. If it fails again, STOP that note and report it.
 
-## Step 8: Write the section
+## Step 7: Write the section
 
 In the interview note, immediately after the `## Transcript` section, add:
 
@@ -137,20 +122,16 @@ In the interview note, immediately after the `## Transcript` section, add:
 - missing::
   - **{check}:** {what was missing or wrong, for that check}
 - feedback:: {feedback}
-
-#### Canonical Answer
-
-{ideal answer}
 ````
 
 - One `###` heading per question, in the order asked. `{question}` is the complete question on one line, with any `#`, `|`, or `^` removed and `[`/`]` replaced with `(`/`)` (a Markdown link becomes `text (url)`), so the heading still works as a link. `Interviews.md` links to it.
 - The bullets are `djgrade`'s output for that question, written as is. Each field is its own list item, so Dataview reads it per section.
-- The ideal answer goes under a `#### Canonical Answer` subheading as plain text, matching the rest of the vault. Blocks are separated by exactly one blank line.
+- Blocks are separated by exactly one blank line.
 - The section has no intro line: it goes straight from `## Questions` to the first `###` question.
-- For an existing ungraded section (Step 3), insert each question's bullets between its heading and its `#### Canonical Answer` subheading (adding the subheading before the model answer if it's missing). Nothing else in it changes.
+- For an existing ungraded section (Step 3), insert each question's bullets under its heading, before any `#### Practice` subheading. Nothing else in it changes.
 - Use Edit, anchoring on the transcript's embed line (or on each heading) and whatever follows it, so nothing else moves.
 - Commit each interview note as soon as its section is written, one commit per note: `git add -- "Applications/{Application}/Interviews/{n}/{n}.md" && git commit -m "Grade {Application} interview {n}" -- "Applications/{Application}/Interviews/{n}/{n}.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 
-## Step 9: Report and stop
+## Step 8: Report and stop
 
 Report one line per interview note (for example, `Interview 1: 5 questions (3 pass, 2 fail)`), plus a line for any transcript skipped and why. Then STOP.

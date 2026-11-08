@@ -2,9 +2,10 @@
 # Print one question, chosen uniformly at random, from the application notes
 # (Applications/{title}/{title}.md) and interview notes
 # (Applications/{title}/Interviews/{n}/{n}.md). A question is a `### {question}`
-# heading inside a note's `## Questions` section. Its answer is the text under
-# its `#### Canonical Answer` subheading (interview notes), or else the text
-# directly under the heading (application notes), up to the next heading.
+# heading inside a note's `## Questions` section. Its answers are the plain
+# text directly under the heading (application notes), up to the next heading,
+# and the value of every `- answer::` line under it: the interview answer and
+# each `#### Practice` session's answer.
 #
 # Output: the note's name on the first line ("{title}" or "{title} - Interview {n}"),
 # its vault path without `.md` on the second, then the question as a `> ` line.
@@ -13,9 +14,9 @@
 # in order, after the same two lines, one blank line between questions.
 #
 # With `--answers [root]`, it reads every note under root (default: the vault)
-# and prints each question that has an answer: `## {note path without .md}`,
+# and prints each answer, in order: `## {note path without .md}`,
 # `### {question}`, a blank line, then the answer verbatim, one blank line
-# between them.
+# between them. A question with several answers is printed once per answer.
 set -euo pipefail
 shopt -s nullglob
 
@@ -51,24 +52,24 @@ awk -v all="$all" -v answers="$answers" '
   /^#{1,2} / { inqs = ($0 == "## Questions"); cur = 0; next }
   inqs && /^### / {
     n++; cur = n; file[n] = FILENAME; q[n] = substr($0, 5); sect = "direct"
-    direct[n] = ""; canon[n] = ""; hascanon[n] = 0
+    direct[n] = ""; na[n] = 0; infield = 0
     next
   }
-  cur && /^####+ / {
-    if ($0 == "#### Canonical Answer") { sect = "canon"; hascanon[cur] = 1 }
-    else if ($0 ~ /^#### /) sect = "other"
-    next
-  }
+  cur && /^####+ / { sect = "other"; next }
+  cur && /^- answer:: / { na[cur]++; ans[cur, na[cur]] = substr($0, 12) }
+  cur && /^- [a-z_]+::( |$)/ { infield = 1; next }
+  cur && infield && /^[ \t]+/ { next }
+  cur { infield = 0 }
   cur && sect == "direct" { direct[cur] = direct[cur] $0 "\n" }
-  cur && sect == "canon" { canon[cur] = canon[cur] $0 "\n" }
   END {
     if (answers) {
       m = 0
       for (j = 1; j <= n; j++) {
-        a = trim(hascanon[j] ? canon[j] : direct[j])
-        if (a !~ /[^ \t\n]/) continue
         path = file[j]; sub(/\.md$/, "", path)
-        printf "%s## %s\n### %s\n\n%s\n", (m++ ? "\n" : ""), path, q[j], a
+        a = trim(direct[j])
+        if (a ~ /[^ \t\n]/) printf "%s## %s\n### %s\n\n%s\n", (m++ ? "\n" : ""), path, q[j], a
+        for (k = 1; k <= na[j]; k++)
+          if (ans[j, k] ~ /[^ \t]/) printf "%s## %s\n### %s\n\n%s\n", (m++ ? "\n" : ""), path, q[j], ans[j, k]
       }
       exit (m == 0)
     }

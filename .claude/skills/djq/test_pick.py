@@ -1,4 +1,4 @@
-"""Tests for pick.sh --all and --answers. Run: python3 -I .claude/skills/djq/test_pick.py"""
+"""Tests for pick.sh --all and --answers (answer text, then every answer:: line). Run: python3 -I .claude/skills/djq/test_pick.py"""
 
 import pathlib
 import subprocess
@@ -62,12 +62,9 @@ type: interview
 ### What is Kafka?
 
 - grade:: fail
+- answer:: "Uh, a queue."
 - missing::
   - **lead:** stalled
-
-#### Canonical Answer
-
-A log.
 
 #### Practice
 
@@ -82,10 +79,6 @@ A log.
 - feedback:: Say more.
 
 ### Why leave?
-
-#### Canonical Answer
-
-To grow.
 
 ## Retrospective
 
@@ -149,9 +142,10 @@ class PickTest(unittest.TestCase):
         self.write("Applications/Acme/Interviews/2/2.md", INTERVIEW)
         self.assertEqual(self.run_pick("--answers", self.root), (
             "## Applications/Acme/Acme\n### Why us?\n\nBecause.\n\nIt's a good fit.\n\n"
+            "## Applications/Acme/Acme\n### Why us?\n\n\"Because.\"\n\n"
             "## Applications/Acme/Acme\n### Tell us about a project. Keep it short.\n\n- Built a crawler\n- Built a pipeline\n\n"
-            "## Applications/Acme/Interviews/2/2\n### What is Kafka?\n\nA log.\n\n"
-            "## Applications/Acme/Interviews/2/2\n### Why leave?\n\nTo grow.\n"
+            "## Applications/Acme/Interviews/2/2\n### What is Kafka?\n\n\"Uh, a queue.\"\n\n"
+            "## Applications/Acme/Interviews/2/2\n### What is Kafka?\n\n\"It's a log.\"\n"
         ))
 
 

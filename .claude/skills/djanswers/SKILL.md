@@ -6,7 +6,7 @@ argument-hint: <application-note-name>
 
 # Draft Application Answers
 
-Answer the unanswered questions in one `Applications/` note, and in its interview notes (`Applications/{Application}/Interviews/{n}/{n}.md`), with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note.
+Answer the unanswered questions in one `Applications/` application note with draft answers written in the user's voice, from evidence about the user's real experience. The user reviews and edits the drafts in the note.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -16,8 +16,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is `pick.sh --answers`.
 - The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`), `bash .claude/skills/djq/pick.sh --answers` (Step 3), and the commit in Step 5 (`git add`, `git commit`).
-- The only files this skill modifies are `Applications/{Application}/{Application}.md` and its interview notes, and only by writing answer text under unanswered questions. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
-- The assistant MUST NOT create or modify anything in other application or interview notes, `../resume/`, client repositories, or anywhere else.
+- The only files this skill modifies are `Applications/{Application}/{Application}.md`, and only by writing answer text under unanswered questions. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
+- The assistant MUST NOT create or modify anything in other application notes, any interview note, `../resume/`, client repositories, or anywhere else.
 - The assistant commits only the notes it edited, in Step 5. It MUST NOT push.
 
 ## Honesty
@@ -43,7 +43,7 @@ These drafts go to real employers under the user's name.
 A question is a `### {question}` heading in a note's `## Questions` section. Its answer is plain text, up to the next heading:
 
 - In an application note, the text directly under the heading, before any `#### Practice` subheading.
-- In an interview note, the text under the `#### Canonical Answer` subheading that follows the heading's `- field::` bullets and their indented sub-bullets (`grade`, `score`, `answer`, `missing`, `feedback`).
+- Interview notes hold no answers to fill in: their questions carry only grade bullets and practice sessions, so this skill doesn't touch them.
 
 - A question with no non-whitespace answer text is **unanswered**.
 - A question with answer text is **answered** and MUST be left untouched.
@@ -54,18 +54,18 @@ A question is a `### {question}` heading in a note's `## Questions` section. Its
 - The argument is `{Application}`, the application note's name without `.md`. Resolve it to an application folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. The note is `Applications/{Application}/{Application}.md`.
 - If no argument was provided, the assistant MUST STOP and ask for it.
 - If no matching note exists, the assistant MUST STOP with one line naming the missing file.
-- Read the whole note, then every interview note in `Applications/{Application}/Interviews/` (`ls`).
+- Read the whole note.
 
 ## Step 2: Find unanswered questions
 
-- Find every unanswered Q/A in the note and its interview notes, in any section.
+- Find every unanswered question in the note's `## Questions` section.
 - If there are none, the assistant MUST STOP with one line saying so.
 
 ## Step 3: Gather evidence
 
 Read these sources. They are listed from most to least authoritative for the user's voice.
 
-1. **The user's past answers,** printed by `bash .claude/skills/djq/pick.sh --answers`: every answered question in `Applications/`, each after its note's path. The user's own writing about their experience, stories, preferences, and constraints. These are the primary source for both facts and voice. Model answers under an interview note's `#### Canonical Answer` were generated for study, not written by the user, so they count for voice and facts only where the user's own answers or the other sources back them.
+1. **The user's past answers,** printed by `bash .claude/skills/djq/pick.sh --answers`: every answered question in `Applications/`, each after its note's path. The user's own writing about their experience, stories, preferences, and constraints. These are the primary source for both facts and voice. It includes every `answer::` line: what the user said in interviews (machine-transcribed speech) and in practice sessions. Each sits beside its `grade::`, `missing::` and `feedback::` bullets in the note; prefer answers graded `pass`, and don't reuse a claim that a `missing::` item flags as inaccurate.
 2. **`../resume/resume.yaml`.** The source of truth for jobs, dates, bullets, skills, projects, certifications, and education. Include every bullet, whatever its `resume-type`. Compute years of experience as the file's comments describe.
 3. **`Consulting/` notes in this vault.** The user's working notes, time logs, and learnings from client projects.
 4. **Client project repositories under `/Users/cld/workspace/clients/`.** Use `find` and `grep` to locate relevant decision records and plans (`docs/adr/`, `.agents/docs/adrs/`, `.agents/plans/`) and each project's `package.json` for the libraries it actually used. Read only what's relevant to a question.
@@ -112,8 +112,7 @@ Before writing, check every draft against this rubric, and revise it until it pa
 
 ## Step 5: Write the answers into the note
 
-- For each drafted answer, use Edit to put the answer text under the question: in an application note, between the `### {question}` heading and the next heading; in an interview note, between `#### Canonical Answer` and the next heading. Exactly one blank line separates the answer from the heading above it and the heading below it. The headings stay exactly as they are.
-- `#### Canonical Answer` lines are identical, so in an interview note each Edit's `old_string` MUST include the question's heading or its last bullet to make the match unique.
+- For each drafted answer, use Edit to put the answer text under the question: between the `### {question}` heading and the next heading. Exactly one blank line separates the answer from the heading above it and the heading below it. The headings stay exactly as they are.
 - Leave unanswered any question the sources couldn't support.
 - If any answer was written, commit the notes that were edited: `git add -- {each edited note} && git commit -m "Draft {Application} answers" -- {each edited note}`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 - Then STOP, after the one-line list of empty questions if there are any (see Output).
