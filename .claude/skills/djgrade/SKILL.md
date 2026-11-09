@@ -39,7 +39,11 @@ If the caller names the note a question lives in, the reference answer is:
 
 - In an application note's `## Questions` section, the plain text directly under the question's `### {question}` heading, up to the next heading.
 
-Interview notes have no reference answers. If there's none, grade against the question alone, using correct technical knowledge.
+Interview notes have no reference answers. If there's none, grade against the question alone, using correct technical knowledge. If the caller gives the reference answer itself, use it and don't read the note.
+
+## Fact sources
+
+A caller MAY give fact sources about the candidate: the resume (`../resume/resume.yaml`) and the answer the candidate gave to the same question in the real interview. They are evidence only for `accurate`: whether the answer claims more than the candidate's experience supports, or contradicts what they said before (e.g. a production result for a system that never reached production). They MUST NOT be used to judge any other check, to fill in what the answer left out, or as material for `feedback::` beyond explaining an `accurate` failure. Without fact sources, `accurate` is judged on technical correctness and the answer's own claims.
 
 ## Rubric
 

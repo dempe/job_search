@@ -44,8 +44,16 @@ From [[{note path}|{note name}]]
 
 If the user replies with an answer to the question (typed, or pasted from speech) rather than asking for the answer:
 
-1. Invoke the `djgrade` skill with the Skill tool, passing the question, the user's reply as the candidate's answer, and the note path, so it finds the reference answer (application notes only).
-2. Show the user `djgrade`'s full output block.
+1. Grade it in a fresh context, so the grade isn't shaped by anything this conversation knows about the user. Launch one `general-purpose` agent with the Agent tool. Its prompt MUST contain only:
+   - the path `.claude/skills/djgrade/SKILL.md`, to read and follow in item mode
+   - the question, verbatim
+   - the user's reply, verbatim, as the candidate's answer
+   - for an application note, the reference answer: the text under the question's heading, up to the next heading, copied from the note. An interview question has none.
+   - the fact sources (see djgrade's Fact sources): the path `../resume/resume.yaml` (relative to the vault root), and for an interview note the question's interview `answer::` value, copied from the note
+   - the instruction to read no file other than djgrade's `SKILL.md` and the resume, to create or modify nothing, and to return only djgrade's output block
+
+   The prompt MUST NOT include anything else: no other notes, prep material, earlier answers, or the assistant's own summary of the user. If the agent returns something that isn't one block in djgrade's output shape, run it once more; if it fails again, STOP with one line saying so.
+2. Show the user the agent's block, as is.
 3. Run `date "+%Y-%m-%d %H:%M:%S"` and log the attempt as a new numbered session in the question's `#### Practice` section:
 
    ````markdown
