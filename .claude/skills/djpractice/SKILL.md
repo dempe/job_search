@@ -1,7 +1,7 @@
 ---
 name: djpractice
-description: Practice every question in one interview note, or in one application note, in order, the way djq practices a random one. Shows one question at a time, and when the user answers, grades the attempt with djgrade, logs it under the question, and moves on to the next. Takes the application note's name and an optional interview number (e.g. `micro1 1`, or `Rivora` for the application's own questions).
-argument-hint: <application-note-name> [interview-number]
+description: Practice every question in one interview note, in order, the way djq practices a random one. Shows one question at a time, and when the user answers, grades the attempt with djgrade, logs it under the question, and moves on to the next. Takes the application note's name and an interview number (e.g. `micro1 1`). Application notes' own questions are never practiced.
+argument-hint: <application-note-name> <interview-number>
 ---
 
 # Practice an Interview
@@ -18,8 +18,8 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 
 ## Step 1: Input
 
-- The arguments are `{Application}`, an application note's name, and optionally `{n}`, an interview number. Resolve `{Application}` to its folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. If no argument was given, STOP and ask for it.
-- The note is `Applications/{Application}/Interviews/{n}/{n}.md` with `{n}`, otherwise `Applications/{Application}/{Application}.md`. If it doesn't exist (`test -e`), STOP with one line naming it.
+- The arguments are `{Application}`, an application note's name, and `{n}`, an interview number. Resolve `{Application}` to its folder in `Applications/` (`ls`), matching case-insensitively, and use that folder's casing. If either argument is missing, STOP and ask for it. Application notes' own questions are never practiced.
+- The note is `Applications/{Application}/Interviews/{n}/{n}.md`. If it doesn't exist (`test -e`), STOP with one line naming it.
 
 ## Step 2: List the questions
 

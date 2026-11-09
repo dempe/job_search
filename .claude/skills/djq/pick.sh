@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
-# Print one question, chosen uniformly at random, from the application notes
-# (Applications/{title}/{title}.md) and interview notes
-# (Applications/{title}/Interviews/{n}/{n}.md). A question is a `### {question}`
+# Print one question, chosen uniformly at random, from the interview notes
+# (Applications/{title}/Interviews/{n}/{n}.md) under root (default: the vault).
+# Application notes are never practiced. A question is a `### {question}`
 # heading inside a note's `## Questions` section. Its answers are the plain
 # text directly under the heading (application notes), up to the next heading,
 # and the value of every `- answer::` line under it: the interview answer and
 # each `#### Practice` session's answer.
 #
-# Output: the note's name on the first line ("{title}" or "{title} - Interview {n}"),
+# Output: the note's name on the first line ("{title} - Interview {n}"),
 # its vault path without `.md` on the second, then the question as a `> ` line.
 #
-# With `--all {note}`, it reads only that note and prints every question in it,
-# in order, after the same two lines, one blank line between questions.
+# With `--all {note}`, it reads only that interview note and prints every
+# question in it, in order, after the same two lines, one blank line between
+# questions. It exits non-zero for any other note.
 #
-# With `--answers [root]`, it reads every note under root (default: the vault)
+# With `--answers [root]`, it reads every application and interview note under root
 # and prints each answer, in order: `## {note path without .md}`,
 # `### {question}`, a blank line, then the answer verbatim, one blank line
 # between them. A question with several answers is printed once per answer.
@@ -23,28 +24,35 @@ shopt -s nullglob
 all=0
 answers=0
 notes=()
+root="$(cd "$(dirname "$0")/../../.." && pwd)"
 if [[ "${1:-}" == "--all" ]]; then
   all=1
   notes=("$(cd "$(dirname "$2")" && pwd)/$(basename "$2")")
-fi
-root="$(cd "$(dirname "$0")/../../.." && pwd)"
-if [[ "${1:-}" == "--answers" ]]; then
+  [[ "${notes[0]}" =~ /Applications/[^/]+/Interviews/([0-9]+)/([0-9]+)\.md$ ]] \
+    && [[ "${BASH_REMATCH[1]}" == "${BASH_REMATCH[2]}" ]] || exit 1
+elif [[ "${1:-}" == "--answers" ]]; then
   answers=1
   root="$(cd "${2:-$root}" && pwd)"
+elif [[ -n "${1:-}" ]]; then
+  root="$(cd "$1" && pwd)"
 fi
 
 cd "$root"
 
 if (( ! all )); then
   for dir in Applications/*/; do
-    title=$(basename "$dir")
-    [[ -f "$dir$title.md" ]] && notes+=("$dir$title.md")
+    if (( answers )); then
+      title=$(basename "$dir")
+      [[ -f "$dir$title.md" ]] && notes+=("$dir$title.md")
+    fi
     for interview in "$dir"Interviews/*/; do
       n=$(basename "$interview")
       [[ -f "$interview$n.md" ]] && notes+=("$interview$n.md")
     done
   done
 fi
+
+(( ${#notes[@]} )) || exit 1
 
 awk -v all="$all" -v answers="$answers" '
   function trim(s) { sub(/^\n+/, "", s); sub(/\n+$/, "", s); return s }

@@ -1,4 +1,4 @@
-"""Tests for pick.sh --all and --answers (answer text, then every answer:: line). Run: python3 -I .claude/skills/djq/test_pick.py"""
+"""Tests for pick.sh (interview questions only), --all, and --answers (answer text, then every answer:: line). Run: python3 -I .claude/skills/djq/test_pick.py"""
 
 import pathlib
 import subprocess
@@ -107,14 +107,24 @@ class PickTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         return result.stdout
 
-    def test_lists_every_application_question_in_order(self):
+    def test_all_rejects_an_application_note(self):
         note = self.write("Applications/Acme/Acme.md", APPLICATION)
-        self.assertEqual(self.run_pick("--all", note), (
-            "Acme\nApplications/Acme/Acme\n"
-            "> Why us?\n\n"
-            "> Tell us about a project. Keep it short.\n\n"
-            "> Unanswered?\n"
-        ))
+        result = subprocess.run(["bash", str(PICK), "--all", str(note)], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(result.stdout, "")
+
+    def test_random_pick_skips_application_notes(self):
+        self.write("Applications/Acme/Acme.md", APPLICATION)
+        self.write("Applications/Acme/Interviews/2/2.md", INTERVIEW.replace("### Why leave?\n\n", ""))
+        for _ in range(10):
+            self.assertEqual(self.run_pick(self.root), (
+                "Acme - Interview 2\nApplications/Acme/Interviews/2/2\n> What is Kafka?\n"
+            ))
+
+    def test_random_pick_without_interviews_exits_non_zero(self):
+        self.write("Applications/Acme/Acme.md", APPLICATION)
+        result = subprocess.run(["bash", str(PICK), str(self.root)], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
 
     def test_lists_every_interview_question_in_order(self):
         note = self.write("Applications/Acme/Interviews/2/2.md", INTERVIEW)
@@ -133,7 +143,7 @@ class PickTest(unittest.TestCase):
         ))
 
     def test_note_without_questions_exits_non_zero(self):
-        note = self.write("Applications/Acme/Acme.md", "---\ntype: job\n---\n\n## Notes\n\n### Not a question\n")
+        note = self.write("Applications/Acme/Interviews/1/1.md", "---\ntype: interview\n---\n\n## Notes\n\n### Not a question\n")
         result = subprocess.run(["bash", str(PICK), "--all", str(note)], capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
 
