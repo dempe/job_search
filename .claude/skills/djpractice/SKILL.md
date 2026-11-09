@@ -14,7 +14,8 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 
 - The assistant MUST get the questions by running `pick.sh --all` (Step 2). It MUST NOT find them itself.
 - Grading, logging and committing each attempt follow djq's Step 3 exactly, including its constraints: the only file change is one session added to the question's `#### Practice` section, committed with djq's message.
-- The Bash tool MUST be used only for `ls`, `test -e`, `pick.sh`, and what djq's Step 3 runs (`date "+%Y-%m-%d %H:%M:%S"`, `git add`, `git commit`). It MUST NOT push.
+- The Bash tool MUST be used only for `ls`, `test -e`, `pick.sh`, what djq's Step 3 runs (`date "+%Y-%m-%d %H:%M:%S"`, `git add`, `git commit`), and the run file's `mktemp`, append and `rm` (Steps 2–4). It MUST NOT push.
+- The run file is the only record of this run's earlier answers. The assistant MUST NOT take them from the conversation or from the note's `#### Practice` sessions, which mix sessions from different runs.
 
 ## Step 1: Input
 
@@ -33,6 +34,13 @@ The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted 
 - The first line of output is the note's name and the second its vault path without `.md`, as in djq. The rest is every question in the note, in order, as `>` lines, with one blank line between questions.
 - If the script exits non-zero, STOP with one line saying the note has no questions.
 - Number the questions 1 to {total}, in that order.
+- Create this run's file, and keep its path for the rest of the run:
+
+  ```bash
+  mktemp -t djpractice
+  ```
+
+  It starts empty. It's temporary: lost on a restart, which is fine, since a new run starts over.
 
 ## Step 3: Practice each question
 
@@ -40,12 +48,23 @@ Starting with question 1:
 
 1. **Show it** as djq's Step 2 does, with one line before the blockquote: `Question {i} of {total}`. Then wait for the user's reply.
 2. **Handle the reply:**
-   - An answer: grade, show and log it exactly as djq's Step 3, items 1–4 (djgrade, its full output block, the `#### Practice` session, the commit). The grading prompt includes the earlier answers: every question answered earlier in this run, in order, each with the user's reply verbatim. Skipped questions are left out. Then go on to the next question.
+   - An answer: grade, show and log it exactly as djq's Step 3, items 1–4 (djgrade, its full output block, the `#### Practice` session, the commit), passing the run file's path as the earlier answers. Then append the question and the reply, verbatim, to the run file:
+
+     ```bash
+     cat >> "{run file}" <<'ANSWER'
+     ### {question}
+
+     {the user's reply, verbatim}
+
+     ANSWER
+     ```
+
+     Append only after grading, so the grader sees only earlier questions. Then go on to the next question.
    - A request for the answer: show it as djq's Step 2 says, then wait for their answer to the same question.
-   - `skip`: go on to the next question without grading or logging.
+   - `skip`: go on to the next question without grading, logging, or adding to the run file.
    - `stop`: go to Step 4.
 3. After the last question, go to Step 4.
 
 ## Step 4: Summary and stop
 
-One line: how many questions were answered, the pass/fail tally among them, and how many were skipped. Then STOP.
+Delete the run file (`rm -f "{run file}"`). Then one line: how many questions were answered, the pass/fail tally among them, and how many were skipped. Then STOP.

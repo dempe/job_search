@@ -49,8 +49,8 @@ If the user replies with an answer to the question (typed, or pasted from speech
    - the question, verbatim
    - the user's reply, verbatim, as the candidate's answer
    - the fact source (see djgrade's Fact sources): the path `../resume/resume.yaml` (relative to the vault root). Nothing from the note, not even the question's interview `answer::`, goes in the prompt.
-   - when a caller gives them (djpractice does), the earlier answers (see djgrade's Earlier answers): every question answered earlier in the same practice run, in order, each with the user's reply verbatim. A single `/djq` question has none.
-   - the instruction to read no file other than djgrade's `SKILL.md` and the resume, to create or modify nothing, and to return only djgrade's output block
+   - when a caller gives one (djpractice does), the path of its run file, which holds the earlier answers (see djgrade's Earlier answers): every question answered earlier in the same practice run, in order, with the user's reply. The prompt gives the path, not the answers. A single `/djq` question has none.
+   - the instruction to read no file other than djgrade's `SKILL.md`, the resume and the run file (if given), to create or modify nothing, and to return only djgrade's output block
 
    The prompt MUST NOT include anything else: no other notes, prep material, interview answers, answers from other runs, or the assistant's own summary of the user. If the agent returns something that isn't one block in djgrade's output shape, run it once more; if it fails again, STOP with one line saying so.
 2. Show the user the agent's block, as is.
