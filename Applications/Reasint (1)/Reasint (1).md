@@ -3,18 +3,18 @@ type: job
 applied: 2026-10-13
 job_type: fulltime
 channel: direct
-status: awaiting-reply
+status: rejected
 interviews:
 source: linkedin
-listing: "https://reasint.prismhr-hire.com/job/1065349/senior-software-engineer"
+listing: https://reasint.prismhr-hire.com/job/1065349/senior-software-engineer
 company: Reasint
 position: Senior Software Engineer
 contract: false
 remote: false
 compensation:
 title: Reasint (1)
-date_created: "2026-10-13 12:05"
-date_modified: "2026-10-13 12:05"
+date_created: "2026-11-08 00:30"
+date_modified: "2026-11-08 00:48"
 ---
 
 ## Questions
@@ -60,3 +60,7 @@ Yes, I'm based in Arkansas. Last time we settled on a hybrid plan where I would 
 Best,
 Chris
 ```
+
+## Rejection
+
+I'm updating the status of this application to `rejected`. Let's face it. Cameron had zero intention of ever contacting me again. He just worded it the way he did for in the extremely rare off-chance they were out of candidates. And it's better to word it that way than to say "no" outright. Leaves the door open just in case. Win-win for them.
