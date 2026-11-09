@@ -9,7 +9,7 @@ date_modified: "2026-11-05 12:43"
 ```dataview
 TABLE WITHOUT ID application AS "Application", file.link AS "Interview", file.frontmatter.date AS "When", interviewers AS "Interviewers"
 FROM "Applications"
-WHERE type = "interview"
+WHERE type = "interview" AND outcome = "pending"
 FLATTEN date(substring(string(file.frontmatter.date), 0, 10)) AS day
 WHERE day >= date(today)
 SORT day ASC
