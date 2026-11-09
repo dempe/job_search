@@ -44,13 +44,15 @@ From [[{note path}|{note name}]]
 
 If the user replies with an answer to the question (typed, or pasted from speech) rather than asking for the answer:
 
+The attempt belongs to a practice run `{r}`, a whole number per note that groups the sessions practiced together. A caller like djpractice gives `{r}`. Otherwise this question is a run of its own: `{r}` is the output of `bash .claude/skills/djq/pick.sh --next-run "{note path}.md"`.
+
 1. Grade it in a fresh context, so the grade isn't shaped by anything this conversation knows about the user. Launch one `general-purpose` agent with the Agent tool. Its prompt MUST contain only:
    - the path `.claude/skills/djgrade/SKILL.md`, to read and follow in item mode
    - the question, verbatim
    - the user's reply, verbatim, as the candidate's answer
    - the fact source (see djgrade's Fact sources): the path `../resume/resume.yaml` (relative to the vault root). Nothing from the note, not even the question's interview `answer::`, goes in the prompt.
-   - when a caller gives one (djpractice does), the path of its run file, which holds the earlier answers (see djgrade's Earlier answers): every question answered earlier in the same practice run, in order, with the user's reply. The prompt gives the path, not the answers. A single `/djq` question has none.
-   - the instruction to read no file other than djgrade's `SKILL.md`, the resume and the run file (if given), to create or modify nothing, and to return only djgrade's output block
+   - when a caller gave `{r}` (djpractice does), the earlier answers (see djgrade's Earlier answers), as a command for the agent to run from the vault root: `bash .claude/skills/djq/pick.sh --run {r} "{note path}.md"`. It prints every question answered earlier in this run, with the answer as logged. The prompt gives the command, not the answers. A single `/djq` question has none.
+   - the instruction to read no file other than djgrade's `SKILL.md` and the resume, never to open the note itself, to run no command other than the one above (if given), to create or modify nothing, and to return only djgrade's output block
 
    The prompt MUST NOT include anything else: no other notes, prep material, interview answers, answers from other runs, or the assistant's own summary of the user. If the agent returns something that isn't one block in djgrade's output shape, run it once more; if it fails again, STOP with one line saying so.
 2. Show the user the agent's block, as is.
@@ -62,6 +64,7 @@ If the user replies with an answer to the question (typed, or pasted from speech
    ##### {k}
 
    - date:: {YYYY-MM-DD HH:mm:ss}
+   - run:: {r}
    {djgrade's full output block, exactly as shown to the user}
    ````
 
