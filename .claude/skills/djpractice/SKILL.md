@@ -40,7 +40,7 @@ Starting with question 1:
 
 1. **Show it** as djq's Step 2 does, with one line before the blockquote: `Question {i} of {total}`. Then wait for the user's reply.
 2. **Handle the reply:**
-   - An answer: grade, show and log it exactly as djq's Step 3, items 1–4 (djgrade, its full output block, the `#### Practice` session, the commit). Then go on to the next question.
+   - An answer: grade, show and log it exactly as djq's Step 3, items 1–4 (djgrade, its full output block, the `#### Practice` session, the commit). The grading prompt includes the earlier answers: every question answered earlier in this run, in order, each with the user's reply verbatim. Skipped questions are left out. Then go on to the next question.
    - A request for the answer: show it as djq's Step 2 says, then wait for their answer to the same question.
    - `skip`: go on to the next question without grading or logging.
    - `stop`: go to Step 4.

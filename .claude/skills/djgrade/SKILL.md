@@ -45,6 +45,14 @@ Interview notes have no reference answers. If there's none, grade against the qu
 
 A caller MAY give the candidate's resume (`../resume/resume.yaml`) as a fact source. It is evidence only for `accurate`: whether the answer claims more than the candidate's experience supports. It MUST NOT be used to judge any other check, to fill in what the answer left out, or as material for `feedback::` beyond explaining an `accurate` failure. Without fact sources, `accurate` is judged on technical correctness and the answer's own claims.
 
+## Earlier answers
+
+A caller MAY give the questions the candidate answered earlier in the same practice session, each with their answer. The question being graded is then part of a conversation, the way a follow-up is in a real interview:
+
+- A check passes if the earlier answers already cover it. A follow-up isn't failed for leaving out what the candidate explained one question before (e.g. a clarifying question about a data model isn't failed on `substance:how` when the previous answer described the merge).
+- `answer::` still quotes only the answer to the question being graded.
+- `feedback::` MAY refer to the earlier answers: repetition, a contradiction between answers, or how this one builds on them.
+
 ## Rubric
 
 Classify the question, then go through its **content** and **delivery** checks. Each failed check becomes one `missing::` item. The rubric decides what goes in `missing::`; it doesn't set the grade directly (see Grade).
