@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 status: ghosted
 source: matcha
-interviews:
 listing:
 company: Eliza
 position: Senior Forward Deployed Engineer

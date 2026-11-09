@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2026-04-09
-interviews:
 status: rejected
 job_type: parttime
 source: wellfound

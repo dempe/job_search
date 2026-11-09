@@ -4,7 +4,6 @@ applied: 2026-09-16
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: matcha
 listing: "https://job-boards.greenhouse.io/beaconbiosignals/jobs/4407556009"
 company: Beacon Biosignals

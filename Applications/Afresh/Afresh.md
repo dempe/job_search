@@ -4,7 +4,6 @@ applied: 2026-09-14
 job_type: fulltime
 channel: form
 status: rejected
-interviews:
 source: matcha
 listing: https://job-boards.greenhouse.io/afresh/jobs/6190640004
 company: Afresh

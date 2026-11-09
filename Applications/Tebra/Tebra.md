@@ -4,7 +4,6 @@ applied: 2026-10-15
 job_type: fulltime
 channel: form
 status: awaiting-reply
-interviews:
 source: matcha
 listing: "https://job-boards.greenhouse.io/tebra/jobs/4743714005"
 company: Tebra

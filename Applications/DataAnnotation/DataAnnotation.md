@@ -4,7 +4,6 @@ applied: 2026-10-13
 job_type: contractor
 channel: recruited
 status: awaiting-reply
-interviews:
 source: linkedin
 listing:
 company: DataAnnotation

@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: awaiting-reply
-interviews:
 source: matcha
 listing: "https://job-boards.greenhouse.io/trivelta/jobs/4215796009"
 company: Trivelta

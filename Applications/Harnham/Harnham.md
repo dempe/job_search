@@ -2,7 +2,6 @@
 type: job
 applied: 2026-04-30
 status: ghosted
-interviews:
 job_type: fulltime
 source: linkedin
 position: Senior Software Engineer

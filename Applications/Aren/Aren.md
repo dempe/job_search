@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: awaiting-reply
-interviews:
 source: matcha
 listing: "https://www.workatastartup.com/jobs/118232"
 company: Aren

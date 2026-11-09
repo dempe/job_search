@@ -4,7 +4,6 @@ applied: 2026-09-28
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: wellfound
 listing: "https://wellfound.com/jobs?job_listing_slug=4756714-senior-backend-engineer-e-commerce-platform"
 company: ParcelNest

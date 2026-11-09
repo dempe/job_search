@@ -4,7 +4,6 @@ applied: 2026-10-22
 job_type: fulltime
 channel: direct
 status: awaiting-reply
-interviews:
 source: linkedin
 listing: "https://matcha.Fm/apply/be"
 company: Matcha

@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2023-09-01
-interviews: 
 status: rejected
 job_type: fulltime
 position: Senior Java Software Developer

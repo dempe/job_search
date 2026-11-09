@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2026-02-25
-interviews:
 status: rejected
 job_type: fulltime
 source: wellfound

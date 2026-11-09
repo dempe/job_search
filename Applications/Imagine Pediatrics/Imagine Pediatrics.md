@@ -4,7 +4,6 @@ applied: 2026-09-16
 job_type: fulltime
 channel: form
 status: rejected
-interviews:
 source: matcha
 listing: "https://job-boards.greenhouse.io/imaginepediatrics/jobs/4694659005"
 company: Imagine Pediatrics

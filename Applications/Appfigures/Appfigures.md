@@ -3,7 +3,6 @@ type: job
 applied: 2023-07-27
 interview_dates: []
 status: ghosted
-interviews:
 job_type: fulltime
 position: "Back End Developer (Mid Level)"
 remote: true

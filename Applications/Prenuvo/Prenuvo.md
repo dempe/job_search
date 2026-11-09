@@ -4,7 +4,6 @@ applied: 2026-10-02
 job_type: fulltime
 channel: form
 status: rejected
-interviews:
 source: matcha
 listing: "https://app.careerpuck.com/job-board/prenuvo/job/4738973005?gh_jid=4738973005"
 company: Prenuvo

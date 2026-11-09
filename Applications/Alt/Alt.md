@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: rejected
-interviews:
 source: matcha
 listing: "https://jobs.ashbyhq.com/alt/9bd9d6a6-e9ef-4eb5-bb75-5e7a4a45c15e"
 company: Alt

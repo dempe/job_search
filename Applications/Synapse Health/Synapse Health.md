@@ -4,7 +4,6 @@ applied: 2026-10-19
 job_type: fulltime
 channel: form
 status: awaiting-reply
-interviews:
 source: linkedin
 listing: "https://synapsehealth.com/job-postings?gh_jid=5267478007&gh_src=jag7p2p67us"
 company: Synapse Health

@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: awaiting-reply
-interviews:
 source: wellfound
 listing: "https://wellfound.com/jobs/4875054-senior-backend-engineer"
 company: DuckDuckGo

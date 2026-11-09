@@ -4,7 +4,6 @@ applied: 2026-10-02
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: matcha
 listing: https://job-boards.greenhouse.io/fleetio/jobs/5253664007
 company: Fleetio

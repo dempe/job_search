@@ -1,8 +1,6 @@
 ---
 type: job
 applied: 2024-02-19
-interviews:
-  - 2024-02-23
 status: rejected
 source: wellfound
 job_type: contractor

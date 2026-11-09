@@ -2,7 +2,6 @@
 type: job
 applied: 2026-07-29
 status: ghosted
-interviews:
 job_type: fulltime
 source: matcha
 position: Senior Software Engineer

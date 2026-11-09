@@ -4,7 +4,6 @@ applied: 2026-08-04
 job_type: fulltime
 channel: form
 status: rejected
-interviews:
 source: matcha
 listing: https://jobs.Ashbyhq.Com/ashby/0f5dbf59-687b-4d88-88a7-73ee0a66b48
 company: Ashby

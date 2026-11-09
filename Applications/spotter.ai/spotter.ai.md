@@ -4,7 +4,6 @@ applied: 2026-09-10
 job_type: fulltime
 channel: recruited
 status: ghosted
-interviews:
 source: email
 listing:
 company: spotter.ai

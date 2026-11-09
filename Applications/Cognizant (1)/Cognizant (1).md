@@ -4,9 +4,6 @@ applied: 2026-08-10
 job_type: fulltime
 channel: recruited
 status: ghosted
-interviews:
-  - 2026-08-12
-  - 2026-08-19 12:00
 source: indeed
 listing: https://careers.Cognizant.Com/global-en/jobs/00070024261/senior-java-backend-engineer-hybrid/
 company: Cognizant

@@ -5,8 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: rejected
-interviews:
-  - 2026-10-28 10:00
 source: linkedin
 listing:
 company: GoAccess

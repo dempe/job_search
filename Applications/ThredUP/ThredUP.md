@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2023-10-02
-interviews: 
 status: ghosted
 job_type: fulltime
 position: "Senior Software Engineer"

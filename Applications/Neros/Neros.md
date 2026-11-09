@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: rejected
-interviews:
 source: linkedin
 listing: https://job-boards.greenhouse.io/nerostechnologies/jobs/5265805007?gh_src=a44e27377us
 company: Neros

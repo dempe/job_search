@@ -5,7 +5,6 @@ job_type: fulltime
 channel: direct
 contact: Matt (recruiter)
 status: rejected
-interviews:
 source: linkedin
 listing: "https://job-boards.greenhouse.io/acuitymd/jobs/6212199004?gh_src=sh6nlep24us"
 company: AcuityMD

@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2025-10-23
-interviews:
 status: ghosted
 job_type: fulltime
 position: Senior Java Software Engineer

@@ -2,7 +2,6 @@
 type: job
 applied: 2026-07-16
 status: rejected
-interviews:
 job_type: fulltime
 source: previously worked there
 position:

@@ -1,12 +1,12 @@
 ---
 name: djinterview
-description: Add a new interview to a job application. Creates the next `Applications/{Application}/Interviews/{n}/{n}.md` note, adds its date to the application's `interviews` frontmatter, then runs `djtrans` on it to file and grade `./transcript.txt` if there is one. Takes the application note's name and the interview's date/time (e.g. `People Data Labs 2026-11-10 14:00 - 15:00`).
+description: Add a new interview to a job application. Creates the next `Applications/{Application}/Interviews/{n}/{n}.md` note, linked to its application through its `application` field, then runs `djtrans` on it to file and grade `./transcript.txt` if there is one. Takes the application note's name and the interview's date/time (e.g. `People Data Labs 2026-11-10 14:00 - 15:00`).
 argument-hint: <application-note-name> <date/time>
 ---
 
 # New Interview Note
 
-Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, beside its application note. Create the note for one new interview, add its date to its application, then hand off to `djtrans`, which takes the transcript from `./transcript.txt` if the interview has already happened.
+Each interview is its own note, `Applications/{Application}/Interviews/{n}/{n}.md`, beside its application note. The application note doesn't list its interviews: each interview note links back through its `application` field, so the interviews show in the application's backlinks and in `Applications.md`. Create the note for one new interview, then hand off to `djtrans`, which takes the transcript from `./transcript.txt` if the interview has already happened.
 
 The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are to be interpreted as described in RFC 2119.
 
@@ -16,8 +16,8 @@ Follow the steps below in order. A step that says STOP ends the run.
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit, Write, and Skill for `djtrans` in Step 5). It MUST NOT write or run scripts.
 - The Bash tool MUST be used only to run `date "+%Y-%m-%d %H:%M"`, read-only commands (`ls`, `test -e`), `mkdir -p` for the new interview's folder, and the commit in Step 4 (`git add`, `git commit`).
-- The assistant creates exactly one file, the new interview note (`djtrans` then adds the transcript). In the application note it MAY only add one `interviews` list item. It MUST NOT add an interview heading or embed. Everything else MUST stay byte-for-byte unchanged.
-- The assistant commits only the new interview note and the application note, in Step 4. It MUST NOT push.
+- The assistant creates exactly one file, the new interview note (`djtrans` then adds the transcript). It MUST NOT modify the application note.
+- The assistant commits only the new interview note, in Step 4. It MUST NOT push.
 
 ## Output
 
@@ -59,10 +59,9 @@ Follow the steps below in order. A step that says STOP ends the run.
 - The body is empty. `djtrans` adds the transcript (Step 5); prep and notes are added by hand.
 - Create the folder with `mkdir -p "Applications/{Application}/Interviews/{n}"`, then write the note to `Applications/{Application}/Interviews/{n}/{n}.md`.
 
-## Step 4: Add it to the application
+## Step 4: Commit
 
-- Append `{date}` as a new item at the end of the application's `interviews` list, matching the existing items' indentation. If `interviews:` is blank, add the list under it with two-space indentation (`  - {date}`).
-- Commit both notes: `git add -- "Applications/{Application}/Interviews/{n}/{n}.md" "Applications/{Application}/{Application}.md" && git commit -m "Add {Application} interview {n}" -- "Applications/{Application}/Interviews/{n}/{n}.md" "Applications/{Application}/{Application}.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
+- Commit the note: `git add -- "Applications/{Application}/Interviews/{n}/{n}.md" && git commit -m "Add {Application} interview {n}" -- "Applications/{Application}/Interviews/{n}/{n}.md"`. The message MUST be exactly this, with the placeholders filled in: one line, no body, no other wording.
 
 ## Step 5: Transcript and grading
 

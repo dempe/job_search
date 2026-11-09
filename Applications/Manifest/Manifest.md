@@ -4,7 +4,6 @@ applied: 2026-09-09
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: matcha
 listing: https://job-boards.Greenhouse.Io/manifest/jobs/4398657009/
 company: Manifest

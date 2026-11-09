@@ -1,8 +1,6 @@
 ---
 type: job
 applied: 2026-03-24
-interviews:
-  - 2026-03-26 11:00
 status: declined
 source: wellfound
 position: Backend Engineer

@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2024-12-02
-interviews: 
 status: rejected
 job_type: fulltime
 position: Distinguished Software Engineer

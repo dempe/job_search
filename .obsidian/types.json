@@ -8,7 +8,6 @@
     "interview_dates": "multitext",
     "remote": "checkbox",
     "recruited": "checkbox",
-    "finished": "multitext",
-    "interviews": "date"
+    "finished": "multitext"
   }
 }

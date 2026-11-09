@@ -2,7 +2,6 @@
 type: job
 applied: 2026-06-02
 status: rejected
-interviews:
 job_type: fulltime
 source: whoshiring
 position: Backend Software Engineer - Python/Postgres [Remote / Global]

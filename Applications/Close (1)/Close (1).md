@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2024-09-29
-interviews: 
 status: rejected
 job_type: fulltime
 position: "Senior or Staff Software Engineer"

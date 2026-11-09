@@ -2,7 +2,6 @@
 type: job
 applied: 2023-07-09
 status: ghosted
-interviews:
 job_type: fulltime
 position: Backend Engineer (10X)
 remote: true

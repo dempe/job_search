@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2026-03-24
-interviews:
 status: ghosted
 source: wellfound
 position: Full Stack Engineer- Agentic Ai

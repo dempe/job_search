@@ -4,7 +4,6 @@ applied: 2026-08-10
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: matcha
 listing:
 company: 1upHealth

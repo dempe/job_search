@@ -1,8 +1,6 @@
 ---
 type: job
 applied: 2025-11-14
-interviews:
-  - 2025-11-19 12:15
 status: rejected
 job_type: fulltime
 source: workatastartup

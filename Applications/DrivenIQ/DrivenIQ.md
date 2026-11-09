@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2023-07-27
-interviews:
 status: ghosted
 job_type: fulltime
 position: "Senior Backend Software Engineer"

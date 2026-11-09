@@ -4,7 +4,6 @@ applied: 2026-08-07
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: corvi
 listing: Software Engineer II
 company: Ambry Genetics

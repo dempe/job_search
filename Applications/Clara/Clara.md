@@ -1,9 +1,6 @@
 ---
 type: job
 applied: 2026-02-01
-interviews:
-  - 2024-02-04 14:30
-  - 2024-02-11 14:00
 status: declined
 job_type: fulltime
 source: workatastartup

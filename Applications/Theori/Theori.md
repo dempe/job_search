@@ -2,7 +2,6 @@
 type: job
 applied: 2026-06-11
 status: ghosted
-interviews:
 job_type: fulltime
 source: matcha
 position: Backend Software Engineer

@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2025-11-26
-interviews:
 status: ghosted
 job_type: fulltime
 source: wellfound

@@ -1,9 +1,6 @@
 ---
 type: job
 applied: 2025-11-24
-interviews:
-  - 2025-11-26 11:00
-  - 2025-12-05 11:00
 status: offer
 job_type: fulltime
 source: indeed

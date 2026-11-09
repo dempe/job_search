@@ -2,7 +2,6 @@
 type: job
 applied: 2026-07-28
 status: rejected
-interviews:
 job_type: fulltime
 source: matcha
 position: Senior DevOps Engineer

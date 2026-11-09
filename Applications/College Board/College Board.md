@@ -4,7 +4,6 @@ applied: 2026-10-19
 job_type: fulltime
 channel: form
 status: awaiting-reply
-interviews:
 source: linkedin
 listing: "https://collegeboard.wd1.myworkdayjobs.com/en-US/Careers/job/Remote---USA/Senior-Software-Engineer_REQ002897?source=LinkedIn"
 company: College Board

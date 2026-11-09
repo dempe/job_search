@@ -4,7 +4,6 @@ applied: 2026-10-02
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: matcha
 listing: https://hellotilt.hiringthing.com/job/1062558/software-engineer-ii
 company: Tilt

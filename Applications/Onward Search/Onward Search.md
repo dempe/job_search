@@ -1,8 +1,6 @@
 ---
 type: job
 applied: 2025-12-04
-interviews:
-  - 2025-12-08 11:00
 status: rejected
 job_type: fulltime
 source: indeed

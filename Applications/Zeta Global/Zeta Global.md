@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2026-04-29
-interviews:
 status: ghosted
 job_type:
 source: linkedin

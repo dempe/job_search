@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2025-10-22
-interviews:
 status: ghosted
 job_type: fulltime
 position:

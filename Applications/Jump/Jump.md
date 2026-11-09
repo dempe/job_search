@@ -2,7 +2,6 @@
 type: job
 applied: 2023-07-27
 status: rejected
-interviews:
 job_type: fulltime
 position: Senior Software Engineer
 remote: true

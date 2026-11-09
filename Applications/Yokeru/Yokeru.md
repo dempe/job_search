@@ -1,8 +1,6 @@
 ---
 type: job
 applied: 2026-04-24
-interviews:
-  - 2026-04-27
 status: declined
 job_type: fulltime
 source: wellfound

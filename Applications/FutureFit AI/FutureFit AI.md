@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: awaiting-reply
-interviews:
 source: wellfound
 listing: "https://wellfound.com/jobs?job_listing_slug=4881335-senior-backend-engineer-integrations-platform"
 company: FutureFit AI

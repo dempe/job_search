@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2025-10-30
-interviews:
 status: ghosted
 job_type: fulltime
 position: Lead Engineer (Backend)

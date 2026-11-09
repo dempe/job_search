@@ -2,7 +2,6 @@
 type: job
 applied: 2026-06-18
 status: ghosted
-interviews:
 job_type: fulltime
 source: hn
 position: Senior Software Engineer

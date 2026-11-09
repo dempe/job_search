@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2026-02-19
-interviews:
 status: ghosted
 job_type: fulltime
 source: 4dayweek

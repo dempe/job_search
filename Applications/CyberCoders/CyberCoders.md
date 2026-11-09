@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2026-04-29
-interviews:
 status: rejected
 job_type: fulltime
 source: linkedin

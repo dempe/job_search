@@ -1,8 +1,6 @@
 ---
 type: job
 applied: 2025-04-21
-interviews:
-  - 2025-04-23 10:30
 status: rejected
 job_type: fulltime
 position:

@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2025-11-14
-interviews:
 status: rejected
 job_type: fulltime
 position: Software Engineer ID44006

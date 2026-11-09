@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: awaiting-reply
-interviews:
 source: matcha
 listing: "https://job-boards.greenhouse.io/redcellpartners/jobs/5268063007"
 company: Red Cell Partners

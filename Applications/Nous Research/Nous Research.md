@@ -2,7 +2,6 @@
 type: job
 applied: 2026-07-16
 status: ghosted
-interviews:
 job_type: fulltime
 source: matcha
 position: Software Engineer

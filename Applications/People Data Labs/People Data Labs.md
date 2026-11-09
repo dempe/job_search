@@ -5,9 +5,6 @@ job_type: fulltime
 channel: form
 contact:
 status: interview
-interviews:
-  - 2026-10-29 12:30 - 13:00
-  - 2026-11-03 14:00 - 14:45
 source: matcha
 listing: "https://jobs.ashbyhq.com/people-data-labs/5108aa65-f7cc-4d41-92fe-a3a5373d705d"
 company: People Data Labs

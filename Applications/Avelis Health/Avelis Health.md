@@ -1,9 +1,6 @@
 ---
 type: job
 applied: 2025-11-03
-interviews:
-  - 2025-11-05 10:30
-  - 2025-11-11 14:00
 status: rejected
 job_type: fulltime
 position: Senior Backend Engineer

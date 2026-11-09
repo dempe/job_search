@@ -2,7 +2,6 @@
 type: job
 applied: 2026-06-10
 status: rejected
-interviews:
 job_type: fulltime
 source: matcha
 position: Senior Backend Software Engineer

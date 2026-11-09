@@ -5,7 +5,6 @@ job_type: fulltime
 channel: form
 status: ghosted
 source: matcha
-interviews:
 listing: https://jobs.Ashbyhq.Com/horizon3ai/57d96033-2e76-4f73-87e3-b11e0586ae19
 company: Horizon3
 position: Senior Backend Engineer, Security Controls

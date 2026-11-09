@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2024-02-22
-interviews:
 status: ghosted
 job_type: contractor
 source: wellfound

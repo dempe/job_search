@@ -4,7 +4,6 @@ applied: 2026-08-12
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: matcha
 listing: https://job-boards.Greenhouse.Io/incadigitalinc/jobs/4336700009
 company: Inca Digital

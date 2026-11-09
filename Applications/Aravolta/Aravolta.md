@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2026-04-10
-interviews:
 status: ghosted
 job_type: fulltime
 source: workatastartup

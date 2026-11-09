@@ -1,10 +1,6 @@
 ---
 type: job
 applied: 2023-08-24
-interviews:
-  - 2023-08-31
-  - 2023-09-25
-  - 2023-10-19
 status: rejected
 job_type: fulltime
 position: "Software Engineer Infrastructure"

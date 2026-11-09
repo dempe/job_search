@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2025-10-23
-interviews:
 status: rejected
 job_type: fulltime
 position: Senior Software Engineer (Java)

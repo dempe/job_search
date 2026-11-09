@@ -4,7 +4,6 @@ applied: 2026-08-10
 job_type: fulltime
 channel: form
 status: rejected
-interviews:
 source: indeed
 listing: https://www.Indeed.Com/viewjob?Jk=6270bf7aecfebc80&tk=1jvknct68jc0j801&from=jobi2a_jobmatch-reactivation-en-US_email&rjptk=1jvkncsiimmdq800&xpse=SoC267I3g2q0M6yWq50LbzkdCdPP&xfps=4fbc9253-44a2-4240-ab9c-8760c83ceb2b&xkcb=SoAn67M3g0m8Di7SDZ0KbzkdCdPP
 company: Allstate

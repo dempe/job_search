@@ -4,7 +4,6 @@ applied: 2026-10-02
 job_type: contractor
 channel: form
 status: ghosted
-interviews:
 source: indeed
 listing: https://smartapply.indeed.com/beta/indeedapply/applybyapplyablejobid?indeedApplyableJobId=f1b9ede5-7348-479f-b713-8c7fd16f3c57-Y21o
 company: Compest Solutions Inc

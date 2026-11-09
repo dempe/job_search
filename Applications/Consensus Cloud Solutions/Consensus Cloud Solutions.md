@@ -4,7 +4,6 @@ applied: 2026-09-26
 job_type: fulltime
 channel: form
 status: ghosted
-interviews:
 source: matcha
 listing: https://www.consensus.com/careers/jobs/?gh_jid=4671227006
 company: Consensus Cloud Solutions

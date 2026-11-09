@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2025-11-12
-interviews:
 status: ghosted
 job_type: fulltime
 source: workatastartup

@@ -4,7 +4,6 @@ applied: 2026-10-16
 job_type: fulltime
 channel: form
 status: awaiting-reply
-interviews:
 source: linkedin
 listing: "https://jobs.ashbyhq.com/hims-and-hers/89b79149-e97a-48b8-b411-3fbf01274bb5/application?utm_source=linkedinpremium"
 company: Hims & Hers

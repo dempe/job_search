@@ -3,7 +3,6 @@ tags:
 applied: 2023-06-02
 job_type: contractor
 application_stage: rejected
-interviews:
 remote:
 industry: consulting
 website: https://platform.a.team/chrisdempewolf

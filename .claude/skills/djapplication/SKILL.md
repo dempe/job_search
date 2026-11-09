@@ -165,7 +165,6 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 | `channel` | `form`. The other values are `recruited`, `referral`, and `direct`; the user sets those by hand. |
 | `contact` | blank. The user fills it in by hand with whom they reached out to, e.g. `Matt (recruiter)`. |
 | `status` | `awaiting-reply` |
-| `interviews` | blank |
 | `source` | `{source}` from Step 1 or Step 6, or blank |
 | `listing` | `{listing}` from Step 1 or Step 6, or blank |
 | `jd` | `"[[Applications/{title}/jd]]"`: a link to the JD saved in Step 11 |
@@ -180,7 +179,7 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 
 The frontmatter MUST be valid YAML:
 
-- A blank value is written as the key and colon with nothing after it (`interviews:`).
+- A blank value is written as the key and colon with nothing after it (`contact:`).
 - Booleans are lowercase `true` or `false`.
 - Wrap a value in double quotes if it contains `:` or `#`, or if it begins with any of ``- ? , [ ] { } & * ! | > ' " % @ ` ``. Escape embedded `"` as `\"` and `\` as `\\`. Because they contain `:`, `date_created`, `date_modified`, and URLs are always quoted.
 
@@ -241,7 +240,6 @@ job_type: fulltime
 channel: form
 contact:
 status: awaiting-reply
-interviews:
 source: matcha
 listing:
 jd: "[[Applications/Privacy/jd]]"

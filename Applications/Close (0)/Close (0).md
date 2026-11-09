@@ -3,8 +3,6 @@ type: job
 applied: 2023-05-21
 status: rejected
 source: remotive
-interviews:
-  - 2023-06-15
 job_type: fulltime
 remote: "true"
 industry: sales

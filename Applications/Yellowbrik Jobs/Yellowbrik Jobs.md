@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2024-09-03
-interviews: 
 status: ghosted
 job_type: fulltime
 position: Backend Engineer

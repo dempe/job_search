@@ -1,7 +1,6 @@
 ---
 type: job
 applied: 2024-10-03
-interviews:
 status: ghosted
 job_type: fulltime
 position: Remote Senior Backend Engineer - Java/Kotlin

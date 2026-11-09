@@ -1,8 +1,6 @@
 ---
 type: job
 applied: 2026-04-30
-interviews:
-  - 2026-04-30
 status: declined
 job_type: fulltime
 source: linkedin
