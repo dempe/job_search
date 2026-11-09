@@ -7,8 +7,8 @@
 //   1. the application's `outcome`, set by hand for what no interview note records
 //      (rejected before interviewing, declined, offer, cancelled)
 //   2. an interview note's `outcome`: rejected, declined, offer, ghosted, in that order
-//   3. with interview notes: ghosted if the latest is still pending 30 days after its
-//      date, otherwise interviewing
+//   3. with interview notes: ghosted if the latest is still pending or advanced 30 days
+//      after its date, otherwise interviewing
 //   4. without: awaiting-reply for 30 days after applying, then ghosted
 // `follow_up: true` is a reminder, listed only while the status is awaiting-reply or ghosted.
 //
@@ -47,7 +47,7 @@ function status(app) {
   }
   if (ivs.length) {
     const latest = ivs.reduce((a, b) => (b.date && (!a.date || b.date > a.date) ? b : a));
-    const stale = latest.outcome === "pending" && latest.date && daysSince(latest.date) > GHOST_DAYS;
+    const stale = ["pending", "advanced"].includes(latest.outcome) && latest.date && daysSince(latest.date) > GHOST_DAYS;
     return stale ? "ghosted" : "interviewing";
   }
   const applied = day(app.file.frontmatter.applied);

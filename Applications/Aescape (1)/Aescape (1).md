@@ -15,18 +15,18 @@ remote: true
 compensation:
 title: Aescape (1)
 date_created: "2026-10-29 11:11"
-date_modified: "2026-11-04 17:20"
+date_modified: "2026-11-09 12:05"
 ---
 
 ## Questions
 
-### Please describe your most recent production Golang experience: what you built, roughly when, and for how long.
+### Please Describe Your Most Recent Production Golang Experience: what You Built, Roughly When, and for how Long.
 
 My most recent production Go was at SimplyMeasured (later Sprout Social), from 2016 through mid 2018. Most of the backend there was in Go and Java. I designed and built APIs and microservices in Go and Spring Boot, sitting behind an API gateway I set up to centralize auth, rate limiting, and request transforms.
 
 So it's been a while. Since then I've worked mostly in typed languages (TypeScript, Java, Kotlin), and I'd expect it to take me a few weeks to get fluent in Go again.
 
-### Describe a third-party API integration you built and shipped in production.
+### Describe a Third-party API Integration You Built and Shipped in Production.
 
 At Dekstech, I built a greenfield Node.js middleware on Heroku connecting a client's Shopify store to their new payment provider, ahead of a hard deadline to migrate off their old processor. Customers paid through the provider's hosted checkout, and the middleware reconciled each checkout session with its Shopify order.
 
@@ -34,15 +34,15 @@ During scoping, I noticed the API docs warned not to treat redirects to `/paymen
 
 Since it was touching payments, it was imperative that my code was correct. Each payment session got its own idempotency key, reused across retries, so a retry couldn't double-charge anyone. Gateway errors were mapped to typed errors, so a decline was handled differently from a transient gateway failure. Every request boundary was validated with schema parsing, and 32 tests against a stubbed gateway proved that a declined or interrupted payment couldn't leave an order paid but unfulfilled.
 
-### Please share your AI tools experience. E.g. Cursor, Claude Code, etc.
+### Please Share Your AI Tools Experience. E.g. Cursor, Claude Code, Etc.
 
-I mostly use Codex and Opus, but use DeepSeek for lighter weight stuff.  I use the OpenCode harness in addition to the TUIs for Opus and Codex.
+I mostly use Codex and Opus, but use DeepSeek for lighter weight stuff. I use the OpenCode harness in addition to the TUIs for Opus and Codex.
 
 As for how I actually use AI, I have a pretty detailed, constantly-evolving workflow that's really a chain of model-agnostic skills:
 
-scope -> plan -> execute -> verify.  `scope` takes a loosely defined problem and turns it into a more formally defined problem in terms of functional and non-functional requirements, constraints, assumptions, and risks, and outputs `scope.md`.
+scope -> plan -> execute -> verify. `scope` takes a loosely defined problem and turns it into a more formally defined problem in terms of functional and non-functional requirements, constraints, assumptions, and risks, and outputs `scope.md`.
 
-The next phase is `plan`.  It reads `scope.md`, and builds an implementation plan in `plan.md`, making sure all requirements and dependencies are fullfilled.
+The next phase is `plan`. It reads `scope.md`, and builds an implementation plan in `plan.md`, making sure all requirements and dependencies are fulfilled.
 
 There is a lot of back-and-forth with the AI on these first two phases, but it really helps narrow down *what* exactly we're trying to solve and *how* we will solve it.
 
