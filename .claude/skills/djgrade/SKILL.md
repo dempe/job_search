@@ -43,7 +43,7 @@ Interview notes have no reference answers. If there's none, grade against the qu
 
 ## Fact sources
 
-A caller MAY give fact sources about the candidate: the resume (`../resume/resume.yaml`) and the answer the candidate gave to the same question in the real interview. They are evidence only for `accurate`: whether the answer claims more than the candidate's experience supports, or contradicts what they said before (e.g. a production result for a system that never reached production). They MUST NOT be used to judge any other check, to fill in what the answer left out, or as material for `feedback::` beyond explaining an `accurate` failure. Without fact sources, `accurate` is judged on technical correctness and the answer's own claims.
+A caller MAY give the candidate's resume (`../resume/resume.yaml`) as a fact source. It is evidence only for `accurate`: whether the answer claims more than the candidate's experience supports. It MUST NOT be used to judge any other check, to fill in what the answer left out, or as material for `feedback::` beyond explaining an `accurate` failure. Without fact sources, `accurate` is judged on technical correctness and the answer's own claims.
 
 ## Rubric
 

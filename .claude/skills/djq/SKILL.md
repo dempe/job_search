@@ -48,7 +48,7 @@ If the user replies with an answer to the question (typed, or pasted from speech
    - the path `.claude/skills/djgrade/SKILL.md`, to read and follow in item mode
    - the question, verbatim
    - the user's reply, verbatim, as the candidate's answer
-   - the fact sources (see djgrade's Fact sources): the path `../resume/resume.yaml` (relative to the vault root), and the question's interview `answer::` value, copied from the note
+   - the fact source (see djgrade's Fact sources): the path `../resume/resume.yaml` (relative to the vault root). Nothing from the note, not even the question's interview `answer::`, goes in the prompt.
    - the instruction to read no file other than djgrade's `SKILL.md` and the resume, to create or modify nothing, and to return only djgrade's output block
 
    The prompt MUST NOT include anything else: no other notes, prep material, earlier answers, or the assistant's own summary of the user. If the agent returns something that isn't one block in djgrade's output shape, run it once more; if it fails again, STOP with one line saying so.
