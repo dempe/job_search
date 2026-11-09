@@ -4,7 +4,7 @@ applied: 2026-10-26
 job_type: fulltime
 channel: form
 contact:
-status: rejected
+outcome:
 source: linkedin
 listing:
 company: GoAccess

@@ -6,27 +6,14 @@ date_modified: "2026-11-09 12:21"
 
 ## Follow Up
 
-```dataview
-TABLE choice(
-    date(applied) = date(today),
-    "today",
-    date(today) - date(applied) + " ago"
-  ) AS "Applied", source AS "Source"
-FROM "Applications"
-WHERE status = "follow-up"
+```dataviewjs
+await dv.view("_meta/scripts/applications", {followUp: true, columns: ["ago", "source"]})
 ```
 
 ## Awaiting Reply
 
-```dataview
-TABLE choice(
-    date(applied) = date(today),
-    "today",
-    date(today) - date(applied) + " ago"
-  ) AS "Applied", source AS "Source", contract AS "Contract"
-FROM "Applications"
-WHERE status = "awaiting-reply"
-SORT date(applied) ASC
+```dataviewjs
+await dv.view("_meta/scripts/applications", {status: "awaiting-reply", columns: ["ago", "source", "contract"], sort: "asc"})
 ```
 
 ## Applied to This Year
@@ -40,35 +27,24 @@ SORT applied DESC
 
 ## Offer
 
-```dataview
-TABLE length(filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/"))) AS "Num Interviews", source AS "Source"
-FROM "Applications"
-WHERE status = "offer"
+```dataviewjs
+await dv.view("_meta/scripts/applications", {status: "offer", columns: ["applied", "source", "interviews"], sort: "desc"})
 ```
 
 ## Declined
 
-```dataview
-TABLE applied AS "Applied", source AS "Source", length(filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/"))) AS "Num Interviews"
-FROM "Applications"
-WHERE status = "declined"
-SORT applied DESC
+```dataviewjs
+await dv.view("_meta/scripts/applications", {status: "declined", columns: ["applied", "source", "interviews"], sort: "desc"})
 ```
 
 ## Rejected
 
-```dataview
-TABLE applied AS "Applied", source AS "Source", length(filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/"))) AS "Num Interviews"
-FROM "Applications"
-WHERE status = "rejected"
-SORT applied DESC
+```dataviewjs
+await dv.view("_meta/scripts/applications", {status: "rejected", columns: ["applied", "source", "interviews"], sort: "desc"})
 ```
 
 ## Ghosted
 
-```dataview
-TABLE applied AS "Applied", source AS "Source", length(filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/"))) AS "Num Interviews"
-FROM "Applications"
-WHERE status = "ghosted"
-SORT applied DESC
+```dataviewjs
+await dv.view("_meta/scripts/applications", {status: "ghosted", columns: ["applied", "source", "interviews"], sort: "desc"})
 ```

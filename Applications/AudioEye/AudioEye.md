@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-16
 job_type: fulltime
 channel: form
-status: awaiting-reply
+outcome:
 source: matcha
 listing: "https://job-boards.greenhouse.io/audioeye/jobs/6225356004"
 company: AudioEye

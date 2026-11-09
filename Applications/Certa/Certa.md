@@ -3,7 +3,7 @@ type: job
 applied: 2026-07-29
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: https://jobs.Ashbyhq.Com/certa/3c608236-953e-4902-ba27-0589b09bb028
 position: Software Engineer - Partner Engineering

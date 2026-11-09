@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-06-23
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: "Onboarding Engineer"
 remote: true

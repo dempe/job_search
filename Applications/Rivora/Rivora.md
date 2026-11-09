@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-14
 job_type: contractor
 channel: form
-status: rejected
+outcome:
 source: wellfound
 listing: https://wellfound.com/jobs?job_listing_slug=4697979-backend-engineer-5-8-years
 company: Rivora

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-08-03
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: Software Engineer III
 remote: true

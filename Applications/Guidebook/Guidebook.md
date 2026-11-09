@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-02-19
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: wellfound
 position: Senior Backend Engineer

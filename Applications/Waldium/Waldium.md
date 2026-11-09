@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-12-04
-status: rejected
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Founding Engineer

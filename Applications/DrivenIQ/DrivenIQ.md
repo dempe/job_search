@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-07-27
-status: ghosted
+outcome:
 job_type: fulltime
 position: "Senior Backend Software Engineer"
 remote: true

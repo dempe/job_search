@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-10-21
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: Distinguished Software Engineer
 contract: false

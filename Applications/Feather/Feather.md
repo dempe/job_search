@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-10
-status: declined
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Founding Engineer

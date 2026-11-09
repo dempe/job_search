@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-16
 job_type: contractor
 channel: form
-status: awaiting-reply
+outcome:
 source: linkedin
 listing: "https://www.linkedin.com/jobs/view/4479209699/?companyName=Market+Street+Talent%2C+Inc.&refId=imBMAOSuVu4QKSGcrw0inA%3D%3D&trackingId=IHx9Km%2ByohabdMKwjDZ8Tg%3D%3D&applicantTrackingSystemName=LinkedIn"
 company: Market Street Talent

@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-22
 job_type: fulltime
 channel: recruited
-status: awaiting-reply
+outcome:
 source: linkedin
 listing: "https://oreillyauto.wd1.myworkdayjobs.com/oreilly/job/Headquarters/Senior-Software-Engineer--Full-Stack--Java-React-_R196227"
 company: O'Reilly Auto Parts

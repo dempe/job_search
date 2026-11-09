@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-12-04
-status: ghosted
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Senior Backend Engineer

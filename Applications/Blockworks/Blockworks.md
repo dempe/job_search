@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-07-27
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: Senior Backend Engineer
 remote: true

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-10-02
-status: ghosted
+outcome:
 job_type: fulltime
 position: "Senior Software Engineer"
 remote: false

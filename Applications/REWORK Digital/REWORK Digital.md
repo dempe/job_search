@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-24
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: wellfound
 position: AI Automation Specialist

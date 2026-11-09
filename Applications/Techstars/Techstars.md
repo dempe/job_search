@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-14
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: "https://job-boards.greenhouse.io/techstars57/jobs/8790116002"
 company: Techstars

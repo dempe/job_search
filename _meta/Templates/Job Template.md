@@ -4,7 +4,7 @@ applied: {{date}}
 job_type: fulltime
 channel: form
 contact:
-status: awaiting-reply
+outcome:
 source:
 listing:
 jd:

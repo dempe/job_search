@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-07-02
-status: ghosted
+outcome:
 job_type: fulltime
 position: Senior Software Engineer - Cloud Infrastructure
 remote: true

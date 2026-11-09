@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-12
-status: ghosted
+outcome:
 job_type: fulltime
 position: Full Stack Engineer (The Fixer)
 source: workatastartup

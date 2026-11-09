@@ -3,7 +3,7 @@ type: job
 applied: 2026-07-29
 job_type: fulltime
 channel: form
-status: rejected
+outcome: rejected
 source: matcha
 listing: https://jobs.Lever.Co/firstup/28b3e9f0-9b31-445c-b7de-500bff93da94/apply
 company: Firstup

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-03-24
-status: declined
+outcome:
 source: wellfound
 position: Backend Engineer
 contract: true

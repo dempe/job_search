@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-09-29
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: "Senior or Staff Software Engineer"
 remote: true

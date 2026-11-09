@@ -3,7 +3,7 @@ type: job
 applied: 2026-07-29
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: https://jobs.Ashbyhq.Com/shadeform/73ac1020-84aa-45c1-ade1-f22a6c620456
 company: Shadeform

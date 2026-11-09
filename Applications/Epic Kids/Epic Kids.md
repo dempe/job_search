@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-07-16
-status: ghosted
+outcome:
 job_type: fulltime
 source: matcha
 position: Senior Site Reliability Engineer

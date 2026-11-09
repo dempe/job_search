@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-13
 job_type: fulltime
 channel: direct
-status: rejected
+outcome: rejected
 source: linkedin
 listing: https://reasint.prismhr-hire.com/job/1065349/senior-software-engineer
 company: Reasint

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-06-04
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: matcha
 position: Backend Engineer (Infra), Core Sending

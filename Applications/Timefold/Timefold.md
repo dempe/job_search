@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-15
 job_type: fulltime
 channel: form
-status: awaiting-reply
+outcome:
 source: matcha
 listing: "https://jobs.timefold.ai/jobs/8548801-platform-backend-engineer"
 company: Timefold

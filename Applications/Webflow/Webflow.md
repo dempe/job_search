@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-18
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: Senior Software Engineer, Data Infrastructure
 contract: false

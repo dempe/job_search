@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-25
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: linkedin
 position: Java Senior Backend Engineer

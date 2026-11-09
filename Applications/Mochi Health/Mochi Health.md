@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-01-26
-status: ghosted
+outcome:
 job_type: fulltime
 source: wellfound
 position: Senior Backend Engineer - Pharmacy

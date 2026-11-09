@@ -164,7 +164,7 @@ Read `_meta/Templates/Job Template.md`. The new note's frontmatter MUST contain 
 | `job_type` | `fulltime`, `parttime`, or `contractor`, as stated in the JD. Use `fulltime` if the JD doesn't say. |
 | `channel` | `form`. The other values are `recruited`, `referral`, and `direct`; the user sets those by hand. |
 | `contact` | blank. The user fills it in by hand with whom they reached out to, e.g. `Matt (recruiter)`. |
-| `status` | `awaiting-reply` |
+| `outcome` | blank. Status is derived (`_meta/scripts/applications.js`); the user sets `outcome` by hand only for what no interview note records, e.g. `rejected` before any interview. |
 | `source` | `{source}` from Step 1 or Step 6, or blank |
 | `listing` | `{listing}` from Step 1 or Step 6, or blank |
 | `jd` | `"[[Applications/{title}/jd]]"`: a link to the JD saved in Step 11 |
@@ -239,7 +239,7 @@ applied: 2026-09-14
 job_type: fulltime
 channel: form
 contact:
-status: awaiting-reply
+outcome:
 source: matcha
 listing:
 jd: "[[Applications/Privacy/jd]]"

@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-14
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: "https://arkatechture.pinpointhq.com/en/postings/795de167-707f-4349-b41f-92945f512210"
 company: Arkatechture

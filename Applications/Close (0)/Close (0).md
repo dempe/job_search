@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-05-21
-status: rejected
+outcome:
 source: remotive
 job_type: fulltime
 remote: "true"

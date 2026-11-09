@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-02-19
-status: rejected
+outcome:
 source: wellfound
 job_type: contractor
 position: back-end

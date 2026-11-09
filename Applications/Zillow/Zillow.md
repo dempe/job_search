@@ -4,7 +4,7 @@ applied: 2026-10-22
 job_type: fulltime
 channel: form
 contact:
-status: rejected
+outcome: rejected
 source: linkedin
 listing: https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Remote-USA/Senior-Software-Development-Engineer_P751030-1?source=LinkedIn
 company: Zillow

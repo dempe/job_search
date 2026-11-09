@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-02-19
-status: ghosted
+outcome:
 job_type: fulltime
 source: 4dayweek
 position: Software Engineer II, L2 Integrations Team

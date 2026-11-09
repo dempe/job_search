@@ -4,7 +4,7 @@ applied: 2026-10-23
 job_type: fulltime
 channel: form
 contact:
-status: rejected
+outcome: rejected
 source: linkedin
 listing: https://job-boards.greenhouse.io/nerostechnologies/jobs/5265805007?gh_src=a44e27377us
 company: Neros

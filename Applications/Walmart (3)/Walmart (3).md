@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-04
-status: rejected
+outcome:
 source: linkedin
 job_type: fulltime
 position:

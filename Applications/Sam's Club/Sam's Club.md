@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-29
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: linkedin
 position: Senior, Software Engineer - SRE

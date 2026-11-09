@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-12
-status: ghosted
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Senior Full Stack Software Engineer

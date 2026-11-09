@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-16
 job_type: fulltime
 channel: form
-status: awaiting-reply
+outcome:
 source: matcha
 listing: "https://castellumai.hiringthing.com/job/1067555/senior-software-engineer-full-stack"
 company: Castellum.AI

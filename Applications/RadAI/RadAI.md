@@ -3,7 +3,7 @@ type: job
 applied: 2026-07-29
 job_type: fulltime
 channel: form
-status: rejected
+outcome: rejected
 source: matcha
 listing: https://jobs.Ashbyhq.Com/radai/0143d5f5-b1a4-4684-a9bd-763990f4ccf8
 company: Rad AI

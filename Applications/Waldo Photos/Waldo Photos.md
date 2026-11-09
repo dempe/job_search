@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-02-22
-status: ghosted
+outcome:
 job_type: contractor
 source: wellfound
 position: backend

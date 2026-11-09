@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-06-08
-status: ghosted
+outcome:
 job_type: fulltime
 source: wellfound
 position: Senior Backend Engineer

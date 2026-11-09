@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-24
-status: offer
+outcome:
 job_type: fulltime
 source: indeed
 position: AWS Engineer (Background PHP Job Management & Server Optimization)

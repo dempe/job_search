@@ -4,7 +4,7 @@ applied: 2026-11-09
 job_type: fulltime
 channel: form
 contact:
-status: awaiting-reply
+outcome:
 source: inbound
 listing: "https://recruiting.paylocity.com/recruiting/jobs/Details/4645533/Phoenix-Oversight-Group-LLC/Senior-Software-Engineer-AI-First-Development"
 jd: "[[Applications/PhoenixTeam/jd]]"

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-09-02
-status: ghosted
+outcome:
 job_type: fulltime
 position: Senior Software Engineer (Backend/Data)
 remote: true

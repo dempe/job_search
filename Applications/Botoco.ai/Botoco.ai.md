@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-03-29
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: wellfound
 position: Sr Java Back-end Engineer

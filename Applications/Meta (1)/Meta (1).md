@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-08-24
-status: rejected
+outcome:
 job_type: fulltime
 position: "Software Engineer Infrastructure"
 remote: true

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-10-04
-status: ghosted
+outcome:
 job_type: fulltime
 position: Senior Software Engineer
 remote: true

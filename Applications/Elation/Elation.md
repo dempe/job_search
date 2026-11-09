@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-15
 job_type: fulltime
 channel: form
-status: awaiting-reply
+outcome:
 source: matcha
 listing: "https://www.elationhealth.com/about-us/careers/?gh_jid=8265478"
 company: Elation

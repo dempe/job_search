@@ -3,7 +3,7 @@ type: job
 applied: 2026-08-12
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: https://jobs.Ashbyhq.Com/Superhuman%20Platform%20Inc/fab20ff5-63c9-4ea4-a961-a08338140ed2
 company: Superhuman

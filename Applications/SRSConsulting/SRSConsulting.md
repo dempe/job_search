@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-10-21
-status: ghosted
+outcome:
 job_type: fulltime
 position:
 contract:

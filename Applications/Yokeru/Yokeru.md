@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-24
-status: declined
+outcome:
 job_type: fulltime
 source: wellfound
 position: Integrations Engineer

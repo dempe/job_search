@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-09-02
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: "Senior Software Engineer and Tech Lead"
 remote: true

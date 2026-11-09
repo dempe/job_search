@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-02-17
-status: ghosted
+outcome:
 job_type: fulltime
 source: 4dayweek.io
 position: Full stack developer

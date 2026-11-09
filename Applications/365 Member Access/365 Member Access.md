@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-07
 job_type: fulltime
 channel: recruited
-status: rejected
+outcome:
 source: inbound
 listing:
 company: 365 Member Access

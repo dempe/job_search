@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2024-03-14
-status: ghosted
+outcome:
 job_type: fulltime
 position: Senior Backend Engineer
 remote: true

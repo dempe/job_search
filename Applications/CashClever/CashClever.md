@@ -3,7 +3,7 @@ type: job
 applied: 2026-08-12
 job_type: fulltime
 channel: direct
-status: ghosted
+outcome:
 source: wellfound
 listing: https://wellfound.Com/jobs?Job_listing_slug=4551029-senior-backend-engineer-financial-infrastructure
 company: CashClever

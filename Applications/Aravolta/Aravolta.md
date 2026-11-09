@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-10
-status: ghosted
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Senior Software Engineer

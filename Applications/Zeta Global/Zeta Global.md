@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-29
-status: ghosted
+outcome:
 job_type:
 source: linkedin
 position: Lead Software Engineer, Opportunity Insights

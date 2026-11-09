@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-15
 job_type: fulltime
 channel: form
-status: awaiting-reply
+outcome:
 source: matcha
 listing: "https://careers.kula.ai/deepscribe/62582-software-engineer-product/"
 company: DeepScribe

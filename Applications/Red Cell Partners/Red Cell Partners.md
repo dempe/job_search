@@ -4,7 +4,7 @@ applied: 2026-10-23
 job_type: fulltime
 channel: form
 contact:
-status: awaiting-reply
+outcome:
 source: matcha
 listing: "https://job-boards.greenhouse.io/redcellpartners/jobs/5268063007"
 company: Red Cell Partners

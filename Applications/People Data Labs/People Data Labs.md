@@ -4,7 +4,7 @@ applied: 2026-10-22
 job_type: fulltime
 channel: form
 contact:
-status: interview
+outcome:
 source: matcha
 listing: "https://jobs.ashbyhq.com/people-data-labs/5108aa65-f7cc-4d41-92fe-a3a5373d705d"
 company: People Data Labs

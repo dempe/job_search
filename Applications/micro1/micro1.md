@@ -4,7 +4,7 @@ applied: 2026-11-06
 job_type: contractor
 channel: form
 contact:
-status: interview
+outcome:
 source: inbound
 listing: https://jobs.micro1.ai/post/6634c1b6-553f-4d60-a692-be005464a798?referralCode=40f093c5-b8ab-4307-8006-863eb897fd85
 jd: "[[Applications/micro1/jd]]"

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-02-01
-status: declined
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Founding Platform Engineer

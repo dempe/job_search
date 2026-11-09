@@ -4,7 +4,7 @@ applied: 2026-10-22
 job_type: fulltime
 channel: form
 contact:
-status: awaiting-reply
+outcome:
 source: matcha
 listing: "https://job-boards.greenhouse.io/automox/jobs/5454296008"
 company: Automox

@@ -3,7 +3,7 @@ type: job
 applied: 2026-09-04
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: https://job-boards.Greenhouse.Io/lithic/jobs/6181839004
 company: Lithic

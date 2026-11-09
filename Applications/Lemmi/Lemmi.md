@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-24
-status: ghosted
+outcome:
 job_type: fulltime
 source: wellfound
 position: Python Engineer (early-stage, entry-level friendly)

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 
-status: rejected
+outcome:
 source: reference
 job_type: fulltime
 position: "Senior Software Engineer Platform"

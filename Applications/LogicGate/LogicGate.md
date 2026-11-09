@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-16
 job_type: fulltime
 channel: form
-status: awaiting-reply
+outcome:
 source: linkedin
 listing: "https://www.logicgate.ai/company/careers/?gh_jid=4743005005"
 company: LogicGate

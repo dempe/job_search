@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-02
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: https://ats.rippling.com/tilledcareers/jobs/439f9915-bab3-4ac5-8ec5-4b2ef408b96a
 company: Tilled

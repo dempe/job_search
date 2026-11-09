@@ -2,7 +2,7 @@
 type: job
 applied: 2023-07-09
 interview_dates:
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: Senior Java Developer
 remote: true

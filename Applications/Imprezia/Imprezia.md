@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-12-02
-status: ghosted
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Senior Ad Tech Engineer (Founding Team)

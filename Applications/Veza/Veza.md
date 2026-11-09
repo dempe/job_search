@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-05-28
-status: ghosted
+outcome:
 job_type: fulltime
 source: Matcha
 position: Senior Backend Engineer

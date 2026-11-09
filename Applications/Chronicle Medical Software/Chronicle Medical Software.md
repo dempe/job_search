@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-09
-status: rejected
+outcome: rejected
 job_type: parttime
 source: wellfound
 position: Cloud Platform Engineer (IaC)

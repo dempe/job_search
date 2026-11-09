@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-27
-status: ghosted
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Product Engineer (Fullstack)

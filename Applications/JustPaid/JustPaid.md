@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-02-12
-status: ghosted
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Full Stack Software Developer

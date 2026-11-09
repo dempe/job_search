@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-18
-status: ghosted
+outcome:
 job_type: fulltime
 position: Software Engineer, Ads
 contract: false

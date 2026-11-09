@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-06-05
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: matcha
 position: Senior Software Engineer

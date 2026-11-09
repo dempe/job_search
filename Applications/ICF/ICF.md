@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-10-23
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: Senior Software Engineer (Java)
 contract: true

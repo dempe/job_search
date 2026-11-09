@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-01
-status: ghosted
+outcome:
 job_type: fulltime
 position: Senior Software Engineer
 contract: false

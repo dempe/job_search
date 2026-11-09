@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-26
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: indeed
 position: Lead Software Developer

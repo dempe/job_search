@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-24
-status: declined
+outcome: declined
 job_type: fulltime
 source: workatastartup
 position: Backend Engineer (India)

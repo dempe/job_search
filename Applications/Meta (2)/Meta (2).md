@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-04-21
-status: rejected
+outcome:
 job_type: fulltime
 position:
 remote:

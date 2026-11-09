@@ -2,7 +2,7 @@
 type: job
 applied: 2023-06-23
 interview_dates:
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: "Staff Software Engineer"
 remote: true

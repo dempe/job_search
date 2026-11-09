@@ -3,7 +3,7 @@ type: job
 applied: 2026-07-29
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing:
 company: Eliza

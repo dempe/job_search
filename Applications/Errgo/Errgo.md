@@ -3,7 +3,7 @@ type: job
 applied: 2026-07-29
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: wellfound
 listing: https://wellfound.Com/jobs?Job_listing_slug=4514777-data-engineer-ingestion-change-data-capture-clone
 company: Try Errgo

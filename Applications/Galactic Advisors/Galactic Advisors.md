@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-24
-status: ghosted
+outcome:
 job_type: fulltime
 source: indeed
 position: Senior Full Stack PHP Developer

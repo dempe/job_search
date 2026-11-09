@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2023-08-31
-status: rejected
+outcome: rejected
 job_type: fulltime
 position: "Senior Software Engineer"
 remote: true

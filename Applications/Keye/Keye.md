@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-17
-status: ghosted
+outcome:
 job_type: fulltime
 position: Senior Software Engineer (Hybrid)
 contract: false

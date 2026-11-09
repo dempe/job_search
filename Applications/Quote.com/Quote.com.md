@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-24
-status: ghosted
+outcome:
 job_type: fulltime
 source: indeed
 position: Lead Software Engineer (Full Stack | PHP | JavaScript | React | Vue)

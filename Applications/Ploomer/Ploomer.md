@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-10-27
-status: ghosted
+outcome:
 job_type: fulltime
 position: Senior Software Engineer (Backend)
 contract: false

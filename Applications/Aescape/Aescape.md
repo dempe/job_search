@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-06-30
-status: rejected
+outcome:
 job_type: fulltime
 source: matcha
 position: Senior / Staff Backend Engineer

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-24
-status: ghosted
+outcome:
 job_type: fulltime
 source: wellfound
 position: Senior Software Developer (1099 Contractor)

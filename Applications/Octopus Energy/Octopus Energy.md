@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-06-08
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: wellfound
 position: Backend Engineer II

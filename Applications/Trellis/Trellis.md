@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-06-11
-status: cancelled
+outcome: cancelled
 job_type: fulltime
 source: matcha
 position: Senior Backend Engineer, Provider Integrations

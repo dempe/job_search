@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-03
-status: rejected
+outcome:
 job_type: fulltime
 position: Senior Backend Engineer
 contract: false

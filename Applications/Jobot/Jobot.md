@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-30
-status: declined
+outcome:
 job_type: fulltime
 source: linkedin
 position: Senior Software Engineer (Python / Django)

@@ -3,7 +3,7 @@ type: job
 applied: 2026-07-29
 job_type: fulltime
 channel: form
-status: ghosted
+outcome:
 source: matcha
 listing: https://jobs.Ashbyhq.Com/lumanu/083ae448-e841-4d6f-8741-cb6b13a5d496
 company: Lumanu

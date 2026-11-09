@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-04-30
-status: ghosted
+outcome:
 job_type: fulltime
 source: linkedin
 position: Back End Developer - Python & Go

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-06-30
-status: ghosted
+outcome:
 job_type: fulltime
 source: 4dayweek.io
 position: Senior Software Engineer, Cloud Platform

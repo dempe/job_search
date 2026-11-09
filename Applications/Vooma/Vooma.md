@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2025-11-14
-status: rejected
+outcome:
 job_type: fulltime
 source: workatastartup
 position: Platform and Integrations Engineer

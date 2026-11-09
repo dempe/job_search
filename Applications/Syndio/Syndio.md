@@ -4,7 +4,7 @@ applied: 2026-10-22
 job_type: fulltime
 channel: form
 contact:
-status: rejected
+outcome: rejected
 source: matcha
 listing: "https://synd.io/careers/?gh_jid=6231512004"
 company: Syndio

@@ -1,7 +1,7 @@
 ---
 type: job
 applied: 2026-07-16
-status: rejected
+outcome: rejected
 job_type: fulltime
 source: wellfound
 position: Cloud Solutions Architect

@@ -3,7 +3,7 @@ type: job
 applied: 2026-10-19
 job_type: fulltime
 channel: form
-status: awaiting-reply
+outcome:
 source: linkedin
 listing: "https://jobs.lever.co/teamsnap/86869664-1c38-4f5b-9a2a-555cdb565713"
 company: TeamSnap

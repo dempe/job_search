@@ -3,7 +3,7 @@ type: job
 applied: 2026-08-10
 job_type: fulltime
 channel: form
-status: declined
+outcome: declined
 source: indeed
 listing:
 company: RPA INFOTECH INDIA

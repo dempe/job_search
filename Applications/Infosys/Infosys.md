@@ -3,7 +3,7 @@ type: job
 applied: 2026-08-06
 job_type: fulltime
 channel: form
-status: rejected
+outcome: rejected
 source:
 listing:
 company: Infosys
