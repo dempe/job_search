@@ -1,16 +1,8 @@
 ---
-title: _MOC Jobs
+title: Applications
 date_created: "2023-05-30 15:06"
-date_modified: "2026-09-15 01:02"
+date_modified: "2026-11-09 12:21"
 ---
-
-## Upcoming Interview
-
-```dataview
-TABLE filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/")) AS "Interviews", source AS "Source"
-FROM "Applications"
-WHERE status = "interview"
-```
 
 ## Follow Up
 
@@ -49,7 +41,7 @@ SORT applied DESC
 ## Offer
 
 ```dataview
-TABLE filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/")) AS "Interviews", source AS "Source"
+TABLE length(filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/"))) AS "Num Interviews", source AS "Source"
 FROM "Applications"
 WHERE status = "offer"
 ```
@@ -79,13 +71,4 @@ TABLE applied AS "Applied", source AS "Source", length(filter(file.inlinks, (l) 
 FROM "Applications"
 WHERE status = "ghosted"
 SORT applied DESC
-```
-
-## Total Interviews
-
-```dataview
-TABLE filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/")) AS "Interviews", source AS "Source", channel AS "Channel"
-FROM "Applications"
-WHERE length(filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/"))) > 0
-SORT channel, max(map(filter(file.inlinks, (l) => contains(meta(l).path, "/Interviews/")), (l) => string(l.file.frontmatter.date))) DESC
 ```
