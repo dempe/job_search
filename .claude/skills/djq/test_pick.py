@@ -87,6 +87,67 @@ type: interview
 - Calm
 """
 
+RUNS = """---
+type: interview
+---
+
+## Questions
+
+### What is Kafka?
+
+- grade:: fail
+- answer:: "Uh, a queue."
+
+#### Practice
+
+##### 1
+
+- date:: 2026-11-07 14:03:22
+- run:: 1
+- grade:: fail
+- answer:: "It's a log."
+- missing::
+  - **specifics:** no detail
+- feedback:: Say more.
+
+##### 2
+
+- date:: 2026-11-08 09:00:00
+- run:: 2
+- grade:: pass
+- answer:: "A partitioned, replicated log."
+- feedback:: Good.
+
+### Why leave?
+
+- answer:: "Growth."
+
+#### Practice
+
+##### 1
+
+- date:: 2026-11-08 09:05:00
+- run:: 2
+- grade:: pass
+- answer:: "I want ownership."
+- feedback:: Fine.
+
+### Untagged?
+
+#### Practice
+
+##### 1
+
+- date:: 2026-11-01 10:00:00
+- grade:: pass
+- answer:: "Old session."
+- feedback:: Fine.
+
+## Notes
+
+- run:: 9
+"""
+
 
 class PickTest(unittest.TestCase):
     def setUp(self):
@@ -157,6 +218,33 @@ class PickTest(unittest.TestCase):
             "## Applications/Acme/Interviews/2/2\n### What is Kafka?\n\n\"Uh, a queue.\"\n\n"
             "## Applications/Acme/Interviews/2/2\n### What is Kafka?\n\n\"It's a log.\"\n"
         ))
+
+
+    def test_next_run_is_one_more_than_the_highest(self):
+        note = self.write("Applications/Acme/Interviews/2/2.md", RUNS)
+        self.assertEqual(self.run_pick("--next-run", note), "3\n")
+
+    def test_next_run_starts_at_one(self):
+        note = self.write("Applications/Acme/Interviews/2/2.md", INTERVIEW)
+        self.assertEqual(self.run_pick("--next-run", note), "1\n")
+
+    def test_run_lists_that_runs_answers_in_order(self):
+        note = self.write("Applications/Acme/Interviews/2/2.md", RUNS)
+        self.assertEqual(self.run_pick("--run", 2, note), (
+            "### What is Kafka?\n\n\"A partitioned, replicated log.\"\n\n"
+            "### Why leave?\n\n\"I want ownership.\"\n"
+        ))
+
+    def test_run_without_answers_prints_nothing(self):
+        note = self.write("Applications/Acme/Interviews/2/2.md", RUNS)
+        self.assertEqual(self.run_pick("--run", 3, note), "")
+
+    def test_run_modes_reject_an_application_note(self):
+        note = self.write("Applications/Acme/Acme.md", APPLICATION)
+        for args in (["--next-run", note], ["--run", 1, note]):
+            result = subprocess.run(["bash", str(PICK), *map(str, args)], capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertEqual(result.stdout, "")
 
 
 if __name__ == "__main__":
