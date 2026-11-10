@@ -15,16 +15,15 @@ remote:
 compensation: $240k – $320k
 title: TrustIn (1)
 date_created: "2026-11-10 13:07"
-date_modified: "2026-11-10 13:07"
+date_modified: "2026-11-10 13:10"
 ---
 
 ## Questions
 
-### What interests you about working for this company?
+### What Interests You about Working for This Company?
 
-The path from a webhook to a personalized response. Customer data comes in as events, and it has to be processed and served back fast enough to personalize in real time.
+I'm Chris. I've got 11 years of experience in backend development, mostly in distributed systems, data pipelines, and integrations. Streaming data has been my bread and butter for a lot of my career. For example, at Octimine I built a real-time, event driven pipeline in Kafka Streams to replace a fragile weekly batch job processing about 30 million documents. I've also built distributed data ingestion frameworks (at DataRank), and more recently, payment integrations for clients that run on webhooks.
 
-I've built the ingestion side of that before. At Octimine, I replaced a fragile weekly Python batch job (~30 million documents a week) with a real-time, event-driven Kafka Streams pipeline in Java, with a DLQ, feeding the Elasticsearch index behind our API and UI. More recently, I built payment integrations for clients where webhooks can arrive duplicated or out of order, so I used idempotency keys and checked for both.
+I worked at DataRank when it was 5 people, so I know what it's like to work at a startup. Multi-region infrastructure and a low latency caching layer would be new for me, and that's exactly the kind of thing I'm looking for to keep growing as an engineer.
 
-The low-latency serving layer and multi-region infrastructure are where I'd be growing, and that's a big part of the draw.
-
+I'd love to be a part of the team!
