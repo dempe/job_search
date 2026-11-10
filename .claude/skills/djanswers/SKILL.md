@@ -15,7 +15,7 @@ Follow the steps below in order. A step that says STOP ends the run.
 ## Constraints
 
 - The assistant MUST use only Claude Code's built-in tools (Bash, Read, Edit). It MUST NOT write scripts, and the only script it runs is `pick.sh --answers`.
-- The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`), `bash .claude/skills/djq/pick.sh --answers` (Step 3), and the commit in Step 5 (`git add`, `git commit`).
+- The Bash tool MUST be used only for read-only commands (`ls`, `find`, `grep`, `test -e`, `git log`, `git diff`, `git show`), `bash .claude/skills/djq/pick.sh --answers` (Step 3), and the commit in Step 5 (`git add`, `git commit`).
 - The only files this skill modifies are `Applications/{Application}/{Application}.md`, and only by writing answer text under unanswered questions. Everything else in them (frontmatter, headings, questions, existing answers, links) MUST stay byte-for-byte unchanged.
 - The assistant MUST NOT create or modify anything in other application notes, any interview note, `../resume/`, client repositories, or anywhere else.
 - The assistant commits only the notes it edited, in Step 5. It MUST NOT push.
@@ -74,41 +74,46 @@ Read these sources. They are listed from most to least authoritative for the use
 
 Also use what the user's global `CLAUDE.md` records about how they work, when it is relevant to a question. It doesn't record which project an incident happened on, so don't attach one to a specific project unless another source confirms it.
 
+## Step 3b: Choose voice exemplars
+
+The drafts must sound like the user, and the only reliable guide to that is the user's own writing. A description of their voice is not enough: the assistant will fill it in with its own idea of "plain and direct", which reads as AI-written.
+
+- **Find the user's own written answers.** Not every answer in `Applications/` was written by the user: some are drafts from earlier runs of this skill, left as they were. List the draft commits with `git log --format="%h %s" --grep="^Draft .* answers$"`.
+  - An answer in a note with no draft commit was written by the user.
+  - For a note with a draft commit, `git diff {commit} HEAD -- {note}` shows what the user changed afterwards. Text the user added or rewrote is theirs. Text left exactly as drafted is not, and MUST NOT be used as an exemplar.
+- **The user's rewrites are the strongest evidence.** Where the user replaced a draft, compare the draft (`git show {commit}:{note}`) with their version. Whatever they removed is what to avoid, and what they wrote instead is what to imitate.
+- **Pick 3–5 exemplars**, written application answers rather than machine-transcribed speech, preferring answers to the same kind of question (motivation, a project story, a technical explanation). Read each one in full, not a grep excerpt.
+- Note the shape the exemplars share, for this kind of question: how they open, the order they go in, how long they are, how they close, and the user's recurring phrasings.
+
 ## Step 4: Draft each answer
 
 For each unanswered question, in order:
 
+- **Follow the exemplars.** The draft's structure, length, opening, closing and sentence style MUST follow the exemplars from Step 3b for this kind of question. If the user opens by introducing themselves, walks through what they've built, and closes with a line of enthusiasm, the draft does the same.
 - **Reuse first.** If the user has answered the same or a similar question before in their past answers, start from that answer and adapt it to this company and question. Keep the user's sentences wherever they still fit.
 - **Pick the strongest true story.** Choose the story that best answers what the question actually asks, and that fits what the company does and values, among the stories the sources support.
 - **Answer the question asked.** Cover every part of a multi-part question (e.g. "what did it get right, and what did you have to fix or reject?").
 - **Respect limits.** If the question or JD gives a word or sentence limit, stay under it.
-- **Match the user's voice.** Write the way the user writes in their past answers:
-  - first person, plain, direct, and conversational
-  - short paragraphs; lists only when the user would use them
-  - concrete specifics (employer names, technologies, numbers) over adjectives
-  - the user's own phrasings where they apply (e.g. "Since it was touching payments, it was imperative that my code was correct.")
-  - `--` for dashes, never em dashes
-  - no corporate filler ("I'm passionate about…", "leverage", "synergy"), no generic AI-sounding sentences
+- **Use the user's words.** Prefer the user's own phrasings from the exemplars and past answers (e.g. "Since it was touching payments, it was imperative that my code was correct.") over new wording. Use `--` for dashes, never em dashes.
 - **No markup around the answer.** The answer is plain text under the question. No headings, no code blocks, no preamble such as "Here's a draft".
-- **Motivation questions** ("why us?", "what interests you about this company?", intros and cover messages) need extra care, because a generic answer is the default failure:
-  - Lead with the one thing that is distinctive to this company: the problem only it has, or what is hard about what it's building. Don't lead with a value the user merely shares with it.
+- **Motivation questions** ("why us?", "what interests you about this company?", intros and cover messages):
+  - Follow the shape of the user's own motivation answers (Step 3b), whatever it is. It is not the assistant's job to restructure it into a stronger pitch.
   - Tailor it to the role in the JD, not only the company. A company the user applied to before may be hiring for a different problem now, so an earlier answer for the same company is a starting point, not a final answer.
   - If the sources show the user personally uses the company's product, say so in one sentence. If they don't, MUST NOT imply it.
-  - Frame motivation as something the user is drawn to, not as a deal-breaker the company happens to avoid.
   - Connect the user's experience to the role honestly. Name the actual overlap ("I've built ingestion pipelines and want to apply that to search"), not an implied equivalence ("pipelines that keep search relevant are what I do").
   - A gap can be part of the motivation when it's true (e.g. the company's AI work is something the user wants to grow into). Don't hide it, and don't claim it's covered.
-  - Aim for about 100 words unless the question asks for more.
 
 ## Step 4b: Review each draft
 
 Before writing, check every draft against this rubric, and revise it until it passes:
 
-- **Swap test.** Replace the company's name with a close competitor's. If most sentences still work, the draft is generic. Rewrite it around what is specific to this company.
-- **No template structure.** No "three reasons" layout ("Mostly X… The work itself… Lastly, the culture"), no list of virtues. One clear point with support beats three thin ones.
+- **Voice check.** Read the draft next to the exemplars. Any sentence that would look out of place among them MUST be rewritten in the user's phrasing. Common giveaways the user doesn't write:
+  - a sentence fragment as the opening line ("The path from a webhook to a personalized response.")
+  - a neat closing line or summary ("…and that's a big part of the draw.")
+  - balanced, polished sentences and rhetorical setups ("Not X, but Y")
+  - abstract framing of the company's problem in place of plain statements about what the user did and wants
 - **No JD echo.** Don't restate facts from the JD back to the company (founding year, revenue, "profitable since…"), and don't paraphrase the JD's own phrases (e.g. "scoping to postmortem"). They know their company; it reads as skimming the page.
-- **Answer this question.** Cut sentences that answer a different one, e.g. "I'm looking to get back on a team" answers "why are you job-hunting?", not "why us?".
 - **No stretched evidence.** Each claim about the user's experience must hold up if an interviewer asks a follow-up. Wording that implies more overlap than the sources show counts as upgrading the evidence (see Honesty).
-- **Survives summarization.** Assume an AI or a skimming reader reduces the answer to one line. That line should be about this candidate and this company, not "likes the mission, has relevant experience, wants remote."
 
 ## Step 5: Write the answers into the note
 
