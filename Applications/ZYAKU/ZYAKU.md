@@ -15,16 +15,13 @@ remote: true
 compensation: $30k – $95k • No equity
 title: ZYAKU
 date_created: "2026-11-10 12:32"
-date_modified: "2026-11-10 12:32"
+date_modified: "2026-11-10 12:42"
 ---
 
 ## Questions
 
-### What interests you about working for this company?
+### What Interests You about Working for This Company?
 
-The backend problem. When the network can't be trusted, every request might be a retry, so a post or a payment has to land exactly once no matter how many times the client sends it. Correctness under retries is the kind of problem I like most.
+I'm Chris. I've got 11 years of experience in backend development. API design, orchestrating background jobs, queues, and caching has been my bread and butter for a lot of my career. For example, I built a real-time, event driven streaming pipeline in Kafka Streams. I've built serverless pipelines in AWS, distributed web scraping frameworks (at DataRank), and a payment integration app (for a client recently). And I'm currently reading through Designing Data Intensive Applications.
 
-I've worked on smaller versions of it. At Dekstech, I prevented duplicate charges on a Shopify checkout by scoping an idempotency key to each payment session and reusing it across retries. My own React Native app, Athena Math, keeps its session history offline in SQLite.
-
-I also spent years at SimplyMeasured building social media analytics for marketers. Building for independent journalists and crisis alerts is work I'd feel a lot better about.
-
+I think I could make a great contribution to Zyaku's team and I'd love to be a part of it!
