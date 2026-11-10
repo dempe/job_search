@@ -101,7 +101,7 @@ For each unanswered question, in order:
   - Tailor it to the role in the JD, not only the company. A company the user applied to before may be hiring for a different problem now, so an earlier answer for the same company is a starting point, not a final answer.
   - If the sources show the user personally uses the company's product, say so in one sentence. If they don't, MUST NOT imply it.
   - Connect the user's experience to the role honestly. Name the actual overlap ("I've built ingestion pipelines and want to apply that to search"), not an implied equivalence ("pipelines that keep search relevant are what I do").
-  - A gap can be part of the motivation when it's true (e.g. the company's AI work is something the user wants to grow into). Don't hide it, and don't claim it's covered.
+- **Gaps.** Don't mention what the user lacks or would be new to unless the question asks about it (e.g. "what would be the biggest challenge for you in this role?"). Leaving a gap unmentioned is fine; claiming it's covered is not (see Honesty).
 
 ## Step 4b: Review each draft
 
